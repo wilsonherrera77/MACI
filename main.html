@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Infografía: Programa Quinquenal de Soberanía Biocultural MACI</title>
+    <title>Infografía: Soberanía de Datos Indígenas - Principios CREA y el Programa MACI</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -12,6 +12,7 @@
     <style>
         body {
             font-family: 'Inter', sans-serif;
+            background-color: #f8f9fa;
         }
         .chart-container {
             position: relative;
@@ -28,197 +29,191 @@
             }
         }
         .gradient-text {
-            background: linear-gradient(to right, #16A085, #27AE60);
+            background: linear-gradient(to right, #118AB2, #06D6A0);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
+        .card {
+            background-color: white;
+            border-radius: 0.75rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            padding: 1.5rem;
+            transition: transform 0.3s ease-in-out;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        .step-arrow {
+            font-size: 2rem;
+            color: #FFD166;
+            align-self: center;
+            margin: 0 1rem;
+        }
     </style>
 </head>
-<body class="bg-gray-50 text-gray-800">
+<body class="text-gray-800">
 
     <div class="container mx-auto p-4 md:p-8">
 
         <header class="text-center mb-12 md:mb-20">
-            <h1 class="text-4xl md:text-6xl font-black text-[#16A085] mb-4">Soberanía Biocultural</h1>
-            <p class="text-xl md:text-2xl font-bold gradient-text">Un Programa Quinquenal para Fortalecer el Monitoreo Ambiental Comunitario Indígena (MACI)</p>
+            <h1 class="text-4xl md:text-6xl font-black text-[#073B4C] mb-4">Soberanía de Datos Indígenas</h1>
+            <p class="text-xl md:text-2xl font-bold gradient-text">De los Principios CREA a la Acción con el Programa MACI</p>
         </header>
 
-        <section id="vision" class="mb-16 md:mb-24">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
-                <div class="md:col-span-1 text-center">
-                    <div class="bg-white rounded-lg shadow-xl p-8 border-t-4 border-[#16A085]">
-                        <p class="text-lg text-gray-600">Los pueblos indígenas son guardianes del</p>
-                        <p class="text-8xl font-black text-[#27AE60] my-4">80%</p>
-                        <p class="text-lg text-gray-600">de la biodiversidad del planeta.</p>
-                    </div>
+        <section id="data-wisdom" class="mb-16 md:mb-24">
+            <h2 class="text-3xl font-bold text-center text-[#073B4C] mb-10">El Viaje del Conocimiento</h2>
+            <p class="text-lg text-center text-gray-600 max-w-3xl mx-auto mb-12">El valor no reside en los datos crudos, sino en el proceso que los transforma en sabiduría. Este ciclo es fundamental para entender por qué la gobernanza es crucial.</p>
+            <div class="flex flex-col md:flex-row justify-center items-stretch">
+                <div class="card flex-1 text-center m-2">
+                    <h3 class="text-2xl font-bold text-[#118AB2]">Datos</h3>
+                    <p class="mt-2">Representación simbólica de una variable.</p>
                 </div>
-                <div class="md:col-span-2">
-                    <h2 class="text-3xl font-bold text-[#16A085] mb-4">El Desafío: Más Allá del Monitoreo</h2>
-                    <p class="text-lg text-gray-700 leading-relaxed">
-                        El problema no es solo la falta de capacidad para monitorear, sino la vulnerabilidad del patrimonio biocultural indígena frente a un paradigma de datos extractivo. Este programa de 5 años re-enmarca el desafío, poniendo la gobernabilidad y la soberanía de los datos en el centro para asegurar que el fortalecimiento técnico sea una herramienta de empoderamiento, no de extracción.
-                    </p>
+                <div class="step-arrow">&#10140;</div>
+                <div class="card flex-1 text-center m-2">
+                    <h3 class="text-2xl font-bold text-[#06D6A0]">Información</h3>
+                    <p class="mt-2">Datos agrupados y estructurados.</p>
+                </div>
+                <div class="step-arrow">&#10140;</div>
+                <div class="card flex-1 text-center m-2">
+                    <h3 class="text-2xl font-bold text-[#FFD166]">Conocimiento</h3>
+                    <p class="mt-2">Información sobre la que se razona y concluye.</p>
+                </div>
+                <div class="step-arrow">&#10140;</div>
+                <div class="card flex-1 text-center m-2">
+                    <h3 class="text-2xl font-bold text-[#FF6B6B]">Sabiduría</h3>
+                    <p class="mt-2">Entendimiento profundo para la acción.</p>
                 </div>
             </div>
         </section>
 
-        <section id="program-overview" class="text-center mb-16 md:mb-24 p-8 bg-white rounded-lg shadow-lg">
-            <h2 class="text-3xl font-bold text-[#16A085] mb-2">Un Programa Integral y Modular</h2>
-            <p class="text-lg text-gray-600 mb-10 max-w-3xl mx-auto">El programa se estructura en cinco módulos interconectados, diseñados para construir una base sólida de gobernabilidad antes de realizar inversiones tecnológicas a gran escala, garantizando la sostenibilidad a largo plazo.</p>
-            
-            <div class="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-4">
-                <div class="p-4 bg-[#E67E22] bg-opacity-20 rounded-lg shadow-md text-center">
-                    <p class="text-2xl font-bold text-[#E67E22]">Módulo 1</p>
-                    <p class="font-semibold">Gobernabilidad</p>
+        <section id="fair-crea" class="mb-16 md:mb-24">
+            <h2 class="text-3xl font-bold text-center text-[#073B4C] mb-10">Dos Paradigmas: FAIR y CREA</h2>
+            <p class="text-lg text-center text-gray-600 max-w-3xl mx-auto mb-12">Los datos científicos se rigen por los principios FAIR, enfocados en la apertura. Sin embargo, para los datos indígenas, esto es insuficiente. Se necesita una capa de soberanía: los principios CREA.</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="card">
+                    <h3 class="text-2xl font-bold text-center text-[#118AB2] mb-4">Principios FAIR</h3>
+                    <ul class="space-y-2 list-disc list-inside">
+                        <li><span class="font-bold">Findable (Encontrable):</span> Los datos deben ser fáciles de localizar.</li>
+                        <li><span class="font-bold">Accessible (Accesible):</span> Los datos deben ser recuperables.</li>
+                        <li><span class="font-bold">Interoperable:</span> Los datos deben poder combinarse con otros datos.</li>
+                        <li><span class="font-bold">Reusable (Reutilizable):</span> Los datos deben estar bien descritos para su reutilización.</li>
+                    </ul>
                 </div>
-                <div class="text-2xl font-bold text-gray-400">&#10140;</div>
-                <div class="p-4 bg-[#2980B9] bg-opacity-20 rounded-lg shadow-md text-center">
-                    <p class="text-2xl font-bold text-[#2980B9]">Módulo 2</p>
-                    <p class="font-semibold">Tecnología</p>
-                </div>
-                <div class="text-2xl font-bold text-gray-400">&#10140;</div>
-                <div class="p-4 bg-[#16A085] bg-opacity-20 rounded-lg shadow-md text-center">
-                    <p class="text-2xl font-bold text-[#16A085]">Módulo 3</p>
-                    <p class="font-semibold">Monitoreo</p>
-                </div>
-                <div class="text-2xl font-bold text-gray-400">&#10140;</div>
-                <div class="p-4 bg-[#8E44AD] bg-opacity-20 rounded-lg shadow-md text-center">
-                    <p class="text-2xl font-bold text-[#8E44AD]">Módulo 4</p>
-                    <p class="font-semibold">Genética</p>
-                </div>
-                 <div class="text-2xl font-bold text-gray-400">&#10140;</div>
-                <div class="p-4 bg-[#27AE60] bg-opacity-20 rounded-lg shadow-md text-center">
-                    <p class="text-2xl font-bold text-[#27AE60]">Módulo 5</p>
-                    <p class="font-semibold">Bioeconomía</p>
+                <div class="card border-t-4 border-[#06D6A0]">
+                    <h3 class="text-2xl font-bold text-center text-[#06D6A0] mb-4">Principios CREA</h3>
+                     <ul class="space-y-2 list-disc list-inside">
+                        <li><span class="font-bold">Control:</span> Los pueblos indígenas deben controlar sus datos.</li>
+                        <li><span class="font-bold">Responsabilidad:</span> Quienes trabajen con datos indígenas son responsables ante los pueblos.</li>
+                        <li><span class="font-bold">Ética:</span> Se deben respetar los derechos y el bienestar de los pueblos.</li>
+                        <li><span class="font-bold">Aprovechamiento:</span> Los datos deben usarse para el beneficio colectivo de los pueblos.</li>
+                    </ul>
                 </div>
             </div>
         </section>
-        
-        <section id="budget" class="mb-16 md:mb-24">
-            <h2 class="text-3xl font-bold text-center text-[#16A085] mb-10">Inversión Estratégica: $44 Mil Millones COP a 5 Años</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-                <div class="bg-white rounded-lg shadow-lg p-6">
-                    <h3 class="text-xl font-bold text-center text-gray-700 mb-4">Distribución Total por Módulo</h3>
-                    <p class="text-center text-gray-600 mb-4">El presupuesto refleja el enfoque estratégico: la mayor inversión se destina al monitoreo en campo, el corazón del programa, seguido de la bioeconomía y la tecnología como pilares de sostenibilidad y autonomía.</p>
+
+        <section id="maci-program" class="mb-16 md:mb-24">
+            <div class="text-center">
+                <h2 class="text-3xl font-bold text-[#073B4C] mb-4">CREA en Acción: El Programa MACI</h2>
+                <p class="text-lg text-gray-600 max-w-4xl mx-auto mb-12">El Programa Quinquenal de Fortalecimiento del Monitoreo Ambiental Comunitario Indígena (MACI) es la materialización de los principios CREA. Es una hoja de ruta para pasar de la teoría a la soberanía biocultural en la práctica.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 mb-12">
+                <div class="card">
+                    <h3 class="text-xl font-bold text-center text-gray-700 mb-4">Presupuesto por Módulo (Total 5 Años)</h3>
+                    <p class="text-center text-gray-600 mb-4">La inversión prioriza el trabajo en campo (Monitoreo) y la sostenibilidad (Bioeconomía), sobre una base sólida de Gobernabilidad.</p>
                     <div class="chart-container">
                         <canvas id="budgetDonutChart"></canvas>
                     </div>
                 </div>
-                <div class="bg-white rounded-lg shadow-lg p-6">
-                    <h3 class="text-xl font-bold text-center text-gray-700 mb-4">Presupuesto Anual por Módulo (en COP)</h3>
-                     <p class="text-center text-gray-600 mb-4">La inversión evoluciona anualmente, comenzando con una fuerte base en gobernabilidad y monitoreo, para luego escalar las capacidades en genética y bioeconomía en los años posteriores.</p>
+                <div class="card">
+                    <h3 class="text-xl font-bold text-center text-gray-700 mb-4">Inversión Anual por Módulo (en COP)</h3>
+                     <p class="text-center text-gray-600 mb-4">La estrategia es secuencial: se consolida la gobernabilidad y el monitoreo en los primeros años para luego escalar la genética y la bioeconomía.</p>
                     <div class="chart-container">
                         <canvas id="budgetStackedBarChart"></canvas>
                     </div>
                 </div>
             </div>
-        </section>
 
-        <section id="timeline" class="mb-16 md:mb-24">
-            <h2 class="text-3xl font-bold text-center text-[#16A085] mb-10">Hoja de Ruta: 60 Meses hacia la Autonomía</h2>
-            <div class="bg-white rounded-lg shadow-lg p-6 overflow-x-auto">
-                 <p class="text-center text-gray-600 mb-6">El cronograma está diseñado para construir capacidades de forma secuencial. Las bases de gobernabilidad (Módulo 1) se establecen primero, permitiendo un despliegue tecnológico (Módulo 2) y de monitoreo (Módulo 3) seguro y soberano, que a su vez alimenta las fases avanzadas de genética (Módulo 4) y bioeconomía (Módulo 5).</p>
-                <table class="w-full min-w-[800px] text-center">
-                    <thead>
-                        <tr class="border-b-2 border-gray-300">
-                            <th class="p-2 font-bold text-left">Módulo / Actividad Clave</th>
-                            <th class="p-2 font-bold">Año 1</th>
-                            <th class="p-2 font-bold">Año 2</th>
-                            <th class="p-2 font-bold">Año 3</th>
-                            <th class="p-2 font-bold">Año 4</th>
-                            <th class="p-2 font-bold">Año 5</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr class="border-b border-gray-200"><td colspan="6" class="p-2 font-bold text-left bg-gray-50 text-[#E67E22]">1. Gobernabilidad</td></tr>
-                        <tr class="border-b border-gray-200">
-                            <td class="p-2 text-left pl-6">Desarrollo de Protocolos Bioculturales</td>
-                            <td colspan="2"><div class="bg-[#E67E22] rounded-full h-4"></div></td><td><div class="bg-[#E67E22]/50 rounded-full h-4"></div></td><td><div class="bg-[#E67E22]/50 rounded-full h-4"></div></td><td><div class="bg-[#E67E22]/50 rounded-full h-4"></div></td>
-                        </tr>
-                        <tr class="border-b border-gray-200">
-                            <td class="p-2 text-left pl-6">Creación Estructura de Gobernabilidad</td>
-                            <td><div class="bg-[#E67E22] rounded-full h-4"></div></td><td><div class="bg-[#E67E22]/50 rounded-full h-4"></div></td><td></td><td></td><td></td>
-                        </tr>
-                        <tr class="border-b border-gray-200"><td colspan="6" class="p-2 font-bold text-left bg-gray-50 text-[#2980B9]">2. Tecnología</td></tr>
-                        <tr class="border-b border-gray-200">
-                            <td class="p-2 text-left pl-6">Desarrollo Plataforma (PSB) y Blockchain</td>
-                            <td></td><td colspan="2"><div class="bg-[#2980B9] rounded-full h-4"></div></td><td><div class="bg-[#2980B9]/50 rounded-full h-4"></div></td><td></td>
-                        </tr>
-                         <tr class="border-b border-gray-200">
-                            <td class="p-2 text-left pl-6">Adquisición y Distribución de Equipos</td>
-                            <td colspan="2"><div class="bg-[#2980B9] rounded-full h-4"></div></td><td><div class="bg-[#2980B9]/50 rounded-full h-4"></div></td><td></td><td></td>
-                        </tr>
-                        <tr class="border-b border-gray-200"><td colspan="6" class="p-2 font-bold text-left bg-gray-50 text-[#16A085]">3. Monitoreo</td></tr>
-                        <tr class="border-b border-gray-200">
-                            <td class="p-2 text-left pl-6">Formación "Guardianes de la Vida"</td>
-                            <td colspan="5"><div class="bg-[#16A085] rounded-full h-4"></div></td>
-                        </tr>
-                        <tr class="border-b border-gray-200">
-                            <td class="p-2 text-left pl-6">Inventarios Bioculturales en Campo</td>
-                            <td></td><td colspan="4"><div class="bg-[#16A085] rounded-full h-4"></div></td>
-                        </tr>
-                        <tr class="border-b border-gray-200"><td colspan="6" class="p-2 font-bold text-left bg-gray-50 text-[#8E44AD]">4. Genética</td></tr>
-                         <tr class="border-b border-gray-200">
-                            <td class="p-2 text-left pl-6">Proyectos Piloto de Muestreo Genético</td>
-                            <td></td><td colspan="2"><div class="bg-[#8E44AD] rounded-full h-4"></div></td><td></td><td></td>
-                        </tr>
-                        <tr class="border-b border-gray-200">
-                            <td class="p-2 text-left pl-6">Diseño e Implementación del Biobanco</td>
-                             <td></td><td></td><td colspan="2"><div class="bg-[#8E44AD] rounded-full h-4"></div></td><td></td>
-                        </tr>
-                        <tr class="border-b border-gray-200"><td colspan="6" class="p-2 font-bold text-left bg-gray-50 text-[#27AE60]">5. Bioeconomía</td></tr>
-                         <tr class="border-b border-gray-200">
-                            <td class="p-2 text-left pl-6">Identificación de Oportunidades</td>
-                             <td></td><td></td><td><div class="bg-[#27AE60] rounded-full h-4"></div></td><td><div class="bg-[#27AE60]/50 rounded-full h-4"></div></td><td></td>
-                        </tr>
-                        <tr class="border-b border-gray-200">
-                            <td class="p-2 text-left pl-6">Incubación de Bionegocios</td>
-                             <td></td><td></td><td></td><td colspan="2"><div class="bg-[#27AE60] rounded-full h-4"></div></td>
-                        </tr>
-                    </tbody>
-                </table>
+            <div class="card mb-12">
+                <h3 class="text-xl font-bold text-center text-gray-700 mb-6">Cronograma Estratégico a 5 Años</h3>
+                <div class="overflow-x-auto">
+                    <table class="w-full min-w-[800px] text-center">
+                        <thead>
+                            <tr class="border-b-2 border-gray-300">
+                                <th class="p-2 font-bold text-left">Módulo / Actividad Clave</th>
+                                <th class="p-2 font-bold">Año 1</th>
+                                <th class="p-2 font-bold">Año 2</th>
+                                <th class="p-2 font-bold">Año 3</th>
+                                <th class="p-2 font-bold">Año 4</th>
+                                <th class="p-2 font-bold">Año 5</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="border-b border-gray-200"><td colspan="6" class="p-2 font-bold text-left bg-gray-50 text-[#E67E22]">1. Gobernabilidad y Soberanía</td></tr>
+                            <tr class="border-b border-gray-200">
+                                <td class="p-2 text-left pl-6">Desarrollo de Protocolos Bioculturales</td>
+                                <td colspan="2"><div class="bg-[#E67E22] rounded-full h-4"></div></td><td><div class="bg-[#E67E22]/50 rounded-full h-4"></div></td><td></td><td></td>
+                            </tr>
+                            <tr class="border-b border-gray-200"><td colspan="6" class="p-2 font-bold text-left bg-gray-50 text-[#2980B9]">2. Fortalecimiento Tecnológico</td></tr>
+                            <tr class="border-b border-gray-200">
+                                <td class="p-2 text-left pl-6">Desarrollo Plataforma Soberana (PSB)</td>
+                                <td></td><td colspan="2"><div class="bg-[#2980B9] rounded-full h-4"></div></td><td class="bg-[#2980B9]/50 rounded-full h-4"></td><td></td>
+                            </tr>
+                            <tr class="border-b border-gray-200"><td colspan="6" class="p-2 font-bold text-left bg-gray-50 text-[#16A085]">3. Monitoreo Comunitario</td></tr>
+                            <tr class="border-b border-gray-200">
+                                <td class="p-2 text-left pl-6">Inventarios Bioculturales en Campo</td>
+                                <td></td><td colspan="4"><div class="bg-[#16A085] rounded-full h-4"></div></td>
+                            </tr>
+                            <tr class="border-b border-gray-200"><td colspan="6" class="p-2 font-bold text-left bg-gray-50 text-[#8E44AD]">4. Capacidades en Genética</td></tr>
+                            <tr class="border-b border-gray-200">
+                                <td class="p-2 text-left pl-6">Proyectos Piloto de Secuenciación</td>
+                                <td></td><td></td><td colspan="2"><div class="bg-[#8E44AD] rounded-full h-4"></div></td><td></td>
+                            </tr>
+                            <tr class="border-b border-gray-200"><td colspan="6" class="p-2 font-bold text-left bg-gray-50 text-[#27AE60]">5. Bioeconomía y Sostenibilidad</td></tr>
+                            <tr class="border-b border-gray-200">
+                                <td class="p-2 text-left pl-6">Incubación de Bionegocios</td>
+                                <td></td><td></td><td></td><td colspan="2"><div class="bg-[#27AE60] rounded-full h-4"></div></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </section>
 
         <section id="impact" class="text-center mb-16 md:mb-24">
-            <h2 class="text-3xl font-bold text-center text-[#16A085] mb-10">Impacto Esperado: Un Legado de Autonomía</h2>
+            <h2 class="text-3xl font-bold text-center text-[#073B4C] mb-10">Impacto Esperado: Un Legado de Autonomía</h2>
             <p class="text-lg text-gray-600 mb-10 max-w-3xl mx-auto">Al finalizar el quinquenio, el programa habrá consolidado un ecosistema de soberanía biocultural, generando beneficios tangibles para las comunidades y para la conservación de la biodiversidad global.</p>
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="bg-white rounded-lg shadow-lg p-6 transform hover:scale-105 transition-transform duration-300">
+                <div class="card">
                     <p class="text-5xl font-black gradient-text mb-2">500,000+</p>
                     <p class="text-lg font-semibold text-gray-700">Registros de Biodiversidad</p>
-                    <p class="text-gray-600">Validados comunitariamente y gestionados en la Plataforma de Soberanía Biocultural.</p>
                 </div>
-                 <div class="bg-white rounded-lg shadow-lg p-6 transform hover:scale-105 transition-transform duration-300">
+                 <div class="card">
                     <p class="text-5xl font-black gradient-text mb-2">10+</p>
                     <p class="text-lg font-semibold text-gray-700">Bionegocios Indígenas</p>
-                    <p class="text-gray-600">Operativos y contribuyendo a la sostenibilidad financiera del sistema MACI.</p>
                 </div>
-                 <div class="bg-white rounded-lg shadow-lg p-6 transform hover:scale-105 transition-transform duration-300">
+                 <div class="card">
                     <p class="text-5xl font-black gradient-text mb-2">1</p>
                     <p class="text-lg font-semibold text-gray-700">Consejo de Gobernabilidad</p>
-                    <p class="text-gray-600">Autónomo, gestionando el patrimonio biocultural bajo derecho propio.</p>
                 </div>
-                 <div class="bg-white rounded-lg shadow-lg p-6 transform hover:scale-105 transition-transform duration-300">
+                 <div class="card">
                     <p class="text-5xl font-black gradient-text mb-2">80%</p>
                     <p class="text-lg font-semibold text-gray-700">Pueblos con Protocolos</p>
-                    <p class="text-gray-600">Con Protocolos Bioculturales validados, ejerciendo su soberanía de datos.</p>
                 </div>
-                 <div class="bg-white rounded-lg shadow-lg p-6 transform hover:scale-105 transition-transform duration-300">
+                 <div class="card">
                     <p class="text-5xl font-black gradient-text mb-2">1</p>
                     <p class="text-lg font-semibold text-gray-700">Biobanco Piloto</p>
-                    <p class="text-gray-600">Operativo, albergando muestras genéticas bajo control indígena soberano.</p>
                 </div>
-                 <div class="bg-white rounded-lg shadow-lg p-6 transform hover:scale-105 transition-transform duration-300">
+                 <div class="card">
                     <p class="text-5xl font-black gradient-text mb-2">+15%</p>
                     <p class="text-lg font-semibold text-gray-700">Indicadores de Buen Vivir</p>
-                    <p class="text-gray-600">Aumento en los indicadores locales, reflejando el bienestar comunitario.</p>
                 </div>
             </div>
         </section>
 
-        <footer class="text-center mt-20 pt-8 border-t-2 border-gray-300">
-            <p class="text-lg font-bold text-[#16A085]">Programa para la Soberanía Biocultural y Fortalecimiento del MACI</p>
-            <p class="text-gray-600">Una hoja de ruta viable, técnicamente robusta y alineada con la política indígena ambiental.</p>
+        <footer class="text-center mt-20 pt-8 border-t-2 border-gray-200">
+            <p class="text-lg font-bold text-[#073B4C]">Gobernanza de Datos para un Futuro Sostenible</p>
+            <p class="text-gray-600">Implementando los principios CREA para la autodeterminación y la protección de la vida.</p>
         </footer>
 
     </div>
@@ -275,7 +270,7 @@
                             title: tooltipTitleCallback
                         },
                         backgroundColor: '#ffffff',
-                        titleColor: '#374151',
+                        titleColor: '#073B4C',
                         bodyColor: '#374151',
                         borderColor: '#E5E7EB',
                         borderWidth: 1,
@@ -290,7 +285,7 @@
                 }
             };
             
-            const colorPalette = ['#16A085', '#27AE60', '#2980B9', '#E67E22', '#8E44AD'];
+            const colorPalette = ['#06D6A0', '#27AE60', '#118AB2', '#E67E22', '#8E44AD', '#FF6B6B', '#FFD166'];
 
             const budgetDonutCtx = document.getElementById('budgetDonutChart').getContext('2d');
             const budgetDonutData = {
@@ -299,13 +294,13 @@
                     'Bioeconomía', 
                     'Tecnología', 
                     'Gobernabilidad', 
-                    ['Capacidades en', 'Secuenciación Genética']
+                    wrapLabel('Capacidades en Genética')
                 ],
                 datasets: [{
                     label: 'Distribución del Presupuesto Total',
                     data: [20500000000, 7838617200, 6200000000, 4811382800, 4706914000],
-                    backgroundColor: colorPalette,
-                    borderColor: '#ffffff',
+                    backgroundColor: [colorPalette[0], colorPalette[1], colorPalette[2], colorPalette[3], colorPalette[4]],
+                    borderColor: '#f8f9fa',
                     borderWidth: 2,
                     hoverOffset: 4
                 }]
@@ -365,7 +360,7 @@
                                 color: '#374151',
                                 callback: function(value) {
                                     if (value === 0) return '0';
-                                    return (value / 1e9) + ' mil M';
+                                    return (value / 1e9).toFixed(1) + ' mil M';
                                 }
                             }
                         }
