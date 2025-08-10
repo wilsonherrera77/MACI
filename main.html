@@ -1,41 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<!-- Imagen (izq) + Video YouTube (der) -->
-<section class="mb-12 md:mb-16">
-  <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch">
-    
-    <!-- Columna izquierda: imagen PNG -->
-    <figure class="card p-0 overflow-hidden">
-      <img
-        src="./assets/portada_maci.png"   <!-- cambia la ruta si tu HTML está en subcarpeta -->
-        alt="Programa MACI – Soberanía de Datos Indígenas"
-        loading="lazy"
-        class="w-full h-full object-cover md:h-[360px]"
-      />
-      <figcaption class="px-3 py-2 text-xs text-gray-500">
-        Imagen de portada del Programa MACI (opcional).
-      </figcaption>
-    </figure>
-
-    <!-- Columna derecha: video YouTube -->
-    <div class="card p-0 overflow-hidden">
-      <!-- Contenedor 16:9 -->
-      <div class="relative w-full" style="padding-top:56.25%;">
-        <iframe
-          class="absolute inset-0 w-full h-full"
-          src="https://www.youtube.com/embed/71GC77_fmsk?rel=0&modestbranding=1"
-          title="Video: Programa MACI"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          referrerpolicy="strict-origin-when-cross-origin"
-          allowfullscreen
-        ></iframe>
-      </div>
-    </div>
-
-  </div>
-</section>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Infografía: Soberanía de Datos Indígenas – CREA & Programa MACI</title>
@@ -59,10 +24,44 @@
 <body class="text-gray-800">
   <div class="container mx-auto p-4 md:p-8">
     <!-- Header -->
-    <header class="text-center mb-10 md:mb-16">
+    <header class="text-center mb-6 md:mb-8">
       <h1 class="text-4xl md:text-6xl font-black text-[var(--ink)] mb-3">Soberanía de Datos Indígenas</h1>
       <p class="text-lg md:text-2xl font-semibold gradient-text">De los principios CREA a la acción con el Programa MACI</p>
     </header>
+
+    <!-- NUEVO: Imagen (izq) + Video YouTube (der) justo debajo de los títulos -->
+    <section class="mb-12 md:mb-16">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch">
+        <!-- Columna izquierda: imagen PNG alojada en GitHub (raw) -->
+        <figure class="card p-0 overflow-hidden">
+          <img
+            src="https://raw.githubusercontent.com/wilsonherrera77/MACI/main/Ambito%20territorial%20ONIC.png"
+            alt="Ámbito territorial ONIC – Programa MACI"
+            loading="lazy"
+            class="w-full h-full object-cover md:h-[360px]"
+          />
+          <figcaption class="px-3 py-2 text-xs text-gray-500">
+            Ámbito territorial ONIC (ilustrativo).
+          </figcaption>
+        </figure>
+
+        <!-- Columna derecha: video YouTube -->
+        <div class="card p-0 overflow-hidden">
+          <!-- Contenedor 16:9 -->
+          <div class="relative w-full" style="padding-top:56.25%;">
+            <iframe
+              class="absolute inset-0 w-full h-full"
+              src="https://www.youtube.com/embed/71GC77_fmsk?rel=0&modestbranding=1"
+              title="Video: Programa MACI"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen
+            ></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!-- Objetivo general y alcance (actualizado) -->
     <section class="mb-12 md:mb-16">
@@ -190,7 +189,7 @@
               </tr>
             </thead>
             <tbody>
-              <tr class="border-b border-gray-200"><td colspan="6" class="p-2 font-bold text-left bg-gray-50 text-[var(--orange)]"><a href="https://wilsonherrera77.github.io/MACI1/MACI1.html" target="_blank" rel="noopener noreferrer" class="no-underline" style="color:inherit">1. Gobernabilidad y Soberanía</a></td></tr>
+              <tr class="border-b border-gray-200"><td colspan="6" class="p-2 font-bold text-left bg-gray-50 text-[var(--orange)]">1. Gobernabilidad y Soberanía</td></tr>
               <tr class="border-b border-gray-100">
                 <td class="p-2 text-left pl-6">Protocolos bioculturales, CLPI/ABS y Consejo</td>
                 <td colspan="2"><div class="bg-[var(--orange)] rounded-full h-3"></div></td>
@@ -199,7 +198,7 @@
                 <td></td>
               </tr>
 
-              <tr class="border-b border-gray-200"><td colspan="6" class="p-2 font-bold text-left bg-gray-50 text-[var(--blue)]"><a href="https://wilsonherrera77.github.io/MACI2/MACI2.html" target="_blank" rel="noopener noreferrer" class="no-underline" style="color:inherit">2. Plataforma Soberana</a></td></tr>
+              <tr class="border-b border-gray-200"><td colspan="6" class="p-2 font-bold text-left bg-gray-50 text-[var(--blue)]">2. Plataforma Soberana</td></tr>
               <tr class="border-b border-gray-100">
                 <td class="p-2 text-left pl-6">Arquitectura, MVP, catálogo y APIs</td>
                 <td><div class="bg-[color:rgba(17,138,178,.35)] rounded-full h-3"></div></td>
@@ -208,14 +207,14 @@
                 <td></td>
               </tr>
 
-              <tr class="border-b border-gray-200"><td colspan="6" class="p-2 font-bold text-left bg-gray-50 text-[var(--green)]"><a href="https://wilsonherrera77.github.io/MACI3/MACI3.html" target="_blank" rel="noopener noreferrer" class="no-underline" style="color:inherit">3. Monitoreo Comunitario</a></td></tr>
+              <tr class="border-b border-gray-200"><td colspan="6" class="p-2 font-bold text-left bg-gray-50 text-[var(--green)]">3. Monitoreo Comunitario</td></tr>
               <tr class="border-b border-gray-100">
                 <td class="p-2 text-left pl-6">Inventarios bioculturales, QA/QC y devolución</td>
                 <td></td>
                 <td colspan="4"><div class="bg-[var(--green)] rounded-full h-3"></div></td>
               </tr>
 
-              <tr class="border-b border-gray-200"><td colspan="6" class="p-2 font-bold text-left text-[var(--violet)] bg-gray-50"><a href="https://wilsonherrera77.github.io/MACI4/MACI4.html" target="_blank" rel="noopener noreferrer" class="no-underline" style="color:inherit">4. Genética y Biobanco</a></td></tr>
+              <tr class="border-b border-gray-200"><td colspan="6" class="p-2 font-bold text-left text-[var(--violet)] bg-gray-50">4. Genética y Biobanco</td></tr>
               <tr class="border-b border-gray-100">
                 <td class="p-2 text-left pl-6">Pilotos de secuenciación y biobanco piloto</td>
                 <td></td>
@@ -224,7 +223,7 @@
                 <td></td>
               </tr>
 
-              <tr class="border-b border-gray-200"><td colspan="6" class="p-2 font-bold text-left bg-gray-50 text-[var(--emerald)]"><a href="https://wilsonherrera77.github.io/MACI5/MACI5.html" target="_blank" rel="noopener noreferrer" class="no-underline" style="color:inherit">5. Bioeconomía y Sostenibilidad</a></td></tr>
+              <tr class="border-b border-gray-200"><td colspan="6" class="p-2 font-bold text-left bg-gray-50 text-[var(--emerald)]">5. Bioeconomía y Sostenibilidad</td></tr>
               <tr class="border-b border-gray-100">
                 <td class="p-2 text-left pl-6">Incubación y escalamiento de bionegocios</td>
                 <td></td><td></td><td></td>
@@ -261,7 +260,7 @@
         <div class="text-xs text-left text-gray-600 mt-2 max-w-3xl mx-auto">
           <p>Los valores base de Año 1 (USD) por módulo provienen del documento actualizado. Para proyecciones a 5 años se aplican factores de escalamiento editables (por defecto se consolida gobernanza y se incrementan genética y bioeconomía en años 3–5). La conversión a COP usa TRM editable.</p>
           <ul class="list-disc list-inside mt-2">
-            <li><strong>Base Año 1 (USD):</strong> CREA 288.000; PSB 531.000; Monitoreo 7.090.239; Genética 1.268.000; Bioeconomía 2.455.000; <em>Overhead</em> 1.163.224.<em>Overhead</em> 1.163.224.</li>
+            <li><strong>Base Año 1 (USD):</strong> CREA 288.000; PSB 531.000; Monitoreo 7.090.239; Genética 1.268.000; Bioeconomía 2.455.000; <em>Overhead</em> 1.163.224.</li>
             <li>Novedades: el componente de Monitoreo integra costos de conservación/restauración y drones; y se incorpora una partida explícita de <em>overhead</em> operativo (10%).</li>
           </ul>
         </div>
@@ -416,4 +415,3 @@
   </script>
 </body>
 </html>
-
