@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Infografía: Soberanía de Datos Indígenas – CREA & Programa MACI</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&display=swap" rel="stylesheet" />
+  <style>
+    :root { --ink:#073B4C; --green:#06D6A0; --blue:#118AB2; --amber:#FFD166; --orange:#E67E22; --violet:#8E44AD; --emerald:#27AE60; --rose:#FF6B6B; }
+    body { font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, sans-serif; background:#f8f9fa; }
+    .card { background:#fff; border-radius:0.75rem; box-shadow:0 10px 15px -3px rgba(0,0,0,.1),0 4px 6px -2px rgba(0,0,0,.05); padding:1.25rem }
+    .card:hover{ transform:translateY(-2px); transition:transform .2s ease }
+    .gradient-text { background: linear-gradient(90deg, var(--blue), var(--green)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .chart-container{ position:relative; width:100%; height:360px }
+    @media (min-width: 768px){ .chart-container{ height:420px } }
+    .step-arrow{ font-size:2rem; color:var(--amber); align-self:center; margin:0 1rem }
+    details[open] summary svg { transform: rotate(180deg); }
+  </style>
+</head>
+<body class="text-gray-800">
+  <div class="container mx-auto p-4 md:p-8">
+    <!-- Header -->
+    <header class="text-center mb-10 md:mb-16">
+      <h1 class="text-4xl md:text-6xl font-black text-[var(--ink)] mb-3">Soberanía de Datos Indígenas</h1>
+      <p class="text-lg md:text-2xl font-semibold gradient-text">De los principios CREA a la acción con el Programa MACI</p>
+    </header>
+
+    <!-- Objetivo general y alcance (actualizado) -->
+    <section class="mb-12 md:mb-16">
+      <div class="card">
+        <h2 class="text-2xl md:text-3xl font-bold text-[var(--ink)] mb-3">Objetivo general y Alcance del Programa</h2>
+        <p class="text-gray-700 mb-3"><strong>Objetivo general.</strong> Fortalecer la gobernabilidad biocultural y las capacidades tecnológicas, científicas y empresariales de los pueblos indígenas articulados a la ONIC para <em>generar, custodiar, analizar y aprovechar</em> de manera ética, soberana e interoperable la información biocultural y genética de sus territorios; con ello, mejorar el Buen Vivir, la conservación y la economía propia mediante decisiones informadas, servicios de conocimiento y bionegocios con reparto justo de beneficios.</p>
+        <p class="text-gray-700"><strong>Alcance.</strong> Programa nacional a 5 años que integra cinco componentes: 1) Gobernabilidad y Soberanía de Datos (CREA); 2) Plataforma Soberana (PSB); 3) Monitoreo Comunitario; 4) Capacidades en Genética y Biobanco; 5) Bioeconomía e Incubación. Cobertura en territorios priorizados de pueblos ONIC, con alianzas institucionales y un enfoque intercultural, de derechos y territorial.</p>
+      </div>
+    </section>
+
+    <!-- Viaje del conocimiento -->
+    <section id="data-wisdom" class="mb-12 md:mb-16">
+      <h2 class="text-2xl md:text-3xl font-bold text-center text-[var(--ink)] mb-6">El Viaje del Conocimiento</h2>
+      <p class="text-base md:text-lg text-center text-gray-600 max-w-3xl mx-auto mb-8">El valor no reside en los datos crudos, sino en el proceso que los transforma en sabiduría. Este ciclo fundamenta por qué la <strong>gobernanza</strong> es crucial.</p>
+      <div class="flex flex-col md:flex-row justify-center items-stretch">
+        <div class="card flex-1 text-center m-2"><h3 class="text-xl font-bold text-[var(--blue)]">Datos</h3><p class="mt-2">Representación de variables.</p></div>
+        <div class="step-arrow">&#10140;</div>
+        <div class="card flex-1 text-center m-2"><h3 class="text-xl font-bold text-[var(--green)]">Información</h3><p class="mt-2">Datos agrupados y estructurados.</p></div>
+        <div class="step-arrow">&#10140;</div>
+        <div class="card flex-1 text-center m-2"><h3 class="text-xl font-bold text-[var(--amber)]">Conocimiento</h3><p class="mt-2">Información interpretada para decidir.</p></div>
+        <div class="step-arrow">&#10140;</div>
+        <div class="card flex-1 text-center m-2"><h3 class="text-xl font-bold text-[var(--rose)]">Sabiduría</h3><p class="mt-2">Entendimiento profundo orientado a la acción.</p></div>
+      </div>
+    </section>
+
+    <!-- FAIR vs CREA -->
+    <section id="fair-crea" class="mb-12 md:mb-16">
+      <h2 class="text-2xl md:text-3xl font-bold text-center text-[var(--ink)] mb-6">Dos Paradigmas: FAIR y CREA</h2>
+      <p class="text-base md:text-lg text-center text-gray-600 max-w-3xl mx-auto mb-8">Los datos científicos se rigen por FAIR; para los datos indígenas añadimos una capa de <strong>soberanía</strong>: los principios <strong>CREA</strong>.</p>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="card">
+          <h3 class="text-xl font-bold text-center text-[var(--blue)] mb-2">Principios FAIR</h3>
+          <ul class="list-disc list-inside space-y-1 text-gray-700">
+            <li><strong>Findable</strong>: fácil de localizar.</li>
+            <li><strong>Accessible</strong>: recuperable con reglas claras.</li>
+            <li><strong>Interoperable</strong>: combinable con otros datos.</li>
+            <li><strong>Reusable</strong>: bien descritos para reuso.</li>
+          </ul>
+        </div>
+        <div class="card border-t-4" style="border-color:var(--green)">
+          <h3 class="text-xl font-bold text-center text-[var(--green)] mb-2">Principios CREA</h3>
+          <ul class="list-disc list-inside space-y-1 text-gray-700">
+            <li><strong>Control</strong>: los pueblos controlan sus datos.</li>
+            <li><strong>Responsabilidad</strong>: rendición de cuentas ante los pueblos.</li>
+            <li><strong>Ética</strong>: derechos y bienestar por encima.</li>
+            <li><strong>Aprovechamiento</strong>: beneficio colectivo.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Panel de control dinámico -->
+    <section class="mb-10 md:mb-14">
+      <div class="card">
+        <h2 class="text-2xl md:text-3xl font-bold text-[var(--ink)] mb-4">CREA en acción: Programa MACI — Presupuesto y Proyecciones (5 años)</h2>
+        <p class="text-gray-600 mb-4">Ajusta la <span class="font-semibold">TRM</span> y los <span class="font-semibold">factores de escalamiento anual</span> por módulo para ver cómo cambian los gráficos. Valores base de <span class="font-semibold">Año 1 (USD)</span> vienen del documento actualizado.</p>
+
+        <!-- Controles -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-4">
+          <div class="bg-gray-50 rounded-lg p-3">
+            <h3 class="font-semibold text-gray-800 mb-2">Moneda</h3>
+            <div class="flex items-center gap-4 mb-3">
+              <label class="inline-flex items-center gap-2"><input type="radio" name="currency" value="USD" checked class="accent-[var(--ink)]"><span>USD</span></label>
+              <label class="inline-flex items-center gap-2"><input type="radio" name="currency" value="COP" class="accent-[var(--ink)]"><span>COP</span></label>
+            </div>
+            <label class="block text-sm text-gray-600">TRM (COP por USD)</label>
+            <input id="trm" type="number" step="0.01" value="4200" class="mt-1 w-full border rounded-md px-3 py-1.5" />
+          </div>
+
+          <div class="bg-gray-50 rounded-lg p-3 lg:col-span-2">
+            <h3 class="font-semibold text-gray-800 mb-2">Factores de escalamiento anual (x Año 1)</h3>
+            <p class="text-xs text-gray-500 mb-2">Por defecto: consolidamos Gobernabilidad; escalamos Tecnología/Monitoreo de forma moderada; y aumentamos Genética y Bioeconomía en años 3–5.</p>
+            <div class="grid grid-cols-1 md:grid-cols-5 gap-2 text-xs">
+              <div class="space-y-1"><div class="font-semibold">Gobernabilidad</div><input data-mod="CREA" type="text" value="1,0|0,7|0,6|0,5|0,5" class="w-full border rounded px-2 py-1" /></div>
+              <div class="space-y-1"><div class="font-semibold">Tecnología</div><input data-mod="PSB" type="text" value="1,0|1,2|1,0|0,9|0,8" class="w-full border rounded px-2 py-1" /></div>
+              <div class="space-y-1"><div class="font-semibold">Monitoreo</div><input data-mod="MON" type="text" value="1,0|0,95|1,0|1,05|1,1" class="w-full border rounded px-2 py-1" /></div>
+              <div class="space-y-1"><div class="font-semibold">Genética</div><input data-mod="GEN" type="text" value="1,0|1,2|1,3|1,4|1,45" class="w-full border rounded px-2 py-1" /></div>
+              <div class="space-y-1"><div class="font-semibold">Bioeconomía</div><input data-mod="BIO" type="text" value="1,0|1,3|1,5|1,7|1,9" class="w-full border rounded px-2 py-1" /></div>
+            </div>
+            <p class="text-[11px] text-gray-500 mt-2">Formato: cinco valores separados por «|». Ej.: <code>1,0|1,2|1,0|0,9|0,8</code>
+              (usa coma decimal). Se interpretan como multiplicadores del presupuesto del Año 1.</p>
+            <button id="applyBtn" class="mt-3 inline-flex items-center gap-2 bg-[var(--ink)] text-white rounded-lg px-3 py-2 text-sm">Aplicar cambios</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gráficos -->
+    <section class="mb-12 md:mb-16">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+        <div class="card">
+          <h3 class="text-lg md:text-xl font-bold text-center text-gray-700 mb-2">Presupuesto por Módulo — Total 5 años</h3>
+          <p class="text-center text-gray-500 text-sm mb-2">Suma de los 5 años según los factores de escalamiento.</p>
+          <div class="chart-container"><canvas id="donutChart"></canvas></div>
+          <div class="text-center mt-3">
+            <button id="dlDonut" class="text-sm underline text-[var(--blue)]">Descargar gráfico</button>
+          </div>
+        </div>
+        <div class="card">
+          <h3 class="text-lg md:text-xl font-bold text-center text-gray-700 mb-2">Inversión anual por módulo</h3>
+          <p class="text-center text-gray-500 text-sm mb-2">Estrategia secuencial: consolidar gobernanza, escalar tecnología/monitoreo, potenciar genética y bioeconomía.</p>
+          <div class="chart-container"><canvas id="stackedChart"></canvas></div>
+          <div class="text-center mt-3">
+            <button id="dlStacked" class="text-sm underline text-[var(--blue)]">Descargar gráfico</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3 class="text-lg md:text-xl font-bold text-center text-gray-700 mb-4">Cronograma estratégico a 5 años</h3>
+        <div class="overflow-x-auto">
+          <table class="w-full min-w-[880px] text-center">
+            <thead>
+              <tr class="border-b-2 border-gray-300">
+                <th class="p-2 text-left font-bold">Módulo / Actividad Clave</th>
+                <th class="p-2 font-bold">Año 1</th>
+                <th class="p-2 font-bold">Año 2</th>
+                <th class="p-2 font-bold">Año 3</th>
+                <th class="p-2 font-bold">Año 4</th>
+                <th class="p-2 font-bold">Año 5</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="border-b border-gray-200"><td colspan="6" class="p-2 font-bold text-left bg-gray-50 text-[var(--orange)]">1. Gobernabilidad y Soberanía</td></tr>
+              <tr class="border-b border-gray-100">
+                <td class="p-2 text-left pl-6">Protocolos bioculturales, CLPI/ABS y Consejo</td>
+                <td colspan="2"><div class="bg-[var(--orange)] rounded-full h-3"></div></td>
+                <td><div class="bg-[color:rgba(230,126,34,.5)] rounded-full h-3"></div></td>
+                <td></td>
+                <td></td>
+              </tr>
+
+              <tr class="border-b border-gray-200"><td colspan="6" class="p-2 font-bold text-left bg-gray-50 text-[var(--blue)]">2. Plataforma Soberana</td></tr>
+              <tr class="border-b border-gray-100">
+                <td class="p-2 text-left pl-6">Arquitectura, MVP, catálogo y APIs</td>
+                <td><div class="bg-[color:rgba(17,138,178,.35)] rounded-full h-3"></div></td>
+                <td colspan="2"><div class="bg-[var(--blue)] rounded-full h-3"></div></td>
+                <td><div class="bg-[color:rgba(17,138,178,.35)] rounded-full h-3"></div></td>
+                <td></td>
+              </tr>
+
+              <tr class="border-b border-gray-200"><td colspan="6" class="p-2 font-bold text-left bg-gray-50 text-[var(--green)]">3. Monitoreo Comunitario</td></tr>
+              <tr class="border-b border-gray-100">
+                <td class="p-2 text-left pl-6">Inventarios bioculturales, QA/QC y devolución</td>
+                <td></td>
+                <td colspan="4"><div class="bg-[var(--green)] rounded-full h-3"></div></td>
+              </tr>
+
+              <tr class="border-b border-gray-200"><td colspan="6" class="p-2 font-bold text-left text-[var(--violet)] bg-gray-50">4. Genética y Biobanco</td></tr>
+              <tr class="border-b border-gray-100">
+                <td class="p-2 text-left pl-6">Pilotos de secuenciación y biobanco piloto</td>
+                <td></td>
+                <td></td>
+                <td colspan="2"><div class="bg-[var(--violet)] rounded-full h-3"></div></td>
+                <td></td>
+              </tr>
+
+              <tr class="border-b border-gray-200"><td colspan="6" class="p-2 font-bold text-left bg-gray-50 text-[var(--emerald)]">5. Bioeconomía y Sostenibilidad</td></tr>
+              <tr class="border-b border-gray-100">
+                <td class="p-2 text-left pl-6">Incubación y escalamiento de bionegocios</td>
+                <td></td><td></td><td></td>
+                <td colspan="2"><div class="bg-[var(--emerald)] rounded-full h-3"></div></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- Impacto -->
+    <section id="impact" class="text-center mb-12 md:mb-16">
+      <h2 class="text-2xl md:text-3xl font-bold text-center text-[var(--ink)] mb-6">Impacto esperado</h2>
+      <p class="text-base md:text-lg text-gray-600 mb-6 max-w-3xl mx-auto">Al cierre del quinquenio: 500.000+ registros de biodiversidad, ≥10 bionegocios, Consejo de Gobernabilidad, ≥80% de pueblos con protocolos, 1 biobanco piloto y +15% en indicadores de Buen Vivir.</p>
+      <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+        <div class="card"><p class="text-4xl md:text-5xl font-black gradient-text mb-1">500,000+</p><p class="text-sm md:text-base font-semibold text-gray-700">Registros de biodiversidad</p></div>
+        <div class="card"><p class="text-4xl md:text-5xl font-black gradient-text mb-1">10+</p><p class="text-sm md:text-base font-semibold text-gray-700">Bionegocios indígenas</p></div>
+        <div class="card"><p class="text-4xl md:text-5xl font-black gradient-text mb-1">1</p><p class="text-sm md:text-base font-semibold text-gray-700">Consejo de Gobernabilidad</p></div>
+        <div class="card"><p class="text-4xl md:text-5xl font-black gradient-text mb-1">80%</p><p class="text-sm md:text-base font-semibold text-gray-700">Pueblos con protocolos</p></div>
+        <div class="card"><p class="text-4xl md:text-5xl font-black gradient-text mb-1">1</p><p class="text-sm md:text-base font-semibold text-gray-700">Biobanco piloto</p></div>
+        <div class="card"><p class="text-4xl md:text-5xl font-black gradient-text mb-1">+15%</p><p class="text-sm md:text-base font-semibold text-gray-700">Indicadores de Buen Vivir</p></div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-center mt-12 pt-8 border-t-2 border-gray-200">
+      <p class="text-base md:text-lg font-bold text-[var(--ink)]">Gobernanza de Datos para un Futuro Sostenible</p>
+      <p class="text-gray-600 text-sm">Implementamos CREA para la autodeterminación y la protección de la vida.</p>
+      <details class="mt-4 inline-block">
+        <summary class="cursor-pointer text-sm text-[var(--blue)] inline-flex items-center gap-2">Notas y supuestos <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4"><path fill-rule="evenodd" d="M12 3.75a.75.75 0 0 1 .75.75v13.69l4.72-4.72a.75.75 0 1 1 1.06 1.06l-6 6a.75.75 0 0 1-1.06 0l-6-6a.75.75 0 1 1 1.06-1.06l4.72 4.72V4.5a.75.75 0 0 1 .75-.75Z" clip-rule="evenodd"/></svg></summary>
+        <div class="text-xs text-left text-gray-600 mt-2 max-w-3xl mx-auto">
+          <p>Los valores base de Año 1 (USD) por módulo provienen del documento actualizado. Para proyecciones a 5 años se aplican factores de escalamiento editables (por defecto se consolida gobernanza y se incrementan genética y bioeconomía en años 3–5). La conversión a COP usa TRM editable.</p>
+          <ul class="list-disc list-inside mt-2">
+            <li><strong>Base Año 1 (USD):</strong> CREA 853.050; PSB 531.000; Monitoreo 1.147.000; Genética 1.268.000; Bioeconomía 2.455.000.</li>
+            <li>Si el documento maestro cambia, actualiza los números en el bloque de <em>configuración</em> del script.</li>
+          </ul>
+        </div>
+      </details>
+    </footer>
+  </div>
+
+  <script>
+    // =================== CONFIGURACIÓN INICIAL ===================
+    const baseYear1USD = {
+      CREA: 853050,   // Gobernabilidad y Soberanía (detalle del documento)
+      PSB: 531000,    // Plataforma Soberana
+      MON: 1147000,   // Monitoreo Comunitario
+      GEN: 1268000,   // Genética y Biobanco
+      BIO: 2455000    // Bioeconomía e Incubación
+    };
+
+    const labelsPretty = {
+      CREA: 'Gobernabilidad',
+      PSB: 'Tecnología',
+      MON: 'Monitoreo',
+      GEN: 'Genética',
+      BIO: 'Bioeconomía'
+    };
+
+    const palette = ['#06D6A0', '#118AB2', '#FFD166', '#8E44AD', '#27AE60'];
+
+    // =================== UTILIDADES ===================
+    const qs = (sel, el=document) => el.querySelector(sel);
+    const qsa = (sel, el=document) => Array.from(el.querySelectorAll(sel));
+
+    const parseFactors = (str) => {
+      // acepta formato con coma decimal: "1,0|1,2|..."
+      return str.split('|').map(s => parseFloat(s.replace(',', '.')));
+    };
+
+    const toCurrency = (v, currency, trm) => {
+      const val = currency === 'USD' ? v : v * trm;
+      const fmt = new Intl.NumberFormat('es-CO', { style: 'currency', currency: currency === 'USD' ? 'USD' : 'COP', maximumFractionDigits: 0 });
+      return fmt.format(val);
+    };
+
+    // =================== CÁLCULO ===================
+    function computeSeries(factors) {
+      // factors: {CREA:[...], PSB:[...], ...}
+      const years = [1,2,3,4,5];
+      const series = {}; // por módulo: [y1..y5]
+      for (const k of Object.keys(baseYear1USD)) {
+        const f = factors[k];
+        series[k] = years.map((_,i) => baseYear1USD[k] * (f[i] || 1));
+      }
+      return series;
+    }
+
+    function sum(arr){ return arr.reduce((a,b)=>a+b,0); }
+
+    function totals5y(series){
+      const totals = {};
+      for (const k of Object.keys(series)) totals[k] = sum(series[k]);
+      return totals;
+    }
+
+    // =================== ESTADO ===================
+    let currency = 'USD';
+    let trm = 4200;
+    let factors = {
+      CREA: [1.0, 0.7, 0.6, 0.5, 0.5],
+      PSB:  [1.0, 1.2, 1.0, 0.9, 0.8],
+      MON:  [1.0, 0.95, 1.0, 1.05, 1.1],
+      GEN:  [1.0, 1.2, 1.3, 1.4, 1.45],
+      BIO:  [1.0, 1.3, 1.5, 1.7, 1.9]
+    };
+
+    const yearsLabels = ['Año 1','Año 2','Año 3','Año 4','Año 5'];
+
+    // =================== GRÁFICOS ===================
+    const donutCtx = qs('#donutChart').getContext('2d');
+    const stackedCtx = qs('#stackedChart').getContext('2d');
+
+    let donutChart, stackedChart;
+
+    function buildCharts(){
+      const series = computeSeries(factors);
+      const totals = totals5y(series);
+
+      // Donut: totales 5 años
+      const donutData = {
+        labels: Object.keys(totals).map(k => labelsPretty[k]),
+        datasets: [{
+          label: 'Total 5 años',
+          data: Object.keys(totals).map(k => totals[k] * (currency==='USD'?1:trm)),
+          backgroundColor: palette,
+          borderColor: '#f8f9fa',
+          borderWidth: 2,
+          hoverOffset: 4
+        }]
+      };
+
+      const sharedOpts = {
+        responsive:true, maintainAspectRatio:false,
+        plugins:{ legend:{ position:'bottom', labels:{ color:'#374151', font:{ family:'Inter' } }},
+          tooltip:{ backgroundColor:'#fff', titleColor:'#111827', bodyColor:'#374151', borderColor:'#E5E7EB', borderWidth:1, padding:10,
+            callbacks:{ label: (ctx)=> {
+              const val = ctx.parsed;
+              return `${ctx.label}: ${toCurrency(val, currency, trm)}`;
+            }} }
+        }
+      };
+
+      if (donutChart) donutChart.destroy();
+      donutChart = new Chart(donutCtx, { type:'doughnut', data:donutData, options: sharedOpts });
+
+      // Stacked bars: por año y módulo
+      const datasets = Object.keys(series).map((k,i)=>({
+        label: labelsPretty[k],
+        data: series[k].map(v => (currency==='USD'?v:v*trm)),
+        backgroundColor: palette[i]
+      }));
+
+      const stackedData = { labels: yearsLabels, datasets };
+      const stackedOpts = {
+        ...sharedOpts,
+        scales:{
+          x:{ stacked:true, grid:{ display:false }, ticks:{ color:'#374151' }},
+          y:{ stacked:true, grid:{ color:'#E5E7EB' }, ticks:{ color:'#374151', callback: (v)=>{
+            if (currency==='USD') return '$' + (v/1e6).toFixed(1) + ' M';
+            return (v/1e9).toFixed(1) + ' mil M';
+          }}}
+        }
+      };
+
+      if (stackedChart) stackedChart.destroy();
+      stackedChart = new Chart(stackedCtx, { type:'bar', data: stackedData, options: stackedOpts });
+    }
+
+    function applyControls(){
+      currency = qsa('input[name="currency"]').find(i=>i.checked).value;
+      trm = parseFloat(qs('#trm').value || '4200');
+      qsa('input[data-mod]').forEach(input=>{
+        const key = input.getAttribute('data-mod');
+        factors[key] = parseFactors(input.value);
+        if (factors[key].length !== 5 || factors[key].some(x=>isNaN(x))) {
+          alert('Revisa los factores: deben ser 5 valores numéricos por módulo.');
+        }
+      });
+      buildCharts();
+    }
+
+    // Descargar PNG de gráficos
+    function downloadCanvas(canvasId, filename){
+      const link = document.createElement('a');
+      link.download = filename;
+      link.href = document.getElementById(canvasId).toDataURL('image/png');
+      link.click();
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      buildCharts();
+      qs('#applyBtn').addEventListener('click', applyControls);
+      qs('#dlDonut').addEventListener('click', ()=> downloadCanvas('donutChart', 'maci_presupuesto_total_5a.png'));
+      qs('#dlStacked').addEventListener('click', ()=> downloadCanvas('stackedChart', 'maci_inversion_anual.png'));
+      qsa('input[name="currency"]').forEach(r=> r.addEventListener('change', applyControls));
+      qs('#trm').addEventListener('change', applyControls);
+    });
+  </script>
+</body>
+</html>
