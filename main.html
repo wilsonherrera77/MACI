@@ -1,6 +1,41 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+<!-- Imagen (izq) + Video YouTube (der) -->
+<section class="mb-12 md:mb-16">
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch">
+    
+    <!-- Columna izquierda: imagen PNG -->
+    <figure class="card p-0 overflow-hidden">
+      <img
+        src="./assets/portada_maci.png"   <!-- cambia la ruta si tu HTML está en subcarpeta -->
+        alt="Programa MACI – Soberanía de Datos Indígenas"
+        loading="lazy"
+        class="w-full h-full object-cover md:h-[360px]"
+      />
+      <figcaption class="px-3 py-2 text-xs text-gray-500">
+        Imagen de portada del Programa MACI (opcional).
+      </figcaption>
+    </figure>
+
+    <!-- Columna derecha: video YouTube -->
+    <div class="card p-0 overflow-hidden">
+      <!-- Contenedor 16:9 -->
+      <div class="relative w-full" style="padding-top:56.25%;">
+        <iframe
+          class="absolute inset-0 w-full h-full"
+          src="https://www.youtube.com/embed/71GC77_fmsk?rel=0&modestbranding=1"
+          title="Video: Programa MACI"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen
+        ></iframe>
+      </div>
+    </div>
+
+  </div>
+</section>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Infografía: Soberanía de Datos Indígenas – CREA & Programa MACI</title>
@@ -381,3 +416,4 @@
   </script>
 </body>
 </html>
+
