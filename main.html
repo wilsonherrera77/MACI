@@ -19,6 +19,16 @@
     @media (min-width: 768px){ .chart-container{ height:420px } }
     .step-arrow{ font-size:2rem; color:var(--amber); align-self:center; margin:0 1rem }
     details[open] summary svg { transform: rotate(180deg); }
+
+    /* Overlay de pantalla completa */
+    .fs-overlay{ position:fixed; inset:0; background:rgba(0,0,0,.92); display:none; align-items:center; justify-content:center; z-index:9999; }
+    .fs-overlay.active{ display:flex; }
+    .fs-content{ max-width:95vw; max-height:95vh; }
+    .fs-close{ position:absolute; top:12px; right:12px; background:rgba(255,255,255,.1); border:1px solid rgba(255,255,255,.2); color:white; border-radius:.5rem; padding:.4rem .6rem; line-height:1; }
+    .fs-close:hover{ background:rgba(255,255,255,.2); }
+    .fs-hint{ position:absolute; bottom:10px; left:50%; transform:translateX(-50%); color:#e5e7eb; font-size:.75rem; opacity:.85 }
+    .cursor-zoom{ cursor:zoom-in; }
+    .overlay-trigger{ position:absolute; inset:0; background:transparent; }
   </style>
 </head>
 <body class="text-gray-800">
@@ -29,28 +39,34 @@
       <p class="text-lg md:text-2xl font-semibold gradient-text">De los principios CREA a la acción con el Programa MACI</p>
     </header>
 
-    <!-- NUEVO: Imagen (izq) + Video YouTube (der) justo debajo de los títulos -->
+    <!-- Imagen (izq) + Video YouTube (der) JUSTO debajo de los títulos -->
     <section class="mb-12 md:mb-16">
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch">
-        <!-- Columna izquierda: imagen PNG alojada en GitHub (raw) -->
-        <figure class="card p-0 overflow-hidden">
+        <!-- Imagen -->
+        <figure class="card p-0 overflow-hidden relative">
           <img
+            id="thumbImage"
             src="https://raw.githubusercontent.com/wilsonherrera77/MACI/main/Ambito%20territorial%20ONIC.png"
             alt="Ámbito territorial ONIC – Programa MACI"
             loading="lazy"
-            class="w-full h-full object-cover md:h-[360px]"
+            class="w-full h-full object-cover md:h-[360px] cursor-zoom"
           />
+          <button
+            type="button"
+            aria-label="Ver imagen a pantalla completa"
+            class="overlay-trigger"
+            onclick="openImageFS('https://raw.githubusercontent.com/wilsonherrera77/MACI/main/Ambito%20territorial%20ONIC.png')"
+          ></button>
           <figcaption class="px-3 py-2 text-xs text-gray-500">
-            Ámbito territorial ONIC (ilustrativo).
+            Ámbito territorial ONIC (ilustrativo). Clic para pantalla completa.
           </figcaption>
         </figure>
 
-        <!-- Columna derecha: video YouTube -->
-        <div class="card p-0 overflow-hidden">
-          <!-- Contenedor 16:9 -->
+        <!-- Video -->
+        <div class="card p-0 overflow-hidden relative">
           <div class="relative w-full" style="padding-top:56.25%;">
             <iframe
-              class="absolute inset-0 w-full h-full"
+              class="absolute inset-0 w-full h-full pointer-events-none"
               src="https://www.youtube.com/embed/71GC77_fmsk?rel=0&modestbranding=1"
               title="Video: Programa MACI"
               frameborder="0"
@@ -58,7 +74,16 @@
               referrerpolicy="strict-origin-when-cross-origin"
               allowfullscreen
             ></iframe>
+            <!-- Botón invisible para capturar el clic y abrir en overlay -->
+            <button
+              type="button"
+              aria-label="Ver video a pantalla completa"
+              class="overlay-trigger"
+              onclick="openVideoFS('71GC77_fmsk')"
+              title="Pantalla completa"
+            ></button>
           </div>
+          <div class="px-3 py-2 text-xs text-gray-500">Clic para ver el video a pantalla completa.</div>
         </div>
       </div>
     </section>
@@ -260,7 +285,7 @@
         <div class="text-xs text-left text-gray-600 mt-2 max-w-3xl mx-auto">
           <p>Los valores base de Año 1 (USD) por módulo provienen del documento actualizado. Para proyecciones a 5 años se aplican factores de escalamiento editables (por defecto se consolida gobernanza y se incrementan genética y bioeconomía en años 3–5). La conversión a COP usa TRM editable.</p>
           <ul class="list-disc list-inside mt-2">
-            <li><strong>Base Año 1 (USD):</strong> CREA 288.000; PSB 531.000; Monitoreo 7.090.239; Genética 1.268.000; Bioeconomía 2.455.000; <em>Overhead</em> 1.163.224.</li>
+            <li><strong>Base Año 1 (USD):</strong> CREA 288.000; PSB 531.000; Monitoreo 7.090.239; Genética 1.268.000; Bioeconomía 2.455.000; <em>Overhead</em> 1.163.224.<em>Overhead</em> 1.163.224.</li>
             <li>Novedades: el componente de Monitoreo integra costos de conservación/restauración y drones; y se incorpora una partida explícita de <em>overhead</em> operativo (10%).</li>
           </ul>
         </div>
@@ -268,15 +293,22 @@
     </footer>
   </div>
 
+  <!-- Overlay de pantalla completa (reutilizable para imagen y video) -->
+  <div id="fsOverlay" class="fs-overlay" role="dialog" aria-modal="true" aria-label="Contenido a pantalla completa">
+    <button class="fs-close" onclick="closeFS()" aria-label="Cerrar (Esc)">✕</button>
+    <div id="fsContent" class="fs-content"></div>
+    <div class="fs-hint">Pulsa Esc para salir de pantalla completa</div>
+  </div>
+
   <script>
     // =================== CONFIGURACIÓN INICIAL ===================
     const baseYear1USD = {
-      CREA: 288000,   // Gobernabilidad y Soberanía (detalle)
-      PSB: 531000,    // Plataforma Soberana
-      MON: 7090239,   // Monitoreo + conservación/restauración
-      GEN: 1268000,   // Genética y Biobanco
-      BIO: 2455000,   // Bioeconomía e Incubación
-      OVR: 1163224    // Operación/overhead 10%
+      CREA: 288000,
+      PSB: 531000,
+      MON: 7090239,
+      GEN: 1268000,
+      BIO: 2455000,
+      OVR: 1163224
     };
 
     const labelsPretty = {
@@ -290,19 +322,79 @@
 
     const palette = ['#06D6A0', '#118AB2', '#FFD166', '#8E44AD', '#27AE60', '#A3A3A3'];
 
-    // =================== UTILIDADES ===================
     const qs = (sel, el=document) => el.querySelector(sel);
     const qsa = (sel, el=document) => Array.from(el.querySelectorAll(sel));
-
     const parseFactors = (str) => str.split('|').map(s => parseFloat(s.replace(',', '.')));
-
     const toCurrency = (v, currency, trm) => {
       const val = currency === 'USD' ? v : v * trm;
       const fmt = new Intl.NumberFormat('es-CO', { style: 'currency', currency: currency === 'USD' ? 'USD' : 'COP', maximumFractionDigits: 0 });
       return fmt.format(val);
     };
 
-    // =================== CÁLCULO ===================
+    // =================== OVERLAY PANTALLA COMPLETA ===================
+    const fsOverlay = document.getElementById('fsOverlay');
+    const fsContent = document.getElementById('fsContent');
+
+    function openImageFS(src){
+      fsContent.innerHTML = '';
+      const img = document.createElement('img');
+      img.src = src;
+      img.alt = 'Imagen a pantalla completa';
+      img.style.maxWidth = '95vw';
+      img.style.maxHeight = '95vh';
+      img.style.objectFit = 'contain';
+      fsContent.appendChild(img);
+      showOverlay();
+    }
+
+    function openVideoFS(videoId){
+      fsContent.innerHTML = '';
+      const wrap = document.createElement('div');
+      wrap.style.width = 'min(1200px, 95vw)';
+      wrap.style.aspectRatio = '16 / 9';
+      wrap.style.maxHeight = '95vh';
+
+      const iframe = document.createElement('iframe');
+      iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0&modestbranding=1`;
+      iframe.title = 'Video en pantalla completa';
+      iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+      iframe.referrerPolicy = 'strict-origin-when-cross-origin';
+      iframe.allowFullscreen = true;
+      iframe.style.width = '100%';
+      iframe.style.height = '100%';
+      iframe.style.border = '0';
+
+      wrap.appendChild(iframe);
+      fsContent.appendChild(wrap);
+      showOverlay();
+    }
+
+    function showOverlay(){
+      fsOverlay.classList.add('active');
+      // Intentar API de Fullscreen (opcional; algunos navegadores pueden bloquearlo)
+      try {
+        if (fsOverlay.requestFullscreen) fsOverlay.requestFullscreen();
+      } catch(e){ /* silencioso */ }
+    }
+
+    function closeFS(){
+      fsOverlay.classList.remove('active');
+      fsContent.innerHTML = '';
+      if (document.fullscreenElement && document.exitFullscreen){
+        document.exitFullscreen();
+      }
+    }
+
+    // Cerrar con Esc
+    document.addEventListener('keydown', (e)=>{
+      if (e.key === 'Escape') closeFS();
+    });
+    // Cerrar al hacer clic en el fondo del overlay (no dentro del contenido)
+    fsOverlay.addEventListener('click', (e)=>{
+      if (e.target === fsOverlay) closeFS();
+    });
+
+    // =================== CÁLCULO PRESUPUESTO / GRÁFICOS ===================
     function computeSeries(factors) {
       const years = [1,2,3,4,5];
       const series = {};
@@ -315,7 +407,6 @@
     function sum(arr){ return arr.reduce((a,b)=>a+b,0); }
     function totals5y(series){ const totals = {}; for (const k of Object.keys(series)) totals[k] = sum(series[k]); return totals; }
 
-    // =================== ESTADO ===================
     let currency = 'USD';
     let trm = 4200;
     let includeOverhead = true;
@@ -330,7 +421,6 @@
 
     const yearsLabels = ['Año 1','Año 2','Año 3','Año 4','Año 5'];
 
-    // =================== GRÁFICOS ===================
     const donutCtx = qs('#donutChart').getContext('2d');
     const stackedCtx = qs('#stackedChart').getContext('2d');
     let donutChart, stackedChart;
@@ -345,7 +435,6 @@
       const series = Object.fromEntries(keys.map(k => [k, seriesAll[k]]));
       const totals = totals5y(series);
 
-      // Donut
       const donutData = {
         labels: keys.map(k => labelsPretty[k]),
         datasets: [{
@@ -365,7 +454,6 @@
       if (donutChart) donutChart.destroy();
       donutChart = new Chart(donutCtx, { type:'doughnut', data:donutData, options: sharedOpts });
 
-      // Stacked bars
       const datasets = keys.map((k,i)=>({
         label: labelsPretty[k],
         data: series[k].map(v => (currency==='USD'?v:v*trm)),
@@ -400,17 +488,20 @@
     }
 
     function downloadCanvas(canvasId, filename){
-      const link = document.createElement('a'); link.download = filename; link.href = document.getElementById(canvasId).toDataURL('image/png'); link.click();
+      const link = document.createElement('a');
+      link.download = filename;
+      link.href = document.getElementById(canvasId).toDataURL('image/png');
+      link.click();
     }
 
     document.addEventListener('DOMContentLoaded', () => {
       buildCharts();
-      qs('#applyBtn').addEventListener('click', applyControls);
+      qs('#applyBtn')?.addEventListener('click', applyControls);
       qsa('input[name="currency"]').forEach(r=> r.addEventListener('change', applyControls));
-      qs('#trm').addEventListener('change', applyControls);
-      qs('#toggleOverhead').addEventListener('change', applyControls);
-      qs('#dlDonut').addEventListener('click', ()=> downloadCanvas('donutChart', 'maci_presupuesto_total_5a.png'));
-      qs('#dlStacked').addEventListener('click', ()=> downloadCanvas('stackedChart', 'maci_inversion_anual.png'));
+      qs('#trm')?.addEventListener('change', applyControls);
+      qs('#toggleOverhead')?.addEventListener('change', applyControls);
+      qs('#dlDonut')?.addEventListener('click', ()=> downloadCanvas('donutChart', 'maci_presupuesto_total_5a.png'));
+      qs('#dlStacked')?.addEventListener('click', ()=> downloadCanvas('stackedChart', 'maci_inversion_anual.png'));
     });
   </script>
 </body>
