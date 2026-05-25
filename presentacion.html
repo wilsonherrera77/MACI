@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kit Cumbre Brasilia 2026 · ONIC · Presentación de Productos</title>
+<meta name="description" content="Showcase completo del kit operativo Wilson Herrera - Cumbre RRI Brasilia 2026 - 12 entregables - 4 idiomas - 5 macrorregiones ONIC">
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+:root {
+  --olive: #7d8a3c;
+  --olive-dark: #5a6427;
+  --grafito: #3d3d3d;
+  --beige: #e8e0c8;
+  --beige-light: #f5f0dd;
+  --gold: #d4a017;
+}
+body { font-family: 'Inter', system-ui, sans-serif; background: var(--beige-light); color: var(--grafito); }
+.bg-olive { background-color: var(--olive); }
+.bg-olive-dark { background-color: var(--olive-dark); }
+.bg-grafito { background-color: var(--grafito); }
+.bg-beige { background-color: var(--beige); }
+.bg-gold { background-color: var(--gold); }
+.text-olive { color: var(--olive); }
+.text-olive-dark { color: var(--olive-dark); }
+.text-grafito { color: var(--grafito); }
+.text-gold { color: var(--gold); }
+.border-olive { border-color: var(--olive); }
+.hero-bg {
+  background: linear-gradient(135deg, var(--grafito) 0%, var(--olive-dark) 60%, var(--olive) 100%);
+  position: relative;
+}
+.hero-bg::before {
+  content: ''; position: absolute; inset: 0;
+  background: radial-gradient(circle at 30% 40%, rgba(212,160,23,0.18) 0%, transparent 50%),
+              radial-gradient(circle at 70% 70%, rgba(232,224,200,0.12) 0%, transparent 50%);
+}
+.h-headline { font-weight: 900; letter-spacing: 0.04em; text-transform: uppercase; line-height: 1.05; }
+.triangle { width:0; height:0; border-left:24px solid transparent; border-right:24px solid transparent; border-bottom:40px solid var(--gold); }
+.card {
+  background: white; border-radius: 6px; padding: 1.5rem;
+  box-shadow: 0 4px 12px rgba(61,61,61,0.08);
+  border-top: 4px solid var(--olive);
+  transition: transform 0.2s, box-shadow 0.2s, border-top-color 0.2s;
+}
+.card:hover { transform: translateY(-4px); box-shadow: 0 12px 24px rgba(61,61,61,0.15); border-top-color: var(--gold); }
+.card.featured { border-top: 4px solid var(--gold); background: linear-gradient(180deg, #fff9e6 0%, white 30%); }
+.tag { display:inline-block; padding: 2px 10px; background: var(--beige); color: var(--olive-dark); font-size: 0.7rem; font-weight: 700; text-transform: uppercase; border-radius: 12px; letter-spacing: 0.05em; }
+.tag.gold { background: var(--gold); color: white; }
+.tag.dark { background: var(--grafito); color: white; }
+.stat-num { font-size: 2.5rem; font-weight: 900; line-height: 1; color: var(--gold); }
+.icon-wrap { width: 48px; height: 48px; border-radius: 8px; display: flex; align-items: center; justify-content: center; background: var(--beige); font-size: 1.5rem; }
+a.product { color: inherit; text-decoration: none; display: block; }
+.geometric-divider { display:flex; gap:6px; margin: 16px 0; }
+.geometric-divider span { display:block; width: 8px; height: 8px; transform: rotate(45deg); background: var(--olive); }
+.geometric-divider span:nth-child(2) { background: var(--gold); }
+.geometric-divider span:nth-child(3) { background: var(--grafito); }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<header class="hero-bg text-white py-20 relative overflow-hidden">
+  <div class="max-w-6xl mx-auto px-6 relative z-10">
+    <div class="flex items-center gap-4 mb-6">
+      <div class="triangle"></div>
+      <p class="text-gold tracking-widest text-sm uppercase font-bold">Kit Operativo · Cumbre RRI Brasília · 26-29 Mayo 2026</p>
+    </div>
+    <h1 class="h-headline text-5xl md:text-7xl mb-6 max-w-4xl">Presentación de Productos · Sprint Brasília 2026</h1>
+    <p class="text-2xl font-light text-beige max-w-3xl mb-2">Pacto para Volver al Origen · XI Congreso ONIC</p>
+    <p class="text-lg text-yellow-100 max-w-3xl mb-8">12 entregables · 4 idiomas · 5 macrorregiones · 8 bilaterales preparadas · evidencia certificada Verra+CCB · catálogo Kew+GBIF</p>
+    <div class="flex flex-wrap gap-3">
+      <a href="brasilia2026.html" class="bg-gold text-grafito px-6 py-3 font-bold uppercase tracking-wider hover:bg-yellow-300 transition">Ver Landing Pública</a>
+      <a href="#productos" class="border-2 border-white text-white px-6 py-3 font-bold uppercase tracking-wider hover:bg-white hover:text-olive-dark transition">Productos</a>
+      <a href="#flujo" class="border-2 border-white text-white px-6 py-3 font-bold uppercase tracking-wider hover:bg-white hover:text-olive-dark transition">Cómo Usar</a>
+    </div>
+  </div>
+</header>
+
+<!-- STATS -->
+<section class="py-16 bg-beige">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="geometric-divider"><span></span><span></span><span></span></div>
+    <h2 class="text-3xl font-bold text-olive-dark mb-2">Lo Producido en 72 Horas</h2>
+    <p class="text-grafito mb-8 max-w-3xl">Sprint Visual_Agentes · cero token API de pago en runtime · LOCAL-FIRST estricto · arsenal completo desplegado a producción</p>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+      <div class="bg-white p-6 text-center border-t-4 border-olive">
+        <div class="stat-num">14</div>
+        <p class="text-sm uppercase tracking-wider mt-2 font-bold">PDFs publicados</p>
+      </div>
+      <div class="bg-white p-6 text-center border-t-4 border-gold">
+        <div class="stat-num">13</div>
+        <p class="text-sm uppercase tracking-wider mt-2 font-bold">QR Codes</p>
+      </div>
+      <div class="bg-white p-6 text-center border-t-4 border-olive">
+        <div class="stat-num">19</div>
+        <p class="text-sm uppercase tracking-wider mt-2 font-bold">Notas Obsidian</p>
+      </div>
+      <div class="bg-white p-6 text-center border-t-4 border-gold">
+        <div class="stat-num">4</div>
+        <p class="text-sm uppercase tracking-wider mt-2 font-bold">Idiomas ES/EN/PT/FR</p>
+      </div>
+      <div class="bg-white p-6 text-center border-t-4 border-olive">
+        <div class="stat-num">5.690</div>
+        <p class="text-sm uppercase tracking-wider mt-2 font-bold">Especies plantas geo</p>
+      </div>
+      <div class="bg-white p-6 text-center border-t-4 border-gold">
+        <div class="stat-num">1.85M</div>
+        <p class="text-sm uppercase tracking-wider mt-2 font-bold">Hectáreas Matavén</p>
+      </div>
+      <div class="bg-white p-6 text-center border-t-4 border-olive">
+        <div class="stat-num">8</div>
+        <p class="text-sm uppercase tracking-wider mt-2 font-bold">Bilaterales</p>
+      </div>
+      <div class="bg-white p-6 text-center border-t-4 border-gold">
+        <div class="stat-num">5</div>
+        <p class="text-sm uppercase tracking-wider mt-2 font-bold">Macrorregiones</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCTO ESTRELLA: LANDING -->
+<section id="productos" class="py-16">
+  <div class="max-w-6xl mx-auto px-6">
+    <p class="text-gold uppercase tracking-widest font-bold mb-2">Producto Estrella</p>
+    <h2 class="text-4xl font-bold text-olive-dark mb-6">Landing Multilingüe Brasília 2026</h2>
+    <div class="card featured">
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="md:col-span-2">
+          <span class="tag gold">Pieza Central</span>
+          <span class="tag dark mt-1">HTTP 200 ✓</span>
+          <h3 class="text-2xl font-bold mt-3 mb-3">brasilia2026.html · 32 KB</h3>
+          <p class="text-grafito mb-4">Landing pública multilingüe (ES/EN/PT/FR) con Tailwind CDN + Leaflet + paleta heredada de la tarjeta-QR física SMT-ONIC. Estructura: hero · MACI 60s · 5 módulos · mapa interactivo 5 macrorregiones · caso estrella Matavén · catálogo Plantas Útiles · cross-map 8 donantes · descargables · CTA contacto.</p>
+          <p class="text-sm text-olive-dark font-mono break-all">https://wilsonherrera77.github.io/MACI/brasilia2026.html</p>
+        </div>
+        <div class="bg-grafito text-white p-4 rounded">
+          <p class="text-xs uppercase tracking-wider text-yellow-200 mb-2">Acceso</p>
+          <p class="font-bold mb-3">Tarjeta-QR física existente + rebote smt-onic.com</p>
+          <a href="brasilia2026.html" class="block bg-gold text-grafito text-center py-3 font-bold uppercase tracking-wider hover:bg-yellow-300 transition">Abrir Landing</a>
+          <a href="contact-brasilia.html" class="block bg-olive text-white text-center py-3 font-bold uppercase tracking-wider mt-2 hover:bg-olive-dark transition">Hub Móvil</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ONE-PAGERS 4 IDIOMAS -->
+<section class="py-16 bg-beige-light">
+  <div class="max-w-6xl mx-auto px-6">
+    <p class="text-olive uppercase tracking-widest font-bold mb-2">Entregable E1</p>
+    <h2 class="text-3xl font-bold text-olive-dark mb-2">One-Pager A4 · 4 Idiomas</h2>
+    <p class="text-grafito mb-8 max-w-3xl">Pieza impresa principal · estructura MACI 5 módulos + 5 macrorregiones + 5 ventanas concretas 2026-2030 + ask USD 60-80M / 5 años · imprimir 30 ES + 30 EN.</p>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+      <a href="one-pager/one_pager_ES.pdf" class="card product">
+        <div class="icon-wrap mb-3">🇨🇴</div>
+        <span class="tag">Español</span>
+        <h3 class="font-bold mt-2 mb-1">one_pager_ES.pdf</h3>
+        <p class="text-xs text-grafito">Canónico · prioridad imprenta 30 copias</p>
+      </a>
+      <a href="one-pager/one_pager_EN.pdf" class="card product">
+        <div class="icon-wrap mb-3">🇺🇸</div>
+        <span class="tag">English</span>
+        <h3 class="font-bold mt-2 mb-1">one_pager_EN.pdf</h3>
+        <p class="text-xs text-grafito">Bergum NICFI · Dabbagh FCLP · Watson</p>
+      </a>
+      <a href="one-pager/one_pager_PT.pdf" class="card product">
+        <div class="icon-wrap mb-3">🇧🇷</div>
+        <span class="tag">Português</span>
+        <h3 class="font-bold mt-2 mb-1">one_pager_PT.pdf</h3>
+        <p class="text-xs text-grafito">Yamada Ford Brasil · Costa GIZ · Kaingang MinPI</p>
+      </a>
+      <a href="one-pager/one_pager_FR.pdf" class="card product">
+        <div class="icon-wrap mb-3">🇫🇷</div>
+        <span class="tag">Français</span>
+        <h3 class="font-bold mt-2 mb-1">one_pager_FR.pdf</h3>
+        <p class="text-xs text-grafito">Panelistas francófonos · backup</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- DOSSIERS REGIONALES -->
+<section class="py-16">
+  <div class="max-w-6xl mx-auto px-6">
+    <p class="text-olive uppercase tracking-widest font-bold mb-2">Entregables E8-E11</p>
+    <h2 class="text-3xl font-bold text-olive-dark mb-2">Dossiers Regionales · 5 Macrorregiones ONIC</h2>
+    <p class="text-grafito mb-8 max-w-3xl">Cada dossier es perfil regional con cifras verificables · entregables digitales vía QR específico en celular Wilson.</p>
+    <div class="grid md:grid-cols-2 gap-4">
+      <a href="dossiers/mataven.pdf" class="card featured product">
+        <span class="tag gold">⭐ Estrella</span>
+        <h3 class="font-bold text-xl mt-3">E8 · Selva de Matavén</h3>
+        <p class="text-sm text-olive-dark font-bold mt-1">Amazonía · ACATISEMA · Verra ID 1566</p>
+        <p class="text-sm text-grafito mt-2">REDD+ certificado VCS+CCB · ~1.85M ha · 6 etnias (Cubeo · Curripaco · Piapoco · Piaroa · Puinave · Sikuani) · monitoreo verificado 2013-2019</p>
+        <div class="mt-3 flex gap-2 flex-wrap">
+          <span class="tag">M3 Monitoreo</span>
+          <span class="tag">M1 Custodia</span>
+          <span class="tag dark">Bergum · Dabbagh · Watson</span>
+        </div>
+      </a>
+      <a href="dossiers/plantas-utiles.pdf" class="card product">
+        <span class="tag">Transversal 5 regiones</span>
+        <h3 class="font-bold text-xl mt-3">E9 · Catálogo Plantas Útiles × Resguardos</h3>
+        <p class="text-sm text-olive-dark font-bold mt-1">5.690 especies geo · Kew Gardens + GBIF</p>
+        <p class="text-sm text-grafito mt-2">327.614 registros geolocalizados · top: Cyathea caracasana · Hedyosmum cumbalense · Xylopia polyantha · base científica internacional reproducible</p>
+        <div class="mt-3 flex gap-2 flex-wrap">
+          <span class="tag">M3 + M4 + M5</span>
+          <span class="tag dark">Costa · Azevedo · Jintiach</span>
+        </div>
+      </a>
+      <a href="dossiers/sierra-nevada-santa-marta.pdf" class="card product">
+        <span class="tag">Caribe · 4 pueblos</span>
+        <h3 class="font-bold text-xl mt-3">E10 · Sierra Nevada de Santa Marta + Línea Negra</h3>
+        <p class="text-sm text-olive-dark font-bold mt-1">Kogui · Wiwa · Arhuaco · Kankuamo</p>
+        <p class="text-sm text-grafito mt-2">Línea Negra (Res. 837/1995 + Dec. 1500/2018) · 17.000 km² · 30+ ríos sagrados · cacao indígena con identidad biocultural</p>
+        <div class="mt-3 flex gap-2 flex-wrap">
+          <span class="tag">M3 territorial</span>
+          <span class="tag dark">Bergum · Dabbagh · Watson · Kaingang</span>
+        </div>
+      </a>
+      <a href="dossiers/uwa-su039-cocuy.pdf" class="card product">
+        <span class="tag">Andes · ONIC fundacional</span>
+        <h3 class="font-bold text-xl mt-3">E11 · Pueblo U'wa · Sentencia SU-039/1997</h3>
+        <p class="text-sm text-olive-dark font-bold mt-1">Sierra Nevada del Cocuy · caso jurídico fundacional</p>
+        <p class="text-sm text-grafito mt-2">Corte Constitucional · Magistrado Antonio Barrera Carbonell · primer caso latinoamericano consulta previa como derecho fundamental vinculante · base para Convenio 169 OIT</p>
+        <div class="mt-3 flex gap-2 flex-wrap">
+          <span class="tag">M1 Gobernanza</span>
+          <span class="tag dark">Yamada · Dabbagh</span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- SCRIPTS Y CONTENIDOS -->
+<section class="py-16 bg-grafito text-white">
+  <div class="max-w-6xl mx-auto px-6">
+    <p class="text-gold uppercase tracking-widest font-bold mb-2">Entregables E2-E5 · E12-E13</p>
+    <h2 class="text-3xl font-bold text-beige-light mb-2">Scripts · Declaración · Pregunta · Mesquita</h2>
+    <p class="text-yellow-100 mb-8 max-w-3xl">Contenidos calibrados para uso operativo · cronometrados · idiomas listos.</p>
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+      <a href="dossiers/scripts-8-bilaterales.pdf" class="card product">
+        <span class="tag dark">E3</span>
+        <h3 class="font-bold mt-2 text-grafito">8 Scripts Bilaterales</h3>
+        <p class="text-sm text-grafito mt-2">Yamada · Azevedo · Bergum · Kaingang · Jintiach · Dabbagh · Costa · Watson · 250 palabras c/u · idioma destino · hook + ask + monto + handoff</p>
+      </a>
+      <a href="dossiers/declaracion-3-parrafos-ES.pdf" class="card product">
+        <span class="tag dark">E4</span>
+        <h3 class="font-bold mt-2 text-grafito">3 Párrafos Declaración Final</h3>
+        <p class="text-sm text-grafito mt-2">Soberanía datos · financiación directa · gobernanza biocultural · listos para inyectar en grupos regionales martes 15-17h + jueves 08:30</p>
+      </a>
+      <a href="dossiers/pregunta-panel4.pdf" class="card product">
+        <span class="tag dark">E5</span>
+        <h3 class="font-bold mt-2 text-grafito">Pregunta Panel 4 · 30 seg</h3>
+        <p class="text-sm text-grafito mt-2">ES (67 palabras · 28s) + PT + EN · pregunta sobre mecanismos fiduciarios directos · panel miércoles 09:50 modera Watson</p>
+      </a>
+      <a href="dossiers/mesquita-onic-conaq.pdf" class="card product">
+        <span class="tag dark">E12</span>
+        <h3 class="font-bold mt-2 text-grafito">Brief Quilombo Mesquita</h3>
+        <p class="text-sm text-grafito mt-2">PT/ES · análogos colombianos (U'wa Cocuy · Sierra cacao · Chocó Embera) · 30 aniv CONAQ · Pacto Volver al Origen ↔ 280 años resistencia</p>
+      </a>
+      <a href="dossiers/mesquita-cierre-simbolico.pdf" class="card product">
+        <span class="tag dark">E13</span>
+        <h3 class="font-bold mt-2 text-grafito">Script Cierre Simbólico Mesquita</h3>
+        <p class="text-sm text-grafito mt-2">ES/PT · 200 palabras · 75s · entregar a líder CONAQ viernes 29 · "voltar à origem é defender território séculos sem recuar"</p>
+      </a>
+      <a href="wilson.vcf" class="card product">
+        <span class="tag dark">vCard</span>
+        <h3 class="font-bold mt-2 text-grafito">Wilson Herrera Baltán · contacto</h3>
+        <p class="text-sm text-grafito mt-2">Importar a celular donante en 1 clic · WhatsApp · email institucional · LinkedIn · redes sociales ONIC + SMT</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- VAULT OBSIDIAN -->
+<section class="py-16">
+  <div class="max-w-6xl mx-auto px-6">
+    <p class="text-olive uppercase tracking-widest font-bold mb-2">Inteligencia de Campo</p>
+    <h2 class="text-3xl font-bold text-olive-dark mb-2">Vault Obsidian · 19 Notas</h2>
+    <p class="text-grafito mb-8 max-w-3xl">Knowledge base sincronizable laptop + celular · links bidireccionales [[]] entre casos · módulos · donantes · regiones · referencias oficiales. Drill-down libre en bilateral sin abrir laptop. Ubicado en <code class="bg-beige px-2 py-1 text-sm">Brazil_RRI/04_obsidian_vault/</code></p>
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-3">
+      <div class="card p-4"><span class="tag">MOC</span><p class="font-bold mt-1">00_INDEX.md</p><p class="text-xs">Navegación + acciones pendientes</p></div>
+      <div class="card p-4"><span class="tag">Propuesta</span><p class="font-bold mt-1">01_MACI_propuesta.md</p><p class="text-xs">5 módulos + USD 60-80M</p></div>
+      <div class="card featured p-4"><span class="tag gold">Estrella</span><p class="font-bold mt-1">02_Mataven_caso_estrella.md</p><p class="text-xs">Verra 1566 · VCS+CCB</p></div>
+      <div class="card p-4"><span class="tag">Evidencia</span><p class="font-bold mt-1">03_Plantas_Utiles_Colombia.md</p><p class="text-xs">5.690 especies geo</p></div>
+      <div class="card p-4"><span class="tag">Caribe</span><p class="font-bold mt-1">04_Sierra_Nevada_Santa_Marta.md</p><p class="text-xs">4 pueblos · cacao</p></div>
+      <div class="card p-4"><span class="tag">Caribe</span><p class="font-bold mt-1">05_Linea_Negra_intersecciones.md</p><p class="text-xs">Territorio ancestral</p></div>
+      <div class="card p-4"><span class="tag">Andes</span><p class="font-bold mt-1">06_Uwa_SU039_Cocuy.md</p><p class="text-xs">Caso jurídico fundacional</p></div>
+      <div class="card p-4"><span class="tag">Donantes</span><p class="font-bold mt-1">07_Donantes_8_Brasilia.md</p><p class="text-xs">Índice + 8 sub-notas</p></div>
+      <div class="card p-4"><span class="tag">Cobertura</span><p class="font-bold mt-1">08_Macroregiones_5.md</p><p class="text-xs">ONIC en toda Colombia</p></div>
+      <div class="card p-4"><span class="tag">Fuentes</span><p class="font-bold mt-1">09_Fuentes_Oficiales_ONIC.md</p><p class="text-xs">Línea Base 2022 · Hoja Ruta 2023</p></div>
+      <div class="card p-4"><span class="tag">Aliados</span><p class="font-bold mt-1">10_Mesquita_CONAQ.md</p><p class="text-xs">Viernes 29 · puente PAS</p></div>
+      <div class="card p-4 bg-grafito text-white"><span class="tag" style="background:#d4a017;color:white">+8</span><p class="font-bold mt-1">donantes/*.md</p><p class="text-xs">Notas operativas individuales</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- QRs SISTEMA -->
+<section class="py-16 bg-beige">
+  <div class="max-w-6xl mx-auto px-6">
+    <p class="text-olive uppercase tracking-widest font-bold mb-2">Sistema QR</p>
+    <h2 class="text-3xl font-bold text-olive-dark mb-2">13 QR Codes Digitales + Tarjeta Física Existente</h2>
+    <p class="text-grafito mb-8 max-w-3xl">Las 50+ tarjetas físicas COP-16 se reutilizan vía rebote smt-onic.com → landing Brasília. Adicionalmente 13 QRs digitales en celular Wilson para entrega específica por contraparte.</p>
+    <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
+      <div class="card p-3"><strong>Q01</strong> Landing principal</div>
+      <div class="card p-3"><strong>Q02</strong> wilson.vcf vCard</div>
+      <div class="card p-3"><strong>Q03</strong> Dossier Matavén</div>
+      <div class="card p-3"><strong>Q04</strong> Plantas Útiles</div>
+      <div class="card p-3"><strong>Q05</strong> Sierra Nevada SM</div>
+      <div class="card p-3"><strong>Q06</strong> U'wa SU-039</div>
+      <div class="card p-3"><strong>Q07</strong> Mesquita CONAQ</div>
+      <div class="card p-3"><strong>Q08a</strong> One-pager ES</div>
+      <div class="card p-3"><strong>Q08b</strong> One-pager EN</div>
+      <div class="card p-3"><strong>Q09</strong> Pitch Persuasivo</div>
+      <div class="card p-3"><strong>Q10</strong> NotebookLM</div>
+      <div class="card p-3"><strong>Q11</strong> Contact Hub</div>
+      <div class="card p-3 bg-olive text-white"><strong>Q12</strong> SMT-ONIC institucional</div>
+    </div>
+  </div>
+</section>
+
+<!-- FLUJO USO WILSON -->
+<section id="flujo" class="py-16 bg-grafito text-white">
+  <div class="max-w-6xl mx-auto px-6">
+    <p class="text-gold uppercase tracking-widest font-bold mb-2">Cómo Usar</p>
+    <h2 class="text-3xl font-bold text-beige-light mb-8">Flujo Wilson en Sala · Bilateral Típico</h2>
+    <div class="space-y-4">
+      <div class="card bg-olive-dark text-white border-t-4 border-gold p-6">
+        <div class="flex items-start gap-4">
+          <span class="text-3xl font-black text-gold">1</span>
+          <div>
+            <h3 class="font-bold text-lg">Primer contacto · Tarjeta física</h3>
+            <p class="text-yellow-100 mt-1">Wilson entrega tarjeta-QR física (50+ disponibles · de COP-16) · donante escanea → rebote smt-onic → landing Brasília 2026 multilingüe.</p>
+          </div>
+        </div>
+      </div>
+      <div class="card bg-olive-dark text-white border-t-4 border-gold p-6">
+        <div class="flex items-start gap-4">
+          <span class="text-3xl font-black text-gold">2</span>
+          <div>
+            <h3 class="font-bold text-lg">Conversación profundiza · QR específico desde celular</h3>
+            <p class="text-yellow-100 mt-1">Donante pregunta sobre tema X → Wilson muestra QR Q03-Q12 desde Photos/Obsidian del celular · donante escanea · descarga PDF puntual al instante.</p>
+          </div>
+        </div>
+      </div>
+      <div class="card bg-olive-dark text-white border-t-4 border-gold p-6">
+        <div class="flex items-start gap-4">
+          <span class="text-3xl font-black text-gold">3</span>
+          <div>
+            <h3 class="font-bold text-lg">Pregunta técnica avanzada · Obsidian + NotebookLM</h3>
+            <p class="text-yellow-100 mt-1">Si asesor técnico donante quiere drill-down → Wilson abre vault Obsidian celular (19 notas + 8 donantes · links bidireccionales) o pasa Q10 → NotebookLM 15 fuentes.</p>
+          </div>
+        </div>
+      </div>
+      <div class="card bg-olive-dark text-white border-t-4 border-gold p-6">
+        <div class="flex items-start gap-4">
+          <span class="text-3xl font-black text-gold">4</span>
+          <div>
+            <h3 class="font-bold text-lg">Cierre · vCard + Calendar</h3>
+            <p class="text-yellow-100 mt-1">"Agendemos 15 min en junio" → Wilson muestra Q11 (contact hub) o Q02 (vCard descarga) · donante guarda contacto en su agenda con redes sociales ONIC+SMT incluidas.</p>
+          </div>
+        </div>
+      </div>
+      <div class="card bg-olive-dark text-white border-t-4 border-gold p-6">
+        <div class="flex items-start gap-4">
+          <span class="text-3xl font-black text-gold">5</span>
+          <div>
+            <h3 class="font-bold text-lg">Noche en hotel · Update vault + landing</h3>
+            <p class="text-yellow-100 mt-1">Wilson actualiza nota Obsidian del donante con resultado · sube foto+insight a landing (commit + push) · prepara siguiente día.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ACCIONES PENDIENTES -->
+<section class="py-16 bg-red-50">
+  <div class="max-w-6xl mx-auto px-6">
+    <p class="text-red-600 uppercase tracking-widest font-bold mb-2">Acciones Humanas · Wilson</p>
+    <h2 class="text-3xl font-bold text-red-800 mb-8">Antes del Vuelo (lunes 25-may 20:00 BRT)</h2>
+    <div class="space-y-3">
+      <div class="bg-white border-l-4 border-red-500 p-4">
+        <h3 class="font-bold text-red-800">T30 · Enviar email rebote SMT</h3>
+        <p class="text-sm text-grafito mt-1">Email listo en <code class="bg-beige px-2 text-xs">outputs/kit_brasilia/T30_email_rebote_SMT.md</code> · enviar HOY a persona equipo SMT con acceso WP. Crítico para que tarjetas QR físicas reboten a landing nueva.</p>
+      </div>
+      <div class="bg-white border-l-4 border-orange-500 p-4">
+        <h3 class="font-bold text-orange-800">T32 · Checklist E2E completo</h3>
+        <p class="text-sm text-grafito mt-1">Documento <code class="bg-beige px-2 text-xs">outputs/kit_brasilia/T32_CHECKLIST_E2E_WILSON.md</code> · pasos: imprimir 85 hojas · ensayar 7 piezas voz alta cronómetro · sincronizar vault celular · cargar 13 QRs en Photos · maleta.</p>
+      </div>
+      <div class="bg-white border-l-4 border-yellow-500 p-4">
+        <h3 class="font-bold text-yellow-800">T01b · Validar y borrar _ZIPS_TO_DELETE</h3>
+        <p class="text-sm text-grafito mt-1">Carpeta cuarentena <code class="bg-beige px-2 text-xs">Brazil_RRI/_ZIPS_TO_DELETE/</code> con ZIPs descomprimidos · validar paridad · borrar cuando esté seguro.</p>
+      </div>
+      <div class="bg-white border-l-4 border-blue-500 p-4">
+        <h3 class="font-bold text-blue-800">T25 · Armonizar MACI1-MACI5 (Fase C post-cumbre)</h3>
+        <p class="text-sm text-grafito mt-1">Refactor visual ligero de los 5 subsitios MACI1-MACI5 con paleta tarjeta · ya planificado · no bloquea Brasília.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="py-12 bg-grafito text-beige-light">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="grid md:grid-cols-3 gap-8">
+      <div>
+        <h3 class="font-bold text-yellow-200 mb-3">ONIC · Pacto Volver al Origen</h3>
+        <p class="text-sm">Organización Nacional Indígena de Colombia · Sistema de Monitoreo Territorial · XI Congreso · Cumbre RRI Brasília 26-29 mayo 2026.</p>
+      </div>
+      <div>
+        <h3 class="font-bold text-yellow-200 mb-3">Wilson Herrera Baltán</h3>
+        <p class="text-sm">Director · SMT-ONIC<br>
+        <a href="mailto:poblacion@onic.org.co" class="text-yellow-200">poblacion@onic.org.co</a><br>
+        WhatsApp +57 311 220 1903<br>
+        <a href="https://smt-onic.com" class="text-yellow-200">smt-onic.com</a></p>
+      </div>
+      <div>
+        <h3 class="font-bold text-yellow-200 mb-3">Stack Sprint</h3>
+        <p class="text-sm">Visual_Agentes V2.1 · 72 horas · sprint <code class="text-xs">brasilia_2026_relampago</code> · cero token API de pago en runtime · LOCAL-FIRST estricto · 35 tareas T01-T32 ejecutadas · 2 commits GitHub.</p>
+      </div>
+    </div>
+    <div class="border-t border-gray-700 mt-8 pt-6 text-center text-sm text-yellow-100 opacity-70">
+      Cifras 77% verificables · 23% asumidas (asterisco) · honestidad ante donantes > apariencia de completitud
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
