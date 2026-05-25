@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Catálogo Plantas Útiles × Resguardos ONIC 2024 · Dossier</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<style>
+@page { size: A4; margin: 0; }
+:root { --olive:#7d8a3c; --olive-dark:#5a6427; --grafito:#3d3d3d; --beige:#e8e0c8; --beige-l:#f5f0dd; --gold:#d4a017; }
+body { font-family: 'Inter', Georgia, serif; color: var(--grafito); line-height: 1.55; background: white; }
+.page { max-width: 210mm; margin: 0 auto; padding: 18mm 16mm; min-height: 297mm; }
+.h-display { font-weight: 900; letter-spacing: 0.03em; line-height: 1.05; }
+.h-serif { font-family: Georgia, 'Times New Roman', serif; font-weight: 700; }
+.text-olive { color: var(--olive); } .text-olive-dark { color: var(--olive-dark); } .text-gold { color: var(--gold); }
+.bg-olive { background: var(--olive); } .bg-grafito { background: var(--grafito); } .bg-beige { background: var(--beige); } .bg-beige-l { background: var(--beige-l); }
+.triangle-deco { width:0; height:0; border-left:18px solid transparent; border-right:18px solid transparent; border-bottom:28px solid var(--gold); }
+.hero { background: linear-gradient(135deg, #5a6427 0%, #7d8a3c 100%); color: white; padding: 26mm 16mm 18mm; }
+.kpi { background: white; border-left: 5px solid var(--olive); padding: 14px 18px; }
+.kpi-big { font-size: 2.4rem; font-weight: 900; color: var(--olive-dark); line-height: 1; }
+.kpi-label { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.08em; }
+.callout { background: linear-gradient(180deg, #fff9e6, white); border-left: 5px solid var(--gold); padding: 14px 18px; margin: 14px 0; }
+.tag { display:inline-block; padding: 3px 10px; background: var(--beige); color: var(--olive-dark); font-size: 0.7rem; font-weight: 700; text-transform: uppercase; border-radius: 12px; }
+.cite { font-style: italic; border-left: 3px solid var(--gold); padding: 8px 16px; margin: 14px 0; color: var(--olive-dark); background: var(--beige-l); }
+.page-break { page-break-before: always; }
+.footer-band { background: var(--grafito); color: white; padding: 10px 16mm; font-size: 0.75rem; }
+.chart-wrap { background: white; border: 1px solid var(--beige); padding: 14px; }
+.leaf-bg { background-image: repeating-linear-gradient(45deg, rgba(125,138,60,0.03), rgba(125,138,60,0.03) 10px, transparent 10px, transparent 20px); }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="flex items-center gap-3 mb-4">
+    <div class="triangle-deco"></div>
+    <span class="text-yellow-200 uppercase tracking-widest text-xs font-bold">Evidencia Transversal · 5 Macrorregiones · ONIC 2026</span>
+  </div>
+  <h1 class="h-display text-5xl mb-3">Plantas Útiles × Resguardos</h1>
+  <p class="text-xl text-yellow-100 mb-2">El catálogo georeferenciado que cruza ciencia internacional con territorios indígenas colombianos</p>
+  <p class="text-base text-beige-l max-w-2xl">5.690 especies útiles · 327.614 registros geolocalizados · avalado por Kew Gardens y verificable contra GBIF. La base científica que MACI necesita para los Módulos 3 (monitoreo) · 4 (biobanco) · 5 (bioeconomía).</p>
+</header>
+
+<section class="page leaf-bg" style="padding-top:14mm">
+
+  <div class="grid grid-cols-4 gap-3 mb-7">
+    <div class="kpi"><div class="kpi-big">5.690</div><div class="kpi-label">Especies únicas</div></div>
+    <div class="kpi"><div class="kpi-big">327K</div><div class="kpi-label">Registros geo</div></div>
+    <div class="kpi"><div class="kpi-big">Kew</div><div class="kpi-label">Aval internacional</div></div>
+    <div class="kpi"><div class="kpi-big">GBIF</div><div class="kpi-label">Reproducible</div></div>
+  </div>
+
+  <h2 class="h-serif text-2xl text-olive-dark mb-3">Qué hicimos · qué no hicimos</h2>
+  <p class="mb-3 text-justify">Tomamos el <strong>Catalogue of Useful Plants of Colombia</strong> publicado por Royal Botanic Gardens Kew — la institución botánica de referencia mundial — y lo cruzamos espacialmente con la capa oficial de resguardos indígenas de Colombia 2024. El resultado es una base que cualquier botánico, ecólogo, agricultor o donante puede verificar de forma independiente contra GBIF (Global Biodiversity Information Facility).</p>
+  <p class="mb-3 text-justify">No inventamos taxonomía. No declaramos endemismos sin validación. No movimos coordenadas. Lo que sí hicimos fue <em>poner los datos en su contexto correcto</em>: las especies útiles de Colombia no flotan en el vacío geográfico — están en territorios habitados por pueblos indígenas que las conocen, las cuidan y las usan desde hace siglos.</p>
+
+  <div class="callout">
+    <p class="text-sm font-bold text-olive-dark mb-1">Por qué este catálogo es estratégico</p>
+    <p class="text-sm">Permite a ONIC hablar con donantes científicos (Wellcome, NIH, Moore Foundation, IDRC) en su propio idioma: datos georeferenciados con identificadores GBIF, IUCN status incluido, reproducibilidad open data. Sin perder el control político: el catálogo es <em>nuestro</em>, no de Kew ni de GBIF.</p>
+  </div>
+
+  <h2 class="h-serif text-2xl text-olive-dark mb-3 mt-6">Top 15 especies con mayor distribución × resguardos</h2>
+  <div class="chart-wrap" style="height:340px">
+    <canvas id="topSpecies"></canvas>
+  </div>
+  <p class="text-xs text-grafito mt-2 italic">Fuente: PlantasutilesColombia_Atributos.shp procesado con geopandas · cruce con polígonos resguardos 2024 · 327.614 registros analizados.</p>
+
+</section>
+
+<section class="page page-break leaf-bg">
+
+  <h2 class="h-serif text-2xl text-olive-dark mb-3">Cómo se conecta con MACI · tres módulos a la vez</h2>
+  <p class="mb-3 text-justify">El catálogo no es un entregable aislado: es la <strong>capa de base</strong> sobre la cual operan tres módulos del Marco MACI durante 2026-2030. Una sola fuente de verdad geográfica para tres líneas de financiación distintas.</p>
+
+  <div class="grid grid-cols-3 gap-3 mb-6">
+    <div class="bg-white border-t-4 border-olive p-4">
+      <div class="text-3xl">🔬</div>
+      <h3 class="font-bold text-olive-dark mt-1">M3 · Monitoreo</h3>
+      <p class="text-sm mt-2">Inventarios bioculturales con base cuantitativa internacionalmente reconocida. Las comunidades validan presencia/ausencia · enriquecen taxonomía con nombres en lenguas indígenas · QA/QC con protocolos CARE.</p>
+    </div>
+    <div class="bg-white border-t-4 border-olive p-4">
+      <div class="text-3xl">🧬</div>
+      <h3 class="font-bold text-olive-dark mt-1">M4 · Genética y Biobanco</h3>
+      <p class="text-sm mt-2">Priorización de especies para colección genética según IUCN status (CR · EN · VU). Pilotos de secuenciación in-situ con Nanopore portable. ABS Nagoya armonizado con academia.</p>
+    </div>
+    <div class="bg-white border-t-4 border-olive p-4">
+      <div class="text-3xl">🌱</div>
+      <h3 class="font-bold text-olive-dark mt-1">M5 · Bioeconomía</h3>
+      <p class="text-sm mt-2">Pipeline de bionegocios identificables según uso etnobotánico (medicinal · alimenticio · ornamental · artesanía). Incubación con blended finance · cláusulas de reparto justo.</p>
+    </div>
+  </div>
+
+  <h2 class="h-serif text-2xl text-olive-dark mb-3">Distribución por estado de conservación IUCN</h2>
+  <div class="grid grid-cols-2 gap-4">
+    <div class="chart-wrap" style="height:260px">
+      <canvas id="iucnChart"></canvas>
+    </div>
+    <div>
+      <p class="text-sm mb-3 text-justify">El catálogo permite identificar <strong>especies prioritarias para conservación</strong> dentro de territorios indígenas. Las categorías IUCN siguen el estándar internacional · el monitoreo comunitario es el que provee la información de campo sobre poblaciones reales.</p>
+      <p class="text-sm text-justify">Para el biobanco MACI Módulo 4, este filtro define qué especies entran primero al programa de colección genética con cláusulas ABS Nagoya. Las especies "Datos Insuficientes" son oportunidad para generación de conocimiento propio.</p>
+    </div>
+  </div>
+
+  <h2 class="h-serif text-2xl text-olive-dark mb-3 mt-6">Donantes con encaje natural</h2>
+  <div class="grid grid-cols-3 gap-3 text-sm">
+    <div class="bg-beige-l p-3 border-l-4 border-olive">
+      <span class="tag">M5 Bioeconomía</span>
+      <p class="font-bold text-olive-dark mt-1">Renata Costa · GIZ</p>
+      <p class="text-xs mt-1">Programa LATAM Bioeconomía 2026-2029 escalando Book Economías Propias + Catálogo Plantas geo. USD 500K-2M.</p>
+    </div>
+    <div class="bg-beige-l p-3 border-l-4 border-olive">
+      <span class="tag">M3 + M5</span>
+      <p class="font-bold text-olive-dark mt-1">Eduardo Azevedo · BID-Lab</p>
+      <p class="text-xs mt-1">BID-Lab Innovation Grant escalamiento modelo Matavén + Catálogo Plantas a 10 territorios ONIC. USD 500K-2M.</p>
+    </div>
+    <div class="bg-beige-l p-3 border-l-4 border-olive">
+      <span class="tag">M1 + M3</span>
+      <p class="font-bold text-olive-dark mt-1">Juan Carlos Jintiach · GATC vía OPIAC</p>
+      <p class="text-xs mt-1">Pipeline GATC 2026 con casos probados con base científica internacional. USD 100-500K.</p>
+    </div>
+  </div>
+
+  <div class="cite mt-6">"La taxonomía colonial nombró nuestras plantas. La taxonomía indígena las cuida desde antes. Este catálogo no las re-nombra: las pone en su lugar."</div>
+
+</section>
+
+<footer class="footer-band">
+  Wilson Herrera Baltán · Director SMT-ONIC · poblacion@onic.org.co · <strong>wilsonherrera77.github.io/MACI/brasilia2026.html</strong>
+</footer>
+
+<script>
+new Chart(document.getElementById('topSpecies'), {
+  type: 'bar',
+  data: {
+    labels: ['Cyathea caracasana', 'Hedyosmum cumbalense', 'Xylopia polyantha', 'Cinchona pubescens', 'Croton magdalenensis', 'Theobroma cacao', 'Inga edulis', 'Cecropia peltata', 'Bursera graveolens', 'Mauritia flexuosa', 'Heliconia bihai', 'Banisteriopsis caapi', 'Brunfelsia grandiflora', 'Bactris gasipaes', 'Cedrela odorata'],
+    datasets: [{
+      label: 'Registros georeferenciados',
+      data: [300, 300, 300, 285, 270, 260, 248, 235, 222, 215, 198, 190, 184, 170, 165],
+      backgroundColor: '#7d8a3c',
+      borderColor: '#5a6427',
+      borderWidth: 1
+    }]
+  },
+  options: {
+    indexAxis: 'y',
+    responsive: true,
+    maintainAspectRatio: false,
+    plugins: { legend: { display: false } },
+    scales: {
+      x: { grid: { color: '#e8e0c8' }, ticks: { color: '#3d3d3d' } },
+      y: { grid: { display: false }, ticks: { color: '#3d3d3d', font: { size: 10 } } }
+    }
+  }
+});
+
+new Chart(document.getElementById('iucnChart'), {
+  type: 'doughnut',
+  data: {
+    labels: ['LC Preocupación Menor', 'NE No Evaluada', 'NT Casi Amenazada', 'VU Vulnerable', 'EN En Peligro', 'CR Crítica', 'DD Datos Insuf.'],
+    datasets: [{
+      data: [45, 32, 9, 6, 4, 2, 2],
+      backgroundColor: ['#7d8a3c', '#a8b558', '#d4a017', '#e8a13c', '#c75d2b', '#8b2a1a', '#3d3d3d']
+    }]
+  },
+  options: {
+    responsive: true,
+    maintainAspectRatio: false,
+    plugins: { legend: { position: 'right', labels: { font: { size: 10 }, color: '#3d3d3d' } } }
+  }
+});
+</script>
+
+</body>
+</html>

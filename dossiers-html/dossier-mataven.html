@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Selva de Matavén · ACATISEMA · Verra ID 1566 · Dossier ONIC</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<style>
+@page { size: A4; margin: 0; }
+:root { --olive:#7d8a3c; --olive-dark:#5a6427; --grafito:#3d3d3d; --beige:#e8e0c8; --beige-l:#f5f0dd; --gold:#d4a017; }
+body { font-family: 'Inter', Georgia, serif; color: var(--grafito); background: white; line-height: 1.55; }
+.page { max-width: 210mm; margin: 0 auto; padding: 18mm 16mm; min-height: 297mm; }
+.h-display { font-weight: 900; letter-spacing: 0.03em; line-height: 1.05; }
+.h-serif { font-family: Georgia, 'Times New Roman', serif; font-weight: 700; }
+.text-olive { color: var(--olive); } .text-olive-dark { color: var(--olive-dark); } .text-gold { color: var(--gold); }
+.bg-olive { background: var(--olive); } .bg-olive-dark { background: var(--olive-dark); } .bg-grafito { background: var(--grafito); }
+.bg-beige { background: var(--beige); } .bg-beige-l { background: var(--beige-l); } .bg-gold { background: var(--gold); }
+.border-olive { border-color: var(--olive); }
+.triangle-deco { width:0; height:0; border-left:18px solid transparent; border-right:18px solid transparent; border-bottom:28px solid var(--gold); }
+.hero { background: linear-gradient(135deg, #3d3d3d 0%, #5a6427 65%, #7d8a3c 100%); color: white; padding: 30mm 16mm 22mm; position: relative; }
+.hero::before { content:''; position:absolute; inset:0; background: radial-gradient(circle at 80% 30%, rgba(212,160,23,0.2), transparent 50%); }
+.kpi { background: white; border-left: 5px solid var(--olive); padding: 14px 18px; }
+.kpi-big { font-size: 2.6rem; font-weight: 900; color: var(--olive-dark); line-height: 1; }
+.kpi-label { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--grafito); margin-top: 6px; }
+.callout { background: linear-gradient(180deg, #fff9e6 0%, white 60%); border-left: 5px solid var(--gold); padding: 16px 20px; margin: 16px 0; }
+.timeline-item { position: relative; padding-left: 28px; padding-bottom: 14px; border-left: 2px solid var(--olive); }
+.timeline-item::before { content:''; position: absolute; left: -7px; top: 4px; width: 12px; height: 12px; background: var(--gold); border: 2px solid white; border-radius: 50%; box-shadow: 0 0 0 2px var(--olive); }
+.tag { display:inline-block; padding: 3px 10px; background: var(--beige); color: var(--olive-dark); font-size: 0.7rem; font-weight: 700; text-transform: uppercase; border-radius: 12px; letter-spacing: 0.06em; }
+.tag-dark { background: var(--grafito); color: white; }
+.tag-gold { background: var(--gold); color: white; }
+.cite { font-style: italic; border-left: 3px solid var(--gold); padding: 8px 16px; margin: 14px 0; color: var(--olive-dark); background: var(--beige-l); }
+.page-break { page-break-before: always; }
+.footer-band { background: var(--grafito); color: white; padding: 10px 16mm; font-size: 0.75rem; }
+</style>
+</head>
+<body>
+
+<!-- PAGE 1: HERO + NARRATIVA -->
+<header class="hero">
+  <div class="flex items-center gap-3 mb-4">
+    <div class="triangle-deco"></div>
+    <span class="text-gold uppercase tracking-widest text-xs font-bold">Caso Estrella · ONIC · Cumbre RRI Brasília 2026</span>
+  </div>
+  <h1 class="h-display text-5xl mb-3">Selva de Matavén</h1>
+  <p class="text-xl text-yellow-100 mb-2">El bosque que custodian seis pueblos · el mecanismo fiduciario que ya funciona</p>
+  <p class="text-base text-beige-l max-w-2xl">Un proyecto REDD+ certificado bajo dos estándares internacionales independientes (VCS + CCB) operado durante una década por una organización indígena nacional. Evidencia · no propuesta.</p>
+  <div class="flex gap-2 mt-6 flex-wrap">
+    <span class="tag-gold tag">Verra Registry ID 1566</span>
+    <span class="tag" style="background:rgba(255,255,255,0.15);color:white">~1.85M hectáreas</span>
+    <span class="tag" style="background:rgba(255,255,255,0.15);color:white">6 etnias · 100% custodia indígena</span>
+  </div>
+</header>
+
+<section class="page" style="padding-top:14mm;padding-bottom:6mm">
+
+  <div class="grid grid-cols-3 gap-3 mb-8">
+    <div class="kpi"><div class="kpi-big">1.85M</div><div class="kpi-label">Hectáreas conservadas</div></div>
+    <div class="kpi"><div class="kpi-big">10+</div><div class="kpi-label">Años operación verificada</div></div>
+    <div class="kpi"><div class="kpi-big">2×</div><div class="kpi-label">Certificación independiente</div></div>
+  </div>
+
+  <h2 class="h-serif text-2xl text-olive-dark mb-3">La historia que el dato cuenta</h2>
+  <p class="mb-3 text-justify">En el extremo nororiental de la Amazonía colombiana, donde el Vichada se encuentra con los esteros y los morichales, seis pueblos indígenas — <strong>Piaroa, Sikuani, Curripaco, Piapoco, Puinave y Cubeo</strong> — administran de manera autónoma uno de los bloques de selva continua más extensos del país. No es un parque nacional. No es una concesión gubernamental con terceros. Es un resguardo indígena gestionado por sus propias autoridades a través de <strong>ACATISEMA</strong> (Asociación de Cabildos y Autoridades Tradicionales Indígenas de la Selva de Matavén).</p>
+  <p class="mb-3 text-justify">En 2016 ACATISEMA registró el territorio ante el <strong>Verra Carbon Standard</strong> como proyecto REDD+ con identificador 1566. Un año después validaron simultáneamente bajo el estándar <strong>Climate, Community & Biodiversity (CCB)</strong>, una doble certificación que exige no solo reducción de deforestación sino también beneficio social tangible y conservación de biodiversidad demostrable.</p>
+  <p class="mb-3 text-justify">Lo importante no es la certificación en sí — muchos proyectos REDD+ han sido cuestionados. Lo importante es <em>quién la opera</em>: la cadena de custodia, las decisiones sobre los créditos emitidos, los acuerdos comunitarios firmados (COMMS_AGR_1566_28OCT2016) y los reportes de verificación 2013-2015, 2016-2017 y 2018-2019 pasan íntegramente por la gobernanza indígena. Sin intermediarios internacionales que diluyen el control político.</p>
+
+  <div class="callout">
+    <p class="text-sm font-bold text-olive-dark mb-1">Por qué este caso importa para Brasília</p>
+    <p class="text-sm">Cuando los donantes del Panel 4 pregunten "¿qué mecanismo fiduciario directo funciona en la práctica?", la respuesta no es una hipótesis: es Matavén. Un proyecto auditado por terceros internacionales, operado por una organización indígena nacional, durante una década, en Colombia.</p>
+  </div>
+
+  <h2 class="h-serif text-2xl text-olive-dark mb-3 mt-6">Los seis pueblos custodios</h2>
+  <div class="grid grid-cols-3 gap-3">
+    <div class="bg-beige-l p-3 border-l-4 border-olive"><div class="font-bold text-olive-dark">Piaroa</div><div class="text-xs">Familia lingüística Sáliba</div></div>
+    <div class="bg-beige-l p-3 border-l-4 border-olive"><div class="font-bold text-olive-dark">Sikuani</div><div class="text-xs">Familia Guahibo</div></div>
+    <div class="bg-beige-l p-3 border-l-4 border-olive"><div class="font-bold text-olive-dark">Curripaco</div><div class="text-xs">Familia Arawak</div></div>
+    <div class="bg-beige-l p-3 border-l-4 border-olive"><div class="font-bold text-olive-dark">Piapoco</div><div class="text-xs">Familia Arawak</div></div>
+    <div class="bg-beige-l p-3 border-l-4 border-olive"><div class="font-bold text-olive-dark">Puinave</div><div class="text-xs">Familia Maku</div></div>
+    <div class="bg-beige-l p-3 border-l-4 border-olive"><div class="font-bold text-olive-dark">Cubeo</div><div class="text-xs">Familia Tukano oriental</div></div>
+  </div>
+
+</section>
+
+<!-- PAGE 2: CRONOLOGÍA + IMPACT -->
+<section class="page page-break">
+  <h2 class="h-serif text-2xl text-olive-dark mb-4">Cronología de la operación</h2>
+
+  <div class="grid grid-cols-2 gap-6 mb-6">
+    <div>
+      <div class="timeline-item"><strong class="text-olive-dark">2013-2015</strong><br><span class="text-sm">Período de validación inicial · primera fase de monitoreo (VERIF_STA_1566_01JAN2013_31DEC2015)</span></div>
+      <div class="timeline-item"><strong class="text-olive-dark">28 Oct 2016</strong><br><span class="text-sm">Acuerdo comunitario formal firmado (COMMS_AGR_1566) · KML del territorio depositado en Verra Registry</span></div>
+      <div class="timeline-item"><strong class="text-olive-dark">28 May 2017</strong><br><span class="text-sm">Registro completo VCS · proyecto activo · primeros créditos contabilizables (REG_PRR_1566)</span></div>
+    </div>
+    <div>
+      <div class="timeline-item"><strong class="text-olive-dark">Jun 2017</strong><br><span class="text-sm">Reporte Final VCS Matavín validado (10 06 2017_VCS Final Report)</span></div>
+      <div class="timeline-item"><strong class="text-olive-dark">2016-2017</strong><br><span class="text-sm">Primera verificación independiente de emisiones evitadas (VERIF_REP_1566)</span></div>
+      <div class="timeline-item"><strong class="text-olive-dark">2018-2019</strong><br><span class="text-sm">Segunda verificación · validación CCB · monitoreo socio-ambiental (MONIT_REP_1566_CCB_v1.1)</span></div>
+      <div class="timeline-item"><strong class="text-olive-dark">Abr 2021</strong><br><span class="text-sm">CCB PDD borrador final · 5.4 MB de documentación pública</span></div>
+    </div>
+  </div>
+
+  <h2 class="h-serif text-2xl text-olive-dark mb-3 mt-4">Lo que Matavén ya probó · tres cosas concretas</h2>
+  <div class="grid grid-cols-3 gap-3 mb-6">
+    <div class="bg-grafito text-white p-4">
+      <div class="text-gold text-3xl font-black">01</div>
+      <p class="font-bold mt-2 text-yellow-100">Es transferible</p>
+      <p class="text-sm text-beige-l mt-1">Donantes y compradores de créditos pueden transferir recursos directamente a una organización indígena nacional. Funcionó durante una década.</p>
+    </div>
+    <div class="bg-olive text-white p-4">
+      <div class="text-yellow-200 text-3xl font-black">02</div>
+      <p class="font-bold mt-2">Es auditable</p>
+      <p class="text-sm mt-1">Tres reportes de verificación independiente y dos estándares cruzados (VCS + CCB) probaron que la gobernanza indígena cumple estándares fiduciarios internacionales.</p>
+    </div>
+    <div class="bg-grafito text-white p-4">
+      <div class="text-gold text-3xl font-black">03</div>
+      <p class="font-bold mt-2 text-yellow-100">Es replicable</p>
+      <p class="text-sm text-beige-l mt-1">El modelo institucional ACATISEMA-Verra puede aplicarse a las otras cuatro macrorregiones ONIC dentro del Marco MACI Módulos 3 + 5.</p>
+    </div>
+  </div>
+
+  <h2 class="h-serif text-2xl text-olive-dark mb-3">Encaje en MACI · escalamiento 2026-2030</h2>
+  <p class="mb-3 text-justify">Matavén no es un caso aislado: es la base operativa que MACI propone escalar bajo gobernanza indígena nacional. Específicamente alimenta tres módulos:</p>
+  <div class="grid grid-cols-3 gap-3 text-sm">
+    <div class="bg-beige-l p-3"><strong class="text-olive-dark">M1 Gobernabilidad</strong><br>Protocolo de cadena de custodia ACATISEMA → Consejo de Datos MACI · CLPI + ABS armonizado</div>
+    <div class="bg-beige-l p-3"><strong class="text-olive-dark">M3 Monitoreo</strong><br>MRV indigenous-led con KML georeferenciado · base para 248K ha + 500K registros M3 Año 1</div>
+    <div class="bg-beige-l p-3"><strong class="text-olive-dark">M4-M5 Bioeconomía</strong><br>Modelo de blended finance + ABS Nagoya replicable a Sierra · Cocuy · Chocó</div>
+  </div>
+
+  <div class="callout mt-6">
+    <p class="text-sm font-bold text-olive-dark mb-2">Donantes con encaje natural</p>
+    <p class="text-sm"><strong>Ole Reidar Bergum (NICFI Noruega)</strong> · ventana NICFI III post-2025 para MRV indigenous-led con cadena custodia ya certificada. <strong>Lina Dabbagh (FCLP)</strong> · country package Colombia con traslape TEF Matavén. <strong>Rachael Watson (Campaign for Nature)</strong> · 30x30 con gobernanza indígena efectiva sobre 1.85M ha conservadas.</p>
+  </div>
+
+  <div class="cite">"Lo que Matavén demuestra es que la pregunta no es <em>si</em> los pueblos indígenas pueden administrar fondos climáticos de gran escala. La pregunta es por qué seguimos pidiendo intermediarios cuando la arquitectura ya existe."</div>
+
+</section>
+
+<footer class="footer-band">
+  Wilson Herrera Baltán · Director SMT-ONIC · poblacion@onic.org.co · +57 311 220 1903 · <strong>wilsonherrera77.github.io/MACI/brasilia2026.html</strong>
+</footer>
+
+</body>
+</html>
