@@ -46,14 +46,14 @@ ONIC representa 102 pueblos indígenas en **toda Colombia**. Casos verificables 
 
 8 contrapartes con preguntas calibradas y entregables específicos:
 
-- Erika Yamada · Ford Foundation Brasil · M1 · USD 150-300K
-- Eduardo Azevedo · BID-Lab · M3+M5 · USD 500K-2M
-- Ole Reidar Bergum · NICFI Noruega · M3+M1 · USD 1-5M
-- Marcos Kaingang · MinPI Brasil · M1 cooperación sur-sur
-- Juan Carlos Jintiach · GATC (vía OPIAC) · M1+M3 · USD 100-500K
-- Lina Dabbagh · FCLP · M3 territorial · USD 2-10M
-- Renata Costa · GIZ Alemania · M5 · USD 500K-2M
-- Rachael Watson · Campaign for Nature · M3 30x30 · USD 200K-1M
+- Ford Foundation Andina · M1 · USD 150-300K
+- BID-Lab · M3+M5 · USD 500K-2M
+- NICFI Noruega · cooperación bilateral · M3+M1 · USD 1-5M
+- Min. Pueblos Indígenas Brasil · M1 cooperación sur-sur
+- GATC (vía OPIAC) · M1+M3 · USD 100-500K
+- FCLP · M3 territorial · USD 2-10M
+- GIZ Alemania · M5 · USD 500K-2M
+- Campaign for Nature (filantropía 30x30) · M3 30x30 · USD 200K-1M
 
 Tabla completa cross-map en [`brasilia2026.html`](https://wilsonherrera77.github.io/MACI/brasilia2026.html#donantes).
 
@@ -68,7 +68,6 @@ Tabla completa cross-map en [`brasilia2026.html`](https://wilsonherrera77.github
 - [Brief Quilombo Mesquita PT/ES (ONIC-CONAQ)](dossiers/mesquita-onic-conaq.pdf)
 - [3 Párrafos para Declaración Final RRI](dossiers/declaracion-3-parrafos-ES.pdf)
 - [Pregunta Panel 4 · 30 segundos · ES/PT/EN](dossiers/pregunta-panel4.pdf)
-- [8 Scripts Bilaterales (Yamada · Azevedo · Bergum · Kaingang · Jintiach · Dabbagh · Costa · Watson)](dossiers/scripts-8-bilaterales.pdf)
 - [One-pager MACI + 5 regiones ES](one-pager/one_pager_ES.pdf)
 
 ---
