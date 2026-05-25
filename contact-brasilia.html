@@ -28,7 +28,7 @@ body { background: linear-gradient(160deg, #3d3d3d 0%, #5a6427 100%); min-height
   <div class="text-center mb-6">
     <div class="w-24 h-24 bg-white rounded-full mx-auto mb-4 flex items-center justify-center text-4xl font-black text-olive-dark" style="color: #5a6427">WH</div>
     <h1 class="text-2xl font-black tracking-wide">WILSON HERRERA BALTÁN</h1>
-    <p class="text-yellow-200 mt-1" data-i18n="role">Director · SMT-ONIC</p>
+    <p class="text-yellow-200 mt-1" data-i18n="role">Coordinador · SMT-ONIC</p>
     <p class="text-xs text-beige opacity-80 mt-1" data-i18n="org">Organización Nacional Indígena de Colombia</p>
   </div>
 
@@ -85,10 +85,10 @@ body { background: linear-gradient(160deg, #3d3d3d 0%, #5a6427 100%); min-height
 
 <script>
 const i18n = {
-  es: {role:'Director · SMT-ONIC',org:'Organización Nacional Indígena de Colombia',save_contact:'Guardar Contacto (.vcf)',save_hint:'Importar a tu agenda',landing:'Landing completa Brasilia 2026',landing_hint:'MACI · 5 regiones · descargables',downloads:'Descargar Documentos',d_mataven:'Matavén VCS+CCB',d_plantas:'Plantas Útiles',d_sierra:'Sierra Nevada',d_uwa:'U\'wa SU-039',d_mesquita:'Mesquita PT/ES',footer_summit:'Cumbre RRI Brasilia · 26-29 mayo 2026'},
-  en: {role:'Director · SMT-ONIC',org:'National Indigenous Organization of Colombia',save_contact:'Save Contact (.vcf)',save_hint:'Add to your phone book',landing:'Full Brasilia 2026 Landing',landing_hint:'MACI · 5 regions · downloads',downloads:'Download Documents',d_mataven:'Matavén VCS+CCB',d_plantas:'Useful Plants',d_sierra:'Sierra Nevada',d_uwa:'U\'wa SU-039',d_mesquita:'Mesquita PT/ES',footer_summit:'RRI Brasilia Summit · 26-29 May 2026'},
-  pt: {role:'Diretor · SMT-ONIC',org:'Organização Nacional Indígena da Colômbia',save_contact:'Salvar Contato (.vcf)',save_hint:'Adicionar à agenda',landing:'Landing Brasília 2026',landing_hint:'MACI · 5 regiões · downloads',downloads:'Baixar Documentos',d_mataven:'Matavén VCS+CCB',d_plantas:'Plantas Úteis',d_sierra:'Serra Nevada',d_uwa:'U\'wa SU-039',d_mesquita:'Mesquita PT/ES',footer_summit:'Cúpula RRI Brasília · 26-29 maio 2026'},
-  fr: {role:'Directeur · SMT-ONIC',org:'Organisation Nationale Autochtone de Colombie',save_contact:'Enregistrer Contact',save_hint:'Ajouter au répertoire',landing:'Landing Brasília 2026',landing_hint:'MACI · 5 régions',downloads:'Télécharger Documents',d_mataven:'Matavén',d_plantas:'Plantes Utiles',d_sierra:'Sierra Nevada',d_uwa:'U\'wa',d_mesquita:'Mesquita',footer_summit:'Sommet RRI Brasília · 26-29 mai 2026'}
+  es: {role:'Coordinador · SMT-ONIC',org:'Organización Nacional Indígena de Colombia',save_contact:'Guardar Contacto (.vcf)',save_hint:'Importar a tu agenda',landing:'Landing completa Brasilia 2026',landing_hint:'MACI · 5 regiones · descargables',downloads:'Descargar Documentos',d_mataven:'Matavén VCS+CCB',d_plantas:'Plantas Útiles',d_sierra:'Sierra Nevada',d_uwa:'U\'wa SU-039',d_mesquita:'Mesquita PT/ES',footer_summit:'Cumbre RRI Brasilia · 26-29 mayo 2026'},
+  en: {role:'Coordinador · SMT-ONIC',org:'National Indigenous Organization of Colombia',save_contact:'Save Contact (.vcf)',save_hint:'Add to your phone book',landing:'Full Brasilia 2026 Landing',landing_hint:'MACI · 5 regions · downloads',downloads:'Download Documents',d_mataven:'Matavén VCS+CCB',d_plantas:'Useful Plants',d_sierra:'Sierra Nevada',d_uwa:'U\'wa SU-039',d_mesquita:'Mesquita PT/ES',footer_summit:'RRI Brasilia Summit · 26-29 May 2026'},
+  pt: {role:'Coordenador · SMT-ONIC',org:'Organização Nacional Indígena da Colômbia',save_contact:'Salvar Contato (.vcf)',save_hint:'Adicionar à agenda',landing:'Landing Brasília 2026',landing_hint:'MACI · 5 regiões · downloads',downloads:'Baixar Documentos',d_mataven:'Matavén VCS+CCB',d_plantas:'Plantas Úteis',d_sierra:'Serra Nevada',d_uwa:'U\'wa SU-039',d_mesquita:'Mesquita PT/ES',footer_summit:'Cúpula RRI Brasília · 26-29 maio 2026'},
+  fr: {role:'Coordinateur · SMT-ONIC',org:'Organisation Nationale Autochtone de Colombie',save_contact:'Enregistrer Contact',save_hint:'Ajouter au répertoire',landing:'Landing Brasília 2026',landing_hint:'MACI · 5 régions',downloads:'Télécharger Documents',d_mataven:'Matavén',d_plantas:'Plantes Utiles',d_sierra:'Sierra Nevada',d_uwa:'U\'wa',d_mesquita:'Mesquita',footer_summit:'Sommet RRI Brasília · 26-29 mai 2026'}
 };
 function setLang(lang){document.querySelectorAll('[data-i18n]').forEach(el=>{const k=el.getAttribute('data-i18n');if(i18n[lang]&&i18n[lang][k])el.textContent=i18n[lang][k];});document.querySelectorAll('.lang-btn').forEach(b=>b.classList.toggle('active',b.dataset.lang===lang));try{localStorage.setItem('lang',lang);}catch(e){}}
 const s=(function(){try{return localStorage.getItem('lang');}catch(e){return null;}})();if(s&&i18n[s])setLang(s);

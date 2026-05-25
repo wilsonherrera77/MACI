@@ -74,7 +74,7 @@ Tabla completa cross-map en [`brasilia2026.html`](https://wilsonherrera77.github
 
 ## Contacto
 
-**Wilson Herrera Baltán** · Director · SMT-ONIC
+**Wilson Herrera Baltán** · Coordinador · SMT-ONIC
 
 - WhatsApp: +57 311 220 1903
 - Email: poblacion@onic.org.co · onic@onic.org.co
