@@ -34,7 +34,7 @@ MACI es el vehículo bancable de ONIC para articular los mandatos del XI Congres
 
 ONIC representa 102 pueblos indígenas en **toda Colombia**. Casos verificables por macrorregión:
 
-- **Amazonía** · Selva de Matavén (ACATISEMA · Verra ID 1566 · REDD+ VCS+CCB certificado · ~1.85M ha · 6 etnias)
+- **Amazonía** · Selva de Matavén (ACATISEMA · Verra ID 1566 · REDD+ VCS+CCB certificado · ~1.85M ha · 5 etnias custodias)
 - **Orinoquía** · Cumaribo + Catálogo Plantas Útiles × Resguardos 2024 (5.690 especies geo · aval Kew Gardens + GBIF)
 - **Andes** · Pueblo U'wa · Sierra Nevada del Cocuy · Sentencia SU-039/1997 (caso jurídico fundacional consulta previa)
 - **Caribe-Sierra Nevada** · 4 pueblos Kogui · Wiwa · Arhuaco · Kankuamo · Línea Negra intersecciones territoriales
