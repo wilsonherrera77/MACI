@@ -42,15 +42,9 @@ body {
   width: 160px; height: 160px;
   background: radial-gradient(circle, rgba(232,224,200,0.15) 0%, transparent 70%);
 }
-.triangle-deco {
-  width:0; height:0;
-  border-left:12px solid transparent;
-  border-right:12px solid transparent;
-  border-bottom:18px solid #d4a017;
-  display: inline-block;
-}
-.icon-row { display: flex; gap: 12px; justify-content: flex-start; margin-bottom: 14px; position: relative; z-index: 2; }
-.icon-tile { width: 38px; height: 38px; background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.25); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 18px; backdrop-filter: blur(4px); }
+.logo-row { display: flex; gap: 14px; align-items: center; margin-bottom: 18px; position: relative; z-index: 2; }
+.logo-row img { height: 46px; width: auto; display: block; background: white; padding: 4px; border-radius: 6px; box-shadow: 0 2px 6px rgba(0,0,0,0.18); }
+.logo-row .divider { width: 1px; height: 32px; background: rgba(255,255,255,0.3); }
 .brand-name { font-weight: 900; letter-spacing: 0.03em; line-height: 1.05; }
 .brand-role { color: #ffe9a1; font-weight: 600; font-size: 0.86rem; letter-spacing: 0.05em; text-transform: uppercase; margin-top: 4px; }
 .brand-sub { color: #e8e0c8; font-size: 0.78rem; margin-top: 2px; opacity: 0.9; }
@@ -99,17 +93,16 @@ body {
     <button class="lang-btn active" data-lang="en" onclick="setLang('en')">EN</button>
     <button class="lang-btn" data-lang="es" onclick="setLang('es')">ES</button>
     <button class="lang-btn" data-lang="pt" onclick="setLang('pt')">PT</button>
+    <button class="lang-btn" data-lang="fr" onclick="setLang('fr')">FR</button>
+    <button class="lang-btn" data-lang="id" onclick="setLang('id')">ID</button>
   </div>
 
   <!-- BUSINESS CARD FRONT -->
   <section class="card-front">
-    <div class="summit-pill"><span>●</span> <span data-i18n="summit">RRI Brasília Summit · May 26-29 · 2026</span></div>
-
-    <div class="icon-row">
-      <div class="icon-tile">🐢</div>
-      <div class="icon-tile">🌿</div>
-      <div class="icon-tile">🐸</div>
-      <div class="triangle-deco" style="margin-left: 6px"></div>
+    <div class="logo-row">
+      <img src="logo_ONIC.png" alt="ONIC" />
+      <span class="divider"></span>
+      <img src="LogoSMT_1.png" alt="SMT" />
     </div>
 
     <h1 class="brand-name text-2xl mb-1" style="font-size: 1.5rem">WILSON<br>HERRERA BALTÁN</h1>
@@ -219,10 +212,34 @@ const i18n = {
     org: 'Organização Nacional Indígena da Colômbia',
     qr_caption: 'Escaneie · Kit MACI Brasília 2026',
     b_save: 'Salvar Contato', b_save_hint: 'Adicionar à agenda',
-    b_kit: 'Kit MACI · Brasília 2026', b_kit_hint: 'Landing · 4 idiomas · 5 regiões',
+    b_kit: 'Kit MACI · Brasília 2026', b_kit_hint: 'Landing · 5 idiomas · 5 regiões',
     b_hub: 'Hub Móvel', b_hub_hint: 'Dossiês · downloads · agenda',
     b_smt_hint: 'Portal institucional',
     footer: 'ONIC · Pacto para Voltar à Origem · XI Congresso · Adicione à tela de início para uso offline.'
+  },
+  fr: {
+    summit: 'Sommet RRI Brasília · 26-29 mai 2026',
+    role: 'Coordinateur · SMT-ONIC',
+    sub: 'Système de Surveillance Territoriale Autochtone',
+    org: 'Organisation Nationale Autochtone de Colombie',
+    qr_caption: 'Scannez · Kit MACI Brasília 2026',
+    b_save: 'Enregistrer Contact', b_save_hint: 'Ajouter au répertoire',
+    b_kit: 'Kit MACI · Brasília 2026', b_kit_hint: 'Landing · 5 langues · 5 régions',
+    b_hub: 'Hub Mobile', b_hub_hint: 'Dossiers · téléchargements · agenda',
+    b_smt_hint: 'Portail institutionnel',
+    footer: 'ONIC · Pacte pour Revenir à l\'Origine · XIe Congrès · Ajoutez à l\'écran d\'accueil pour usage hors ligne.'
+  },
+  id: {
+    summit: 'KTT RRI Brasília · 26-29 Mei 2026',
+    role: 'Koordinator · SMT-ONIC',
+    sub: 'Sistem Pemantauan Wilayah Masyarakat Adat',
+    org: 'Organisasi Nasional Masyarakat Adat Kolombia',
+    qr_caption: 'Pindai · Kit MACI Brasília 2026',
+    b_save: 'Simpan Kontak', b_save_hint: 'Tambah ke buku telepon',
+    b_kit: 'Kit MACI · Brasília 2026', b_kit_hint: 'Landing · 5 bahasa · 5 wilayah',
+    b_hub: 'Hub Seluler', b_hub_hint: 'Dossier · unduh · jadwal',
+    b_smt_hint: 'Portal institusional',
+    footer: 'ONIC · Pakta Kembali ke Asal · Kongres XI · Tambahkan ke Layar Beranda untuk penggunaan offline.'
   }
 };
 function setLang(lang) {
