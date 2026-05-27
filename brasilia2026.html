@@ -3,494 +3,1099 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ONIC · Cumbre RRI Brasilia 2026 · Pacto para Volver al Origen</title>
-<meta name="description" content="Organización Nacional Indígena de Colombia · MACI USD 60-80M / 5 años · 5 macrorregiones · Cumbre RRI Brasilia 26-29 mayo 2026">
+<title>ONIC · Cumbre RRI Brasília 2026 · Pacto para Volver al Origen</title>
+<meta name="description" content="Organización Nacional Indígena de Colombia · MACI USD 60-80M / 5 años · 959 resguardos · 31.3% territorio nacional · Cumbre RRI Brasília 26-29 mayo 2026">
+
+<!-- Fonts: Fraunces (serif display editorial) + DM Sans (body distinctive) + JetBrains Mono (numeric) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT,WONK@9..144,300..900,0..100,0..1&family=DM+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+
 <script src="https://cdn.tailwindcss.com"></script>
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
 <style>
 :root {
+  --smt-deep: #0a3f33;
+  --smt-deep-tint: #1a5f4f;
   --olive: #7d8a3c;
   --olive-dark: #5a6427;
-  --grafito: #3d3d3d;
+  --onic-red: #c8431c;
+  --onic-red-soft: #d96b48;
+  --grafito: #2d2d2d;
+  --grafito-light: #4a4a4a;
   --beige: #e8e0c8;
-  --beige-light: #f5f0dd;
+  --beige-l: #f5f0dd;
+  --beige-cream: #faf6e8;
+  --gold: #d4a017;
+  --gold-soft: #e5c067;
+  --paper: #fafaf6;
 }
-body { font-family: 'Inter', system-ui, -apple-system, sans-serif; background: var(--beige-light); color: var(--grafito); }
-.bg-olive { background-color: var(--olive); }
-.bg-olive-dark { background-color: var(--olive-dark); }
-.bg-grafito { background-color: var(--grafito); }
-.bg-beige { background-color: var(--beige); }
-.bg-beige-light { background-color: var(--beige-light); }
-.text-olive { color: var(--olive); }
-.text-olive-dark { color: var(--olive-dark); }
-.text-grafito { color: var(--grafito); }
-.border-olive { border-color: var(--olive); }
-.hero-bg {
-  background: linear-gradient(135deg, var(--grafito) 0%, var(--olive-dark) 100%);
+
+* { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'DM Sans', system-ui, sans-serif;
+  background: var(--paper);
+  color: var(--grafito);
+  font-feature-settings: "ss01" on, "cv01" on;
+  line-height: 1.55;
+}
+
+.font-display { font-family: 'Fraunces', Georgia, serif; font-variation-settings: 'opsz' 144, 'SOFT' 0, 'WONK' 0; }
+.font-display-soft { font-family: 'Fraunces', Georgia, serif; font-variation-settings: 'opsz' 96, 'SOFT' 50, 'WONK' 0; }
+.font-mono { font-family: 'JetBrains Mono', monospace; font-feature-settings: "tnum" on; }
+
+/* Telar pattern · inspirado en logo SMT */
+.telar-bg {
   position: relative;
+  overflow: hidden;
 }
-.hero-bg::before {
-  content: ''; position: absolute; inset: 0;
-  background-image: radial-gradient(circle at 20% 50%, rgba(125,138,60,0.3) 0%, transparent 50%),
-                    radial-gradient(circle at 80% 50%, rgba(232,224,200,0.15) 0%, transparent 50%);
+.telar-bg::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(circle at 0% 50%, transparent 20%, var(--smt-deep) 20.5%, var(--smt-deep) 21%, transparent 21.5%),
+    radial-gradient(circle at 100% 50%, transparent 20%, var(--smt-deep) 20.5%, var(--smt-deep) 21%, transparent 21.5%);
+  background-size: 60px 60px;
+  background-position: 0 0, 30px 30px;
+  opacity: 0.04;
   pointer-events: none;
 }
-.h-headline { font-family: 'Inter', sans-serif; font-weight: 900; letter-spacing: 0.05em; text-transform: uppercase; line-height: 1.1; }
-.triangle-deco {
+
+.weave-overlay {
+  background-image:
+    repeating-linear-gradient(45deg, transparent 0 19px, rgba(10,63,51,0.025) 19px 20px),
+    repeating-linear-gradient(-45deg, transparent 0 19px, rgba(125,138,60,0.02) 19px 20px);
+}
+
+/* Color utilities */
+.text-smt-deep { color: var(--smt-deep); }
+.bg-smt-deep { background-color: var(--smt-deep); }
+.bg-smt-deep-tint { background-color: var(--smt-deep-tint); }
+.text-onic-red { color: var(--onic-red); }
+.bg-onic-red { background-color: var(--onic-red); }
+.text-olive { color: var(--olive); }
+.text-olive-dark { color: var(--olive-dark); }
+.bg-olive { background-color: var(--olive); }
+.bg-olive-dark { background-color: var(--olive-dark); }
+.text-grafito { color: var(--grafito); }
+.bg-beige { background-color: var(--beige); }
+.bg-beige-l { background-color: var(--beige-l); }
+.bg-beige-cream { background-color: var(--beige-cream); }
+.bg-paper { background-color: var(--paper); }
+.text-gold { color: var(--gold); }
+.bg-gold { background-color: var(--gold); }
+.border-smt-deep { border-color: var(--smt-deep); }
+.border-olive { border-color: var(--olive); }
+.border-gold { border-color: var(--gold); }
+.border-onic-red { border-color: var(--onic-red); }
+
+/* Hero asimétrico */
+.hero-grad {
+  background:
+    radial-gradient(ellipse at 80% 20%, rgba(200,67,28,0.18) 0%, transparent 50%),
+    radial-gradient(ellipse at 20% 80%, rgba(212,160,23,0.10) 0%, transparent 50%),
+    linear-gradient(135deg, var(--smt-deep) 0%, var(--smt-deep-tint) 60%, var(--olive-dark) 100%);
+}
+
+/* Triangulo decorativo */
+.tri-deco {
   width: 0; height: 0;
-  border-left: 30px solid transparent; border-right: 30px solid transparent;
-  border-bottom: 50px solid var(--olive);
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  border-bottom: 34px solid var(--gold);
+  filter: drop-shadow(0 4px 8px rgba(0,0,0,0.15));
 }
-.card-modulo {
-  background: white; border-left: 6px solid var(--olive);
-  padding: 1.5rem; border-radius: 4px;
-  box-shadow: 0 4px 8px rgba(61,61,61,0.08);
-  transition: transform 0.2s, box-shadow 0.2s;
+
+/* Display headlines */
+.display-massive {
+  font-family: 'Fraunces', Georgia, serif;
+  font-variation-settings: 'opsz' 144, 'SOFT' 0, 'WONK' 1;
+  font-weight: 900;
+  line-height: 0.92;
+  letter-spacing: -0.025em;
 }
-.card-modulo:hover { transform: translateY(-4px); box-shadow: 0 8px 16px rgba(61,61,61,0.15); }
-.card-region {
-  background: white; padding: 1.5rem; border-top: 4px solid var(--olive);
-  border-radius: 4px; box-shadow: 0 2px 6px rgba(61,61,61,0.08);
+
+.section-headline {
+  font-family: 'Fraunces', Georgia, serif;
+  font-variation-settings: 'opsz' 96, 'SOFT' 30, 'WONK' 0;
+  font-weight: 800;
+  letter-spacing: -0.015em;
+  line-height: 1.05;
 }
-.card-region.featured { border-top-color: #d4a017; background: linear-gradient(180deg, #fff9e6 0%, white 30%); }
-.donor-row { transition: background 0.15s; }
-.donor-row:hover { background: var(--beige); }
-#map { height: 500px; border-radius: 8px; border: 2px solid var(--olive); }
-.lang-btn { padding: 4px 10px; border: 1px solid var(--olive); background: white; color: var(--olive); cursor: pointer; }
-.lang-btn.active { background: var(--olive); color: white; }
-.lang-btn:hover { background: var(--olive-dark); color: white; }
-[data-i18n] { transition: opacity 0.15s; }
+
+.eyebrow {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+/* KPI bloque */
+.kpi-block {
+  font-family: 'Fraunces', Georgia, serif;
+  font-variation-settings: 'opsz' 144, 'SOFT' 0, 'WONK' 1;
+  font-weight: 900;
+  line-height: 0.9;
+  letter-spacing: -0.04em;
+}
+
+/* Editorial divider */
+.editorial-rule {
+  width: 60px; height: 3px; background: var(--gold); display: inline-block;
+}
+.editorial-rule-long {
+  width: 100%; height: 1px; background: var(--smt-deep); opacity: 0.2;
+}
+
+/* Cards distintivas */
+.card-edit {
+  background: white;
+  border-left: 5px solid var(--olive);
+  padding: 28px 32px;
+  box-shadow: 0 2px 0 var(--beige), 4px 4px 16px rgba(10,63,51,0.06);
+  transition: all 0.3s ease;
+  position: relative;
+}
+.card-edit:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 0 var(--olive), 8px 8px 24px rgba(10,63,51,0.10);
+  border-left-color: var(--gold);
+}
+.card-edit.featured {
+  border-left-color: var(--gold);
+  background: linear-gradient(180deg, var(--beige-cream) 0%, white 50%);
+}
+
+/* Tabla editorial */
+.tbl-edit {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: 'DM Sans', sans-serif;
+}
+.tbl-edit thead th {
+  background: var(--smt-deep);
+  color: white;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 14px 18px;
+  text-align: left;
+  border-bottom: 3px solid var(--gold);
+}
+.tbl-edit tbody td {
+  padding: 14px 18px;
+  border-bottom: 1px solid var(--beige);
+  font-size: 0.95rem;
+}
+.tbl-edit tbody tr:nth-child(even) { background: var(--beige-l); }
+.tbl-edit tbody tr.total { background: var(--smt-deep); color: white; }
+.tbl-edit tbody tr.total td { border-bottom: none; font-weight: 700; }
+.tbl-edit .num { font-family: 'JetBrains Mono', monospace; font-weight: 700; text-align: right; font-size: 0.95rem; }
+.tbl-edit .pct {
+  font-family: 'Fraunces', Georgia, serif;
+  font-variation-settings: 'opsz' 144, 'SOFT' 0, 'WONK' 1;
+  font-weight: 900;
+  font-size: 1.15rem;
+  color: var(--smt-deep);
+}
+.tbl-edit tbody tr.total .pct { color: var(--gold); }
+
+/* Pull quote */
+.pull-quote {
+  font-family: 'Fraunces', Georgia, serif;
+  font-variation-settings: 'opsz' 144, 'SOFT' 80, 'WONK' 0;
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(1.4rem, 2.5vw, 2rem);
+  line-height: 1.3;
+  color: var(--smt-deep);
+  border-left: 4px solid var(--gold);
+  padding-left: 32px;
+  position: relative;
+}
+.pull-quote::before {
+  content: '"';
+  font-family: 'Fraunces', Georgia, serif;
+  font-size: 5rem;
+  font-weight: 900;
+  color: var(--gold);
+  position: absolute;
+  left: 24px;
+  top: -30px;
+  opacity: 0.2;
+}
+
+/* Map frame */
+#map {
+  height: 540px;
+  border: 1px solid var(--smt-deep);
+  box-shadow: 12px 12px 0 var(--beige);
+}
+
+/* Lang switcher */
+.lang-btn {
+  padding: 6px 12px;
+  border: 1px solid rgba(255,255,255,0.4);
+  background: transparent;
+  color: white;
+  cursor: pointer;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition: all 0.2s;
+  font-family: 'DM Sans', sans-serif;
+}
+.lang-btn.active {
+  background: var(--gold);
+  color: var(--smt-deep);
+  border-color: var(--gold);
+}
+.lang-btn:hover:not(.active) {
+  background: rgba(255,255,255,0.1);
+  border-color: var(--gold);
+}
+
+/* CTA buttons */
+.btn-primary {
+  background: var(--gold);
+  color: var(--smt-deep);
+  padding: 16px 28px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 0.82rem;
+  transition: all 0.25s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: 2px solid var(--gold);
+}
+.btn-primary:hover {
+  background: var(--smt-deep);
+  color: var(--gold);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 0 var(--gold);
+}
+.btn-secondary {
+  background: transparent;
+  color: white;
+  padding: 16px 28px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 0.82rem;
+  transition: all 0.25s ease;
+  border: 2px solid rgba(255,255,255,0.5);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.btn-secondary:hover {
+  border-color: var(--gold);
+  background: rgba(212,160,23,0.1);
+  color: var(--gold);
+}
+
+.btn-arrow::after {
+  content: '→';
+  font-family: 'Fraunces', serif;
+  font-size: 1.2em;
+  transition: transform 0.2s;
+}
+.btn-arrow:hover::after { transform: translateX(4px); }
+
+/* Module card */
+.module-card {
+  background: white;
+  border: 1px solid var(--beige);
+  padding: 32px 28px;
+  position: relative;
+  transition: all 0.3s ease;
+}
+.module-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 4px;
+  background: linear-gradient(90deg, var(--smt-deep) 0%, var(--olive) 100%);
+}
+.module-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 32px rgba(10,63,51,0.12);
+}
+.module-num {
+  font-family: 'Fraunces', Georgia, serif;
+  font-variation-settings: 'opsz' 144, 'WONK' 1;
+  font-size: 4rem;
+  font-weight: 900;
+  line-height: 0.85;
+  color: var(--smt-deep);
+  opacity: 0.95;
+}
+
+/* Stat block */
+.stat-block {
+  background: var(--smt-deep);
+  color: white;
+  padding: 40px 32px;
+  border-bottom: 4px solid var(--gold);
+  position: relative;
+  overflow: hidden;
+}
+.stat-block::after {
+  content: '';
+  position: absolute;
+  top: -50%; right: -20%;
+  width: 200px; height: 200px;
+  border: 30px solid rgba(212,160,23,0.06);
+  border-radius: 50%;
+}
+.stat-block .stat-num {
+  font-family: 'Fraunces', Georgia, serif;
+  font-variation-settings: 'opsz' 144, 'SOFT' 0, 'WONK' 1;
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 900;
+  line-height: 0.9;
+  color: var(--gold);
+  letter-spacing: -0.03em;
+}
+.stat-block .stat-label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--beige-l);
+  margin-top: 8px;
+}
+
+/* Region cell */
+.region-cell {
+  background: white;
+  border: 1px solid var(--beige);
+  border-top: 5px solid var(--olive);
+  padding: 24px 20px;
+  position: relative;
+  transition: all 0.25s;
+}
+.region-cell.featured {
+  border-top-color: var(--gold);
+  background: linear-gradient(180deg, var(--beige-cream) 0%, white 60%);
+}
+.region-cell:hover { transform: translateY(-2px); box-shadow: 0 4px 16px rgba(10,63,51,0.08); }
+
+/* Logo header */
+.logo-onic { width: 56px; height: 56px; border-radius: 50%; box-shadow: 0 4px 12px rgba(0,0,0,0.15); }
+.logo-smt { height: 44px; filter: brightness(0) invert(1); opacity: 0.95; }
+
+/* Editorial accent number */
+.accent-num {
+  font-family: 'Fraunces', Georgia, serif;
+  font-variation-settings: 'opsz' 144, 'WONK' 1;
+  font-weight: 900;
+  font-size: clamp(4rem, 9vw, 8rem);
+  line-height: 0.85;
+  letter-spacing: -0.04em;
+}
+
+/* Footer */
+.footer-band {
+  background: var(--smt-deep);
+  color: var(--beige-l);
+}
+
+/* Reveal animation */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.reveal {
+  animation: fadeUp 0.8s ease-out backwards;
+}
+.reveal-1 { animation-delay: 0.1s; }
+.reveal-2 { animation-delay: 0.25s; }
+.reveal-3 { animation-delay: 0.4s; }
+.reveal-4 { animation-delay: 0.55s; }
+.reveal-5 { animation-delay: 0.7s; }
+
+/* Print-safe */
+@media print {
+  .no-print { display: none; }
+}
 </style>
 </head>
-<body>
+<body class="bg-paper text-grafito">
 
-<!-- HERO -->
-<header class="hero-bg text-white py-16 relative overflow-hidden">
-  <div class="absolute top-4 right-4 z-10 flex gap-1 text-sm">
-    <button class="lang-btn active" data-lang="es" onclick="setLang('es')">ES</button>
-    <button class="lang-btn" data-lang="en" onclick="setLang('en')">EN</button>
-    <button class="lang-btn" data-lang="pt" onclick="setLang('pt')">PT</button>
-    <button class="lang-btn" data-lang="fr" onclick="setLang('fr')">FR</button>
-  </div>
-  <div class="max-w-6xl mx-auto px-6 relative z-10">
-    <div class="flex items-center gap-4 mb-4">
-      <div class="triangle-deco"></div>
-      <p class="text-yellow-200 tracking-widest text-sm" data-i18n="hero_eyebrow">CUMBRE RRI BRASILIA · 26-29 MAYO 2026</p>
+<!-- ============== HERO ============== -->
+<header class="relative overflow-hidden hero-grad text-white">
+  <div class="weave-overlay absolute inset-0 opacity-30"></div>
+
+  <!-- Top bar: logos + lang switcher -->
+  <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 pt-6 flex items-center justify-between">
+    <div class="flex items-center gap-5">
+      <img src="assets/logo_ONIC.png" alt="ONIC" class="logo-onic">
+      <div class="hidden md:block w-px h-10 bg-white/20"></div>
+      <img src="assets/logo_SMT.png" alt="SMT · Sistema de Monitoreo Territorial" class="logo-smt hidden md:block">
     </div>
-    <h1 class="h-headline text-4xl md:text-6xl mb-4" data-i18n="hero_title">¡Sé Parte del Cambio Hoy!</h1>
-    <p class="text-2xl md:text-3xl font-light mb-2 text-yellow-50" data-i18n="hero_subtitle">Pacto para Volver al Origen · XI Congreso ONIC</p>
-    <p class="text-xl text-beige-light max-w-3xl" data-i18n="hero_lead">Marco de Acción para Comunidades Indígenas · MACI · USD 60-80M / 5 años · 5 macrorregiones colombianas · evidencia certificada Verra+CCB</p>
-    <div class="mt-8 flex flex-wrap gap-4">
-      <a href="#caso-estrella" class="bg-olive hover:bg-olive-dark text-white px-6 py-3 font-bold uppercase tracking-wider transition">Caso Matavén</a>
-      <a href="#cooperacion" class="bg-white text-olive-dark px-6 py-3 font-bold uppercase tracking-wider transition hover:bg-beige" data-i18n="cta_donors">Cooperación</a>
-      <a href="#contacto" class="border-2 border-white text-white px-6 py-3 font-bold uppercase tracking-wider transition hover:bg-white hover:text-olive-dark" data-i18n="cta_contact">Contacto Wilson</a>
+    <div class="flex gap-1 no-print">
+      <button class="lang-btn active" data-lang="es" onclick="setLang('es')">ES</button>
+      <button class="lang-btn" data-lang="en" onclick="setLang('en')">EN</button>
+      <button class="lang-btn" data-lang="pt" onclick="setLang('pt')">PT</button>
+      <button class="lang-btn" data-lang="fr" onclick="setLang('fr')">FR</button>
+    </div>
+  </div>
+
+  <!-- Hero content asimétrico -->
+  <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 pt-16 lg:pt-24 pb-20 lg:pb-32 grid lg:grid-cols-12 gap-8 items-start">
+
+    <!-- Lado izquierdo: titular -->
+    <div class="lg:col-span-8 reveal reveal-1">
+      <div class="flex items-center gap-4 mb-8">
+        <div class="tri-deco"></div>
+        <p class="eyebrow text-gold" data-i18n="hero_eyebrow">Cumbre RRI Brasilia · 26-29 mayo 2026</p>
+      </div>
+
+      <h1 class="display-massive text-5xl md:text-7xl lg:text-8xl mb-6 text-white">
+        <span data-i18n="hero_title">¡Sé Parte del Cambio Hoy!</span>
+      </h1>
+
+      <div class="flex items-center gap-3 mb-8">
+        <span class="editorial-rule"></span>
+        <p class="text-xl md:text-2xl text-gold-soft font-display-soft italic" data-i18n="hero_subtitle">Pacto para Volver al Origen · XI Congreso ONIC</p>
+      </div>
+
+      <p class="text-lg lg:text-xl text-white/85 max-w-3xl leading-relaxed mb-10" data-i18n="hero_lead">
+        Marco de Acción para Comunidades Indígenas · MACI · USD 60-80M / 5 años · 5 macrorregiones colombianas · evidencia certificada Verra+CCB en Matavén · custodios de 31.3% del territorio nacional.
+      </p>
+
+      <div class="flex flex-wrap gap-3 no-print">
+        <a href="#caso-estrella" class="btn-primary btn-arrow">Caso Matavén</a>
+        <a href="#cooperacion" class="btn-secondary btn-arrow" data-i18n="cta_donors">Cooperación</a>
+        <a href="#contacto" class="btn-secondary btn-arrow" data-i18n="cta_contact">Contacto Wilson</a>
+      </div>
+    </div>
+
+    <!-- Lado derecho: stat de autoridad -->
+    <div class="lg:col-span-4 reveal reveal-2 lg:pt-12">
+      <div class="bg-white/10 backdrop-blur-sm border border-white/20 p-8 lg:p-10 relative">
+        <div class="absolute -top-3 left-8 bg-gold text-smt-deep px-3 py-1 text-xs font-bold tracking-widest uppercase">ANT 2025-2026</div>
+        <div class="kpi-block text-7xl lg:text-8xl text-gold mb-2">31.3<span class="text-3xl">%</span></div>
+        <p class="text-sm text-white/85 leading-relaxed mb-4">del territorio nacional colombiano bajo gobernanza colectiva indígena formalizada</p>
+        <div class="grid grid-cols-2 gap-4 pt-4 border-t border-white/15">
+          <div>
+            <div class="font-mono text-2xl text-gold-soft font-bold">959</div>
+            <div class="text-[10px] uppercase tracking-widest text-white/60 mt-1">resguardos</div>
+          </div>
+          <div>
+            <div class="font-mono text-2xl text-gold-soft font-bold">35.75M</div>
+            <div class="text-[10px] uppercase tracking-widest text-white/60 mt-1">hectáreas</div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </header>
 
-<!-- MACI EN 60 SEGUNDOS -->
-<section class="py-16 bg-beige-light">
-  <div class="max-w-6xl mx-auto px-6">
-    <div class="flex items-center gap-3 mb-6">
-      <div class="w-12 h-1 bg-olive"></div>
-      <h2 class="text-3xl font-bold text-olive-dark" data-i18n="maci_60_title">MACI en 60 segundos</h2>
-    </div>
-    <p class="text-lg max-w-4xl mb-8" data-i18n="maci_60_lead">El Marco de Acción para Comunidades Indígenas (MACI) articula los mandatos del XI Congreso ONIC en 5 módulos operativos sobre soberanía de datos, monitoreo biocultural, banco genético y bioeconomía propia. Vehículo bancable único para activar el pipeline de financiación 2026-2030.</p>
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8">
-      <div class="bg-grafito text-white p-6 text-center">
-        <div class="text-4xl font-black text-yellow-200">~1.85M</div>
-        <div class="text-sm uppercase tracking-wider mt-2" data-i18n="stat_ha">hectáreas Matavén</div>
+<!-- ============== MACI EN 60 SEGUNDOS ============== -->
+<section class="py-24 bg-paper telar-bg">
+  <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-12">
+    <div class="grid lg:grid-cols-12 gap-12 items-start">
+      <div class="lg:col-span-5">
+        <div class="flex items-center gap-3 mb-6">
+          <span class="editorial-rule"></span>
+          <p class="eyebrow text-olive-dark">MACI · arquitectura</p>
+        </div>
+        <h2 class="section-headline text-4xl lg:text-5xl text-smt-deep mb-6" data-i18n="maci_60_title">MACI en 60 segundos</h2>
+        <p class="text-lg text-grafito-light leading-relaxed" data-i18n="maci_60_lead">El Marco de Acción para Comunidades Indígenas articula los mandatos del XI Congreso ONIC en 5 módulos operativos sobre soberanía de datos, monitoreo biocultural, banco genético y bioeconomía propia. Vehículo bancable único para activar pipeline 2026-2030.</p>
       </div>
-      <div class="bg-olive text-white p-6 text-center">
-        <div class="text-4xl font-black">5.690</div>
-        <div class="text-sm uppercase tracking-wider mt-2" data-i18n="stat_especies">especies útiles geo</div>
-      </div>
-      <div class="bg-grafito text-white p-6 text-center">
-        <div class="text-4xl font-black text-yellow-200">~18M</div>
-        <div class="text-sm uppercase tracking-wider mt-2" data-i18n="stat_ha_total">ha NO amazónicas ONIC</div>
-      </div>
-      <div class="bg-olive text-white p-6 text-center">
-        <div class="text-4xl font-black">USD 60-80M</div>
-        <div class="text-sm uppercase tracking-wider mt-2" data-i18n="stat_5anos">5 años · MACI</div>
+      <div class="lg:col-span-7 grid grid-cols-2 gap-4">
+        <div class="stat-block">
+          <div class="stat-num">1.85<span class="text-2xl ml-1">M</span></div>
+          <div class="stat-label" data-i18n="stat_ha">hectáreas Matavén</div>
+        </div>
+        <div class="stat-block bg-olive-dark" style="background:var(--olive-dark)">
+          <div class="stat-num">5.690</div>
+          <div class="stat-label" data-i18n="stat_especies">especies útiles geo</div>
+        </div>
+        <div class="stat-block" style="background:var(--olive)">
+          <div class="stat-num">~18<span class="text-2xl">M</span></div>
+          <div class="stat-label" data-i18n="stat_ha_total">ha NO amazónicas</div>
+        </div>
+        <div class="stat-block" style="background:var(--onic-red)">
+          <div class="stat-num">USD<br>60-80<span class="text-2xl">M</span></div>
+          <div class="stat-label" data-i18n="stat_5anos">5 años · MACI</div>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- 18M HA · 5 ECOSISTEMAS ESTRATÉGICOS -->
-<section class="py-16" style="background:linear-gradient(180deg,#fff9e6 0%,#f5f0dd 100%)">
-  <div class="max-w-6xl mx-auto px-6">
-    <div class="flex items-center gap-3 mb-3">
-      <div class="w-12 h-1" style="background:#d4a017"></div>
-      <h2 class="text-3xl font-bold" style="color:#5a6427" data-i18n="eco_title">~18 millones de hectáreas en ecosistemas NO amazónicos</h2>
+<!-- ============== 18M ECOSISTEMAS NO AMAZÓNICOS ============== -->
+<section class="py-24 bg-beige-cream relative">
+  <div class="max-w-7xl mx-auto px-6 lg:px-12">
+    <div class="max-w-3xl mb-16">
+      <div class="flex items-center gap-3 mb-6">
+        <span class="editorial-rule"></span>
+        <p class="eyebrow text-onic-red">ecosistemas estratégicos</p>
+      </div>
+      <h2 class="section-headline text-4xl lg:text-5xl text-smt-deep mb-6" data-i18n="eco_title">
+        <span class="accent-num text-onic-red block mb-2">~18M</span>
+        hectáreas en ecosistemas <em class="font-display-soft text-olive-dark">NO amazónicos</em>
+      </h2>
+      <p class="text-lg text-grafito-light leading-relaxed" data-i18n="eco_lead">Los pueblos indígenas de Colombia custodiamos cerca de 18 millones de hectáreas tituladas distribuidas en cinco ecosistemas estratégicos del planeta. <strong>No solo Amazonía</strong> · también páramos andinos, Chocó biogeográfico, sabanas de Orinoquía y desiertos del Caribe.</p>
     </div>
-    <p class="text-lg max-w-4xl mb-8 text-grafito" data-i18n="eco_lead">Los pueblos indígenas de Colombia custodiamos cerca de 18 millones de hectáreas tituladas distribuidas en cinco ecosistemas estratégicos del planeta. <strong>No solo Amazonía</strong> · también páramos andinos, Chocó biogeográfico, sabanas de Orinoquía y desiertos del Caribe.</p>
-    <div class="grid md:grid-cols-2 lg:grid-cols-5 gap-3">
-      <div class="bg-white p-4 border-l-4 border-olive">
-        <div class="text-xs uppercase tracking-wider text-olive font-bold">Páramos</div>
-        <div class="text-2xl font-black my-1 text-olive-dark">~2.5-3M ha</div>
-        <div class="text-xs text-grafito">Cocuy · Sumapaz · Chingaza · Cumbal · SNSM glaciar. <strong>50% de los páramos del mundo</strong> están en Colombia. Agua continental Andes.</div>
-        <div class="text-xs italic mt-2 text-olive-dark">U'wa · Pasto · Yanacona · Misak · 4 pueblos SNSM</div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-5 gap-5">
+      <div class="card-edit featured">
+        <p class="eyebrow text-olive mb-3">Páramos</p>
+        <div class="kpi-block text-3xl text-smt-deep mb-2">~2.5-3M</div>
+        <p class="text-xs text-grafito-light">U'wa · Pasto · Yanacona · Misak · SNSM glaciar</p>
+        <p class="text-[11px] text-olive-dark mt-3 font-medium">50% páramos del mundo · agua continental Andes</p>
       </div>
-      <div class="bg-white p-4 border-l-4 border-olive">
-        <div class="text-xs uppercase tracking-wider text-olive font-bold">Chocó Biogeográfico</div>
-        <div class="text-2xl font-black my-1 text-olive-dark">~5-6M ha</div>
-        <div class="text-xs text-grafito"><strong>Hotspot #1 de biodiversidad por km²</strong>. 9.000+ especies plantas · 25% endémicas · selva lluviosa Pacífico.</div>
-        <div class="text-xs italic mt-2 text-olive-dark">Embera Dóbida · Katío · Wounaan · Tule · 30+ pueblos</div>
+      <div class="card-edit">
+        <p class="eyebrow text-olive mb-3">Chocó biogeográfico</p>
+        <div class="kpi-block text-3xl text-smt-deep mb-2">~5-6M</div>
+        <p class="text-xs text-grafito-light">Embera Dóbida · Katío · Wounaan · Tule · 30+ pueblos</p>
+        <p class="text-[11px] text-olive-dark mt-3 font-medium">Hotspot #1 mundial · 9.000+ especies plantas</p>
       </div>
-      <div class="bg-white p-4 border-l-4 border-olive">
-        <div class="text-xs uppercase tracking-wider text-olive font-bold">Sabanas Orinoquía</div>
-        <div class="text-2xl font-black my-1 text-olive-dark">~4-5M ha</div>
-        <div class="text-xs text-grafito">Incluye Matavén (Verra 1566 · VCS+CCB · ~1.85M ha). Reservorio carbono pastizales tropicales · aves migratorias.</div>
-        <div class="text-xs italic mt-2 text-olive-dark">Sikuani · Curripaco · Piapoco · Cuiba · Achagua · Sáliba</div>
+      <div class="card-edit">
+        <p class="eyebrow text-olive mb-3">Sabanas Orinoquía</p>
+        <div class="kpi-block text-3xl text-smt-deep mb-2">~4-5M</div>
+        <p class="text-xs text-grafito-light">Sikuani · Curripaco · Piapoco · Cuiba · Achagua · Sáliba</p>
+        <p class="text-[11px] text-olive-dark mt-3 font-medium">Reservorio carbono pastizales tropicales</p>
       </div>
-      <div class="bg-white p-4 border-l-4 border-olive">
-        <div class="text-xs uppercase tracking-wider text-olive font-bold">Desiertos y áridos</div>
-        <div class="text-2xl font-black my-1 text-olive-dark">~1.5-2M ha</div>
-        <div class="text-xs text-grafito">Guajira (Wayuu) · Tatacoa. Ecosistemas áridos tropicales únicos · adaptación climática.</div>
-        <div class="text-xs italic mt-2 text-olive-dark">Wayuu · Wiwa zonas bajas</div>
+      <div class="card-edit">
+        <p class="eyebrow text-olive mb-3">Desiertos áridos</p>
+        <div class="kpi-block text-3xl text-smt-deep mb-2">~1.5-2M</div>
+        <p class="text-xs text-grafito-light">Wayuu · Wiwa zonas bajas</p>
+        <p class="text-[11px] text-olive-dark mt-3 font-medium">Adaptación climática Guajira · cultura wayuu</p>
       </div>
-      <div class="bg-white p-4 border-l-4 border-olive">
-        <div class="text-xs uppercase tracking-wider text-olive font-bold">Bosques amazónicos</div>
-        <div class="text-2xl font-black my-1 text-olive-dark">~3-4M ha</div>
-        <div class="text-xs text-grafito">Vichada · Vaupés · Guainía · Caquetá · Amazonas · Putumayo. Pulmón continental · servicio hídrico.</div>
-        <div class="text-xs italic mt-2 text-olive-dark">50+ pueblos amazónicos</div>
+      <div class="card-edit">
+        <p class="eyebrow text-olive mb-3">Amazónicos titulados</p>
+        <div class="kpi-block text-3xl text-smt-deep mb-2">~3-4M</div>
+        <p class="text-xs text-grafito-light">Vichada · Vaupés · Guainía · Caquetá · Amazonas · Putumayo</p>
+        <p class="text-[11px] text-olive-dark mt-3 font-medium">Pulmón continental · captura CO2</p>
       </div>
-    </div>
-    <div class="mt-6 p-4" style="background:#5a6427;color:white">
-      <p class="text-sm"><strong>Cifras a validar con autoridades comunitarias y resguardos titulados.</strong> Estimaciones basadas en territorios ONIC afiliados · base oficial ANT (Agencia Nacional de Tierras Colombia).</p>
     </div>
   </div>
 </section>
 
-<!-- MARCO TERRITORIAL NACIONAL · TABLA ANT GOBERNANZA COLECTIVA -->
-<section class="py-16 bg-white">
-  <div class="max-w-6xl mx-auto px-6">
-    <div class="flex items-center gap-3 mb-3">
-      <div class="w-12 h-1 bg-olive"></div>
-      <h2 class="text-3xl font-bold text-olive-dark" data-i18n="territorio_title">Marco territorial nacional · gobernanza colectiva</h2>
+<!-- ============== CONTINUIDAD MANDATO POLITICO · PULL QUOTE + TABLA SABIOS ============== -->
+<section class="py-24 bg-paper">
+  <div class="max-w-7xl mx-auto px-6 lg:px-12">
+    <div class="grid lg:grid-cols-12 gap-12 items-start mb-16">
+      <div class="lg:col-span-5">
+        <div class="flex items-center gap-3 mb-6">
+          <span class="editorial-rule"></span>
+          <p class="eyebrow text-gold">de Cali a Brasília</p>
+        </div>
+        <h2 class="section-headline text-4xl lg:text-5xl text-smt-deep mb-6" data-i18n="mandate_title">Continuidad de mandato político</h2>
+        <p class="text-base text-grafito-light leading-relaxed" data-i18n="mandate_lead">MACI no es propuesta nueva: implementa operativamente lo que el movimiento indígena colombiano ya estableció en la <strong>Declaración de Sabios y Sabias COP16</strong> (Centro Java Liviana · Pueblo Muysca · octubre 2024) y las recomendaciones de la <strong>Cumbre Mundial TRÜA al OS8j</strong> del Convenio de Diversidad Biológica.</p>
+      </div>
+      <div class="lg:col-span-7">
+        <div class="pull-quote">
+          Volver al origen · cambiar las maneras ambiciosas, violentas, egoístas e irresponsables de existir que devastan la Madre Tierra.
+          <footer class="mt-4 text-sm not-italic font-medium text-grafito-light">— Declaración de Sabios y Sabias COP16 · Centro Java Liviana · Pueblo Muysca · octubre 2024</footer>
+        </div>
+      </div>
     </div>
-    <p class="text-lg max-w-4xl mb-6 text-grafito" data-i18n="territorio_lead">Más del <strong>31.3% del territorio nacional colombiano</strong> está bajo gobernanza colectiva indígena y afrodescendiente formalizada. Más de 1.100 territorios étnicos titulados · ANT 2025-2026.</p>
+
     <div class="overflow-x-auto">
-      <table class="w-full text-sm bg-white border border-beige">
-        <thead class="bg-grafito text-white">
+      <table class="tbl-edit">
+        <thead>
           <tr>
-            <th class="p-3 text-left">Categoría</th>
-            <th class="p-3 text-right">Cantidad</th>
-            <th class="p-3 text-right">Hectáreas</th>
-            <th class="p-3 text-right">% Territorio Nacional</th>
-            <th class="p-3 text-left">Marco normativo</th>
+            <th>Mandato Sabios COP16 / TRÜA · Cali 2024</th>
+            <th>Traducción operativa RRI Brasília 2026</th>
           </tr>
         </thead>
         <tbody>
-          <tr class="border-b border-beige bg-beige-light"><td class="p-3"><strong>Resguardos indígenas</strong></td><td class="p-3 text-right">959</td><td class="p-3 text-right">35,748,000</td><td class="p-3 text-right font-bold text-olive-dark text-lg">31.3%</td><td class="p-3 text-xs">Decreto 2164/1995 · Ley 89/1890</td></tr>
-          <tr class="border-b border-beige"><td class="p-3"><strong>Territorios colectivos afrodescendientes</strong></td><td class="p-3 text-right">297</td><td class="p-3 text-right">5,760,000</td><td class="p-3 text-right font-bold text-olive-dark text-lg">5.0%</td><td class="p-3 text-xs">Ley 70/1993 · Decreto 1745/1995</td></tr>
-          <tr class="border-b border-beige bg-beige-light"><td class="p-3"><strong>Zonas de Reserva Campesina (ZRC)</strong></td><td class="p-3 text-right">21</td><td class="p-3 text-right">1,594,000</td><td class="p-3 text-right font-bold text-olive-dark text-lg">1.4%</td><td class="p-3 text-xs">Ley 160/1994 · Decreto 1777/1996</td></tr>
-          <tr class="bg-olive-dark text-white"><td class="p-3"><strong>TOTAL gobernanza colectiva</strong></td><td class="p-3 text-right font-bold">1,277</td><td class="p-3 text-right font-bold">~43,102,000</td><td class="p-3 text-right font-bold text-yellow-200 text-xl">~37.7%</td><td class="p-3 text-xs">suma · cifras consolidadas</td></tr>
-        </tbody>
-      </table>
-    </div>
-    <p class="text-xs mt-3 text-grafito italic">Fuentes: ANT (Agencia Nacional de Tierras Colombia) · Ministerio del Interior · datos oficiales 2023-2025. Sobre territorio nacional 114.17M ha. La pregunta de Wilson en Panel 2 amplió el marco a "organizaciones indígenas y afrodescendientes nacionales" reconociendo este universo territorial completo.</p>
-  </div>
-</section>
-
-<!-- CONTINUIDAD MANDATO POLÍTICO: SABIOS COP16 + TRÜA → RRI BRASILIA -->
-<section class="py-16 bg-beige">
-  <div class="max-w-6xl mx-auto px-6">
-    <div class="flex items-center gap-3 mb-3">
-      <div class="w-12 h-1 bg-olive"></div>
-      <h2 class="text-3xl font-bold text-olive-dark" data-i18n="mandate_title">Continuidad de mandato político · de Cali a Brasília</h2>
-    </div>
-    <p class="text-lg max-w-4xl mb-6 text-grafito" data-i18n="mandate_lead">MACI no es propuesta nueva: implementa operativamente lo que el movimiento indígena colombiano ya estableció en la <strong>Declaración de Sabios y Sabias COP16</strong> (Centro Java Liviana · Pueblo Muysca · octubre 2024) y las recomendaciones de la <strong>Cumbre Mundial TRÜA al OS8j del Convenio de Diversidad Biológica</strong>. La cumbre RRI Brasília es la siguiente estación operativa de ese mandato.</p>
-    <div class="overflow-x-auto">
-      <table class="w-full text-sm bg-white">
-        <thead class="bg-grafito text-white">
-          <tr>
-            <th class="p-3 text-left">Mandato Sabios COP16 / TRÜA · Cali 2024</th>
-            <th class="p-3 text-left">Traducción operativa cumbre RRI Brasília 2026</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr class="border-b border-beige"><td class="p-3"><em>"Volver al origen · cambiar maneras ambiciosas, violentas, egoístas"</em></td><td class="p-3">Economías propias funcionales · no extractivas · arquitectura ya operando</td></tr>
-          <tr class="border-b border-beige"><td class="p-3">Sistemas de conocimiento indígena · Ley de Origen</td><td class="p-3">Catálogo Plantas Útiles georef. (Kew + GBIF) · cruce ciencia + saber tradicional</td></tr>
-          <tr class="border-b border-beige"><td class="p-3">Sitios sagrados como sujetos de derecho · espacios vitales</td><td class="p-3">Línea Negra (Res. 837/1995 + Dec. 1500/2018) · 17.000 km² gobernanza 4-pueblos</td></tr>
-          <tr class="border-b border-beige"><td class="p-3">OS8j (artículo 8j CDB) · puente FAO/OMPI/IPBES/CMCC</td><td class="p-3">MACI M1 Gobernabilidad CREA operacionaliza arquitectura ONU 8j a nivel nacional</td></tr>
-          <tr class="border-b border-beige"><td class="p-3">Financiación directa · estructuras gobierno indígena · Planes de Vida</td><td class="p-3">Reconocimiento fiduciario directo a ONIC · MACI vehículo bancable USD 60-80M / 5 años</td></tr>
-          <tr><td class="p-3">Gobierno Propio · autoridades ambientales · libre determinación</td><td class="p-3">Cadena custodia indígena Matavén (Verra 1566 · VCS+CCB) · 10 años operando · auditable</td></tr>
+          <tr><td><em class="font-display-soft">"Volver al origen · cambiar maneras ambiciosas, violentas, egoístas"</em></td><td>Economías propias funcionales · no extractivas · arquitectura ya operando</td></tr>
+          <tr><td>Sistemas de conocimiento indígena · Ley de Origen</td><td>Catálogo Plantas Útiles georef. (Kew + GBIF) · cruce ciencia + saber tradicional</td></tr>
+          <tr><td>Sitios sagrados como sujetos de derecho · espacios vitales</td><td>Línea Negra (Res. 837/1995 + Dec. 1500/2018) · 17.000 km² gobernanza 4-pueblos</td></tr>
+          <tr><td>OS8j (artículo 8j CDB) · puente FAO/OMPI/IPBES/CMCC</td><td>MACI M1 Gobernabilidad CREA operacionaliza arquitectura ONU 8j nacional</td></tr>
+          <tr><td>Financiación directa · estructuras gobierno indígena · Planes de Vida</td><td>Reconocimiento fiduciario directo a ONIC · MACI USD 60-80M / 5 años</td></tr>
+          <tr><td>Gobierno Propio · autoridades ambientales · libre determinación</td><td>Cadena custodia indígena Matavén · Verra 1566 · VCS+CCB · 10 años auditable</td></tr>
         </tbody>
       </table>
     </div>
 
-    <!-- ECONOMÍAS PROPIAS FUNCIONALES · mención ligera (detalle restringido) -->
-    <div class="mt-8 bg-white p-6 border-l-4 border-olive">
-      <h3 class="text-xl font-bold text-olive-dark mb-2" data-i18n="econ_title">Economías propias funcionales · arquitectura financiera indígena en formulación</h3>
-      <p class="text-sm text-grafito" data-i18n="econ_lead">En cumplimiento del mandato XI Congreso ONIC "Pacto para Volver al Origen" y los lineamientos de la <strong>Mesa Permanente de Concertación</strong> (Decreto 1088/1993 · Decreto 1397/1996), ONIC participa en la formulación de un <strong>mecanismo financiero dedicado a pueblos indígenas</strong> que combina fondo de inversión, asociación de autoridades indígenas y cooperativa financiera comunitaria. La arquitectura busca operacionalizar la financiación directa demandada por la Declaración de Sabios y Sabias COP16 sin diluir el control político indígena. <em>El detalle institucional se comparte en bilaterales con donantes invitados.</em></p>
+    <div class="mt-12 p-8 bg-beige-cream border-l-4 border-olive">
+      <h3 class="font-display text-2xl text-smt-deep mb-3" data-i18n="econ_title">Economías propias funcionales · arquitectura financiera indígena en formulación</h3>
+      <p class="text-base text-grafito-light leading-relaxed" data-i18n="econ_lead">En cumplimiento del mandato XI Congreso ONIC "Pacto para Volver al Origen" y los lineamientos de la <strong>Mesa Permanente de Concertación</strong> (Decreto 1088/1993 · Decreto 1397/1996), ONIC participa en la formulación de un <strong>mecanismo financiero dedicado a pueblos indígenas</strong> que combina fondo de inversión, asociación de autoridades indígenas y cooperativa financiera comunitaria. La arquitectura busca operacionalizar la financiación directa demandada por la Declaración de Sabios y Sabias COP16 sin diluir el control político indígena. <em class="text-olive-dark">El detalle institucional se comparte en bilaterales con donantes invitados.</em></p>
     </div>
   </div>
 </section>
 
-<!-- 5 MÓDULOS MACI -->
-<section class="py-16">
-  <div class="max-w-6xl mx-auto px-6">
-    <h2 class="text-3xl font-bold text-olive-dark mb-3" data-i18n="modulos_title">5 Módulos MACI · Año 1: USD 12.79M</h2>
-    <p class="text-grafito mb-8 max-w-3xl" data-i18n="modulos_lead">Cada módulo es un perfil de proyecto independiente · todos integrados bajo la arquitectura CREA (Control · Responsabilidad · Ética · Aprovechamiento).</p>
+<!-- ============== MARCO TERRITORIAL NACIONAL · TABLA ANT ============== -->
+<section class="py-24 bg-smt-deep text-white relative">
+  <div class="weave-overlay absolute inset-0 opacity-30"></div>
+  <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-12">
+    <div class="grid lg:grid-cols-12 gap-12 items-end mb-12">
+      <div class="lg:col-span-7">
+        <div class="flex items-center gap-3 mb-6">
+          <span class="editorial-rule"></span>
+          <p class="eyebrow text-gold" data-i18n="territorio_eyebrow">Marco territorial nacional</p>
+        </div>
+        <h2 class="section-headline text-4xl lg:text-5xl text-white mb-6" data-i18n="territorio_title">Gobernanza colectiva: 37.7% del territorio nacional</h2>
+        <p class="text-lg text-white/80 leading-relaxed" data-i18n="territorio_lead">Más de 1.277 territorios indígenas, afrodescendientes y campesinos formalizados en Colombia. Fuente ANT 2025-2026 con actualización incremental enero-mayo 2026 (+648.000 ha).</p>
+      </div>
+      <div class="lg:col-span-5 text-right">
+        <div class="kpi-block text-gold text-8xl lg:text-9xl">37.7<span class="text-4xl">%</span></div>
+        <p class="text-xs text-white/60 tracking-widest uppercase mt-2">territorio nacional bajo gobernanza colectiva</p>
+      </div>
+    </div>
+
+    <div class="overflow-x-auto bg-white">
+      <table class="tbl-edit">
+        <thead>
+          <tr>
+            <th>Categoría</th>
+            <th class="text-right">Cantidad</th>
+            <th class="text-right">Hectáreas</th>
+            <th class="text-right">% Nacional</th>
+            <th>Marco normativo</th>
+          </tr>
+        </thead>
+        <tbody class="text-grafito">
+          <tr>
+            <td class="font-semibold">Resguardos indígenas</td>
+            <td class="num">959</td>
+            <td class="num">35,748,000</td>
+            <td class="text-right"><span class="pct">31.3%</span></td>
+            <td class="text-xs">Decreto 2164/1995 · Ley 89/1890</td>
+          </tr>
+          <tr>
+            <td class="font-semibold">Territorios colectivos afrodescendientes</td>
+            <td class="num">297</td>
+            <td class="num">5,760,000</td>
+            <td class="text-right"><span class="pct">5.0%</span></td>
+            <td class="text-xs">Ley 70/1993 · Decreto 1745/1995</td>
+          </tr>
+          <tr>
+            <td class="font-semibold">Zonas de Reserva Campesina (ZRC)</td>
+            <td class="num">21</td>
+            <td class="num">1,594,000</td>
+            <td class="text-right"><span class="pct">1.4%</span></td>
+            <td class="text-xs">Ley 160/1994 · Decreto 1777/1996</td>
+          </tr>
+          <tr class="total">
+            <td>TOTAL gobernanza colectiva</td>
+            <td class="num">1,277</td>
+            <td class="num">~43,102,000</td>
+            <td class="text-right"><span class="pct">~37.7%</span></td>
+            <td class="text-xs">suma consolidada ANT 2025-2026</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p class="text-xs text-white/50 mt-4 italic">Fuentes: ANT (Agencia Nacional de Tierras Colombia) · Ministerio del Interior · CNTI Observatorio Derechos Territoriales. Actualización incremental ene-may 2026: +521K ha Amazonía + 126K ha Guaviare/Nariño/Guainía/Vichada + 617 ha Córdoba. Territorio nacional 114.17M ha.</p>
+  </div>
+</section>
+
+<!-- ============== 5 MODULOS MACI ============== -->
+<section class="py-24 bg-paper">
+  <div class="max-w-7xl mx-auto px-6 lg:px-12">
+    <div class="max-w-3xl mb-16">
+      <div class="flex items-center gap-3 mb-6">
+        <span class="editorial-rule"></span>
+        <p class="eyebrow text-onic-red">arquitectura modular</p>
+      </div>
+      <h2 class="section-headline text-4xl lg:text-5xl text-smt-deep mb-6" data-i18n="modulos_title">5 Módulos MACI · Año 1: USD 12.79M</h2>
+      <p class="text-lg text-grafito-light leading-relaxed" data-i18n="modulos_lead">Cada módulo es un perfil de proyecto independiente con presupuesto auditable y donantes mapeados. Todos integrados bajo CREA (Control · Responsabilidad · Ética · Aprovechamiento).</p>
+    </div>
+
     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-      <a href="https://wilsonherrera77.github.io/MACI1/MACI1.html" target="_blank" class="card-modulo block">
-        <div class="text-olive font-black text-2xl mb-2">M1</div>
-        <h3 class="font-bold text-lg mb-2">Gobernabilidad y Soberanía (CREA)</h3>
-        <p class="text-sm text-grafito mb-3">Protocolos bioculturales · CLPI/ABS · Consejo de Datos</p>
-        <div class="text-olive-dark font-bold">USD 288K Año 1</div>
+      <a href="https://wilsonherrera77.github.io/MACI1/MACI1.html" target="_blank" class="module-card block">
+        <div class="module-num mb-4">01</div>
+        <h3 class="font-display text-xl text-smt-deep mb-3">Gobernabilidad y Soberanía (CREA)</h3>
+        <p class="text-sm text-grafito-light mb-6">Protocolos bioculturales · CLPI/ABS · Consejo de Datos</p>
+        <div class="pt-4 border-t border-beige flex items-baseline justify-between">
+          <span class="font-mono text-xl font-bold text-olive-dark">USD 288K</span>
+          <span class="text-xs uppercase tracking-widest text-grafito-light">año 1</span>
+        </div>
       </a>
-      <a href="https://wilsonherrera77.github.io/MACI2/MACI2.html" target="_blank" class="card-modulo block">
-        <div class="text-olive font-black text-2xl mb-2">M2</div>
-        <h3 class="font-bold text-lg mb-2">Plataforma Soberana de Datos</h3>
-        <p class="text-sm text-grafito mb-3">Arquitectura · MVP · catálogo · APIs · CARE+FAIR</p>
-        <div class="text-olive-dark font-bold">USD 531K Año 1</div>
+      <a href="https://wilsonherrera77.github.io/MACI2/MACI2.html" target="_blank" class="module-card block">
+        <div class="module-num mb-4">02</div>
+        <h3 class="font-display text-xl text-smt-deep mb-3">Plataforma Soberana de Datos</h3>
+        <p class="text-sm text-grafito-light mb-6">Arquitectura · MVP · catálogo · APIs · CARE+FAIR</p>
+        <div class="pt-4 border-t border-beige flex items-baseline justify-between">
+          <span class="font-mono text-xl font-bold text-olive-dark">USD 531K</span>
+          <span class="text-xs uppercase tracking-widest text-grafito-light">año 1</span>
+        </div>
       </a>
-      <a href="https://wilsonherrera77.github.io/MACI3/MACI3.html" target="_blank" class="card-modulo block">
-        <div class="text-olive font-black text-2xl mb-2">M3</div>
-        <h3 class="font-bold text-lg mb-2">Monitoreo Comunitario Biocultural</h3>
-        <p class="text-sm text-grafito mb-3">Inventarios · QA/QC · devolución resultados</p>
-        <div class="text-olive-dark font-bold">USD 7.09M Año 1</div>
+      <a href="https://wilsonherrera77.github.io/MACI3/MACI3.html" target="_blank" class="module-card block">
+        <div class="module-num mb-4">03</div>
+        <h3 class="font-display text-xl text-smt-deep mb-3">Monitoreo Comunitario Biocultural</h3>
+        <p class="text-sm text-grafito-light mb-6">Inventarios · QA/QC · devolución a comunidades</p>
+        <div class="pt-4 border-t border-beige flex items-baseline justify-between">
+          <span class="font-mono text-xl font-bold text-olive-dark">USD 7.09M</span>
+          <span class="text-xs uppercase tracking-widest text-grafito-light">año 1</span>
+        </div>
       </a>
-      <a href="https://wilsonherrera77.github.io/MACI4/MACI4.html" target="_blank" class="card-modulo block">
-        <div class="text-olive font-black text-2xl mb-2">M4</div>
-        <h3 class="font-bold text-lg mb-2">Genética y Biobanco</h3>
-        <p class="text-sm text-grafito mb-3">Pilotos secuenciación · biobanco · cadena custodia indígena</p>
-        <div class="text-olive-dark font-bold">USD 1.27M Año 1</div>
+      <a href="https://wilsonherrera77.github.io/MACI4/MACI4.html" target="_blank" class="module-card block">
+        <div class="module-num mb-4">04</div>
+        <h3 class="font-display text-xl text-smt-deep mb-3">Genética y Biobanco</h3>
+        <p class="text-sm text-grafito-light mb-6">Pilotos secuenciación · biobanco · cadena custodia</p>
+        <div class="pt-4 border-t border-beige flex items-baseline justify-between">
+          <span class="font-mono text-xl font-bold text-olive-dark">USD 1.27M</span>
+          <span class="text-xs uppercase tracking-widest text-grafito-light">año 1</span>
+        </div>
       </a>
-      <a href="https://wilsonherrera77.github.io/MACI5/MACI5.html" target="_blank" class="card-modulo block">
-        <div class="text-olive font-black text-2xl mb-2">M5</div>
-        <h3 class="font-bold text-lg mb-2">Bioeconomía y Sostenibilidad</h3>
-        <p class="text-sm text-grafito mb-3">Incubación bionegocios · blended finance · ABS Nagoya</p>
-        <div class="text-olive-dark font-bold">USD 2.46M Año 1</div>
+      <a href="https://wilsonherrera77.github.io/MACI5/MACI5.html" target="_blank" class="module-card block">
+        <div class="module-num mb-4">05</div>
+        <h3 class="font-display text-xl text-smt-deep mb-3">Bioeconomía y Sostenibilidad</h3>
+        <p class="text-sm text-grafito-light mb-6">Incubación · blended finance · ABS Nagoya</p>
+        <div class="pt-4 border-t border-beige flex items-baseline justify-between">
+          <span class="font-mono text-xl font-bold text-olive-dark">USD 2.46M</span>
+          <span class="text-xs uppercase tracking-widest text-grafito-light">año 1</span>
+        </div>
       </a>
-      <div class="card-modulo bg-grafito text-white">
-        <div class="text-yellow-200 font-black text-2xl mb-2">+10%</div>
-        <h3 class="font-bold text-lg mb-2">Overhead institucional</h3>
-        <p class="text-sm mb-3">Gestión + auditorías + comunicaciones</p>
-        <div class="font-bold">USD 1.16M Año 1</div>
+      <div class="module-card block" style="border-top-color:var(--gold);background:var(--smt-deep);color:white;">
+        <div class="module-num mb-4" style="color:var(--gold);opacity:0.95">+10%</div>
+        <h3 class="font-display text-xl mb-3" style="color:var(--gold-soft)">Overhead institucional</h3>
+        <p class="text-sm text-white/70 mb-6">Gestión + auditorías + comunicaciones</p>
+        <div class="pt-4 border-t border-white/20 flex items-baseline justify-between">
+          <span class="font-mono text-xl font-bold text-gold-soft">USD 1.16M</span>
+          <span class="text-xs uppercase tracking-widest text-white/60">año 1</span>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- MAPA COLOMBIA · 5 MACRORREGIONES -->
-<section class="py-16 bg-grafito text-white">
-  <div class="max-w-6xl mx-auto px-6">
-    <h2 class="text-3xl font-bold text-yellow-200 mb-3" data-i18n="mapa_title">5 Macrorregiones ONIC · Evidencia Verificable</h2>
-    <p class="text-beige-light mb-6 max-w-3xl" data-i18n="mapa_lead">ONIC representa 102 pueblos indígenas en toda Colombia · no solo Amazonía. Cada región tiene casos georreferenciados verificables internacionalmente.</p>
-    <div id="map" class="mb-6"></div>
-    <div class="grid md:grid-cols-2 gap-4 text-sm">
-      <div class="bg-olive-dark p-4"><strong class="text-yellow-200">Amazonía:</strong> Selva de Matavén · ACATISEMA · Verra Registry ID 1566 · VCS+CCB · fuente: SMT-ONIC + Verra Registry</div>
-      <div class="bg-olive-dark p-4"><strong class="text-yellow-200">Orinoquía:</strong> Cumaribo · Catálogo Plantas Útiles 5.690 especies georef.</div>
-      <div class="bg-olive-dark p-4"><strong class="text-yellow-200">Andes:</strong> Pueblo U'wa · Sierra Nevada del Cocuy · Sentencia SU-039/1997</div>
-      <div class="bg-olive-dark p-4"><strong class="text-yellow-200">Caribe-Sierra:</strong> 4 pueblos Sierra Nevada Santa Marta · Línea Negra</div>
-      <div class="bg-olive-dark p-4 md:col-span-2"><strong class="text-yellow-200">Pacífico:</strong> Chocó · Embera Dóbida y Katío · sistemas ancestrales pesca + noní</div>
+<!-- ============== MAPA 5 MACRORREGIONES ============== -->
+<section class="py-24 bg-beige-cream">
+  <div class="max-w-7xl mx-auto px-6 lg:px-12">
+    <div class="grid lg:grid-cols-12 gap-12 mb-12">
+      <div class="lg:col-span-5">
+        <div class="flex items-center gap-3 mb-6">
+          <span class="editorial-rule"></span>
+          <p class="eyebrow text-olive-dark">cartografía territorial</p>
+        </div>
+        <h2 class="section-headline text-4xl lg:text-5xl text-smt-deep mb-6" data-i18n="mapa_title">5 Macrorregiones ONIC · Evidencia Verificable</h2>
+        <p class="text-base text-grafito-light leading-relaxed" data-i18n="mapa_lead">ONIC representa 102 pueblos indígenas en toda Colombia. No solo Amazonía · cada región tiene un caso operativo o jurisprudencia consolidada que MACI propone escalar.</p>
+      </div>
+      <div class="lg:col-span-7">
+        <div id="map"></div>
+      </div>
     </div>
-  </div>
-</section>
 
-<!-- CASO ESTRELLA MATAVÉN -->
-<section id="caso-estrella" class="py-16 bg-beige">
-  <div class="max-w-6xl mx-auto px-6">
-    <div class="flex items-center gap-3 mb-4">
-      <span class="text-3xl">⭐</span>
-      <h2 class="text-3xl font-bold text-grafito" data-i18n="mataven_title">Caso Estrella · Selva de Matavén</h2>
-    </div>
-    <p class="text-lg mb-8 max-w-4xl" data-i18n="mataven_lead">El único proyecto REDD+ en Colombia con certificación VCS+CCB y cadena de custodia 100% indígena. Operado por ACATISEMA (Asociación de Cabildos y Autoridades Tradicionales Indígenas de la Selva de Matavén) en el departamento del Vichada · Orinoquía colombiana.</p>
-    <div class="grid md:grid-cols-3 gap-6">
-      <div class="bg-white p-6 border-t-4 border-olive">
-        <div class="text-xs uppercase tracking-wider text-olive">Verra Registry</div>
-        <div class="text-3xl font-black text-grafito my-2">ID 1566</div>
-        <div class="text-sm">Reportes monitoreo verificados 2013-2019</div>
+    <div class="grid md:grid-cols-2 lg:grid-cols-5 gap-3">
+      <div class="region-cell featured">
+        <p class="eyebrow text-onic-red mb-2">Amazonía</p>
+        <div class="font-display text-lg text-smt-deep font-bold leading-tight">Selva de Matavén</div>
+        <p class="text-xs text-grafito-light mt-2">ACATISEMA · Verra 1566 · VCS+CCB · 1.85M ha</p>
       </div>
-      <div class="bg-white p-6 border-t-4 border-olive">
-        <div class="text-xs uppercase tracking-wider text-olive">Cobertura</div>
-        <div class="text-3xl font-black text-grafito my-2">~1.85M ha</div>
-        <div class="text-sm">Conservadas con gobernanza indígena</div>
+      <div class="region-cell">
+        <p class="eyebrow text-olive mb-2">Orinoquía</p>
+        <div class="font-display text-lg text-smt-deep font-bold leading-tight">Cumaribo + Catálogo</div>
+        <p class="text-xs text-grafito-light mt-2">5.690 especies útiles · Kew + GBIF</p>
       </div>
-      <div class="bg-white p-6 border-t-4 border-olive">
-        <div class="text-xs uppercase tracking-wider text-olive">Pueblos</div>
-        <div class="text-3xl font-black text-grafito my-2">5 etnias custodias</div>
-        <div class="text-sm">Sikuani · Piaroa · Piapoco · Puinave · Curripaco</div>
+      <div class="region-cell featured">
+        <p class="eyebrow text-onic-red mb-2">Andes</p>
+        <div class="font-display text-lg text-smt-deep font-bold leading-tight">U'wa · Sierra Cocuy</div>
+        <p class="text-xs text-grafito-light mt-2">Sentencia SU-039/1997 fundacional</p>
       </div>
-    </div>
-    <div class="mt-6 bg-white p-6">
-      <h3 class="font-bold text-olive-dark mb-2" data-i18n="mataven_what_proves">Lo que prueba Matavén para Brasilia:</h3>
-      <ul class="space-y-2 text-grafito list-disc list-inside">
-        <li data-i18n="mataven_proof_1">El mecanismo fiduciario directo a organizaciones indígenas funciona en la práctica (ACATISEMA opera créditos VCS verificados desde 2013).</li>
-        <li data-i18n="mataven_proof_2">La cadena de custodia indígena es auditable internacionalmente (VCS+CCB con doble verificación 2017+2019).</li>
-        <li data-i18n="mataven_proof_3">El modelo es replicable a las otras 4 macrorregiones ONIC con MACI Módulos 3+4+5.</li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<!-- CATÁLOGO PLANTAS ÚTILES -->
-<section class="py-16">
-  <div class="max-w-6xl mx-auto px-6">
-    <div class="flex items-center gap-3 mb-4">
-      <span class="text-3xl">🌿</span>
-      <h2 class="text-3xl font-bold text-olive-dark" data-i18n="plantas_title">Catálogo Plantas Útiles × Resguardos 2024</h2>
-    </div>
-    <p class="text-lg mb-8 max-w-4xl" data-i18n="plantas_lead">Base científica con aval internacional (Kew Gardens · GBIF) cruzada con resguardos indígenas colombianos. Transversal a las 5 macrorregiones · evidencia directa para MACI M3 Monitoreo + M4 Genética + M5 Bioeconomía.</p>
-    <div class="grid md:grid-cols-4 gap-4">
-      <div class="bg-olive text-white p-6 text-center">
-        <div class="text-4xl font-black">5.690</div>
-        <div class="text-sm" data-i18n="plantas_stat_1">especies únicas</div>
+      <div class="region-cell">
+        <p class="eyebrow text-olive mb-2">Caribe · Sierra</p>
+        <div class="font-display text-lg text-smt-deep font-bold leading-tight">Línea Negra</div>
+        <p class="text-xs text-grafito-light mt-2">4 pueblos · Kogui · Wiwa · Arhuaco · Kankuamo</p>
       </div>
-      <div class="bg-grafito text-white p-6 text-center">
-        <div class="text-4xl font-black text-yellow-200">327K+</div>
-        <div class="text-sm" data-i18n="plantas_stat_2">registros georef.</div>
-      </div>
-      <div class="bg-olive text-white p-6 text-center">
-        <div class="text-4xl font-black">Kew</div>
-        <div class="text-sm" data-i18n="plantas_stat_3">aval científico</div>
-      </div>
-      <div class="bg-grafito text-white p-6 text-center">
-        <div class="text-4xl font-black text-yellow-200">GBIF</div>
-        <div class="text-sm" data-i18n="plantas_stat_4">datos reproducibles</div>
+      <div class="region-cell">
+        <p class="eyebrow text-olive mb-2">Pacífico</p>
+        <div class="font-display text-lg text-smt-deep font-bold leading-tight">Chocó Biogeográfico</div>
+        <p class="text-xs text-grafito-light mt-2">Embera Dóbida y Katío · noní</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- COOPERACION INSTITUCIONAL · genérico · sin nombres ni montos (sanitizado por directiva Wilson 2026-05-26) -->
-<section id="cooperacion" class="py-16 bg-beige-light">
-  <div class="max-w-6xl mx-auto px-6">
-    <h2 class="text-3xl font-bold text-olive-dark mb-3" data-i18n="cooperacion_title">Cooperación Internacional</h2>
-    <p class="text-grafito mb-6 max-w-3xl" data-i18n="cooperacion_lead">ONIC mantiene diálogo activo con cooperación internacional alineada con los mandatos del XI Congreso "Pacto para Volver al Origen". El pipeline operativo se gestiona bajo acuerdos bilaterales · información detallada disponible solo bajo NDA institucional.</p>
-    <div class="grid md:grid-cols-3 gap-4 mt-6">
-      <div class="bg-white p-5 border-l-4 border-olive">
-        <div class="font-bold text-olive-dark">Panel 4 RRI Brasília</div>
-        <div class="text-xs text-grafito mt-1" data-i18n="cooperacion_p4">Financiando economías comunitarias · desbloqueando flujos financieros</div>
+<!-- ============== CASO ESTRELLA · MATAVÉN ============== -->
+<section id="caso-estrella" class="py-24 bg-paper">
+  <div class="max-w-7xl mx-auto px-6 lg:px-12">
+    <div class="grid lg:grid-cols-12 gap-12 items-start">
+      <div class="lg:col-span-5">
+        <div class="flex items-center gap-3 mb-6">
+          <span class="editorial-rule" style="background:var(--gold)"></span>
+          <p class="eyebrow text-gold">caso estrella</p>
+        </div>
+        <h2 class="section-headline text-4xl lg:text-6xl text-smt-deep mb-4" data-i18n="mataven_title">Selva de Matavén</h2>
+        <p class="font-display-soft italic text-xl text-olive-dark mb-8">El bosque que custodian cinco pueblos · el mecanismo fiduciario que ya funciona</p>
+        <p class="text-base text-grafito-light leading-relaxed mb-8" data-i18n="mataven_lead">El único proyecto REDD+ en Colombia con certificación VCS+CCB y cadena de custodia 100% indígena. Operado por ACATISEMA · 10 años · 1.85 millones de hectáreas · auditado internacionalmente.</p>
+
+        <div class="space-y-2 mb-8">
+          <div class="flex items-center gap-3">
+            <span class="font-mono text-xs bg-smt-deep text-gold px-3 py-1.5 font-bold tracking-widest">1566</span>
+            <span class="text-sm">Verra Registry ID</span>
+          </div>
+          <div class="flex items-center gap-3">
+            <span class="font-mono text-xs bg-smt-deep text-gold px-3 py-1.5 font-bold tracking-widest">VCS + CCB</span>
+            <span class="text-sm">Doble certificación independiente</span>
+          </div>
+          <div class="flex items-center gap-3">
+            <span class="font-mono text-xs bg-smt-deep text-gold px-3 py-1.5 font-bold tracking-widest">10 AÑOS</span>
+            <span class="text-sm">Operación verificada 2013-2042</span>
+          </div>
+        </div>
+
+        <a href="dossiers/mataven.pdf" class="btn-primary btn-arrow">Descargar dossier</a>
       </div>
-      <div class="bg-white p-5 border-l-4 border-olive">
-        <div class="font-bold text-olive-dark">Panel 2 + Panel 6</div>
-        <div class="text-xs text-grafito mt-1" data-i18n="cooperacion_p2">Territorios · medios de vida · derechos · compromisos globales</div>
-      </div>
-      <div class="bg-white p-5 border-l-4 border-gold">
-        <div class="font-bold text-olive-dark" data-i18n="cooperacion_contact_title">Bilateral · contacto</div>
-        <div class="text-xs text-grafito mt-1" data-i18n="cooperacion_contact">poblacion@onic.org.co · WhatsApp +57 311 220 1903</div>
+
+      <div class="lg:col-span-7">
+        <div class="bg-smt-deep text-white p-10 lg:p-12 relative overflow-hidden">
+          <div class="absolute top-0 right-0 w-48 h-48 border-[16px] border-gold/10 rounded-full -mr-24 -mt-24"></div>
+          <p class="eyebrow text-gold mb-6" data-i18n="mataven_what_proves">Lo que prueba Matavén para Brasilia</p>
+          <div class="space-y-6">
+            <div class="flex gap-5 items-start">
+              <div class="kpi-block text-5xl text-gold">01</div>
+              <p class="text-lg leading-snug pt-2" data-i18n="mataven_proof_1">El mecanismo fiduciario directo a organizaciones indígenas nacionales funciona en la práctica.</p>
+            </div>
+            <div class="editorial-rule-long bg-white/15"></div>
+            <div class="flex gap-5 items-start">
+              <div class="kpi-block text-5xl text-gold">02</div>
+              <p class="text-lg leading-snug pt-2" data-i18n="mataven_proof_2">La cadena de custodia indígena es auditable internacionalmente.</p>
+            </div>
+            <div class="editorial-rule-long bg-white/15"></div>
+            <div class="flex gap-5 items-start">
+              <div class="kpi-block text-5xl text-gold">03</div>
+              <p class="text-lg leading-snug pt-2" data-i18n="mataven_proof_3">El modelo es replicable a las otras 4 macrorregiones ONIC.</p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- DOWNLOADABLES -->
-<section class="py-16 bg-grafito text-white">
-  <div class="max-w-6xl mx-auto px-6">
-    <h2 class="text-3xl font-bold text-yellow-200 mb-3" data-i18n="downloads_title">Descargables Públicos</h2>
-    <p class="text-beige-light mb-8" data-i18n="downloads_lead">Todos los archivos están disponibles vía QR específico (físico de la tarjeta o digital en celular Wilson).</p>
-    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
-      <a href="dossiers/mataven.pdf" class="bg-olive p-4 hover:bg-olive-dark transition">
-        <div class="font-bold">Dossier Matavén</div>
-        <div class="text-xs text-yellow-100 mt-1">VCS+CCB · Verra 1566</div>
+<!-- ============== PLANTAS UTILES ============== -->
+<section class="py-24 bg-beige-cream telar-bg">
+  <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-12">
+    <div class="max-w-3xl mb-12">
+      <div class="flex items-center gap-3 mb-6">
+        <span class="editorial-rule"></span>
+        <p class="eyebrow text-olive-dark">evidencia científica</p>
+      </div>
+      <h2 class="section-headline text-4xl lg:text-5xl text-smt-deep mb-6" data-i18n="plantas_title">Catálogo Plantas Útiles × Resguardos 2024</h2>
+      <p class="text-lg text-grafito-light leading-relaxed" data-i18n="plantas_lead">Base científica con aval internacional (Kew Gardens · GBIF) cruzada con resguardos indígenas colombianos. Conocimiento tradicional + ciencia formal.</p>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
+      <div class="bg-white p-8 border-t-4 border-onic-red">
+        <div class="kpi-block text-5xl text-smt-deep mb-3">5.690</div>
+        <p class="eyebrow text-grafito-light" data-i18n="plantas_stat_1">especies únicas</p>
+      </div>
+      <div class="bg-white p-8 border-t-4 border-olive">
+        <div class="kpi-block text-5xl text-smt-deep mb-3">327K<span class="text-2xl text-grafito-light">+</span></div>
+        <p class="eyebrow text-grafito-light" data-i18n="plantas_stat_2">registros georef.</p>
+      </div>
+      <div class="bg-white p-8 border-t-4 border-gold">
+        <div class="font-display text-xl text-smt-deep font-bold mt-2 mb-3 leading-tight">Kew + GBIF</div>
+        <p class="eyebrow text-grafito-light" data-i18n="plantas_stat_3">aval científico</p>
+      </div>
+      <div class="bg-white p-8 border-t-4 border-smt-deep">
+        <div class="kpi-block text-5xl text-smt-deep mb-3">100<span class="text-2xl">%</span></div>
+        <p class="eyebrow text-grafito-light" data-i18n="plantas_stat_4">datos reproducibles</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== COOPERACION INTERNACIONAL ============== -->
+<section id="cooperacion" class="py-24 bg-paper">
+  <div class="max-w-7xl mx-auto px-6 lg:px-12">
+    <div class="max-w-3xl mb-12">
+      <div class="flex items-center gap-3 mb-6">
+        <span class="editorial-rule"></span>
+        <p class="eyebrow text-onic-red" data-i18n="coop_eyebrow">diálogo institucional</p>
+      </div>
+      <h2 class="section-headline text-4xl lg:text-5xl text-smt-deep mb-6" data-i18n="cooperacion_title">Cooperación Internacional</h2>
+      <p class="text-lg text-grafito-light leading-relaxed" data-i18n="cooperacion_lead">ONIC mantiene diálogo activo con cooperación internacional alineada con los mandatos del XI Congreso "Pacto para Volver al Origen". El pipeline operativo se gestiona bajo acuerdos bilaterales · información detallada disponible solo bajo NDA institucional.</p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-5">
+      <div class="card-edit">
+        <p class="eyebrow text-olive mb-3">Panel 4</p>
+        <div class="font-display text-lg text-smt-deep font-bold mb-2">RRI Brasília</div>
+        <p class="text-sm text-grafito-light" data-i18n="cooperacion_p4">Financiando economías comunitarias · desbloqueando flujos financieros</p>
+      </div>
+      <div class="card-edit">
+        <p class="eyebrow text-olive mb-3">Panel 2 + Panel 6</p>
+        <div class="font-display text-lg text-smt-deep font-bold mb-2">Territorios y compromisos</div>
+        <p class="text-sm text-grafito-light" data-i18n="cooperacion_p2">Territorios · medios de vida · derechos · compromisos globales</p>
+      </div>
+      <div class="card-edit featured">
+        <p class="eyebrow text-gold mb-3" data-i18n="cooperacion_contact_title">Bilateral · contacto</p>
+        <div class="font-display text-lg text-smt-deep font-bold mb-2">Wilson Herrera</div>
+        <p class="text-sm text-grafito-light" data-i18n="cooperacion_contact">poblacion@onic.org.co · WhatsApp +57 311 220 1903</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== CROWDFUNDING SMT ============== -->
+<section class="py-24 bg-smt-deep text-white relative">
+  <div class="weave-overlay absolute inset-0 opacity-30"></div>
+  <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-12">
+    <div class="grid lg:grid-cols-12 gap-12 items-center">
+      <div class="lg:col-span-7">
+        <div class="flex items-center gap-3 mb-6">
+          <span class="editorial-rule"></span>
+          <p class="eyebrow text-gold" data-i18n="cf_eyebrow">iniciativas en curso</p>
+        </div>
+        <h2 class="section-headline text-4xl lg:text-5xl text-white mb-6" data-i18n="cf_title">Apoya iniciativas en curso</h2>
+        <p class="text-base text-white/80 leading-relaxed mb-8" data-i18n="cf_lead">Más allá del programa MACI (escala institucional), ONIC y el Sistema de Monitoreo Territorial (SMT) mantenemos un portal de <strong>iniciativas indígenas concretas buscando financiación directa</strong>: monitoreo comunitario, etnobotánica, sitios sagrados, semillas nativas, ecoturismo y conservación territorial. Aportes desde USD 100.</p>
+
+        <div class="grid sm:grid-cols-3 gap-4 mb-8">
+          <div class="bg-white/10 p-5 border-l-4 border-gold">
+            <div class="kpi-block text-4xl text-gold mb-2">27<span class="text-xl">+</span></div>
+            <p class="eyebrow text-white/70" data-i18n="cf_stat1">iniciativas activas</p>
+          </div>
+          <div class="bg-white/10 p-5 border-l-4 border-gold">
+            <div class="kpi-block text-4xl text-gold mb-2">$100<span class="text-xl">+</span></div>
+            <p class="eyebrow text-white/70" data-i18n="cf_stat2">ticket mínimo</p>
+          </div>
+          <div class="bg-white/10 p-5 border-l-4 border-gold">
+            <div class="kpi-block text-4xl text-gold mb-2">100<span class="text-xl">%</span></div>
+            <p class="eyebrow text-white/70" data-i18n="cf_stat3">gestión comunidad</p>
+          </div>
+        </div>
+
+        <a href="https://smt-onic.com/donation/projects/?category=44&utm_source=brasilia2026" target="_blank" rel="noopener" class="btn-primary btn-arrow">
+          <span data-i18n="cf_cta">Ver iniciativas en SMT-ONIC</span>
+        </a>
+      </div>
+
+      <div class="lg:col-span-5">
+        <div class="pull-quote text-white" style="color:white;border-color:var(--gold)">
+          Las 27+ iniciativas son <strong>complemento operativo</strong> de MACI: el programa institucional opera la escala estratégica · el portal de iniciativas opera la entrada de capital con tickets pequeños. Ambos bajo la misma gobernanza SMT-ONIC.
+          <footer class="mt-4 text-sm not-italic font-medium text-white/70" data-i18n="cf_note">— Política institucional SMT-ONIC</footer>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== DOWNLOADS ============== -->
+<section class="py-24 bg-paper">
+  <div class="max-w-7xl mx-auto px-6 lg:px-12">
+    <div class="max-w-3xl mb-12">
+      <div class="flex items-center gap-3 mb-6">
+        <span class="editorial-rule"></span>
+        <p class="eyebrow text-olive-dark" data-i18n="downloads_eyebrow">documentos institucionales</p>
+      </div>
+      <h2 class="section-headline text-4xl lg:text-5xl text-smt-deep mb-6" data-i18n="downloads_title">Descargables Públicos</h2>
+      <p class="text-base text-grafito-light leading-relaxed" data-i18n="downloads_lead">Todos los archivos están disponibles vía QR específico (físico en tarjeta o digital en celular Wilson).</p>
+    </div>
+
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
+      <a href="dossiers/mataven.pdf" class="bg-smt-deep text-white p-5 hover:bg-smt-deep-tint transition group">
+        <div class="text-xs eyebrow text-gold mb-2">REDD+</div>
+        <div class="font-display text-base font-bold leading-tight group-hover:text-gold transition">Dossier Matavén</div>
+        <p class="text-[11px] text-white/60 mt-1">VCS+CCB · Verra 1566</p>
       </a>
-      <a href="dossiers/plantas-utiles.pdf" class="bg-olive p-4 hover:bg-olive-dark transition">
-        <div class="font-bold">Dossier Plantas Útiles</div>
-        <div class="text-xs text-yellow-100 mt-1">5.690 especies × resguardos</div>
+      <a href="dossiers/plantas-utiles.pdf" class="bg-olive-dark text-white p-5 hover:bg-olive transition group">
+        <div class="text-xs eyebrow text-gold mb-2">Catálogo</div>
+        <div class="font-display text-base font-bold leading-tight">Plantas Útiles</div>
+        <p class="text-[11px] text-white/60 mt-1">5.690 especies × resguardos</p>
       </a>
-      <a href="dossiers/sierra-nevada-santa-marta.pdf" class="bg-olive p-4 hover:bg-olive-dark transition">
-        <div class="font-bold">Sierra Nevada Sta Marta</div>
-        <div class="text-xs text-yellow-100 mt-1">4 pueblos · Línea Negra</div>
+      <a href="dossiers/sierra-nevada-santa-marta.pdf" class="bg-onic-red text-white p-5 hover:opacity-90 transition group">
+        <div class="text-xs eyebrow text-gold mb-2">Caribe</div>
+        <div class="font-display text-base font-bold leading-tight">Sierra Nevada</div>
+        <p class="text-[11px] text-white/70 mt-1">4 pueblos · Línea Negra</p>
       </a>
-      <a href="dossiers/uwa-su039-cocuy.pdf" class="bg-olive p-4 hover:bg-olive-dark transition">
-        <div class="font-bold">U'wa SU-039/1997</div>
-        <div class="text-xs text-yellow-100 mt-1">Caso jurídico fundacional</div>
+      <a href="dossiers/uwa-su039-cocuy.pdf" class="bg-smt-deep text-white p-5 hover:bg-smt-deep-tint transition group">
+        <div class="text-xs eyebrow text-gold mb-2">Andes</div>
+        <div class="font-display text-base font-bold leading-tight">U'wa SU-039/1997</div>
+        <p class="text-[11px] text-white/60 mt-1">Caso jurídico fundacional</p>
       </a>
-      <a href="dossiers/mesquita-onic-conaq.pdf" class="bg-olive p-4 hover:bg-olive-dark transition">
-        <div class="font-bold">Brief Mesquita</div>
-        <div class="text-xs text-yellow-100 mt-1">PT/ES · ONIC-CONAQ</div>
+      <a href="dossiers/mesquita-onic-conaq.pdf" class="bg-olive-dark text-white p-5 hover:bg-olive transition group">
+        <div class="text-xs eyebrow text-gold mb-2">PT/ES</div>
+        <div class="font-display text-base font-bold leading-tight">Brief Mesquita</div>
+        <p class="text-[11px] text-white/60 mt-1">ONIC-CONAQ · viernes 29</p>
       </a>
-      <a href="one-pager/one_pager_ES.pdf" class="bg-olive p-4 hover:bg-olive-dark transition">
-        <div class="font-bold">One-pager ES</div>
-        <div class="text-xs text-yellow-100 mt-1">A4 · MACI + 5 regiones</div>
+      <a href="one-pager/one_pager_ES.pdf" class="bg-smt-deep text-white p-5 hover:bg-smt-deep-tint transition group">
+        <div class="text-xs eyebrow text-gold mb-2">ES</div>
+        <div class="font-display text-base font-bold leading-tight">One-pager</div>
+        <p class="text-[11px] text-white/60 mt-1">A4 · MACI + 5 regiones</p>
       </a>
-      <a href="one-pager/one_pager_EN.pdf" class="bg-olive p-4 hover:bg-olive-dark transition">
-        <div class="font-bold">One-pager EN</div>
-        <div class="text-xs text-yellow-100 mt-1">A4 · MACI + 5 regions</div>
+      <a href="one-pager/one_pager_EN.pdf" class="bg-smt-deep text-white p-5 hover:bg-smt-deep-tint transition group">
+        <div class="text-xs eyebrow text-gold mb-2">EN</div>
+        <div class="font-display text-base font-bold leading-tight">One-pager</div>
+        <p class="text-[11px] text-white/60 mt-1">A4 · MACI + 5 regions</p>
       </a>
-      <a href="wilson.vcf" class="bg-olive p-4 hover:bg-olive-dark transition">
-        <div class="font-bold">Wilson vCard</div>
-        <div class="text-xs text-yellow-100 mt-1">Importar contacto</div>
+      <a href="wilson.vcf" class="bg-gold text-smt-deep p-5 hover:bg-gold-soft transition group">
+        <div class="text-xs eyebrow text-smt-deep mb-2">vCard</div>
+        <div class="font-display text-base font-bold leading-tight">Wilson Herrera</div>
+        <p class="text-[11px] mt-1 opacity-80">Importar contacto</p>
       </a>
     </div>
   </div>
 </section>
 
-<!-- INICIATIVAS EN CURSO · CROWDFUNDING SMT-ONIC -->
-<section class="py-16" style="background:linear-gradient(180deg,#3d3d3d 0%,#5a6427 100%);color:white">
-  <div class="max-w-6xl mx-auto px-6">
-    <div class="flex items-center gap-3 mb-3">
-      <div class="w-12 h-1" style="background:#d4a017"></div>
-      <h2 class="text-3xl font-bold text-yellow-200" data-i18n="cf_title">Apoya iniciativas en curso</h2>
+<!-- ============== CTA CONTACTO ============== -->
+<section id="contacto" class="py-24 bg-olive-dark text-white">
+  <div class="max-w-5xl mx-auto px-6 lg:px-12 text-center">
+    <div class="flex justify-center mb-6">
+      <span class="editorial-rule" style="background:var(--gold)"></span>
     </div>
-    <p class="text-lg max-w-4xl mb-6 text-beige" data-i18n="cf_lead">Más allá del programa MACI USD 60-80M (escala institucional), ONIC y el Sistema de Monitoreo Territorial (SMT) mantenemos un portal de <strong>iniciativas indígenas concretas buscando financiación directa</strong>: monitoreo comunitario, etnobotánica, sitios sagrados, semillas nativas, ecoturismo y conservación territorial. Aportes desde USD 100. Cada proyecto es operado directamente por la comunidad o resguardo.</p>
-    <div class="grid md:grid-cols-3 gap-4 mb-8">
-      <div class="p-4" style="background:rgba(255,255,255,0.1);border-left:4px solid #d4a017">
-        <div class="text-3xl font-black text-yellow-200">27+</div>
-        <div class="text-sm uppercase tracking-wider mt-1" data-i18n="cf_stat1">Iniciativas activas</div>
-      </div>
-      <div class="p-4" style="background:rgba(255,255,255,0.1);border-left:4px solid #d4a017">
-        <div class="text-3xl font-black text-yellow-200">USD 100+</div>
-        <div class="text-sm uppercase tracking-wider mt-1" data-i18n="cf_stat2">Ticket mínimo · aporte directo</div>
-      </div>
-      <div class="p-4" style="background:rgba(255,255,255,0.1);border-left:4px solid #d4a017">
-        <div class="text-3xl font-black text-yellow-200">100%</div>
-        <div class="text-sm uppercase tracking-wider mt-1" data-i18n="cf_stat3">Gestión por comunidad</div>
-      </div>
-    </div>
-    <div class="text-center">
-      <a href="https://smt-onic.com/donation/projects/?category=44&utm_source=brasilia2026" target="_blank" rel="noopener" class="inline-block px-8 py-4 text-grafito font-bold uppercase tracking-wider transition" style="background:#d4a017">
-        <span data-i18n="cf_cta">Ver iniciativas en SMT-ONIC →</span>
-      </a>
-      <p class="text-xs text-beige mt-4 max-w-2xl mx-auto" data-i18n="cf_note">Las 27+ iniciativas son <strong>complemento operativo</strong> de MACI: el programa institucional opera la escala estratégica · el portal de iniciativas opera la entrada de capital con tickets pequeños. Ambos se articulan bajo la misma gobernanza SMT-ONIC.</p>
-    </div>
-  </div>
-</section>
+    <h2 class="section-headline text-4xl lg:text-5xl text-white mb-3" data-i18n="contact_title">Contactar Wilson Herrera Baltán</h2>
+    <p class="text-gold-soft font-display-soft italic text-lg mb-3">Coordinador · SMT-ONIC</p>
+    <p class="text-white/75 mb-12" data-i18n="contact_lead">Coordinador del Sistema de Monitoreo Territorial · ONIC · Bogotá, Colombia</p>
 
-<!-- CTA CONTACTO -->
-<section id="contacto" class="py-16 bg-olive text-white">
-  <div class="max-w-4xl mx-auto px-6 text-center">
-    <h2 class="text-3xl font-bold mb-4" data-i18n="contact_title">Contactar Wilson Herrera Baltán</h2>
-    <p class="text-yellow-100 mb-2">Coordinador · SMT-ONIC</p>
-    <p class="text-beige-light mb-8" data-i18n="contact_lead">Coordinador del Sistema de Monitoreo Territorial · ONIC · Bogotá, Colombia</p>
     <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-3 mb-8">
-      <a href="https://wa.me/573112201903" class="bg-grafito p-4 hover:bg-black transition block">
-        <div class="font-bold">WhatsApp</div>
-        <div class="text-xs">+57 311 220 1903</div>
+      <a href="https://wa.me/573112201903" class="bg-smt-deep p-6 hover:bg-grafito transition block group">
+        <div class="text-gold text-xs eyebrow mb-2">WhatsApp</div>
+        <div class="font-mono text-sm">+57 311 220 1903</div>
       </a>
-      <a href="mailto:poblacion@onic.org.co" class="bg-grafito p-4 hover:bg-black transition block">
-        <div class="font-bold">Email</div>
-        <div class="text-xs">poblacion@onic.org.co</div>
+      <a href="mailto:poblacion@onic.org.co" class="bg-smt-deep p-6 hover:bg-grafito transition block group">
+        <div class="text-gold text-xs eyebrow mb-2">Email</div>
+        <div class="font-mono text-xs">poblacion@onic.org.co</div>
       </a>
-      <a href="contact-brasilia.html" class="bg-grafito p-4 hover:bg-black transition block">
-        <div class="font-bold">Hub Móvil</div>
-        <div class="text-xs">vCard + descargas</div>
+      <a href="contact-brasilia.html" class="bg-smt-deep p-6 hover:bg-grafito transition block group">
+        <div class="text-gold text-xs eyebrow mb-2">Hub mobile</div>
+        <div class="font-display text-base font-bold">Contacto + Descargables</div>
       </a>
-      <a href="https://smt-onic.com" class="bg-grafito p-4 hover:bg-black transition block">
-        <div class="font-bold">SMT-ONIC</div>
-        <div class="text-xs">Sitio institucional</div>
+      <a href="tarjeta-en.html" class="bg-gold p-6 hover:bg-gold-soft text-smt-deep transition block group">
+        <div class="text-xs eyebrow mb-2">Business card</div>
+        <div class="font-display text-base font-bold">Tarjeta digital iPhone</div>
       </a>
     </div>
-    <p class="text-sm text-beige-light italic">Cifras 77% verificables · 23% asumidas (marcadas con asterisco) · honestidad ante el Consejo > apariencia de completitud</p>
+
+    <p class="font-display-soft italic text-xl text-gold-soft max-w-3xl mx-auto leading-snug">
+      "Volver al origen significa custodiar lo nuestro · pero también hablar con el mundo desde nuestra autoridad."
+    </p>
   </div>
 </section>
 
-<!-- FOOTER -->
-<footer class="py-8 bg-grafito text-beige-light text-center text-sm">
-  <div class="max-w-6xl mx-auto px-6">
-    <p>ONIC · Organización Nacional Indígena de Colombia · Sistema de Monitoreo Territorial</p>
-    <p class="mt-2">Mandato XI Congreso · Pacto para Volver al Origen · Cumbre RRI Brasilia 26-29 mayo 2026</p>
-    <p class="mt-4 text-xs opacity-60">Landing generada con Visual_Agentes V2.1 · LOCAL-FIRST · cero token API de pago</p>
+<!-- ============== FOOTER ============== -->
+<footer class="footer-band py-12">
+  <div class="max-w-7xl mx-auto px-6 lg:px-12 grid md:grid-cols-3 gap-8 items-center">
+    <div class="flex items-center gap-4">
+      <img src="assets/logo_ONIC.png" alt="ONIC" class="w-12 h-12 rounded-full">
+      <img src="assets/logo_SMT.png" alt="SMT" class="h-9" style="filter:brightness(0) invert(1);opacity:0.85">
+    </div>
+    <div class="text-center text-sm text-white/80">
+      <p class="font-display text-base text-gold mb-1">Organización Nacional Indígena de Colombia</p>
+      <p>Sistema de Monitoreo Territorial · Mandato XI Congreso</p>
+      <p class="text-xs text-white/50 mt-2 italic">Pacto para Volver al Origen · Cumbre RRI Brasília 26-29 mayo 2026</p>
+    </div>
+    <div class="text-right text-xs text-white/50">
+      <p>Landing institucional v2026.05</p>
+      <p class="mt-1">Visual_Agentes V2.1 · LOCAL-FIRST</p>
+    </div>
   </div>
 </footer>
 
-<!-- LEAFLET MAP + i18n -->
 <script>
+// Leaflet map
 const map = L.map('map').setView([4.5, -73.5], 5);
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
   attribution: '© OpenStreetMap',
@@ -498,11 +1103,11 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 }).addTo(map);
 
 const regiones = [
-  { coords: [3.7, -69.5], name: 'Amazonía · Selva de Matavén (ACATISEMA · Verra 1566)', color: '#7d8a3c' },
+  { coords: [3.7, -69.5], name: 'Amazonía · Selva de Matavén (ACATISEMA · Verra 1566)', color: '#d4a017' },
   { coords: [4.2, -70.5], name: 'Orinoquía · Cumaribo + Catálogo Plantas Útiles', color: '#7d8a3c' },
   { coords: [6.5, -72.5], name: 'Andes · Pueblo U\'wa · Sierra del Cocuy (SU-039/1997)', color: '#d4a017' },
   { coords: [10.8, -73.7], name: 'Caribe · Sierra Nevada Santa Marta (Línea Negra · 4 pueblos)', color: '#7d8a3c' },
-  { coords: [5.5, -77.0], name: 'Pacífico · Chocó (Embera Dóbida y Katío)', color: '#7d8a3c' }
+  { coords: [5.5, -77.0], name: 'Pacífico · Chocó (Embera Dóbida y Katío)', color: '#0a3f33' }
 ];
 regiones.forEach(r => {
   L.circleMarker(r.coords, { radius: 18, color: r.color, fillColor: r.color, fillOpacity: 0.7, weight: 3 })
@@ -512,145 +1117,211 @@ regiones.forEach(r => {
 // i18n
 const i18n = {
   es: {
-    hero_eyebrow: 'CUMBRE RRI BRASILIA · 26-29 MAYO 2026',
+    hero_eyebrow: 'Cumbre RRI Brasilia · 26-29 mayo 2026',
     hero_title: '¡Sé Parte del Cambio Hoy!',
     hero_subtitle: 'Pacto para Volver al Origen · XI Congreso ONIC',
-    hero_lead: 'Marco de Acción para Comunidades Indígenas · MACI · USD 60-80M / 5 años · 5 macrorregiones colombianas · evidencia certificada Verra+CCB',
+    hero_lead: 'Marco de Acción para Comunidades Indígenas · MACI · USD 60-80M / 5 años · 5 macrorregiones colombianas · evidencia certificada Verra+CCB · custodios de 31.3% del territorio nacional.',
     cta_donors: 'Cooperación',
     cta_contact: 'Contacto Wilson',
     maci_60_title: 'MACI en 60 segundos',
-    maci_60_lead: 'El Marco de Acción para Comunidades Indígenas (MACI) articula los mandatos del XI Congreso ONIC en 5 módulos operativos sobre soberanía de datos, monitoreo biocultural, banco genético y bioeconomía propia.',
+    maci_60_lead: 'El Marco de Acción para Comunidades Indígenas articula los mandatos del XI Congreso ONIC en 5 módulos operativos sobre soberanía de datos, monitoreo biocultural, banco genético y bioeconomía propia. Vehículo bancable único para activar pipeline 2026-2030.',
     stat_ha: 'hectáreas Matavén',
     stat_especies: 'especies útiles geo',
-    stat_regiones: 'macrorregiones ONIC',
+    stat_ha_total: 'ha NO amazónicas',
     stat_5anos: '5 años · MACI',
+    eco_title: 'hectáreas en ecosistemas NO amazónicos',
+    eco_lead: 'Los pueblos indígenas de Colombia custodiamos cerca de 18 millones de hectáreas tituladas distribuidas en cinco ecosistemas estratégicos del planeta. No solo Amazonía · también páramos andinos, Chocó biogeográfico, sabanas de Orinoquía y desiertos del Caribe.',
+    mandate_title: 'Continuidad de mandato político',
+    mandate_lead: 'MACI no es propuesta nueva: implementa operativamente lo que el movimiento indígena colombiano ya estableció en la Declaración de Sabios y Sabias COP16 (Centro Java Liviana · Pueblo Muysca · octubre 2024) y las recomendaciones de la Cumbre Mundial TRÜA al OS8j del Convenio de Diversidad Biológica.',
+    econ_title: 'Economías propias funcionales · arquitectura financiera indígena en formulación',
+    econ_lead: 'En cumplimiento del mandato XI Congreso ONIC y los lineamientos de la Mesa Permanente de Concertación (Decreto 1088/1993), ONIC participa en la formulación de un mecanismo financiero dedicado a pueblos indígenas que combina fondo de inversión, asociación de autoridades y cooperativa financiera comunitaria. El detalle institucional se comparte en bilaterales con donantes invitados.',
+    territorio_eyebrow: 'Marco territorial nacional',
+    territorio_title: 'Gobernanza colectiva: 37.7% del territorio nacional',
+    territorio_lead: 'Más de 1.277 territorios indígenas, afrodescendientes y campesinos formalizados en Colombia. Fuente ANT 2025-2026 con actualización incremental enero-mayo 2026 (+648.000 ha).',
     modulos_title: '5 Módulos MACI · Año 1: USD 12.79M',
-    modulos_lead: 'Cada módulo es un perfil de proyecto independiente · todos integrados bajo CREA.',
+    modulos_lead: 'Cada módulo es un perfil de proyecto independiente con presupuesto auditable y donantes mapeados. Todos integrados bajo CREA (Control · Responsabilidad · Ética · Aprovechamiento).',
     mapa_title: '5 Macrorregiones ONIC · Evidencia Verificable',
-    mapa_lead: 'ONIC representa 102 pueblos indígenas en toda Colombia · no solo Amazonía.',
-    mataven_title: 'Caso Estrella · Selva de Matavén',
-    mataven_lead: 'El único proyecto REDD+ en Colombia con certificación VCS+CCB y cadena de custodia 100% indígena.',
-    mataven_what_proves: 'Lo que prueba Matavén para Brasilia:',
-    mataven_proof_1: 'El mecanismo fiduciario directo a organizaciones indígenas funciona en la práctica.',
+    mapa_lead: 'ONIC representa 102 pueblos indígenas en toda Colombia. No solo Amazonía · cada región tiene un caso operativo o jurisprudencia consolidada que MACI propone escalar.',
+    mataven_title: 'Selva de Matavén',
+    mataven_lead: 'El único proyecto REDD+ en Colombia con certificación VCS+CCB y cadena de custodia 100% indígena. Operado por ACATISEMA · 10 años · 1.85 millones de hectáreas · auditado internacionalmente.',
+    mataven_what_proves: 'Lo que prueba Matavén para Brasilia',
+    mataven_proof_1: 'El mecanismo fiduciario directo a organizaciones indígenas nacionales funciona en la práctica.',
     mataven_proof_2: 'La cadena de custodia indígena es auditable internacionalmente.',
     mataven_proof_3: 'El modelo es replicable a las otras 4 macrorregiones ONIC.',
     plantas_title: 'Catálogo Plantas Útiles × Resguardos 2024',
-    plantas_lead: 'Base científica con aval internacional (Kew Gardens · GBIF) cruzada con resguardos indígenas colombianos.',
+    plantas_lead: 'Base científica con aval internacional (Kew Gardens · GBIF) cruzada con resguardos indígenas colombianos. Conocimiento tradicional + ciencia formal.',
     plantas_stat_1: 'especies únicas',
     plantas_stat_2: 'registros georef.',
     plantas_stat_3: 'aval científico',
     plantas_stat_4: 'datos reproducibles',
+    coop_eyebrow: 'diálogo institucional',
     cooperacion_title: 'Cooperación Internacional',
-    cooperacion_lead: 'ONIC mantiene diálogo activo con cooperación internacional alineada con los mandatos del XI Congreso. Pipeline operativo bajo NDA institucional.',
+    cooperacion_lead: 'ONIC mantiene diálogo activo con cooperación internacional alineada con los mandatos del XI Congreso "Pacto para Volver al Origen". El pipeline operativo se gestiona bajo acuerdos bilaterales · información detallada disponible solo bajo NDA institucional.',
     cooperacion_p4: 'Financiando economías comunitarias · desbloqueando flujos financieros',
     cooperacion_p2: 'Territorios · medios de vida · derechos · compromisos globales',
     cooperacion_contact_title: 'Bilateral · contacto',
     cooperacion_contact: 'poblacion@onic.org.co · WhatsApp +57 311 220 1903',
+    cf_eyebrow: 'iniciativas en curso',
+    cf_title: 'Apoya iniciativas en curso',
+    cf_lead: 'Más allá del programa MACI (escala institucional), ONIC y el Sistema de Monitoreo Territorial (SMT) mantenemos un portal de iniciativas indígenas concretas buscando financiación directa: monitoreo comunitario, etnobotánica, sitios sagrados, semillas nativas, ecoturismo y conservación territorial. Aportes desde USD 100.',
+    cf_stat1: 'iniciativas activas',
+    cf_stat2: 'ticket mínimo',
+    cf_stat3: 'gestión comunidad',
+    cf_cta: 'Ver iniciativas en SMT-ONIC',
+    cf_note: 'Política institucional SMT-ONIC',
+    downloads_eyebrow: 'documentos institucionales',
     downloads_title: 'Descargables Públicos',
-    downloads_lead: 'Todos los archivos están disponibles vía QR específico.',
+    downloads_lead: 'Todos los archivos están disponibles vía QR específico (físico en tarjeta o digital en celular Wilson).',
     contact_title: 'Contactar Wilson Herrera Baltán',
     contact_lead: 'Coordinador del Sistema de Monitoreo Territorial · ONIC · Bogotá, Colombia'
   },
   en: {
-    hero_eyebrow: 'RRI BRASILIA SUMMIT · MAY 26-29, 2026',
-    hero_title: 'Be Part of the Change Today!',
+    hero_eyebrow: 'RRI Brasilia Summit · May 26-29, 2026',
+    hero_title: 'Be Part of the Change Today',
     hero_subtitle: 'Pact to Return to Origin · ONIC XI Congress',
-    hero_lead: 'Framework for Action with Indigenous Communities · MACI · USD 60-80M / 5 years · 5 Colombian macro-regions · Verra+CCB certified evidence',
+    hero_lead: 'Framework for Action with Indigenous Communities · MACI · USD 60-80M / 5 years · 5 Colombian macro-regions · Verra+CCB certified evidence · custodians of 31.3% of national territory.',
     cta_donors: 'Cooperation',
     cta_contact: 'Contact Wilson',
     maci_60_title: 'MACI in 60 seconds',
-    maci_60_lead: 'The Framework for Action with Indigenous Communities (MACI) articulates ONIC XI Congress mandates in 5 operational modules on data sovereignty, biocultural monitoring, gene bank and Indigenous-led bioeconomy.',
+    maci_60_lead: 'The Framework for Action with Indigenous Communities articulates ONIC XI Congress mandates in 5 operational modules on data sovereignty, biocultural monitoring, gene bank and Indigenous-led bioeconomy. Single bankable vehicle to activate the 2026-2030 pipeline.',
     stat_ha: 'Matavén hectares',
     stat_especies: 'useful geo-species',
-    stat_regiones: 'ONIC macro-regions',
+    stat_ha_total: 'ha NON-Amazonian',
     stat_5anos: '5 years · MACI',
+    eco_title: 'hectares in NON-Amazonian ecosystems',
+    eco_lead: 'Indigenous peoples in Colombia steward approximately 18 million titled hectares distributed across five strategic ecosystems. Not only Amazon · also Andean páramos, Chocó biogeographic hotspot, Orinoco savannas and Caribbean drylands.',
+    mandate_title: 'Continuity of political mandate',
+    mandate_lead: 'MACI is not a new proposal: it operationally implements what the Colombian Indigenous movement already established in the Declaration of Wise Men and Wise Women COP16 (Centro Java Liviana · Muysca People · October 2024) and the recommendations of the Global TRÜA Summit on Article 8(j) of the Convention on Biological Diversity.',
+    econ_title: 'Functional Indigenous economies · financial architecture in formulation',
+    econ_lead: 'In compliance with the XI Congress mandate and the Permanent Concertation Roundtable (Decree 1088/1993), ONIC participates in formulating a dedicated financial mechanism for Indigenous peoples combining investment fund, association of authorities and community financial cooperative. Institutional details shared in bilaterals with invited donors.',
+    territorio_eyebrow: 'National territorial framework',
+    territorio_title: 'Collective governance: 37.7% of national territory',
+    territorio_lead: 'Over 1,277 indigenous, Afro-descendant and peasant collective territories formalized in Colombia. Source: ANT 2025-2026 with incremental update Jan-May 2026 (+648,000 ha).',
     modulos_title: '5 MACI Modules · Year 1: USD 12.79M',
-    modulos_lead: 'Each module is an independent project profile · all integrated under CREA.',
+    modulos_lead: 'Each module is an independent project profile with auditable budget and mapped donors. All integrated under CREA (Control · Responsibility · Ethics · Use).',
     mapa_title: '5 ONIC Macro-regions · Verifiable Evidence',
-    mapa_lead: 'ONIC represents 102 Indigenous peoples across Colombia · not only Amazon.',
-    mataven_title: 'Star Case · Selva de Matavén',
-    mataven_lead: 'Colombia\'s only REDD+ project with VCS+CCB certification and 100% Indigenous custody chain.',
-    mataven_what_proves: 'What Matavén proves for Brasilia:',
+    mapa_lead: 'ONIC represents 102 Indigenous peoples across Colombia. Not only Amazon · each region has an operational case or consolidated jurisprudence that MACI proposes to scale.',
+    mataven_title: 'Selva de Matavén',
+    mataven_lead: "Colombia's only REDD+ project with VCS+CCB certification and 100% Indigenous custody chain. Operated by ACATISEMA · 10 years · 1.85 million hectares · internationally audited.",
+    mataven_what_proves: 'What Matavén proves for Brasília',
     mataven_proof_1: 'Direct fiduciary mechanism to Indigenous national organizations works in practice.',
     mataven_proof_2: 'Indigenous custody chain is internationally auditable.',
-    mataven_proof_3: 'Model is replicable to the other 4 ONIC macro-regions.',
+    mataven_proof_3: 'The model is replicable to the other 4 ONIC macro-regions.',
     plantas_title: 'Useful Plants × Indigenous Lands Catalogue 2024',
-    plantas_lead: 'Internationally backed scientific base (Kew Gardens · GBIF) cross-tabulated with Colombian Indigenous lands.',
+    plantas_lead: 'Internationally backed scientific base (Kew Gardens · GBIF) cross-tabulated with Colombian Indigenous lands. Traditional knowledge + formal science.',
     plantas_stat_1: 'unique species',
     plantas_stat_2: 'geo records',
     plantas_stat_3: 'scientific backing',
     plantas_stat_4: 'reproducible data',
+    coop_eyebrow: 'institutional dialogue',
     cooperacion_title: 'International Cooperation',
-    cooperacion_lead: 'ONIC engages in active dialogue with international cooperation aligned with the XI Congress mandates. Operational pipeline under institutional NDA.',
+    cooperacion_lead: 'ONIC engages in active dialogue with international cooperation aligned with the XI Congress mandates "Pact to Return to Origin". Operational pipeline managed under bilateral agreements · detailed information available only under institutional NDA.',
     cooperacion_p4: 'Financing community economies · unlocking financial flows',
     cooperacion_p2: 'Territories · livelihoods · rights · global commitments',
     cooperacion_contact_title: 'Bilateral · contact',
     cooperacion_contact: 'poblacion@onic.org.co · WhatsApp +57 311 220 1903',
+    cf_eyebrow: 'ongoing initiatives',
+    cf_title: 'Support ongoing initiatives',
+    cf_lead: 'Beyond the MACI program (institutional scale), ONIC and the Territorial Monitoring System (SMT) maintain a portal of concrete Indigenous initiatives seeking direct funding: community monitoring, ethnobotany, sacred sites, native seeds, ecotourism and territorial conservation. Contributions from USD 100.',
+    cf_stat1: 'active initiatives',
+    cf_stat2: 'minimum ticket',
+    cf_stat3: 'community-managed',
+    cf_cta: 'View initiatives at SMT-ONIC',
+    cf_note: 'SMT-ONIC institutional policy',
+    downloads_eyebrow: 'institutional documents',
     downloads_title: 'Public Downloads',
-    downloads_lead: 'All files available via specific QR.',
+    downloads_lead: 'All files available via specific QR (physical on card or digital on Wilson phone).',
     contact_title: 'Contact Wilson Herrera Baltán',
     contact_lead: 'Coordinator · Territorial Monitoring System · ONIC · Bogotá, Colombia'
   },
   pt: {
-    hero_eyebrow: 'CÚPULA RRI BRASÍLIA · 26-29 MAIO 2026',
-    hero_title: 'Seja Parte da Mudança Hoje!',
+    hero_eyebrow: 'Cúpula RRI Brasília · 26-29 maio 2026',
+    hero_title: 'Seja Parte da Mudança Hoje',
     hero_subtitle: 'Pacto para Voltar à Origem · XI Congresso ONIC',
-    hero_lead: 'Marco de Ação para Comunidades Indígenas · MACI · USD 60-80M / 5 anos · 5 macrorregiões colombianas · evidência certificada Verra+CCB',
+    hero_lead: 'Marco de Ação para Comunidades Indígenas · MACI · USD 60-80M / 5 anos · 5 macrorregiões colombianas · evidência certificada Verra+CCB · custódios de 31.3% do território nacional.',
     cta_donors: 'Cooperação',
     cta_contact: 'Contato Wilson',
     maci_60_title: 'MACI em 60 segundos',
-    maci_60_lead: 'O Marco de Ação para Comunidades Indígenas (MACI) articula os mandatos do XI Congresso ONIC em 5 módulos operativos.',
+    maci_60_lead: 'O Marco de Ação para Comunidades Indígenas articula os mandatos do XI Congresso ONIC em 5 módulos operativos sobre soberania de dados, monitoramento biocultural, banco genético e bioeconomia própria.',
     stat_ha: 'hectares Matavén',
     stat_especies: 'espécies úteis geo',
-    stat_regiones: 'macrorregiões ONIC',
+    stat_ha_total: 'ha NÃO amazônicos',
     stat_5anos: '5 anos · MACI',
+    eco_title: 'hectares em ecossistemas NÃO amazônicos',
+    eco_lead: 'Os povos indígenas da Colômbia custodiamos cerca de 18 milhões de hectares titulados distribuídos em cinco ecossistemas estratégicos. Não só Amazônia · também páramos andinos, Chocó biogeográfico, savanas de Orinoquía e desertos do Caribe.',
+    mandate_title: 'Continuidade do mandato político',
+    mandate_lead: 'MACI implementa operativamente a Declaração de Sábios e Sábias COP16 (Centro Java Liviana · Povo Muysca · outubro 2024) e as recomendações da Cúpula Mundial TRÜA ao OS8j da Convenção sobre Diversidade Biológica.',
+    econ_title: 'Economias próprias funcionais · arquitetura financeira indígena em formulação',
+    econ_lead: 'Em cumprimento ao mandato XI Congresso e à Mesa Permanente de Concertação (Decreto 1088/1993), ONIC participa na formulação de mecanismo financeiro dedicado aos povos indígenas. Detalhe institucional em bilaterais com doadores convidados.',
+    territorio_eyebrow: 'Marco territorial nacional',
+    territorio_title: 'Governança coletiva: 37.7% do território nacional',
+    territorio_lead: 'Mais de 1.277 territórios indígenas, afrodescendentes e camponeses formalizados na Colômbia. Fonte ANT 2025-2026 com atualização incremental jan-mai 2026 (+648.000 ha).',
     modulos_title: '5 Módulos MACI · Ano 1: USD 12.79M',
     modulos_lead: 'Cada módulo é um perfil de projeto independente.',
     mapa_title: '5 Macrorregiões ONIC · Evidência Verificável',
-    mapa_lead: 'ONIC representa 102 povos indígenas em toda Colômbia.',
-    mataven_title: 'Caso Estrela · Selva de Matavén',
-    mataven_lead: 'O único projeto REDD+ na Colômbia com certificação VCS+CCB e cadeia de custódia 100% indígena.',
-    mataven_what_proves: 'O que Matavén prova para Brasília:',
+    mapa_lead: 'ONIC representa 102 povos indígenas em toda Colômbia. Não só Amazônia.',
+    mataven_title: 'Selva de Matavén',
+    mataven_lead: 'O único projeto REDD+ na Colômbia com certificação VCS+CCB e cadeia de custódia 100% indígena. Operado por ACATISEMA · 10 anos · 1.85 milhões de hectares.',
+    mataven_what_proves: 'O que Matavén prova para Brasília',
     mataven_proof_1: 'O mecanismo fiduciário direto a organizações indígenas funciona na prática.',
     mataven_proof_2: 'A cadeia de custódia indígena é auditável internacionalmente.',
     mataven_proof_3: 'O modelo é replicável às outras 4 macrorregiões ONIC.',
     plantas_title: 'Catálogo Plantas Úteis × Resguardos 2024',
-    plantas_lead: 'Base científica com aval internacional (Kew Gardens · GBIF) cruzada com resguardos indígenas colombianos.',
+    plantas_lead: 'Base científica com aval internacional (Kew Gardens · GBIF).',
     plantas_stat_1: 'espécies únicas',
     plantas_stat_2: 'registros georef.',
     plantas_stat_3: 'aval científico',
     plantas_stat_4: 'dados reproduzíveis',
+    coop_eyebrow: 'diálogo institucional',
     cooperacion_title: 'Cooperação Internacional',
     cooperacion_lead: 'ONIC mantém diálogo ativo com cooperação internacional alinhada aos mandatos do XI Congresso. Pipeline operativo sob NDA institucional.',
     cooperacion_p4: 'Financiando economias comunitárias · desbloqueando fluxos financeiros',
     cooperacion_p2: 'Territórios · meios de vida · direitos · compromissos globais',
     cooperacion_contact_title: 'Bilateral · contato',
     cooperacion_contact: 'poblacion@onic.org.co · WhatsApp +57 311 220 1903',
+    cf_eyebrow: 'iniciativas em curso',
+    cf_title: 'Apoie iniciativas em curso',
+    cf_lead: 'Além do programa MACI, ONIC e o SMT mantemos um portal de iniciativas indígenas concretas buscando financiamento direto. Aportes a partir de USD 100.',
+    cf_stat1: 'iniciativas ativas',
+    cf_stat2: 'ticket mínimo',
+    cf_stat3: 'gestão comunidade',
+    cf_cta: 'Ver iniciativas em SMT-ONIC',
+    cf_note: 'Política institucional SMT-ONIC',
+    downloads_eyebrow: 'documentos institucionais',
     downloads_title: 'Downloads Públicos',
     downloads_lead: 'Todos os arquivos disponíveis via QR específico.',
     contact_title: 'Contatar Wilson Herrera Baltán',
     contact_lead: 'Coordenador · Sistema de Monitoramento Territorial · ONIC · Bogotá, Colômbia'
   },
   fr: {
-    hero_eyebrow: 'SOMMET RRI BRASÍLIA · 26-29 MAI 2026',
-    hero_title: 'Soyez le Changement Aujourd\'hui!',
+    hero_eyebrow: 'Sommet RRI Brasília · 26-29 mai 2026',
+    hero_title: 'Soyez le Changement Aujourd\'hui',
     hero_subtitle: 'Pacte pour Revenir à l\'Origine · XIe Congrès ONIC',
-    hero_lead: 'Cadre d\'Action pour les Communautés Autochtones · MACI · USD 60-80M / 5 ans',
+    hero_lead: 'Cadre d\'Action pour les Communautés Autochtones · MACI · USD 60-80M / 5 ans · 5 macro-régions colombiennes · gardiens de 31.3% du territoire national.',
     cta_donors: 'Coopération',
     cta_contact: 'Contact Wilson',
     maci_60_title: 'MACI en 60 secondes',
-    maci_60_lead: 'Le Cadre d\'Action pour les Communautés Autochtones (MACI) articule les mandats du XIe Congrès ONIC.',
+    maci_60_lead: 'Le Cadre d\'Action pour les Communautés Autochtones articule les mandats du XIe Congrès ONIC.',
     stat_ha: 'hectares Matavén',
     stat_especies: 'espèces utiles géo',
-    stat_regiones: 'macro-régions ONIC',
+    stat_ha_total: 'ha NON amazoniens',
     stat_5anos: '5 ans · MACI',
-    modulos_title: '5 Modules MACI · Année 1',
+    eco_title: 'hectares dans des écosystèmes NON amazoniens',
+    eco_lead: 'Les peuples autochtones de Colombie sont gardiens d\'environ 18 millions d\'hectares titrés dans cinq écosystèmes stratégiques.',
+    mandate_title: 'Continuité du mandat politique',
+    mandate_lead: 'MACI met en œuvre opérationnellement la Déclaration des Sages COP16 (Centre Java Liviana · Peuple Muysca · octobre 2024).',
+    econ_title: 'Économies autochtones fonctionnelles · architecture financière en formulation',
+    econ_lead: 'En accord avec le mandat XIe Congrès, ONIC participe à la formulation d\'un mécanisme financier dédié aux peuples autochtones.',
+    territorio_eyebrow: 'Cadre territorial national',
+    territorio_title: 'Gouvernance collective: 37.7% du territoire national',
+    territorio_lead: 'Plus de 1.277 territoires autochtones, afro-descendants et paysans formalisés en Colombie. Source ANT 2025-2026.',
+    modulos_title: '5 Modules MACI · Année 1: USD 12.79M',
     modulos_lead: 'Chaque module est un profil de projet indépendant.',
     mapa_title: '5 Macro-régions ONIC',
     mapa_lead: 'ONIC représente 102 peuples autochtones partout en Colombie.',
-    mataven_title: 'Cas Étoile · Selva de Matavén',
-    mataven_lead: 'Le seul projet REDD+ en Colombie avec certification VCS+CCB et chaîne de custodie 100% indigène.',
-    mataven_what_proves: 'Ce que Matavén prouve:',
+    mataven_title: 'Selva de Matavén',
+    mataven_lead: 'Le seul projet REDD+ en Colombie avec certification VCS+CCB et chaîne de custodie 100% autochtone.',
+    mataven_what_proves: 'Ce que Matavén prouve',
     mataven_proof_1: 'Le mécanisme fiduciaire direct fonctionne.',
     mataven_proof_2: 'La chaîne de custodie autochtone est auditable.',
     mataven_proof_3: 'Le modèle est réplicable.',
@@ -660,18 +1331,29 @@ const i18n = {
     plantas_stat_2: 'enregistrements géo',
     plantas_stat_3: 'soutien scientifique',
     plantas_stat_4: 'données reproductibles',
+    coop_eyebrow: 'dialogue institutionnel',
     cooperacion_title: 'Coopération Internationale',
-    cooperacion_lead: 'ONIC maintient un dialogue actif avec la coopération internationale alignée sur les mandats du XIe Congrès. Pipeline opérationnel sous NDA institutionnel.',
-    cooperacion_p4: 'Financer les économies communautaires · débloquer les flux financiers',
-    cooperacion_p2: 'Territoires · moyens de subsistance · droits · engagements globaux',
+    cooperacion_lead: 'ONIC maintient un dialogue actif avec la coopération internationale. Pipeline opérationnel sous NDA institutionnel.',
+    cooperacion_p4: 'Financer les économies communautaires',
+    cooperacion_p2: 'Territoires · moyens de subsistance · droits',
     cooperacion_contact_title: 'Bilatéral · contact',
     cooperacion_contact: 'poblacion@onic.org.co · WhatsApp +57 311 220 1903',
+    cf_eyebrow: 'initiatives en cours',
+    cf_title: 'Soutenir les initiatives en cours',
+    cf_lead: 'Au-delà de MACI, ONIC maintient un portail d\'initiatives autochtones concrètes cherchant financement direct.',
+    cf_stat1: 'initiatives actives',
+    cf_stat2: 'ticket minimum',
+    cf_stat3: 'gestion communauté',
+    cf_cta: 'Voir initiatives à SMT-ONIC',
+    cf_note: 'Politique institutionnelle SMT-ONIC',
+    downloads_eyebrow: 'documents institutionnels',
     downloads_title: 'Téléchargements Publics',
     downloads_lead: 'Tous les fichiers disponibles via QR.',
     contact_title: 'Contacter Wilson Herrera Baltán',
     contact_lead: 'Coordinateur · Système de Surveillance Territoriale · ONIC'
   }
 };
+
 function setLang(lang) {
   document.documentElement.lang = lang;
   document.querySelectorAll('[data-i18n]').forEach(el => {

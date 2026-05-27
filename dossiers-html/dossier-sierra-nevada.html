@@ -3,164 +3,233 @@
 <head>
 <meta charset="UTF-8">
 <title>Sierra Nevada de Santa Marta · 4 Pueblos · Línea Negra · Dossier ONIC</title>
-<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,800;0,9..144,900;1,9..144,400;1,9..144,600&family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
 @page { size: A4; margin: 0; }
-:root { --olive:#7d8a3c; --olive-dark:#5a6427; --grafito:#3d3d3d; --beige:#e8e0c8; --beige-l:#f5f0dd; --gold:#d4a017; }
-body { font-family: 'Inter', Georgia, serif; color: var(--grafito); line-height: 1.55; background: white; }
-.page { max-width: 210mm; margin: 0 auto; padding: 18mm 16mm; min-height: 297mm; }
-.h-display { font-weight: 900; letter-spacing: 0.03em; line-height: 1.05; }
-.h-serif { font-family: Georgia, serif; font-weight: 700; }
-.text-olive { color: var(--olive); } .text-olive-dark { color: var(--olive-dark); } .text-gold { color: var(--gold); }
-.bg-olive { background: var(--olive); } .bg-grafito { background: var(--grafito); } .bg-beige-l { background: var(--beige-l); }
-.triangle-deco { width:0; height:0; border-left:18px solid transparent; border-right:18px solid transparent; border-bottom:28px solid var(--gold); }
-.hero { background: linear-gradient(135deg, #3d3d3d 0%, #5a6427 60%, #7d8a3c 100%); color: white; padding: 28mm 16mm 18mm; }
-.kpi { background: white; border-left: 5px solid var(--olive); padding: 14px 18px; }
-.kpi-big { font-size: 2.4rem; font-weight: 900; color: var(--olive-dark); line-height: 1; }
-.kpi-label { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.08em; }
-.callout { background: linear-gradient(180deg, #fff9e6, white); border-left: 5px solid var(--gold); padding: 14px 18px; margin: 14px 0; }
-.cite { font-style: italic; border-left: 3px solid var(--gold); padding: 8px 16px; margin: 14px 0; color: var(--olive-dark); background: var(--beige-l); }
+:root {
+  --smt-deep: #0a3f33; --smt-deep-dark: #062821;
+  --olive: #7d8a3c; --olive-dark: #5a6427;
+  --onic-orange: #c8431c;
+  --grafito: #2a2a2a; --grafito-soft: #4a4a4a;
+  --beige: #e8e0c8; --beige-l: #f5f0dd; --cream: #faf6e8;
+  --gold: #d4a017; --gold-soft: #f0c850;
+  --pueblo-kogui: #0a3f33;
+  --pueblo-wiwa: #d4a017;
+  --pueblo-arhuaco: #8b2a1a;
+  --pueblo-kankuamo: #5a6427;
+}
+* { box-sizing: border-box; }
+body { font-family: 'DM Sans', system-ui, sans-serif; color: var(--grafito); line-height: 1.55; background: white; font-size: 10.5pt; -webkit-font-smoothing: antialiased; }
+.mono { font-family: 'JetBrains Mono', monospace; font-variant-numeric: tabular-nums; }
+.page { width: 210mm; margin: 0 auto; padding: 0; background: white; position: relative; }
+.page-content { padding: 10mm 14mm 8mm; }
 .page-break { page-break-before: always; }
-.footer-band { background: var(--grafito); color: white; padding: 10px 16mm; font-size: 0.75rem; }
-.tag { display:inline-block; padding: 3px 10px; background: var(--beige-l); color: var(--olive-dark); font-size: 0.7rem; font-weight: 700; text-transform: uppercase; border-radius: 12px; }
-.pueblo-card { background: white; border: 1px solid var(--beige); border-radius: 6px; padding: 16px; transition: transform 0.2s; }
-.pueblo-card.kogui { border-top: 5px solid #7d8a3c; }
-.pueblo-card.wiwa { border-top: 5px solid #d4a017; }
-.pueblo-card.arhuaco { border-top: 5px solid #8b2a1a; }
-.pueblo-card.kankuamo { border-top: 5px solid #5a6427; }
-.pueblo-card .ic { width:44px; height:44px; background: var(--beige-l); border-radius: 8px; display:flex; align-items:center; justify-content:center; font-size:1.6rem; }
+
+.hero { background: linear-gradient(135deg, var(--smt-deep-dark) 0%, var(--smt-deep) 50%, var(--olive-dark) 100%); color: white; padding: 14mm 14mm 12mm; position: relative; overflow: hidden; }
+.hero::before { content: ''; position: absolute; inset: 0; background-image: repeating-linear-gradient(45deg, rgba(255,255,255,0.025) 0 2px, transparent 2px 14px); pointer-events: none; }
+.hero::after { content: ''; position: absolute; right: -60px; bottom: -60px; width: 260px; height: 260px; background: radial-gradient(circle, rgba(212,160,23,0.18) 0%, transparent 70%); pointer-events: none; }
+.hero-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8mm; position: relative; z-index: 2; }
+.logo-smt-img { height: 32px; filter: brightness(0) invert(1); opacity: 0.95; }
+.logo-onic-img { height: 38px; filter: brightness(0) invert(1); opacity: 0.95; }
+.event-stamp { font-family: 'JetBrains Mono', monospace; font-size: 8pt; text-transform: uppercase; letter-spacing: 0.18em; color: var(--gold-soft); border-top: 1px solid rgba(212,160,23,0.4); border-bottom: 1px solid rgba(212,160,23,0.4); padding: 4px 0; display: inline-block; }
+.hero-body { position: relative; z-index: 2; }
+.kicker { font-family: 'JetBrains Mono', monospace; font-size: 9pt; text-transform: uppercase; letter-spacing: 0.22em; color: var(--gold-soft); margin: 5mm 0 6mm; display: flex; align-items: center; gap: 10px; }
+.kicker::before { content: ''; width: 28px; height: 1px; background: var(--gold-soft); }
+.hero-title { font-family: 'Fraunces', serif; font-weight: 900; font-size: 44pt; line-height: 0.95; letter-spacing: -0.025em; margin: 0 0 4mm 0; color: white; }
+.hero-title em { font-style: italic; font-weight: 400; color: var(--gold-soft); }
+.hero-deck { font-family: 'Fraunces', serif; font-style: italic; font-weight: 400; font-size: 14pt; line-height: 1.3; color: rgba(255,255,255,0.92); max-width: 160mm; margin: 0 0 5mm 0; }
+.hero-sub { font-size: 10.5pt; line-height: 1.5; color: rgba(255,255,255,0.85); max-width: 160mm; margin: 0; }
+
+.kpis { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--beige); margin: 6mm 0 8mm; border-top: 2px solid var(--smt-deep); border-bottom: 1px solid var(--beige); }
+.kpi { background: white; padding: 5mm 5mm; }
+.kpi-num { font-family: 'Fraunces', serif; font-weight: 900; font-size: 32pt; line-height: 1; color: var(--smt-deep); letter-spacing: -0.03em; }
+.kpi-num em { font-style: italic; font-weight: 400; color: var(--olive); }
+.kpi-lbl { font-family: 'JetBrains Mono', monospace; font-size: 7pt; text-transform: uppercase; letter-spacing: 0.12em; color: var(--grafito-soft); margin-top: 3mm; }
+
+.section-num { font-family: 'JetBrains Mono', monospace; font-size: 8pt; letter-spacing: 0.2em; color: var(--onic-orange); font-weight: 700; text-transform: uppercase; display: flex; align-items: center; gap: 8px; margin: 5mm 0 3mm; }
+.section-num::before { content: ''; width: 4px; height: 4px; background: var(--onic-orange); border-radius: 50%; }
+.section-title { font-family: 'Fraunces', serif; font-weight: 800; font-size: 22pt; line-height: 1.05; letter-spacing: -0.02em; color: var(--smt-deep); margin: 0 0 4mm 0; }
+.section-title em { font-style: italic; font-weight: 400; color: var(--olive); }
+.body-text { font-size: 10pt; line-height: 1.6; color: var(--grafito); margin-bottom: 3mm; text-align: justify; }
+.body-text strong { color: var(--smt-deep); font-weight: 600; }
+.body-text em { font-style: italic; }
+
+.callout { background: linear-gradient(135deg, var(--cream) 0%, rgba(240,200,80,0.1) 100%); border-left: 3px solid var(--gold); padding: 4mm 6mm; margin: 5mm 0; }
+.callout-eyebrow { font-family: 'JetBrains Mono', monospace; font-size: 7.5pt; text-transform: uppercase; letter-spacing: 0.18em; color: var(--onic-orange); font-weight: 700; margin-bottom: 2mm; }
+.callout-body { font-size: 10pt; line-height: 1.5; color: var(--grafito); }
+.callout-body strong { color: var(--smt-deep); font-weight: 600; }
+
+/* Pueblos cards */
+.pueblos-4 { display: grid; grid-template-columns: 1fr 1fr; gap: 3px; margin: 3mm 0 5mm; }
+.pueblo-card { background: var(--cream); padding: 5mm 5mm; border-top: 4px solid var(--olive); }
+.pueblo-card.kogui { border-top-color: var(--pueblo-kogui); }
+.pueblo-card.wiwa { border-top-color: var(--pueblo-wiwa); }
+.pueblo-card.arhuaco { border-top-color: var(--pueblo-arhuaco); }
+.pueblo-card.kankuamo { border-top-color: var(--pueblo-kankuamo); }
+.pueblo-name { font-family: 'Fraunces', serif; font-weight: 800; font-size: 17pt; color: var(--smt-deep); letter-spacing: -0.01em; margin-bottom: 1mm; }
+.pueblo-epithet { font-family: 'Fraunces', serif; font-style: italic; font-size: 10pt; color: var(--olive-dark); margin-bottom: 3mm; }
+.pueblo-body { font-size: 9pt; line-height: 1.5; color: var(--grafito); }
+.pueblo-body strong { color: var(--smt-deep); }
+
+/* Legal dual block */
+.legal-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 3px; margin: 4mm 0; }
+.legal-left { background: var(--cream); padding: 5mm 6mm; border-left: 3px solid var(--gold); }
+.legal-right { background: var(--smt-deep); color: white; padding: 5mm 6mm; }
+.legal-right-eyebrow { font-family: 'JetBrains Mono', monospace; font-size: 7.5pt; text-transform: uppercase; letter-spacing: 0.18em; color: var(--gold-soft); font-weight: 700; margin-bottom: 3mm; }
+.legal-right h3 { font-family: 'Fraunces', serif; font-weight: 700; font-size: 14pt; margin: 0 0 3mm 0; color: white; }
+.legal-right ul { list-style: none; padding: 0; margin: 0; }
+.legal-right li { font-size: 9pt; line-height: 1.45; color: rgba(255,255,255,0.92); padding: 2mm 0; border-bottom: 1px solid rgba(255,255,255,0.1); }
+.legal-right li:last-child { border-bottom: none; }
+.legal-right li strong { color: var(--gold-soft); font-weight: 700; }
+
+/* Economias 3-up */
+.economias { display: grid; grid-template-columns: repeat(3, 1fr); gap: 3px; margin: 3mm 0 5mm; }
+.eco-card { background: var(--cream); padding: 4mm 5mm; border-top: 3px solid var(--olive); }
+.eco-card:nth-child(2) { border-top-color: var(--smt-deep); }
+.eco-card:nth-child(3) { border-top-color: var(--onic-orange); }
+.eco-name { font-family: 'Fraunces', serif; font-weight: 700; font-size: 12pt; color: var(--smt-deep); margin-bottom: 2mm; }
+.eco-desc { font-size: 9pt; line-height: 1.45; color: var(--grafito-soft); }
+
+/* Pull quote */
+.pullquote { margin: 5mm 0 2mm; padding: 5mm 7mm; border-left: 3px solid var(--gold); background: var(--cream); font-family: 'Fraunces', serif; font-style: italic; font-size: 13pt; line-height: 1.4; color: var(--smt-deep); position: relative; }
+.pullquote::before { content: '"'; font-family: 'Fraunces', serif; font-size: 56pt; color: var(--gold); position: absolute; left: 2mm; top: -2mm; line-height: 1; opacity: 0.3; }
+
+.footer-band { background: var(--grafito); color: white; padding: 4mm 14mm; font-family: 'JetBrains Mono', monospace; font-size: 7.5pt; letter-spacing: 0.1em; text-transform: uppercase; display: flex; justify-content: space-between; align-items: center; }
 </style>
 </head>
 <body>
 
+<!-- PAGE 1 -->
+<section class="page">
 <header class="hero">
-  <div class="flex items-center gap-3 mb-4">
-    <div class="triangle-deco"></div>
-    <span class="text-gold uppercase tracking-widest text-xs font-bold">Caribe ONIC · Sierra Nevada de Santa Marta · Padres Mayores</span>
+  <div class="hero-header">
+    <img src="../assets/logo_SMT.png" alt="SMT" class="logo-smt-img">
+    <img src="../assets/logo_ONIC.png" alt="ONIC" class="logo-onic-img">
   </div>
-  <h1 class="h-display text-5xl mb-3">El Corazón del Mundo</h1>
-  <p class="text-xl text-yellow-100 mb-2">Cuatro pueblos hermanos · una sola Sierra · una sola Línea Negra</p>
-  <p class="text-base text-beige-l max-w-2xl">17.000 km² de sistema montañoso que va del mar Caribe a glaciares ecuatoriales · habitado por Kogui, Wiwa, Arhuaco y Kankuamo · custodios del equilibrio hídrico de toda la región norte de Colombia.</p>
+  <div class="hero-body">
+    <div class="event-stamp">Caribe ONIC · Padres Mayores</div>
+    <div class="kicker">Sierra Nevada de Santa Marta · 4 Pueblos · Línea Negra</div>
+    <h1 class="hero-title">El Corazón<br><em>del Mundo</em></h1>
+    <p class="hero-deck">Cuatro pueblos hermanos · una sola Sierra · una sola Línea Negra.</p>
+    <p class="hero-sub"><strong style="color:var(--gold-soft)">17.000 km²</strong> de sistema montañoso que va del mar Caribe a glaciares ecuatoriales · habitado por Kogui, Wiwa, Arhuaco y Kankuamo · custodios del equilibrio hídrico de toda la región norte de Colombia.</p>
+  </div>
 </header>
 
-<section class="page" style="padding-top:14mm">
+<div class="page-content">
 
-  <div class="grid grid-cols-4 gap-3 mb-7">
-    <div class="kpi"><div class="kpi-big">4</div><div class="kpi-label">Pueblos hermanos</div></div>
-    <div class="kpi"><div class="kpi-big">17K</div><div class="kpi-label">km² Sierra Nevada</div></div>
-    <div class="kpi"><div class="kpi-big">30+</div><div class="kpi-label">Ríos sagrados</div></div>
-    <div class="kpi"><div class="kpi-big">5.775</div><div class="kpi-label">metros · Pico Cristóbal Colón</div></div>
+  <div class="kpis">
+    <div class="kpi"><div class="kpi-num">4</div><div class="kpi-lbl">Pueblos hermanos</div></div>
+    <div class="kpi"><div class="kpi-num">17<em>K</em></div><div class="kpi-lbl">km² Sierra Nevada</div></div>
+    <div class="kpi"><div class="kpi-num">30<em>+</em></div><div class="kpi-lbl">Ríos sagrados</div></div>
+    <div class="kpi"><div class="kpi-num">5.775</div><div class="kpi-lbl">m · Pico Colón</div></div>
   </div>
 
-  <h2 class="h-serif text-2xl text-olive-dark mb-3">Geografía sagrada · función hidrológica continental</h2>
-  <p class="mb-3 text-justify">La Sierra Nevada de Santa Marta es la montaña costera más alta del mundo: del mar Caribe sube a glaciares ecuatoriales en menos de 50 kilómetros lineales. Esta concentración vertical extrema produce un sistema hidrológico único: <strong>más de 30 ríos nacen aquí</strong> y abastecen de agua a tres departamentos colombianos — Magdalena, La Guajira y Cesar — y a tres millones de habitantes urbanos en la costa.</p>
-  <p class="mb-3 text-justify">Para los cuatro pueblos hermanos, la Sierra no es un proveedor de servicios ecosistémicos: es <em>el corazón que bombea el equilibrio de la tierra</em>. Los Mamos — autoridades espirituales — describen el sistema en términos precisos: cada sitio sagrado tiene una función específica en el flujo hídrico, y la salud de los ríos en la planicie depende del cuidado ritual de los nacimientos en la altura.</p>
+  <div class="section-num">Geografía sagrada</div>
+  <h2 class="section-title">Función hidrológica <em>continental</em></h2>
+  <p class="body-text">La Sierra Nevada de Santa Marta es la montaña costera más alta del mundo: del mar Caribe sube a glaciares ecuatoriales en menos de 50 kilómetros lineales. Esta concentración vertical extrema produce un sistema hidrológico único: <strong>más de 30 ríos nacen aquí</strong> y abastecen de agua a tres departamentos colombianos — Magdalena, La Guajira y Cesar — y a <strong>tres millones de habitantes urbanos</strong> en la costa.</p>
+  <p class="body-text">Para los cuatro pueblos hermanos, la Sierra no es un proveedor de servicios ecosistémicos: es <em>el corazón que bombea el equilibrio de la tierra</em>. Los Mamos — autoridades espirituales — describen el sistema en términos precisos: cada sitio sagrado tiene una función específica en el flujo hídrico, y la salud de los ríos en la planicie depende del cuidado ritual de los nacimientos en la altura.</p>
 
-  <h2 class="h-serif text-2xl text-olive-dark mb-3 mt-5">Los cuatro pueblos · Padres Mayores</h2>
-  <div class="grid grid-cols-2 gap-3">
+  <div class="section-num">Cuatro hermanos</div>
+  <h2 class="section-title">Los pueblos · <em>Padres Mayores</em></h2>
+
+  <div class="pueblos-4">
     <div class="pueblo-card kogui">
-      <div class="flex gap-3 items-start">
-        <div class="ic">⛰️</div>
-        <div>
-          <h3 class="font-bold text-olive-dark">Kogui</h3>
-          <p class="text-xs italic mt-1">"Padres Mayores · cuidadores del centro espiritual"</p>
-          <p class="text-sm mt-2">La mayoría vive en las vertientes altas. Su lengua, el Kogui-Kog, es la más antigua hablada continuamente en Sierra Nevada. Mantienen el sistema de Mamos con escuela ancestral activa desde la infancia.</p>
-        </div>
-      </div>
+      <div class="pueblo-name">Kogui</div>
+      <div class="pueblo-epithet">"Padres Mayores · cuidadores del centro espiritual"</div>
+      <div class="pueblo-body">La mayoría vive en las vertientes altas. Su lengua, el <strong>Kogui-Kog</strong>, es la más antigua hablada continuamente en Sierra Nevada. Mantienen el sistema de Mamos con escuela ancestral activa desde la infancia.</div>
     </div>
     <div class="pueblo-card wiwa">
-      <div class="flex gap-3 items-start">
-        <div class="ic">🌅</div>
-        <div>
-          <h3 class="font-bold text-olive-dark">Wiwa</h3>
-          <p class="text-xs italic mt-1">"Padres del Sol Naciente"</p>
-          <p class="text-sm mt-2">Habitan principalmente las vertientes norte y noroeste. Su nombre significa "los que dan el origen del calor". El documento DHA-spa-2018 sobre sitios sagrados Wiwa es referencia internacional.</p>
-        </div>
-      </div>
+      <div class="pueblo-name">Wiwa</div>
+      <div class="pueblo-epithet">"Padres del Sol Naciente"</div>
+      <div class="pueblo-body">Habitan principalmente las vertientes norte y noroeste. Su nombre significa <strong>"los que dan el origen del calor"</strong>. El documento DHA-spa-2018 sobre sitios sagrados Wiwa es referencia internacional.</div>
     </div>
     <div class="pueblo-card arhuaco">
-      <div class="flex gap-3 items-start">
-        <div class="ic">📖</div>
-        <div>
-          <h3 class="font-bold text-olive-dark">Arhuaco (Ijku)</h3>
-          <p class="text-xs italic mt-1">"Padres del Conocimiento"</p>
-          <p class="text-sm mt-2">Mayor visibilidad política e interlocución institucional. Sus autoridades han llevado el caso Línea Negra a la jurisprudencia colombiana y a foros internacionales ONU.</p>
-        </div>
-      </div>
+      <div class="pueblo-name">Arhuaco (Ijku)</div>
+      <div class="pueblo-epithet">"Padres del Conocimiento"</div>
+      <div class="pueblo-body">Mayor visibilidad política e interlocución institucional. Sus autoridades han llevado el caso <strong>Línea Negra</strong> a la jurisprudencia colombiana y a foros internacionales ONU.</div>
     </div>
     <div class="pueblo-card kankuamo">
-      <div class="flex gap-3 items-start">
-        <div class="ic">🌱</div>
-        <div>
-          <h3 class="font-bold text-olive-dark">Kankuamo</h3>
-          <p class="text-xs italic mt-1">"Padres del Sostén"</p>
-          <p class="text-sm mt-2">El pueblo más castigado por el conflicto armado en los años 2000. Hoy en proceso de fortalecimiento identitario y recuperación territorial activa.</p>
-        </div>
-      </div>
+      <div class="pueblo-name">Kankuamo</div>
+      <div class="pueblo-epithet">"Padres del Sostén"</div>
+      <div class="pueblo-body">El pueblo más castigado por el conflicto armado en los años 2000. Hoy en proceso de <strong>fortalecimiento identitario</strong> y recuperación territorial activa.</div>
     </div>
   </div>
 
   <div class="callout">
-    <p class="text-sm font-bold text-olive-dark mb-1">Cuatro pueblos · un sistema territorial</p>
-    <p class="text-sm">A diferencia de muchos otros territorios indígenas, los cuatro pueblos de la Sierra Nevada operan como <strong>sistema de gobierno indígena unificado</strong> a través del Consejo Territorial Mayor (CTC). Esto convierte a la Sierra en uno de los pocos casos del mundo con CLPI ya operativo a escala regional · listo para ser interlocutor único frente a programas climáticos internacionales.</p>
+    <div class="callout-eyebrow">Cuatro pueblos · un sistema territorial</div>
+    <div class="callout-body">A diferencia de muchos otros territorios indígenas, los cuatro pueblos de la Sierra Nevada operan como <strong>sistema de gobierno indígena unificado</strong> a través del Consejo Territorial Mayor (CTC). Esto convierte a la Sierra en uno de los pocos casos del mundo con <strong>CLPI ya operativo a escala regional</strong> · listo para ser interlocutor único frente a programas climáticos internacionales.</div>
   </div>
 
+</div>
 </section>
 
+<!-- PAGE 2 -->
 <section class="page page-break">
+<div class="page-content" style="padding-top:14mm">
 
-  <h2 class="h-serif text-2xl text-olive-dark mb-3">Línea Negra · el territorio que existe más allá del polígono</h2>
-  <p class="mb-3 text-justify">La <strong>Línea Negra</strong> es un concepto único en derecho indígena latinoamericano: el reconocimiento jurídico de un territorio ancestral <em>ampliado</em>, más allá del polígono administrativo del Parque Nacional Natural Sierra Nevada o de los resguardos formalmente titulados.</p>
-  <p class="mb-3 text-justify">Se materializó en dos pasos: <strong>Resolución 837 de 1995</strong> (primer reconocimiento) y <strong>Decreto 1500 de 2018</strong> (ratificación + ampliación). Lo que el Estado colombiano reconoció — y es jurídicamente vinculante — es que los sitios sagrados que conforman la Línea Negra son territorio ancestral aunque queden fuera del límite del parque o del resguardo. Esto incluye <em>playas, lagunas, ríos, cerros</em> en cuatro departamentos.</p>
+  <div class="section-num">Línea Negra</div>
+  <h2 class="section-title">El territorio que existe <em>más allá del polígono</em></h2>
+  <p class="body-text">La <strong>Línea Negra</strong> es un concepto único en derecho indígena latinoamericano: el reconocimiento jurídico de un territorio ancestral <em>ampliado</em>, más allá del polígono administrativo del Parque Nacional Natural Sierra Nevada o de los resguardos formalmente titulados.</p>
+  <p class="body-text">Se materializó en dos pasos: <strong>Resolución 837 de 1995</strong> (primer reconocimiento) y <strong>Decreto 1500 de 2018</strong> (ratificación + ampliación). Lo que el Estado colombiano reconoció — y es jurídicamente vinculante — es que los sitios sagrados que conforman la Línea Negra son territorio ancestral aunque queden fuera del límite del parque o del resguardo. Esto incluye <em>playas, lagunas, ríos, cerros</em> en cuatro departamentos.</p>
 
-  <div class="grid grid-cols-2 gap-4 mt-5">
-    <div>
-      <h3 class="h-serif text-xl text-olive-dark mb-2">El dato geoespacial existe</h3>
-      <p class="text-sm mb-2">Una geodatabase de 113 MB documenta las intersecciones de la Línea Negra con todas las figuras de protección, concesiones mineras, bloques de hidrocarburos y áreas urbanas. Es un instrumento de soberanía territorial digital.</p>
-      <p class="text-sm">El archivo <code class="bg-beige px-1 text-xs">INTERSECCIONES_TERRITORIO_ANCESTRAL_LINEA_NEGRA.gdb.zip</code> está disponible bajo protocolo CLPI para donantes serios que quieran apoyar el monitoreo continuo.</p>
+  <div class="legal-grid">
+    <div class="legal-left">
+      <div class="callout-eyebrow" style="color:var(--olive-dark)">El dato geoespacial existe</div>
+      <p class="body-text" style="margin-bottom:2mm; font-size:9.5pt">Una geodatabase de <strong>113 MB</strong> documenta las intersecciones de la Línea Negra con todas las figuras de protección, concesiones mineras, bloques de hidrocarburos y áreas urbanas. Es un instrumento de soberanía territorial digital.</p>
+      <p class="body-text" style="font-size:9.5pt">El archivo <span class="mono">INTERSECCIONES_TERRITORIO_ANCESTRAL_LINEA_NEGRA.gdb.zip</span> está disponible bajo protocolo CLPI para donantes serios que quieran apoyar el monitoreo continuo.</p>
     </div>
-    <div class="bg-grafito text-white p-4">
-      <h3 class="font-bold text-yellow-200 mb-2">El instrumento jurídico</h3>
-      <ul class="text-sm text-beige-l space-y-2">
-        <li>📜 <strong>Res. 837/1995</strong> · primer reconocimiento sistema sitios sagrados</li>
-        <li>📜 <strong>Dec. 1500/2018</strong> · ratificación + ampliación</li>
-        <li>🗺️ <strong>Línea ampliada</strong> · 4 departamentos · más allá del parque</li>
-        <li>⚖️ <strong>Vinculante</strong> · cualquier proyecto sobre Línea Negra requiere CLPI con CTC</li>
+    <div class="legal-right">
+      <div class="legal-right-eyebrow">El instrumento jurídico</div>
+      <h3>Marco vinculante</h3>
+      <ul>
+        <li><strong>Res. 837 / 1995</strong> · primer reconocimiento sistema sitios sagrados</li>
+        <li><strong>Dec. 1500 / 2018</strong> · ratificación + ampliación territorio ancestral</li>
+        <li><strong>Línea ampliada</strong> · 4 departamentos · más allá del parque</li>
+        <li><strong>Vinculante</strong> · cualquier proyecto sobre Línea Negra requiere CLPI con CTC</li>
       </ul>
     </div>
   </div>
 
-  <h2 class="h-serif text-2xl text-olive-dark mb-3 mt-6">Casos económicos propios · bioeconomía con identidad</h2>
-  <div class="grid grid-cols-3 gap-3 mb-5">
-    <div class="bg-beige-l p-4 border-l-4 border-olive">
-      <h4 class="font-bold text-olive-dark">Cacao indígena</h4>
-      <p class="text-sm mt-1">Sistema agroforestal tradicional con cacao en sombra de bosque · cosmovisión Kogui/Arhuaco/Wiwa · valor agregado en cadena de transformación.</p>
+  <div class="section-num">Bioeconomía con identidad</div>
+  <h2 class="section-title">Casos económicos <em>propios</em></h2>
+
+  <div class="economias">
+    <div class="eco-card">
+      <div class="eco-name">Cacao indígena</div>
+      <div class="eco-desc">Sistema agroforestal tradicional con cacao en sombra de bosque · cosmovisión Kogui/Arhuaco/Wiwa · valor agregado en cadena de transformación.</div>
     </div>
-    <div class="bg-beige-l p-4 border-l-4 border-olive">
-      <h4 class="font-bold text-olive-dark">Café de altura</h4>
-      <p class="text-sm mt-1">Cooperativas cafeteras indígenas en zona buffer · alianzas con comercio justo internacional · denominación de origen.</p>
+    <div class="eco-card">
+      <div class="eco-name">Café de altura</div>
+      <div class="eco-desc">Cooperativas cafeteras indígenas en zona buffer · alianzas con comercio justo internacional · denominación de origen.</div>
     </div>
-    <div class="bg-beige-l p-4 border-l-4 border-olive">
-      <h4 class="font-bold text-olive-dark">Servicios hidrológicos</h4>
-      <p class="text-sm mt-1">Pago por servicios ambientales con acueductos de Santa Marta · Ríohacha · Valledupar · 3 millones de beneficiarios urbanos.</p>
+    <div class="eco-card">
+      <div class="eco-name">Servicios hidrológicos</div>
+      <div class="eco-desc">Pago por servicios ambientales con acueductos de Santa Marta · Ríohacha · Valledupar · 3 millones de beneficiarios urbanos.</div>
     </div>
   </div>
 
-  <h2 class="h-serif text-2xl text-olive-dark mb-3">Encaje en MACI · escalamiento 2026-2030</h2>
-  <p class="mb-3 text-sm text-justify">Sierra Nevada es la oportunidad para que MACI Módulo 3 (Monitoreo) escale el modelo Matavén a un sistema territorial 10× más complejo: cuatro pueblos en simultáneo, multinivel jurídico (Línea Negra + resguardos + parque), y con servicio ecosistémico hidrológico cuantificable contra costo de agua urbana.</p>
+  <div class="section-num">Encaje MACI · 2026—2030</div>
+  <h2 class="section-title">Escalamiento <em>10× Matavén</em></h2>
+  <p class="body-text">Sierra Nevada es la oportunidad para que MACI Módulo 3 (Monitoreo) escale el modelo Matavén a un sistema territorial 10× más complejo: <strong>cuatro pueblos en simultáneo</strong>, multinivel jurídico (Línea Negra + resguardos + parque), y con servicio ecosistémico hidrológico cuantificable contra costo de agua urbana.</p>
 
   <div class="callout">
-    <p class="text-sm font-bold text-olive-dark mb-1">Donantes con encaje natural</p>
-    <p class="text-sm"><strong>NICFI · Cooperación bilateral noruega</strong> · Módulo 3 monitoreo agua + sitios sagrados. <strong>FCLP · Forest Climate Leaders</strong> · traslapes Línea Negra mapeados · USD 2-10M country package. <strong>Coalición filantrópica 30x30</strong> · 30x30 con gobernanza efectiva 4-pueblos. <strong>Cooperación sur-sur Brasil</strong> · cooperación sur-sur arquitectura institucional indígena-Estado.</p>
+    <div class="callout-eyebrow">Donantes con encaje natural</div>
+    <div class="callout-body"><strong>NICFI · cooperación bilateral noruega</strong> · Módulo 3 monitoreo agua + sitios sagrados. <strong>FCLP · Forest Climate Leaders</strong> · traslapes Línea Negra mapeados · USD 2—10M country package. <strong>Coalición filantrópica 30×30</strong> · gobernanza efectiva 4-pueblos. <strong>Cooperación sur-sur Brasil</strong> · arquitectura institucional indígena-Estado.</div>
   </div>
 
-  <div class="cite mt-5">"Los Padres Mayores no monitorean la Sierra como ecólogos: la cuidan como médicos cuidan un cuerpo. La diferencia importa para todo donante que quiera financiar conservación real."</div>
+  <div class="pullquote">
+    Los Padres Mayores no monitorean la Sierra como ecólogos: <em>la cuidan como médicos cuidan un cuerpo</em>. La diferencia importa para todo donante que quiera financiar conservación real.
+  </div>
 
-</section>
+</div>
 
 <footer class="footer-band">
-  Wilson Herrera Baltán · Coordinador SMT-ONIC · poblacion@onic.org.co · <strong>wilsonherrera77.github.io/MACI/brasilia2026.html</strong>
+  <span>Wilson Herrera Baltán · Coordinador SMT-ONIC · poblacion@onic.org.co · +57 311 220 1903</span>
+  <span>wilsonherrera77.github.io/MACI/brasilia2026.html</span>
 </footer>
+</section>
 
 </body>
 </html>

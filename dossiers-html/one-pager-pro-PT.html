@@ -3,234 +3,273 @@
 <head>
 <meta charset="UTF-8">
 <title>ONIC · MACI · Cúpula RRI Brasília 2026 · One-pager</title>
-<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,800;0,9..144,900;1,9..144,400;1,9..144,600&family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
 @page { size: A4; margin: 0; }
-:root { --olive:#7d8a3c; --olive-dark:#5a6427; --grafito:#3d3d3d; --beige:#e8e0c8; --beige-l:#f5f0dd; --gold:#d4a017; }
-body { font-family: 'Inter', Georgia, serif; color: var(--grafito); line-height: 1.5; background: white; }
-.page { max-width: 210mm; margin: 0 auto; padding: 14mm 14mm; min-height: 297mm; }
-.h-display { font-weight: 900; letter-spacing: 0.025em; line-height: 1.0; }
-.h-serif { font-family: Georgia, serif; font-weight: 700; }
-.text-olive { color: var(--olive); } .text-olive-dark { color: var(--olive-dark); } .text-gold { color: var(--gold); }
-.bg-olive { background: var(--olive); } .bg-grafito { background: var(--grafito); } .bg-beige-l { background: var(--beige-l); }
-.triangle-deco { width:0; height:0; border-left:14px solid transparent; border-right:14px solid transparent; border-bottom:22px solid var(--gold); }
-.hero { background: linear-gradient(135deg, #3d3d3d 0%, #5a6427 65%, #7d8a3c 100%); color: white; padding: 20mm 14mm 12mm; }
-.module-row { display: flex; align-items: center; padding: 8px 12px; border-bottom: 1px solid var(--beige); gap: 10px; }
-.module-row:last-child { border-bottom: none; }
-.module-num { background: var(--olive); color: white; font-weight: 900; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; border-radius: 50%; flex-shrink: 0; }
-.region-cell { background: var(--beige-l); padding: 8px 10px; border-left: 3px solid var(--olive); font-size: 0.78rem; }
-.cite { font-style: italic; border-left: 3px solid var(--gold); padding: 8px 16px; margin: 10px 0; color: var(--olive-dark); background: var(--beige-l); font-size: 0.88rem; }
-.callout { background: linear-gradient(180deg, #fff9e6, white); border-left: 4px solid var(--gold); padding: 10px 14px; }
+:root {
+  --smt-deep: #0a3f33; --smt-deep-dark: #062821;
+  --olive: #7d8a3c; --olive-dark: #5a6427;
+  --onic-orange: #c8431c; --onic-orange-dark: #9c3416;
+  --grafito: #2a2a2a; --grafito-soft: #4a4a4a;
+  --beige: #e8e0c8; --beige-l: #f5f0dd; --cream: #faf6e8;
+  --gold: #d4a017; --gold-soft: #f0c850;
+}
+* { box-sizing: border-box; }
+body { font-family: 'DM Sans', system-ui, sans-serif; color: var(--grafito); line-height: 1.55; background: white; font-size: 10.5pt; -webkit-font-smoothing: antialiased; }
+.mono { font-family: 'JetBrains Mono', monospace; font-variant-numeric: tabular-nums; }
+.page { width: 210mm; margin: 0 auto; padding: 0; position: relative; background: white; }
+.page-content { padding: 10mm 14mm 8mm; }
 .page-break { page-break-before: always; }
-.footer-band { background: var(--grafito); color: white; padding: 8px 14mm; font-size: 0.7rem; }
-.tag { display:inline-block; padding: 2px 8px; background: var(--beige); color: var(--olive-dark); font-size: 0.65rem; font-weight: 700; text-transform: uppercase; border-radius: 10px; }
+.hero { background: linear-gradient(135deg, var(--smt-deep-dark) 0%, var(--smt-deep) 55%, var(--olive-dark) 100%); color: white; padding: 12mm 14mm 10mm; position: relative; overflow: hidden; }
+.hero::before { content: ''; position: absolute; inset: 0; background-image: repeating-linear-gradient(45deg, rgba(255,255,255,0.025) 0 2px, transparent 2px 14px), repeating-linear-gradient(-45deg, rgba(212,160,23,0.04) 0 1px, transparent 1px 18px); pointer-events: none; }
+.hero-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8mm; position: relative; z-index: 2; }
+.logo-smt-img { height: 32px; filter: brightness(0) invert(1); opacity: 0.95; }
+.logo-onic-img { height: 38px; filter: brightness(0) invert(1); opacity: 0.95; }
+.event-stamp { font-family: 'JetBrains Mono', monospace; font-size: 8pt; text-transform: uppercase; letter-spacing: 0.18em; color: var(--gold-soft); border-top: 1px solid rgba(212,160,23,0.4); border-bottom: 1px solid rgba(212,160,23,0.4); padding: 4px 0; display: inline-block; }
+.hero-body { position: relative; z-index: 2; }
+.kicker { font-family: 'JetBrains Mono', monospace; font-size: 8.5pt; text-transform: uppercase; letter-spacing: 0.22em; color: var(--gold-soft); margin-bottom: 6mm; display: flex; align-items: center; gap: 10px; }
+.kicker::before { content: ''; width: 28px; height: 1px; background: var(--gold-soft); }
+.hero-title { font-family: 'Fraunces', serif; font-weight: 900; font-size: 34pt; line-height: 0.98; letter-spacing: -0.02em; margin: 0 0 4mm 0; color: white; }
+.hero-title em { font-style: italic; font-weight: 400; color: var(--gold-soft); }
+.hero-sub { font-size: 11.5pt; line-height: 1.5; color: rgba(255,255,255,0.92); max-width: 165mm; margin: 0 0 6mm 0; }
+.hero-tags { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 4mm; }
+.hero-tag { font-family: 'JetBrains Mono', monospace; font-size: 8pt; font-weight: 600; padding: 4px 10px; letter-spacing: 0.05em; border: 1px solid rgba(255,255,255,0.25); text-transform: uppercase; color: rgba(255,255,255,0.92); }
+.hero-tag.primary { background: var(--gold); color: var(--smt-deep-dark); border-color: var(--gold); font-weight: 700; }
+.section-num { font-family: 'JetBrains Mono', monospace; font-size: 8pt; letter-spacing: 0.2em; color: var(--onic-orange); font-weight: 700; text-transform: uppercase; display: flex; align-items: center; gap: 8px; margin-bottom: 3mm; }
+.section-num::before { content: ''; width: 4px; height: 4px; background: var(--onic-orange); border-radius: 50%; }
+.section-title { font-family: 'Fraunces', serif; font-weight: 800; font-size: 18pt; line-height: 1.1; letter-spacing: -0.015em; color: var(--smt-deep); margin: 0 0 3mm 0; }
+.section-title em { font-style: italic; font-weight: 400; color: var(--olive); }
+.lead { font-size: 10pt; line-height: 1.55; color: var(--grafito-soft); margin-bottom: 4mm; max-width: 180mm; }
+.lead strong { color: var(--smt-deep); font-weight: 600; }
+.modulos { border-top: 2px solid var(--smt-deep); margin-bottom: 5mm; }
+.modulo { display: grid; grid-template-columns: 32px 1fr auto; gap: 12px; padding: 3.5mm 0; border-bottom: 1px solid var(--beige); align-items: baseline; }
+.modulo-num { font-family: 'Fraunces', serif; font-weight: 900; font-size: 22pt; color: var(--gold); line-height: 1; }
+.modulo-titulo { font-family: 'Fraunces', serif; font-weight: 700; font-size: 12pt; color: var(--smt-deep); line-height: 1.15; margin-bottom: 1.5mm; }
+.modulo-desc { font-size: 9pt; color: var(--grafito-soft); line-height: 1.45; }
+.modulo-monto { text-align: right; font-family: 'JetBrains Mono', monospace; }
+.modulo-monto-val { font-size: 13pt; font-weight: 700; color: var(--smt-deep); letter-spacing: -0.02em; }
+.modulo-monto-lbl { font-size: 7pt; text-transform: uppercase; letter-spacing: 0.15em; color: var(--grafito-soft); }
+.regiones { display: grid; grid-template-columns: repeat(5, 1fr); gap: 3px; margin-bottom: 4mm; }
+.region { background: var(--cream); padding: 3mm 3.5mm; border-top: 3px solid var(--olive); }
+.region:nth-child(odd) { border-top-color: var(--smt-deep); }
+.region-tag { font-family: 'JetBrains Mono', monospace; font-size: 7pt; font-weight: 700; letter-spacing: 0.15em; color: var(--onic-orange); text-transform: uppercase; margin-bottom: 2mm; }
+.region-body { font-size: 8pt; line-height: 1.4; color: var(--grafito); }
+.region-body strong { color: var(--smt-deep); font-weight: 600; }
+.callout { background: linear-gradient(135deg, var(--cream) 0%, rgba(240, 200, 80, 0.12) 100%); border-left: 3px solid var(--gold); padding: 3mm 5mm; margin: 4mm 0; font-size: 9pt; line-height: 1.5; }
+.callout strong { color: var(--smt-deep); font-weight: 600; }
+.tabla-wrap { margin: 3mm 0 2mm; border: 1px solid var(--beige); }
+.tabla-territorial { width: 100%; border-collapse: collapse; font-size: 9pt; }
+.tabla-territorial thead th { background: var(--smt-deep); color: white; font-family: 'JetBrains Mono', monospace; font-size: 7.5pt; font-weight: 600; text-transform: uppercase; letter-spacing: 0.12em; padding: 2.5mm 3mm; text-align: left; }
+.tabla-territorial thead th:not(:first-child) { text-align: right; }
+.tabla-territorial tbody td { padding: 2.5mm 3mm; border-bottom: 1px solid var(--beige); }
+.tabla-territorial tbody td:not(:first-child) { text-align: right; font-family: 'JetBrains Mono', monospace; font-variant-numeric: tabular-nums; }
+.tabla-territorial tbody tr:nth-child(even) { background: var(--cream); }
+.tabla-territorial tbody tr.total td { background: var(--olive-dark); color: white; font-weight: 700; }
+.tabla-territorial tbody tr.total td:not(:first-child) { color: var(--gold-soft); }
+.tabla-footnote { font-family: 'JetBrains Mono', monospace; font-size: 7pt; color: var(--grafito-soft); margin-top: 2mm; }
+.ventanas { display: flex; flex-direction: column; gap: 2.5mm; margin-bottom: 5mm; }
+.ventana { display: grid; grid-template-columns: 1fr auto; gap: 8mm; align-items: start; padding: 3mm 4mm; background: white; border-left: 3px solid var(--olive); border-bottom: 1px solid var(--beige); }
+.ventana.priority { border-left-color: var(--gold); background: linear-gradient(90deg, rgba(240,200,80,0.08) 0%, white 50%); }
+.ventana-titulo { font-family: 'Fraunces', serif; font-weight: 700; font-size: 11pt; color: var(--smt-deep); line-height: 1.2; margin-bottom: 1mm; }
+.ventana-meta { font-family: 'JetBrains Mono', monospace; font-size: 7.5pt; text-transform: uppercase; letter-spacing: 0.12em; color: var(--onic-orange); margin-bottom: 1.5mm; }
+.ventana-desc { font-size: 9pt; color: var(--grafito-soft); line-height: 1.45; }
+.ventana-monto { text-align: right; font-family: 'JetBrains Mono', monospace; white-space: nowrap; }
+.ventana-monto-val { font-size: 13pt; font-weight: 700; color: var(--smt-deep); }
+.ventana-monto-lbl { font-size: 7pt; text-transform: uppercase; letter-spacing: 0.15em; color: var(--grafito-soft); }
+.pullquote { margin: 5mm 0; padding: 4mm 6mm; border-left: 3px solid var(--gold); background: var(--cream); font-family: 'Fraunces', serif; font-style: italic; font-size: 12pt; line-height: 1.4; color: var(--smt-deep); position: relative; }
+.pullquote::before { content: '"'; font-family: 'Fraunces', serif; font-size: 48pt; color: var(--gold); position: absolute; left: 2mm; top: -2mm; line-height: 1; opacity: 0.3; }
+.pullquote-attr { display: block; margin-top: 2mm; font-family: 'DM Sans', sans-serif; font-style: normal; font-size: 8pt; text-transform: uppercase; letter-spacing: 0.15em; color: var(--olive-dark); font-weight: 600; }
+.contacto { display: grid; grid-template-columns: 1.4fr 1fr; gap: 3px; margin-top: 5mm; }
+.contacto-wilson { background: var(--smt-deep); color: white; padding: 5mm 6mm; position: relative; }
+.contacto-wilson::before { content: ''; position: absolute; top: 0; right: 0; width: 32px; height: 32px; background: var(--gold); clip-path: polygon(100% 0, 0 0, 100% 100%); }
+.contacto-label { font-family: 'JetBrains Mono', monospace; font-size: 7.5pt; text-transform: uppercase; letter-spacing: 0.18em; color: var(--gold-soft); margin-bottom: 2mm; }
+.contacto-nombre { font-family: 'Fraunces', serif; font-weight: 800; font-size: 16pt; line-height: 1.1; margin-bottom: 2mm; }
+.contacto-info { font-family: 'JetBrains Mono', monospace; font-size: 8.5pt; line-height: 1.6; color: rgba(255,255,255,0.92); }
+.contacto-kit { background: var(--olive-dark); color: white; padding: 5mm 6mm; }
+.contacto-kit-url { font-family: 'JetBrains Mono', monospace; font-size: 8.5pt; font-weight: 600; line-height: 1.3; word-break: break-all; margin-bottom: 2mm; }
+.contacto-kit-meta { font-size: 8pt; color: rgba(255,255,255,0.85); line-height: 1.5; }
+.footer-band { background: var(--grafito); color: white; padding: 4mm 14mm; font-family: 'JetBrains Mono', monospace; font-size: 7.5pt; letter-spacing: 0.1em; text-transform: uppercase; display: flex; justify-content: space-between; align-items: center; }
+.footer-marks { display: flex; gap: 8px; align-items: center; opacity: 0.6; }
 </style>
 </head>
 <body>
 
+<section class="page">
 <header class="hero">
-  <div class="flex items-center gap-3 mb-3">
-    <div class="triangle-deco"></div>
-    <span class="text-gold uppercase tracking-widest text-xs font-bold">Pacto para Voltar à Origem · XI Congresso · ONIC 2026</span>
+  <div class="hero-header">
+    <img src="../assets/logo_SMT.png" alt="SMT" class="logo-smt-img">
+    <img src="../assets/logo_ONIC.png" alt="ONIC" class="logo-onic-img">
   </div>
-  <h1 class="h-display text-4xl mb-2">MACI · Marco de Ação para Comunidades Indígenas</h1>
-  <p class="text-base text-yellow-100 mb-2">O veículo bancável que articula os mandatos do XI Congresso ONIC com financiamento internacional 2026-2030</p>
-  <div class="flex gap-2 mt-3 flex-wrap">
-    <span class="tag" style="background:#d4a017;color:#3d3d3d;font-weight:900">USD 60-80M · 5 anos</span>
-    <span class="tag" style="background:rgba(255,255,255,0.15);color:white">~31.3% território nacional · governança étnica</span>
-    <span class="tag" style="background:rgba(255,255,255,0.15);color:white">5 macrorregiões</span>
-    <span class="tag" style="background:rgba(255,255,255,0.15);color:white">Cúpula RRI Brasília 26-29 maio</span>
+  <div class="hero-body">
+    <div class="event-stamp">Cúpula RRI Brasília · 26—29 maio 2026</div>
+    <div class="kicker" style="margin-top:5mm">Pacto para Voltar à Origem · XI Congresso ONIC</div>
+    <h1 class="hero-title">MACI<br><em>Marco de Ação para Comunidades Indígenas</em></h1>
+    <p class="hero-sub">O veículo bancável que articula os mandatos do XI Congresso ONIC com financiamento internacional 2026—2030 — uma arquitetura operacional para as 5 macrorregiões indígenas da Colômbia.</p>
+    <div class="hero-tags">
+      <span class="hero-tag primary">USD 60—80M · 5 anos</span>
+      <span class="hero-tag">31,3% território nacional</span>
+      <span class="hero-tag">5 macrorregiões</span>
+      <span class="hero-tag">102 povos</span>
+    </div>
   </div>
 </header>
 
-<section class="page" style="padding-top:8mm;padding-bottom:6mm">
+<div class="page-content">
 
-  <h2 class="h-serif text-xl text-olive-dark mb-2">A proposta · 5 módulos · USD 12.79M ano 1</h2>
-  <p class="text-sm mb-3 text-justify">MACI não é um projeto — é a arquitetura operativa que ONIC propõe para canalizar financiamento internacional às 5 macrorregiões indígenas da Colômbia durante 2026-2030. Cada módulo é um perfil de projeto independente com orçamento auditável e contrapartes institucionais mapeadas.</p>
+  <div class="section-num">01 · A proposta</div>
+  <h2 class="section-title">Cinco módulos <em>operacionais</em> · USD 12,79M ano 1</h2>
+  <p class="lead">MACI não é um projeto: é a <strong>arquitetura operacional</strong> que a ONIC propõe para canalizar financiamento internacional ao quadriênio. Cada módulo é um perfil independente com orçamento auditável e doadores mapeados.</p>
 
-  <div class="bg-white border border-beige rounded">
-    <div class="module-row">
-      <div class="module-num">1</div>
-      <div class="flex-1">
-        <div class="font-bold text-olive-dark">Governabilidade e Soberania (CREA)</div>
-        <div class="text-xs">Protocolos bioculturais · CLPI · ABS · Conselho de Dados</div>
-      </div>
-      <div class="text-right">
-        <div class="font-bold text-olive-dark">USD 288K</div>
-        <div class="text-xs">ano 1</div>
-      </div>
+  <div class="modulos">
+    <div class="modulo"><div class="modulo-num">1</div>
+      <div><div class="modulo-titulo">Governança e Soberania (CREA)</div>
+      <div class="modulo-desc">Protocolos bioculturais · CLPI · ABS Nagoia · Conselho de Dados · harmonização 5 macrorregiões</div></div>
+      <div class="modulo-monto"><div class="modulo-monto-val">USD 288K</div><div class="modulo-monto-lbl">ano 1</div></div>
     </div>
-    <div class="module-row">
-      <div class="module-num">2</div>
-      <div class="flex-1">
-        <div class="font-bold text-olive-dark">Plataforma Soberana de Dados (PSB)</div>
-        <div class="text-xs">Arquitetura · MVP · catálogo · APIs · CARE+FAIR</div>
-      </div>
-      <div class="text-right">
-        <div class="font-bold text-olive-dark">USD 531K</div>
-        <div class="text-xs">ano 1</div>
-      </div>
+    <div class="modulo"><div class="modulo-num">2</div>
+      <div><div class="modulo-titulo">Plataforma Soberana de Dados (PSB)</div>
+      <div class="modulo-desc">Arquitetura · MVP · catálogo · APIs · CARE+FAIR · soberania digital indígena</div></div>
+      <div class="modulo-monto"><div class="modulo-monto-val">USD 531K</div><div class="modulo-monto-lbl">ano 1</div></div>
     </div>
-    <div class="module-row">
-      <div class="module-num">3</div>
-      <div class="flex-1">
-        <div class="font-bold text-olive-dark">Monitoramento Comunitário Biocultural</div>
-        <div class="text-xs">Inventários · QA/QC · devolução às comunidades</div>
-      </div>
-      <div class="text-right">
-        <div class="font-bold text-olive-dark">USD 7.09M</div>
-        <div class="text-xs">ano 1</div>
-      </div>
+    <div class="modulo"><div class="modulo-num">3</div>
+      <div><div class="modulo-titulo">Monitoramento Comunitário Biocultural</div>
+      <div class="modulo-desc">Inventários georreferenciados · QA/QC indígena-led · devolução de resultados às comunidades</div></div>
+      <div class="modulo-monto"><div class="modulo-monto-val">USD 7,09M</div><div class="modulo-monto-lbl">ano 1</div></div>
     </div>
-    <div class="module-row">
-      <div class="module-num">4</div>
-      <div class="flex-1">
-        <div class="font-bold text-olive-dark">Genética e Biobanco</div>
-        <div class="text-xs">Sequenciamento in-situ · cadeia custódia indígena</div>
-      </div>
-      <div class="text-right">
-        <div class="font-bold text-olive-dark">USD 1.27M</div>
-        <div class="text-xs">ano 1</div>
-      </div>
+    <div class="modulo"><div class="modulo-num">4</div>
+      <div><div class="modulo-titulo">Genética e Biobanco</div>
+      <div class="modulo-desc">Sequenciamento in-situ · cadeia de custódia indígena · biobanco piloto Matavén</div></div>
+      <div class="modulo-monto"><div class="modulo-monto-val">USD 1,27M</div><div class="modulo-monto-lbl">ano 1</div></div>
     </div>
-    <div class="module-row">
-      <div class="module-num">5</div>
-      <div class="flex-1">
-        <div class="font-bold text-olive-dark">Bioeconomia e Sustentabilidade</div>
-        <div class="text-xs">Incubação bionegócios · blended finance · ABS Nagoya</div>
-      </div>
-      <div class="text-right">
-        <div class="font-bold text-olive-dark">USD 2.46M</div>
-        <div class="text-xs">ano 1</div>
-      </div>
+    <div class="modulo"><div class="modulo-num">5</div>
+      <div><div class="modulo-titulo">Bioeconomia e Sustentabilidade</div>
+      <div class="modulo-desc">Incubação de bionegócios · blended finance · ABS Nagoia · Catálogo Plantas 5.690 espécies</div></div>
+      <div class="modulo-monto"><div class="modulo-monto-val">USD 2,46M</div><div class="modulo-monto-lbl">ano 1</div></div>
     </div>
   </div>
 
-  <h2 class="h-serif text-xl text-olive-dark mb-2 mt-5">A evidência · 5 macrorregiões ONIC com casos verificáveis</h2>
-  <p class="text-sm mb-3 text-justify">ONIC representa 102 povos indígenas em <strong>toda a Colômbia</strong>. Cada região tem um caso operacional ou jurisprudência consolidada que MACI propõe escalar e articular:</p>
+  <div class="section-num">02 · A evidência</div>
+  <h2 class="section-title">Cinco macrorregiões · <em>casos verificáveis</em></h2>
+  <p class="lead">A ONIC representa <strong>102 povos indígenas em toda Colômbia</strong>. Cada região tem um caso operativo ou jurisprudência consolidada que o MACI propõe escalar e articular.</p>
 
-  <div class="grid grid-cols-5 gap-2 mb-2">
-    <div class="region-cell"><strong class="text-olive-dark text-xs">AMAZÔNIA</strong><br><span class="text-xs">Matavén · Verra Registry ID 1566 · VCS+CCB · fuente: SMT-ONIC + Verra Registry · 1.85M ha · 5 etnias custodias</span></div>
-    <div class="region-cell"><strong class="text-olive-dark text-xs">ORINOQUIA</strong><br><span class="text-xs">Cumaribo + Catálogo Plantas Úteis · 5.690 espécies (Kew + GBIF)</span></div>
-    <div class="region-cell"><strong class="text-olive-dark text-xs">ANDES</strong><br><span class="text-xs">U'wa · Serra Nevada do Cocuy · Sentença SU-039/1997 fundacional</span></div>
-    <div class="region-cell"><strong class="text-olive-dark text-xs">CARIBE-SERRA</strong><br><span class="text-xs">4 povos · Linha Negra · Kogui/Wiwa/Arhuaco/Kankuamo</span></div>
-    <div class="region-cell"><strong class="text-olive-dark text-xs">PACÍFICO</strong><br><span class="text-xs">Chocó · Embera Dóbida e Katío · pesca artesanal · noni</span></div>
+  <div class="regiones">
+    <div class="region"><div class="region-tag">Amazônia</div><div class="region-body"><strong>Matavén</strong> · Verra Registry 1566 · VCS+CCB · 1,85M ha · 5 etnias custódias</div></div>
+    <div class="region"><div class="region-tag">Orinoquía</div><div class="region-body"><strong>Cumaribo</strong> · Catálogo Plantas Úteis 5.690 espécies · Kew + GBIF</div></div>
+    <div class="region"><div class="region-tag">Andes</div><div class="region-body"><strong>U'wa</strong> · Sierra del Cocuy · Sentença Corte Constitucional <span class="mono">SU-039/1997</span></div></div>
+    <div class="region"><div class="region-tag">Caribe-Sierra</div><div class="region-body"><strong>Línea Negra</strong> · Kogui · Wiwa · Arhuaco · Kankuamo · 4 povos guardiões</div></div>
+    <div class="region"><div class="region-tag">Pacífico</div><div class="region-body"><strong>Chocó</strong> · Embera Dóbida e Katío · pesca artesanal · biodiversidade #1</div></div>
   </div>
 
   <div class="callout">
-    <p class="text-xs"><strong class="text-olive-dark">Dados 77% verificáveis · 23% assumidos (asterisco)</strong> · honestidade frente ao Conselho e doadores > aparência de completude · base oficial Linha Base MACI 2022 + Folha de Rota 2023 + Formulação Fase 1 2025.</p>
+    <strong>Honestidade institucional · 77% verificável · 23% assumido (asterisco).</strong> Base oficial: Linha Base MACI 2022 + Roteiro 2023 + Formulação Fase 1 2025. Transparência ao Conselho e doadores prevalece sobre aparência de completude.
   </div>
 
-  <h2 class="h-serif text-xl text-olive-dark mb-2 mt-4">Marco territorial nacional · governança coletiva</h2>
-  <p class="text-sm mb-2 text-justify">Mais de <strong>31.3% do território nacional colombiano</strong> está sob governança coletiva indígena e afrodescendente formalizada (fonte: ANT 2025-2026):</p>
-  <table class="w-full text-xs" style="border-collapse:collapse">
-    <thead style="background:var(--olive);color:white">
-      <tr><th class="p-1 text-left">Categoria</th><th class="p-1 text-right">Quantidade</th><th class="p-1 text-right">Hectares</th><th class="p-1 text-right">% Nacional</th></tr>
-    </thead>
-    <tbody>
-      <tr style="background:var(--beige-l)"><td class="p-1"><strong>Resguardos indígenas</strong></td><td class="p-1 text-right">959</td><td class="p-1 text-right">35,748,000</td><td class="p-1 text-right font-bold text-olive-dark">31.3%</td></tr>
-      <tr><td class="p-1"><strong>Territórios coletivos afrodescendentes</strong></td><td class="p-1 text-right">297</td><td class="p-1 text-right">5,760,000</td><td class="p-1 text-right font-bold text-olive-dark">5.0%</td></tr>
-      <tr style="background:var(--beige-l)"><td class="p-1"><strong>Zonas Reserva Camponesa (ZRC)</strong></td><td class="p-1 text-right">21</td><td class="p-1 text-right">1,594,000</td><td class="p-1 text-right font-bold text-olive-dark">1.4%</td></tr>
-      <tr style="background:var(--olive-dark);color:white"><td class="p-1"><strong>TOTAL governança coletiva</strong></td><td class="p-1 text-right"><strong>1,277</strong></td><td class="p-1 text-right"><strong>~43,102,000</strong></td><td class="p-1 text-right"><strong>~37.7%</strong></td></tr>
-    </tbody>
-  </table>
-  <p class="text-xs mt-1 text-grafito" style="font-style:italic">Fontes: ANT (Agência Nacional de Terras Colômbia) · Min Interior · dados oficiais 2023-2025. Sobre território nacional de 114.17M ha.</p>
+  <div class="section-num">03 · Marco territorial nacional</div>
+  <h2 class="section-title">Governança coletiva · <em>37,7% do país</em></h2>
+  <p class="lead">Mais de <strong>31,3% do território nacional</strong> está sob governança indígena formalizada (ANT 2025—2026). Somando comunidades afrodescendentes e camponesas, a governança coletiva ultrapassa <strong>37,7%</strong>:</p>
 
+  <div class="tabla-wrap">
+    <table class="tabla-territorial">
+      <thead><tr><th>Categoria</th><th>Quantidade</th><th>Hectares</th><th>% Nacional</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Resguardos indígenas</strong></td><td>959</td><td>35.748.000</td><td><strong>31,3%</strong></td></tr>
+        <tr><td>Territórios coletivos afrodescendentes</td><td>297</td><td>5.760.000</td><td><strong>5,0%</strong></td></tr>
+        <tr><td>Zonas de Reserva Camponesa</td><td>21</td><td>1.594.000</td><td><strong>1,4%</strong></td></tr>
+        <tr class="total"><td>Total governança coletiva</td><td>1.277</td><td>~43.102.000</td><td>~37,7%</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="tabla-footnote">Fontes · ANT (Agência Nacional de Terras) · Min Interior · dez 2025 + incremental jan—mai 2026 · território nacional 114,17M ha</p>
+
+</div>
 </section>
 
 <section class="page page-break">
+<div class="page-content" style="padding-top:12mm">
 
-  <h2 class="h-serif text-xl text-olive-dark mb-2">O pedido em Brasília · cinco janelas concretas 2026-2030</h2>
-  <p class="text-sm mb-3 text-justify">Menos de 1% dos USD 1,7 bilhões comprometidos no Forest Tenure Pledge de Glasgow chegou de forma direta a organizações indígenas nacionais. Esta arquitetura é estrutural — e MACI oferece o veículo institucional para corrigir. Cinco janelas concretas ativáveis na cúpula:</p>
+  <div class="section-num">04 · O pedido em Brasília</div>
+  <h2 class="section-title">Cinco janelas concretas · <em>2026—2030</em></h2>
+  <p class="lead">Menos de <strong>1%</strong> dos USD 1,7 bilhão comprometidos no Forest Tenure Pledge de Glasgow chegou diretamente a organizações indígenas nacionais. A arquitetura é estrutural — o MACI oferece o veículo institucional para corrigi-la.</p>
 
-  <div class="space-y-2 mb-4">
-    <div class="bg-beige-l p-3 border-l-4 border-olive">
-      <div class="flex justify-between items-start">
-        <div>
-          <strong class="text-olive-dark">Ford Foundation Andina</strong> · Módulo 1 protocolos bioculturais
-          <p class="text-xs mt-1">Janela plurianual para escalar CLPI/ABS harmonizado nas 5 macrorregiões · base U'wa SU-039.</p>
-        </div>
-        <span class="font-bold text-olive-dark text-sm whitespace-nowrap">USD 150-300K</span>
-      </div>
+  <div class="ventanas">
+    <div class="ventana">
+      <div><div class="ventana-meta">Módulo 1 · Protocolos bioculturais</div>
+        <div class="ventana-titulo">Ford Foundation Andina</div>
+        <div class="ventana-desc">Janela plurianual para escalar CLPI/ABS harmonizado nas 5 macrorregiões — base U'wa SU-039.</div></div>
+      <div class="ventana-monto"><div class="ventana-monto-val">USD 150—300K</div><div class="ventana-monto-lbl">plurianual</div></div>
     </div>
-    <div class="bg-beige-l p-3 border-l-4 border-olive">
-      <div class="flex justify-between items-start">
-        <div>
-          <strong class="text-olive-dark">NICFI Civil Society Call III</strong> · Módulo 3 MRV indígena
-          <p class="text-xs mt-1">Cadeia de custódia já certificada (Matavén Verra+CCB) · escalonamento para Serra Nevada Linha Negra.</p>
-        </div>
-        <span class="font-bold text-olive-dark text-sm whitespace-nowrap">USD 1-5M</span>
-      </div>
+    <div class="ventana">
+      <div><div class="ventana-meta">Módulo 3 · MRV indígena-led</div>
+        <div class="ventana-titulo">NICFI Civil Society Call III</div>
+        <div class="ventana-desc">Cadeia de custódia já certificada em Matavén (Verra+CCB) — escalonamento a Sierra Nevada e Línea Negra.</div></div>
+      <div class="ventana-monto"><div class="ventana-monto-val">USD 1—5M</div><div class="ventana-monto-lbl">2026—2030</div></div>
     </div>
-    <div class="bg-beige-l p-3 border-l-4 border-olive">
-      <div class="flex justify-between items-start">
-        <div>
-          <strong class="text-olive-dark">BID-Lab Innovation Grant</strong> · Módulos 3+5 escalonamento
-          <p class="text-xs mt-1">Modelo Matavén + Catálogo Plantas Úteis 5.690 espécies a 10 territórios ONIC.</p>
-        </div>
-        <span class="font-bold text-olive-dark text-sm whitespace-nowrap">USD 500K-2M</span>
-      </div>
+    <div class="ventana">
+      <div><div class="ventana-meta">Módulos 3+5 · Escalonamento</div>
+        <div class="ventana-titulo">BID-Lab Innovation Grant</div>
+        <div class="ventana-desc">Modelo Matavén + Catálogo Plantas Úteis 5.690 espécies replicado a 10 territórios ONIC.</div></div>
+      <div class="ventana-monto"><div class="ventana-monto-val">USD 500K—2M</div><div class="ventana-monto-lbl">3 anos</div></div>
     </div>
-    <div class="bg-beige-l p-3 border-l-4 border-olive">
-      <div class="flex justify-between items-start">
-        <div>
-          <strong class="text-olive-dark">GIZ Bioeconomia LATAM 2026-29</strong> · Módulo 5
-          <p class="text-xs mt-1">Escalonamento Book Economías Propias SMT + Catálogo Plantas georeferenciado.</p>
-        </div>
-        <span class="font-bold text-olive-dark text-sm whitespace-nowrap">USD 500K-2M</span>
-      </div>
+    <div class="ventana">
+      <div><div class="ventana-meta">Módulo 5 · Bioeconomia</div>
+        <div class="ventana-titulo">GIZ Bioeconomia LATAM 2026—29</div>
+        <div class="ventana-desc">Escalonamento Book Economías Propias SMT + Catálogo Plantas georreferenciado em cadeias de valor.</div></div>
+      <div class="ventana-monto"><div class="ventana-monto-val">USD 500K—2M</div><div class="ventana-monto-lbl">4 anos</div></div>
     </div>
-    <div class="bg-beige-l p-3 border-l-4 border-gold">
-      <div class="flex justify-between items-start">
-        <div>
-          <strong class="text-olive-dark">FCLP Country Package Colômbia</strong> · Módulo 3 territorial
-          <p class="text-xs mt-1">Sobreposições TEF Matavén + Linha Negra + U'wa Cocuy · sucessão Forest Tenure Pledge.</p>
-        </div>
-        <span class="font-bold text-olive-dark text-sm whitespace-nowrap">USD 2-10M</span>
-      </div>
+    <div class="ventana priority">
+      <div><div class="ventana-meta">Módulo 3 · Country Package</div>
+        <div class="ventana-titulo">FCLP Colômbia · sucessão Forest Tenure Pledge</div>
+        <div class="ventana-desc">Sobreposições TEF Matavén + Línea Negra + U'wa Cocuy — pilar fiduciário nacional 2026—2030.</div></div>
+      <div class="ventana-monto"><div class="ventana-monto-val">USD 2—10M</div><div class="ventana-monto-lbl">5 anos</div></div>
     </div>
   </div>
 
-  
-  <h2 class="h-serif text-xl text-olive-dark mb-2 mt-5">Continuidade do mandato político</h2>
-  <p class="text-sm mb-3 text-justify">MACI implementa operativamente a <strong>Declaração de Sábios e Sábias COP16</strong> (Centro Java Liviana · Povo Muysca · out-2024) e as recomendações da <strong>Cúpula Mundial TRÜA ao OS8j</strong> da Convenção sobre Diversidade Biológica. <em>"Voltar à origem · mudar maneiras ambiciosas, violentas, egoístas e irresponsáveis de existir"</em> (Sábios COP16). Brasília 2026 é a próxima estação operativa deste mandato.</p>
-  <p class="text-xs text-grafito mt-2"><strong>Arquitetura financeira indígena em formulação:</strong> mecanismo financeiro dedicado aos povos indígenas (Decreto 1088/1993 · MPC) em construção · detalhe institucional disponível em bilaterais com doadores convidados.</p>
-  <p class="text-xs text-grafito mt-2"><strong>Apoio direto a iniciativas em curso:</strong> aportes a partir de USD 100 via portal SMT-ONIC · <a href="https://smt-onic.com/donation/projects/?category=44" style="color:#5a6427;text-decoration:underline;font-weight:bold">smt-onic.com/donation/projects/?category=44</a></p>
+  <div class="section-num">05 · Continuidade do mandato político</div>
+  <h2 class="section-title">Mandato <em>operacionalizado</em></h2>
+  <p class="lead">O MACI operacionaliza a <strong>Declaração de Sábios e Sábias COP16</strong> (Centro Java Liviana · Povo Muysca · out 2024) e as recomendações da <strong>Cúpula Mundial TRÜA</strong> ao OS8j da CDB.</p>
 
-  <h2 class="h-serif text-xl text-olive-dark mb-2 mt-4">O que pedimos na sala</h2>
-  <div class="cite">
-    "Reconhecimento fiduciário direto da ONIC sem veículos intermediários que diluem controle político. Menos de 1% dos USD 1,7B pós-COP26 chega diretamente a organizações indígenas nacionais. MACI oferece a arquitetura que sim podem transferir."
+  <div class="pullquote">
+    Voltar à origem — mudar maneiras ambiciosas, violentas, egoístas e irresponsáveis de existir.
+    <span class="pullquote-attr">Declaração de Sábios e Sábias COP16 · Centro Java Liviana · Povo Muysca · outubro 2024</span>
   </div>
 
-  <h2 class="h-serif text-xl text-olive-dark mb-2 mt-4">Contato · como continuar a conversa</h2>
-  <div class="grid grid-cols-2 gap-3 mb-3">
-    <div class="bg-grafito text-white p-3 rounded">
-      <div class="text-yellow-200 text-xs uppercase tracking-wider">Coordenador SMT-ONIC</div>
-      <div class="font-bold text-lg mt-1">Wilson Herrera Baltán</div>
-      <div class="text-sm text-beige-l mt-1">
+  <p class="lead" style="margin-top:4mm"><strong>Arquitetura financeira indígena em formulação</strong> · mecanismo financeiro dedicado aos povos indígenas (Decreto 1088/1993 · MPC) em construção · detalhe institucional disponível em bilaterais com doadores convidados.</p>
+
+  <p class="lead"><strong>Apoio direto a iniciativas em curso</strong> · contribuições a partir de USD 100 via portal SMT-ONIC · <a href="https://smt-onic.com/donation/projects/?category=44" style="color:var(--smt-deep);text-decoration:underline;font-weight:600">smt-onic.com/donation/projects/?category=44</a></p>
+
+  <div class="section-num" style="margin-top:6mm">06 · O que pedimos na sala</div>
+  <h2 class="section-title">Reconhecimento <em>fiduciário direto</em></h2>
+  <div class="pullquote">
+    Reconhecimento fiduciário direto da ONIC, sem veículos intermediários que diluem o controle político. Menos de 1% dos USD 1,7B pós-COP26 chega diretamente a organizações indígenas nacionais. O MACI oferece a arquitetura que de fato pode ser transferida.
+    <span class="pullquote-attr">ONIC · Posição na Cúpula RRI Brasília · Painel 4 · Financiamento de economias comunitárias</span>
+  </div>
+
+  <div class="contacto">
+    <div class="contacto-wilson">
+      <div class="contacto-label">Coordenador SMT-ONIC</div>
+      <div class="contacto-nombre">Wilson Herrera Baltán</div>
+      <div class="contacto-info">
         WhatsApp +57 311 220 1903<br>
-        poblacion@onic.org.co
+        poblacion@onic.org.co<br>
+        Bogotá D.C. · Colômbia
       </div>
     </div>
-    <div class="bg-olive text-white p-3 rounded">
-      <div class="text-yellow-100 text-xs uppercase tracking-wider">Kit digital completo</div>
-      <div class="font-bold text-base mt-1">wilsonherrera77.github.io/MACI/brasilia2026.html</div>
-      <div class="text-sm text-beige-l mt-1">
-        Multilíngue ES/EN/PT/FR<br>
-        Dossiês + Catálogo Plantas + 5 macrorregiões
-      </div>
+    <div class="contacto-kit">
+      <div class="contacto-label">Kit digital completo</div>
+      <div class="contacto-kit-url">wilsonherrera77.github.io/MACI/brasilia2026.html</div>
+      <div class="contacto-kit-meta">Multilíngue ES · EN · PT · FR<br>Dossiês · Catálogo Plantas<br>5 macrorregiões · QR escaneável</div>
     </div>
   </div>
 
-  <div class="text-center mt-4">
-    <p class="text-xs text-grafito italic">Escaneie o QR do cartão · baixe dossiê específico por região · agende 15 minutos com Wilson para junho 2026.</p>
-  </div>
-
-</section>
+</div>
 
 <footer class="footer-band">
-  ONIC · Pacto para Voltar à Origem · XI Congresso · Cúpula RRI Brasília 26-29 maio 2026 · LOCAL-FIRST · 77% verificável
+  <span>ONIC · Pacto para Voltar à Origem · Cúpula RRI Brasília · 26—29 maio 2026</span>
+  <span class="footer-marks"><span>LOCAL-FIRST · 77% verificável</span></span>
 </footer>
+</section>
 
 </body>
 </html>

@@ -3,96 +3,312 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0a3f33">
 <title>Wilson Herrera Baltán · ONIC · Cumbre Brasilia 2026</title>
-<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,700;0,9..144,800;0,9..144,900&family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
-:root { --olive: #7d8a3c; --olive-dark: #5a6427; --grafito: #3d3d3d; --beige: #e8e0c8; }
-body { background: linear-gradient(160deg, #3d3d3d 0%, #5a6427 100%); min-height: 100vh; font-family: system-ui, sans-serif; }
-.btn { display: flex; align-items: center; gap: 12px; padding: 16px; background: white; border-radius: 8px; font-weight: 600; transition: all 0.15s; }
-.btn:hover { background: #e8e0c8; transform: scale(1.02); }
-.btn-dark { background: rgba(0,0,0,0.3); color: white; border: 1px solid rgba(255,255,255,0.3); }
-.btn-dark:hover { background: rgba(0,0,0,0.5); }
-.lang-btn { padding: 4px 10px; border: 1px solid white; background: transparent; color: white; cursor: pointer; border-radius: 4px; }
-.lang-btn.active { background: white; color: #5a6427; }
+:root {
+  --smt-deep: #0a3f33; --smt-deep-dark: #062821;
+  --olive: #7d8a3c; --olive-dark: #5a6427;
+  --onic-orange: #c8431c;
+  --grafito: #2a2a2a; --grafito-soft: #4a4a4a;
+  --beige: #e8e0c8; --beige-l: #f5f0dd; --cream: #faf6e8;
+  --gold: #d4a017; --gold-soft: #f0c850;
+}
+* { box-sizing: border-box; -webkit-tap-highlight-color: transparent; margin: 0; padding: 0; }
+body {
+  font-family: 'DM Sans', system-ui, sans-serif;
+  background: linear-gradient(165deg, var(--smt-deep-dark) 0%, var(--smt-deep) 50%, var(--olive-dark) 100%);
+  min-height: 100vh;
+  color: white;
+  padding: 16px 14px 28px;
+  -webkit-font-smoothing: antialiased;
+}
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: repeating-linear-gradient(45deg, rgba(255,255,255,0.025) 0 2px, transparent 2px 14px), repeating-linear-gradient(-45deg, rgba(212,160,23,0.04) 0 1px, transparent 1px 18px);
+  pointer-events: none;
+}
+.wrap { max-width: 480px; margin: 0 auto; position: relative; z-index: 1; }
+
+/* Lang switch */
+.lang-switch { display: flex; gap: 5px; justify-content: flex-end; margin-bottom: 14px; }
+.lang-btn {
+  font-family: 'JetBrains Mono', monospace;
+  padding: 5px 10px;
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.25);
+  color: white;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  cursor: pointer;
+  -webkit-appearance: none;
+}
+.lang-btn.active { background: var(--gold); color: var(--smt-deep-dark); border-color: var(--gold); }
+
+/* Logo header */
+.logo-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 18px; }
+.logo-row img.smt { height: 28px; filter: brightness(0) invert(1); opacity: 0.95; }
+.logo-row img.onic { height: 34px; filter: brightness(0) invert(1); opacity: 0.95; }
+
+/* Identity block */
+.summit-band {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 8.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--gold-soft);
+  border-top: 1px solid rgba(212,160,23,0.4);
+  border-bottom: 1px solid rgba(212,160,23,0.4);
+  padding: 5px 0;
+  display: inline-block;
+  margin-bottom: 14px;
+}
+.brand {
+  font-family: 'Fraunces', serif;
+  font-weight: 900;
+  font-size: 26px;
+  line-height: 0.98;
+  letter-spacing: -0.025em;
+  color: white;
+  margin-bottom: 6px;
+}
+.brand em { font-style: italic; font-weight: 400; color: var(--gold-soft); }
+.brand-role {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--gold-soft);
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+.brand-org { font-size: 12px; color: rgba(255,255,255,0.75); font-style: italic; margin-bottom: 22px; }
+
+/* Section header */
+.section-header {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  color: var(--gold-soft);
+  margin: 20px 0 10px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.section-header::before { content: ''; width: 18px; height: 1px; background: var(--gold-soft); }
+
+/* Action buttons */
+.btn-stack { display: flex; flex-direction: column; gap: 8px; }
+.btn {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 16px;
+  background: white;
+  color: var(--grafito);
+  text-decoration: none;
+  border-left: 3px solid var(--olive);
+  transition: transform 0.12s;
+}
+.btn:active { transform: scale(0.985); }
+.btn-icon {
+  font-family: 'Fraunces', serif;
+  font-weight: 900;
+  font-size: 17px;
+  color: var(--smt-deep);
+  width: 28px;
+  text-align: center;
+  letter-spacing: -0.03em;
+}
+.btn-label { font-family: 'Fraunces', serif; font-weight: 700; font-size: 15px; color: var(--smt-deep); line-height: 1.15; }
+.btn-hint { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--grafito-soft); letter-spacing: 0.05em; margin-top: 2px; }
+.btn-arrow { color: var(--gold); font-size: 16px; font-family: 'Fraunces', serif; margin-left: auto; }
+.btn.primary { background: var(--gold); border-left-color: var(--smt-deep-dark); }
+.btn.primary .btn-icon, .btn.primary .btn-label { color: var(--smt-deep-dark); }
+.btn.primary .btn-hint { color: var(--smt-deep); opacity: 0.7; }
+.btn.primary .btn-arrow { color: var(--smt-deep-dark); }
+
+/* Downloads grid */
+.downloads { display: grid; grid-template-columns: repeat(2, 1fr); gap: 6px; }
+.dl-btn {
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.18);
+  color: white;
+  text-decoration: none;
+  padding: 10px 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: background 0.12s;
+}
+.dl-btn:active { background: rgba(255,255,255,0.18); }
+.dl-tag {
+  font-family: 'Fraunces', serif;
+  font-weight: 700;
+  font-size: 13px;
+  color: var(--gold);
+  letter-spacing: -0.02em;
+}
+.dl-label {
+  font-size: 10.5px;
+  line-height: 1.25;
+  color: rgba(255,255,255,0.9);
+  font-weight: 500;
+}
+
+/* Footer */
+.footer {
+  margin-top: 22px;
+  padding-top: 14px;
+  border-top: 1px solid rgba(255,255,255,0.15);
+  text-align: center;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 9px;
+  color: rgba(255,255,255,0.6);
+  letter-spacing: 0.1em;
+  line-height: 1.7;
+  text-transform: uppercase;
+}
 </style>
 </head>
-<body class="p-6 text-white">
-<div class="max-w-md mx-auto">
-  <div class="flex justify-end gap-1 mb-4 text-xs">
+<body>
+
+<div class="wrap">
+
+  <div class="lang-switch">
     <button class="lang-btn active" data-lang="es" onclick="setLang('es')">ES</button>
     <button class="lang-btn" data-lang="en" onclick="setLang('en')">EN</button>
     <button class="lang-btn" data-lang="pt" onclick="setLang('pt')">PT</button>
     <button class="lang-btn" data-lang="fr" onclick="setLang('fr')">FR</button>
   </div>
 
-  <div class="text-center mb-6">
-    <div class="w-24 h-24 bg-white rounded-full mx-auto mb-4 flex items-center justify-center text-4xl font-black text-olive-dark" style="color: #5a6427">WH</div>
-    <h1 class="text-2xl font-black tracking-wide">WILSON HERRERA BALTÁN</h1>
-    <p class="text-yellow-200 mt-1" data-i18n="role">Coordinador · SMT-ONIC</p>
-    <p class="text-xs text-beige opacity-80 mt-1" data-i18n="org">Organización Nacional Indígena de Colombia</p>
+  <div class="logo-row">
+    <img class="smt" src="logo_SMT.png" alt="SMT">
+    <img class="onic" src="logo_ONIC.png" alt="ONIC">
   </div>
 
-  <div class="space-y-3 mb-8">
-    <a href="wilson.vcf" class="btn block text-grafito" style="color: #3d3d3d">
-      <span class="text-2xl">📇</span>
+  <div class="summit-band" data-i18n="summit">Cumbre RRI Brasília · 26—29 mayo 2026</div>
+
+  <h1 class="brand">Wilson<br>Herrera <em>Baltán</em></h1>
+  <div class="brand-role" data-i18n="role">Coordinador · SMT-ONIC</div>
+  <div class="brand-org" data-i18n="org">Organización Nacional Indígena de Colombia</div>
+
+  <div class="section-header" data-i18n="contact_header">Contactar a Wilson</div>
+
+  <div class="btn-stack">
+    <a href="wilson.vcf" class="btn primary" download>
+      <span class="btn-icon">01</span>
       <div>
-        <div data-i18n="save_contact">Guardar Contacto (.vcf)</div>
-        <div class="text-xs opacity-60" data-i18n="save_hint">Importar a tu agenda</div>
+        <div class="btn-label" data-i18n="save_contact">Guardar Contacto</div>
+        <div class="btn-hint" data-i18n="save_hint">Importar a tu agenda · .vcf</div>
       </div>
+      <span class="btn-arrow">→</span>
     </a>
-    <a href="https://wa.me/573112201903" class="btn block text-grafito" style="color: #3d3d3d">
-      <span class="text-2xl">💬</span>
+    <a href="https://wa.me/573112201903" class="btn">
+      <span class="btn-icon">02</span>
       <div>
-        <div>WhatsApp</div>
-        <div class="text-xs opacity-60">+57 311 220 1903</div>
+        <div class="btn-label">WhatsApp</div>
+        <div class="btn-hint">+57 311 220 1903</div>
       </div>
+      <span class="btn-arrow">→</span>
     </a>
-    <a href="mailto:poblacion@onic.org.co" class="btn block text-grafito" style="color: #3d3d3d">
-      <span class="text-2xl">✉️</span>
+    <a href="mailto:poblacion@onic.org.co?subject=RRI%20Brasilia%202026%20-%20ONIC%20MACI" class="btn">
+      <span class="btn-icon">03</span>
       <div>
-        <div>Email</div>
-        <div class="text-xs opacity-60">poblacion@onic.org.co</div>
+        <div class="btn-label">Email</div>
+        <div class="btn-hint">poblacion@onic.org.co</div>
       </div>
+      <span class="btn-arrow">→</span>
     </a>
-    <a href="brasilia2026.html" class="btn btn-dark block">
-      <span class="text-2xl">📋</span>
+    <a href="brasilia2026.html" class="btn">
+      <span class="btn-icon">04</span>
       <div>
-        <div data-i18n="landing">Landing completa Brasilia 2026</div>
-        <div class="text-xs opacity-60" data-i18n="landing_hint">MACI · 5 regiones · descargables</div>
+        <div class="btn-label" data-i18n="landing">Landing Brasília 2026</div>
+        <div class="btn-hint" data-i18n="landing_hint">MACI · 5 regiones · descargables</div>
       </div>
+      <span class="btn-arrow">→</span>
     </a>
   </div>
 
-  <div class="mb-6">
-    <h2 class="text-sm uppercase tracking-widest text-yellow-200 mb-3" data-i18n="downloads">Descargar Documentos</h2>
-    <div class="grid grid-cols-2 gap-2 text-xs">
-      <a href="dossiers/mataven.pdf" class="btn-dark btn block">📑 <span data-i18n="d_mataven">Matavén VCS+CCB</span></a>
-      <a href="dossiers/plantas-utiles.pdf" class="btn-dark btn block">🌿 <span data-i18n="d_plantas">Plantas Útiles</span></a>
-      <a href="dossiers/sierra-nevada-santa-marta.pdf" class="btn-dark btn block">⛰️ <span data-i18n="d_sierra">Sierra Nevada</span></a>
-      <a href="dossiers/uwa-su039-cocuy.pdf" class="btn-dark btn block">⚖️ <span data-i18n="d_uwa">U'wa SU-039</span></a>
-      <a href="dossiers/mesquita-onic-conaq.pdf" class="btn-dark btn block">🤝 <span data-i18n="d_mesquita">Mesquita PT/ES</span></a>
-      <a href="one-pager/one_pager_ES.pdf" class="btn-dark btn block">📄 One-pager ES</a>
-      <a href="one-pager/one_pager_EN.pdf" class="btn-dark btn block">📄 One-pager EN</a>
-      <a href="one-pager/one_pager_PT.pdf" class="btn-dark btn block">📄 One-pager PT</a>
-      <a href="one-pager/one_pager_FR.pdf" class="btn-dark btn block">📄 One-pager FR</a>
-    </div>
+  <div class="section-header" data-i18n="downloads">Descargar Documentos</div>
+
+  <div class="downloads">
+    <a href="dossiers/mataven.pdf" class="dl-btn">
+      <span class="dl-tag">01</span>
+      <span class="dl-label" data-i18n="d_mataven">Matavén VCS+CCB</span>
+    </a>
+    <a href="dossiers/plantas-utiles.pdf" class="dl-btn">
+      <span class="dl-tag">02</span>
+      <span class="dl-label" data-i18n="d_plantas">Plantas Útiles</span>
+    </a>
+    <a href="dossiers/sierra-nevada-santa-marta.pdf" class="dl-btn">
+      <span class="dl-tag">03</span>
+      <span class="dl-label" data-i18n="d_sierra">Sierra Nevada</span>
+    </a>
+    <a href="dossiers/uwa-su039-cocuy.pdf" class="dl-btn">
+      <span class="dl-tag">04</span>
+      <span class="dl-label" data-i18n="d_uwa">U'wa SU-039</span>
+    </a>
+    <a href="dossiers/mesquita-onic-conaq.pdf" class="dl-btn">
+      <span class="dl-tag">05</span>
+      <span class="dl-label" data-i18n="d_mesquita">Mesquita PT/ES</span>
+    </a>
+    <a href="dossiers/pregunta-panel4.pdf" class="dl-btn">
+      <span class="dl-tag">06</span>
+      <span class="dl-label" data-i18n="d_panel4">Pregunta Panel 4</span>
+    </a>
+    <a href="one-pager/one_pager_ES.pdf" class="dl-btn">
+      <span class="dl-tag">ES</span>
+      <span class="dl-label">One-pager</span>
+    </a>
+    <a href="one-pager/one_pager_EN.pdf" class="dl-btn">
+      <span class="dl-tag">EN</span>
+      <span class="dl-label">One-pager</span>
+    </a>
+    <a href="one-pager/one_pager_PT.pdf" class="dl-btn">
+      <span class="dl-tag">PT</span>
+      <span class="dl-label">One-pager</span>
+    </a>
+    <a href="one-pager/one_pager_FR.pdf" class="dl-btn">
+      <span class="dl-tag">FR</span>
+      <span class="dl-label">One-pager</span>
+    </a>
   </div>
 
-  <div class="border-t border-white border-opacity-20 pt-4 text-center text-xs opacity-70">
-    <p>ONIC · Pacto para Volver al Origen</p>
-    <p class="mt-1" data-i18n="footer_summit">Cumbre RRI Brasilia · 26-29 mayo 2026</p>
+  <div class="footer">
+    <div>ONIC · Pacto para Volver al Origen</div>
+    <div data-i18n="footer_summit">Cumbre RRI Brasília · 26—29 mayo 2026</div>
   </div>
+
 </div>
 
 <script>
 const i18n = {
-  es: {role:'Coordinador · SMT-ONIC',org:'Organización Nacional Indígena de Colombia',save_contact:'Guardar Contacto (.vcf)',save_hint:'Importar a tu agenda',landing:'Landing completa Brasilia 2026',landing_hint:'MACI · 5 regiones · descargables',downloads:'Descargar Documentos',d_mataven:'Matavén VCS+CCB',d_plantas:'Plantas Útiles',d_sierra:'Sierra Nevada',d_uwa:'U\'wa SU-039',d_mesquita:'Mesquita PT/ES',footer_summit:'Cumbre RRI Brasilia · 26-29 mayo 2026'},
-  en: {role:'Coordinator · SMT-ONIC',org:'National Indigenous Organization of Colombia',save_contact:'Save Contact (.vcf)',save_hint:'Add to your phone book',landing:'Full Brasilia 2026 Landing',landing_hint:'MACI · 5 regions · downloads',downloads:'Download Documents',d_mataven:'Matavén VCS+CCB',d_plantas:'Useful Plants',d_sierra:'Sierra Nevada',d_uwa:'U\'wa SU-039',d_mesquita:'Mesquita PT/ES',footer_summit:'RRI Brasilia Summit · 26-29 May 2026'},
-  pt: {role:'Coordenador · SMT-ONIC',org:'Organização Nacional Indígena da Colômbia',save_contact:'Salvar Contato (.vcf)',save_hint:'Adicionar à agenda',landing:'Landing Brasília 2026',landing_hint:'MACI · 5 regiões · downloads',downloads:'Baixar Documentos',d_mataven:'Matavén VCS+CCB',d_plantas:'Plantas Úteis',d_sierra:'Serra Nevada',d_uwa:'U\'wa SU-039',d_mesquita:'Mesquita PT/ES',footer_summit:'Cúpula RRI Brasília · 26-29 maio 2026'},
-  fr: {role:'Coordinateur · SMT-ONIC',org:'Organisation Nationale Autochtone de Colombie',save_contact:'Enregistrer Contact',save_hint:'Ajouter au répertoire',landing:'Landing Brasília 2026',landing_hint:'MACI · 5 régions',downloads:'Télécharger Documents',d_mataven:'Matavén',d_plantas:'Plantes Utiles',d_sierra:'Sierra Nevada',d_uwa:'U\'wa',d_mesquita:'Mesquita',footer_summit:'Sommet RRI Brasília · 26-29 mai 2026'}
+  es: { summit:'Cumbre RRI Brasília · 26—29 mayo 2026', role:'Coordinador · SMT-ONIC', org:'Organización Nacional Indígena de Colombia', contact_header:'Contactar a Wilson', save_contact:'Guardar Contacto', save_hint:'Importar a tu agenda · .vcf', landing:'Landing Brasília 2026', landing_hint:'MACI · 5 regiones · descargables', downloads:'Descargar Documentos', d_mataven:'Matavén VCS+CCB', d_plantas:'Plantas Útiles', d_sierra:'Sierra Nevada', d_uwa:"U'wa SU-039", d_mesquita:'Mesquita PT/ES', d_panel4:'Pregunta Panel 4', footer_summit:'Cumbre RRI Brasília · 26—29 mayo 2026' },
+  en: { summit:'RRI Brasília Summit · 26—29 May 2026', role:'Coordinator · SMT-ONIC', org:'National Indigenous Organization of Colombia', contact_header:'Contact Wilson', save_contact:'Save Contact', save_hint:'Add to your phone book · .vcf', landing:'Brasília 2026 Landing', landing_hint:'MACI · 5 regions · downloads', downloads:'Download Documents', d_mataven:'Matavén VCS+CCB', d_plantas:'Useful Plants', d_sierra:'Sierra Nevada', d_uwa:"U'wa SU-039", d_mesquita:'Mesquita PT/ES', d_panel4:'Panel 4 question', footer_summit:'RRI Brasília Summit · 26—29 May 2026' },
+  pt: { summit:'Cúpula RRI Brasília · 26—29 maio 2026', role:'Coordenador · SMT-ONIC', org:'Organização Nacional Indígena da Colômbia', contact_header:'Contatar Wilson', save_contact:'Salvar Contato', save_hint:'Adicionar à agenda · .vcf', landing:'Landing Brasília 2026', landing_hint:'MACI · 5 regiões · downloads', downloads:'Baixar Documentos', d_mataven:'Matavén VCS+CCB', d_plantas:'Plantas Úteis', d_sierra:'Serra Nevada', d_uwa:"U'wa SU-039", d_mesquita:'Mesquita PT/ES', d_panel4:'Pergunta Painel 4', footer_summit:'Cúpula RRI Brasília · 26—29 maio 2026' },
+  fr: { summit:'Sommet RRI Brasília · 26—29 mai 2026', role:'Coordinateur · SMT-ONIC', org:'Organisation Nationale Autochtone de Colombie', contact_header:'Contacter Wilson', save_contact:'Enregistrer Contact', save_hint:'Ajouter au répertoire · .vcf', landing:'Landing Brasília 2026', landing_hint:'MACI · 5 régions · téléchargements', downloads:'Télécharger Documents', d_mataven:'Matavén VCS+CCB', d_plantas:'Plantes Utiles', d_sierra:'Sierra Nevada', d_uwa:"U'wa SU-039", d_mesquita:'Mesquita PT/ES', d_panel4:'Question Panel 4', footer_summit:'Sommet RRI Brasília · 26—29 mai 2026' }
 };
-function setLang(lang){document.querySelectorAll('[data-i18n]').forEach(el=>{const k=el.getAttribute('data-i18n');if(i18n[lang]&&i18n[lang][k])el.textContent=i18n[lang][k];});document.querySelectorAll('.lang-btn').forEach(b=>b.classList.toggle('active',b.dataset.lang===lang));try{localStorage.setItem('lang',lang);}catch(e){}}
-const s=(function(){try{return localStorage.getItem('lang');}catch(e){return null;}})();if(s&&i18n[s])setLang(s);
+function setLang(lang) {
+  document.documentElement.lang = lang;
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const k = el.dataset.i18n;
+    if (i18n[lang] && i18n[lang][k]) el.textContent = i18n[lang][k];
+  });
+  document.querySelectorAll('.lang-btn').forEach(b => b.classList.toggle('active', b.dataset.lang === lang));
+  try { localStorage.setItem('lang_hub', lang); } catch(e) { /* private mode safe no-op */ }
+}
+const s = (function(){ try { return localStorage.getItem('lang_hub'); } catch(e) { return null; } })();
+if (s && i18n[s]) setLang(s);
 </script>
+
 </body>
 </html>

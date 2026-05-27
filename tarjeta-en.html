@@ -5,90 +5,246 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="theme-color" content="#5a6427">
+<meta name="theme-color" content="#0a3f33">
 <title>Wilson Herrera Baltán · ONIC · SMT</title>
-<link rel="manifest" href="data:application/manifest+json;base64,eyJuYW1lIjoiV2lsc29uIEhlcnJlcmEgQmFsdMOhbiAtIE9OSUMiLCJzaG9ydF9uYW1lIjoiV2lsc29uIE9OSUMiLCJzdGFydF91cmwiOiIuLyIsImRpc3BsYXkiOiJzdGFuZGFsb25lIiwidGhlbWVfY29sb3IiOiIjNWE2NDI3IiwiYmFja2dyb3VuZF9jb2xvciI6IiM3ZDhhM2MifQ==">
-<script src="https://cdn.tailwindcss.com"></script>
+<link rel="manifest" href="data:application/manifest+json;base64,eyJuYW1lIjoiV2lsc29uIEhlcnJlcmEgQmFsdMOhbiAtIE9OSUMiLCJzaG9ydF9uYW1lIjoiV2lsc29uIE9OSUMiLCJzdGFydF91cmwiOiIuLyIsImRpc3BsYXkiOiJzdGFuZGFsb25lIiwidGhlbWVfY29sb3IiOiIjMGEzZjMzIiwiYmFja2dyb3VuZF9jb2xvciI6IiM3ZDhhM2MifQ==">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,700;0,9..144,800;0,9..144,900&family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
-:root { --olive:#7d8a3c; --olive-dark:#5a6427; --grafito:#3d3d3d; --beige:#e8e0c8; --beige-l:#f5f0dd; --gold:#d4a017; }
-* { -webkit-tap-highlight-color: transparent; }
+:root {
+  --smt-deep: #0a3f33; --smt-deep-dark: #062821;
+  --olive: #7d8a3c; --olive-dark: #5a6427;
+  --onic-orange: #c8431c;
+  --grafito: #2a2a2a; --grafito-soft: #4a4a4a;
+  --beige: #e8e0c8; --beige-l: #f5f0dd; --cream: #faf6e8;
+  --gold: #d4a017; --gold-soft: #f0c850;
+}
+* { -webkit-tap-highlight-color: transparent; box-sizing: border-box; }
 body {
-  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-  background: linear-gradient(160deg, #3d3d3d 0%, #5a6427 50%, #7d8a3c 100%);
+  font-family: 'DM Sans', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  background: linear-gradient(165deg, var(--smt-deep-dark) 0%, var(--smt-deep) 45%, var(--olive-dark) 100%);
   min-height: 100vh;
   margin: 0;
   color: var(--grafito);
   padding-bottom: env(safe-area-inset-bottom);
   padding-top: env(safe-area-inset-top);
+  -webkit-font-smoothing: antialiased;
 }
-.card-wrap { max-width: 420px; margin: 0 auto; padding: 16px 14px 24px; }
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image:
+    repeating-linear-gradient(45deg, rgba(255,255,255,0.025) 0 2px, transparent 2px 14px),
+    repeating-linear-gradient(-45deg, rgba(212,160,23,0.04) 0 1px, transparent 1px 18px);
+  pointer-events: none;
+  z-index: 0;
+}
+.card-wrap { max-width: 420px; margin: 0 auto; padding: 14px 14px 28px; position: relative; z-index: 1; }
+
+/* Language switch */
+.lang-switch {
+  display: flex;
+  gap: 5px;
+  justify-content: center;
+  margin-bottom: 14px;
+}
+.lang-btn {
+  font-family: 'JetBrains Mono', monospace;
+  padding: 6px 11px;
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.25);
+  color: white;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  cursor: pointer;
+  -webkit-appearance: none;
+}
+.lang-btn.active { background: var(--gold); color: var(--smt-deep-dark); border-color: var(--gold); }
+
+/* Card front · editorial business card */
 .card-front {
-  background: linear-gradient(135deg, #3d3d3d 0%, #5a6427 60%, #7d8a3c 100%);
-  border-radius: 18px;
-  padding: 24px 22px;
+  background: linear-gradient(135deg, var(--smt-deep-dark) 0%, var(--smt-deep) 60%, var(--olive-dark) 100%);
+  padding: 28px 24px 24px;
   color: white;
   position: relative;
   overflow: hidden;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.35), 0 8px 16px rgba(0,0,0,0.2);
-  margin-bottom: 16px;
+  box-shadow: 0 22px 44px rgba(0,0,0,0.4), 0 8px 20px rgba(0,0,0,0.2);
+  margin-bottom: 14px;
 }
 .card-front::before {
-  content:''; position: absolute; top: -40px; left: -40px;
-  width: 140px; height: 140px;
-  background: radial-gradient(circle, rgba(212,160,23,0.25) 0%, transparent 70%);
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: repeating-linear-gradient(45deg, rgba(255,255,255,0.025) 0 2px, transparent 2px 14px);
+  pointer-events: none;
 }
 .card-front::after {
-  content:''; position: absolute; bottom: -50px; right: -50px;
-  width: 160px; height: 160px;
-  background: radial-gradient(circle, rgba(232,224,200,0.15) 0%, transparent 70%);
+  content: '';
+  position: absolute;
+  right: -50px;
+  bottom: -50px;
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle, rgba(212,160,23,0.2) 0%, transparent 70%);
+  pointer-events: none;
 }
-.logo-row { display: flex; gap: 14px; align-items: center; margin-bottom: 18px; position: relative; z-index: 2; }
-.logo-row img { height: 46px; width: auto; display: block; background: white; padding: 4px; border-radius: 6px; box-shadow: 0 2px 6px rgba(0,0,0,0.18); }
-.logo-row .divider { width: 1px; height: 32px; background: rgba(255,255,255,0.3); }
-.brand-name { font-weight: 900; letter-spacing: 0.03em; line-height: 1.05; }
-.brand-role { color: #ffe9a1; font-weight: 600; font-size: 0.86rem; letter-spacing: 0.05em; text-transform: uppercase; margin-top: 4px; }
-.brand-sub { color: #e8e0c8; font-size: 0.78rem; margin-top: 2px; opacity: 0.9; }
-.qr-block { background: white; padding: 14px; border-radius: 12px; display: flex; align-items: center; justify-content: center; margin: 18px 0 6px; position: relative; z-index: 2; }
-.qr-block svg { width: 100%; height: auto; max-width: 200px; display: block; }
-.qr-caption { text-align: center; font-size: 0.7rem; color: #ffe9a1; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 700; position: relative; z-index: 2; }
-.btn-stack { display: flex; flex-direction: column; gap: 10px; margin-top: 6px; }
+.card-content { position: relative; z-index: 2; }
+
+.logo-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 22px;
+}
+.logo-row img.smt { height: 32px; filter: brightness(0) invert(1); opacity: 0.95; }
+.logo-row img.onic { height: 38px; filter: brightness(0) invert(1); opacity: 0.95; }
+
+.summit-band {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 8.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--gold-soft);
+  border-top: 1px solid rgba(212,160,23,0.4);
+  border-bottom: 1px solid rgba(212,160,23,0.4);
+  padding: 5px 0;
+  display: inline-block;
+  margin-bottom: 18px;
+}
+
+.brand-name {
+  font-family: 'Fraunces', serif;
+  font-weight: 900;
+  font-size: 26px;
+  line-height: 0.98;
+  letter-spacing: -0.025em;
+  margin: 0 0 8px 0;
+  color: white;
+}
+.brand-name em { font-style: italic; font-weight: 400; color: var(--gold-soft); }
+.brand-role {
+  font-family: 'JetBrains Mono', monospace;
+  color: var(--gold-soft);
+  font-weight: 600;
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-top: 8px;
+}
+.brand-sub {
+  color: rgba(255,255,255,0.85);
+  font-size: 12px;
+  margin-top: 5px;
+  line-height: 1.4;
+}
+.brand-org {
+  color: rgba(255,255,255,0.7);
+  font-size: 11px;
+  margin-top: 3px;
+  font-style: italic;
+}
+
+.qr-block {
+  background: white;
+  padding: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 22px 0 8px;
+  border: 4px solid rgba(212,160,23,0.4);
+}
+.qr-block img { width: 100%; max-width: 200px; height: auto; display: block; }
+.qr-caption {
+  font-family: 'JetBrains Mono', monospace;
+  text-align: center;
+  font-size: 10px;
+  color: var(--gold-soft);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-top: 4px;
+}
+
+.divider-track {
+  display: flex;
+  gap: 4px;
+  justify-content: center;
+  margin: 14px 0 0;
+}
+.divider-track span { width: 6px; height: 6px; transform: rotate(45deg); }
+.divider-track span:nth-child(1) { background: rgba(255,255,255,0.3); }
+.divider-track span:nth-child(2) { background: var(--gold); }
+.divider-track span:nth-child(3) { background: rgba(255,255,255,0.3); }
+
+/* Action buttons */
+.btn-stack { display: flex; flex-direction: column; gap: 8px; margin-top: 4px; }
 .btn {
-  display: flex; align-items: center; gap: 14px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
   padding: 14px 18px;
   background: white;
-  border-radius: 12px;
   text-decoration: none;
   color: var(--grafito);
   font-weight: 600;
-  font-size: 0.95rem;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.12);
-  transition: all 0.15s;
-  -webkit-user-select: none;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  transition: transform 0.12s;
+  border-left: 3px solid var(--olive);
 }
-.btn:active { transform: scale(0.98); }
-.btn-icon { font-size: 22px; flex-shrink: 0; }
-.btn-text { flex: 1; }
-.btn-text .label { font-size: 0.95rem; font-weight: 700; line-height: 1.1; }
-.btn-text .hint { font-size: 0.72rem; opacity: 0.65; margin-top: 2px; font-weight: 500; }
-.btn-arrow { color: #7d8a3c; font-size: 18px; }
-.btn-primary { background: #d4a017; color: #3d3d3d; }
-.btn-primary .btn-arrow { color: #3d3d3d; }
-.lang-switch { display: flex; gap: 6px; justify-content: center; margin-top: 18px; position: relative; z-index: 2; }
-.lang-btn { padding: 5px 12px; background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.3); color: white; border-radius: 14px; font-size: 0.72rem; font-weight: 700; cursor: pointer; -webkit-appearance: none; }
-.lang-btn.active { background: white; color: var(--olive-dark); }
-.footer-note { text-align: center; font-size: 0.7rem; color: rgba(255,255,255,0.55); margin-top: 18px; padding: 0 8px; line-height: 1.4; }
-.divider-track { display: flex; gap: 4px; justify-content: center; margin: 10px 0; }
-.divider-track span { width: 6px; height: 6px; background: white; opacity: 0.4; transform: rotate(45deg); }
-.divider-track span:nth-child(2) { background: #d4a017; opacity: 0.9; }
-.divider-track span:nth-child(3) { background: white; opacity: 0.4; }
-.summit-pill { display: inline-flex; align-items: center; gap: 6px; padding: 4px 10px; background: rgba(212,160,23,0.2); border: 1px solid rgba(212,160,23,0.5); border-radius: 12px; font-size: 0.7rem; color: #ffe9a1; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 10px; position: relative; z-index: 2; }
+.btn:active { transform: scale(0.985); }
+.btn-icon {
+  font-family: 'Fraunces', serif;
+  font-weight: 900;
+  font-size: 18px;
+  flex-shrink: 0;
+  color: var(--smt-deep);
+  width: 28px;
+  text-align: center;
+  letter-spacing: -0.03em;
+}
+.btn-text { flex: 1; min-width: 0; }
+.btn-text .label {
+  font-family: 'Fraunces', serif;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 1.15;
+  color: var(--smt-deep);
+}
+.btn-text .hint {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  color: var(--grafito-soft);
+  margin-top: 3px;
+  letter-spacing: 0.05em;
+}
+.btn-arrow { color: var(--gold); font-size: 18px; font-family: 'Fraunces', serif; font-weight: 700; }
+.btn.primary { background: var(--gold); border-left-color: var(--smt-deep-dark); }
+.btn.primary .btn-icon { color: var(--smt-deep-dark); }
+.btn.primary .btn-text .label { color: var(--smt-deep-dark); }
+.btn.primary .btn-text .hint { color: var(--smt-deep); opacity: 0.75; }
+.btn.primary .btn-arrow { color: var(--smt-deep-dark); }
+
+.footer-note {
+  font-family: 'JetBrains Mono', monospace;
+  text-align: center;
+  font-size: 9px;
+  color: rgba(255,255,255,0.55);
+  margin-top: 22px;
+  padding: 0 12px;
+  line-height: 1.55;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
 </style>
 </head>
 <body>
 
 <div class="card-wrap">
 
-  <!-- LANG SWITCH (top of page · floating) -->
   <div class="lang-switch">
     <button class="lang-btn active" data-lang="en" onclick="setLang('en')">EN</button>
     <button class="lang-btn" data-lang="es" onclick="setLang('es')">ES</button>
@@ -97,32 +253,32 @@ body {
     <button class="lang-btn" data-lang="id" onclick="setLang('id')">ID</button>
   </div>
 
-  <!-- BUSINESS CARD FRONT -->
   <section class="card-front">
-    <div class="logo-row">
-      <img src="logo_ONIC.png" alt="ONIC" />
-      <span class="divider"></span>
-      <img src="LogoSMT_1.png" alt="SMT" />
+    <div class="card-content">
+
+      <div class="logo-row">
+        <img class="smt" src="logo_SMT.png" alt="SMT">
+        <img class="onic" src="logo_ONIC.png" alt="ONIC">
+      </div>
+
+      <div class="summit-band" data-i18n="summit">RRI Brasília Summit · 26—29 May 2026</div>
+
+      <h1 class="brand-name">Wilson<br>Herrera <em>Baltán</em></h1>
+      <div class="brand-role" data-i18n="role">Coordinator · SMT-ONIC</div>
+      <div class="brand-sub" data-i18n="sub">Indigenous Territorial Monitoring System</div>
+      <div class="brand-org" data-i18n="org">National Indigenous Organization of Colombia</div>
+
+      <div class="qr-block" id="qrContainer"></div>
+      <div class="qr-caption" data-i18n="qr_caption">Scan · Connect</div>
+
+      <div class="divider-track"><span></span><span></span><span></span></div>
+
     </div>
-
-    <h1 class="brand-name text-2xl mb-1" style="font-size: 1.5rem">WILSON<br>HERRERA BALTÁN</h1>
-    <div class="brand-role" data-i18n="role">Coordinator · SMT-ONIC</div>
-    <div class="brand-sub" data-i18n="sub">Indigenous Territorial Monitoring System</div>
-    <div class="brand-sub" data-i18n="org">Organización Nacional Indígena de Colombia</div>
-
-    <!-- QR -->
-    <div class="qr-block" id="qrContainer">
-      <!-- QR SVG injected via JS for crisp rendering -->
-    </div>
-    <div class="qr-caption" data-i18n="qr_caption">Scan · Connect with Wilson</div>
-
-    <div class="divider-track"><span></span><span></span><span></span></div>
   </section>
 
-  <!-- ACTION BUTTONS STACK -->
   <div class="btn-stack">
-    <a href="wilson.vcf" class="btn btn-primary" download>
-      <span class="btn-icon">📇</span>
+    <a href="wilson.vcf" class="btn primary" download>
+      <span class="btn-icon">01</span>
       <div class="btn-text">
         <div class="label" data-i18n="b_save">Save Contact</div>
         <div class="hint" data-i18n="b_save_hint">Add Wilson to your phone book</div>
@@ -130,7 +286,7 @@ body {
       <span class="btn-arrow">→</span>
     </a>
     <a href="https://wa.me/573112201903" class="btn">
-      <span class="btn-icon">💬</span>
+      <span class="btn-icon">02</span>
       <div class="btn-text">
         <div class="label">WhatsApp</div>
         <div class="hint">+57 311 220 1903</div>
@@ -138,7 +294,7 @@ body {
       <span class="btn-arrow">→</span>
     </a>
     <a href="mailto:poblacion@onic.org.co?subject=RRI%20Brasilia%202026%20-%20ONIC%20MACI" class="btn">
-      <span class="btn-icon">✉️</span>
+      <span class="btn-icon">03</span>
       <div class="btn-text">
         <div class="label">Email</div>
         <div class="hint">poblacion@onic.org.co</div>
@@ -146,7 +302,7 @@ body {
       <span class="btn-arrow">→</span>
     </a>
     <a href="brasilia2026.html" class="btn">
-      <span class="btn-icon">🌎</span>
+      <span class="btn-icon">04</span>
       <div class="btn-text">
         <div class="label" data-i18n="b_kit">MACI · ONIC Programme</div>
         <div class="hint" data-i18n="b_kit_hint">Institutional context · multilingual</div>
@@ -154,7 +310,7 @@ body {
       <span class="btn-arrow">→</span>
     </a>
     <a href="contact-brasilia.html" class="btn">
-      <span class="btn-icon">📱</span>
+      <span class="btn-icon">05</span>
       <div class="btn-text">
         <div class="label" data-i18n="b_hub">Schedule a meeting</div>
         <div class="hint" data-i18n="b_hub_hint">Booking · contact options</div>
@@ -162,7 +318,7 @@ body {
       <span class="btn-arrow">→</span>
     </a>
     <a href="https://smt-onic.com" class="btn">
-      <span class="btn-icon">🛰️</span>
+      <span class="btn-icon">06</span>
       <div class="btn-text">
         <div class="label">SMT-ONIC</div>
         <div class="hint" data-i18n="b_smt_hint">Institutional portal</div>
@@ -171,76 +327,17 @@ body {
     </a>
   </div>
 
-  <p class="footer-note">
-    <span data-i18n="footer">ONIC · Pact to Return to Origin · XI Congress · Add this page to Home Screen for offline use.</span>
-  </p>
+  <p class="footer-note" data-i18n="footer">ONIC · Pact to Return to Origin · XI Congress · Add this page to Home Screen for offline use.</p>
 
 </div>
 
-<!-- QR generator inline (no external libs · pure JS) -->
 <script>
-// i18n
 const i18n = {
-  en: {
-    summit: '',
-    role: 'Coordinator · SMT-ONIC',
-    sub: 'Indigenous Territorial Monitoring System',
-    org: 'National Indigenous Organization of Colombia',
-    qr_caption: 'Scan · Connect with Wilson',
-    b_save: 'Save Contact', b_save_hint: 'Add Wilson to your phone book',
-    b_kit: 'MACI · ONIC Programme', b_kit_hint: 'Institutional context · multilingual',
-    b_hub: 'Schedule a meeting', b_hub_hint: 'Booking · contact options',
-    b_smt_hint: 'Institutional portal',
-    footer: 'ONIC · Pact to Return to Origin · XI Congress · Add this page to Home Screen for offline use.'
-  },
-  es: {
-    summit: '',
-    role: 'Coordinador · SMT-ONIC',
-    sub: 'Sistema de Monitoreo Territorial Indígena',
-    org: 'Organización Nacional Indígena de Colombia',
-    qr_caption: 'Escanea · Conecta con Wilson',
-    b_save: 'Guardar Contacto', b_save_hint: 'Agregar a tu agenda',
-    b_kit: 'MACI · Programa ONIC', b_kit_hint: 'Contexto institucional · multilingüe',
-    b_hub: 'Agendar reunión', b_hub_hint: 'Reserva · opciones de contacto',
-    b_smt_hint: 'Portal institucional',
-    footer: 'ONIC · Pacto para Volver al Origen · XI Congreso · Añade esta página a la pantalla de inicio para uso offline.'
-  },
-  pt: {
-    summit: '',
-    role: 'Coordenador · SMT-ONIC',
-    sub: 'Sistema de Monitoramento Territorial Indígena',
-    org: 'Organização Nacional Indígena da Colômbia',
-    qr_caption: 'Escaneie · Conecte com Wilson',
-    b_save: 'Salvar Contato', b_save_hint: 'Adicionar à agenda',
-    b_kit: 'MACI · Programa ONIC', b_kit_hint: 'Contexto institucional · multilingue',
-    b_hub: 'Agendar reunião', b_hub_hint: 'Reserva · opções de contato',
-    b_smt_hint: 'Portal institucional',
-    footer: 'ONIC · Pacto para Voltar à Origem · XI Congresso · Adicione à tela de início para uso offline.'
-  },
-  fr: {
-    summit: '',
-    role: 'Coordinateur · SMT-ONIC',
-    sub: 'Système de Surveillance Territoriale Autochtone',
-    org: 'Organisation Nationale Autochtone de Colombie',
-    qr_caption: 'Scannez · Connectez avec Wilson',
-    b_save: 'Enregistrer Contact', b_save_hint: 'Ajouter au répertoire',
-    b_kit: 'MACI · Programme ONIC', b_kit_hint: 'Contexte institutionnel · multilingue',
-    b_hub: 'Planifier une réunion', b_hub_hint: 'Réservation · options de contact',
-    b_smt_hint: 'Portail institutionnel',
-    footer: 'ONIC · Pacte pour Revenir à l\'Origine · XIe Congrès · Ajoutez à l\'écran d\'accueil pour usage hors ligne.'
-  },
-  id: {
-    summit: '',
-    role: 'Koordinator · SMT-ONIC',
-    sub: 'Sistem Pemantauan Wilayah Masyarakat Adat',
-    org: 'Organisasi Nasional Masyarakat Adat Kolombia',
-    qr_caption: 'Pindai · Terhubung dengan Wilson',
-    b_save: 'Simpan Kontak', b_save_hint: 'Tambah ke buku telepon',
-    b_kit: 'MACI · Program ONIC', b_kit_hint: 'Konteks institusional · multibahasa',
-    b_hub: 'Jadwalkan pertemuan', b_hub_hint: 'Reservasi · opsi kontak',
-    b_smt_hint: 'Portal institusional',
-    footer: 'ONIC · Pakta Kembali ke Asal · Kongres XI · Tambahkan ke Layar Beranda untuk penggunaan offline.'
-  }
+  en: { summit: 'RRI Brasília Summit · 26—29 May 2026', role: 'Coordinator · SMT-ONIC', sub: 'Indigenous Territorial Monitoring System', org: 'National Indigenous Organization of Colombia', qr_caption: 'Scan · Connect', b_save: 'Save Contact', b_save_hint: 'Add Wilson to your phone book', b_kit: 'MACI · ONIC Programme', b_kit_hint: 'Institutional context · multilingual', b_hub: 'Schedule a meeting', b_hub_hint: 'Booking · contact options', b_smt_hint: 'Institutional portal', footer: 'ONIC · Pact to Return to Origin · XI Congress · Add this page to Home Screen for offline use.' },
+  es: { summit: 'Cumbre RRI Brasília · 26—29 mayo 2026', role: 'Coordinador · SMT-ONIC', sub: 'Sistema de Monitoreo Territorial Indígena', org: 'Organización Nacional Indígena de Colombia', qr_caption: 'Escanea · Conecta', b_save: 'Guardar Contacto', b_save_hint: 'Agregar a tu agenda', b_kit: 'MACI · Programa ONIC', b_kit_hint: 'Contexto institucional · multilingüe', b_hub: 'Agendar reunión', b_hub_hint: 'Reserva · opciones de contacto', b_smt_hint: 'Portal institucional', footer: 'ONIC · Pacto para Volver al Origen · XI Congreso · Añade esta página a la pantalla de inicio para uso offline.' },
+  pt: { summit: 'Cúpula RRI Brasília · 26—29 maio 2026', role: 'Coordenador · SMT-ONIC', sub: 'Sistema de Monitoramento Territorial Indígena', org: 'Organização Nacional Indígena da Colômbia', qr_caption: 'Escaneie · Conecte', b_save: 'Salvar Contato', b_save_hint: 'Adicionar à agenda', b_kit: 'MACI · Programa ONIC', b_kit_hint: 'Contexto institucional · multilíngue', b_hub: 'Agendar reunião', b_hub_hint: 'Reserva · opções de contato', b_smt_hint: 'Portal institucional', footer: 'ONIC · Pacto para Voltar à Origem · XI Congresso · Adicione à tela de início para uso offline.' },
+  fr: { summit: 'Sommet RRI Brasília · 26—29 mai 2026', role: 'Coordinateur · SMT-ONIC', sub: 'Système de Surveillance Territoriale Autochtone', org: 'Organisation Nationale Autochtone de Colombie', qr_caption: 'Scannez · Connectez', b_save: 'Enregistrer Contact', b_save_hint: 'Ajouter au répertoire', b_kit: 'MACI · Programme ONIC', b_kit_hint: 'Contexte institutionnel · multilingue', b_hub: 'Planifier une réunion', b_hub_hint: 'Réservation · options de contact', b_smt_hint: 'Portail institutionnel', footer: 'ONIC · Pacte pour Revenir à l\'Origine · XIe Congrès · Ajoutez à l\'écran d\'accueil pour usage hors ligne.' },
+  id: { summit: 'KTT RRI Brasília · 26—29 Mei 2026', role: 'Koordinator · SMT-ONIC', sub: 'Sistem Pemantauan Wilayah Masyarakat Adat', org: 'Organisasi Nasional Masyarakat Adat Kolombia', qr_caption: 'Pindai · Terhubung', b_save: 'Simpan Kontak', b_save_hint: 'Tambah ke buku telepon', b_kit: 'MACI · Program ONIC', b_kit_hint: 'Konteks institusional · multibahasa', b_hub: 'Jadwalkan pertemuan', b_hub_hint: 'Reservasi · opsi kontak', b_smt_hint: 'Portal institusional', footer: 'ONIC · Pakta Kembali ke Asal · Kongres XI · Tambahkan ke Layar Beranda untuk penggunaan offline.' }
 };
 function setLang(lang) {
   document.documentElement.lang = lang;
@@ -256,20 +353,17 @@ function setLang(lang) {
 const saved = (function(){try{return localStorage.getItem('lang_card');}catch(e){return null;}})();
 if (saved && i18n[saved]) setLang(saved);
 
-// QR injection · uses pre-rendered SVG (generated server-side as inline data URL)
 fetch('qr_codes/Q01_landing.png').then(r => {
   if (r.ok) {
     const img = document.createElement('img');
     img.src = 'qr_codes/Q01_landing.png';
-    img.style.cssText = 'width:100%;max-width:200px;height:auto;display:block;';
     img.alt = 'QR to MACI Brasilia 2026 landing';
     document.getElementById('qrContainer').appendChild(img);
   } else {
-    // fallback: link
     const a = document.createElement('a');
     a.href = 'brasilia2026.html';
     a.textContent = 'Open MACI Brasília 2026 →';
-    a.style.cssText = 'color:#5a6427;font-weight:700;text-decoration:none;padding:20px;';
+    a.style.cssText = 'color:#0a3f33;font-weight:700;text-decoration:none;padding:20px;font-family:Fraunces,serif;';
     document.getElementById('qrContainer').appendChild(a);
   }
 }).catch(() => {});

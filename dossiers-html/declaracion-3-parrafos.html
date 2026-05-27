@@ -3,71 +3,140 @@
 <head>
 <meta charset="UTF-8">
 <title>3 Párrafos · Declaración Final RRI Brasília 2026 · ONIC</title>
-<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,800;0,9..144,900;1,9..144,400;1,9..144,600&family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
 @page { size: A4; margin: 0; }
-:root { --olive:#7d8a3c; --olive-dark:#5a6427; --grafito:#3d3d3d; --beige:#e8e0c8; --beige-l:#f5f0dd; --gold:#d4a017; }
-body { font-family: 'Inter', Georgia, serif; color: var(--grafito); line-height: 1.6; background: white; }
-.page { max-width: 210mm; margin: 0 auto; padding: 16mm 18mm; }
-.h-display { font-weight: 900; letter-spacing: 0.025em; line-height: 1.05; }
-.h-serif { font-family: Georgia, serif; font-weight: 700; }
-.hero { background: linear-gradient(135deg, #3d3d3d 0%, #5a6427 60%, #7d8a3c 100%); color: white; padding: 22mm 18mm 14mm; }
-.triangle-deco { width:0; height:0; border-left:14px solid transparent; border-right:14px solid transparent; border-bottom:22px solid var(--gold); }
-.parrafo { background: white; border-left: 5px solid var(--olive); padding: 14px 22px; margin: 14px 0; box-shadow: 0 2px 6px rgba(61,61,61,0.08); }
-.parrafo-num { display: inline-block; background: var(--olive); color: white; font-weight: 900; padding: 4px 12px; font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; border-radius: 3px; }
-.parrafo h3 { color: var(--olive-dark); font-family: Georgia, serif; font-weight: 700; font-size: 1.15rem; margin: 8px 0 10px 0; }
-.parrafo p { text-align: justify; font-size: 0.95rem; line-height: 1.55; }
-.cita { font-style: italic; color: var(--olive-dark); font-weight: 600; }
-.uso { background: var(--beige-l); padding: 12px 20px; border-left: 5px solid var(--gold); margin-top: 18px; font-size: 0.85rem; }
-.footer-band { background: var(--grafito); color: white; padding: 12px 18mm; font-size: 0.75rem; text-align: center; }
-.tag { display:inline-block; padding: 3px 10px; background: rgba(255,255,255,0.15); color: white; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; border-radius: 12px; }
+:root {
+  --smt-deep: #0a3f33; --smt-deep-dark: #062821;
+  --olive: #7d8a3c; --olive-dark: #5a6427;
+  --onic-orange: #c8431c;
+  --grafito: #2a2a2a; --grafito-soft: #4a4a4a;
+  --beige: #e8e0c8; --beige-l: #f5f0dd; --cream: #faf6e8;
+  --gold: #d4a017; --gold-soft: #f0c850;
+}
+* { box-sizing: border-box; }
+body { font-family: 'DM Sans', system-ui, sans-serif; color: var(--grafito); line-height: 1.6; background: white; font-size: 10.5pt; -webkit-font-smoothing: antialiased; }
+.page { width: 210mm; margin: 0 auto; padding: 0; background: white; position: relative; }
+.page-content { padding: 10mm 16mm 8mm; }
+
+.hero { background: linear-gradient(135deg, var(--smt-deep-dark) 0%, var(--smt-deep) 55%, var(--olive-dark) 100%); color: white; padding: 14mm 16mm 11mm; position: relative; overflow: hidden; }
+.hero::before { content: ''; position: absolute; inset: 0; background-image: repeating-linear-gradient(45deg, rgba(255,255,255,0.025) 0 2px, transparent 2px 14px); pointer-events: none; }
+.hero-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 7mm; position: relative; z-index: 2; }
+.logo-smt-img { height: 32px; filter: brightness(0) invert(1); opacity: 0.95; }
+.logo-onic-img { height: 38px; filter: brightness(0) invert(1); opacity: 0.95; }
+.event-stamp { font-family: 'JetBrains Mono', monospace; font-size: 8pt; text-transform: uppercase; letter-spacing: 0.18em; color: var(--gold-soft); border-top: 1px solid rgba(212,160,23,0.4); border-bottom: 1px solid rgba(212,160,23,0.4); padding: 4px 0; display: inline-block; }
+.hero-body { position: relative; z-index: 2; }
+.kicker { font-family: 'JetBrains Mono', monospace; font-size: 9pt; text-transform: uppercase; letter-spacing: 0.22em; color: var(--gold-soft); margin: 5mm 0 5mm; display: flex; align-items: center; gap: 10px; }
+.kicker::before { content: ''; width: 28px; height: 1px; background: var(--gold-soft); }
+.hero-title { font-family: 'Fraunces', serif; font-weight: 900; font-size: 30pt; line-height: 1; letter-spacing: -0.025em; margin: 0 0 3mm 0; color: white; }
+.hero-title em { font-style: italic; font-weight: 400; color: var(--gold-soft); }
+.hero-sub { font-size: 10.5pt; line-height: 1.5; color: rgba(255,255,255,0.92); max-width: 160mm; margin: 0 0 4mm 0; }
+.hero-tags { display: flex; gap: 6px; flex-wrap: wrap; }
+.hero-tag { font-family: 'JetBrains Mono', monospace; font-size: 8pt; font-weight: 600; padding: 4px 10px; letter-spacing: 0.05em; border: 1px solid rgba(255,255,255,0.25); text-transform: uppercase; color: rgba(255,255,255,0.92); }
+
+/* Parrafos editorial */
+.parrafo {
+  margin: 6mm 0;
+  position: relative;
+  padding: 5mm 0 5mm 18mm;
+  border-bottom: 1px solid var(--beige);
+}
+.parrafo::before {
+  content: '01';
+  position: absolute;
+  left: 0;
+  top: 5mm;
+  font-family: 'Fraunces', serif;
+  font-weight: 900;
+  font-size: 38pt;
+  color: var(--gold);
+  line-height: 1;
+  letter-spacing: -0.04em;
+}
+.parrafo.p2::before { content: '02'; }
+.parrafo.p3::before { content: '03'; }
+.parrafo-eyebrow {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 7.5pt;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--onic-orange);
+  font-weight: 700;
+  margin-bottom: 2mm;
+}
+.parrafo-title {
+  font-family: 'Fraunces', serif;
+  font-weight: 800;
+  font-size: 16pt;
+  line-height: 1.15;
+  color: var(--smt-deep);
+  letter-spacing: -0.015em;
+  margin-bottom: 4mm;
+}
+.parrafo-title em { font-style: italic; font-weight: 400; color: var(--olive); }
+.parrafo-body { font-size: 9.5pt; line-height: 1.6; color: var(--grafito); text-align: justify; }
+.parrafo-body strong { color: var(--smt-deep); font-weight: 600; }
+.parrafo-body .cita {
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-weight: 500;
+  color: var(--olive-dark);
+}
+
+.footer-band { background: var(--grafito); color: white; padding: 4mm 16mm; font-family: 'JetBrains Mono', monospace; font-size: 7.5pt; letter-spacing: 0.1em; text-transform: uppercase; display: flex; justify-content: space-between; align-items: center; }
 </style>
 </head>
 <body>
 
+<section class="page">
+
 <header class="hero">
-  <div class="flex items-center gap-3 mb-3">
-    <div class="triangle-deco"></div>
-    <span class="text-gold uppercase tracking-widest text-xs font-bold">ONIC · Cumbre RRI Brasília · 26-29 mayo 2026</span>
+  <div class="hero-header">
+    <img src="../assets/logo_SMT.png" alt="SMT" class="logo-smt-img">
+    <img src="../assets/logo_ONIC.png" alt="ONIC" class="logo-onic-img">
   </div>
-  <h1 class="h-display text-3xl mb-2">Tres párrafos para la Declaración Final</h1>
-  <p class="text-base text-yellow-100">Propuestos para inyección en grupos regionales · Pacto para Volver al Origen · XI Congreso ONIC</p>
-  <div class="mt-3 flex gap-2 flex-wrap">
-    <span class="tag">Soberanía de datos</span>
-    <span class="tag">Financiación directa</span>
-    <span class="tag">Gobernanza biocultural</span>
+  <div class="hero-body">
+    <div class="event-stamp">Cumbre RRI Brasília · 26—29 mayo 2026</div>
+    <div class="kicker">Pacto para Volver al Origen · XI Congreso ONIC</div>
+    <h1 class="hero-title">Tres párrafos para la<br><em>Declaración Final</em></h1>
+    <p class="hero-sub">Propuestos para inyección en grupos regionales · base operativa Sabios COP16 + TRÜA OS8j del CDB.</p>
+    <div class="hero-tags">
+      <span class="hero-tag">Soberanía de datos</span>
+      <span class="hero-tag">Financiación directa</span>
+      <span class="hero-tag">Gobernanza biocultural</span>
+    </div>
   </div>
 </header>
 
-<section class="page">
+<div class="page-content">
 
   <div class="parrafo">
-    <span class="parrafo-num">Párrafo 1</span>
-    <h3>Soberanía de datos indígenas y sistemas de conocimiento</h3>
-    <p>La soberanía de datos indígenas no es aspiración técnica · es condición operativa para que los pueblos custodien la información biocultural de sus territorios bajo principios CARE (Collective benefit · Authority to control · Responsibility · Ethics). La Declaración de Sabios y Sabias COP16 (Centro Java Liviana · Pueblo Muysca · octubre 2024) lo establece con claridad: <span class="cita">"nuestros sistemas de conocimiento, dados desde la creación y transmitidos de generación en generación, son fundamentales para proteger la Madre Tierra"</span>. En Colombia, la Organización Nacional Indígena (ONIC) y el Sistema de Monitoreo Territorial (SMT) construyen el Marco MACI articulando 5 módulos operativos sobre Consejo de Datos · protocolos CLPI · ABS Nagoya · biobanco con cadena de custodia indígena · y bioeconomía con reparto justo. La evidencia ya existe: el Catálogo de Plantas Útiles × Resguardos 2024 cataloga 5.690 especies geolocalizadas con aval de Kew Gardens y GBIF · y los pueblos custodios cuidan cerca de <strong>18 millones de hectáreas en ecosistemas NO amazónicos</strong> (páramos · Chocó biogeográfico · sabanas · desiertos) adicionales a los territorios amazónicos. La Declaración de Brasília debe reconocer la soberanía de datos como derecho fundamental complementario al <strong>OS8j del Convenio de Diversidad Biológica</strong>, y comprometer mecanismos concretos para que organizaciones indígenas nacionales sean reconocidas fiduciariamente sin intermediarios que diluyan control político.</p>
+    <div class="parrafo-eyebrow">Párrafo 01 · Soberanía</div>
+    <h2 class="parrafo-title">Soberanía de datos indígenas y <em>sistemas de conocimiento</em></h2>
+    <p class="parrafo-body">La soberanía de datos indígenas no es aspiración técnica · es condición operativa para que los pueblos custodien la información biocultural de sus territorios bajo principios CARE (Collective benefit · Authority to control · Responsibility · Ethics). La Declaración de Sabios y Sabias COP16 (Centro Java Liviana · Pueblo Muysca · octubre 2024) lo establece con claridad: <span class="cita">"nuestros sistemas de conocimiento, dados desde la creación y transmitidos de generación en generación, son fundamentales para proteger la Madre Tierra"</span>. En Colombia, la Organización Nacional Indígena (ONIC) y el Sistema de Monitoreo Territorial (SMT) construyen el Marco MACI articulando 5 módulos operativos sobre Consejo de Datos · protocolos CLPI · ABS Nagoya · biobanco con cadena de custodia indígena · y bioeconomía con reparto justo. La evidencia ya existe: el Catálogo de Plantas Útiles × Resguardos 2024 cataloga 5.690 especies geolocalizadas con aval de Kew Gardens y GBIF · y los pueblos custodios cuidan cerca de <strong>18 millones de hectáreas en ecosistemas NO amazónicos</strong> (páramos · Chocó biogeográfico · sabanas · desiertos) adicionales a los territorios amazónicos. La Declaración de Brasília debe reconocer la soberanía de datos como derecho fundamental complementario al <strong>OS8j del Convenio de Diversidad Biológica</strong>, y comprometer mecanismos concretos para que organizaciones indígenas nacionales sean reconocidas fiduciariamente sin intermediarios que diluyan control político.</p>
   </div>
 
-  <div class="parrafo">
-    <span class="parrafo-num">Párrafo 2</span>
-    <h3>Financiación directa sin intermediarios</h3>
-    <p>Menos del 1% de los USD 1.7 mil millones comprometidos en el Forest Tenure Pledge de Glasgow ha llegado de manera directa a organizaciones indígenas nacionales. Esta arquitectura es estructural · dos décadas de fondos climáticos canalizados vía ONGs internacionales han producido capacidad fragmentada · proyectos cortos · y dependencia. La Declaración de Sabios y Sabias COP16 (Centro Java Liviana · Pueblo Muysca) lo señala literalmente: <span class="cita">"concertar estrategias de financiación directa con los pueblos indígenas · permitiendo que la ejecución y administración se realicen directamente por las estructuras de gobierno indígena para la implementación de los Planes de Vida"</span>. La Cumbre Mundial TRÜA al OS8j del CDB lo reafirma. La Cumbre de Brasília debe avanzar más allá de declaraciones de intención hacia mecanismos fiduciarios concretos: (a) acreditaciones directas tipo GCF DAE para organizaciones indígenas nacionales · (b) country packages bilaterales con titularidad indígena · (c) fondos territoriales nacionales (modelo Podáali Brasil) replicables · y (d) ventanas filantrópicas con cuotas mínimas indígena directa. El compromiso debe ser cuantitativo · trazable · con plazos.</p>
+  <div class="parrafo p2">
+    <div class="parrafo-eyebrow">Párrafo 02 · Financiación</div>
+    <h2 class="parrafo-title">Financiación directa <em>sin intermediarios</em></h2>
+    <p class="parrafo-body">Menos del <strong>1%</strong> de los USD 1,7 mil millones comprometidos en el Forest Tenure Pledge de Glasgow ha llegado de manera directa a organizaciones indígenas nacionales. Esta arquitectura es estructural · dos décadas de fondos climáticos canalizados vía ONGs internacionales han producido capacidad fragmentada · proyectos cortos · y dependencia. La Declaración de Sabios y Sabias COP16 lo señala literalmente: <span class="cita">"concertar estrategias de financiación directa con los pueblos indígenas · permitiendo que la ejecución y administración se realicen directamente por las estructuras de gobierno indígena para la implementación de los Planes de Vida"</span>. La Cumbre Mundial TRÜA al OS8j del CDB lo reafirma. La Cumbre de Brasília debe avanzar más allá de declaraciones de intención hacia mecanismos fiduciarios concretos: <strong>(a)</strong> acreditaciones directas tipo GCF DAE para organizaciones indígenas nacionales · <strong>(b)</strong> country packages bilaterales con titularidad indígena · <strong>(c)</strong> fondos territoriales nacionales (modelo Podáali Brasil) replicables · y <strong>(d)</strong> ventanas filantrópicas con cuotas mínimas indígena directa. El compromiso debe ser cuantitativo · trazable · con plazos.</p>
   </div>
 
-  <div class="parrafo">
-    <span class="parrafo-num">Párrafo 3</span>
-    <h3>Gobernanza biocultural y volver al origen</h3>
-    <p>La gobernanza biocultural exige integrar tres capas que hoy operan separadas: el conocimiento tradicional · la ciencia formal · y los mercados sostenibles. La Declaración de Sabios y Sabias COP16 hace el llamado político-espiritual de fondo: <span class="cita">"volver al origen para cambiar las maneras ambiciosas, violentas, egoístas e irresponsables de existir"</span> que devastan la Madre Tierra · y exige reconocer <span class="cita">"espacios vitales, sitios sagrados y elementos naturales · agua, montañas, ríos, páramos, mares, sabanas, bosques y selvas · como seres vivos sujetos de derecho"</span>. El Marco MACI traduce este mandato a arquitectura operativa: inventarios comunitarios bioculturales con QA/QC y devolución obligatoria a las comunidades · capacidades genéticas y biobanco con CLPI específico y acuerdos ABS Nagoya · incubación de bionegocios con cláusulas de reparto justo. La cobertura geográfica abarca las 5 macrorregiones de Colombia con casos verificables: Matavén certificado VCS+CCB · Catálogo Plantas Útiles georeferenciado · Sentencia U'wa SU-039/1997 · Línea Negra de la Sierra Nevada · Chocó Embera. La Declaración de Brasília debe reconocer la bioeconomía indígena como economía propia legítima · no como nicho de mercado · y comprometer apoyo financiero plurianual estable a programas integrales tipo MACI · no proyectos aislados de 18 meses.</p>
+  <div class="parrafo p3">
+    <div class="parrafo-eyebrow">Párrafo 03 · Gobernanza</div>
+    <h2 class="parrafo-title">Gobernanza biocultural y <em>volver al origen</em></h2>
+    <p class="parrafo-body">La gobernanza biocultural exige integrar tres capas que hoy operan separadas: el conocimiento tradicional · la ciencia formal · y los mercados sostenibles. La Declaración de Sabios y Sabias COP16 hace el llamado político-espiritual de fondo: <span class="cita">"volver al origen para cambiar las maneras ambiciosas, violentas, egoístas e irresponsables de existir"</span> que devastan la Madre Tierra · y exige reconocer <span class="cita">"espacios vitales, sitios sagrados y elementos naturales · agua, montañas, ríos, páramos, mares, sabanas, bosques y selvas · como seres vivos sujetos de derecho"</span>. El Marco MACI traduce este mandato a arquitectura operativa: inventarios comunitarios bioculturales con QA/QC y devolución obligatoria a las comunidades · capacidades genéticas y biobanco con CLPI específico y acuerdos ABS Nagoya · incubación de bionegocios con cláusulas de reparto justo. La cobertura geográfica abarca las 5 macrorregiones de Colombia con casos verificables: <strong>Matavén certificado VCS+CCB · Catálogo Plantas Útiles georeferenciado · Sentencia U'wa SU-039/1997 · Línea Negra de la Sierra Nevada · Chocó Embera</strong>. La Declaración de Brasília debe reconocer la bioeconomía indígena como economía propia legítima · no como nicho de mercado · y comprometer apoyo financiero plurianual estable a programas integrales tipo MACI · no proyectos aislados de 18 meses.</p>
   </div>
 
-  <div class="uso">
-    <strong>Fundamento institucional:</strong> Estos tres párrafos articulan los mandatos del XI Congreso ONIC "Pacto para Volver al Origen" con la Declaración de Sabios y Sabias COP16 (Centro Java Liviana · Pueblo Muysca · octubre 2024) y las recomendaciones de la Cumbre Mundial TRÜA al OS8j del Convenio de Diversidad Biológica. ~210 palabras por párrafo · ~80 segundos de lectura cada uno.
-  </div>
-
-</section>
+</div>
 
 <footer class="footer-band">
-  Wilson Herrera Baltán · Coordinador SMT-ONIC · poblacion@onic.org.co · <strong>wilsonherrera77.github.io/MACI/brasilia2026.html</strong>
+  <span>Wilson Herrera Baltán · Coordinador SMT-ONIC · poblacion@onic.org.co</span>
+  <span>wilsonherrera77.github.io/MACI/brasilia2026.html</span>
 </footer>
+</section>
 
 </body>
 </html>

@@ -4,124 +4,290 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Pueblo U'wa · Sentencia SU-039/1997 · Sierra Nevada del Cocuy · Dossier ONIC</title>
-<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,800;0,9..144,900;1,9..144,400;1,9..144,600&family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
 @page { size: A4; margin: 0; }
-:root { --olive:#7d8a3c; --olive-dark:#5a6427; --grafito:#3d3d3d; --beige:#e8e0c8; --beige-l:#f5f0dd; --gold:#d4a017; --red:#8b2a1a; }
-body { font-family: 'Inter', Georgia, serif; color: var(--grafito); line-height: 1.55; background: white; }
-.page { max-width: 210mm; margin: 0 auto; padding: 18mm 16mm; min-height: 297mm; }
-.h-display { font-weight: 900; letter-spacing: 0.03em; line-height: 1.05; }
-.h-serif { font-family: Georgia, serif; font-weight: 700; }
-.text-olive { color: var(--olive); } .text-olive-dark { color: var(--olive-dark); } .text-gold { color: var(--gold); }
-.bg-olive { background: var(--olive); } .bg-grafito { background: var(--grafito); } .bg-beige-l { background: var(--beige-l); }
-.triangle-deco { width:0; height:0; border-left:18px solid transparent; border-right:18px solid transparent; border-bottom:28px solid var(--gold); }
-.hero { background: linear-gradient(135deg, #3d3d3d 0%, #5a6427 100%); color: white; padding: 28mm 16mm 18mm; position: relative; }
-.hero::before { content:''; position:absolute; inset:0; background: radial-gradient(circle at 20% 70%, rgba(139,42,26,0.3), transparent 50%); }
-.kpi { background: white; border-left: 5px solid var(--olive); padding: 14px 18px; }
-.kpi-big { font-size: 2.4rem; font-weight: 900; color: var(--olive-dark); line-height: 1; }
-.kpi-label { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.08em; }
-.callout { background: linear-gradient(180deg, #fff9e6, white); border-left: 5px solid var(--gold); padding: 14px 18px; margin: 14px 0; }
-.cite-court { background: var(--grafito); color: white; padding: 18px 22px; border-left: 6px solid var(--gold); font-style: italic; font-size: 0.95rem; }
-.timeline-y { position: relative; padding-left: 32px; padding-bottom: 16px; border-left: 2px solid var(--olive); }
-.timeline-y::before { content:''; position: absolute; left: -8px; top: 4px; width: 14px; height: 14px; background: var(--gold); border: 2px solid white; border-radius: 50%; box-shadow: 0 0 0 2px var(--olive); }
-.timeline-y.critical::before { background: var(--red); box-shadow: 0 0 0 2px var(--red); }
-.year { font-weight: 900; color: var(--olive-dark); font-size: 1.1rem; }
+:root {
+  --smt-deep: #0a3f33; --smt-deep-dark: #062821;
+  --olive: #7d8a3c; --olive-dark: #5a6427;
+  --onic-orange: #c8431c; --onic-orange-dark: #9c3416;
+  --legal-red: #8b2a1a;
+  --grafito: #2a2a2a; --grafito-soft: #4a4a4a;
+  --beige: #e8e0c8; --beige-l: #f5f0dd; --cream: #faf6e8;
+  --gold: #d4a017; --gold-soft: #f0c850;
+}
+* { box-sizing: border-box; }
+body { font-family: 'DM Sans', system-ui, sans-serif; color: var(--grafito); line-height: 1.55; background: white; font-size: 10.5pt; -webkit-font-smoothing: antialiased; }
+.mono { font-family: 'JetBrains Mono', monospace; font-variant-numeric: tabular-nums; }
+.page { width: 210mm; margin: 0 auto; padding: 0; background: white; position: relative; }
+.page-content { padding: 10mm 14mm 8mm; }
 .page-break { page-break-before: always; }
-.footer-band { background: var(--grafito); color: white; padding: 10px 16mm; font-size: 0.75rem; }
-.tag { display:inline-block; padding: 3px 10px; background: var(--beige); color: var(--olive-dark); font-size: 0.7rem; font-weight: 700; text-transform: uppercase; border-radius: 12px; }
+
+.hero { background: linear-gradient(135deg, var(--smt-deep-dark) 0%, var(--legal-red) 70%, var(--onic-orange-dark) 100%); color: white; padding: 14mm 14mm 12mm; position: relative; overflow: hidden; }
+.hero::before { content: ''; position: absolute; inset: 0; background-image: repeating-linear-gradient(45deg, rgba(255,255,255,0.025) 0 2px, transparent 2px 14px); pointer-events: none; }
+.hero::after { content: ''; position: absolute; right: -60px; top: -60px; width: 280px; height: 280px; background: radial-gradient(circle, rgba(212,160,23,0.16) 0%, transparent 70%); pointer-events: none; }
+.hero-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8mm; position: relative; z-index: 2; }
+.logo-smt-img { height: 32px; filter: brightness(0) invert(1); opacity: 0.95; }
+.logo-onic-img { height: 38px; filter: brightness(0) invert(1); opacity: 0.95; }
+.event-stamp { font-family: 'JetBrains Mono', monospace; font-size: 8pt; text-transform: uppercase; letter-spacing: 0.18em; color: var(--gold-soft); border-top: 1px solid rgba(212,160,23,0.4); border-bottom: 1px solid rgba(212,160,23,0.4); padding: 4px 0; display: inline-block; }
+.hero-body { position: relative; z-index: 2; }
+.kicker { font-family: 'JetBrains Mono', monospace; font-size: 9pt; text-transform: uppercase; letter-spacing: 0.22em; color: var(--gold-soft); margin: 5mm 0 6mm; display: flex; align-items: center; gap: 10px; }
+.kicker::before { content: ''; width: 28px; height: 1px; background: var(--gold-soft); }
+.hero-title { font-family: 'Fraunces', serif; font-weight: 900; font-size: 46pt; line-height: 0.95; letter-spacing: -0.025em; margin: 0 0 4mm 0; color: white; }
+.hero-title em { font-style: italic; font-weight: 400; color: var(--gold-soft); }
+.hero-deck { font-family: 'Fraunces', serif; font-style: italic; font-weight: 400; font-size: 14pt; line-height: 1.3; color: rgba(255,255,255,0.92); max-width: 160mm; margin: 0 0 5mm 0; }
+.hero-sub { font-size: 10.5pt; line-height: 1.5; color: rgba(255,255,255,0.85); max-width: 160mm; margin: 0; }
+
+.kpis { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--beige); margin: 6mm 0 8mm; border-top: 2px solid var(--legal-red); border-bottom: 1px solid var(--beige); }
+.kpi { background: white; padding: 5mm 5mm; }
+.kpi-num { font-family: 'Fraunces', serif; font-weight: 900; font-size: 36pt; line-height: 1; color: var(--smt-deep); letter-spacing: -0.03em; }
+.kpi-num em { font-style: italic; font-weight: 400; color: var(--legal-red); }
+.kpi-lbl { font-family: 'JetBrains Mono', monospace; font-size: 7pt; text-transform: uppercase; letter-spacing: 0.12em; color: var(--grafito-soft); margin-top: 3mm; }
+
+.section-num { font-family: 'JetBrains Mono', monospace; font-size: 8pt; letter-spacing: 0.2em; color: var(--onic-orange); font-weight: 700; text-transform: uppercase; display: flex; align-items: center; gap: 8px; margin: 5mm 0 3mm; }
+.section-num::before { content: ''; width: 4px; height: 4px; background: var(--onic-orange); border-radius: 50%; }
+.section-title { font-family: 'Fraunces', serif; font-weight: 800; font-size: 22pt; line-height: 1.05; letter-spacing: -0.02em; color: var(--smt-deep); margin: 0 0 4mm 0; }
+.section-title em { font-style: italic; font-weight: 400; color: var(--legal-red); }
+.body-text { font-size: 10pt; line-height: 1.6; color: var(--grafito); margin-bottom: 3mm; text-align: justify; }
+.body-text strong { color: var(--smt-deep); font-weight: 600; }
+.body-text em { font-style: italic; }
+
+/* Citation Court */
+.court-cite {
+  background: var(--smt-deep-dark);
+  color: white;
+  padding: 6mm 7mm;
+  border-left: 4px solid var(--gold);
+  margin: 5mm 0;
+  position: relative;
+}
+.court-cite::before {
+  content: '§';
+  font-family: 'Fraunces', serif;
+  font-size: 42pt;
+  color: var(--gold);
+  position: absolute;
+  right: 6mm;
+  top: 0;
+  line-height: 1.1;
+  opacity: 0.2;
+}
+.court-cite-body {
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 12pt;
+  line-height: 1.45;
+  color: rgba(255,255,255,0.95);
+}
+.court-cite-attr {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 7.5pt;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--gold-soft);
+  margin-top: 4mm;
+  font-weight: 700;
+}
+
+/* Timeline */
+.timeline { margin: 4mm 0; padding-left: 0; }
+.timeline-item { position: relative; padding: 0 0 4mm 14mm; }
+.timeline::before { content: ''; position: absolute; left: 4mm; top: 4mm; bottom: 0; width: 2px; background: var(--beige); }
+.timeline-item::before { content: ''; position: absolute; left: calc(4mm - 4px); top: 6px; width: 10px; height: 10px; background: var(--gold); border: 2px solid var(--smt-deep); border-radius: 50%; }
+.timeline-item.critical::before { background: var(--legal-red); border-color: var(--legal-red); width: 14px; height: 14px; left: calc(4mm - 6px); top: 4px; }
+.timeline-year { font-family: 'JetBrains Mono', monospace; font-size: 9pt; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; color: var(--legal-red); margin-bottom: 1mm; }
+.timeline-item.critical .timeline-year { color: var(--legal-red); font-size: 10pt; }
+.timeline-body { font-size: 9.5pt; line-height: 1.5; color: var(--grafito); }
+.timeline-body strong { color: var(--smt-deep); }
+
+/* Maci fit dual */
+.maci-fit { display: grid; grid-template-columns: 1fr 1fr; gap: 3px; margin: 4mm 0 5mm; }
+.maci-card { padding: 5mm 6mm; color: white; }
+.maci-card.dark { background: var(--smt-deep); }
+.maci-card.olive { background: var(--olive-dark); }
+.maci-eyebrow { font-family: 'JetBrains Mono', monospace; font-size: 7.5pt; text-transform: uppercase; letter-spacing: 0.18em; color: var(--gold-soft); font-weight: 700; margin-bottom: 2mm; }
+.maci-title { font-family: 'Fraunces', serif; font-weight: 700; font-size: 14pt; color: white; margin-bottom: 3mm; }
+.maci-body { font-size: 9pt; line-height: 1.5; color: rgba(255,255,255,0.9); }
+.maci-body strong { color: var(--gold-soft); }
+
+.callout { background: linear-gradient(135deg, var(--cream) 0%, rgba(240,200,80,0.1) 100%); border-left: 3px solid var(--gold); padding: 4mm 6mm; margin: 5mm 0; }
+.callout-eyebrow { font-family: 'JetBrains Mono', monospace; font-size: 7.5pt; text-transform: uppercase; letter-spacing: 0.18em; color: var(--onic-orange); font-weight: 700; margin-bottom: 2mm; }
+.callout-body { font-size: 10pt; line-height: 1.5; color: var(--grafito); }
+.callout-body strong { color: var(--smt-deep); font-weight: 600; }
+
+/* Donantes */
+.donantes-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 3px; margin: 3mm 0 5mm; }
+.donante { background: var(--cream); padding: 4mm 5mm; border-left: 3px solid var(--olive); }
+.donante-tag { font-family: 'JetBrains Mono', monospace; font-size: 7pt; text-transform: uppercase; letter-spacing: 0.12em; color: var(--onic-orange); font-weight: 700; margin-bottom: 2mm; }
+.donante-name { font-family: 'Fraunces', serif; font-weight: 700; font-size: 12pt; color: var(--smt-deep); margin-bottom: 1mm; }
+.donante-desc { font-size: 9pt; line-height: 1.45; color: var(--grafito-soft); }
+
+/* Lecciones list */
+.lecciones { counter-reset: lec; margin: 4mm 0; padding: 0; list-style: none; }
+.lecciones li {
+  position: relative;
+  padding: 3mm 0 3mm 16mm;
+  border-bottom: 1px solid var(--beige);
+  counter-increment: lec;
+  font-size: 10pt;
+  line-height: 1.5;
+}
+.lecciones li:last-child { border-bottom: none; }
+.lecciones li::before {
+  content: counter(lec, decimal-leading-zero);
+  position: absolute;
+  left: 0;
+  top: 2mm;
+  font-family: 'Fraunces', serif;
+  font-weight: 900;
+  font-size: 22pt;
+  color: var(--gold);
+  line-height: 1;
+  letter-spacing: -0.03em;
+}
+.lecciones li strong { color: var(--smt-deep); font-weight: 600; }
+
+.footer-band { background: var(--grafito); color: white; padding: 4mm 14mm; font-family: 'JetBrains Mono', monospace; font-size: 7.5pt; letter-spacing: 0.1em; text-transform: uppercase; display: flex; justify-content: space-between; align-items: center; }
 </style>
 </head>
 <body>
 
+<!-- PAGE 1 -->
+<section class="page">
 <header class="hero">
-  <div class="flex items-center gap-3 mb-4 relative z-10">
-    <div class="triangle-deco"></div>
-    <span class="text-gold uppercase tracking-widest text-xs font-bold">Andes ONIC · Caso Jurídico Fundacional · Sierra Nevada del Cocuy</span>
+  <div class="hero-header">
+    <img src="../assets/logo_SMT.png" alt="SMT" class="logo-smt-img">
+    <img src="../assets/logo_ONIC.png" alt="ONIC" class="logo-onic-img">
   </div>
-  <h1 class="h-display text-5xl mb-3 relative z-10">Pueblo U'wa</h1>
-  <p class="text-xl text-yellow-100 mb-2 relative z-10">El día que América Latina aprendió que consultar a los pueblos indígenas es un derecho fundamental</p>
-  <p class="text-base text-beige-l max-w-2xl relative z-10">Sentencia SU-039 de 1997 · Corte Constitucional de Colombia · M.P. Antonio Barrera Carbonell. La doctrina jurídica que abrió la puerta al Convenio 169 OIT como derecho vinculante en toda la región.</p>
+  <div class="hero-body">
+    <div class="event-stamp">Andes ONIC · Caso Jurídico Fundacional</div>
+    <div class="kicker">Sierra Nevada del Cocuy · Sentencia SU-039 · 1997</div>
+    <h1 class="hero-title">Pueblo<br><em>U'wa</em></h1>
+    <p class="hero-deck">El día que América Latina aprendió que consultar a los pueblos indígenas es un derecho fundamental.</p>
+    <p class="hero-sub">Sentencia <strong style="color:var(--gold-soft)">SU-039 de 1997</strong> · Corte Constitucional de Colombia · M.P. Antonio Barrera Carbonell. La doctrina jurídica que abrió la puerta al Convenio 169 OIT como derecho vinculante en toda la región.</p>
+  </div>
 </header>
 
-<section class="page" style="padding-top:14mm">
+<div class="page-content">
 
-  <div class="grid grid-cols-3 gap-3 mb-7">
-    <div class="kpi"><div class="kpi-big">1997</div><div class="kpi-label">Sentencia fundacional</div></div>
-    <div class="kpi"><div class="kpi-big">28+</div><div class="kpi-label">Años de jurisprudencia derivada</div></div>
-    <div class="kpi"><div class="kpi-big">169</div><div class="kpi-label">Convenio OIT vinculante</div></div>
+  <div class="kpis">
+    <div class="kpi"><div class="kpi-num">1997</div><div class="kpi-lbl">Sentencia fundacional</div></div>
+    <div class="kpi"><div class="kpi-num">28<em>+</em></div><div class="kpi-lbl">Años jurisprudencia derivada</div></div>
+    <div class="kpi"><div class="kpi-num">169</div><div class="kpi-lbl">Convenio OIT vinculante</div></div>
   </div>
 
-  <h2 class="h-serif text-2xl text-olive-dark mb-3">El caso que cambió la región</h2>
-  <p class="mb-3 text-justify">En 1995, el gobierno colombiano otorgó a la empresa Occidental Petroleum una licencia de exploración sísmica sobre el <strong>Bloque Samoré</strong>, sin haber realizado una consulta previa real, libre e informada al pueblo U'wa, dueño ancestral del territorio. El pueblo U'wa habita la Sierra Nevada del Cocuy — un sistema montañoso que en su cosmovisión es <em>"la sangre de la tierra"</em>, donde el petróleo no es un recurso sino un órgano vital cuya extracción equivale a un sangrado mortal.</p>
-  <p class="mb-3 text-justify">El pueblo U'wa, en lugar de aceptar la consulta posterior a la decisión administrativa, amenazó con el <strong>suicidio colectivo</strong> — una forma de resistencia espiritual que los Padres Mayores describieron a la prensa internacional. La acción de tutela llegó a la Corte Constitucional. El 3 de febrero de 1997, el Magistrado Antonio Barrera Carbonell, en sentencia SU-039, hizo lo que ningún tribunal latinoamericano había hecho antes: declaró la consulta previa como derecho fundamental vinculante con rango constitucional, vía el bloque de constitucionalidad y el Convenio 169 OIT.</p>
+  <div class="section-num">Caso fundacional</div>
+  <h2 class="section-title">El caso que <em>cambió la región</em></h2>
+  <p class="body-text">En 1995, el gobierno colombiano otorgó a la empresa Occidental Petroleum una licencia de exploración sísmica sobre el <strong>Bloque Samoré</strong>, sin haber realizado una consulta previa real, libre e informada al pueblo U'wa, dueño ancestral del territorio. El pueblo U'wa habita la Sierra Nevada del Cocuy — un sistema montañoso que en su cosmovisión es <em>"la sangre de la tierra"</em>, donde el petróleo no es un recurso sino un órgano vital cuya extracción equivale a un sangrado mortal.</p>
+  <p class="body-text">El pueblo U'wa, en lugar de aceptar la consulta posterior a la decisión administrativa, amenazó con el <strong>suicidio colectivo</strong> — una forma de resistencia espiritual que los Padres Mayores describieron a la prensa internacional. La acción de tutela llegó a la Corte Constitucional. El <strong>3 de febrero de 1997</strong>, el Magistrado Antonio Barrera Carbonell, en sentencia SU-039, hizo lo que ningún tribunal latinoamericano había hecho antes: declaró la consulta previa como derecho fundamental vinculante con rango constitucional, vía el bloque de constitucionalidad y el Convenio 169 OIT.</p>
 
-  <div class="cite-court">
-    "La consulta previa, libre e informada de las comunidades indígenas constituye un derecho fundamental, en cuanto se erige en un instrumento que es básico para preservar la integridad étnica, social, económica y cultural de las comunidades indígenas y para asegurar, por ende, su subsistencia como grupo social."
-    <div class="mt-2 text-xs text-yellow-200 not-italic font-bold">— Corte Constitucional de Colombia · SU-039 de 1997 · M.P. Antonio Barrera Carbonell</div>
+  <div class="court-cite">
+    <div class="court-cite-body">La consulta previa, libre e informada de las comunidades indígenas constituye un derecho fundamental, en cuanto se erige en un instrumento que es básico para preservar la integridad étnica, social, económica y cultural de las comunidades indígenas y para asegurar, por ende, su subsistencia como grupo social.</div>
+    <div class="court-cite-attr">Corte Constitucional de Colombia · SU-039 / 1997 · M.P. Antonio Barrera Carbonell</div>
   </div>
 
-  <h2 class="h-serif text-2xl text-olive-dark mb-3 mt-6">Cronología de la lucha</h2>
-  <div>
-    <div class="timeline-y"><span class="year">Décadas 1970-90</span><br><span class="text-sm">Exploraciones petroleras OXY y Shell sobre territorio U'wa sin consulta previa. Resistencia comunitaria sostenida.</span></div>
-    <div class="timeline-y"><span class="year">1995</span><br><span class="text-sm">Adjudicación del Bloque Samoré a Occidental Petroleum sin consulta previa real.</span></div>
-    <div class="timeline-y"><span class="year">1996</span><br><span class="text-sm">Amenaza pública de suicidio colectivo del pueblo U'wa. Atención internacional masiva.</span></div>
-    <div class="timeline-y critical"><span class="year">3 Feb 1997</span><br><span class="text-sm"><strong>Sentencia SU-039</strong> · Corte Constitucional · M.P. Barrera Carbonell. Consulta previa = derecho fundamental vinculante.</span></div>
-    <div class="timeline-y"><span class="year">2003</span><br><span class="text-sm">SU-383 amplía doctrina a fumigaciones aéreas con glifosato sobre territorios indígenas.</span></div>
-    <div class="timeline-y"><span class="year">2009-2011</span><br><span class="text-sm">T-769/2009 y T-129/2011 consolidan doctrina sobre proyectos minero-energéticos · estándar CIDH internacional.</span></div>
-    <div class="timeline-y"><span class="year">2025-presente</span><br><span class="text-sm">Defensa permanente · pueblo U'wa como referente internacional · base de litigio estratégico en toda América Latina.</span></div>
+  <div class="section-num">Cronología</div>
+  <h2 class="section-title">Cronología de la <em>lucha</em></h2>
+
+  <div class="timeline">
+    <div class="timeline-item">
+      <div class="timeline-year">Décadas 1970 — 90</div>
+      <div class="timeline-body">Exploraciones petroleras OXY y Shell sobre territorio U'wa sin consulta previa. <strong>Resistencia comunitaria sostenida</strong>.</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-year">1995</div>
+      <div class="timeline-body">Adjudicación del <strong>Bloque Samoré</strong> a Occidental Petroleum sin consulta previa real.</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-year">1996</div>
+      <div class="timeline-body">Amenaza pública de <strong>suicidio colectivo</strong> del pueblo U'wa. Atención internacional masiva.</div>
+    </div>
+    <div class="timeline-item critical">
+      <div class="timeline-year">3 febrero 1997</div>
+      <div class="timeline-body"><strong>Sentencia SU-039</strong> · Corte Constitucional · M.P. Barrera Carbonell. Consulta previa = derecho fundamental vinculante.</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-year">2003</div>
+      <div class="timeline-body"><strong>SU-383</strong> amplía doctrina a fumigaciones aéreas con glifosato sobre territorios indígenas.</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-year">2009 — 2011</div>
+      <div class="timeline-body"><strong>T-769/2009 y T-129/2011</strong> consolidan doctrina sobre proyectos minero-energéticos · estándar CIDH internacional.</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-year">2025 — presente</div>
+      <div class="timeline-body">Defensa permanente · pueblo U'wa como referente internacional · base de litigio estratégico en toda América Latina.</div>
+    </div>
   </div>
 
+</div>
 </section>
 
+<!-- PAGE 2 -->
 <section class="page page-break">
+<div class="page-content" style="padding-top:14mm">
 
-  <h2 class="h-serif text-2xl text-olive-dark mb-3">El territorio · Sierra Nevada del Cocuy</h2>
-  <p class="mb-3 text-justify">El Resguardo Unido U'wa se extiende sobre cuatro departamentos del nororiente colombiano: <strong>Boyacá, Norte de Santander, Casanare y Arauca</strong>. La Sierra Nevada del Cocuy alcanza altitudes de más de 5.300 metros — uno de los pocos sistemas glaciares ecuatoriales del mundo. Es páramo, glaciar, selva andina y selva de transición todo en un mismo territorio.</p>
-  <p class="mb-3 text-justify">Para el pueblo U'wa, este territorio no es un paisaje: es la geografía sagrada que describe el Tunebo, el saber ancestral. Los nevados son los <em>Cubinokat</em> · los rituales se realizan en sitios precisos cuya ubicación geográfica es secreto comunitario. Conservar este territorio no es solo política climática — es preservar una cosmovisión activa.</p>
+  <div class="section-num">Territorio</div>
+  <h2 class="section-title">Sierra Nevada del <em>Cocuy</em></h2>
+  <p class="body-text">El Resguardo Unido U'wa se extiende sobre cuatro departamentos del nororiente colombiano: <strong>Boyacá, Norte de Santander, Casanare y Arauca</strong>. La Sierra Nevada del Cocuy alcanza altitudes de más de 5.300 metros — uno de los pocos sistemas glaciares ecuatoriales del mundo. Es páramo, glaciar, selva andina y selva de transición todo en un mismo territorio.</p>
+  <p class="body-text">Para el pueblo U'wa, este territorio no es un paisaje: es la geografía sagrada que describe el Tunebo, el saber ancestral. Los nevados son los <em>Cubinokat</em> · los rituales se realizan en sitios precisos cuya ubicación geográfica es secreto comunitario. Conservar este territorio no es solo política climática — es <strong>preservar una cosmovisión activa</strong>.</p>
 
-  <h2 class="h-serif text-2xl text-olive-dark mb-3 mt-5">Por qué este caso importa para MACI</h2>
-  <div class="grid grid-cols-2 gap-4 mb-4">
-    <div class="bg-grafito text-white p-4">
-      <h3 class="font-bold text-yellow-200">M1 · Gobernabilidad</h3>
-      <p class="text-sm text-beige-l mt-2">El pueblo U'wa estableció el estándar global de CLPI (Consentimiento Libre, Previo e Informado) antes de que Naciones Unidas adoptara la Declaración sobre los Derechos de los Pueblos Indígenas (UNDRIP) en 2007. El protocolo biocultural CREA de MACI se construye sobre esta doctrina.</p>
+  <div class="section-num">Encaje MACI</div>
+  <h2 class="section-title">Por qué este caso <em>importa</em></h2>
+
+  <div class="maci-fit">
+    <div class="maci-card dark">
+      <div class="maci-eyebrow">M1 · Gobernabilidad</div>
+      <div class="maci-title">Estándar global CLPI</div>
+      <div class="maci-body">El pueblo U'wa estableció el estándar global de <strong>CLPI</strong> (Consentimiento Libre, Previo e Informado) antes de que Naciones Unidas adoptara la Declaración sobre los Derechos de los Pueblos Indígenas (UNDRIP) en 2007. El protocolo biocultural CREA de MACI se construye sobre esta doctrina.</div>
     </div>
-    <div class="bg-olive text-white p-4">
-      <h3 class="font-bold text-yellow-100">M3 · Monitoreo</h3>
-      <p class="text-sm mt-2">La Sierra Nevada del Cocuy es ecosistema páramo-glaciar único en escala global. Pocos lugares del mundo tienen monitoreo comunitario de retroceso glaciar combinado con sabiduría ancestral sobre ciclos hídricos. Prioridad para los recursos NICFI + FCLP.</p>
+    <div class="maci-card olive">
+      <div class="maci-eyebrow">M3 · Monitoreo</div>
+      <div class="maci-title">Ecosistema único global</div>
+      <div class="maci-body">La Sierra Nevada del Cocuy es ecosistema <strong>páramo-glaciar único</strong> en escala global. Pocos lugares del mundo tienen monitoreo comunitario de retroceso glaciar combinado con sabiduría ancestral sobre ciclos hídricos. Prioridad para los recursos NICFI + FCLP.</div>
     </div>
   </div>
 
   <div class="callout">
-    <p class="text-sm font-bold text-olive-dark mb-1">Lo que el caso U'wa demuestra a Brasília</p>
-    <p class="text-sm">Colombia tiene la <strong>doctrina jurídica más avanzada de América Latina</strong> sobre consulta previa indígena. No es retórica: son 28 años de jurisprudencia constitucional acumulada. Para donantes que buscan financiar arquitectura institucional indígena, Colombia ofrece un punto de partida que Brasil mismo está construyendo y otros países latinoamericanos están adoptando.</p>
+    <div class="callout-eyebrow">Lo que el caso U'wa demuestra a Brasília</div>
+    <div class="callout-body">Colombia tiene la <strong>doctrina jurídica más avanzada de América Latina</strong> sobre consulta previa indígena. No es retórica: son 28 años de jurisprudencia constitucional acumulada. Para donantes que buscan financiar arquitectura institucional indígena, Colombia ofrece un punto de partida que Brasil mismo está construyendo y otros países latinoamericanos están adoptando.</div>
   </div>
 
-  <h2 class="h-serif text-2xl text-olive-dark mb-3 mt-5">Donantes con encaje natural</h2>
-  <div class="grid grid-cols-2 gap-3 text-sm">
-    <div class="bg-beige-l p-3 border-l-4 border-olive">
-      <span class="tag">Ford Andina</span>
-      <p class="font-bold text-olive-dark mt-1">Ford Foundation Andina</p>
-      <p class="text-xs mt-1">Ventana Ford Andina 2026 para escalar protocolos bioculturales con caso jurídico fundacional como base. USD 150-300K.</p>
+  <div class="section-num">Donantes</div>
+  <h2 class="section-title">Encaje <em>natural</em></h2>
+
+  <div class="donantes-2">
+    <div class="donante">
+      <div class="donante-tag">Ford Foundation Andina</div>
+      <div class="donante-name">Protocolos bioculturales</div>
+      <div class="donante-desc">Ventana Ford Andina 2026 para escalar protocolos bioculturales con caso jurídico fundacional como base. USD 150—300K plurianual.</div>
     </div>
-    <div class="bg-beige-l p-3 border-l-4 border-olive">
-      <span class="tag">FCLP territorial</span>
-      <p class="font-bold text-olive-dark mt-1">FCLP</p>
-      <p class="text-xs mt-1">Country package Colombia incluyendo Andes ONIC (Cocuy) + Amazonía (Matavén) + Caribe (Línea Negra). USD 2-10M.</p>
+    <div class="donante">
+      <div class="donante-tag">FCLP Country Package</div>
+      <div class="donante-name">Pilar territorial</div>
+      <div class="donante-desc">Country package Colombia incluyendo Andes ONIC (Cocuy) + Amazonía (Matavén) + Caribe (Línea Negra). USD 2—10M.</div>
     </div>
   </div>
 
-  <h2 class="h-serif text-2xl text-olive-dark mb-3 mt-5">Lecciones operativas para 2026-2030</h2>
-  <ol class="space-y-2 ml-5 text-sm">
-    <li><strong class="text-olive-dark">1.</strong> La consulta previa no es trámite — es ejercicio de soberanía. MACI debe operar con consultas previas reales, no protocolarias.</li>
-    <li><strong class="text-olive-dark">2.</strong> La amenaza espiritual (suicidio colectivo) fue lo que cambió el debate. La Declaración de Brasília debe reconocer que la resistencia indígena no es solo política — es ontológica.</li>
-    <li><strong class="text-olive-dark">3.</strong> Una sentencia bien argumentada puede crear precedente regional. El litigio estratégico es una herramienta MACI Módulo 1, no solo un costo de cumplimiento.</li>
+  <div class="section-num">Lecciones operativas 2026 — 2030</div>
+  <h2 class="section-title">Tres <em>lecciones</em></h2>
+
+  <ol class="lecciones">
+    <li>La consulta previa no es trámite — es <strong>ejercicio de soberanía</strong>. MACI debe operar con consultas previas reales, no protocolarias.</li>
+    <li>La amenaza espiritual (suicidio colectivo) fue lo que cambió el debate. La Declaración de Brasília debe reconocer que la resistencia indígena no es solo política — es <strong>ontológica</strong>.</li>
+    <li>Una sentencia bien argumentada puede crear <strong>precedente regional</strong>. El litigio estratégico es una herramienta MACI Módulo 1, no solo un costo de cumplimiento.</li>
   </ol>
 
-</section>
+</div>
 
 <footer class="footer-band">
-  Wilson Herrera Baltán · Coordinador SMT-ONIC · poblacion@onic.org.co · <strong>wilsonherrera77.github.io/MACI/brasilia2026.html</strong>
+  <span>Wilson Herrera Baltán · Coordinador SMT-ONIC · poblacion@onic.org.co · +57 311 220 1903</span>
+  <span>wilsonherrera77.github.io/MACI/brasilia2026.html</span>
 </footer>
+</section>
 
 </body>
 </html>

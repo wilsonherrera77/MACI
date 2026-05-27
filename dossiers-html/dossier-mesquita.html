@@ -3,152 +3,274 @@
 <head>
 <meta charset="UTF-8">
 <title>Quilombo de Mesquita · ONIC ↔ CONAQ · Pacto Volver al Origen</title>
-<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,800;0,9..144,900;1,9..144,400;1,9..144,600&family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
 @page { size: A4; margin: 0; }
-:root { --olive:#7d8a3c; --olive-dark:#5a6427; --grafito:#3d3d3d; --beige:#e8e0c8; --beige-l:#f5f0dd; --gold:#d4a017; --quilombo:#8b2a1a; }
-body { font-family: 'Inter', Georgia, serif; color: var(--grafito); line-height: 1.55; background: white; }
-.page { max-width: 210mm; margin: 0 auto; padding: 16mm 14mm; min-height: 297mm; }
-.h-display { font-weight: 900; letter-spacing: 0.03em; line-height: 1.05; }
-.h-serif { font-family: Georgia, serif; font-weight: 700; }
-.text-olive { color: var(--olive); } .text-olive-dark { color: var(--olive-dark); } .text-gold { color: var(--gold); } .text-quilombo { color: var(--quilombo); }
-.bg-olive { background: var(--olive); } .bg-grafito { background: var(--grafito); } .bg-beige-l { background: var(--beige-l); } .bg-quilombo { background: var(--quilombo); }
-.triangle-deco { width:0; height:0; border-left:18px solid transparent; border-right:18px solid transparent; border-bottom:28px solid var(--gold); }
-.hero { background: linear-gradient(135deg, var(--quilombo) 0%, #5a6427 100%); color: white; padding: 26mm 14mm 16mm; }
-.bridge { background: linear-gradient(90deg, var(--quilombo) 0%, var(--quilombo) 45%, var(--olive) 55%, var(--olive) 100%); height: 6px; margin: 16px 0; border-radius: 3px; position: relative; }
-.bridge::before, .bridge::after { content:''; position: absolute; top: -8px; width: 20px; height: 20px; border-radius: 50%; background: var(--gold); border: 3px solid white; }
-.bridge::before { left: 5%; } .bridge::after { right: 5%; }
-.cite-mesquita { background: var(--grafito); color: white; padding: 16px 20px; border-left: 5px solid var(--quilombo); font-style: italic; }
-.cite-onic { background: var(--grafito); color: white; padding: 16px 20px; border-left: 5px solid var(--olive); font-style: italic; }
-.bilingual { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin: 14px 0; }
-.lang-card { background: var(--beige-l); padding: 14px 18px; border-radius: 4px; }
+:root {
+  --smt-deep: #0a3f33; --smt-deep-dark: #062821;
+  --olive: #7d8a3c; --olive-dark: #5a6427;
+  --onic-orange: #c8431c;
+  --quilombo: #8b2a1a; --quilombo-dark: #5c1a10;
+  --grafito: #2a2a2a; --grafito-soft: #4a4a4a;
+  --beige: #e8e0c8; --beige-l: #f5f0dd; --cream: #faf6e8;
+  --gold: #d4a017; --gold-soft: #f0c850;
+}
+* { box-sizing: border-box; }
+body { font-family: 'DM Sans', system-ui, sans-serif; color: var(--grafito); line-height: 1.55; background: white; font-size: 10.5pt; -webkit-font-smoothing: antialiased; }
+.mono { font-family: 'JetBrains Mono', monospace; font-variant-numeric: tabular-nums; }
+.page { width: 210mm; margin: 0 auto; padding: 0; background: white; position: relative; }
+.page-content { padding: 10mm 14mm 8mm; }
+.page-break { page-break-before: always; }
+
+.hero { background: linear-gradient(135deg, var(--quilombo-dark) 0%, var(--quilombo) 45%, var(--olive-dark) 100%); color: white; padding: 14mm 14mm 12mm; position: relative; overflow: hidden; }
+.hero::before { content: ''; position: absolute; inset: 0; background-image: repeating-linear-gradient(45deg, rgba(255,255,255,0.025) 0 2px, transparent 2px 14px); pointer-events: none; }
+.hero::after { content: ''; position: absolute; right: -60px; bottom: -60px; width: 260px; height: 260px; background: radial-gradient(circle, rgba(212,160,23,0.18) 0%, transparent 70%); pointer-events: none; }
+.hero-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8mm; position: relative; z-index: 2; }
+.logo-smt-img { height: 32px; filter: brightness(0) invert(1); opacity: 0.95; }
+.logo-onic-img { height: 38px; filter: brightness(0) invert(1); opacity: 0.95; }
+.event-stamp { font-family: 'JetBrains Mono', monospace; font-size: 8pt; text-transform: uppercase; letter-spacing: 0.18em; color: var(--gold-soft); border-top: 1px solid rgba(212,160,23,0.4); border-bottom: 1px solid rgba(212,160,23,0.4); padding: 4px 0; display: inline-block; }
+.hero-body { position: relative; z-index: 2; }
+.kicker { font-family: 'JetBrains Mono', monospace; font-size: 9pt; text-transform: uppercase; letter-spacing: 0.22em; color: var(--gold-soft); margin: 5mm 0 6mm; display: flex; align-items: center; gap: 10px; }
+.kicker::before { content: ''; width: 28px; height: 1px; background: var(--gold-soft); }
+.hero-title { font-family: 'Fraunces', serif; font-weight: 900; font-size: 42pt; line-height: 0.95; letter-spacing: -0.025em; margin: 0 0 4mm 0; color: white; }
+.hero-title em { font-style: italic; font-weight: 400; color: var(--gold-soft); }
+.hero-deck { font-family: 'Fraunces', serif; font-style: italic; font-weight: 400; font-size: 13pt; line-height: 1.3; color: rgba(255,255,255,0.92); max-width: 160mm; margin: 0 0 5mm 0; }
+.hero-sub { font-size: 10.5pt; line-height: 1.5; color: rgba(255,255,255,0.85); max-width: 160mm; margin: 0; }
+.hero-sub strong { color: var(--gold-soft); }
+
+/* Bridge ONIC-CONAQ */
+.bridge {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 0;
+  align-items: center;
+  margin: 6mm 0 5mm;
+}
+.bridge-side {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 9pt;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  padding: 3mm 5mm;
+}
+.bridge-side.onic { background: var(--olive-dark); color: white; text-align: right; }
+.bridge-side.conaq { background: var(--quilombo); color: white; text-align: left; }
+.bridge-center {
+  background: var(--gold);
+  color: var(--smt-deep-dark);
+  font-family: 'Fraunces', serif;
+  font-weight: 900;
+  font-size: 22pt;
+  padding: 2mm 6mm;
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+.section-num { font-family: 'JetBrains Mono', monospace; font-size: 8pt; letter-spacing: 0.2em; color: var(--onic-orange); font-weight: 700; text-transform: uppercase; display: flex; align-items: center; gap: 8px; margin: 5mm 0 3mm; }
+.section-num::before { content: ''; width: 4px; height: 4px; background: var(--onic-orange); border-radius: 50%; }
+.section-title { font-family: 'Fraunces', serif; font-weight: 800; font-size: 20pt; line-height: 1.05; letter-spacing: -0.02em; color: var(--smt-deep); margin: 0 0 4mm 0; }
+.section-title em { font-style: italic; font-weight: 400; color: var(--quilombo); }
+.body-text { font-size: 10pt; line-height: 1.6; color: var(--grafito); margin-bottom: 3mm; text-align: justify; }
+.body-text strong { color: var(--smt-deep); font-weight: 600; }
+
+/* Bilingual cards */
+.bilingual { display: grid; grid-template-columns: 1fr 1fr; gap: 3px; margin: 3mm 0 5mm; }
+.lang-card { background: var(--cream); padding: 5mm 6mm; }
 .lang-card.pt { border-top: 4px solid var(--quilombo); }
 .lang-card.es { border-top: 4px solid var(--olive); }
-.lang-tag { font-size: 0.7rem; font-weight: 900; text-transform: uppercase; letter-spacing: 0.1em; }
-.page-break { page-break-before: always; }
-.footer-band { background: var(--grafito); color: white; padding: 8px 14mm; font-size: 0.7rem; }
+.lang-tag { font-family: 'JetBrains Mono', monospace; font-size: 8pt; font-weight: 700; text-transform: uppercase; letter-spacing: 0.18em; margin-bottom: 3mm; }
+.lang-card.pt .lang-tag { color: var(--quilombo); }
+.lang-card.es .lang-tag { color: var(--olive-dark); }
+.lang-body { font-size: 9.5pt; line-height: 1.55; color: var(--grafito); text-align: justify; }
+.lang-body strong { color: var(--smt-deep); font-weight: 600; }
+
+/* Analogos · 3 cards */
+.analogos { display: grid; grid-template-columns: repeat(3, 1fr); gap: 3px; margin: 3mm 0 5mm; }
+.analogo { background: var(--cream); padding: 5mm 5mm; border-top: 4px solid var(--olive); }
+.analogo:nth-child(2) { border-top-color: var(--smt-deep); }
+.analogo:nth-child(3) { border-top-color: var(--onic-orange); }
+.analogo-name { font-family: 'Fraunces', serif; font-weight: 800; font-size: 13pt; color: var(--smt-deep); margin-bottom: 1mm; line-height: 1.1; }
+.analogo-pueblo { font-family: 'Fraunces', serif; font-style: italic; font-size: 9.5pt; color: var(--olive-dark); margin-bottom: 3mm; }
+.analogo-body { font-size: 9pt; line-height: 1.5; color: var(--grafito); }
+.analogo-body strong { color: var(--smt-deep); }
+
+/* Citas con borde */
+.cite-block {
+  padding: 5mm 7mm;
+  margin: 4mm 0;
+  color: white;
+}
+.cite-block.onic { background: var(--smt-deep); border-left: 4px solid var(--olive); }
+.cite-block.conaq { background: var(--grafito); border-left: 4px solid var(--quilombo); }
+.cite-block.closing { background: var(--smt-deep-dark); border-left: 4px solid var(--gold); }
+.cite-eyebrow { font-family: 'JetBrains Mono', monospace; font-size: 8pt; text-transform: uppercase; letter-spacing: 0.18em; font-weight: 700; margin-bottom: 2mm; }
+.cite-block.onic .cite-eyebrow { color: var(--gold-soft); }
+.cite-block.conaq .cite-eyebrow { color: var(--gold-soft); }
+.cite-block.closing .cite-eyebrow { color: var(--gold-soft); }
+.cite-body { font-family: 'Fraunces', serif; font-style: italic; font-size: 12pt; line-height: 1.4; color: white; }
+.cite-attr { font-family: 'JetBrains Mono', monospace; font-size: 7.5pt; text-transform: uppercase; letter-spacing: 0.15em; color: var(--gold-soft); margin-top: 3mm; font-weight: 700; }
+
+/* Compromisos · numbered */
+.compromisos { counter-reset: comp; margin: 4mm 0; padding: 0; list-style: none; border-top: 2px solid var(--smt-deep); }
+.compromisos li {
+  position: relative;
+  padding: 3.5mm 0 3.5mm 16mm;
+  border-bottom: 1px solid var(--beige);
+  counter-increment: comp;
+  font-size: 9.5pt;
+  line-height: 1.5;
+}
+.compromisos li::before {
+  content: counter(comp, decimal-leading-zero);
+  position: absolute;
+  left: 0;
+  top: 3mm;
+  font-family: 'Fraunces', serif;
+  font-weight: 900;
+  font-size: 22pt;
+  color: var(--gold);
+  line-height: 1;
+  letter-spacing: -0.03em;
+}
+.compromisos li strong { color: var(--smt-deep); font-weight: 600; }
+
+.footer-band { background: var(--grafito); color: white; padding: 4mm 14mm; font-family: 'JetBrains Mono', monospace; font-size: 7.5pt; letter-spacing: 0.1em; text-transform: uppercase; display: flex; justify-content: space-between; align-items: center; }
 </style>
 </head>
 <body>
 
+<!-- PAGE 1 -->
+<section class="page">
 <header class="hero">
-  <div class="flex items-center gap-3 mb-3">
-    <div class="triangle-deco"></div>
-    <span class="text-gold uppercase tracking-widest text-xs font-bold">Visita Técnica · Sexta 29 Maio · Goiás Brasil</span>
+  <div class="hero-header">
+    <img src="../assets/logo_SMT.png" alt="SMT" class="logo-smt-img">
+    <img src="../assets/logo_ONIC.png" alt="ONIC" class="logo-onic-img">
   </div>
-  <h1 class="h-display text-5xl mb-3">Quilombo de Mesquita</h1>
-  <p class="text-xl text-yellow-100 mb-2">El puente ONIC ↔ CONAQ · A ponte ONIC ↔ CONAQ</p>
-  <p class="text-base text-beige-l max-w-2xl">280 anos de resistência territorial · 30 anos da CONAQ · cadeia de valor do marmelo · três povos análogos colombianos da ONIC.</p>
+  <div class="hero-body">
+    <div class="event-stamp">Visita Técnica · Sexta 29 Maio 2026 · Goiás Brasil</div>
+    <div class="kicker">ONIC ↔ CONAQ · Pacto Volver al Origen</div>
+    <h1 class="hero-title">Quilombo<br><em>de Mesquita</em></h1>
+    <p class="hero-deck">El puente ONIC ↔ CONAQ · A ponte ONIC ↔ CONAQ</p>
+    <p class="hero-sub"><strong>280 anos</strong> de resistência territorial · <strong>30 anos</strong> da CONAQ · cadeia de valor do marmelo · três povos análogos colombianos da ONIC.</p>
+  </div>
 </header>
 
-<section class="page" style="padding-top:12mm">
+<div class="page-content">
 
-  <div class="bridge"></div>
+  <div class="bridge">
+    <div class="bridge-side onic">ONIC · Colombia</div>
+    <div class="bridge-center">↔</div>
+    <div class="bridge-side conaq">CONAQ · Brasil</div>
+  </div>
 
-  <h2 class="h-serif text-2xl text-olive-dark mb-3">Lo que aprendemos juntos · O que aprendemos juntos</h2>
+  <div class="section-num">Aprendizagem mútua</div>
+  <h2 class="section-title">Lo que aprendemos juntos · <em>O que aprendemos juntos</em></h2>
 
   <div class="bilingual">
     <div class="lang-card pt">
-      <div class="lang-tag text-quilombo mb-2">🇧🇷 Português</div>
-      <p class="text-sm text-justify">Em Mesquita aprendemos que voltar à origem não é nostalgia: é estratégia. A cadeia do marmelo é um caso vivo de bioeconomia comunitária — não um projeto piloto, mas um sistema produtivo de 280 anos. A CONAQ tem construído nessas três décadas a arquitetura institucional que articula os territórios quilombolas no Estado brasileiro.</p>
+      <div class="lang-tag">PT · Português</div>
+      <div class="lang-body">Em Mesquita aprendemos que <strong>voltar à origem não é nostalgia: é estratégia</strong>. A cadeia do marmelo é um caso vivo de bioeconomia comunitária — não um projeto piloto, mas um sistema produtivo de 280 anos. A CONAQ tem construído nessas três décadas a arquitetura institucional que articula os territórios quilombolas no Estado brasileiro.</div>
     </div>
     <div class="lang-card es">
-      <div class="lang-tag text-olive mb-2">🇨🇴 Español</div>
-      <p class="text-sm text-justify">En Mesquita aprendemos que volver al origen no es nostalgia: es estrategia. La cadena del membrillo es un caso vivo de bioeconomía comunitaria — no un proyecto piloto, sino un sistema productivo de 280 años. La CONAQ ha construido en estas tres décadas la arquitectura institucional que articula los territorios quilombolas en el Estado brasileño.</p>
+      <div class="lang-tag">ES · Español</div>
+      <div class="lang-body">En Mesquita aprendemos que <strong>volver al origen no es nostalgia: es estrategia</strong>. La cadena del membrillo es un caso vivo de bioeconomía comunitaria — no un proyecto piloto, sino un sistema productivo de 280 años. La CONAQ ha construido en estas tres décadas la arquitectura institucional que articula los territorios quilombolas en el Estado brasileño.</div>
     </div>
   </div>
 
-  <h2 class="h-serif text-2xl text-olive-dark mb-3 mt-5">Tres análogos colombianos ONIC · Três análogos</h2>
-  <p class="mb-3 text-sm text-justify text-grafito">No Brasil os quilombos guardam territorios afrodescendentes. Em Colômbia, povos indígenas ONIC guardam analogias diretas em três sistemas regionais. Eis-os:</p>
+  <div class="section-num">Tres análogos colombianos</div>
+  <h2 class="section-title">Três análogos · <em>casos hermanos</em></h2>
+  <p class="body-text">No Brasil os quilombos guardam territorios afrodescendentes. Em Colômbia, povos indígenas ONIC guardam analogias diretas em três sistemas regionais:</p>
 
-  <div class="grid grid-cols-3 gap-3">
-    <div class="bg-beige-l p-4 border-l-4 border-olive">
-      <h3 class="font-bold text-olive-dark">Serra Nevada do Cocuy</h3>
-      <p class="text-xs italic">Povo U'wa · Andes ONIC</p>
-      <p class="text-sm mt-2">Resistência histórica frente à exploração petroleira. Sentença SU-039/1997 da Corte Constitucional colombiana — caso jurídico fundacional consulta prévia na América Latina. Como Mesquita, séculos de defesa territorial sem retroceder.</p>
+  <div class="analogos">
+    <div class="analogo">
+      <div class="analogo-name">Serra Nevada<br>do Cocuy</div>
+      <div class="analogo-pueblo">Povo U'wa · Andes ONIC</div>
+      <div class="analogo-body">Resistência histórica frente à exploração petroleira. <strong>Sentença SU-039/1997</strong> da Corte Constitucional colombiana — caso jurídico fundacional consulta prévia na América Latina. Como Mesquita, séculos de defesa territorial sem retroceder.</div>
     </div>
-    <div class="bg-beige-l p-4 border-l-4 border-olive">
-      <h3 class="font-bold text-olive-dark">Serra Nevada de Santa Marta</h3>
-      <p class="text-xs italic">Kogui · Wiwa · Arhuaco · Kankuamo</p>
-      <p class="text-sm mt-2">Sistema de cacau indígena com identidade biocultural própria. Cadeia de valor com denominação de origem, similar ao que CONAQ defende com a cadeia do marmelo de Mesquita. Linha Negra (Res. 837/1995) é nosso equivalente jurídico.</p>
+    <div class="analogo">
+      <div class="analogo-name">Serra Nevada<br>de Santa Marta</div>
+      <div class="analogo-pueblo">Kogui · Wiwa · Arhuaco · Kankuamo</div>
+      <div class="analogo-body">Sistema de cacau indígena com identidade biocultural própria. Cadeia de valor com denominação de origem, similar ao que CONAQ defende com a cadeia do marmelo. <strong>Linha Negra (Res. 837/1995)</strong> é nosso equivalente jurídico.</div>
     </div>
-    <div class="bg-beige-l p-4 border-l-4 border-olive">
-      <h3 class="font-bold text-olive-dark">Pacífico colombiano · Chocó</h3>
-      <p class="text-xs italic">Embera Dóbida e Katío</p>
-      <p class="text-sm mt-2">Sistemas de pesca artesanal · noni · cosmovisão territorial. Traslapes diretos com territórios afrocolombianos (CONAQ tem irmandade com PCN e CITAFRO Colombia). Aqui nasce o eixo PAS Afrodescendente.</p>
+    <div class="analogo">
+      <div class="analogo-name">Pacífico<br>colombiano · Chocó</div>
+      <div class="analogo-pueblo">Embera Dóbida e Katío</div>
+      <div class="analogo-body">Sistemas de pesca artesanal · noni · cosmovisão territorial. Traslapes diretos com territórios afrocolombianos (CONAQ tem irmandade com <strong>PCN e CITAFRO Colombia</strong>). Aqui nasce o eixo PAS Afrodescendente.</div>
     </div>
   </div>
 
-  <div class="bridge"></div>
-
-  <h2 class="h-serif text-2xl text-olive-dark mb-3 mt-2">A proposta concreta · La propuesta concreta · 2026-2030</h2>
+  <div class="section-num">A proposta concreta · 2026—2030</div>
+  <h2 class="section-title">Coordinación operativa · <em>não retórica</em></h2>
 
   <div class="bilingual">
     <div class="lang-card pt">
-      <div class="lang-tag text-quilombo mb-2">🇧🇷 Português</div>
-      <p class="text-sm text-justify">ONIC propõe à CONAQ articular o <strong>Plano de Aceleração de Soluções Afrodescendentes (PAS)</strong> lançado na COP30 Brasil-Colombia com o <strong>Marco de Ação para Comunidades Indígenas (MACI · USD 60-80M / 5 anos)</strong>, dado que ambos compartilham territórios sobrepostos no Pacífico colombiano, Amazônia sudoccidental e Caribe. Coordenação operacional, não retórica.</p>
+      <div class="lang-tag">PT · Português</div>
+      <div class="lang-body">ONIC propõe à CONAQ articular o <strong>Plano de Aceleração de Soluções Afrodescendentes (PAS)</strong> lançado na COP30 Brasil-Colombia com o <strong>Marco de Ação para Comunidades Indígenas (MACI · USD 60—80M / 5 anos)</strong>, dado que ambos compartilham territórios sobrepostos no Pacífico colombiano, Amazônia sudoccidental e Caribe. Coordenação operacional, não retórica.</div>
     </div>
     <div class="lang-card es">
-      <div class="lang-tag text-olive mb-2">🇨🇴 Español</div>
-      <p class="text-sm text-justify">ONIC propone a CONAQ articular el <strong>Plan de Aceleración de Soluciones Afrodescendientes (PAS)</strong> lanzado en COP30 Brasil-Colombia con el <strong>Marco de Acción para Comunidades Indígenas (MACI · USD 60-80M / 5 años)</strong>, dado que ambos comparten territorios traslapados en el Pacífico colombiano, Amazonía surocidental y Caribe. Coordinación operativa, no retórica.</p>
+      <div class="lang-tag">ES · Español</div>
+      <div class="lang-body">ONIC propone a CONAQ articular el <strong>Plan de Aceleración de Soluciones Afrodescendientes (PAS)</strong> lanzado en COP30 Brasil-Colombia con el <strong>Marco de Acción para Comunidades Indígenas (MACI · USD 60—80M / 5 años)</strong>, dado que ambos comparten territorios traslapados en el Pacífico colombiano, Amazonía surocidental y Caribe. Coordinación operativa, no retórica.</div>
     </div>
   </div>
 
+</div>
 </section>
 
+<!-- PAGE 2 -->
 <section class="page page-break">
+<div class="page-content" style="padding-top:14mm">
 
-  <h2 class="h-serif text-2xl text-olive-dark mb-3">El mandato político que nos une · O mandato político que nos une</h2>
+  <div class="section-num">Mandato político compartilhado</div>
+  <h2 class="section-title">El mandato que <em>nos une</em></h2>
 
-  <div class="cite-onic mb-3">
-    <strong class="text-gold text-sm">XI Congresso ONIC · Pacto para Volver al Origen</strong><br>
-    "Volver al origen não é nostalgia: é defender território séculos sem recuar."
+  <div class="cite-block onic">
+    <div class="cite-eyebrow">XI Congresso ONIC · Pacto para Volver al Origen</div>
+    <div class="cite-body">Volver al origen não é nostalgia: é defender território séculos sem recuar.</div>
   </div>
 
-  <div class="cite-mesquita">
-    <strong class="text-yellow-200 text-sm">CONAQ · 30 anos · Mesquita 280 anos</strong><br>
-    "Cada marmelo carrega séculos. Cada quilombo é estrutura. Cada estrutura é resistência."
+  <div class="cite-block conaq">
+    <div class="cite-eyebrow">CONAQ · 30 anos · Mesquita 280 anos</div>
+    <div class="cite-body">Cada marmelo carrega séculos. Cada quilombo é estrutura. Cada estrutura é resistência.</div>
   </div>
 
-  <h2 class="h-serif text-2xl text-olive-dark mb-3 mt-5">Cinco compromissos · Cinco compromisos · 2026-2030</h2>
-  <ol class="space-y-3 text-sm">
-    <li class="flex gap-3 items-start">
-      <span class="bg-olive text-white w-7 h-7 flex items-center justify-center rounded-full font-bold flex-shrink-0">1</span>
-      <span><strong class="text-olive-dark">Mesa técnica permanente ONIC-CONAQ-PCN-CITAFRO</strong> · reunião trimestral · agenda compartilhada PAS+MACI · sede rotativa Bogotá ↔ Brasília ↔ Salvador.</span>
-    </li>
-    <li class="flex gap-3 items-start">
-      <span class="bg-olive text-white w-7 h-7 flex items-center justify-center rounded-full font-bold flex-shrink-0">2</span>
-      <span><strong class="text-olive-dark">Compartilhar protocolo CLPI</strong> · ONIC entrega doutrina SU-039/1997 + jurisprudência derivada · CONAQ entrega modelo institucional 30 anos.</span>
-    </li>
-    <li class="flex gap-3 items-start">
-      <span class="bg-olive text-white w-7 h-7 flex items-center justify-center rounded-full font-bold flex-shrink-0">3</span>
-      <span><strong class="text-olive-dark">Co-formulação de propostas conjuntas</strong> · NICFI · FCLP · Campaign for Nature · Ford Foundation Brasil aceitam consórcios indígenas+afrodescendentes.</span>
-    </li>
-    <li class="flex gap-3 items-start">
-      <span class="bg-olive text-white w-7 h-7 flex items-center justify-center rounded-full font-bold flex-shrink-0">4</span>
-      <span><strong class="text-olive-dark">Intercâmbio cadeias de valor</strong> · marmelo Mesquita ↔ cacau Sierra Nevada ↔ café altura indígena · piloto de comércio justo sur-sur.</span>
-    </li>
-    <li class="flex gap-3 items-start">
-      <span class="bg-olive text-white w-7 h-7 flex items-center justify-center rounded-full font-bold flex-shrink-0">5</span>
-      <span><strong class="text-olive-dark">Coordenação em foros internacionais</strong> · ECOSOC · UNPFII · IPBES · presença coordenada com declarações conjuntas.</span>
-    </li>
+  <div class="section-num">Cinco compromissos · 2026—2030</div>
+  <h2 class="section-title">Compromisos <em>operativos</em></h2>
+
+  <ol class="compromisos">
+    <li><strong>Mesa técnica permanente ONIC-CONAQ-PCN-CITAFRO</strong> · reunião trimestral · agenda compartilhada PAS+MACI · sede rotativa Bogotá ↔ Brasília ↔ Salvador.</li>
+    <li><strong>Compartilhar protocolo CLPI</strong> · ONIC entrega doutrina SU-039/1997 + jurisprudência derivada · CONAQ entrega modelo institucional 30 anos.</li>
+    <li><strong>Co-formulação de propostas conjuntas</strong> · NICFI · FCLP · Campaign for Nature · Ford Foundation Brasil aceitam consórcios indígenas+afrodescendentes.</li>
+    <li><strong>Intercâmbio cadeias de valor</strong> · marmelo Mesquita ↔ cacau Sierra Nevada ↔ café altura indígena · piloto de comércio justo sur-sur.</li>
+    <li><strong>Coordenação em foros internacionais</strong> · ECOSOC · UNPFII · IPBES · presença coordenada com declarações conjuntas.</li>
   </ol>
 
-  <div class="bridge mt-5"></div>
-
-  <h2 class="h-serif text-2xl text-olive-dark mb-3">El cierre simbólico · O cierre simbólico</h2>
-  <p class="mb-3 text-sm text-justify text-grafito">A visita técnica de sexta-feira 29 maio não é fim — é começo. Em Mesquita aprendemos que voltar à origem leva 280 anos de defesa territorial. Esse é o mesmo prazo que nossos povos contam.</p>
-
-  <div class="cite-onic">
-    Líderes e lideranças do Quilombo de Mesquita: o que CONAQ construiu em 30 anos não é só memória — é arquitectura institucional que el mundo precisa aprender. Pelo Pacto para Volver al Origem · obrigado por nos ensinarem.<br>
-    <span class="text-xs not-italic text-yellow-200 font-bold mt-2 block">— Wilson Herrera Baltán · Coordinador SMT-ONIC · 29 mai 2026</span>
+  <div class="bridge">
+    <div class="bridge-side onic">280 ANOS DEFESA</div>
+    <div class="bridge-center">∞</div>
+    <div class="bridge-side conaq">30 ANOS CONAQ</div>
   </div>
 
-</section>
+  <div class="section-num">El cierre simbólico</div>
+  <h2 class="section-title">O cierre <em>simbólico</em></h2>
+
+  <p class="body-text">A visita técnica de sexta-feira 29 maio não é fim — é começo. Em Mesquita aprendemos que voltar à origem leva 280 anos de defesa territorial. <strong>Esse é o mesmo prazo que nossos povos contam</strong>.</p>
+
+  <div class="cite-block closing">
+    <div class="cite-eyebrow">Cierre · Wilson Herrera Baltán · Mesquita · 29 mai 2026</div>
+    <div class="cite-body">Líderes e lideranças do Quilombo de Mesquita: o que CONAQ construiu em 30 anos não é só memória — é arquitectura institucional que el mundo precisa aprender. Pelo Pacto para Voltar à Origem · obrigado por nos ensinarem.</div>
+    <div class="cite-attr">Wilson Herrera Baltán · Coordinador SMT-ONIC</div>
+  </div>
+
+</div>
 
 <footer class="footer-band">
-  Wilson Herrera Baltán · Coordinador SMT-ONIC · poblacion@onic.org.co · WhatsApp +57 311 220 1903 · <strong>wilsonherrera77.github.io/MACI/brasilia2026.html</strong>
+  <span>Wilson Herrera Baltán · Coordinador SMT-ONIC · poblacion@onic.org.co · +57 311 220 1903</span>
+  <span>wilsonherrera77.github.io/MACI/brasilia2026.html</span>
 </footer>
+</section>
 
 </body>
 </html>

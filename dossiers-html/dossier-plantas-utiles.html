@@ -4,129 +4,215 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Catálogo Plantas Útiles × Resguardos ONIC 2024 · Dossier</title>
-<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,800;0,9..144,900;1,9..144,400;1,9..144,600&family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
 <style>
 @page { size: A4; margin: 0; }
-:root { --olive:#7d8a3c; --olive-dark:#5a6427; --grafito:#3d3d3d; --beige:#e8e0c8; --beige-l:#f5f0dd; --gold:#d4a017; }
-body { font-family: 'Inter', Georgia, serif; color: var(--grafito); line-height: 1.55; background: white; }
-.page { max-width: 210mm; margin: 0 auto; padding: 18mm 16mm; min-height: 297mm; }
-.h-display { font-weight: 900; letter-spacing: 0.03em; line-height: 1.05; }
-.h-serif { font-family: Georgia, 'Times New Roman', serif; font-weight: 700; }
-.text-olive { color: var(--olive); } .text-olive-dark { color: var(--olive-dark); } .text-gold { color: var(--gold); }
-.bg-olive { background: var(--olive); } .bg-grafito { background: var(--grafito); } .bg-beige { background: var(--beige); } .bg-beige-l { background: var(--beige-l); }
-.triangle-deco { width:0; height:0; border-left:18px solid transparent; border-right:18px solid transparent; border-bottom:28px solid var(--gold); }
-.hero { background: linear-gradient(135deg, #5a6427 0%, #7d8a3c 100%); color: white; padding: 26mm 16mm 18mm; }
-.kpi { background: white; border-left: 5px solid var(--olive); padding: 14px 18px; }
-.kpi-big { font-size: 2.4rem; font-weight: 900; color: var(--olive-dark); line-height: 1; }
-.kpi-label { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.08em; }
-.callout { background: linear-gradient(180deg, #fff9e6, white); border-left: 5px solid var(--gold); padding: 14px 18px; margin: 14px 0; }
-.tag { display:inline-block; padding: 3px 10px; background: var(--beige); color: var(--olive-dark); font-size: 0.7rem; font-weight: 700; text-transform: uppercase; border-radius: 12px; }
-.cite { font-style: italic; border-left: 3px solid var(--gold); padding: 8px 16px; margin: 14px 0; color: var(--olive-dark); background: var(--beige-l); }
+:root {
+  --smt-deep: #0a3f33; --smt-deep-dark: #062821;
+  --olive: #7d8a3c; --olive-dark: #5a6427; --olive-light: #a8b558;
+  --onic-orange: #c8431c;
+  --grafito: #2a2a2a; --grafito-soft: #4a4a4a;
+  --beige: #e8e0c8; --beige-l: #f5f0dd; --cream: #faf6e8;
+  --gold: #d4a017; --gold-soft: #f0c850;
+}
+* { box-sizing: border-box; }
+body { font-family: 'DM Sans', system-ui, sans-serif; color: var(--grafito); line-height: 1.55; background: white; font-size: 10.5pt; -webkit-font-smoothing: antialiased; }
+.mono { font-family: 'JetBrains Mono', monospace; font-variant-numeric: tabular-nums; }
+.page { width: 210mm; margin: 0 auto; padding: 0; background: white; position: relative; }
+.page-content { padding: 10mm 14mm 8mm; }
 .page-break { page-break-before: always; }
-.footer-band { background: var(--grafito); color: white; padding: 10px 16mm; font-size: 0.75rem; }
-.chart-wrap { background: white; border: 1px solid var(--beige); padding: 14px; }
-.leaf-bg { background-image: repeating-linear-gradient(45deg, rgba(125,138,60,0.03), rgba(125,138,60,0.03) 10px, transparent 10px, transparent 20px); }
+.leaf-bg { background-image: repeating-linear-gradient(45deg, rgba(125,138,60,0.03), rgba(125,138,60,0.03) 12px, transparent 12px, transparent 26px); }
+
+.hero {
+  background: linear-gradient(135deg, var(--smt-deep) 0%, var(--olive-dark) 60%, var(--olive) 100%);
+  color: white;
+  padding: 14mm 14mm 12mm;
+  position: relative;
+  overflow: hidden;
+}
+.hero::before { content: ''; position: absolute; inset: 0; background-image: repeating-linear-gradient(45deg, rgba(255,255,255,0.025) 0 2px, transparent 2px 14px); pointer-events: none; }
+.hero::after { content: ''; position: absolute; right: -60px; bottom: -60px; width: 280px; height: 280px; background: radial-gradient(circle, rgba(212,160,23,0.16) 0%, transparent 70%); pointer-events: none; }
+.hero-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8mm; position: relative; z-index: 2; }
+.logo-smt-img { height: 32px; filter: brightness(0) invert(1); opacity: 0.95; }
+.logo-onic-img { height: 38px; filter: brightness(0) invert(1); opacity: 0.95; }
+.event-stamp { font-family: 'JetBrains Mono', monospace; font-size: 8pt; text-transform: uppercase; letter-spacing: 0.18em; color: var(--gold-soft); border-top: 1px solid rgba(212,160,23,0.4); border-bottom: 1px solid rgba(212,160,23,0.4); padding: 4px 0; display: inline-block; }
+.hero-body { position: relative; z-index: 2; }
+.kicker { font-family: 'JetBrains Mono', monospace; font-size: 9pt; text-transform: uppercase; letter-spacing: 0.22em; color: var(--gold-soft); margin: 5mm 0 6mm; display: flex; align-items: center; gap: 10px; }
+.kicker::before { content: ''; width: 28px; height: 1px; background: var(--gold-soft); }
+.hero-title { font-family: 'Fraunces', serif; font-weight: 900; font-size: 40pt; line-height: 0.95; letter-spacing: -0.025em; margin: 0 0 4mm 0; color: white; }
+.hero-title em { font-style: italic; font-weight: 400; color: var(--gold-soft); }
+.hero-deck { font-family: 'Fraunces', serif; font-style: italic; font-weight: 400; font-size: 14pt; line-height: 1.3; color: rgba(255,255,255,0.92); max-width: 160mm; margin: 0 0 5mm 0; }
+.hero-sub { font-size: 10.5pt; line-height: 1.5; color: rgba(255,255,255,0.85); max-width: 160mm; margin: 0 0 6mm 0; }
+
+.kpis { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--beige); margin: 6mm 0 8mm; border-top: 2px solid var(--smt-deep); border-bottom: 1px solid var(--beige); }
+.kpi { background: white; padding: 5mm 5mm; }
+.kpi-num { font-family: 'Fraunces', serif; font-weight: 900; font-size: 32pt; line-height: 1; color: var(--smt-deep); letter-spacing: -0.03em; }
+.kpi-num em { font-style: italic; font-weight: 400; color: var(--olive); }
+.kpi-lbl { font-family: 'JetBrains Mono', monospace; font-size: 7pt; text-transform: uppercase; letter-spacing: 0.12em; color: var(--grafito-soft); margin-top: 3mm; }
+
+.section-num { font-family: 'JetBrains Mono', monospace; font-size: 8pt; letter-spacing: 0.2em; color: var(--onic-orange); font-weight: 700; text-transform: uppercase; display: flex; align-items: center; gap: 8px; margin: 5mm 0 3mm; }
+.section-num::before { content: ''; width: 4px; height: 4px; background: var(--onic-orange); border-radius: 50%; }
+.section-title { font-family: 'Fraunces', serif; font-weight: 800; font-size: 22pt; line-height: 1.05; letter-spacing: -0.02em; color: var(--smt-deep); margin: 0 0 4mm 0; }
+.section-title em { font-style: italic; font-weight: 400; color: var(--olive); }
+.body-text { font-size: 10pt; line-height: 1.6; color: var(--grafito); margin-bottom: 3mm; text-align: justify; }
+.body-text strong { color: var(--smt-deep); font-weight: 600; }
+.body-text em { font-style: italic; }
+
+.callout { background: linear-gradient(135deg, var(--cream) 0%, rgba(240,200,80,0.1) 100%); border-left: 3px solid var(--gold); padding: 4mm 6mm; margin: 5mm 0; }
+.callout-eyebrow { font-family: 'JetBrains Mono', monospace; font-size: 7.5pt; text-transform: uppercase; letter-spacing: 0.18em; color: var(--onic-orange); font-weight: 700; margin-bottom: 2mm; }
+.callout-title { font-family: 'Fraunces', serif; font-weight: 700; font-size: 13pt; color: var(--smt-deep); margin-bottom: 2mm; }
+.callout-body { font-size: 10pt; line-height: 1.5; color: var(--grafito); }
+.callout-body strong { color: var(--smt-deep); font-weight: 600; }
+
+.chart-wrap { background: white; border: 1px solid var(--beige); padding: 4mm 5mm; margin: 3mm 0; }
+.chart-caption { font-family: 'JetBrains Mono', monospace; font-size: 7.5pt; color: var(--grafito-soft); margin-top: 2mm; font-style: italic; letter-spacing: 0.03em; }
+
+/* Module fit */
+.module-fit { display: grid; grid-template-columns: repeat(3, 1fr); gap: 3px; margin: 3mm 0 5mm; }
+.module-card { background: var(--cream); padding: 5mm 5mm; border-top: 3px solid var(--olive); }
+.module-card:nth-child(2) { border-top-color: var(--smt-deep); }
+.module-card:nth-child(3) { border-top-color: var(--onic-orange); }
+.module-tag { font-family: 'JetBrains Mono', monospace; font-size: 7.5pt; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--onic-orange); margin-bottom: 2mm; }
+.module-name { font-family: 'Fraunces', serif; font-weight: 700; font-size: 12pt; color: var(--smt-deep); margin-bottom: 2mm; }
+.module-desc { font-size: 9pt; color: var(--grafito-soft); line-height: 1.5; }
+
+/* Donantes */
+.donantes { display: grid; grid-template-columns: repeat(3, 1fr); gap: 3px; margin: 4mm 0; }
+.donante { background: var(--cream); padding: 4mm 4mm; border-left: 3px solid var(--olive); }
+.donante-tag { font-family: 'JetBrains Mono', monospace; font-size: 7pt; text-transform: uppercase; letter-spacing: 0.12em; color: var(--onic-orange); font-weight: 700; margin-bottom: 2mm; }
+.donante-name { font-family: 'Fraunces', serif; font-weight: 700; font-size: 11pt; color: var(--smt-deep); margin-bottom: 1mm; }
+.donante-desc { font-size: 8.5pt; color: var(--grafito-soft); line-height: 1.4; }
+
+/* Pull quote */
+.pullquote { margin: 5mm 0 2mm; padding: 5mm 7mm; border-left: 3px solid var(--gold); background: var(--cream); font-family: 'Fraunces', serif; font-style: italic; font-size: 13pt; line-height: 1.4; color: var(--smt-deep); position: relative; }
+.pullquote::before { content: '"'; font-family: 'Fraunces', serif; font-size: 56pt; color: var(--gold); position: absolute; left: 2mm; top: -2mm; line-height: 1; opacity: 0.3; }
+
+.iucn-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6mm; align-items: center; margin: 3mm 0 5mm; }
+
+.footer-band { background: var(--grafito); color: white; padding: 4mm 14mm; font-family: 'JetBrains Mono', monospace; font-size: 7.5pt; letter-spacing: 0.1em; text-transform: uppercase; display: flex; justify-content: space-between; align-items: center; }
 </style>
 </head>
 <body>
 
+<!-- PAGE 1 -->
+<section class="page">
 <header class="hero">
-  <div class="flex items-center gap-3 mb-4">
-    <div class="triangle-deco"></div>
-    <span class="text-yellow-200 uppercase tracking-widest text-xs font-bold">Evidencia Transversal · 5 Macrorregiones · ONIC 2026</span>
+  <div class="hero-header">
+    <img src="../assets/logo_SMT.png" alt="SMT" class="logo-smt-img">
+    <img src="../assets/logo_ONIC.png" alt="ONIC" class="logo-onic-img">
   </div>
-  <h1 class="h-display text-5xl mb-3">Plantas Útiles × Resguardos</h1>
-  <p class="text-xl text-yellow-100 mb-2">El catálogo georeferenciado que cruza ciencia internacional con territorios indígenas colombianos</p>
-  <p class="text-base text-beige-l max-w-2xl">5.690 especies útiles · 327.614 registros geolocalizados · avalado por Kew Gardens y verificable contra GBIF. La base científica que MACI necesita para los Módulos 3 (monitoreo) · 4 (biobanco) · 5 (bioeconomía).</p>
+  <div class="hero-body">
+    <div class="event-stamp">Evidencia Transversal · 5 Macrorregiones</div>
+    <div class="kicker">Catálogo Plantas Útiles × Resguardos · ONIC 2026</div>
+    <h1 class="hero-title">Plantas Útiles<br><em>× Resguardos</em></h1>
+    <p class="hero-deck">El catálogo georeferenciado que cruza ciencia internacional con territorios indígenas colombianos.</p>
+    <p class="hero-sub"><strong style="color:var(--gold-soft)">5.690 especies útiles · 327.614 registros geolocalizados</strong> · avalado por Kew Gardens y verificable contra GBIF. La base científica que MACI necesita para los Módulos 3 (monitoreo) · 4 (biobanco) · 5 (bioeconomía).</p>
+  </div>
 </header>
 
-<section class="page leaf-bg" style="padding-top:14mm">
+<div class="page-content leaf-bg">
 
-  <div class="grid grid-cols-4 gap-3 mb-7">
-    <div class="kpi"><div class="kpi-big">5.690</div><div class="kpi-label">Especies únicas</div></div>
-    <div class="kpi"><div class="kpi-big">327K</div><div class="kpi-label">Registros geo</div></div>
-    <div class="kpi"><div class="kpi-big">Kew</div><div class="kpi-label">Aval internacional</div></div>
-    <div class="kpi"><div class="kpi-big">GBIF</div><div class="kpi-label">Reproducible</div></div>
+  <div class="kpis">
+    <div class="kpi"><div class="kpi-num">5.690</div><div class="kpi-lbl">Especies únicas</div></div>
+    <div class="kpi"><div class="kpi-num">327<em>K</em></div><div class="kpi-lbl">Registros geo</div></div>
+    <div class="kpi"><div class="kpi-num"><em>Kew</em></div><div class="kpi-lbl">Aval internacional</div></div>
+    <div class="kpi"><div class="kpi-num"><em>GBIF</em></div><div class="kpi-lbl">Reproducible</div></div>
   </div>
 
-  <h2 class="h-serif text-2xl text-olive-dark mb-3">Qué hicimos · qué no hicimos</h2>
-  <p class="mb-3 text-justify">Tomamos el <strong>Catalogue of Useful Plants of Colombia</strong> publicado por Royal Botanic Gardens Kew — la institución botánica de referencia mundial — y lo cruzamos espacialmente con la capa oficial de resguardos indígenas de Colombia 2024. El resultado es una base que cualquier botánico, ecólogo, agricultor o donante puede verificar de forma independiente contra GBIF (Global Biodiversity Information Facility).</p>
-  <p class="mb-3 text-justify">No inventamos taxonomía. No declaramos endemismos sin validación. No movimos coordenadas. Lo que sí hicimos fue <em>poner los datos en su contexto correcto</em>: las especies útiles de Colombia no flotan en el vacío geográfico — están en territorios habitados por pueblos indígenas que las conocen, las cuidan y las usan desde hace siglos.</p>
+  <div class="section-num">Metodología</div>
+  <h2 class="section-title">Qué hicimos · <em>qué no hicimos</em></h2>
+  <p class="body-text">Tomamos el <strong>Catalogue of Useful Plants of Colombia</strong> publicado por Royal Botanic Gardens Kew — la institución botánica de referencia mundial — y lo cruzamos espacialmente con la capa oficial de resguardos indígenas de Colombia 2024. El resultado es una base que cualquier botánico, ecólogo, agricultor o donante puede verificar de forma independiente contra GBIF (Global Biodiversity Information Facility).</p>
+  <p class="body-text">No inventamos taxonomía. No declaramos endemismos sin validación. No movimos coordenadas. Lo que sí hicimos fue <em>poner los datos en su contexto correcto</em>: las especies útiles de Colombia no flotan en el vacío geográfico — están en territorios habitados por pueblos indígenas que las conocen, las cuidan y las usan desde hace siglos.</p>
 
   <div class="callout">
-    <p class="text-sm font-bold text-olive-dark mb-1">Por qué este catálogo es estratégico</p>
-    <p class="text-sm">Permite a ONIC hablar con donantes científicos (Wellcome, NIH, Moore Foundation, IDRC) en su propio idioma: datos georeferenciados con identificadores GBIF, IUCN status incluido, reproducibilidad open data. Sin perder el control político: el catálogo es <em>nuestro</em>, no de Kew ni de GBIF.</p>
+    <div class="callout-eyebrow">Por qué este catálogo es estratégico</div>
+    <div class="callout-body">Permite a ONIC hablar con donantes científicos (Wellcome · NIH · Moore Foundation · IDRC) en su propio idioma: datos georeferenciados con identificadores GBIF, IUCN status incluido, reproducibilidad open data. Sin perder el control político: <strong>el catálogo es nuestro</strong>, no de Kew ni de GBIF.</div>
   </div>
 
-  <h2 class="h-serif text-2xl text-olive-dark mb-3 mt-6">Top 15 especies con mayor distribución × resguardos</h2>
-  <div class="chart-wrap" style="height:340px">
+  <div class="section-num">Top 15 especies</div>
+  <h2 class="section-title">Mayor distribución × <em>resguardos</em></h2>
+  <div class="chart-wrap" style="height:200px">
     <canvas id="topSpecies"></canvas>
   </div>
-  <p class="text-xs text-grafito mt-2 italic">Fuente: PlantasutilesColombia_Atributos.shp procesado con geopandas · cruce con polígonos resguardos 2024 · 327.614 registros analizados.</p>
+  <p class="chart-caption">Fuente · PlantasutilesColombia_Atributos.shp procesado con geopandas · cruce con polígonos resguardos 2024 · 327.614 registros analizados</p>
 
+</div>
 </section>
 
-<section class="page page-break leaf-bg">
+<!-- PAGE 2 -->
+<section class="page page-break">
+<div class="page-content leaf-bg" style="padding-top:14mm">
 
-  <h2 class="h-serif text-2xl text-olive-dark mb-3">Cómo se conecta con MACI · tres módulos a la vez</h2>
-  <p class="mb-3 text-justify">El catálogo no es un entregable aislado: es la <strong>capa de base</strong> sobre la cual operan tres módulos del Marco MACI durante 2026-2030. Una sola fuente de verdad geográfica para tres líneas de financiación distintas.</p>
+  <div class="section-num">Encaje MACI</div>
+  <h2 class="section-title">Tres módulos · <em>una sola base científica</em></h2>
+  <p class="body-text">El catálogo no es un entregable aislado: es la <strong>capa de base</strong> sobre la cual operan tres módulos del Marco MACI durante 2026—2030. Una sola fuente de verdad geográfica para tres líneas de financiación distintas.</p>
 
-  <div class="grid grid-cols-3 gap-3 mb-6">
-    <div class="bg-white border-t-4 border-olive p-4">
-      <div class="text-3xl">🔬</div>
-      <h3 class="font-bold text-olive-dark mt-1">M3 · Monitoreo</h3>
-      <p class="text-sm mt-2">Inventarios bioculturales con base cuantitativa internacionalmente reconocida. Las comunidades validan presencia/ausencia · enriquecen taxonomía con nombres en lenguas indígenas · QA/QC con protocolos CARE.</p>
+  <div class="module-fit">
+    <div class="module-card">
+      <div class="module-tag">M3 · Monitoreo</div>
+      <div class="module-name">Inventarios bioculturales</div>
+      <div class="module-desc">Base cuantitativa internacionalmente reconocida. Las comunidades validan presencia/ausencia · enriquecen taxonomía con nombres en lenguas indígenas · QA/QC con protocolos CARE.</div>
     </div>
-    <div class="bg-white border-t-4 border-olive p-4">
-      <div class="text-3xl">🧬</div>
-      <h3 class="font-bold text-olive-dark mt-1">M4 · Genética y Biobanco</h3>
-      <p class="text-sm mt-2">Priorización de especies para colección genética según IUCN status (CR · EN · VU). Pilotos de secuenciación in-situ con Nanopore portable. ABS Nagoya armonizado con academia.</p>
+    <div class="module-card">
+      <div class="module-tag">M4 · Biobanco</div>
+      <div class="module-name">Genética priorizada</div>
+      <div class="module-desc">Priorización de especies para colección genética según IUCN status (CR · EN · VU). Pilotos de secuenciación in-situ con Nanopore portable. ABS Nagoya armonizado con academia.</div>
     </div>
-    <div class="bg-white border-t-4 border-olive p-4">
-      <div class="text-3xl">🌱</div>
-      <h3 class="font-bold text-olive-dark mt-1">M5 · Bioeconomía</h3>
-      <p class="text-sm mt-2">Pipeline de bionegocios identificables según uso etnobotánico (medicinal · alimenticio · ornamental · artesanía). Incubación con blended finance · cláusulas de reparto justo.</p>
+    <div class="module-card">
+      <div class="module-tag">M5 · Bioeconomía</div>
+      <div class="module-name">Pipeline bionegocios</div>
+      <div class="module-desc">Identificables según uso etnobotánico (medicinal · alimenticio · ornamental · artesanía). Incubación con blended finance · cláusulas de reparto justo Nagoya.</div>
     </div>
   </div>
 
-  <h2 class="h-serif text-2xl text-olive-dark mb-3">Distribución por estado de conservación IUCN</h2>
-  <div class="grid grid-cols-2 gap-4">
-    <div class="chart-wrap" style="height:260px">
+  <div class="section-num">Conservación IUCN</div>
+  <h2 class="section-title">Distribución por <em>estado de conservación</em></h2>
+
+  <div class="iucn-grid">
+    <div class="chart-wrap" style="height:180px">
       <canvas id="iucnChart"></canvas>
     </div>
     <div>
-      <p class="text-sm mb-3 text-justify">El catálogo permite identificar <strong>especies prioritarias para conservación</strong> dentro de territorios indígenas. Las categorías IUCN siguen el estándar internacional · el monitoreo comunitario es el que provee la información de campo sobre poblaciones reales.</p>
-      <p class="text-sm text-justify">Para el biobanco MACI Módulo 4, este filtro define qué especies entran primero al programa de colección genética con cláusulas ABS Nagoya. Las especies "Datos Insuficientes" son oportunidad para generación de conocimiento propio.</p>
+      <p class="body-text" style="margin-bottom:3mm">El catálogo permite identificar <strong>especies prioritarias para conservación</strong> dentro de territorios indígenas. Las categorías IUCN siguen el estándar internacional · el monitoreo comunitario es el que provee la información de campo sobre poblaciones reales.</p>
+      <p class="body-text">Para el biobanco MACI Módulo 4, este filtro define qué especies entran primero al programa de colección genética con cláusulas ABS Nagoya. Las especies <em>"Datos Insuficientes"</em> son oportunidad para generación de conocimiento propio.</p>
     </div>
   </div>
 
-  <h2 class="h-serif text-2xl text-olive-dark mb-3 mt-6">Donantes con encaje natural</h2>
-  <div class="grid grid-cols-3 gap-3 text-sm">
-    <div class="bg-beige-l p-3 border-l-4 border-olive">
-      <span class="tag">M5 Bioeconomía</span>
-      <p class="font-bold text-olive-dark mt-1">GIZ Alemania · GIZ</p>
-      <p class="text-xs mt-1">Programa LATAM Bioeconomía 2026-2029 escalando Book Economías Propias + Catálogo Plantas geo. USD 500K-2M.</p>
+  <div class="section-num">Donantes</div>
+  <h2 class="section-title">Encaje <em>natural</em></h2>
+
+  <div class="donantes">
+    <div class="donante">
+      <div class="donante-tag">M5 · Bioeconomía</div>
+      <div class="donante-name">GIZ Bioeconomía LATAM</div>
+      <div class="donante-desc">Programa LATAM 2026—2029 escalando Book Economías Propias + Catálogo Plantas georef · USD 500K—2M</div>
     </div>
-    <div class="bg-beige-l p-3 border-l-4 border-olive">
-      <span class="tag">M3 + M5</span>
-      <p class="font-bold text-olive-dark mt-1">BID-Lab</p>
-      <p class="text-xs mt-1">BID-Lab Innovation Grant escalamiento modelo Matavén + Catálogo Plantas a 10 territorios ONIC. USD 500K-2M.</p>
+    <div class="donante">
+      <div class="donante-tag">M3 + M5</div>
+      <div class="donante-name">BID-Lab Innovation</div>
+      <div class="donante-desc">Innovation Grant escalamiento modelo Matavén + Catálogo Plantas a 10 territorios ONIC · USD 500K—2M</div>
     </div>
-    <div class="bg-beige-l p-3 border-l-4 border-olive">
-      <span class="tag">M1 + M3</span>
-      <p class="font-bold text-olive-dark mt-1">GATC (vía OPIAC) vía OPIAC</p>
-      <p class="text-xs mt-1">Pipeline GATC 2026 con casos probados con base científica internacional. USD 100-500K.</p>
+    <div class="donante">
+      <div class="donante-tag">M1 + M3</div>
+      <div class="donante-name">GATC · vía OPIAC</div>
+      <div class="donante-desc">Pipeline GATC 2026 con casos probados con base científica internacional · USD 100K—500K</div>
     </div>
   </div>
 
-  <div class="cite mt-6">"La taxonomía colonial nombró nuestras plantas. La taxonomía indígena las cuida desde antes. Este catálogo no las re-nombra: las pone en su lugar."</div>
+  <div class="pullquote">
+    La taxonomía colonial nombró nuestras plantas. La taxonomía indígena las cuida desde antes. Este catálogo no las re-nombra: <em>las pone en su lugar</em>.
+  </div>
 
-</section>
+</div>
 
 <footer class="footer-band">
-  Wilson Herrera Baltán · Coordinador SMT-ONIC · poblacion@onic.org.co · <strong>wilsonherrera77.github.io/MACI/brasilia2026.html</strong>
+  <span>Wilson Herrera Baltán · Coordinador SMT-ONIC · poblacion@onic.org.co · +57 311 220 1903</span>
+  <span>wilsonherrera77.github.io/MACI/brasilia2026.html</span>
 </footer>
+</section>
 
 <script>
 new Chart(document.getElementById('topSpecies'), {
@@ -136,9 +222,9 @@ new Chart(document.getElementById('topSpecies'), {
     datasets: [{
       label: 'Registros georeferenciados',
       data: [300, 300, 300, 285, 270, 260, 248, 235, 222, 215, 198, 190, 184, 170, 165],
-      backgroundColor: '#7d8a3c',
+      backgroundColor: '#0a3f33',
       borderColor: '#5a6427',
-      borderWidth: 1
+      borderWidth: 0
     }]
   },
   options: {
@@ -147,8 +233,8 @@ new Chart(document.getElementById('topSpecies'), {
     maintainAspectRatio: false,
     plugins: { legend: { display: false } },
     scales: {
-      x: { grid: { color: '#e8e0c8' }, ticks: { color: '#3d3d3d' } },
-      y: { grid: { display: false }, ticks: { color: '#3d3d3d', font: { size: 10 } } }
+      x: { grid: { color: '#e8e0c8' }, ticks: { color: '#3d3d3d', font: { family: 'JetBrains Mono', size: 8 } } },
+      y: { grid: { display: false }, ticks: { color: '#2a2a2a', font: { family: 'DM Sans', size: 8 } } }
     }
   }
 });
@@ -159,13 +245,15 @@ new Chart(document.getElementById('iucnChart'), {
     labels: ['LC Preocupación Menor', 'NE No Evaluada', 'NT Casi Amenazada', 'VU Vulnerable', 'EN En Peligro', 'CR Crítica', 'DD Datos Insuf.'],
     datasets: [{
       data: [45, 32, 9, 6, 4, 2, 2],
-      backgroundColor: ['#7d8a3c', '#a8b558', '#d4a017', '#e8a13c', '#c75d2b', '#8b2a1a', '#3d3d3d']
+      backgroundColor: ['#0a3f33', '#7d8a3c', '#d4a017', '#f0c850', '#c8431c', '#9c3416', '#3d3d3d'],
+      borderWidth: 2,
+      borderColor: '#ffffff'
     }]
   },
   options: {
     responsive: true,
     maintainAspectRatio: false,
-    plugins: { legend: { position: 'right', labels: { font: { size: 10 }, color: '#3d3d3d' } } }
+    plugins: { legend: { position: 'right', labels: { font: { size: 8, family: 'DM Sans' }, color: '#2a2a2a', boxWidth: 12 } } }
   }
 });
 </script>

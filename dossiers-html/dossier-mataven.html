@@ -4,140 +4,468 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Selva de Matavén · ACATISEMA · Verra ID 1566 · Dossier ONIC</title>
-<script src="https://cdn.tailwindcss.com"></script>
-<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,800;0,9..144,900;1,9..144,400;1,9..144,600&family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
 @page { size: A4; margin: 0; }
-:root { --olive:#7d8a3c; --olive-dark:#5a6427; --grafito:#3d3d3d; --beige:#e8e0c8; --beige-l:#f5f0dd; --gold:#d4a017; }
-body { font-family: 'Inter', Georgia, serif; color: var(--grafito); background: white; line-height: 1.55; }
-.page { max-width: 210mm; margin: 0 auto; padding: 18mm 16mm; min-height: 297mm; }
-.h-display { font-weight: 900; letter-spacing: 0.03em; line-height: 1.05; }
-.h-serif { font-family: Georgia, 'Times New Roman', serif; font-weight: 700; }
-.text-olive { color: var(--olive); } .text-olive-dark { color: var(--olive-dark); } .text-gold { color: var(--gold); }
-.bg-olive { background: var(--olive); } .bg-olive-dark { background: var(--olive-dark); } .bg-grafito { background: var(--grafito); }
-.bg-beige { background: var(--beige); } .bg-beige-l { background: var(--beige-l); } .bg-gold { background: var(--gold); }
-.border-olive { border-color: var(--olive); }
-.triangle-deco { width:0; height:0; border-left:18px solid transparent; border-right:18px solid transparent; border-bottom:28px solid var(--gold); }
-.hero { background: linear-gradient(135deg, #3d3d3d 0%, #5a6427 65%, #7d8a3c 100%); color: white; padding: 30mm 16mm 22mm; position: relative; }
-.hero::before { content:''; position:absolute; inset:0; background: radial-gradient(circle at 80% 30%, rgba(212,160,23,0.2), transparent 50%); }
-.kpi { background: white; border-left: 5px solid var(--olive); padding: 14px 18px; }
-.kpi-big { font-size: 2.6rem; font-weight: 900; color: var(--olive-dark); line-height: 1; }
-.kpi-label { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--grafito); margin-top: 6px; }
-.callout { background: linear-gradient(180deg, #fff9e6 0%, white 60%); border-left: 5px solid var(--gold); padding: 16px 20px; margin: 16px 0; }
-.timeline-item { position: relative; padding-left: 28px; padding-bottom: 14px; border-left: 2px solid var(--olive); }
-.timeline-item::before { content:''; position: absolute; left: -7px; top: 4px; width: 12px; height: 12px; background: var(--gold); border: 2px solid white; border-radius: 50%; box-shadow: 0 0 0 2px var(--olive); }
-.tag { display:inline-block; padding: 3px 10px; background: var(--beige); color: var(--olive-dark); font-size: 0.7rem; font-weight: 700; text-transform: uppercase; border-radius: 12px; letter-spacing: 0.06em; }
-.tag-dark { background: var(--grafito); color: white; }
-.tag-gold { background: var(--gold); color: white; }
-.cite { font-style: italic; border-left: 3px solid var(--gold); padding: 8px 16px; margin: 14px 0; color: var(--olive-dark); background: var(--beige-l); }
+:root {
+  --smt-deep: #0a3f33; --smt-deep-dark: #062821;
+  --olive: #7d8a3c; --olive-dark: #5a6427;
+  --onic-orange: #c8431c;
+  --grafito: #2a2a2a; --grafito-soft: #4a4a4a;
+  --beige: #e8e0c8; --beige-l: #f5f0dd; --cream: #faf6e8;
+  --gold: #d4a017; --gold-soft: #f0c850;
+}
+* { box-sizing: border-box; }
+body { font-family: 'DM Sans', system-ui, sans-serif; color: var(--grafito); background: white; line-height: 1.55; font-size: 10.5pt; -webkit-font-smoothing: antialiased; }
+.mono { font-family: 'JetBrains Mono', monospace; font-variant-numeric: tabular-nums; }
+.page { width: 210mm; margin: 0 auto; padding: 0; background: white; position: relative; }
+.page-content { padding: 10mm 14mm 8mm; }
 .page-break { page-break-before: always; }
-.footer-band { background: var(--grafito); color: white; padding: 10px 16mm; font-size: 0.75rem; }
+
+.hero {
+  background: linear-gradient(135deg, var(--smt-deep-dark) 0%, var(--smt-deep) 50%, var(--olive-dark) 100%);
+  color: white;
+  padding: 14mm 14mm 12mm;
+  position: relative;
+  overflow: hidden;
+}
+.hero::before { content: ''; position: absolute; inset: 0; background-image: repeating-linear-gradient(45deg, rgba(255,255,255,0.025) 0 2px, transparent 2px 14px), repeating-linear-gradient(-45deg, rgba(212,160,23,0.04) 0 1px, transparent 1px 18px); pointer-events: none; }
+.hero::after {
+  content: '';
+  position: absolute;
+  right: -40px;
+  bottom: -40px;
+  width: 240px;
+  height: 240px;
+  background: radial-gradient(circle, rgba(212,160,23,0.18) 0%, transparent 70%);
+  pointer-events: none;
+}
+.hero-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8mm; position: relative; z-index: 2; }
+.logo-smt-img { height: 32px; filter: brightness(0) invert(1); opacity: 0.95; }
+.logo-onic-img { height: 38px; filter: brightness(0) invert(1); opacity: 0.95; }
+.event-stamp { font-family: 'JetBrains Mono', monospace; font-size: 8pt; text-transform: uppercase; letter-spacing: 0.18em; color: var(--gold-soft); border-top: 1px solid rgba(212,160,23,0.4); border-bottom: 1px solid rgba(212,160,23,0.4); padding: 4px 0; display: inline-block; }
+.hero-body { position: relative; z-index: 2; }
+.kicker { font-family: 'JetBrains Mono', monospace; font-size: 9pt; text-transform: uppercase; letter-spacing: 0.22em; color: var(--gold-soft); margin: 5mm 0 6mm; display: flex; align-items: center; gap: 10px; }
+.kicker::before { content: ''; width: 28px; height: 1px; background: var(--gold-soft); }
+.hero-title {
+  font-family: 'Fraunces', serif;
+  font-weight: 900;
+  font-size: 44pt;
+  line-height: 0.95;
+  letter-spacing: -0.025em;
+  margin: 0 0 4mm 0;
+  color: white;
+}
+.hero-title em { font-style: italic; font-weight: 400; color: var(--gold-soft); }
+.hero-deck {
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 14pt;
+  line-height: 1.3;
+  color: rgba(255,255,255,0.92);
+  max-width: 155mm;
+  margin: 0 0 5mm 0;
+}
+.hero-sub { font-size: 10.5pt; line-height: 1.5; color: rgba(255,255,255,0.85); max-width: 155mm; margin: 0 0 6mm 0; }
+.hero-tags { display: flex; gap: 6px; flex-wrap: wrap; }
+.hero-tag { font-family: 'JetBrains Mono', monospace; font-size: 8pt; font-weight: 600; padding: 4px 10px; letter-spacing: 0.05em; border: 1px solid rgba(255,255,255,0.25); text-transform: uppercase; color: rgba(255,255,255,0.92); }
+.hero-tag.gold { background: var(--gold); color: var(--smt-deep-dark); border-color: var(--gold); font-weight: 700; }
+
+/* KPI block 3-up */
+.kpis {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--beige);
+  margin: 6mm 0 8mm;
+  border-top: 2px solid var(--smt-deep);
+  border-bottom: 1px solid var(--beige);
+}
+.kpi {
+  background: white;
+  padding: 5mm 6mm;
+  position: relative;
+}
+.kpi-num {
+  font-family: 'Fraunces', serif;
+  font-weight: 900;
+  font-size: 38pt;
+  line-height: 1;
+  color: var(--smt-deep);
+  letter-spacing: -0.03em;
+}
+.kpi-num em { font-style: italic; font-weight: 400; color: var(--olive); }
+.kpi-lbl {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 7.5pt;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--grafito-soft);
+  margin-top: 3mm;
+}
+
+.section-num { font-family: 'JetBrains Mono', monospace; font-size: 8pt; letter-spacing: 0.2em; color: var(--onic-orange); font-weight: 700; text-transform: uppercase; display: flex; align-items: center; gap: 8px; margin: 5mm 0 3mm; }
+.section-num::before { content: ''; width: 4px; height: 4px; background: var(--onic-orange); border-radius: 50%; }
+.section-title { font-family: 'Fraunces', serif; font-weight: 800; font-size: 22pt; line-height: 1.05; letter-spacing: -0.02em; color: var(--smt-deep); margin: 0 0 4mm 0; }
+.section-title em { font-style: italic; font-weight: 400; color: var(--olive); }
+.body-text { font-size: 10pt; line-height: 1.6; color: var(--grafito); margin-bottom: 3mm; text-align: justify; }
+.body-text strong { color: var(--smt-deep); font-weight: 600; }
+.body-text em { font-style: italic; }
+.lead { font-size: 11pt; line-height: 1.5; color: var(--grafito); margin-bottom: 4mm; }
+.lead strong { color: var(--smt-deep); font-weight: 600; }
+
+/* Callout */
+.callout {
+  background: linear-gradient(135deg, var(--cream) 0%, rgba(240,200,80,0.1) 100%);
+  border-left: 3px solid var(--gold);
+  padding: 4mm 6mm;
+  margin: 5mm 0;
+}
+.callout-eyebrow {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 7.5pt;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--onic-orange);
+  font-weight: 700;
+  margin-bottom: 2mm;
+}
+.callout-title {
+  font-family: 'Fraunces', serif;
+  font-weight: 700;
+  font-size: 13pt;
+  color: var(--smt-deep);
+  margin-bottom: 2mm;
+}
+.callout-body { font-size: 10pt; line-height: 1.5; color: var(--grafito); }
+.callout-body strong { color: var(--smt-deep); font-weight: 600; }
+
+/* Pueblos · 5 etnias */
+.pueblos {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 2px;
+  margin: 4mm 0 6mm;
+  border-top: 2px solid var(--smt-deep);
+}
+.pueblo {
+  background: var(--cream);
+  padding: 4mm 3mm 5mm;
+  border-bottom: 1px solid var(--beige);
+  border-right: 1px solid var(--beige);
+  text-align: center;
+}
+.pueblo:last-child { border-right: none; }
+.pueblo-nombre {
+  font-family: 'Fraunces', serif;
+  font-weight: 800;
+  font-size: 14pt;
+  color: var(--smt-deep);
+  margin-bottom: 2mm;
+  letter-spacing: -0.01em;
+}
+.pueblo-fam {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 7pt;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--olive-dark);
+}
+
+/* Timeline editorial */
+.cronologia { display: grid; grid-template-columns: 1fr 1fr; gap: 12mm; margin: 4mm 0 6mm; }
+.timeline-col { position: relative; }
+.timeline-col::before { content: ''; position: absolute; left: 0; top: 4mm; bottom: 0; width: 2px; background: var(--beige); }
+.timeline-item { position: relative; padding: 0 0 4mm 12mm; }
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: -4px;
+  top: 6px;
+  width: 10px;
+  height: 10px;
+  background: var(--gold);
+  border: 2px solid var(--smt-deep);
+  border-radius: 50%;
+}
+.timeline-date {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 8pt;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--onic-orange);
+  margin-bottom: 1mm;
+}
+.timeline-body { font-size: 9pt; line-height: 1.45; color: var(--grafito); }
+.timeline-body strong { color: var(--smt-deep); }
+
+/* Pruebas 3 col */
+.pruebas { display: grid; grid-template-columns: repeat(3, 1fr); gap: 3px; margin: 4mm 0 6mm; }
+.prueba { padding: 5mm 5mm 6mm; position: relative; }
+.prueba.dark { background: var(--smt-deep); color: white; }
+.prueba.olive { background: var(--olive-dark); color: white; }
+.prueba.darker { background: var(--smt-deep-dark); color: white; }
+.prueba-num {
+  font-family: 'Fraunces', serif;
+  font-weight: 900;
+  font-size: 30pt;
+  line-height: 1;
+  color: var(--gold);
+  letter-spacing: -0.03em;
+  margin-bottom: 2mm;
+}
+.prueba-title {
+  font-family: 'Fraunces', serif;
+  font-weight: 700;
+  font-size: 13pt;
+  margin-bottom: 2mm;
+  color: white;
+}
+.prueba-body { font-size: 9pt; line-height: 1.5; color: rgba(255,255,255,0.85); }
+
+/* Module fit */
+.module-fit { display: grid; grid-template-columns: repeat(3, 1fr); gap: 3px; margin: 3mm 0 5mm; }
+.module-card {
+  background: var(--cream);
+  padding: 4mm 5mm;
+  border-top: 3px solid var(--olive);
+}
+.module-card:nth-child(2) { border-top-color: var(--smt-deep); }
+.module-card:nth-child(3) { border-top-color: var(--onic-orange); }
+.module-tag {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 7.5pt;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--onic-orange);
+  margin-bottom: 2mm;
+}
+.module-name {
+  font-family: 'Fraunces', serif;
+  font-weight: 700;
+  font-size: 12pt;
+  color: var(--smt-deep);
+  margin-bottom: 2mm;
+}
+.module-desc { font-size: 9pt; color: var(--grafito-soft); line-height: 1.45; }
+
+/* Pull quote */
+.pullquote {
+  margin: 6mm 0 2mm;
+  padding: 5mm 7mm;
+  border-left: 3px solid var(--gold);
+  background: var(--cream);
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-size: 14pt;
+  line-height: 1.4;
+  color: var(--smt-deep);
+  position: relative;
+}
+.pullquote::before {
+  content: '"';
+  font-family: 'Fraunces', serif;
+  font-size: 56pt;
+  color: var(--gold);
+  position: absolute;
+  left: 2mm;
+  top: -2mm;
+  line-height: 1;
+  opacity: 0.3;
+}
+
+/* Footer */
+.footer-band {
+  background: var(--grafito);
+  color: white;
+  padding: 4mm 14mm;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 7.5pt;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 </style>
 </head>
 <body>
 
 <!-- PAGE 1: HERO + NARRATIVA -->
+<section class="page">
 <header class="hero">
-  <div class="flex items-center gap-3 mb-4">
-    <div class="triangle-deco"></div>
-    <span class="text-gold uppercase tracking-widest text-xs font-bold">Caso Estrella · ONIC · Cumbre RRI Brasília 2026</span>
+  <div class="hero-header">
+    <img src="../assets/logo_SMT.png" alt="SMT" class="logo-smt-img">
+    <img src="../assets/logo_ONIC.png" alt="ONIC" class="logo-onic-img">
   </div>
-  <h1 class="h-display text-5xl mb-3">Selva de Matavén</h1>
-  <p class="text-xl text-yellow-100 mb-2">El bosque que custodian cinco pueblos · el mecanismo fiduciario que ya funciona</p>
-  <p class="text-base text-beige-l max-w-2xl">Un proyecto REDD+ certificado bajo dos estándares internacionales independientes (VCS + CCB) operado durante una década por una organización indígena nacional. Evidencia · no propuesta.</p>
-  <div class="flex gap-2 mt-6 flex-wrap">
-    <span class="tag-gold tag">Verra Registry ID 1566</span>
-    <span class="tag" style="background:rgba(255,255,255,0.15);color:white">~1.85M hectáreas</span>
-    <span class="tag" style="background:rgba(255,255,255,0.15);color:white">5 etnias custodias · 100% custodia indígena</span>
+  <div class="hero-body">
+    <div class="event-stamp">Caso Estrella · Cumbre RRI Brasília 2026</div>
+    <div class="kicker">Verra Registry · ID 1566 · VCS + CCB</div>
+    <h1 class="hero-title">Selva de <em>Matavén</em></h1>
+    <p class="hero-deck">El bosque que custodian cinco pueblos · el mecanismo fiduciario que ya funciona.</p>
+    <p class="hero-sub">Un proyecto REDD+ certificado bajo dos estándares internacionales independientes (VCS + CCB) operado durante una década por una organización indígena nacional. Evidencia · no propuesta.</p>
+    <div class="hero-tags">
+      <span class="hero-tag gold">Verra Registry · 1566</span>
+      <span class="hero-tag">~1,85M ha</span>
+      <span class="hero-tag">5 etnias custodias</span>
+      <span class="hero-tag">100% gobernanza indígena</span>
+    </div>
   </div>
 </header>
 
-<section class="page" style="padding-top:14mm;padding-bottom:6mm">
+<div class="page-content">
 
-  <div class="grid grid-cols-3 gap-3 mb-8">
-    <div class="kpi"><div class="kpi-big">1.85M</div><div class="kpi-label">Hectáreas conservadas</div></div>
-    <div class="kpi"><div class="kpi-big">10+</div><div class="kpi-label">Años operación verificada</div></div>
-    <div class="kpi"><div class="kpi-big">2×</div><div class="kpi-label">Certificación independiente</div></div>
+  <div class="kpis">
+    <div class="kpi">
+      <div class="kpi-num">1,85<em>M</em></div>
+      <div class="kpi-lbl">Hectáreas conservadas</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-num">10<em>+</em></div>
+      <div class="kpi-lbl">Años operación verificada</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-num">2<em>×</em></div>
+      <div class="kpi-lbl">Certificación independiente</div>
+    </div>
   </div>
 
-  <h2 class="h-serif text-2xl text-olive-dark mb-3">La historia que el dato cuenta</h2>
-  <p class="mb-3 text-justify">En el extremo nororiental de la Amazonía colombiana, donde el Vichada se encuentra con los esteros y los morichales, cinco pueblos indígenas — <strong>Piaroa, Sikuani, Curripaco, Piapoco y Puinave</strong> — administran de manera autónoma uno de los bloques de selva continua más extensos del país. No es un parque nacional. No es una concesión gubernamental con terceros. Es un resguardo indígena gestionado por sus propias autoridades a través de <strong>ACATISEMA</strong> (Asociación de Cabildos y Autoridades Tradicionales Indígenas de la Selva de Matavén).</p>
-  <p class="mb-3 text-justify">En 2016 ACATISEMA registró el territorio ante el <strong>Verra Carbon Standard</strong> como proyecto REDD+ con identificador 1566. Un año después validaron simultáneamente bajo el estándar <strong>Climate, Community & Biodiversity (CCB)</strong>, una doble certificación que exige no solo reducción de deforestación sino también beneficio social tangible y conservación de biodiversidad demostrable.</p>
-  <p class="mb-3 text-justify">Lo importante no es la certificación en sí — muchos proyectos REDD+ han sido cuestionados. Lo importante es <em>quién la opera</em>: la cadena de custodia, las decisiones sobre los créditos emitidos, los acuerdos comunitarios firmados (COMMS_AGR_1566_28OCT2016) y los reportes de verificación 2013-2015, 2016-2017 y 2018-2019 pasan íntegramente por la gobernanza indígena. Sin intermediarios internacionales que diluyen el control político.</p>
+  <div class="section-num">Caso · La historia que el dato cuenta</div>
+  <h2 class="section-title">Cinco pueblos · <em>una sola voluntad</em> · una década de operación</h2>
+
+  <p class="body-text">En el extremo nororiental de la Amazonía colombiana, donde el Vichada se encuentra con los esteros y los morichales, cinco pueblos indígenas — <strong>Piaroa, Sikuani, Curripaco, Piapoco y Puinave</strong> — administran de manera autónoma uno de los bloques de selva continua más extensos del país. No es un parque nacional. No es una concesión gubernamental con terceros. Es un resguardo indígena gestionado por sus propias autoridades a través de <strong>ACATISEMA</strong> (Asociación de Cabildos y Autoridades Tradicionales Indígenas de la Selva de Matavén).</p>
+
+  <p class="body-text">En 2016 ACATISEMA registró el territorio ante el <strong>Verra Carbon Standard</strong> como proyecto REDD+ con identificador 1566. Un año después validaron simultáneamente bajo el estándar <strong>Climate, Community &amp; Biodiversity (CCB)</strong>, una doble certificación que exige no solo reducción de deforestación sino también beneficio social tangible y conservación de biodiversidad demostrable.</p>
+
+  <p class="body-text">Lo importante no es la certificación en sí — muchos proyectos REDD+ han sido cuestionados. Lo importante es <em>quién la opera</em>: la cadena de custodia, las decisiones sobre los créditos emitidos, los acuerdos comunitarios firmados (<span class="mono">COMMS_AGR_1566_28OCT2016</span>) y los reportes de verificación 2013-2015, 2016-2017 y 2018-2019 pasan íntegramente por la gobernanza indígena. Sin intermediarios internacionales que diluyen el control político.</p>
 
   <div class="callout">
-    <p class="text-sm font-bold text-olive-dark mb-1">Por qué este caso importa para Brasília</p>
-    <p class="text-sm">Cuando los donantes del Panel 4 pregunten "¿qué mecanismo fiduciario directo funciona en la práctica?", la respuesta no es una hipótesis: es Matavén. Un proyecto auditado por terceros internacionales, operado por una organización indígena nacional, durante una década, en Colombia.</p>
+    <div class="callout-eyebrow">Por qué este caso importa para Brasília</div>
+    <div class="callout-body">Cuando los donantes del Panel 4 pregunten "<em>¿qué mecanismo fiduciario directo funciona en la práctica?</em>", la respuesta no es una hipótesis: <strong>es Matavén</strong>. Un proyecto auditado por terceros internacionales, operado por una organización indígena nacional, durante una década, en Colombia.</div>
   </div>
 
-  <h2 class="h-serif text-2xl text-olive-dark mb-3 mt-6">Los cinco pueblos custodios</h2>
-  <div class="grid grid-cols-5 gap-3">
-    <div class="bg-beige-l p-3 border-l-4 border-olive"><div class="font-bold text-olive-dark">Piaroa</div><div class="text-xs">Familia lingüística Sáliba</div></div>
-    <div class="bg-beige-l p-3 border-l-4 border-olive"><div class="font-bold text-olive-dark">Sikuani</div><div class="text-xs">Familia Guahibo</div></div>
-    <div class="bg-beige-l p-3 border-l-4 border-olive"><div class="font-bold text-olive-dark">Curripaco</div><div class="text-xs">Familia Arawak</div></div>
-    <div class="bg-beige-l p-3 border-l-4 border-olive"><div class="font-bold text-olive-dark">Piapoco</div><div class="text-xs">Familia Arawak</div></div>
-    <div class="bg-beige-l p-3 border-l-4 border-olive"><div class="font-bold text-olive-dark">Puinave</div><div class="text-xs">Familia Maku</div></div>
+  <div class="section-num">Custodios</div>
+  <h2 class="section-title">Los cinco pueblos <em>custodios</em></h2>
+
+  <div class="pueblos">
+    <div class="pueblo"><div class="pueblo-nombre">Piaroa</div><div class="pueblo-fam">Familia Sáliba</div></div>
+    <div class="pueblo"><div class="pueblo-nombre">Sikuani</div><div class="pueblo-fam">Familia Guahibo</div></div>
+    <div class="pueblo"><div class="pueblo-nombre">Curripaco</div><div class="pueblo-fam">Familia Arawak</div></div>
+    <div class="pueblo"><div class="pueblo-nombre">Piapoco</div><div class="pueblo-fam">Familia Arawak</div></div>
+    <div class="pueblo"><div class="pueblo-nombre">Puinave</div><div class="pueblo-fam">Familia Maku</div></div>
   </div>
 
+</div>
 </section>
 
-<!-- PAGE 2: CRONOLOGÍA + IMPACT -->
+<!-- PAGE 2: CRONOLOGÍA + PRUEBAS + ENCAJE MACI -->
 <section class="page page-break">
-  <h2 class="h-serif text-2xl text-olive-dark mb-4">Cronología de la operación</h2>
 
-  <div class="grid grid-cols-2 gap-6 mb-6">
-    <div>
-      <div class="timeline-item"><strong class="text-olive-dark">2013-2015</strong><br><span class="text-sm">Período de validación inicial · primera fase de monitoreo (VERIF_STA_1566_01JAN2013_31DEC2015)</span></div>
-      <div class="timeline-item"><strong class="text-olive-dark">28 Oct 2016</strong><br><span class="text-sm">Acuerdo comunitario formal firmado (COMMS_AGR_1566) · KML del territorio depositado en Verra Registry</span></div>
-      <div class="timeline-item"><strong class="text-olive-dark">28 May 2017</strong><br><span class="text-sm">Registro completo VCS · proyecto activo · primeros créditos contabilizables (REG_PRR_1566)</span></div>
+<div class="page-content" style="padding-top:14mm">
+
+  <div class="section-num">Cronología</div>
+  <h2 class="section-title">Operación <em>verificada</em> · 2013—2021</h2>
+
+  <div class="cronologia">
+    <div class="timeline-col">
+      <div class="timeline-item">
+        <div class="timeline-date">2013 — 2015</div>
+        <div class="timeline-body">Período de validación inicial · primera fase de monitoreo (<span class="mono">VERIF_STA_1566_01JAN2013_31DEC2015</span>)</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-date">28 oct 2016</div>
+        <div class="timeline-body"><strong>Acuerdo comunitario formal firmado</strong> (<span class="mono">COMMS_AGR_1566</span>) · KML del territorio depositado en Verra Registry</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-date">28 may 2017</div>
+        <div class="timeline-body"><strong>Registro completo VCS</strong> · proyecto activo · primeros créditos contabilizables (<span class="mono">REG_PRR_1566</span>)</div>
+      </div>
     </div>
-    <div>
-      <div class="timeline-item"><strong class="text-olive-dark">Jun 2017</strong><br><span class="text-sm">Reporte Final VCS Matavín validado (10 06 2017_VCS Final Report)</span></div>
-      <div class="timeline-item"><strong class="text-olive-dark">2016-2017</strong><br><span class="text-sm">Primera verificación independiente de emisiones evitadas (VERIF_REP_1566)</span></div>
-      <div class="timeline-item"><strong class="text-olive-dark">2018-2019</strong><br><span class="text-sm">Segunda verificación · validación CCB · monitoreo socio-ambiental (MONIT_REP_1566_CCB_v1.1)</span></div>
-      <div class="timeline-item"><strong class="text-olive-dark">Abr 2021</strong><br><span class="text-sm">CCB PDD borrador final · 5.4 MB de documentación pública</span></div>
+    <div class="timeline-col">
+      <div class="timeline-item">
+        <div class="timeline-date">Jun 2017</div>
+        <div class="timeline-body">Reporte Final VCS Matavén validado (<span class="mono">10 06 2017_VCS Final Report</span>)</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-date">2016 — 2017</div>
+        <div class="timeline-body">Primera verificación independiente de emisiones evitadas (<span class="mono">VERIF_REP_1566</span>)</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-date">2018 — 2019</div>
+        <div class="timeline-body">Segunda verificación · validación CCB · monitoreo socio-ambiental (<span class="mono">MONIT_REP_1566_CCB_v1.1</span>)</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-date">Abr 2021</div>
+        <div class="timeline-body">CCB PDD borrador final · 5.4 MB documentación pública</div>
+      </div>
     </div>
   </div>
 
-  <h2 class="h-serif text-2xl text-olive-dark mb-3 mt-4">Lo que Matavén ya probó · tres cosas concretas</h2>
-  <div class="grid grid-cols-3 gap-3 mb-6">
-    <div class="bg-grafito text-white p-4">
-      <div class="text-gold text-3xl font-black">01</div>
-      <p class="font-bold mt-2 text-yellow-100">Es transferible</p>
-      <p class="text-sm text-beige-l mt-1">Donantes y compradores de créditos pueden transferir recursos directamente a una organización indígena nacional. Funcionó durante una década.</p>
+  <div class="section-num">Pruebas</div>
+  <h2 class="section-title">Tres cosas <em>concretas</em> que Matavén ya probó</h2>
+
+  <div class="pruebas">
+    <div class="prueba dark">
+      <div class="prueba-num">01</div>
+      <div class="prueba-title">Es transferible</div>
+      <div class="prueba-body">Donantes y compradores de créditos pueden transferir recursos directamente a una organización indígena nacional. Funcionó durante una década.</div>
     </div>
-    <div class="bg-olive text-white p-4">
-      <div class="text-yellow-200 text-3xl font-black">02</div>
-      <p class="font-bold mt-2">Es auditable</p>
-      <p class="text-sm mt-1">Tres reportes de verificación independiente y dos estándares cruzados (VCS + CCB) probaron que la gobernanza indígena cumple estándares fiduciarios internacionales.</p>
+    <div class="prueba olive">
+      <div class="prueba-num">02</div>
+      <div class="prueba-title">Es auditable</div>
+      <div class="prueba-body">Tres reportes de verificación independiente y dos estándares cruzados (VCS + CCB) probaron que la gobernanza indígena cumple estándares fiduciarios internacionales.</div>
     </div>
-    <div class="bg-grafito text-white p-4">
-      <div class="text-gold text-3xl font-black">03</div>
-      <p class="font-bold mt-2 text-yellow-100">Es replicable</p>
-      <p class="text-sm text-beige-l mt-1">El modelo institucional ACATISEMA-Verra puede aplicarse a las otras cuatro macrorregiones ONIC dentro del Marco MACI Módulos 3 + 5.</p>
+    <div class="prueba darker">
+      <div class="prueba-num">03</div>
+      <div class="prueba-title">Es replicable</div>
+      <div class="prueba-body">El modelo institucional ACATISEMA-Verra puede aplicarse a las otras cuatro macrorregiones ONIC dentro del Marco MACI Módulos 3 + 5.</div>
     </div>
   </div>
 
-  <h2 class="h-serif text-2xl text-olive-dark mb-3">Encaje en MACI · escalamiento 2026-2030</h2>
-  <p class="mb-3 text-justify">Matavén no es un caso aislado: es la base operativa que MACI propone escalar bajo gobernanza indígena nacional. Específicamente alimenta tres módulos:</p>
-  <div class="grid grid-cols-3 gap-3 text-sm">
-    <div class="bg-beige-l p-3"><strong class="text-olive-dark">M1 Gobernabilidad</strong><br>Protocolo de cadena de custodia ACATISEMA → Consejo de Datos MACI · CLPI + ABS armonizado</div>
-    <div class="bg-beige-l p-3"><strong class="text-olive-dark">M3 Monitoreo</strong><br>MRV indigenous-led con KML georeferenciado · base para 248K ha + 500K registros M3 Año 1</div>
-    <div class="bg-beige-l p-3"><strong class="text-olive-dark">M4-M5 Bioeconomía</strong><br>Modelo de blended finance + ABS Nagoya replicable a Sierra · Cocuy · Chocó</div>
+  <div class="section-num">Encaje MACI · escalamiento 2026—2030</div>
+  <h2 class="section-title">Base operativa que MACI <em>propone escalar</em></h2>
+
+  <p class="body-text">Matavén no es un caso aislado: es la base operativa que MACI propone escalar bajo gobernanza indígena nacional. Específicamente alimenta tres módulos:</p>
+
+  <div class="module-fit">
+    <div class="module-card">
+      <div class="module-tag">M1 · Gobernabilidad</div>
+      <div class="module-name">Cadena de custodia ACATISEMA</div>
+      <div class="module-desc">Protocolo → Consejo de Datos MACI · CLPI + ABS Nagoya armonizado a 5 macrorregiones</div>
+    </div>
+    <div class="module-card">
+      <div class="module-tag">M3 · Monitoreo</div>
+      <div class="module-name">MRV indigenous-led</div>
+      <div class="module-desc">KML georeferenciado · base para 248K ha + 500K registros M3 Año 1 escalable</div>
+    </div>
+    <div class="module-card">
+      <div class="module-tag">M4-M5 · Bioeconomía</div>
+      <div class="module-name">Blended finance + ABS</div>
+      <div class="module-desc">Modelo financiero replicable a Sierra Nevada · Cocuy U'wa · Chocó biogeográfico</div>
+    </div>
   </div>
 
-  <div class="callout mt-6">
-    <p class="text-sm font-bold text-olive-dark mb-2">Donantes con encaje natural</p>
-    <p class="text-sm"><strong>NICFI · Cooperación bilateral noruega</strong> · ventana NICFI III post-2025 para MRV indigenous-led con cadena custodia ya certificada. <strong>FCLP · Forest Climate Leaders</strong> · country package Colombia con traslape TEF Matavén. <strong>Coalición filantrópica 30x30</strong> · 30x30 con gobernanza indígena efectiva sobre 1.85M ha conservadas.</p>
+  <div class="callout">
+    <div class="callout-eyebrow">Donantes con encaje natural</div>
+    <div class="callout-body"><strong>NICFI · cooperación bilateral noruega</strong> · ventana NICFI III post-2025 para MRV indigenous-led con cadena custodia ya certificada. <strong>FCLP · Forest Climate Leaders</strong> · country package Colombia con traslape TEF Matavén. <strong>Coalición filantrópica 30×30</strong> · gobernanza indígena efectiva sobre 1,85M ha conservadas.</div>
   </div>
 
-  <div class="cite">"Lo que Matavén demuestra es que la pregunta no es <em>si</em> los pueblos indígenas pueden administrar fondos climáticos de gran escala. La pregunta es por qué seguimos pidiendo intermediarios cuando la arquitectura ya existe."</div>
+  <div class="pullquote">
+    Lo que Matavén demuestra es que la pregunta no es <em>si</em> los pueblos indígenas pueden administrar fondos climáticos de gran escala. La pregunta es <em>por qué seguimos pidiendo intermediarios</em> cuando la arquitectura ya existe.
+  </div>
 
-</section>
+</div>
 
 <footer class="footer-band">
-  Wilson Herrera Baltán · Coordinador SMT-ONIC · poblacion@onic.org.co · +57 311 220 1903 · <strong>wilsonherrera77.github.io/MACI/brasilia2026.html</strong>
+  <span>Wilson Herrera Baltán · Coordinador SMT-ONIC · poblacion@onic.org.co · +57 311 220 1903</span>
+  <span>wilsonherrera77.github.io/MACI/brasilia2026.html</span>
 </footer>
+</section>
 
 </body>
 </html>
