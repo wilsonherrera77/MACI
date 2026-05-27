@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Mockup Biobanco Indígena · MACI Módulo 4 · ONIC</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,800;0,9..144,900;1,9..144,400;1,9..144,600&family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+@page { size: A4; margin: 0; }
+:root {
+  --smt-deep: #0a3f33; --smt-deep-dark: #062821;
+  --olive: #7d8a3c; --olive-dark: #5a6427;
+  --onic-orange: #c8431c;
+  --bio-purple: #6a4c93; --bio-purple-dark: #4c2e6e;
+  --grafito: #2a2a2a; --grafito-soft: #4a4a4a;
+  --beige: #e8e0c8; --beige-l: #f5f0dd; --cream: #faf6e8;
+  --gold: #d4a017; --gold-soft: #f0c850;
+}
+* { box-sizing: border-box; }
+body { font-family: 'DM Sans', system-ui, sans-serif; color: var(--grafito); line-height: 1.5; background: white; font-size: 10pt; margin: 0; -webkit-font-smoothing: antialiased; }
+.mono { font-family: 'JetBrains Mono', monospace; font-variant-numeric: tabular-nums; }
+.page { width: 210mm; min-height: 297mm; margin: 0 auto; background: white; position: relative; }
+.page-content { padding: 8mm 14mm 8mm; }
+
+.hero { background: linear-gradient(135deg, var(--smt-deep-dark) 0%, var(--smt-deep) 40%, var(--bio-purple-dark) 100%); color: white; padding: 11mm 14mm 9mm; position: relative; overflow: hidden; }
+.hero::before { content: ''; position: absolute; inset: 0; background-image: repeating-linear-gradient(45deg, rgba(255,255,255,0.025) 0 2px, transparent 2px 14px); pointer-events: none; }
+.hero-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 6mm; position: relative; z-index: 2; }
+.logo-smt-img { height: 28px; filter: brightness(0) invert(1); opacity: 0.95; }
+.logo-onic-img { height: 32px; filter: brightness(0) invert(1); opacity: 0.95; }
+.hero-body { position: relative; z-index: 2; }
+.kicker { font-family: 'JetBrains Mono', monospace; font-size: 8.5pt; text-transform: uppercase; letter-spacing: 0.22em; color: var(--gold-soft); margin-bottom: 3mm; display: flex; align-items: center; gap: 10px; font-weight: 700; }
+.kicker::before { content: ''; width: 28px; height: 1px; background: var(--gold-soft); }
+.hero-title { font-family: 'Fraunces', serif; font-weight: 900; font-size: 24pt; line-height: 1; letter-spacing: -0.025em; margin: 0 0 3mm 0; color: white; }
+.hero-title em { font-style: italic; font-weight: 400; color: var(--gold-soft); }
+.hero-sub { font-size: 10pt; line-height: 1.45; color: rgba(255,255,255,0.9); max-width: 165mm; margin: 0; }
+.hero-sub strong { color: var(--gold-soft); }
+
+.section-num { font-family: 'JetBrains Mono', monospace; font-size: 8pt; letter-spacing: 0.2em; color: var(--onic-orange); font-weight: 700; text-transform: uppercase; display: flex; align-items: center; gap: 8px; margin: 5mm 0 2mm; }
+.section-num::before { content: ''; width: 4px; height: 4px; background: var(--onic-orange); border-radius: 50%; }
+.section-title { font-family: 'Fraunces', serif; font-weight: 800; font-size: 17pt; line-height: 1.1; letter-spacing: -0.015em; color: var(--smt-deep); margin: 0 0 3mm 0; }
+.section-title em { font-style: italic; font-weight: 400; color: var(--bio-purple); }
+
+.devices-row { display: flex; gap: 3mm; justify-content: center; align-items: center; margin: 5mm 0 4mm; }
+.iphone {
+  position: relative;
+  width: 53mm;
+  height: 110mm;
+  background: #1a1a1a;
+  border-radius: 8mm;
+  padding: 1.5mm;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.15), inset 0 0 0 0.4mm #444;
+}
+.iphone::before {
+  content: '';
+  position: absolute;
+  top: 4mm;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 14mm;
+  height: 1.8mm;
+  background: #050505;
+  border-radius: 1mm;
+  z-index: 5;
+}
+.screen { width: 100%; height: 100%; border-radius: 6.5mm; background: white; overflow: hidden; position: relative; display: flex; flex-direction: column; }
+.status-bar { background: var(--bio-purple-dark); color: white; font-family: 'JetBrains Mono', monospace; font-size: 5.5pt; padding: 1.8mm 3mm 1.2mm; text-align: right; letter-spacing: 0.05em; }
+.app-title { background: var(--bio-purple-dark); color: white; padding: 1.5mm 3mm 2mm; font-family: 'Fraunces', serif; font-size: 7pt; font-weight: 700; display: flex; justify-content: space-between; align-items: center; border-bottom: 0.3mm solid var(--gold); }
+.app-title-sub { font-family: 'JetBrains Mono', monospace; font-size: 5pt; color: var(--gold-soft); letter-spacing: 0.1em; }
+
+/* Screen 1 · register sample */
+.register-screen { flex: 1; background: var(--cream); padding: 2.5mm; display: flex; flex-direction: column; gap: 1.5mm; }
+.qr-frame {
+  background: white;
+  padding: 2mm;
+  text-align: center;
+  border: 0.5mm dashed var(--bio-purple);
+}
+.qr-pattern {
+  width: 20mm;
+  height: 20mm;
+  margin: 0 auto;
+  background:
+    repeating-linear-gradient(0deg, var(--smt-deep) 0 0.8mm, transparent 0.8mm 1.6mm),
+    repeating-linear-gradient(90deg, var(--smt-deep) 0 0.8mm, transparent 0.8mm 1.6mm);
+  background-color: white;
+  position: relative;
+}
+.qr-pattern::before, .qr-pattern::after { content: ''; position: absolute; width: 4mm; height: 4mm; border: 0.8mm solid var(--smt-deep); background: white; }
+.qr-pattern::before { top: 0; left: 0; }
+.qr-pattern::after { bottom: 0; right: 0; }
+.qr-label { font-family: 'JetBrains Mono', monospace; font-size: 5pt; color: var(--bio-purple); margin-top: 1mm; letter-spacing: 0.08em; }
+.sample-meta { background: white; border-left: 1mm solid var(--bio-purple); padding: 2mm 3mm; }
+.sample-row { font-family: 'JetBrains Mono', monospace; font-size: 5.5pt; color: var(--grafito); padding: 0.4mm 0; display: flex; justify-content: space-between; }
+.sample-row strong { color: var(--smt-deep); }
+.cosmovision { font-family: 'Fraunces', serif; font-style: italic; font-size: 5.5pt; color: var(--bio-purple-dark); line-height: 1.3; padding: 1mm 0 0; border-top: 0.3mm dotted var(--beige); margin-top: 1mm; }
+
+/* Screen 2 · chain of custody */
+.custody-screen { flex: 1; background: white; padding: 2.5mm; }
+.custody-timeline { position: relative; padding-left: 5mm; }
+.custody-timeline::before { content: ''; position: absolute; left: 1.5mm; top: 1.5mm; bottom: 1.5mm; width: 0.5mm; background: var(--beige); }
+.custody-item { position: relative; padding: 1.5mm 0; }
+.custody-item::before {
+  content: '';
+  position: absolute;
+  left: -4mm;
+  top: 2.5mm;
+  width: 2.4mm;
+  height: 2.4mm;
+  background: var(--gold);
+  border: 0.6mm solid var(--bio-purple-dark);
+  border-radius: 50%;
+}
+.custody-item.done::before { background: var(--olive-dark); }
+.custody-role { font-family: 'JetBrains Mono', monospace; font-size: 4.8pt; text-transform: uppercase; letter-spacing: 0.1em; color: var(--bio-purple); font-weight: 700; }
+.custody-name { font-family: 'Fraunces', serif; font-weight: 700; font-size: 6.5pt; color: var(--smt-deep); }
+.custody-time { font-family: 'JetBrains Mono', monospace; font-size: 4.8pt; color: var(--grafito-soft); }
+
+/* Screen 3 · sequencing in-situ */
+.sequencing-screen { flex: 1; background: white; padding: 2.5mm; display: flex; flex-direction: column; gap: 1.5mm; }
+.device-photo { background: linear-gradient(135deg, #4a3e5a 0%, #6a4c93 100%); padding: 3mm; text-align: center; border-radius: 1mm; }
+.device-name { font-family: 'Fraunces', serif; font-weight: 700; font-size: 7pt; color: white; }
+.device-sub { font-family: 'JetBrains Mono', monospace; font-size: 5pt; color: var(--gold-soft); letter-spacing: 0.1em; margin-top: 0.5mm; }
+.progress-block { background: var(--cream); padding: 2mm 3mm; border-left: 1mm solid var(--olive); }
+.progress-label { font-family: 'JetBrains Mono', monospace; font-size: 5pt; text-transform: uppercase; letter-spacing: 0.1em; color: var(--smt-deep); font-weight: 700; }
+.progress-bar { background: var(--beige); height: 1.8mm; margin-top: 1mm; position: relative; overflow: hidden; }
+.progress-fill { background: var(--olive-dark); height: 100%; }
+.progress-stats { font-family: 'JetBrains Mono', monospace; font-size: 5pt; color: var(--grafito); margin-top: 0.8mm; display: flex; justify-content: space-between; }
+.abs-box { background: var(--smt-deep); color: white; padding: 2mm 3mm; text-align: center; }
+.abs-title { font-family: 'JetBrains Mono', monospace; font-size: 5pt; text-transform: uppercase; letter-spacing: 0.12em; color: var(--gold-soft); }
+.abs-status { font-family: 'Fraunces', serif; font-weight: 700; font-size: 7pt; margin-top: 0.5mm; }
+
+.device-captions { display: flex; gap: 3mm; justify-content: center; margin-top: 1mm; }
+.caption-box { width: 53mm; text-align: center; }
+.caption-num { font-family: 'Fraunces', serif; font-weight: 900; font-size: 12pt; color: var(--gold); letter-spacing: -0.03em; }
+.caption-title { font-family: 'Fraunces', serif; font-weight: 700; font-size: 9pt; color: var(--smt-deep); line-height: 1.15; margin-top: 0.5mm; }
+
+.flow { background: var(--cream); border-left: 3px solid var(--gold); padding: 4mm 5mm; margin: 4mm 0; display: grid; grid-template-columns: auto auto auto auto auto auto auto auto auto; gap: 2mm; align-items: center; justify-content: center; }
+.flow-node { text-align: center; font-size: 7.5pt; line-height: 1.2; }
+.flow-node strong { font-family: 'Fraunces', serif; color: var(--smt-deep); display: block; font-size: 8pt; }
+.flow-node small { font-family: 'JetBrains Mono', monospace; font-size: 6pt; color: var(--grafito-soft); }
+.flow-arrow { font-family: 'Fraunces', serif; font-weight: 900; font-size: 14pt; color: var(--gold); }
+
+.piloto-callout {
+  background: linear-gradient(135deg, var(--cream) 0%, rgba(106,76,147,0.08) 100%);
+  border-left: 3px solid var(--bio-purple);
+  padding: 3mm 5mm;
+  margin: 3mm 0;
+}
+.piloto-eyebrow { font-family: 'JetBrains Mono', monospace; font-size: 7.5pt; text-transform: uppercase; letter-spacing: 0.18em; color: var(--bio-purple); font-weight: 700; margin-bottom: 2mm; }
+.piloto-title { font-family: 'Fraunces', serif; font-weight: 700; font-size: 12pt; color: var(--smt-deep); margin-bottom: 1mm; }
+.piloto-body { font-size: 9pt; line-height: 1.45; color: var(--grafito); }
+.piloto-body strong { color: var(--smt-deep); }
+
+.cifras-wrap { margin: 3mm 0 2mm; border: 1px solid var(--beige); }
+.cifras { width: 100%; border-collapse: collapse; font-size: 9pt; }
+.cifras thead th { background: var(--bio-purple-dark); color: white; font-family: 'JetBrains Mono', monospace; font-size: 7.5pt; font-weight: 600; text-transform: uppercase; letter-spacing: 0.12em; padding: 2.5mm 3mm; text-align: left; }
+.cifras thead th:nth-child(2) { text-align: right; }
+.cifras tbody td { padding: 2mm 3mm; border-bottom: 1px solid var(--beige); }
+.cifras tbody td:nth-child(2) { text-align: right; font-family: 'JetBrains Mono', monospace; font-weight: 700; color: var(--smt-deep); }
+.cifras tbody tr:nth-child(even) { background: var(--cream); }
+.cifras tbody tr.total td { background: var(--bio-purple-dark); color: white; font-weight: 700; }
+.cifras tbody tr.total td:nth-child(2) { color: var(--gold-soft); font-size: 11pt; }
+.cifras tbody tr.oficial td:nth-child(2) { color: var(--onic-orange); }
+.cifras-footnote { font-family: 'JetBrains Mono', monospace; font-size: 6.5pt; color: var(--grafito-soft); margin-top: 1mm; }
+
+.mockup-disclaimer { background: rgba(212,160,23,0.1); border-left: 3px solid var(--gold); padding: 2mm 4mm; margin: 3mm 0 0; font-size: 7.5pt; font-family: 'JetBrains Mono', monospace; color: var(--grafito-soft); text-transform: uppercase; letter-spacing: 0.1em; }
+.mockup-disclaimer strong { color: var(--smt-deep); }
+
+.footer-band { background: var(--grafito); color: white; padding: 3mm 14mm; font-family: 'JetBrains Mono', monospace; font-size: 7pt; letter-spacing: 0.1em; text-transform: uppercase; display: flex; justify-content: space-between; align-items: center; position: absolute; bottom: 0; left: 0; right: 0; }
+</style>
+</head>
+<body>
+
+<section class="page">
+
+<header class="hero">
+  <div class="hero-header">
+    <img src="../assets/logo_SMT.png" alt="SMT" class="logo-smt-img">
+    <img src="../assets/logo_ONIC.png" alt="ONIC" class="logo-onic-img">
+  </div>
+  <div class="hero-body">
+    <div class="kicker">MACI · Módulo 4 · Genética y Biobanco</div>
+    <h1 class="hero-title">Biobanco <em>Indígena</em><br>Cadena custodia soberana</h1>
+    <p class="hero-sub">Secuenciación <strong>in-situ con Nanopore portable</strong> (MinION ~USD 1.000 + laptop ruggerizada) · cadena de custodia 100% indígena · cláusulas ABS Nagoya firmadas digitalmente en cada transferencia. Piloto Matavén · escalable a 5 macrorregiones.</p>
+  </div>
+</header>
+
+<div class="page-content">
+
+  <div class="section-num">Flujo del biobanco · 3 momentos</div>
+  <h2 class="section-title">Registrar · <em>custodiar</em> · secuenciar</h2>
+
+  <div class="devices-row">
+    <!-- iPhone 1 · register sample -->
+    <div class="iphone">
+      <div class="screen">
+        <div class="status-bar">21:48 · BB</div>
+        <div class="app-title">SMT Biobanco <span class="app-title-sub">M4</span></div>
+        <div class="register-screen">
+          <div class="qr-frame">
+            <div class="qr-pattern"></div>
+            <div class="qr-label">SMP-1566-0247</div>
+          </div>
+          <div class="sample-meta">
+            <div class="sample-row"><span>Especie</span><strong>C. pubescens</strong></div>
+            <div class="sample-row"><span>Tipo</span><strong>Hoja · sano</strong></div>
+            <div class="sample-row"><span>Coord</span><strong>5.81N · 67.41W</strong></div>
+            <div class="sample-row"><span>IUCN</span><strong>VU</strong></div>
+            <div class="sample-row"><span>Pueblo</span><strong>Sikuani</strong></div>
+            <div class="cosmovision">"Yatúa" · usada en rituales de fiebre · permiso del Mamo registrado</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- iPhone 2 · chain of custody -->
+    <div class="iphone">
+      <div class="screen">
+        <div class="status-bar">21:48 · CoC</div>
+        <div class="app-title">Cadena custodia <span class="app-title-sub">N3</span></div>
+        <div class="custody-screen">
+          <div class="custody-timeline">
+            <div class="custody-item done">
+              <div class="custody-role">01 · Tomador</div>
+              <div class="custody-name">María C. Yepa</div>
+              <div class="custody-time">21:48 · 27 may</div>
+            </div>
+            <div class="custody-item done">
+              <div class="custody-role">02 · Promotor</div>
+              <div class="custody-name">José Piapoco</div>
+              <div class="custody-time">22:15 · 27 may</div>
+            </div>
+            <div class="custody-item done">
+              <div class="custody-role">03 · Mamo · permiso espiritual</div>
+              <div class="custody-name">Ramón Wapixá</div>
+              <div class="custody-time">08:30 · 28 may</div>
+            </div>
+            <div class="custody-item">
+              <div class="custody-role">04 · Curador biobanco</div>
+              <div class="custody-name">Pendiente</div>
+              <div class="custody-time">—</div>
+            </div>
+            <div class="custody-item">
+              <div class="custody-role">05 · Biobanco ONIC</div>
+              <div class="custody-name">—</div>
+              <div class="custody-time">—</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- iPhone 3 · sequencing in-situ -->
+    <div class="iphone">
+      <div class="screen">
+        <div class="status-bar">21:48 · seq</div>
+        <div class="app-title">Nanopore in-situ <span class="app-title-sub">MinION</span></div>
+        <div class="sequencing-screen">
+          <div class="device-photo">
+            <div class="device-name">MinION Mk1B</div>
+            <div class="device-sub">USB · USD 1K</div>
+          </div>
+          <div class="progress-block">
+            <div class="progress-label">Secuenciando</div>
+            <div class="progress-bar"><div class="progress-fill" style="width:73%"></div></div>
+            <div class="progress-stats"><span>73%</span><span>1.4 Gb · Q12</span></div>
+          </div>
+          <div class="progress-block" style="border-left-color:var(--bio-purple);">
+            <div class="progress-label">FASTQ cifrado AES-256</div>
+            <div class="progress-bar"><div class="progress-fill" style="width:100%;background:var(--bio-purple)"></div></div>
+            <div class="progress-stats"><span>OK</span><span>Custodia local</span></div>
+          </div>
+          <div class="abs-box">
+            <div class="abs-title">ABS Nagoya</div>
+            <div class="abs-status">Consentimiento firmado · share-academia 24m</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="device-captions">
+    <div class="caption-box">
+      <div class="caption-num">01</div>
+      <div class="caption-title">Registro QR + cosmovisión + permiso del Mamo</div>
+    </div>
+    <div class="caption-box">
+      <div class="caption-num">02</div>
+      <div class="caption-title">Cadena custodia indígena · 5 pasos auditables</div>
+    </div>
+    <div class="caption-box">
+      <div class="caption-num">03</div>
+      <div class="caption-title">Nanopore portable · FASTQ cifrado · ABS Nagoya</div>
+    </div>
+  </div>
+
+  <div class="section-num">Arquitectura</div>
+  <h2 class="section-title">Flujo técnico <em>simple</em></h2>
+
+  <div class="flow">
+    <div class="flow-node"><strong>Planta</strong><small>priorizada IUCN</small></div>
+    <span class="flow-arrow">→</span>
+    <div class="flow-node"><strong>Nanopore</strong><small>in-situ MinION</small></div>
+    <span class="flow-arrow">→</span>
+    <div class="flow-node"><strong>FASTQ</strong><small>cifrado AES-256</small></div>
+    <span class="flow-arrow">→</span>
+    <div class="flow-node"><strong>Biobanco</strong><small>ONIC custodia</small></div>
+    <span class="flow-arrow">→</span>
+    <div class="flow-node"><strong>ABS Nagoya</strong><small>share + consentimiento</small></div>
+  </div>
+
+  <div class="piloto-callout">
+    <div class="piloto-eyebrow">Caso piloto · base operativa replicable</div>
+    <div class="piloto-title">Matavén 2026 · 50 especies priorizadas</div>
+    <div class="piloto-body"><strong>5 etnias custodias</strong> (Sikuani · Piaroa · Piapoco · Puinave · Curripaco) operan la cadena de custodia ACATISEMA-Verra ya certificada (Registry ID 1566 · VCS+CCB · 10 años verificados). El biobanco piloto Matavén entra al programa en año 1 · escalable a Sierra Nevada · Cocuy · Línea Negra · Chocó en años 2—4.</div>
+  </div>
+
+  <div class="section-num">Inversión 5 años · Módulo 4</div>
+  <h2 class="section-title">USD <em>7,47M</em> · cinco años</h2>
+
+  <div class="cifras-wrap">
+    <table class="cifras">
+      <thead>
+        <tr><th>Año · escala</th><th>Inversión USD</th></tr>
+      </thead>
+      <tbody>
+        <tr class="oficial"><td><strong>Año 1</strong> · piloto Matavén · 1 laboratorio móvil · cifra oficial Formulación Fase 1 2025</td><td>1,27M</td></tr>
+        <tr><td>Año 2 · escala a 3 macrorregiones · 2 labs adicionales · cadena custodia operativa</td><td>1,65M</td></tr>
+        <tr><td>Año 3 · operación 5 macrorregiones · banco genético consolidado</td><td>1,85M</td></tr>
+        <tr><td>Año 4 · consolidación cadena de custodia · ABS Nagoya operacionalizado</td><td>1,50M</td></tr>
+        <tr><td>Año 5 · transferencia capacidades a comunidades · sostenibilidad</td><td>1,20M</td></tr>
+        <tr class="total"><td>Total 5 años · MACI Módulo 4</td><td>USD 7,47M</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="cifras-footnote">Año 1 cifra oficial · años 2—5 proyección razonable con escala secuencial 1 → 3 → 5 macrorregiones y consolidación final.</p>
+
+  <div class="mockup-disclaimer">
+    <strong>Mockup ilustrativo</strong> · diseño aprobado en SMT-ONIC · implementación 2026—2027 vía MACI Módulo 4.
+  </div>
+
+</div>
+
+<footer class="footer-band">
+  <span>Wilson Herrera Baltán · Coordinador SMT-ONIC · poblacion@onic.org.co · +57 311 220 1903</span>
+  <span>brasilia2026 · M4</span>
+</footer>
+
+</section>
+
+</body>
+</html>

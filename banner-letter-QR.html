@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Banner MACI · QR · Cumbre RRI Brasília 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,800;0,9..144,900;1,9..144,400;1,9..144,600&family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+@page { size: Letter portrait; margin: 0; }
+:root {
+  --smt-deep: #0a3f33; --smt-deep-dark: #062821;
+  --olive: #7d8a3c; --olive-dark: #5a6427;
+  --onic-orange: #c8431c;
+  --grafito: #2a2a2a; --grafito-soft: #4a4a4a;
+  --beige: #e8e0c8; --beige-l: #f5f0dd; --cream: #faf6e8;
+  --gold: #d4a017; --gold-soft: #f0c850;
+}
+* { box-sizing: border-box; }
+body { font-family: 'DM Sans', system-ui, sans-serif; color: var(--grafito); line-height: 1.55; background: white; font-size: 11pt; margin: 0; -webkit-font-smoothing: antialiased; }
+.mono { font-family: 'JetBrains Mono', monospace; font-variant-numeric: tabular-nums; }
+.page { width: 215.9mm; height: 279.4mm; margin: 0 auto; position: relative; background: white; overflow: hidden; }
+
+/* Background pattern */
+.page::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    repeating-linear-gradient(45deg, rgba(10,63,51,0.018) 0 2px, transparent 2px 16px),
+    repeating-linear-gradient(-45deg, rgba(212,160,23,0.025) 0 1px, transparent 1px 22px);
+  pointer-events: none;
+}
+
+/* Hero band */
+.hero {
+  background: linear-gradient(135deg, var(--smt-deep-dark) 0%, var(--smt-deep) 50%, var(--olive-dark) 100%);
+  color: white;
+  padding: 14mm 18mm 12mm;
+  position: relative;
+  overflow: hidden;
+}
+.hero::before { content: ''; position: absolute; inset: 0; background-image: repeating-linear-gradient(45deg, rgba(255,255,255,0.03) 0 2px, transparent 2px 14px); pointer-events: none; }
+.hero::after { content: ''; position: absolute; right: -80px; bottom: -80px; width: 320px; height: 320px; background: radial-gradient(circle, rgba(212,160,23,0.18) 0%, transparent 70%); pointer-events: none; }
+
+.hero-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8mm;
+  position: relative;
+  z-index: 2;
+}
+.logo-smt-img { height: 36px; filter: brightness(0) invert(1); opacity: 0.95; }
+.logo-onic-img { height: 44px; filter: brightness(0) invert(1); opacity: 0.95; }
+
+.event-stamp {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 9.5pt;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  color: var(--gold-soft);
+  border-top: 1px solid rgba(212,160,23,0.4);
+  border-bottom: 1px solid rgba(212,160,23,0.4);
+  padding: 5px 0;
+  display: inline-block;
+  position: relative;
+  z-index: 2;
+}
+.hero-title {
+  font-family: 'Fraunces', serif;
+  font-weight: 900;
+  font-size: 38pt;
+  line-height: 0.98;
+  letter-spacing: -0.025em;
+  margin: 6mm 0 3mm;
+  color: white;
+  position: relative;
+  z-index: 2;
+}
+.hero-title em { font-style: italic; font-weight: 400; color: var(--gold-soft); }
+.hero-sub {
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-size: 15pt;
+  color: rgba(255,255,255,0.92);
+  position: relative;
+  z-index: 2;
+  margin: 0;
+  line-height: 1.3;
+}
+
+/* QR central block */
+.qr-section {
+  padding: 14mm 18mm 8mm;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 14mm;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+.qr-wrap {
+  background: white;
+  padding: 8mm;
+  border: 4px solid var(--gold);
+  box-shadow: 0 6px 0 var(--smt-deep), 0 12px 30px rgba(10,63,51,0.18);
+}
+.qr-wrap img {
+  display: block;
+  width: 62mm;
+  height: 62mm;
+}
+.qr-callout-eyebrow {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 9pt;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--onic-orange);
+  font-weight: 700;
+  margin-bottom: 3mm;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.qr-callout-eyebrow::before { content: ''; width: 28px; height: 1px; background: var(--onic-orange); }
+.qr-callout-title {
+  font-family: 'Fraunces', serif;
+  font-weight: 800;
+  font-size: 26pt;
+  line-height: 1.05;
+  color: var(--smt-deep);
+  letter-spacing: -0.02em;
+  margin: 0 0 4mm 0;
+}
+.qr-callout-title em { font-style: italic; font-weight: 400; color: var(--olive); }
+.qr-url {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11pt;
+  font-weight: 600;
+  color: var(--smt-deep);
+  background: var(--cream);
+  padding: 2mm 4mm;
+  display: inline-block;
+  border-left: 3px solid var(--gold);
+  margin-bottom: 4mm;
+}
+.qr-callout-desc {
+  font-size: 11pt;
+  line-height: 1.55;
+  color: var(--grafito);
+}
+.qr-callout-desc strong { color: var(--smt-deep); font-weight: 600; }
+
+/* 5 modulos band */
+.modulos-band {
+  background: var(--cream);
+  padding: 8mm 18mm 6mm;
+  border-top: 2px solid var(--smt-deep);
+  border-bottom: 2px solid var(--smt-deep);
+}
+.modulos-eyebrow {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 8pt;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--onic-orange);
+  font-weight: 700;
+  margin-bottom: 2mm;
+}
+.modulos-title {
+  font-family: 'Fraunces', serif;
+  font-weight: 800;
+  font-size: 18pt;
+  color: var(--smt-deep);
+  letter-spacing: -0.015em;
+  margin: 0 0 4mm 0;
+}
+.modulos-title em { font-style: italic; font-weight: 400; color: var(--olive); }
+.modulos-list { display: grid; grid-template-columns: repeat(5, 1fr); gap: 2mm; }
+.modulo {
+  background: white;
+  border-top: 3px solid var(--olive);
+  padding: 3mm 3mm;
+}
+.modulo:nth-child(odd) { border-top-color: var(--smt-deep); }
+.modulo-num {
+  font-family: 'Fraunces', serif;
+  font-weight: 900;
+  font-size: 20pt;
+  color: var(--gold);
+  line-height: 1;
+  letter-spacing: -0.03em;
+  margin-bottom: 1mm;
+}
+.modulo-titulo {
+  font-family: 'Fraunces', serif;
+  font-weight: 700;
+  font-size: 10pt;
+  color: var(--smt-deep);
+  line-height: 1.15;
+  margin-bottom: 1mm;
+}
+.modulo-desc {
+  font-size: 8pt;
+  line-height: 1.4;
+  color: var(--grafito-soft);
+}
+
+/* KPI strip */
+.kpi-strip {
+  background: var(--smt-deep);
+  color: white;
+  padding: 8mm 18mm;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 8mm;
+  text-align: center;
+}
+.kpi {
+  position: relative;
+}
+.kpi:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  right: -4mm;
+  top: 10%;
+  bottom: 10%;
+  width: 1px;
+  background: rgba(212,160,23,0.3);
+}
+.kpi-num {
+  font-family: 'Fraunces', serif;
+  font-weight: 900;
+  font-size: 22pt;
+  line-height: 1;
+  color: var(--gold-soft);
+  letter-spacing: -0.02em;
+}
+.kpi-num em { font-style: italic; font-weight: 400; color: white; }
+.kpi-lbl {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 7pt;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  margin-top: 2mm;
+  color: rgba(255,255,255,0.8);
+  line-height: 1.4;
+}
+
+/* Pullquote bottom */
+.pullquote-bottom {
+  padding: 8mm 18mm;
+  display: flex;
+  gap: 6mm;
+  align-items: flex-start;
+}
+.pq-icon {
+  font-family: 'Fraunces', serif;
+  font-weight: 900;
+  font-size: 56pt;
+  color: var(--gold);
+  line-height: 1;
+  opacity: 0.35;
+}
+.pq-text {
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-size: 14pt;
+  line-height: 1.4;
+  color: var(--smt-deep);
+  flex: 1;
+}
+.pq-attr {
+  display: block;
+  margin-top: 3mm;
+  font-family: 'JetBrains Mono', monospace;
+  font-style: normal;
+  font-size: 8pt;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--olive-dark);
+  font-weight: 600;
+}
+
+/* Footer */
+.footer-band {
+  background: var(--grafito);
+  color: white;
+  padding: 5mm 18mm;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 8.5pt;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+.footer-contact-name { color: var(--gold-soft); font-weight: 700; }
+</style>
+</head>
+<body>
+
+<section class="page">
+
+<header class="hero">
+  <div class="hero-header">
+    <img src="assets/logo_SMT.png" alt="SMT" class="logo-smt-img">
+    <img src="assets/logo_ONIC.png" alt="ONIC" class="logo-onic-img">
+  </div>
+  <div class="event-stamp">Cumbre RRI Brasília · 26—29 mayo 2026</div>
+  <h1 class="hero-title">MACI<br><em>Marco de Acción para Comunidades Indígenas</em></h1>
+  <p class="hero-sub">Pacto para Volver al Origen · XI Congreso ONIC</p>
+</header>
+
+<div class="qr-section">
+  <div class="qr-wrap">
+    <img src="qr_codes/Q01_landing.png" alt="QR · brasilia2026.html">
+  </div>
+  <div>
+    <div class="qr-callout-eyebrow">Escaneá · Conocé MACI</div>
+    <h2 class="qr-callout-title">El vehículo bancable que <em>operacionaliza</em> el mandato indígena 2026—2030</h2>
+    <div class="qr-url">wilsonherrera77.github.io/MACI/brasilia2026.html</div>
+    <p class="qr-callout-desc">Kit multilingüe ES/EN/PT/FR · <strong>5 macrorregiones</strong> · <strong>959 resguardos · 31,3% territorio</strong> nacional · dossiers Matavén Verra+CCB · Plantas Útiles 5.690 especies · U'wa SU-039 · Línea Negra · Mesquita ONIC—CONAQ.</p>
+  </div>
+</div>
+
+<div class="modulos-band">
+  <div class="modulos-eyebrow">5 módulos en 60 segundos</div>
+  <h3 class="modulos-title">Cinco perfiles operativos · USD <em>60—80M / 5 años</em></h3>
+  <div class="modulos-list">
+    <div class="modulo">
+      <div class="modulo-num">1</div>
+      <div class="modulo-titulo">Gobernabilidad y Soberanía</div>
+      <div class="modulo-desc">CREA · CLPI · ABS Nagoya · Consejo de Datos · armonización 5 macrorregiones.</div>
+    </div>
+    <div class="modulo">
+      <div class="modulo-num">2</div>
+      <div class="modulo-titulo">Plataforma Soberana</div>
+      <div class="modulo-desc">Datos PSB · catálogo · APIs · CARE+FAIR · soberanía digital indígena.</div>
+    </div>
+    <div class="modulo">
+      <div class="modulo-num">3</div>
+      <div class="modulo-titulo">Monitoreo Comunitario</div>
+      <div class="modulo-desc">Inventarios bioculturales georeferenciados · QA/QC indígena · devolución a comunidades.</div>
+    </div>
+    <div class="modulo">
+      <div class="modulo-num">4</div>
+      <div class="modulo-titulo">Genética y Biobanco</div>
+      <div class="modulo-desc">Secuenciación in-situ · Nanopore · cadena custodia indígena · piloto Matavén.</div>
+    </div>
+    <div class="modulo">
+      <div class="modulo-num">5</div>
+      <div class="modulo-titulo">Bioeconomía</div>
+      <div class="modulo-desc">Bionegocios · blended finance · ABS Nagoya · Catálogo Plantas 5.690 especies.</div>
+    </div>
+  </div>
+</div>
+
+<div class="kpi-strip">
+  <div class="kpi">
+    <div class="kpi-num">959</div>
+    <div class="kpi-lbl">Resguardos ANT 2025—2026</div>
+  </div>
+  <div class="kpi">
+    <div class="kpi-num">31,3<em>%</em></div>
+    <div class="kpi-lbl">Territorio nacional indígena</div>
+  </div>
+  <div class="kpi">
+    <div class="kpi-num">102</div>
+    <div class="kpi-lbl">Pueblos representados</div>
+  </div>
+  <div class="kpi">
+    <div class="kpi-num">5.690</div>
+    <div class="kpi-lbl">Especies útiles Kew+GBIF</div>
+  </div>
+  <div class="kpi">
+    <div class="kpi-num">1,85<em>M</em></div>
+    <div class="kpi-lbl">ha Matavén · VCS+CCB</div>
+  </div>
+</div>
+
+<div class="pullquote-bottom">
+  <span class="pq-icon">"</span>
+  <div class="pq-text">
+    Volver al origen — cambiar las maneras ambiciosas, violentas, egoístas e irresponsables de existir.
+    <span class="pq-attr">Declaración Sabios y Sabias COP16 · Centro Java Liviana · Pueblo Muysca · octubre 2024</span>
+  </div>
+</div>
+
+<footer class="footer-band">
+  <span><span class="footer-contact-name">Wilson Herrera Baltán</span> · Coordinador SMT-ONIC · WhatsApp +57 311 220 1903 · poblacion@onic.org.co</span>
+  <span>brasilia2026 · MACI</span>
+</footer>
+
+</section>
+
+</body>
+</html>

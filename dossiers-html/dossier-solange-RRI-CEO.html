@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Para Solange Bandiaky-Badji · MACI · Cumbre RRI Brasília 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,800;0,9..144,900;1,9..144,400;1,9..144,600&family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+@page { size: A4; margin: 0; }
+:root {
+  --smt-deep: #0a3f33; --smt-deep-dark: #062821;
+  --olive: #7d8a3c; --olive-dark: #5a6427;
+  --onic-orange: #c8431c;
+  --bio-purple: #6a4c93; --bio-purple-dark: #4c2e6e;
+  --mujer: #7c3aed; --mujer-soft: #c4b5fd;
+  --grafito: #2a2a2a; --grafito-soft: #4a4a4a;
+  --beige: #e8e0c8; --beige-l: #f5f0dd; --cream: #faf6e8;
+  --gold: #d4a017; --gold-soft: #f0c850;
+}
+* { box-sizing: border-box; }
+body { font-family: 'DM Sans', system-ui, sans-serif; color: var(--grafito); line-height: 1.55; background: white; font-size: 10pt; margin: 0; -webkit-font-smoothing: antialiased; }
+.mono { font-family: 'JetBrains Mono', monospace; font-variant-numeric: tabular-nums; }
+.page { width: 210mm; min-height: 297mm; margin: 0 auto; background: white; position: relative; page-break-after: always; }
+.page:last-child { page-break-after: auto; }
+.page-content { padding: 9mm 14mm 8mm; }
+.page-break { page-break-before: always; }
+
+/* Hero p1 */
+.hero { background: linear-gradient(135deg, var(--smt-deep-dark) 0%, var(--smt-deep) 50%, var(--olive-dark) 100%); color: white; padding: 12mm 14mm 11mm; position: relative; overflow: hidden; }
+.hero::before { content: ''; position: absolute; inset: 0; background-image: repeating-linear-gradient(45deg, rgba(255,255,255,0.025) 0 2px, transparent 2px 14px); pointer-events: none; }
+.hero::after { content: ''; position: absolute; right: -80px; bottom: -80px; width: 320px; height: 320px; background: radial-gradient(circle, rgba(212,160,23,0.18) 0%, transparent 70%); pointer-events: none; }
+.hero-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 7mm; position: relative; z-index: 2; }
+.logo-smt-img { height: 32px; filter: brightness(0) invert(1); opacity: 0.95; }
+.logo-onic-img { height: 38px; filter: brightness(0) invert(1); opacity: 0.95; }
+.event-stamp { font-family: 'JetBrains Mono', monospace; font-size: 8pt; text-transform: uppercase; letter-spacing: 0.18em; color: var(--gold-soft); border-top: 1px solid rgba(212,160,23,0.4); border-bottom: 1px solid rgba(212,160,23,0.4); padding: 4px 0; display: inline-block; }
+.hero-body { position: relative; z-index: 2; }
+
+.para-box {
+  background: rgba(255,255,255,0.08);
+  border-left: 3px solid var(--gold);
+  padding: 4mm 5mm;
+  margin: 5mm 0 5mm;
+  display: inline-block;
+}
+.para-eyebrow { font-family: 'JetBrains Mono', monospace; font-size: 7.5pt; text-transform: uppercase; letter-spacing: 0.2em; color: var(--gold-soft); font-weight: 700; margin-bottom: 2mm; }
+.para-name { font-family: 'Fraunces', serif; font-weight: 800; font-size: 16pt; color: white; line-height: 1.1; margin-bottom: 1mm; }
+.para-org { font-family: 'JetBrains Mono', monospace; font-size: 9pt; color: var(--gold-soft); }
+
+.hero-title { font-family: 'Fraunces', serif; font-weight: 900; font-size: 30pt; line-height: 1; letter-spacing: -0.025em; margin: 0 0 4mm 0; color: white; }
+.hero-title em { font-style: italic; font-weight: 400; color: var(--gold-soft); }
+.hero-sub { font-size: 11pt; line-height: 1.5; color: rgba(255,255,255,0.92); max-width: 165mm; margin: 0 0 5mm 0; }
+.hero-tags { display: flex; gap: 6px; flex-wrap: wrap; }
+.hero-tag { font-family: 'JetBrains Mono', monospace; font-size: 8pt; font-weight: 600; padding: 4px 10px; letter-spacing: 0.05em; border: 1px solid rgba(255,255,255,0.25); text-transform: uppercase; color: rgba(255,255,255,0.92); }
+
+/* Section */
+.section-num { font-family: 'JetBrains Mono', monospace; font-size: 8pt; letter-spacing: 0.2em; color: var(--onic-orange); font-weight: 700; text-transform: uppercase; display: flex; align-items: center; gap: 8px; margin: 5mm 0 2mm; }
+.section-num::before { content: ''; width: 4px; height: 4px; background: var(--onic-orange); border-radius: 50%; }
+.section-title { font-family: 'Fraunces', serif; font-weight: 800; font-size: 18pt; line-height: 1.05; letter-spacing: -0.015em; color: var(--smt-deep); margin: 0 0 3mm 0; }
+.section-title em { font-style: italic; font-weight: 400; color: var(--olive); }
+.section-title.bio em { color: var(--bio-purple); }
+.lead { font-size: 10pt; line-height: 1.6; color: var(--grafito); margin-bottom: 3mm; }
+.lead strong { color: var(--smt-deep); font-weight: 600; }
+.body-text { font-size: 9.5pt; line-height: 1.55; color: var(--grafito); margin-bottom: 3mm; text-align: justify; }
+.body-text strong { color: var(--smt-deep); font-weight: 600; }
+.body-text em { font-style: italic; }
+
+/* KPI block */
+.kpis { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--beige); margin: 4mm 0 4mm; border-top: 2px solid var(--smt-deep); border-bottom: 1px solid var(--beige); }
+.kpi { background: white; padding: 4mm 4mm; }
+.kpi-num { font-family: 'Fraunces', serif; font-weight: 900; font-size: 24pt; line-height: 1; color: var(--smt-deep); letter-spacing: -0.03em; }
+.kpi-num em { font-style: italic; font-weight: 400; color: var(--olive); }
+.kpi-lbl { font-family: 'JetBrains Mono', monospace; font-size: 6.5pt; text-transform: uppercase; letter-spacing: 0.12em; color: var(--grafito-soft); margin-top: 2mm; line-height: 1.4; }
+
+.alignment-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4mm; margin: 4mm 0; }
+.align-col { background: var(--cream); padding: 4mm 5mm; border-top: 3px solid var(--olive); }
+.align-col:nth-child(2) { border-top-color: var(--smt-deep); }
+.align-tag { font-family: 'JetBrains Mono', monospace; font-size: 7.5pt; text-transform: uppercase; letter-spacing: 0.15em; color: var(--onic-orange); font-weight: 700; margin-bottom: 2mm; }
+.align-col:nth-child(2) .align-tag { color: var(--smt-deep); }
+.align-title { font-family: 'Fraunces', serif; font-weight: 700; font-size: 12pt; color: var(--smt-deep); margin-bottom: 2mm; }
+.align-body { font-size: 9pt; line-height: 1.5; color: var(--grafito); }
+.align-body strong { color: var(--smt-deep); }
+
+/* Pull quote */
+.pullquote { margin: 5mm 0; padding: 4mm 6mm; border-left: 3px solid var(--gold); background: var(--cream); font-family: 'Fraunces', serif; font-style: italic; font-size: 12pt; line-height: 1.4; color: var(--smt-deep); position: relative; }
+.pullquote::before { content: '"'; font-family: 'Fraunces', serif; font-size: 56pt; color: var(--gold); position: absolute; left: 2mm; top: -2mm; line-height: 1; opacity: 0.3; }
+.pullquote-attr { display: block; margin-top: 2mm; font-family: 'JetBrains Mono', monospace; font-style: normal; font-size: 7.5pt; text-transform: uppercase; letter-spacing: 0.15em; color: var(--olive-dark); font-weight: 600; }
+
+/* Page 2 + 3 · mockup compact */
+.mockup-block {
+  background: var(--cream);
+  padding: 5mm;
+  margin: 3mm 0;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 6mm;
+  align-items: center;
+}
+.mockup-block.bio { background: rgba(106,76,147,0.05); }
+
+.iphone-mini {
+  position: relative;
+  width: 60mm;
+  height: 124mm;
+  background: #1a1a1a;
+  border-radius: 9mm;
+  padding: 1.5mm;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.15), inset 0 0 0 0.4mm #444;
+}
+.iphone-mini::before {
+  content: '';
+  position: absolute;
+  top: 4mm;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 16mm;
+  height: 1.8mm;
+  background: #050505;
+  border-radius: 1mm;
+  z-index: 5;
+}
+.screen-mini { width: 100%; height: 100%; border-radius: 7.5mm; background: white; overflow: hidden; position: relative; display: flex; flex-direction: column; }
+
+.status-bar-m { background: var(--smt-deep); color: white; font-family: 'JetBrains Mono', monospace; font-size: 5.5pt; padding: 1.8mm 3mm 1.2mm; text-align: right; }
+.bio .status-bar-m { background: var(--bio-purple-dark); }
+.app-title-m { background: var(--smt-deep); color: white; padding: 1.5mm 3mm 2mm; font-family: 'Fraunces', serif; font-size: 7pt; font-weight: 700; display: flex; justify-content: space-between; align-items: center; border-bottom: 0.3mm solid var(--gold); }
+.bio .app-title-m { background: var(--bio-purple-dark); }
+.app-title-m small { font-family: 'JetBrains Mono', monospace; font-size: 5pt; color: var(--gold-soft); letter-spacing: 0.1em; }
+
+/* Inventarios mini screen */
+.inv-mini { flex: 1; display: flex; flex-direction: column; }
+.viewfinder-m {
+  flex: 1.2;
+  background: linear-gradient(135deg, #4a5a2a 0%, #6a7a3a 100%);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.plant-m { font-family: 'Fraunces', serif; font-size: 36pt; color: rgba(255,255,255,0.45); font-style: italic; }
+.gps-m { position: absolute; top: 2mm; left: 2mm; background: rgba(0,0,0,0.6); color: white; font-family: 'JetBrains Mono', monospace; font-size: 5pt; padding: 1mm 2mm; line-height: 1.4; }
+.id-result {
+  background: var(--cream);
+  padding: 2.5mm 3mm;
+  border-top: 0.5mm solid var(--gold);
+}
+.id-row { display: flex; justify-content: space-between; align-items: baseline; }
+.id-binomial { font-family: 'Fraunces', serif; font-style: italic; font-weight: 700; font-size: 7pt; color: var(--smt-deep); }
+.id-pct { font-family: 'JetBrains Mono', monospace; font-size: 7pt; font-weight: 700; color: var(--olive-dark); }
+.id-native { font-size: 5.5pt; color: var(--grafito); margin-top: 1mm; }
+.id-native strong { color: var(--smt-deep); }
+.offline-strip { background: var(--smt-deep); color: white; padding: 1.5mm 3mm; font-family: 'JetBrains Mono', monospace; font-size: 5.5pt; display: flex; justify-content: space-between; }
+.offline-strip strong { color: var(--gold-soft); }
+
+/* Biobanco mini screen */
+.bb-mini { flex: 1; padding: 2.5mm; display: flex; flex-direction: column; gap: 2mm; background: var(--cream); }
+.bb-qr {
+  background: white;
+  padding: 2mm;
+  text-align: center;
+  border: 0.5mm dashed var(--bio-purple);
+}
+.bb-qr-pattern {
+  width: 22mm;
+  height: 22mm;
+  margin: 0 auto;
+  background:
+    repeating-linear-gradient(0deg, var(--smt-deep) 0 0.8mm, transparent 0.8mm 1.6mm),
+    repeating-linear-gradient(90deg, var(--smt-deep) 0 0.8mm, transparent 0.8mm 1.6mm);
+  background-color: white;
+  position: relative;
+}
+.bb-qr-pattern::before, .bb-qr-pattern::after { content: ''; position: absolute; width: 4.5mm; height: 4.5mm; border: 0.8mm solid var(--smt-deep); background: white; }
+.bb-qr-pattern::before { top: 0; left: 0; }
+.bb-qr-pattern::after { bottom: 0; right: 0; }
+.bb-id { font-family: 'JetBrains Mono', monospace; font-size: 5.5pt; color: var(--bio-purple-dark); margin-top: 1mm; letter-spacing: 0.08em; font-weight: 700; }
+.bb-meta { background: white; border-left: 1mm solid var(--bio-purple); padding: 2mm 2.5mm; }
+.bb-row { font-family: 'JetBrains Mono', monospace; font-size: 5.5pt; padding: 0.5mm 0; display: flex; justify-content: space-between; }
+.bb-row strong { color: var(--smt-deep); }
+.bb-progress { background: white; padding: 2mm; border-left: 1mm solid var(--olive); }
+.bb-prog-label { font-family: 'JetBrains Mono', monospace; font-size: 5pt; text-transform: uppercase; letter-spacing: 0.1em; color: var(--smt-deep); font-weight: 700; }
+.bb-bar { background: var(--beige); height: 2mm; margin-top: 1mm; }
+.bb-bar-fill { background: var(--bio-purple); height: 100%; width: 73%; }
+.bb-prog-stats { font-family: 'JetBrains Mono', monospace; font-size: 5pt; color: var(--grafito); margin-top: 0.5mm; display: flex; justify-content: space-between; }
+.bb-abs { background: var(--bio-purple-dark); color: white; padding: 1.5mm 2mm; text-align: center; }
+.bb-abs-label { font-family: 'JetBrains Mono', monospace; font-size: 4.5pt; text-transform: uppercase; letter-spacing: 0.1em; color: var(--gold-soft); }
+.bb-abs-status { font-family: 'Fraunces', serif; font-weight: 700; font-size: 6.5pt; }
+
+.mockup-side h3 { font-family: 'Fraunces', serif; font-weight: 800; font-size: 14pt; color: var(--smt-deep); margin: 0 0 3mm 0; letter-spacing: -0.01em; }
+.mockup-block.bio .mockup-side h3 { color: var(--bio-purple-dark); }
+.mockup-side h3 em { font-style: italic; font-weight: 400; color: var(--olive); }
+.mockup-side ul { list-style: none; padding: 0; margin: 0 0 3mm 0; }
+.mockup-side ul li {
+  font-size: 9pt;
+  line-height: 1.5;
+  color: var(--grafito);
+  padding: 1.5mm 0 1.5mm 6mm;
+  position: relative;
+  border-bottom: 1px dotted var(--beige);
+}
+.mockup-side ul li::before { content: '▸'; position: absolute; left: 0; color: var(--gold); font-family: 'Fraunces', serif; font-size: 8pt; top: 1.5mm; }
+.mockup-side ul li strong { color: var(--smt-deep); font-weight: 600; }
+
+/* Flow compact */
+.flow-compact { background: white; border-left: 3px solid var(--gold); padding: 3mm 4mm; margin-top: 3mm; font-family: 'JetBrains Mono', monospace; font-size: 8pt; color: var(--smt-deep); line-height: 1.7; }
+.flow-compact strong { font-family: 'Fraunces', serif; color: var(--smt-deep-dark); }
+
+/* Cifras compact */
+.cifras-row {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr) auto;
+  gap: 1px;
+  background: var(--beige);
+  margin: 3mm 0;
+  border-top: 2px solid var(--smt-deep);
+  border-bottom: 1px solid var(--beige);
+}
+.mockup-block.bio + .cifras-row { border-top-color: var(--bio-purple-dark); }
+.cifras-block { background: white; padding: 3mm 3mm; text-align: center; }
+.cifras-block.total { background: var(--olive-dark); color: white; }
+.mockup-block.bio + .cifras-row .cifras-block.total { background: var(--bio-purple-dark); }
+.cifras-yr { font-family: 'JetBrains Mono', monospace; font-size: 6.5pt; text-transform: uppercase; letter-spacing: 0.12em; color: var(--grafito-soft); margin-bottom: 1mm; }
+.cifras-block.total .cifras-yr { color: var(--gold-soft); }
+.cifras-val { font-family: 'Fraunces', serif; font-weight: 900; font-size: 13pt; color: var(--smt-deep); letter-spacing: -0.02em; }
+.cifras-block.total .cifras-val { color: white; font-size: 14pt; }
+.cifras-block.oficial .cifras-val { color: var(--onic-orange); }
+.cifras-block.oficial::after { content: 'oficial'; display: block; font-family: 'JetBrains Mono', monospace; font-size: 5pt; color: var(--onic-orange); text-transform: uppercase; letter-spacing: 0.1em; margin-top: 0.5mm; }
+
+/* Total conjunto */
+.total-conjunto {
+  background: linear-gradient(135deg, var(--gold) 0%, var(--gold-soft) 100%);
+  color: var(--smt-deep-dark);
+  padding: 5mm 7mm;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 4mm 0 0;
+}
+.tc-label { font-family: 'JetBrains Mono', monospace; font-size: 8pt; text-transform: uppercase; letter-spacing: 0.2em; font-weight: 700; }
+.tc-amount { font-family: 'Fraunces', serif; font-weight: 900; font-size: 24pt; letter-spacing: -0.02em; }
+.tc-amount em { font-style: italic; font-weight: 400; }
+
+/* Page 4 · Albacea */
+.albacea-block { background: var(--smt-deep); color: white; padding: 5mm 6mm; margin: 4mm 0; }
+.albacea-tag { font-family: 'JetBrains Mono', monospace; font-size: 8pt; text-transform: uppercase; letter-spacing: 0.18em; color: var(--gold-soft); font-weight: 700; margin-bottom: 2mm; }
+.albacea-title { font-family: 'Fraunces', serif; font-weight: 800; font-size: 16pt; line-height: 1.1; margin-bottom: 3mm; color: white; }
+.albacea-title em { font-style: italic; font-weight: 400; color: var(--gold-soft); }
+.albacea-body { font-size: 9.5pt; line-height: 1.55; color: rgba(255,255,255,0.92); }
+.albacea-body strong { color: var(--gold-soft); }
+
+.servicios { display: grid; grid-template-columns: repeat(3, 1fr); gap: 3px; margin: 4mm 0; }
+.servicio-card { background: var(--cream); padding: 4mm 5mm; border-top: 3px solid var(--olive); }
+.servicio-card:nth-child(2) { border-top-color: var(--smt-deep); }
+.servicio-card:nth-child(3) { border-top-color: var(--mujer); }
+.servicio-tag { font-family: 'JetBrains Mono', monospace; font-size: 7pt; text-transform: uppercase; letter-spacing: 0.15em; color: var(--onic-orange); font-weight: 700; margin-bottom: 1.5mm; }
+.servicio-title { font-family: 'Fraunces', serif; font-weight: 700; font-size: 11pt; color: var(--smt-deep); margin-bottom: 2mm; line-height: 1.15; }
+.servicio-body { font-size: 8.5pt; line-height: 1.45; color: var(--grafito); }
+.servicio-body strong { color: var(--smt-deep); }
+
+.protocolo-cnmi {
+  background: linear-gradient(135deg, #faf5ff 0%, white 80%);
+  border-left: 3px solid var(--mujer);
+  padding: 4mm 6mm;
+  margin: 3mm 0;
+}
+.proto-tag { font-family: 'JetBrains Mono', monospace; font-size: 7.5pt; text-transform: uppercase; letter-spacing: 0.18em; color: var(--mujer); font-weight: 700; margin-bottom: 2mm; }
+.proto-title { font-family: 'Fraunces', serif; font-weight: 700; font-size: 12pt; color: var(--smt-deep); margin-bottom: 2mm; }
+.proto-body { font-size: 9pt; line-height: 1.5; color: var(--grafito); margin-bottom: 2mm; }
+.proto-body strong { color: var(--smt-deep); }
+.proto-list { list-style: none; padding: 0; margin: 0; }
+.proto-list li { font-size: 8.5pt; line-height: 1.45; color: var(--grafito); padding: 1mm 0 1mm 6mm; position: relative; }
+.proto-list li::before { content: '◆'; position: absolute; left: 0; top: 1mm; color: var(--mujer); font-size: 7pt; }
+.proto-list li strong { color: var(--smt-deep); font-weight: 600; }
+
+.transferencia { display: grid; grid-template-columns: repeat(5, 1fr); gap: 1px; background: var(--beige); margin: 3mm 0; border-top: 2px solid var(--smt-deep); border-bottom: 1px solid var(--beige); }
+.transfer-step { background: white; padding: 3mm 3mm; text-align: center; }
+.transfer-yr { font-family: 'Fraunces', serif; font-weight: 900; font-size: 16pt; color: var(--gold); letter-spacing: -0.03em; line-height: 1; }
+.transfer-lbl { font-family: 'JetBrains Mono', monospace; font-size: 6pt; text-transform: uppercase; letter-spacing: 0.1em; color: var(--smt-deep); margin-top: 1mm; font-weight: 700; }
+.transfer-desc { font-size: 7.5pt; color: var(--grafito); margin-top: 1mm; line-height: 1.3; }
+
+/* Ask block */
+.ask-block {
+  background: linear-gradient(135deg, var(--smt-deep-dark) 0%, var(--smt-deep) 60%, var(--gold) 200%);
+  color: white;
+  padding: 5mm 7mm;
+  margin: 4mm 0;
+  position: relative;
+  overflow: hidden;
+}
+.ask-block::after { content: '"'; position: absolute; right: 4mm; top: -8mm; font-family: 'Fraunces', serif; font-size: 100pt; color: rgba(212,160,23,0.18); line-height: 1; }
+.ask-tag { font-family: 'JetBrains Mono', monospace; font-size: 8pt; text-transform: uppercase; letter-spacing: 0.18em; color: var(--gold-soft); font-weight: 700; margin-bottom: 2mm; position: relative; z-index: 2; }
+.ask-title { font-family: 'Fraunces', serif; font-weight: 800; font-size: 17pt; line-height: 1.1; margin-bottom: 3mm; color: white; position: relative; z-index: 2; }
+.ask-title em { font-style: italic; font-weight: 400; color: var(--gold-soft); }
+.ask-list { list-style: none; padding: 0; margin: 0; position: relative; z-index: 2; counter-reset: ask; }
+.ask-list li {
+  counter-increment: ask;
+  padding: 2mm 0 2mm 10mm;
+  position: relative;
+  font-size: 10pt;
+  line-height: 1.5;
+  color: rgba(255,255,255,0.95);
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+.ask-list li:last-child { border-bottom: none; }
+.ask-list li::before {
+  content: counter(ask, decimal-leading-zero);
+  position: absolute;
+  left: 0;
+  top: 2mm;
+  font-family: 'Fraunces', serif;
+  font-weight: 900;
+  font-size: 16pt;
+  color: var(--gold);
+  letter-spacing: -0.03em;
+  line-height: 1;
+}
+.ask-list li strong { color: var(--gold-soft); font-weight: 700; }
+
+/* Contacto */
+.contacto-grid { display: grid; grid-template-columns: 1.3fr 1fr; gap: 3px; margin-top: 4mm; }
+.contacto-wilson { background: var(--smt-deep); color: white; padding: 5mm 6mm; position: relative; }
+.contacto-wilson::before { content: ''; position: absolute; top: 0; right: 0; width: 32px; height: 32px; background: var(--gold); clip-path: polygon(100% 0, 0 0, 100% 100%); }
+.contacto-label { font-family: 'JetBrains Mono', monospace; font-size: 7.5pt; text-transform: uppercase; letter-spacing: 0.18em; color: var(--gold-soft); margin-bottom: 2mm; font-weight: 700; }
+.contacto-nombre { font-family: 'Fraunces', serif; font-weight: 800; font-size: 16pt; line-height: 1.1; margin-bottom: 2mm; }
+.contacto-info { font-family: 'JetBrains Mono', monospace; font-size: 8.5pt; line-height: 1.6; color: rgba(255,255,255,0.92); }
+.contacto-kit { background: var(--olive-dark); color: white; padding: 5mm 6mm; }
+.contacto-kit-url { font-family: 'JetBrains Mono', monospace; font-size: 8.5pt; font-weight: 600; line-height: 1.3; word-break: break-all; margin-bottom: 2mm; }
+.contacto-kit-meta { font-size: 8pt; color: rgba(255,255,255,0.85); line-height: 1.5; }
+
+.footer-band { background: var(--grafito); color: white; padding: 3.5mm 14mm; font-family: 'JetBrains Mono', monospace; font-size: 7.5pt; letter-spacing: 0.1em; text-transform: uppercase; display: flex; justify-content: space-between; align-items: center; position: absolute; bottom: 0; left: 0; right: 0; }
+</style>
+</head>
+<body>
+
+<!-- PAGE 1 · HERO + ALINEACIÓN -->
+<section class="page">
+<header class="hero">
+  <div class="hero-header">
+    <img src="../assets/logo_SMT.png" alt="SMT" class="logo-smt-img">
+    <img src="../assets/logo_ONIC.png" alt="ONIC" class="logo-onic-img">
+  </div>
+  <div class="hero-body">
+    <div class="event-stamp">Bilateral institucional · Cumbre RRI Brasília · 27 mayo 2026</div>
+    <div class="para-box">
+      <div class="para-eyebrow">Para · destinataria única</div>
+      <div class="para-name">Solange Bandiaky-Badji</div>
+      <div class="para-org">Presidenta-CEO · Rights and Resources Initiative</div>
+    </div>
+    <h1 class="hero-title">MACI · Operacionalización<br><em>del Marco RRI</em> en Colombia</h1>
+    <p class="hero-sub">Cuatro temas centrales · soberanía de datos · inventarios biodiversidad con IA local · biobanco indígena soberano · y <strong>ONIC como nodo metodológico LATAM</strong> que acompaña a pueblos hermanos bajo coalición RRI.</p>
+    <div class="hero-tags">
+      <span class="hero-tag">USD 60—80M / 5 años</span>
+      <span class="hero-tag">31,3% territorio nacional</span>
+      <span class="hero-tag">102 pueblos · 5 macrorregiones</span>
+      <span class="hero-tag">M3 + M4 · USD 45,94M</span>
+    </div>
+  </div>
+</header>
+
+<div class="page-content">
+
+  <div class="section-num">01 · Por qué este bilateral</div>
+  <h2 class="section-title">RRI · ONIC · una <em>alineación operativa</em></h2>
+  <p class="lead">RRI ha sido durante 20+ años la articulación global más sólida sobre derechos territoriales indígenas. ONIC propone hoy un paso más concreto: <strong>operacionalizar ese mandato en arquitectura técnica, financiera y de gobernanza replicable</strong>. MACI es el vehículo. Esta conversación bilateral es para mostrar dos componentes que prefieren imagen a palabra · más una propuesta de coalición.</p>
+
+  <div class="kpis">
+    <div class="kpi"><div class="kpi-num">959</div><div class="kpi-lbl">Resguardos ANT 2025—2026</div></div>
+    <div class="kpi"><div class="kpi-num">31,3<em>%</em></div><div class="kpi-lbl">Territorio nacional</div></div>
+    <div class="kpi"><div class="kpi-num">5.690</div><div class="kpi-lbl">Especies útiles georef</div></div>
+    <div class="kpi"><div class="kpi-num">18<em>M</em></div><div class="kpi-lbl">ha NO amazónicas custodiadas</div></div>
+  </div>
+
+  <div class="section-num">02 · Cómo encaja con RRI</div>
+  <h2 class="section-title">Dos prioridades RRI · <em>dos respuestas MACI</em></h2>
+
+  <div class="alignment-grid">
+    <div class="align-col">
+      <div class="align-tag">Estratégico RRI · Indigenous-led finance</div>
+      <div class="align-title">MACI vehículo bancable</div>
+      <div class="align-body">5 módulos operativos · USD 12,79M año 1 · auditable por estándares industria financiera (modelo Matavén Verra+CCB ya operando 10 años). Listo para <strong>blended finance NICFI · FCLP · BID-Lab · GIZ</strong> sin intermediarios que diluyen control político.</div>
+    </div>
+    <div class="align-col">
+      <div class="align-tag">Estratégico RRI · South-south exchange</div>
+      <div class="align-title">ONIC nodo metodológico LATAM</div>
+      <div class="align-body">Colombia tiene la <strong>doctrina jurídica más avanzada</strong> sobre consulta previa (U'wa SU-039/1997 · 28 años jurisprudencia). El protocolo CNMI de soberanía datos ya opera. ONIC ofrece custodia metodológica para pueblos hermanos del sur global mientras desarrollan capacidades propias.</div>
+    </div>
+  </div>
+
+  <div class="pullquote">
+    Volver al origen — cambiar las maneras ambiciosas, violentas, egoístas e irresponsables de existir. Permitiendo que la ejecución y administración se realicen <em>directamente por las estructuras de gobierno indígena</em>.
+    <span class="pullquote-attr">Declaración Sabios y Sabias COP16 · Centro Java Liviana · Pueblo Muysca · octubre 2024</span>
+  </div>
+
+  <div class="section-num">03 · Estructura de este briefing</div>
+  <h2 class="section-title">Cuatro páginas · cuatro <em>conversaciones</em></h2>
+  <p class="body-text">Páginas siguientes: <strong>(P2)</strong> mockup app inventarios biodiversidad con IA local · cifras año 1—5 Módulo 3 · <strong>(P3)</strong> mockup biobanco indígena con Nanopore portable · cifras año 1—5 Módulo 4 · <strong>(P4)</strong> ONIC como albacea metodológica + protocolo CNMI replicable + tres asks concretos a RRI.</p>
+
+</div>
+
+<footer class="footer-band">
+  <span>Para Solange Bandiaky-Badji · CEO RRI · Bilateral 27 mayo 2026</span>
+  <span>Página 1 de 4 · brasilia2026</span>
+</footer>
+</section>
+
+<!-- PAGE 2 · MOCKUP INVENTARIOS -->
+<section class="page page-break">
+<div class="page-content" style="padding-top:12mm">
+
+  <div class="section-num">04 · MACI Módulo 3 · Monitoreo Comunitario Biocultural</div>
+  <h2 class="section-title">Inventarios <em>biodiversidad</em> · app soberana ONIC</h2>
+  <p class="body-text">La pregunta que más nos hacen los donantes técnicos: <em>"¿cómo van a generar datos creíbles a escala territorial sin enviar todo a un servidor de Cambridge o Berkeley?"</em> Respuesta visual:</p>
+
+  <div class="mockup-block">
+    <div class="iphone-mini">
+      <div class="screen-mini">
+        <div class="status-bar-m">21:48 · IA local</div>
+        <div class="app-title-m">SMT Bioinventario <small>M3</small></div>
+        <div class="inv-mini">
+          <div class="viewfinder-m">
+            <div class="gps-m">5.812°N · 67.412°W<br>±3m · 12 sat</div>
+            <div class="plant-m">𝒫</div>
+          </div>
+          <div class="id-result">
+            <div class="id-row">
+              <span class="id-binomial">Cinchona pubescens</span>
+              <span class="id-pct">94,2%</span>
+            </div>
+            <div class="id-native"><strong>"Yatúa"</strong> · sikuani · <strong>"Quina"</strong> · castellano · Kew + GBIF</div>
+          </div>
+          <div class="offline-strip">
+            <span>OFFLINE · 47 pendientes</span>
+            <strong>Sync WiFi</strong>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="mockup-side">
+      <h3>App de campo · <em>online + offline</em></h3>
+      <ul>
+        <li><strong>IA local TFLite</strong> entrenada con 5.690 especies Catálogo Plantas Útiles Kew · identifica sin conexión.</li>
+        <li><strong>Cache SQLite cifrado AES-256</strong> · funciona offline en monte profundo · sync automático al detectar WiFi.</li>
+        <li><strong>Servidores propios ONIC</strong> (Plataforma Soberana de Datos · Módulo 2) · cero cloud externo · CARE+FAIR.</li>
+        <li>Cada registro pide <strong>aprobación del Cabildo</strong> antes de sync público (GBIF/iNaturalist). Custodia indígena por defecto.</li>
+        <li>Nombres en lenguas indígenas registrados como atributo primario · taxonomía Kew como secundaria.</li>
+      </ul>
+      <div class="flow-compact">
+        <strong>Flujo:</strong> 📱 Cámara → 🧠 IA local TFLite → 💾 SQLite offline → 📶 Sync detectado → 🖥 ONIC PSB (PostGIS) → ✅ Aprobación Cabildo → 📊 Dashboard SMT
+      </div>
+    </div>
+  </div>
+
+  <div class="section-num">05 · Inversión 5 años · Módulo 3</div>
+  <h2 class="section-title">USD <em>38,47M</em> · cinco años</h2>
+
+  <div class="cifras-row">
+    <div class="cifras-block oficial">
+      <div class="cifras-yr">Año 1</div>
+      <div class="cifras-val">USD 7,09M</div>
+    </div>
+    <div class="cifras-block">
+      <div class="cifras-yr">Año 2</div>
+      <div class="cifras-val">USD 8,51M</div>
+    </div>
+    <div class="cifras-block">
+      <div class="cifras-yr">Año 3</div>
+      <div class="cifras-val">USD 9,07M</div>
+    </div>
+    <div class="cifras-block">
+      <div class="cifras-yr">Año 4</div>
+      <div class="cifras-val">USD 7,50M</div>
+    </div>
+    <div class="cifras-block">
+      <div class="cifras-yr">Año 5</div>
+      <div class="cifras-val">USD 6,30M</div>
+    </div>
+    <div class="cifras-block total" style="grid-column: span 1;">
+      <div class="cifras-yr">Total · M3</div>
+      <div class="cifras-val">38,47M</div>
+    </div>
+  </div>
+  <p class="body-text" style="font-family:'JetBrains Mono',monospace; font-size:7pt; color:var(--grafito-soft); margin-top:1mm;">Año 1 cifra oficial Formulación Fase 1 abril 2025 · años 2—5 proyección razonable con crecimiento moderado para replicación 5 macrorregiones y luego consolidación · curva clásica scale-stabilize.</p>
+
+</div>
+
+<footer class="footer-band">
+  <span>Para Solange Bandiaky-Badji · CEO RRI · Bilateral 27 mayo 2026</span>
+  <span>Página 2 de 4 · Módulo 3</span>
+</footer>
+</section>
+
+<!-- PAGE 3 · MOCKUP BIOBANCO -->
+<section class="page page-break">
+<div class="page-content" style="padding-top:12mm">
+
+  <div class="section-num">06 · MACI Módulo 4 · Genética y Biobanco</div>
+  <h2 class="section-title bio">Biobanco indígena · <em>cadena custodia soberana</em></h2>
+  <p class="body-text">Segunda pregunta frecuente: <em>"¿van a enviar las muestras genéticas a Nature Biotech o las van a manejar ustedes?"</em> Respuesta también visual:</p>
+
+  <div class="mockup-block bio">
+    <div class="iphone-mini">
+      <div class="screen-mini">
+        <div class="status-bar-m">21:48 · BB</div>
+        <div class="app-title-m">SMT Biobanco <small>M4</small></div>
+        <div class="bb-mini">
+          <div class="bb-qr">
+            <div class="bb-qr-pattern"></div>
+            <div class="bb-id">SMP-1566-0247</div>
+          </div>
+          <div class="bb-meta">
+            <div class="bb-row"><span>Especie</span><strong>C. pubescens</strong></div>
+            <div class="bb-row"><span>IUCN</span><strong>VU</strong></div>
+            <div class="bb-row"><span>Pueblo</span><strong>Sikuani</strong></div>
+            <div class="bb-row"><span>Mamo</span><strong>R. Wapixá ✓</strong></div>
+          </div>
+          <div class="bb-progress">
+            <div class="bb-prog-label">Nanopore in-situ</div>
+            <div class="bb-bar"><div class="bb-bar-fill"></div></div>
+            <div class="bb-prog-stats"><span>73% · 1,4Gb</span><span>Q12</span></div>
+          </div>
+          <div class="bb-abs">
+            <div class="bb-abs-label">ABS Nagoya</div>
+            <div class="bb-abs-status">Consentimiento ✓</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="mockup-side">
+      <h3>Secuenciación <em>in-situ</em> · Nanopore portable</h3>
+      <ul>
+        <li><strong>MinION Mk1B</strong> (~USD 1.000 + laptop ruggerizada) · secuenciación <strong>in-situ sin envío al exterior</strong>.</li>
+        <li><strong>Cadena custodia indígena</strong> · 5 pasos auditables (Tomador → Promotor → Mamo → Curador → Biobanco). Permiso espiritual registrado on-chain.</li>
+        <li><strong>FASTQ cifrado AES-256</strong> · custodia ONIC · share con academia bajo <strong>ABS Nagoya con consentimiento firmado digital</strong>.</li>
+        <li>Priorización IUCN (CR · EN · VU) sobre Catálogo Plantas 5.690 especies · 50 especies año 1 piloto Matavén.</li>
+        <li>Replicable a Sierra Nevada · Cocuy · Línea Negra · Chocó (años 2—4).</li>
+      </ul>
+      <div class="flow-compact">
+        <strong>Flujo:</strong> 🌿 Planta IUCN-priorizada → 🔬 MinION in-situ → 🧬 FASTQ AES-256 → 🔐 Biobanco ONIC → 📡 ABS share academia con consentimiento Mamo
+      </div>
+    </div>
+  </div>
+
+  <div class="section-num">07 · Inversión 5 años · Módulo 4</div>
+  <h2 class="section-title bio">USD <em>7,47M</em> · cinco años</h2>
+
+  <div class="cifras-row">
+    <div class="cifras-block oficial">
+      <div class="cifras-yr">Año 1</div>
+      <div class="cifras-val">USD 1,27M</div>
+    </div>
+    <div class="cifras-block">
+      <div class="cifras-yr">Año 2</div>
+      <div class="cifras-val">USD 1,65M</div>
+    </div>
+    <div class="cifras-block">
+      <div class="cifras-yr">Año 3</div>
+      <div class="cifras-val">USD 1,85M</div>
+    </div>
+    <div class="cifras-block">
+      <div class="cifras-yr">Año 4</div>
+      <div class="cifras-val">USD 1,50M</div>
+    </div>
+    <div class="cifras-block">
+      <div class="cifras-yr">Año 5</div>
+      <div class="cifras-val">USD 1,20M</div>
+    </div>
+    <div class="cifras-block total" style="grid-column: span 1;">
+      <div class="cifras-yr">Total · M4</div>
+      <div class="cifras-val">7,47M</div>
+    </div>
+  </div>
+
+  <div class="total-conjunto">
+    <div>
+      <div class="tc-label">Ventana RRI co-financiable · M3 + M4 · 5 años</div>
+    </div>
+    <div class="tc-amount">USD <em>45,94M</em></div>
+  </div>
+
+  <p class="body-text" style="font-family:'JetBrains Mono',monospace; font-size:7pt; color:var(--grafito-soft); margin-top:2mm;">Año 1 cifras oficiales Formulación Fase 1 abril 2025 · años 2—5 proyección razonable con escala secuencial 1 → 3 → 5 macrorregiones y consolidación final. Las cifras pueden absorberse total o parcialmente por coalición de donantes alineados con RRI.</p>
+
+</div>
+
+<footer class="footer-band">
+  <span>Para Solange Bandiaky-Badji · CEO RRI · Bilateral 27 mayo 2026</span>
+  <span>Página 3 de 4 · Módulo 4</span>
+</footer>
+</section>
+
+<!-- PAGE 4 · ALBACEA + CNMI + ASK -->
+<section class="page page-break">
+<div class="page-content" style="padding-top:12mm">
+
+  <div class="section-num">08 · El componente nuevo en este briefing</div>
+  <h2 class="section-title">ONIC como <em>albacea metodológica</em> · coalición RRI</h2>
+
+  <div class="albacea-block">
+    <div class="albacea-tag">Propuesta institucional · sur-sur replicable</div>
+    <h3 class="albacea-title">"Mientras los otros pueblos <em>desarrollan capacidades propias</em>, ONIC cuida sus datos"</h3>
+    <div class="albacea-body">Los pueblos hermanos del sur global (Perú · Bolivia · Brasil · Ecuador · Centroamérica · África) requieren capacidades técnicas que aún no tienen — y la coalición RRI puede financiar transferencia metodológica. ONIC propone actuar como <strong>albacea/cuidador metodológico temporal</strong>: hospeda los datos · capacita a la organización local · transfiere completamente cuando ésta desarrolla capacidades. Modelo basado en la experiencia exitosa de la <strong>CNMI Colombia con custodia soberana de datos VBG durante 5 años</strong>.</div>
+  </div>
+
+  <div class="section-num">09 · Tres servicios concretos · ONIC al servicio</div>
+  <h2 class="section-title">Qué <em>ofrecemos</em> a pueblos hermanos</h2>
+
+  <div class="servicios">
+    <div class="servicio-card">
+      <div class="servicio-tag">01 · Manejo de datos</div>
+      <div class="servicio-title">Arquitectura PostGIS + SQLite mobile</div>
+      <div class="servicio-body">Stack <strong>Plataforma Soberana de Datos</strong> (Módulo 2 MACI) replicable · APIs · sincronización offline · cifrado · capacitación técnica de administradores locales del pueblo hermano.</div>
+    </div>
+    <div class="servicio-card">
+      <div class="servicio-tag">02 · Diseños SIG</div>
+      <div class="servicio-title">GeoJSON + Leaflet + protocolos CARE/FAIR</div>
+      <div class="servicio-body">Cartografía operativa para inventarios · capas territoriales · cruces con concesiones extractivas · todo bajo <strong>protocolos CARE+FAIR</strong> validados. Replica el modelo Catálogo Plantas Útiles.</div>
+    </div>
+    <div class="servicio-card">
+      <div class="servicio-tag">03 · Albacea fiduciaria</div>
+      <div class="servicio-title">Hosting + cadena custodia temporal</div>
+      <div class="servicio-body">Servidores ONIC hospedan datos del pueblo hermano · cadena de custodia con su gobierno como autoridad final · <strong>transferencia completa cuando capacidades locales maduran</strong> (típicamente año 3-5).</div>
+    </div>
+  </div>
+
+  <div class="section-num">10 · Protocolo CNMI · base operacional ya probada</div>
+
+  <div class="protocolo-cnmi">
+    <div class="proto-tag">CNMI · Custodia VBG soberana · 5 años operando</div>
+    <div class="proto-title">El protocolo replicable que <em>YA estamos probando en Colombia</em></div>
+    <div class="proto-body">La Comisión Nacional de Mujeres Indígenas (CNMI) custodia datos VBG con <strong>soberanía indígena absoluta</strong> · 30 indicadores en 9 dimensiones · 10 sin precedente estatal. Tres protocolos clave que se transfieren al modelo de albacea:</div>
+    <ul class="proto-list">
+      <li><strong>Claves criptográficas distribuidas</strong> entre 7 organizaciones territoriales · ningún nodo central puede leer todo.</li>
+      <li><strong>Consejo de Guardianas como autoridad ética nivel N3—N4</strong> · decisiones sobre access requests pasan por consejo plural.</li>
+      <li><strong>Soberanía cero-acceso</strong> · ni ONIC nacional · ni Estado · ni academia tienen acceso directo · solo el pueblo titular.</li>
+    </ul>
+  </div>
+
+  <div class="section-num">11 · Plan transferencia capacidades · 5 años</div>
+
+  <div class="transferencia">
+    <div class="transfer-step">
+      <div class="transfer-yr">01</div>
+      <div class="transfer-lbl">Custodia</div>
+      <div class="transfer-desc">ONIC hospeda · firma de acuerdo con pueblo hermano</div>
+    </div>
+    <div class="transfer-step">
+      <div class="transfer-yr">02</div>
+      <div class="transfer-lbl">Capacitación</div>
+      <div class="transfer-desc">ONIC entrega protocolos + entrena técnicos locales</div>
+    </div>
+    <div class="transfer-step">
+      <div class="transfer-yr">03</div>
+      <div class="transfer-lbl">Co-gestión</div>
+      <div class="transfer-desc">Pueblo hermano administra · ONIC backup técnico</div>
+    </div>
+    <div class="transfer-step">
+      <div class="transfer-yr">04</div>
+      <div class="transfer-lbl">Auditoría</div>
+      <div class="transfer-desc">Coalición RRI valida soberanía completa local</div>
+    </div>
+    <div class="transfer-step">
+      <div class="transfer-yr">05</div>
+      <div class="transfer-lbl">Transferencia</div>
+      <div class="transfer-desc">Datos a servidores propios pueblo · ONIC libera</div>
+    </div>
+  </div>
+
+  <div class="ask-block">
+    <div class="ask-tag">El ask a RRI · tres cosas concretas</div>
+    <h2 class="ask-title">Pedimos a la coalición <em>RRI</em></h2>
+    <ol class="ask-list">
+      <li><strong>Reconocer institucionalmente a ONIC como nodo metodológico LATAM</strong> para inventarios biodiversidad + biobanco soberano · figura del Strategic Plan RRI 2026—2030.</li>
+      <li><strong>Co-financiar MACI Módulos 3+4 · USD 45,94M / 5 años</strong> como vehículo demostrativo de la coalición. Donantes alineados ya identificados: NICFI · FCLP · BID-Lab · GIZ · Campaign for Nature.</li>
+      <li><strong>Facilitar transferencia metodológica</strong> a pueblos hermanos (Perú · Bolivia · Brasil · Ecuador · África) bajo modelo albacea CNMI · ONIC custodia mientras org local madura · RRI backstop institucional.</li>
+    </ol>
+  </div>
+
+  <div class="contacto-grid">
+    <div class="contacto-wilson">
+      <div class="contacto-label">Coordinador SMT-ONIC</div>
+      <div class="contacto-nombre">Wilson Herrera Baltán</div>
+      <div class="contacto-info">
+        WhatsApp +57 311 220 1903<br>
+        poblacion@onic.org.co<br>
+        Bogotá D.C. · Colombia
+      </div>
+    </div>
+    <div class="contacto-kit">
+      <div class="contacto-label">Kit digital + mockups completos</div>
+      <div class="contacto-kit-url">wilsonherrera77.github.io/MACI/brasilia2026.html</div>
+      <div class="contacto-kit-meta">
+        Mockups detallados · 3 pantallas c/u<br>
+        Multilingüe ES · EN · PT · FR<br>
+        Anexos técnicos en bilateral
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<footer class="footer-band">
+  <span>Para Solange Bandiaky-Badji · CEO RRI · Bilateral 27 mayo 2026</span>
+  <span>Página 4 de 4 · Albacea + ask</span>
+</footer>
+</section>
+
+</body>
+</html>

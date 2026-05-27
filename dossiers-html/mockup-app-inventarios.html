@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Mockup app inventarios biodiversidad · MACI Módulo 3 · ONIC</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,800;0,9..144,900;1,9..144,400;1,9..144,600&family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+@page { size: A4; margin: 0; }
+:root {
+  --smt-deep: #0a3f33; --smt-deep-dark: #062821;
+  --olive: #7d8a3c; --olive-dark: #5a6427; --olive-light: #a8b558;
+  --onic-orange: #c8431c;
+  --grafito: #2a2a2a; --grafito-soft: #4a4a4a;
+  --beige: #e8e0c8; --beige-l: #f5f0dd; --cream: #faf6e8;
+  --gold: #d4a017; --gold-soft: #f0c850;
+}
+* { box-sizing: border-box; }
+body { font-family: 'DM Sans', system-ui, sans-serif; color: var(--grafito); line-height: 1.5; background: white; font-size: 10pt; margin: 0; -webkit-font-smoothing: antialiased; }
+.mono { font-family: 'JetBrains Mono', monospace; font-variant-numeric: tabular-nums; }
+.page { width: 210mm; min-height: 297mm; margin: 0 auto; background: white; position: relative; }
+.page-content { padding: 8mm 14mm 8mm; }
+
+/* Hero */
+.hero { background: linear-gradient(135deg, var(--smt-deep-dark) 0%, var(--smt-deep) 50%, var(--olive-dark) 100%); color: white; padding: 11mm 14mm 9mm; position: relative; overflow: hidden; }
+.hero::before { content: ''; position: absolute; inset: 0; background-image: repeating-linear-gradient(45deg, rgba(255,255,255,0.025) 0 2px, transparent 2px 14px); pointer-events: none; }
+.hero-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 6mm; position: relative; z-index: 2; }
+.logo-smt-img { height: 28px; filter: brightness(0) invert(1); opacity: 0.95; }
+.logo-onic-img { height: 32px; filter: brightness(0) invert(1); opacity: 0.95; }
+.hero-body { position: relative; z-index: 2; }
+.kicker { font-family: 'JetBrains Mono', monospace; font-size: 8.5pt; text-transform: uppercase; letter-spacing: 0.22em; color: var(--gold-soft); margin-bottom: 3mm; display: flex; align-items: center; gap: 10px; font-weight: 700; }
+.kicker::before { content: ''; width: 28px; height: 1px; background: var(--gold-soft); }
+.hero-title { font-family: 'Fraunces', serif; font-weight: 900; font-size: 24pt; line-height: 1; letter-spacing: -0.025em; margin: 0 0 3mm 0; color: white; }
+.hero-title em { font-style: italic; font-weight: 400; color: var(--gold-soft); }
+.hero-sub { font-size: 10pt; line-height: 1.45; color: rgba(255,255,255,0.9); max-width: 165mm; margin: 0; }
+.hero-sub strong { color: var(--gold-soft); }
+
+/* Section nav */
+.section-num { font-family: 'JetBrains Mono', monospace; font-size: 8pt; letter-spacing: 0.2em; color: var(--onic-orange); font-weight: 700; text-transform: uppercase; display: flex; align-items: center; gap: 8px; margin: 5mm 0 2mm; }
+.section-num::before { content: ''; width: 4px; height: 4px; background: var(--onic-orange); border-radius: 50%; }
+.section-title { font-family: 'Fraunces', serif; font-weight: 800; font-size: 17pt; line-height: 1.1; letter-spacing: -0.015em; color: var(--smt-deep); margin: 0 0 3mm 0; }
+.section-title em { font-style: italic; font-weight: 400; color: var(--olive); }
+.lead { font-size: 10pt; line-height: 1.55; color: var(--grafito); margin-bottom: 4mm; }
+.lead strong { color: var(--smt-deep); font-weight: 600; }
+
+/* iPhone device frames */
+.devices-row { display: flex; gap: 3mm; justify-content: center; align-items: center; margin: 5mm 0 4mm; }
+.iphone {
+  position: relative;
+  width: 53mm;
+  height: 110mm;
+  background: #1a1a1a;
+  border-radius: 8mm;
+  padding: 1.5mm;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.15), inset 0 0 0 0.4mm #444;
+}
+.iphone::before {
+  content: '';
+  position: absolute;
+  top: 4mm;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 14mm;
+  height: 1.8mm;
+  background: #050505;
+  border-radius: 1mm;
+  z-index: 5;
+}
+.screen {
+  width: 100%;
+  height: 100%;
+  border-radius: 6.5mm;
+  background: white;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+.status-bar {
+  background: var(--smt-deep);
+  color: white;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 5.5pt;
+  padding: 1.8mm 3mm 1.2mm;
+  text-align: right;
+  letter-spacing: 0.05em;
+}
+.app-title {
+  background: var(--smt-deep);
+  color: white;
+  padding: 1.5mm 3mm 2mm;
+  font-family: 'Fraunces', serif;
+  font-size: 7pt;
+  font-weight: 700;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 0.3mm solid var(--gold);
+}
+.app-title-sub { font-family: 'JetBrains Mono', monospace; font-size: 5pt; color: var(--gold-soft); letter-spacing: 0.1em; }
+
+/* Screen 1 · capture */
+.viewfinder {
+  flex: 1;
+  background: linear-gradient(135deg, #4a5a2a 0%, #6a7a3a 100%);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.plant-sil {
+  font-family: 'Fraunces', serif;
+  font-size: 32pt;
+  color: rgba(255,255,255,0.4);
+  font-style: italic;
+}
+.gps-overlay {
+  position: absolute;
+  top: 2mm;
+  left: 2mm;
+  background: rgba(0,0,0,0.6);
+  color: white;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 5pt;
+  padding: 1mm 2mm;
+  letter-spacing: 0.05em;
+  line-height: 1.4;
+}
+.shutter-area {
+  background: rgba(0,0,0,0.4);
+  padding: 3mm;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.shutter {
+  width: 9mm;
+  height: 9mm;
+  background: white;
+  border-radius: 50%;
+  border: 1.2mm solid var(--gold);
+  box-shadow: 0 0 0 0.5mm white;
+}
+
+/* Screen 2 · IA identification */
+.id-screen {
+  flex: 1;
+  background: var(--cream);
+  padding: 3mm;
+  display: flex;
+  flex-direction: column;
+  gap: 2mm;
+}
+.spinner-box {
+  background: white;
+  border: 0.3mm solid var(--beige);
+  padding: 2.5mm;
+  text-align: center;
+}
+.spinner-ring {
+  width: 8mm;
+  height: 8mm;
+  border: 1mm solid var(--beige);
+  border-top-color: var(--gold);
+  border-radius: 50%;
+  margin: 0 auto 2mm;
+}
+.spinner-label { font-family: 'JetBrains Mono', monospace; font-size: 5pt; color: var(--olive-dark); text-transform: uppercase; letter-spacing: 0.12em; font-weight: 700; }
+.match-card {
+  background: white;
+  border-left: 1mm solid var(--smt-deep);
+  padding: 2.5mm 3mm;
+}
+.match-binomial { font-family: 'Fraunces', serif; font-style: italic; font-weight: 700; font-size: 7pt; color: var(--smt-deep); line-height: 1.15; }
+.match-pct { font-family: 'JetBrains Mono', monospace; font-size: 7pt; font-weight: 700; color: var(--olive-dark); margin-top: 1mm; }
+.match-native { font-size: 5.5pt; color: var(--grafito-soft); margin-top: 1mm; line-height: 1.3; }
+.match-native strong { color: var(--smt-deep); }
+.match-source {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 4.5pt;
+  color: var(--grafito-soft);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-top: 1mm;
+}
+
+/* Screen 3 · offline saved */
+.saved-screen {
+  flex: 1;
+  background: white;
+  padding: 3mm;
+  display: flex;
+  flex-direction: column;
+  gap: 2mm;
+}
+.check-block {
+  background: var(--cream);
+  border-left: 1mm solid var(--olive);
+  padding: 3mm;
+  text-align: center;
+}
+.check-icon {
+  width: 9mm;
+  height: 9mm;
+  background: var(--olive-dark);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 2mm;
+  color: white;
+  font-family: 'Fraunces', serif;
+  font-size: 11pt;
+  font-weight: 900;
+}
+.check-title { font-family: 'Fraunces', serif; font-weight: 700; font-size: 7pt; color: var(--smt-deep); }
+.sync-status {
+  background: var(--cream);
+  border-left: 1mm solid var(--gold);
+  padding: 2mm 3mm;
+}
+.sync-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 5.5pt;
+  color: var(--grafito);
+  padding: 0.5mm 0;
+}
+.sync-row strong { color: var(--smt-deep); }
+.sync-pending { color: var(--onic-orange); font-weight: 700; }
+.sync-cta {
+  background: var(--smt-deep);
+  color: white;
+  padding: 2mm;
+  text-align: center;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 6pt;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  margin-top: 1mm;
+  font-weight: 600;
+}
+
+/* Caption under devices */
+.device-captions { display: flex; gap: 3mm; justify-content: center; margin-top: 1mm; }
+.caption-box {
+  width: 53mm;
+  text-align: center;
+}
+.caption-num {
+  font-family: 'Fraunces', serif;
+  font-weight: 900;
+  font-size: 12pt;
+  color: var(--gold);
+  letter-spacing: -0.03em;
+}
+.caption-title {
+  font-family: 'Fraunces', serif;
+  font-weight: 700;
+  font-size: 9pt;
+  color: var(--smt-deep);
+  line-height: 1.15;
+  margin-top: 0.5mm;
+}
+
+/* Flow diagram */
+.flow {
+  background: var(--cream);
+  border-left: 3px solid var(--gold);
+  padding: 4mm 5mm;
+  margin: 4mm 0;
+  display: grid;
+  grid-template-columns: auto auto auto auto auto auto auto auto auto;
+  gap: 2mm;
+  align-items: center;
+  justify-content: center;
+}
+.flow-node {
+  text-align: center;
+  font-size: 7.5pt;
+  line-height: 1.2;
+}
+.flow-node strong { font-family: 'Fraunces', serif; color: var(--smt-deep); display: block; font-size: 8pt; }
+.flow-node small { font-family: 'JetBrains Mono', monospace; font-size: 6pt; color: var(--grafito-soft); }
+.flow-arrow {
+  font-family: 'Fraunces', serif;
+  font-weight: 900;
+  font-size: 14pt;
+  color: var(--gold);
+}
+
+/* Stack tabla */
+.stack-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3px; margin: 3mm 0; }
+.stack-card { background: var(--cream); padding: 3mm 4mm; border-top: 3px solid var(--olive); }
+.stack-card:nth-child(2) { border-top-color: var(--smt-deep); }
+.stack-card:nth-child(3) { border-top-color: var(--onic-orange); }
+.stack-card:nth-child(4) { border-top-color: var(--gold); }
+.stack-tag { font-family: 'JetBrains Mono', monospace; font-size: 7pt; text-transform: uppercase; letter-spacing: 0.15em; color: var(--onic-orange); font-weight: 700; margin-bottom: 1mm; }
+.stack-card:nth-child(2) .stack-tag { color: var(--smt-deep); }
+.stack-card:nth-child(4) .stack-tag { color: #92711a; }
+.stack-title { font-family: 'Fraunces', serif; font-weight: 700; font-size: 10pt; color: var(--smt-deep); margin-bottom: 1mm; }
+.stack-body { font-size: 8.5pt; line-height: 1.45; color: var(--grafito); }
+.stack-body strong { color: var(--smt-deep); }
+
+/* Cifras 5 años */
+.cifras-wrap { margin: 3mm 0 2mm; border: 1px solid var(--beige); }
+.cifras { width: 100%; border-collapse: collapse; font-size: 9pt; }
+.cifras thead th { background: var(--smt-deep); color: white; font-family: 'JetBrains Mono', monospace; font-size: 7.5pt; font-weight: 600; text-transform: uppercase; letter-spacing: 0.12em; padding: 2.5mm 3mm; text-align: left; }
+.cifras thead th:nth-child(2) { text-align: right; }
+.cifras tbody td { padding: 2mm 3mm; border-bottom: 1px solid var(--beige); }
+.cifras tbody td:nth-child(2) { text-align: right; font-family: 'JetBrains Mono', monospace; font-weight: 700; color: var(--smt-deep); }
+.cifras tbody tr:nth-child(even) { background: var(--cream); }
+.cifras tbody tr.total td { background: var(--olive-dark); color: white; font-weight: 700; }
+.cifras tbody tr.total td:nth-child(2) { color: var(--gold-soft); font-size: 11pt; }
+.cifras tbody tr.oficial td:nth-child(2) { color: var(--onic-orange); }
+.cifras-footnote { font-family: 'JetBrains Mono', monospace; font-size: 6.5pt; color: var(--grafito-soft); margin-top: 1mm; }
+
+.mockup-disclaimer {
+  background: rgba(212,160,23,0.1);
+  border-left: 3px solid var(--gold);
+  padding: 2mm 4mm;
+  margin: 3mm 0 0;
+  font-size: 7.5pt;
+  font-family: 'JetBrains Mono', monospace;
+  color: var(--grafito-soft);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+.mockup-disclaimer strong { color: var(--smt-deep); }
+
+.footer-band { background: var(--grafito); color: white; padding: 3mm 14mm; font-family: 'JetBrains Mono', monospace; font-size: 7pt; letter-spacing: 0.1em; text-transform: uppercase; display: flex; justify-content: space-between; align-items: center; position: absolute; bottom: 0; left: 0; right: 0; }
+</style>
+</head>
+<body>
+
+<section class="page">
+
+<header class="hero">
+  <div class="hero-header">
+    <img src="../assets/logo_SMT.png" alt="SMT" class="logo-smt-img">
+    <img src="../assets/logo_ONIC.png" alt="ONIC" class="logo-onic-img">
+  </div>
+  <div class="hero-body">
+    <div class="kicker">MACI · Módulo 3 · Monitoreo Comunitario Biocultural</div>
+    <h1 class="hero-title">Inventarios <em>Biodiversidad</em><br>App soberana ONIC</h1>
+    <p class="hero-sub">App de campo con IA local de identificación de plantas · funciona <strong>online</strong> (modelo entrenado 5.690 especies Catálogo Plantas Útiles) y <strong>offline</strong> (caché SQLite local · sync al servidor ONIC cuando hay conectividad). Datos en servidores propios soberanos.</p>
+  </div>
+</header>
+
+<div class="page-content">
+
+  <div class="section-num">Flujo de campo · 3 momentos</div>
+  <h2 class="section-title">Capturar · <em>identificar</em> · custodiar</h2>
+
+  <div class="devices-row">
+    <!-- iPhone 1 · capture -->
+    <div class="iphone">
+      <div class="screen">
+        <div class="status-bar">21:48 · 4G · 87%</div>
+        <div class="app-title">SMT Bioinventario <span class="app-title-sub">M3</span></div>
+        <div class="viewfinder">
+          <div class="gps-overlay">5.812°N · 67.412°W<br>±3m · 12 sat</div>
+          <div class="plant-sil">𝒫</div>
+        </div>
+        <div class="shutter-area"><div class="shutter"></div></div>
+      </div>
+    </div>
+
+    <!-- iPhone 2 · IA identification -->
+    <div class="iphone">
+      <div class="screen">
+        <div class="status-bar">21:48 · IA local</div>
+        <div class="app-title">Identificando... <span class="app-title-sub">TFLite</span></div>
+        <div class="id-screen">
+          <div class="spinner-box">
+            <div class="spinner-ring"></div>
+            <div class="spinner-label">Procesando · 0.4s</div>
+          </div>
+          <div class="match-card">
+            <div class="match-binomial">Cinchona pubescens</div>
+            <div class="match-pct">match 94,2%</div>
+            <div class="match-native"><strong>"Quina"</strong> · castellano<br><strong>"Yatúa"</strong> · lengua sikuani</div>
+            <div class="match-source">Kew Catálogo · GBIF 32M obs</div>
+          </div>
+          <div class="match-card" style="border-left-color:var(--gold);">
+            <div class="match-binomial" style="color:var(--olive-dark)">Cinchona officinalis</div>
+            <div class="match-pct" style="color:var(--olive-dark)">match 4,1%</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- iPhone 3 · offline saved -->
+    <div class="iphone">
+      <div class="screen">
+        <div class="status-bar">21:48 · offline</div>
+        <div class="app-title">Guardado · SQLite <span class="app-title-sub">M3</span></div>
+        <div class="saved-screen">
+          <div class="check-block">
+            <div class="check-icon">✓</div>
+            <div class="check-title">Registro #1.247<br>guardado</div>
+          </div>
+          <div class="sync-status">
+            <div class="sync-row"><span>Pendientes sync</span><strong class="sync-pending">47</strong></div>
+            <div class="sync-row"><span>Última sync</span><strong>—12h</strong></div>
+            <div class="sync-row"><span>Servidor</span><strong>ONIC PSB</strong></div>
+            <div class="sync-row"><span>Cifrado</span><strong>AES-256</strong></div>
+          </div>
+          <div class="sync-cta">Sync al detectar WiFi</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="device-captions">
+    <div class="caption-box">
+      <div class="caption-num">01</div>
+      <div class="caption-title">Captura geo-localizada en cámara</div>
+    </div>
+    <div class="caption-box">
+      <div class="caption-num">02</div>
+      <div class="caption-title">IA identifica · valida nombres en lengua propia</div>
+    </div>
+    <div class="caption-box">
+      <div class="caption-num">03</div>
+      <div class="caption-title">Cache offline · sync soberano ONIC</div>
+    </div>
+  </div>
+
+  <div class="section-num">Arquitectura</div>
+  <h2 class="section-title">Flujo técnico <em>simple</em></h2>
+
+  <div class="flow">
+    <div class="flow-node"><strong>Cámara</strong><small>iOS · Android</small></div>
+    <span class="flow-arrow">→</span>
+    <div class="flow-node"><strong>IA local</strong><small>TFLite mobile</small></div>
+    <span class="flow-arrow">→</span>
+    <div class="flow-node"><strong>SQLite</strong><small>offline cifrado</small></div>
+    <span class="flow-arrow">→</span>
+    <div class="flow-node"><strong>Sync</strong><small>al detectar WiFi</small></div>
+    <span class="flow-arrow">→</span>
+    <div class="flow-node"><strong>ONIC PSB</strong><small>PostGIS · CARE+FAIR</small></div>
+  </div>
+
+  <div class="section-num">Stack soberano</div>
+  <h2 class="section-title">Cuatro principios <em>operativos</em></h2>
+
+  <div class="stack-grid">
+    <div class="stack-card">
+      <div class="stack-tag">01 · Stack tecnológico</div>
+      <div class="stack-title">TFLite + iNaturalist fallback</div>
+      <div class="stack-body">Modelo local entrenado con <strong>5.690 especies</strong> Catálogo Plantas Útiles + Kew + GBIF. Fallback iNaturalist API solo si hay WiFi y promotor lo autoriza.</div>
+    </div>
+    <div class="stack-card">
+      <div class="stack-tag">02 · Datos</div>
+      <div class="stack-title">GeoJSON + EXIF preservado</div>
+      <div class="stack-body">Cada registro = JSON con coords, taxonomía Kew, foto original, audio opcional (nombre en lengua), validación promotor local.</div>
+    </div>
+    <div class="stack-card">
+      <div class="stack-tag">03 · Soberanía</div>
+      <div class="stack-title">Servidores propios ONIC</div>
+      <div class="stack-body">Hosting <strong>Plataforma Soberana de Datos (Módulo 2)</strong>. Cero cloud externo. Cifrado AES-256 en tránsito y reposo. CARE+FAIR principles operacionalizados.</div>
+    </div>
+    <div class="stack-card">
+      <div class="stack-tag">04 · Devolución</div>
+      <div class="stack-title">Aprobación comunidad antes de público</div>
+      <div class="stack-body">App pide confirmación al Cabildo antes de sync público (GBIF/iNaturalist). El registro queda en custodia indígena hasta que el Cabildo aprueba la difusión externa.</div>
+    </div>
+  </div>
+
+  <div class="section-num">Inversión 5 años · Módulo 3</div>
+  <h2 class="section-title">USD <em>38,47M</em> · cinco años</h2>
+
+  <div class="cifras-wrap">
+    <table class="cifras">
+      <thead>
+        <tr><th>Año · escala</th><th>Inversión USD</th></tr>
+      </thead>
+      <tbody>
+        <tr class="oficial"><td><strong>Año 1</strong> · piloto Matavén + 1 macrorregión · cifra oficial Formulación Fase 1 2025</td><td>7,09M</td></tr>
+        <tr><td>Año 2 · replicación 2 macrorregiones · capacitación promotores</td><td>8,51M</td></tr>
+        <tr><td>Año 3 · expansión 4 macrorregiones · plataforma sync nacional</td><td>9,07M</td></tr>
+        <tr><td>Año 4 · operación + ampliación 5 macrorregiones</td><td>7,50M</td></tr>
+        <tr><td>Año 5 · consolidación · transferencia capacidades a pueblos</td><td>6,30M</td></tr>
+        <tr class="total"><td>Total 5 años · MACI Módulo 3</td><td>USD 38,47M</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="cifras-footnote">Año 1 cifra oficial · años 2—5 proyección razonable con crecimiento moderado para replicación 5 macrorregiones y luego consolidación.</p>
+
+  <div class="mockup-disclaimer">
+    <strong>Mockup ilustrativo</strong> · diseño aprobado en SMT-ONIC · implementación 2026—2027 vía MACI Módulo 3.
+  </div>
+
+</div>
+
+<footer class="footer-band">
+  <span>Wilson Herrera Baltán · Coordinador SMT-ONIC · poblacion@onic.org.co · +57 311 220 1903</span>
+  <span>brasilia2026 · M3</span>
+</footer>
+
+</section>
+
+</body>
+</html>
