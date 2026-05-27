@@ -18,10 +18,16 @@
 }
 * { box-sizing: border-box; }
 html, body { margin: 0; padding: 0; }
-body { font-family: 'DM Sans', system-ui, sans-serif; color: var(--grafito); line-height: 1.45; background: white; font-size: 10pt; -webkit-font-smoothing: antialiased; }
+body {
+  font-family: 'DM Sans', system-ui, sans-serif;
+  color: var(--grafito);
+  line-height: 1.4;
+  background: white;
+  -webkit-font-smoothing: antialiased;
+}
 .mono { font-family: 'JetBrains Mono', monospace; font-variant-numeric: tabular-nums; }
 
-/* Letter portrait · 8.5in × 11in · NO margin/padding on .page */
+/* Letter portrait fixed · NO grids · vertical flow */
 .page {
   width: 8.5in;
   height: 11in;
@@ -33,14 +39,13 @@ body { font-family: 'DM Sans', system-ui, sans-serif; color: var(--grafito); lin
   flex-direction: column;
 }
 
-/* Hero band · compact */
+/* ──────── HERO BAND ──────── */
 .hero {
-  background: linear-gradient(135deg, var(--smt-deep-dark) 0%, var(--smt-deep) 50%, var(--olive-dark) 100%);
+  background: linear-gradient(135deg, var(--smt-deep-dark) 0%, var(--smt-deep) 55%, var(--olive-dark) 100%);
   color: white;
-  padding: 0.5in 0.65in 0.45in;
+  padding: 0.45in 0.6in 0.4in;
   position: relative;
-  overflow: hidden;
-  flex-shrink: 0;
+  text-align: center;
 }
 .hero::before {
   content: '';
@@ -49,204 +54,203 @@ body { font-family: 'DM Sans', system-ui, sans-serif; color: var(--grafito); lin
   background-image: repeating-linear-gradient(45deg, rgba(255,255,255,0.03) 0 2px, transparent 2px 14px);
   pointer-events: none;
 }
-.hero-header {
+.hero-top {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 0.2in;
+  margin-bottom: 0.25in;
   position: relative;
   z-index: 2;
 }
-.logo-smt-img { height: 32px; filter: brightness(0) invert(1); opacity: 0.95; }
-.logo-onic-img { height: 38px; filter: brightness(0) invert(1); opacity: 0.95; }
-.event-stamp {
+.logo-smt-img {
+  height: 44px;
+  background: white;
+  padding: 6px 12px;
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+  object-fit: contain;
+  display: block;
+}
+.event-stamp-corner {
   font-family: 'JetBrains Mono', monospace;
-  font-size: 8.5pt;
+  font-size: 9pt;
   text-transform: uppercase;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.18em;
   color: var(--gold-soft);
-  border-top: 1px solid rgba(212,160,23,0.4);
-  border-bottom: 1px solid rgba(212,160,23,0.4);
-  padding: 4px 0;
-  display: inline-block;
-  position: relative;
-  z-index: 2;
+  border: 1px solid rgba(212,160,23,0.5);
+  padding: 6px 12px;
+  font-weight: 700;
 }
 .hero-title {
   font-family: 'Fraunces', serif;
   font-weight: 900;
-  font-size: 30pt;
-  line-height: 0.98;
-  letter-spacing: -0.025em;
-  margin: 0.18in 0 0.1in;
+  font-size: 48pt;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  margin: 0 0 0.08in 0;
   color: white;
   position: relative;
   z-index: 2;
 }
-.hero-title em { font-style: italic; font-weight: 400; color: var(--gold-soft); }
-.hero-sub {
+.hero-subtitle {
   font-family: 'Fraunces', serif;
   font-style: italic;
-  font-size: 13pt;
-  color: rgba(255,255,255,0.92);
+  font-size: 18pt;
+  color: var(--gold-soft);
+  font-weight: 400;
+  margin: 0 0 0.1in 0;
   position: relative;
   z-index: 2;
+}
+.hero-tagline {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 9.5pt;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  color: rgba(255,255,255,0.9);
   margin: 0;
-  line-height: 1.3;
+  position: relative;
+  z-index: 2;
 }
 
-/* QR central section · explicit columns */
+/* ──────── QR CENTRAL ──────── */
 .qr-section {
-  padding: 0.4in 0.65in 0.3in;
-  display: grid;
-  grid-template-columns: 2.7in 1fr;
-  gap: 0.35in;
+  padding: 0.4in 0.6in 0.3in;
+  text-align: center;
+  background: white;
+}
+.qr-eyebrow {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11pt;
+  text-transform: uppercase;
+  letter-spacing: 0.24em;
+  color: var(--onic-orange);
+  font-weight: 700;
+  margin-bottom: 0.15in;
+  display: flex;
   align-items: center;
-  flex-shrink: 0;
+  gap: 12px;
+  justify-content: center;
+}
+.qr-eyebrow::before, .qr-eyebrow::after {
+  content: '';
+  width: 30px;
+  height: 1px;
+  background: var(--onic-orange);
 }
 .qr-wrap {
+  display: inline-block;
   background: white;
-  padding: 0.22in;
-  border: 4px solid var(--gold);
-  box-shadow: 0 6px 0 var(--smt-deep), 0 12px 24px rgba(10,63,51,0.15);
-  width: 2.7in;
-  height: 2.7in;
+  padding: 0.18in;
+  border: 5px solid var(--gold);
+  box-shadow: 0 6px 0 var(--smt-deep), 0 14px 28px rgba(10,63,51,0.18);
+  margin-bottom: 0.18in;
 }
 .qr-wrap img {
   display: block;
-  width: 100%;
-  height: 100%;
+  width: 2.6in;
+  height: 2.6in;
   object-fit: contain;
 }
-.qr-callout-eyebrow {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 8.5pt;
-  text-transform: uppercase;
-  letter-spacing: 0.18em;
-  color: var(--onic-orange);
-  font-weight: 700;
-  margin-bottom: 0.1in;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-.qr-callout-eyebrow::before { content: ''; width: 22px; height: 1px; background: var(--onic-orange); flex-shrink: 0; }
-.qr-callout-title {
-  font-family: 'Fraunces', serif;
-  font-weight: 800;
-  font-size: 16pt;
-  line-height: 1.1;
-  color: var(--smt-deep);
-  letter-spacing: -0.015em;
-  margin: 0 0 0.12in 0;
-}
-.qr-callout-title em { font-style: italic; font-weight: 400; color: var(--olive); }
 .qr-url {
   font-family: 'JetBrains Mono', monospace;
-  font-size: 9pt;
+  font-size: 10.5pt;
   font-weight: 600;
   color: var(--smt-deep);
   background: var(--cream);
-  padding: 0.07in 0.13in;
+  padding: 0.08in 0.18in;
   display: inline-block;
   border-left: 3px solid var(--gold);
-  margin-bottom: 0.12in;
-  word-break: break-all;
+  border-right: 3px solid var(--gold);
 }
-.qr-callout-desc {
-  font-size: 9pt;
-  line-height: 1.5;
-  color: var(--grafito);
-}
-.qr-callout-desc strong { color: var(--smt-deep); font-weight: 600; }
 
-/* Modulos band · compact */
-.modulos-band {
-  background: var(--cream);
-  padding: 0.25in 0.65in 0.2in;
-  border-top: 2px solid var(--smt-deep);
-  border-bottom: 2px solid var(--smt-deep);
-  flex-shrink: 0;
+/* ──────── ONIC LOGO BAND · BIG ──────── */
+.onic-band {
+  background: white;
+  padding: 0.18in 0.6in;
+  text-align: center;
+  border-top: 1px solid var(--beige);
+  border-bottom: 1px solid var(--beige);
 }
-.modulos-eyebrow {
+.logo-onic-big {
+  height: 68px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
+}
+.onic-label {
   font-family: 'JetBrains Mono', monospace;
   font-size: 8pt;
   text-transform: uppercase;
-  letter-spacing: 0.2em;
-  color: var(--onic-orange);
-  font-weight: 700;
-  margin-bottom: 0.05in;
+  letter-spacing: 0.22em;
+  color: var(--grafito-soft);
+  margin-top: 0.05in;
+  font-weight: 600;
+}
+
+/* ──────── MODULOS GRID ──────── */
+.modulos-band {
+  background: var(--cream);
+  padding: 0.22in 0.6in 0.2in;
+  border-top: 2px solid var(--smt-deep);
 }
 .modulos-title {
   font-family: 'Fraunces', serif;
   font-weight: 800;
-  font-size: 14pt;
+  font-size: 15pt;
   color: var(--smt-deep);
-  letter-spacing: -0.015em;
-  margin: 0 0 0.15in 0;
-  line-height: 1.1;
+  margin: 0 0 0.12in 0;
+  text-align: center;
+  letter-spacing: -0.01em;
 }
 .modulos-title em { font-style: italic; font-weight: 400; color: var(--olive); }
 .modulos-list {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 0.08in;
+  display: flex;
+  justify-content: space-between;
+  gap: 0.1in;
 }
 .modulo {
+  flex: 1;
   background: white;
   border-top: 3px solid var(--olive);
-  padding: 0.1in 0.1in 0.13in;
+  padding: 0.1in 0.1in 0.1in;
   min-width: 0;
 }
 .modulo:nth-child(odd) { border-top-color: var(--smt-deep); }
 .modulo-num {
   font-family: 'Fraunces', serif;
   font-weight: 900;
-  font-size: 16pt;
+  font-size: 18pt;
   color: var(--gold);
   line-height: 1;
   letter-spacing: -0.03em;
-  margin-bottom: 0.03in;
 }
 .modulo-titulo {
   font-family: 'Fraunces', serif;
   font-weight: 700;
-  font-size: 8.5pt;
+  font-size: 9pt;
   color: var(--smt-deep);
   line-height: 1.15;
-  margin-bottom: 0.04in;
-}
-.modulo-desc {
-  font-size: 7pt;
-  line-height: 1.35;
-  color: var(--grafito-soft);
+  margin-top: 0.05in;
 }
 
-/* KPI strip · compact */
+/* ──────── KPI STRIP ──────── */
 .kpi-strip {
   background: var(--smt-deep);
   color: white;
-  padding: 0.28in 0.65in;
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 0.2in;
+  padding: 0.18in 0.6in;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
   text-align: center;
-  flex-shrink: 0;
+  gap: 0.2in;
 }
-.kpi { position: relative; min-width: 0; }
-.kpi:not(:last-child)::after {
-  content: '';
-  position: absolute;
-  right: -0.1in;
-  top: 15%;
-  bottom: 15%;
-  width: 1px;
-  background: rgba(212,160,23,0.3);
-}
+.kpi { min-width: 0; }
 .kpi-num {
   font-family: 'Fraunces', serif;
   font-weight: 900;
-  font-size: 19pt;
+  font-size: 17pt;
   line-height: 1;
   color: var(--gold-soft);
   letter-spacing: -0.02em;
@@ -256,54 +260,18 @@ body { font-family: 'DM Sans', system-ui, sans-serif; color: var(--grafito); lin
   font-family: 'JetBrains Mono', monospace;
   font-size: 6.5pt;
   text-transform: uppercase;
-  letter-spacing: 0.12em;
-  margin-top: 0.07in;
+  letter-spacing: 0.14em;
+  margin-top: 0.05in;
   color: rgba(255,255,255,0.8);
-  line-height: 1.35;
+  line-height: 1.3;
 }
+.kpi-sep { width: 1px; height: 28px; background: rgba(212,160,23,0.3); }
 
-/* Pull quote · compact */
-.pullquote-bottom {
-  padding: 0.28in 0.65in 0.22in;
-  display: flex;
-  gap: 0.2in;
-  align-items: flex-start;
-  flex: 1;
-}
-.pq-icon {
-  font-family: 'Fraunces', serif;
-  font-weight: 900;
-  font-size: 44pt;
-  color: var(--gold);
-  line-height: 0.9;
-  opacity: 0.35;
-  flex-shrink: 0;
-}
-.pq-text {
-  font-family: 'Fraunces', serif;
-  font-style: italic;
-  font-size: 12pt;
-  line-height: 1.4;
-  color: var(--smt-deep);
-  flex: 1;
-}
-.pq-attr {
-  display: block;
-  margin-top: 0.1in;
-  font-family: 'JetBrains Mono', monospace;
-  font-style: normal;
-  font-size: 7.5pt;
-  text-transform: uppercase;
-  letter-spacing: 0.15em;
-  color: var(--olive-dark);
-  font-weight: 600;
-}
-
-/* Footer · in flow (not absolute) */
+/* ──────── FOOTER ──────── */
 .footer-band {
   background: var(--grafito);
   color: white;
-  padding: 0.16in 0.65in;
+  padding: 0.12in 0.6in;
   font-family: 'JetBrains Mono', monospace;
   font-size: 8pt;
   letter-spacing: 0.08em;
@@ -311,104 +279,96 @@ body { font-family: 'DM Sans', system-ui, sans-serif; color: var(--grafito); lin
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex-shrink: 0;
+  margin-top: auto;
 }
-.footer-contact-name { color: var(--gold-soft); font-weight: 700; }
+.footer-name { color: var(--gold-soft); font-weight: 700; }
 </style>
 </head>
 <body>
 
 <section class="page">
 
-<header class="hero">
-  <div class="hero-header">
-    <img src="assets/logo_SMT.png" alt="SMT" class="logo-smt-img">
-    <img src="assets/logo_ONIC.png" alt="ONIC" class="logo-onic-img">
-  </div>
-  <div class="event-stamp">Cumbre RRI Brasília · 26—29 mayo 2026</div>
-  <h1 class="hero-title">MACI<br><em>Marco de Acción para Comunidades Indígenas</em></h1>
-  <p class="hero-sub">Pacto para Volver al Origen · XI Congreso ONIC</p>
-</header>
+  <!-- HERO -->
+  <header class="hero">
+    <div class="hero-top">
+      <img src="assets/logo_SMT.png" alt="SMT" class="logo-smt-img">
+      <div class="event-stamp-corner">RRI Brasília · 26—29 may 2026</div>
+    </div>
+    <h1 class="hero-title">MACI</h1>
+    <p class="hero-subtitle">Marco de Acción para Comunidades Indígenas</p>
+    <p class="hero-tagline">Pacto para Volver al Origen · XI Congreso ONIC</p>
+  </header>
 
-<div class="qr-section">
-  <div class="qr-wrap">
-    <img src="qr_codes/Q01_landing.png" alt="QR · brasilia2026.html">
-  </div>
-  <div>
-    <div class="qr-callout-eyebrow">Escaneá · Conocé MACI</div>
-    <h2 class="qr-callout-title">El vehículo bancable que <em>operacionaliza</em> el mandato indígena 2026—2030</h2>
+  <!-- QR CENTRAL -->
+  <div class="qr-section">
+    <div class="qr-eyebrow">Escaneá · Conocé MACI</div>
+    <div class="qr-wrap">
+      <img src="qr_codes/Q01_landing.png" alt="QR · brasilia2026.html">
+    </div>
     <div class="qr-url">wilsonherrera77.github.io/MACI/brasilia2026.html</div>
-    <p class="qr-callout-desc">Kit multilingüe ES/EN/PT/FR · <strong>5 macrorregiones</strong> · <strong>959 resguardos · 31,3% territorio</strong> nacional · dossiers Matavén Verra+CCB · Plantas Útiles 5.690 especies · U'wa SU-039 · Línea Negra · Mesquita ONIC-CONAQ.</p>
   </div>
-</div>
 
-<div class="modulos-band">
-  <div class="modulos-eyebrow">5 módulos en 60 segundos</div>
-  <h3 class="modulos-title">Cinco perfiles operativos · USD <em>60—80M / 5 años</em></h3>
-  <div class="modulos-list">
-    <div class="modulo">
-      <div class="modulo-num">1</div>
-      <div class="modulo-titulo">Gobernabilidad y Soberanía</div>
-      <div class="modulo-desc">CREA · CLPI · ABS Nagoya · armonización 5 macrorregiones.</div>
-    </div>
-    <div class="modulo">
-      <div class="modulo-num">2</div>
-      <div class="modulo-titulo">Plataforma Soberana</div>
-      <div class="modulo-desc">Datos PSB · catálogo · APIs · CARE+FAIR.</div>
-    </div>
-    <div class="modulo">
-      <div class="modulo-num">3</div>
-      <div class="modulo-titulo">Monitoreo Comunitario</div>
-      <div class="modulo-desc">Inventarios bioculturales · QA/QC indígena.</div>
-    </div>
-    <div class="modulo">
-      <div class="modulo-num">4</div>
-      <div class="modulo-titulo">Genética y Biobanco</div>
-      <div class="modulo-desc">Nanopore in-situ · cadena custodia indígena.</div>
-    </div>
-    <div class="modulo">
-      <div class="modulo-num">5</div>
-      <div class="modulo-titulo">Bioeconomía</div>
-      <div class="modulo-desc">Bionegocios · blended finance · ABS Nagoya.</div>
-    </div>
+  <!-- ONIC LOGO BAND -->
+  <div class="onic-band">
+    <img src="assets/logo_ONIC.png" alt="Organización Nacional Indígena de Colombia" class="logo-onic-big">
+    <div class="onic-label">Organización Nacional Indígena de Colombia · 102 pueblos · 5 macrorregiones</div>
   </div>
-</div>
 
-<div class="kpi-strip">
-  <div class="kpi">
-    <div class="kpi-num">959</div>
-    <div class="kpi-lbl">Resguardos ANT 2025—2026</div>
+  <!-- 5 MODULOS -->
+  <div class="modulos-band">
+    <h3 class="modulos-title">5 módulos operativos · USD <em>60—80M / 5 años</em></h3>
+    <div class="modulos-list">
+      <div class="modulo">
+        <div class="modulo-num">1</div>
+        <div class="modulo-titulo">Gobernabilidad y Soberanía</div>
+      </div>
+      <div class="modulo">
+        <div class="modulo-num">2</div>
+        <div class="modulo-titulo">Plataforma Soberana de Datos</div>
+      </div>
+      <div class="modulo">
+        <div class="modulo-num">3</div>
+        <div class="modulo-titulo">Monitoreo Comunitario</div>
+      </div>
+      <div class="modulo">
+        <div class="modulo-num">4</div>
+        <div class="modulo-titulo">Genética y Biobanco</div>
+      </div>
+      <div class="modulo">
+        <div class="modulo-num">5</div>
+        <div class="modulo-titulo">Bioeconomía</div>
+      </div>
+    </div>
   </div>
-  <div class="kpi">
-    <div class="kpi-num">31,3<em>%</em></div>
-    <div class="kpi-lbl">Territorio nacional</div>
-  </div>
-  <div class="kpi">
-    <div class="kpi-num">102</div>
-    <div class="kpi-lbl">Pueblos representados</div>
-  </div>
-  <div class="kpi">
-    <div class="kpi-num">5.690</div>
-    <div class="kpi-lbl">Especies útiles Kew+GBIF</div>
-  </div>
-  <div class="kpi">
-    <div class="kpi-num">1,85<em>M</em></div>
-    <div class="kpi-lbl">ha Matavén · VCS+CCB</div>
-  </div>
-</div>
 
-<div class="pullquote-bottom">
-  <span class="pq-icon">"</span>
-  <div class="pq-text">
-    Volver al origen — cambiar las maneras ambiciosas, violentas, egoístas e irresponsables de existir.
-    <span class="pq-attr">Declaración Sabios y Sabias COP16 · Centro Java Liviana · Pueblo Muysca · oct 2024</span>
+  <!-- KPI STRIP -->
+  <div class="kpi-strip">
+    <div class="kpi">
+      <div class="kpi-num">959</div>
+      <div class="kpi-lbl">Resguardos<br>ANT 2025—2026</div>
+    </div>
+    <div class="kpi-sep"></div>
+    <div class="kpi">
+      <div class="kpi-num">31,3<em>%</em></div>
+      <div class="kpi-lbl">Territorio<br>nacional indígena</div>
+    </div>
+    <div class="kpi-sep"></div>
+    <div class="kpi">
+      <div class="kpi-num">5.690</div>
+      <div class="kpi-lbl">Especies útiles<br>Kew + GBIF</div>
+    </div>
+    <div class="kpi-sep"></div>
+    <div class="kpi">
+      <div class="kpi-num">1,85<em>M</em></div>
+      <div class="kpi-lbl">ha Matavén<br>Verra+CCB</div>
+    </div>
   </div>
-</div>
 
-<footer class="footer-band">
-  <span><span class="footer-contact-name">Wilson Herrera Baltán</span> · Coordinador SMT-ONIC · WhatsApp +57 311 220 1903 · poblacion@onic.org.co</span>
-  <span>brasilia2026 · MACI</span>
-</footer>
+  <!-- FOOTER -->
+  <footer class="footer-band">
+    <span><span class="footer-name">Wilson Herrera Baltán</span> · Coordinador SMT-ONIC · +57 311 220 1903 · poblacion@onic.org.co</span>
+    <span>brasilia2026 · MACI</span>
+  </footer>
 
 </section>
 

@@ -40,8 +40,8 @@ body { font-family: 'DM Sans', system-ui, sans-serif; color: var(--grafito); lin
 .hero::before { content: ''; position: absolute; inset: 0; background-image: repeating-linear-gradient(45deg, rgba(255,255,255,0.025) 0 2px, transparent 2px 14px); pointer-events: none; }
 .hero::after { content: ''; position: absolute; right: -80px; bottom: -80px; width: 280px; height: 280px; background: radial-gradient(circle, rgba(212,160,23,0.18) 0%, transparent 70%); pointer-events: none; }
 .hero-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 5mm; position: relative; z-index: 2; }
-.logo-smt-img { height: 30px; filter: brightness(0) invert(1); opacity: 0.95; }
-.logo-onic-img { height: 36px; filter: brightness(0) invert(1); opacity: 0.95; }
+.logo-smt-img { height: 30px; background: white; padding: 4px 8px; border-radius: 4px; box-shadow: 0 2px 6px rgba(0,0,0,0.18); }
+.logo-onic-img { height: 36px; background: white; padding: 3px 6px; border-radius: 50%; box-shadow: 0 2px 6px rgba(0,0,0,0.18); }
 .event-stamp { font-family: 'JetBrains Mono', monospace; font-size: 7.5pt; text-transform: uppercase; letter-spacing: 0.18em; color: var(--gold-soft); border-top: 1px solid rgba(212,160,23,0.4); border-bottom: 1px solid rgba(212,160,23,0.4); padding: 3px 0; display: inline-block; }
 .hero-body { position: relative; z-index: 2; }
 
