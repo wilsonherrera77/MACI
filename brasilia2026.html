@@ -684,6 +684,93 @@ body {
   .ce-kpi { border-left: none; border-top: 0.5px solid rgba(125,138,60,0.35); }
   .ce-kpi:first-child { border-top: none; }
 }
+
+/* ============================================
+   BLOQUES VISUALES NUEVOS · Mapas + Charts
+   ============================================ */
+.ce-block-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 72px;
+  margin-bottom: 12px;
+}
+.ce-block-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 700;
+  font-size: 11px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--olive);
+  margin: 0;
+  white-space: nowrap;
+}
+.ce-block-rule {
+  flex: 1;
+  height: 1px;
+  background: var(--gold);
+}
+.ce-block-title {
+  font-family: 'Fraunces', serif;
+  font-weight: 600;
+  font-size: 28px;
+  line-height: 1.2;
+  color: var(--smt-deep);
+  margin: 0 0 28px 0;
+  text-wrap: pretty;
+}
+
+.ce-maps-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+}
+.ce-gobernanza-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+}
+
+.ce-figure {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+.ce-figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--olive);
+  background: var(--beige-cream);
+}
+.ce-figure figcaption {
+  font-family: 'DM Sans', sans-serif;
+  font-style: italic;
+  font-size: 12px;
+  color: var(--olive-dark);
+  margin-top: 10px;
+  line-height: 1.45;
+  padding: 0 4px;
+}
+.ce-figure-wide {
+  margin-bottom: 36px;
+}
+.ce-figure-wide img {
+  border: 1px solid var(--smt-deep);
+}
+
+@media (max-width: 900px) {
+  .ce-maps-grid,
+  .ce-gobernanza-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .ce-block-eyebrow {
+    margin-top: 56px;
+    flex-wrap: wrap;
+  }
+  .ce-block-title { font-size: 24px; }
+}
 </style>
 </head>
 <body class="bg-paper text-grafito">
@@ -1170,6 +1257,57 @@ body {
     </div>
   </div>
 
+  <!-- ========= ENRIQUECIMIENTO VISUAL · 6 PNGs DEL DOSSIER ========= -->
+
+  <!-- Bloque 1 · Contexto territorial · 2 mapas side-by-side -->
+  <div class="ce-block-eyebrow">
+    <p class="ce-block-label" data-i18n="mataven_block_contexto">Contexto territorial</p>
+    <span class="ce-block-rule"></span>
+  </div>
+  <h3 class="ce-block-title" data-i18n="mataven_block_contexto_title">Dónde queda · contexto regional y macrorregional</h3>
+  <div class="ce-maps-grid">
+    <figure class="ce-figure">
+      <img src="assets/mataven_mapa_contexto.png" alt="Contexto sudamericano · Matavén en Colombia" loading="lazy">
+      <figcaption data-i18n="mataven_caption_contexto">Ubicación del proyecto en el escudo Guayanés colombiano · 4.25°N -68.87°W</figcaption>
+    </figure>
+    <figure class="ce-figure">
+      <img src="assets/mataven_mapa_macroregion.png" alt="Macrorregión Vichada · polígono Matavén" loading="lazy">
+      <figcaption data-i18n="mataven_caption_macroregion">Polígono dentro del departamento del Vichada · colindancias Guainía · Meta · Venezuela</figcaption>
+    </figure>
+  </div>
+
+  <!-- Bloque 2 · Portafolio créditos · bar chart + trayectoria CO2 -->
+  <div class="ce-block-eyebrow">
+    <p class="ce-block-label" data-i18n="mataven_block_portafolio">Portafolio REDD+</p>
+    <span class="ce-block-rule"></span>
+  </div>
+  <h3 class="ce-block-title" data-i18n="mataven_block_portafolio_title">Lo que ya se emitió · y la trayectoria de 30 años</h3>
+  <figure class="ce-figure ce-figure-wide">
+    <img src="assets/mataven_chart_vintages.png" alt="Bar chart VCUs emitidos por vintage 2013-2022" loading="lazy">
+    <figcaption data-i18n="mataven_caption_vintages">9.071.843 VCUs emitidos en 3 vintages (2013-2019) · vintage 2020-2022 en certificación VM0048</figcaption>
+  </figure>
+  <figure class="ce-figure ce-figure-wide">
+    <img src="assets/mataven_chart_co2_trajectory.png" alt="Trayectoria CO₂ acumulada 2013-2042" loading="lazy">
+    <figcaption data-i18n="mataven_caption_trayectoria">~108,5 MtCO₂e reducidos sobre los 30 años de acreditación · 3.622.352 tCO₂e/año estimado canónico Verra</figcaption>
+  </figure>
+
+  <!-- Bloque 3 · Gobernanza + horizonte · donut + timeline -->
+  <div class="ce-block-eyebrow">
+    <p class="ce-block-label" data-i18n="mataven_block_gobernanza">Gobernanza y horizonte</p>
+    <span class="ce-block-rule"></span>
+  </div>
+  <h3 class="ce-block-title" data-i18n="mataven_block_gobernanza_title">Seis pueblos custodios · 30 años de operación verificada</h3>
+  <div class="ce-gobernanza-grid">
+    <figure class="ce-figure">
+      <img src="assets/mataven_chart_etnias.png" alt="6 etnias custodias" loading="lazy">
+      <figcaption data-i18n="mataven_caption_etnias">ACATISEMA · 6 pueblos custodios · 4 familias lingüísticas · igualdad decisional</figcaption>
+    </figure>
+    <figure class="ce-figure">
+      <img src="assets/mataven_timeline_2013_2042.png" alt="Timeline horizontal 2013-2042" loading="lazy">
+      <figcaption data-i18n="mataven_caption_timeline">4 vintages verificados + pipeline 2023-2042 · doble auditor ICONTEC + KBS</figcaption>
+    </figure>
+  </div>
+
 </section>
 
 <!-- ============== PLANTAS UTILES ============== -->
@@ -1480,6 +1618,18 @@ const i18n = {
     mataven_kpi_anos_label: '2013 → 2042',
     mataven_kpi_buffer_label: 'buffer pool',
     mataven_kpi_sello_label: 'triple sello premium',
+    mataven_block_contexto: 'Contexto territorial',
+    mataven_block_contexto_title: 'Dónde queda · contexto regional y macrorregional',
+    mataven_caption_contexto: 'Ubicación del proyecto en el escudo Guayanés colombiano · 4.25°N -68.87°W',
+    mataven_caption_macroregion: 'Polígono dentro del departamento del Vichada · colindancias Guainía · Meta · Venezuela',
+    mataven_block_portafolio: 'Portafolio REDD+',
+    mataven_block_portafolio_title: 'Lo que ya se emitió · y la trayectoria de 30 años',
+    mataven_caption_vintages: '9.071.843 VCUs emitidos en 3 vintages (2013-2019) · vintage 2020-2022 en certificación VM0048',
+    mataven_caption_trayectoria: '~108,5 MtCO₂e reducidos sobre los 30 años de acreditación · 3.622.352 tCO₂e/año estimado canónico Verra',
+    mataven_block_gobernanza: 'Gobernanza y horizonte',
+    mataven_block_gobernanza_title: 'Seis pueblos custodios · 30 años de operación verificada',
+    mataven_caption_etnias: 'ACATISEMA · 6 pueblos custodios · 4 familias lingüísticas · igualdad decisional',
+    mataven_caption_timeline: '4 vintages verificados + pipeline 2023-2042 · doble auditor ICONTEC + KBS',
     plantas_title: 'Catálogo Plantas Útiles × Resguardos 2024',
     plantas_lead: 'Base científica con aval internacional (Kew Gardens · GBIF) cruzada con resguardos indígenas colombianos. Conocimiento tradicional + ciencia formal.',
     plantas_stat_1: 'especies únicas',
@@ -1556,6 +1706,18 @@ const i18n = {
     mataven_kpi_anos_label: '2013 → 2042',
     mataven_kpi_buffer_label: 'buffer pool',
     mataven_kpi_sello_label: 'triple premium label',
+    mataven_block_contexto: 'Territorial context',
+    mataven_block_contexto_title: 'Where it is · regional and macro-regional context',
+    mataven_caption_contexto: 'Project location on the Colombian Guiana Shield · 4.25°N -68.87°W',
+    mataven_caption_macroregion: 'Polygon within Vichada department · borders with Guainía · Meta · Venezuela',
+    mataven_block_portafolio: 'REDD+ Portfolio',
+    mataven_block_portafolio_title: 'What has been issued · and the 30-year trajectory',
+    mataven_caption_vintages: '9,071,843 VCUs issued across 3 vintages (2013-2019) · 2020-2022 vintage under VM0048 certification',
+    mataven_caption_trayectoria: '~108.5 MtCO₂e reduced over 30 years of crediting · 3,622,352 tCO₂e/year canonical Verra estimate',
+    mataven_block_gobernanza: 'Governance and horizon',
+    mataven_block_gobernanza_title: 'Six steward peoples · 30 years of verified operation',
+    mataven_caption_etnias: 'ACATISEMA · 6 steward peoples · 4 linguistic families · equal decisional weight',
+    mataven_caption_timeline: '4 verified vintages + pipeline 2023-2042 · dual auditor ICONTEC + KBS',
     plantas_title: 'Useful Plants × Indigenous Lands Catalogue 2024',
     plantas_lead: 'Internationally backed scientific base (Kew Gardens · GBIF) cross-tabulated with Colombian Indigenous lands. Traditional knowledge + formal science.',
     plantas_stat_1: 'unique species',
@@ -1632,6 +1794,18 @@ const i18n = {
     mataven_kpi_anos_label: '2013 → 2042',
     mataven_kpi_buffer_label: 'buffer pool',
     mataven_kpi_sello_label: 'tríplice selo premium',
+    mataven_block_contexto: 'Contexto territorial',
+    mataven_block_contexto_title: 'Onde fica · contexto regional e macrorregional',
+    mataven_caption_contexto: 'Localização do projeto no escudo Guianense colombiano · 4.25°N -68.87°W',
+    mataven_caption_macroregion: 'Polígono dentro do departamento do Vichada · limites com Guainía · Meta · Venezuela',
+    mataven_block_portafolio: 'Portfólio REDD+',
+    mataven_block_portafolio_title: 'O que já foi emitido · e a trajetória de 30 anos',
+    mataven_caption_vintages: '9.071.843 VCUs emitidos em 3 safras (2013-2019) · safra 2020-2022 em certificação VM0048',
+    mataven_caption_trayectoria: '~108,5 MtCO₂e reduzidos ao longo dos 30 anos de acreditação · 3.622.352 tCO₂e/ano estimativa canônica Verra',
+    mataven_block_gobernanza: 'Governança e horizonte',
+    mataven_block_gobernanza_title: 'Seis povos custódios · 30 anos de operação verificada',
+    mataven_caption_etnias: 'ACATISEMA · 6 povos custódios · 4 famílias linguísticas · igualdade decisional',
+    mataven_caption_timeline: '4 safras verificadas + pipeline 2023-2042 · duplo auditor ICONTEC + KBS',
     plantas_title: 'Catálogo Plantas Úteis × Resguardos 2024',
     plantas_lead: 'Base científica com aval internacional (Kew Gardens · GBIF).',
     plantas_stat_1: 'espécies únicas',
@@ -1708,6 +1882,18 @@ const i18n = {
     mataven_kpi_anos_label: '2013 → 2042',
     mataven_kpi_buffer_label: 'buffer pool',
     mataven_kpi_sello_label: 'triple label premium',
+    mataven_block_contexto: 'Contexte territorial',
+    mataven_block_contexto_title: 'Où se trouve · contexte régional et macro-régional',
+    mataven_caption_contexto: 'Localisation du projet sur le bouclier guyanais colombien · 4,25°N -68,87°W',
+    mataven_caption_macroregion: 'Polygone à l\'intérieur du département du Vichada · frontières Guainía · Meta · Venezuela',
+    mataven_block_portafolio: 'Portefeuille REDD+',
+    mataven_block_portafolio_title: 'Ce qui a été émis · et la trajectoire de 30 ans',
+    mataven_caption_vintages: '9 071 843 VCUs émis sur 3 millésimes (2013-2019) · millésime 2020-2022 en certification VM0048',
+    mataven_caption_trayectoria: '~108,5 MtCO₂e réduites sur les 30 ans d\'accréditation · 3 622 352 tCO₂e/an estimation canonique Verra',
+    mataven_block_gobernanza: 'Gouvernance et horizon',
+    mataven_block_gobernanza_title: 'Six peuples gardiens · 30 ans d\'opération vérifiée',
+    mataven_caption_etnias: 'ACATISEMA · 6 peuples gardiens · 4 familles linguistiques · égalité décisionnelle',
+    mataven_caption_timeline: '4 millésimes vérifiés + pipeline 2023-2042 · double auditeur ICONTEC + KBS',
     plantas_title: 'Catalogue Plantes Utiles × Resguardos 2024',
     plantas_lead: 'Base scientifique soutenue internationalement.',
     plantas_stat_1: 'espèces uniques',
