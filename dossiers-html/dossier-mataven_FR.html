@@ -477,6 +477,71 @@ body { font-family: 'DM Sans', system-ui, sans-serif; color: var(--grafito); bac
   color:var(--olive-dark);
   margin-top:3mm;
 }
+
+/* ============================================
+   KPIs strip · variante 4 columnas (canónica)
+   ============================================ */
+.kpis.kpis-4 { display:grid; grid-template-columns:repeat(4, 1fr); gap:0; border-top:1pt solid var(--gold); border-bottom:1pt solid var(--gold); background:var(--cream); margin:4mm 0; }
+.kpis.kpis-4 .kpi { padding:5mm 4mm; border-left:0.3pt solid var(--olive); text-align:left; }
+.kpis.kpis-4 .kpi:first-child { border-left:none; }
+.kpis.kpis-4 .kpi-num { font-family:'Fraunces',serif; font-weight:700; font-size:22pt; color:var(--smt-deep); letter-spacing:-0.02em; line-height:1; font-variant-numeric:tabular-nums; }
+.kpis.kpis-4 .kpi-num em { font-size:14pt; color:var(--olive-dark); font-style:normal; font-weight:500; }
+.kpis.kpis-4 .kpi-lbl { font-family:'DM Sans',sans-serif; font-size:8pt; color:var(--olive-dark); margin-top:2mm; letter-spacing:0.02em; }
+
+/* 6 pueblos en grid 3x2 */
+.pueblos.pueblos-6 { display:grid; grid-template-columns:repeat(3, 1fr); gap:2mm; }
+.pueblos.pueblos-6 .pueblo { padding:3mm; }
+
+/* ============================================
+   PAGE 03 · MAPAS CONTEXTUALES
+   ============================================ */
+.pg3-wrap { width:210mm; height:297mm; background:#ffffff; padding:14mm; display:flex; flex-direction:column; position:relative; }
+.pg3-header { height:15mm; display:flex; flex-direction:column; justify-content:flex-end; flex:0 0 auto; }
+.pg3-header__row { display:flex; align-items:center; gap:6mm; }
+.pg3-kicker, .pg4-kicker, .pg5-kicker { font-family:'JetBrains Mono',monospace; font-size:7pt; font-weight:600; letter-spacing:0.20em; text-transform:uppercase; color:var(--smt-deep); white-space:nowrap; }
+.pg3-header__rule, .pg4-header__rule, .pg5-header__rule { flex:1 1 auto; height:1px; background:var(--gold); }
+.pg3-folio, .pg4-folio, .pg5-folio { font-family:'JetBrains Mono',monospace; font-size:7pt; letter-spacing:0.10em; color:var(--grafito); white-space:nowrap; }
+.pg3-header__sep, .pg4-header__sep, .pg5-header__sep { margin-top:2.5mm; }
+.pg3-header__sep .line-thick, .pg4-header__sep .line-thick, .pg5-header__sep .line-thick { height:1pt; background:var(--smt-deep); }
+.pg3-header__sep .line-thin, .pg4-header__sep .line-thin, .pg5-header__sep .line-thin { height:0.3pt; background:var(--smt-deep); margin-top:1.5mm; }
+.pg3-section-title, .pg4-section-title, .pg5-section-title { font-family:'Fraunces',serif; font-weight:600; font-size:13pt; color:var(--smt-deep); letter-spacing:-0.01em; margin-top:4mm; margin-bottom:2.5mm; }
+
+.pg3-maps-row { display:grid; grid-template-columns:1fr 1fr; gap:5mm; margin-top:3mm; }
+.pg3-map-cell { display:flex; flex-direction:column; }
+.pg3-map-cell .pg3-map-label { font-family:'JetBrains Mono',monospace; font-size:6.5pt; font-weight:600; letter-spacing:0.16em; text-transform:uppercase; color:var(--olive-dark); margin-bottom:1.5mm; }
+.pg3-map-cell .pg3-map-img { width:100%; border:0.8pt solid var(--smt-deep); line-height:0; }
+.pg3-map-cell .pg3-map-img img { width:100%; height:auto; display:block; }
+.pg3-mini-caption { font-family:'DM Sans',sans-serif; font-style:italic; font-size:7.5pt; color:var(--grafito); margin-top:1.5mm; line-height:1.35; }
+
+.pg3-unified-caption { font-family:'Fraunces',serif; font-style:italic; font-size:9.5pt; line-height:1.4; color:var(--grafito); margin-top:4mm; padding:3mm 4mm; background:var(--cream); border-left:3mm solid var(--gold); }
+.pg3-unified-caption strong { font-weight:700; color:var(--smt-deep); font-style:normal; }
+
+/* ============================================
+   PAGE 04 · PORTAFOLIO CRÉDITOS
+   ============================================ */
+.pg4-wrap { width:210mm; height:297mm; background:#ffffff; padding:14mm; display:flex; flex-direction:column; }
+.pg4-chart-frame { width:100%; line-height:0; margin-top:2mm; }
+.pg4-chart-frame img { width:100%; height:auto; display:block; }
+.pg4-strip-cifras { display:grid; grid-template-columns:repeat(3, 1fr); gap:0; border-top:1pt solid var(--gold); border-bottom:1pt solid var(--gold); background:var(--cream); margin-top:4mm; }
+.pg4-strip-cifras .cell { padding:4mm 5mm; border-left:0.3pt solid var(--olive); }
+.pg4-strip-cifras .cell:first-child { border-left:none; }
+.pg4-strip-cifras .num { font-family:'JetBrains Mono',monospace; font-size:18pt; font-weight:700; color:var(--smt-deep); font-variant-numeric:tabular-nums; line-height:1; }
+.pg4-strip-cifras .lbl { font-family:'DM Sans',sans-serif; font-size:8pt; color:var(--olive-dark); margin-top:1.5mm; }
+.pg4-vm-box { flex:0 0 auto; border-left:4mm solid var(--gold); background:var(--cream); padding:5mm 6mm; margin-top:4mm; }
+.pg4-vm-box p { font-family:'DM Sans',sans-serif; font-size:9pt; line-height:1.5; color:var(--grafito); }
+.pg4-vm-box p + p { margin-top:2mm; }
+.pg4-vm-box strong { color:var(--smt-deep); }
+.pg4-vm-head { font-family:'Fraunces',serif; font-weight:600; letter-spacing:0.04em; text-transform:uppercase; font-size:10pt; color:var(--smt-deep); }
+
+/* ============================================
+   PAGE 05 · PUEBLOS Y TIMELINE
+   ============================================ */
+.pg5-wrap { width:210mm; height:297mm; background:#ffffff; padding:14mm; display:flex; flex-direction:column; }
+.pg5-chart-frame { width:100%; line-height:0; margin-top:2mm; flex:0 0 auto; }
+.pg5-chart-frame img { width:100%; height:auto; display:block; }
+.pg5-text-block { font-family:'DM Sans',sans-serif; font-size:10pt; line-height:1.5; color:var(--grafito); margin-top:3mm; padding:3mm 4mm; background:var(--cream); border-left:3mm solid var(--olive); }
+.pg5-text-block strong { color:var(--smt-deep); font-weight:700; }
+
 </style>
 </head>
 <body>
@@ -490,14 +555,14 @@ body { font-family: 'DM Sans', system-ui, sans-serif; color: var(--grafito); bac
   </div>
   <div class="hero-body">
     <div class="event-stamp">Cas Phare · Sommet RRI Brasília 2026</div>
-    <div class="kicker">Verra Registry · ID 1566 · VCS + CCB</div>
+    <div class="kicker">Verra Registry · ID 1566 · VCS + CCB + SD VISta</div>
     <h1 class="hero-title">Forêt de <em>Matavén</em></h1>
-    <p class="hero-deck">La forêt sous la garde de cinq peuples · le mécanisme fiduciaire qui fonctionne déjà.</p>
-    <p class="hero-sub">Un projet REDD+ certifié sous deux normes internationales indépendantes (VCS + CCB), exploité pendant une décennie par une organisation autochtone nationale. Preuve · pas proposition.</p>
+    <p class="hero-deck">La forêt sous la garde de six peuples · le mécanisme fiduciaire qui fonctionne déjà.</p>
+    <p class="hero-sub">Projet REDD+ certifié sous double norme internationale (VCS + CCB) avec SD VISta en validation · période d'accréditation 30 ans (2013-2042) · exploité par une organisation autochtone nationale. Preuve · pas proposition.</p>
     <div class="hero-tags">
       <span class="hero-tag gold">Verra Registry · 1566</span>
-      <span class="hero-tag">~1,85M ha</span>
-      <span class="hero-tag">5 peuples gardiens</span>
+      <span class="hero-tag">1 150 212 ha nettes</span>
+      <span class="hero-tag">6 peuples · 16 resguardos</span>
       <span class="hero-tag">100% gouvernance autochtone</span>
     </div>
   </div>
@@ -505,25 +570,29 @@ body { font-family: 'DM Sans', system-ui, sans-serif; color: var(--grafito); bac
 
 <div class="page-content">
 
-  <div class="kpis">
+  <div class="kpis kpis-4">
     <div class="kpi">
-      <div class="kpi-num">1,85<em>M</em></div>
-      <div class="kpi-lbl">Hectares conservés</div>
+      <div class="kpi-num">1.150.212</div>
+      <div class="kpi-lbl">Hectares nets certifiés</div>
     </div>
     <div class="kpi">
-      <div class="kpi-num">10<em>+</em></div>
-      <div class="kpi-lbl">Années d'opération vérifiée</div>
+      <div class="kpi-num">30<em> ans</em></div>
+      <div class="kpi-lbl">Accréditation 2013-2042</div>
     </div>
     <div class="kpi">
-      <div class="kpi-num">2<em>×</em></div>
-      <div class="kpi-lbl">Certifications indépendantes</div>
+      <div class="kpi-num">3,6<em>M</em></div>
+      <div class="kpi-lbl">tCO₂e/an réduites</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-num">2.845.250</div>
+      <div class="kpi-lbl">Buffer pool non-permanence</div>
     </div>
   </div>
 
   <div class="section-num">Cas · L'histoire que la donnée raconte</div>
-  <h2 class="section-title">Cinq peuples · <em>une seule volonté</em> · une décennie d'opération</h2>
+  <h2 class="section-title">Six peuples · <em>une seule volonté</em> · une décennie d'opération</h2>
 
-  <p class="body-text">Dans l'extrême nord-est de l'Amazonie colombienne, où le Vichada rencontre les esteros et les palmeraies de moriche, cinq peuples autochtones — <strong>Piaroa, Sikuani, Curripaco, Piapoco et Puinave</strong> — administrent de manière autonome l'un des blocs de forêt continue les plus étendus du pays. Ce n'est pas un parc national. Ce n'est pas une concession gouvernementale avec des tiers. C'est un resguardo autochtone géré par ses propres autorités à travers l'<strong>ACATISEMA</strong> (Association des Conseils et Autorités Traditionnelles Autochtones de la Forêt de Matavén).</p>
+  <p class="body-text">Dans l'extrême nord-est de l'Amazonie colombienne, où le Vichada rencontre les esteros et les palmeraies de moriche, six peuples autochtones — <strong>Sikuani, Piaroa, Puinave, Curripaco, Cubeo et Piapoco</strong> — administrent de manière autonome l'un des blocs de forêt continue les plus étendus du pays. <strong>16 anciens resguardos consolidés</strong> en un seul Resguardo Autochtone Unifié de 1 150 212 hectares nets. Ce n'est pas un parc national. Ce n'est pas une concession gouvernementale avec des tiers. C'est un resguardo autochtone géré par ses propres autorités à travers l'<strong>ACATISEMA</strong> (Association des Conseils et Autorités Traditionnelles Autochtones de la Forêt de Matavén).</p>
 
   <p class="body-text">En 2016, ACATISEMA a enregistré le territoire auprès du <strong>Verra Carbon Standard</strong> comme projet REDD+ sous l'identifiant 1566. Un an plus tard, ils ont validé simultanément sous la norme <strong>Climate, Community &amp; Biodiversity (CCB)</strong>, une double certification exigeant non seulement la réduction de la déforestation mais aussi un bénéfice social tangible et une conservation de la biodiversité démontrable.</p>
 
@@ -535,14 +604,15 @@ body { font-family: 'DM Sans', system-ui, sans-serif; color: var(--grafito); bac
   </div>
 
   <div class="section-num">Gardiens</div>
-  <h2 class="section-title">Les cinq peuples <em>gardiens</em></h2>
+  <h2 class="section-title">Les six peuples <em>gardiens</em></h2>
 
-  <div class="pueblos">
-    <div class="pueblo"><div class="pueblo-nombre">Piaroa</div><div class="pueblo-fam">Famille Sáliba</div></div>
+  <div class="pueblos pueblos-6">
     <div class="pueblo"><div class="pueblo-nombre">Sikuani</div><div class="pueblo-fam">Famille Guahibo</div></div>
-    <div class="pueblo"><div class="pueblo-nombre">Curripaco</div><div class="pueblo-fam">Familia Arawak</div></div>
-    <div class="pueblo"><div class="pueblo-nombre">Piapoco</div><div class="pueblo-fam">Familia Arawak</div></div>
+    <div class="pueblo"><div class="pueblo-nombre">Piaroa</div><div class="pueblo-fam">Famille Sáliba</div></div>
     <div class="pueblo"><div class="pueblo-nombre">Puinave</div><div class="pueblo-fam">Familia Maku</div></div>
+    <div class="pueblo"><div class="pueblo-nombre">Curripaco</div><div class="pueblo-fam">Familia Arawak</div></div>
+    <div class="pueblo"><div class="pueblo-nombre">Cubeo</div><div class="pueblo-fam">Famille Tukano</div></div>
+    <div class="pueblo"><div class="pueblo-nombre">Piapoco</div><div class="pueblo-fam">Familia Arawak</div></div>
   </div>
 
 </div>
@@ -629,7 +699,130 @@ body { font-family: 'DM Sans', system-ui, sans-serif; color: var(--grafito); bac
 </div>
 </section>
 
-<!-- PAGE 3: CRONOLOGÍA + PRUEBAS + ENCAJE MACI -->
+<!-- PAGE 03 · MAPAS CONTEXTUALES (NUEVA) -->
+<section class="page page-break">
+<div class="pg3-wrap">
+
+  <header class="pg3-header">
+    <div class="pg3-header__row">
+      <span class="pg3-kicker">Page 03 · Contexte territorial</span>
+      <span class="pg3-header__rule"></span>
+      <span class="pg3-folio">Selva de Matavén · Verra ID 1566</span>
+    </div>
+    <div class="pg3-header__sep">
+      <div class="line-thick"></div>
+      <div class="line-thin"></div>
+    </div>
+  </header>
+
+  <h2 class="pg3-section-title">Où se trouve · contexte régional et macro-régional</h2>
+
+  <div class="pg3-maps-row">
+    <div class="pg3-map-cell">
+      <div class="pg3-map-label">Contexte sud-américain</div>
+      <div class="pg3-map-img"><img src="../assets/mataven_mapa_contexto.png" alt="Contexte sud-américain · Matavén en Colombie"></div>
+      <p class="pg3-mini-caption">Localisation géographique du projet sur le bouclier guyanais colombien · 4,25°N -68,87°W.</p>
+    </div>
+    <div class="pg3-map-cell">
+      <div class="pg3-map-label">Macro-région Vichada</div>
+      <div class="pg3-map-img"><img src="../assets/mataven_mapa_macroregion.png" alt="Macro-région Vichada · polygone Matavén"></div>
+      <p class="pg3-mini-caption">Polygone à l'intérieur du département du Vichada · frontières avec Guainía, Meta et Venezuela.</p>
+    </div>
+  </div>
+
+  <p class="pg3-unified-caption"><strong>Resguardo Autochtone Unifié Forêt de Matavén</strong> · <strong>16 anciens resguardos consolidés</strong> en une seule unité de gouvernance · <strong>1 150 212 hectares nets certifiés</strong> (sur 1 352 211 hectares bruts du polygone, avec exclusions internes RENARE : plans d'eau et zones non éligibles) · <strong>garde autochtone ACATISEMA</strong> · six peuples (Sikuani · Piaroa · Puinave · Curripaco · Cubeo · Piapoco) en quatre familles linguistiques (Guahibo · Sáliba · Maku · Arawak · Tukano).</p>
+
+</div>
+</section>
+
+<!-- PAGE 04 · PORTAFOLIO CRÉDITOS + TRAYECTORIA CO₂ (NUEVA) -->
+<section class="page page-break">
+<div class="pg4-wrap">
+
+  <header class="pg4-header pg3-header">
+    <div class="pg3-header__row">
+      <span class="pg4-kicker">Page 04 · Portefeuille de crédits REDD+</span>
+      <span class="pg4-header__rule"></span>
+      <span class="pg4-folio">Millésimes 2013-2042 · 30 ans d'accréditation</span>
+    </div>
+    <div class="pg4-header__sep">
+      <div class="line-thick"></div>
+      <div class="line-thin"></div>
+    </div>
+  </header>
+
+  <h2 class="pg4-section-title">Ce qui a déjà été émis · et ce qui vient</h2>
+
+  <div class="pg4-chart-frame">
+    <img src="../assets/mataven_chart_vintages.png" alt="Bar chart VCUs émis par millésime 2013-2022">
+  </div>
+
+  <h2 class="pg4-section-title" style="margin-top:5mm">Trajectoire 30 ans · réduction cumulée estimée</h2>
+
+  <div class="pg4-chart-frame">
+    <img src="../assets/mataven_chart_co2_trajectory.png" alt="Stacked area · trajectoire CO₂ cumulée 2013-2042">
+  </div>
+
+  <div class="pg4-strip-cifras">
+    <div class="cell">
+      <div class="num">3.622.352</div>
+      <div class="lbl">tCO₂e/an réduites · estimation canonique Verra</div>
+    </div>
+    <div class="cell">
+      <div class="num">~108,5 M</div>
+      <div class="lbl">tCO₂e totales · 30 ans (2013-2042)</div>
+    </div>
+    <div class="cell">
+      <div class="num">2.845.250</div>
+      <div class="lbl">Buffer pool non-permanence · déjà réservé</div>
+    </div>
+  </div>
+
+  <div class="pg4-vm-box">
+    <p><span class="pg4-vm-head">Transition méthodologique · VM0007 → VM0048 + VMD0055</span></p>
+    <p>Le millésime 2020-2022 est certifié sous <strong>VM0048</strong> avec le module <strong>VMD0055</strong> (base de référence par attribution juridictionnelle), le cadre consolidé qui remplace VM0007 et répond directement à la mise à jour de la norme volontaire suite à l'analyse comparative des baselines publiée en 2021. Les millésimes 2023-2042 continuent sous le même cadre méthodologique actualisé.</p>
+    <p><strong>Statut au 28 mai 2026</strong> · Monitoring Report brouillon livré à Verra en 2024 · validation KBS Certification Services en cours · émission attendue Q3-Q4 2026 · <strong>SD VISta sous validation indépendante</strong> (3e label du projet).</p>
+  </div>
+
+</div>
+</section>
+
+<!-- PAGE 05 · PUEBLOS Y TIMELINE 30 AÑOS (NUEVA) -->
+<section class="page page-break">
+<div class="pg5-wrap">
+
+  <header class="pg5-header pg3-header">
+    <div class="pg3-header__row">
+      <span class="pg5-kicker">Page 05 · Gouvernance et horizon temporel</span>
+      <span class="pg5-header__rule"></span>
+      <span class="pg5-folio">6 peuples · 16 resguardos · 30 ans</span>
+    </div>
+    <div class="pg5-header__sep">
+      <div class="line-thick"></div>
+      <div class="line-thin"></div>
+    </div>
+  </header>
+
+  <h2 class="pg5-section-title">Six peuples gardiens · quatre familles linguistiques</h2>
+
+  <div class="pg5-chart-frame">
+    <img src="../assets/mataven_chart_etnias.png" alt="Donut chart · 6 peuples gardiens">
+  </div>
+
+  <p class="pg5-text-block">ACATISEMA opère selon le principe d'<strong>égalité de voix entre peuples</strong> · chacun des six peuples gardiens participe avec un poids décisionnel équivalent dans les cabildos et autorités traditionnelles qui signent les accords communautaires déposés au Verra Registry.</p>
+
+  <h2 class="pg5-section-title" style="margin-top:5mm">30 ans d'opération vérifiée · chronologie synthétique</h2>
+
+  <div class="pg5-chart-frame">
+    <img src="../assets/mataven_timeline_2013_2042.png" alt="Timeline horizontale 2013-2042 avec jalons">
+  </div>
+
+  <p class="pg5-text-block" style="margin-top:3mm"><strong>2013 → 2042</strong> · Période d'accréditation de 30 ans continus sous VCS · quatre millésimes vérifiés (trois déjà émis · un en certification VM0048) · pipeline 2023-2042 avec base de référence juridictionnelle · double auditeur indépendant (ICONTEC + KBS Certification Services).</p>
+
+</div>
+</section>
+
+<!-- PAGE 06: CRONOLOGÍA + PRUEBAS + ENCAJE MACI -->
 <section class="page page-break">
 
 <div class="page-content" style="padding-top:14mm">
@@ -648,8 +841,8 @@ body { font-family: 'DM Sans', system-ui, sans-serif; color: var(--grafito); bac
         <div class="timeline-body"><strong>Accord communautaire formel signé</strong> (<span class="mono">COMMS_AGR_1566</span>) · KML du territoire déposé au Verra Registry</div>
       </div>
       <div class="timeline-item">
-        <div class="timeline-date">28 mai 2017</div>
-        <div class="timeline-body"><strong>Enregistrement complet VCS</strong> · projet actif · premiers crédits comptabilisables (<span class="mono">REG_PRR_1566</span>)</div>
+        <div class="timeline-date">08 dic 2016</div>
+        <div class="timeline-body"><strong>Registro oficial VCS aprobado</strong> · proyecto activo · acreditación 30 años 2013-2042 · primeros créditos contabilizables (<span class="mono">REG_PRR_1566 informe 28-may-2017</span>)</div>
       </div>
     </div>
     <div class="timeline-col">

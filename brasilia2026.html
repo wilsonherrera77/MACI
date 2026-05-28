@@ -1426,7 +1426,7 @@ fetch('assets/mataven.geojson').then(r => r.json()).then(gj => {
   const feature = gj.type === 'FeatureCollection' ? gj : { type: 'Feature', geometry: gj, properties: {} };
   L.geoJSON(feature, {
     style: { color: '#d4a017', weight: 2.5, fillColor: '#d4a017', fillOpacity: 0.28 }
-  }).addTo(matavenMap).bindPopup('<strong>Selva de Matavén</strong><br>1.150.212 ha · Verra ID 1566<br>Custodia ACATISEMA · 6 etnias');
+  }).addTo(matavenMap).bindPopup('<strong>Selva de Matavén</strong><br>1.150.212 ha netas · Verra ID 1566<br>16 resguardos · 6 etnias · ACATISEMA<br>Acreditación 30 años (2013-2042)');
 }).catch(e => console.warn('geojson load failed', e));
 
 // i18n
