@@ -1,0 +1,1042 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Mesa América Latina · Cumbre RRI Brasília 2026 · Slides apoyo plenaria</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,700;9..144,900&family=DM+Sans:wght@400;500;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<style>
+@page { size: A4 landscape; margin: 0; }
+
+:root {
+  --smt-green: #0a3f33;
+  --smt-green-dark: #062520;
+  --olive: #7d8a3c;
+  --olive-dark: #5a6427;
+  --onic-red: #c8431c;
+  --graphite: #3d3d3d;
+  --beige: #e8e0c8;
+  --beige-light: #f5f0dd;
+  --gold: #d4a017;
+  --gold-dark: #b08713;
+  --white: #ffffff;
+  --serif: 'Fraunces', Georgia, serif;
+  --sans: 'DM Sans', system-ui, sans-serif;
+  --mono: 'JetBrains Mono', monospace;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body {
+  font-family: var(--sans);
+  color: var(--graphite);
+  background: #888;
+  -webkit-font-smoothing: antialiased;
+}
+
+.slide {
+  width: 297mm;
+  height: 210mm;
+  overflow: hidden;
+  position: relative;
+  page-break-after: always;
+  display: flex;
+  flex-direction: column;
+  background: var(--white);
+}
+
+.slide:last-child { page-break-after: avoid; }
+
+/* ============================
+   HEADER común a todas las slides
+   ============================ */
+.slide-header {
+  height: 18mm;
+  padding: 5mm 12mm 0 12mm;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-shrink: 0;
+}
+
+.header-label {
+  font-family: var(--mono);
+  font-size: 9pt;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--smt-green);
+  opacity: 0.9;
+}
+
+.slide-1 .header-label,
+.slide-4 .header-label,
+.slide-7 .header-label {
+  color: var(--gold);
+  opacity: 1;
+}
+
+.event-tag {
+  font-family: var(--mono);
+  font-size: 8pt;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: var(--graphite);
+  opacity: 0.55;
+}
+
+/* ============================
+   FOOTER común
+   ============================ */
+.slide-footer {
+  height: 12mm;
+  padding: 0 12mm;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: var(--mono);
+  font-size: 7.5pt;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: var(--graphite);
+  opacity: 0.55;
+  flex-shrink: 0;
+}
+
+.slide-number {
+  font-family: var(--mono);
+  font-weight: 700;
+  color: var(--gold);
+}
+
+/* ============================
+   CONTENT área central
+   ============================ */
+.slide-content {
+  flex: 1;
+  padding: 0 12mm;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+}
+
+/* ============================
+   SLIDE 1 · PORTADA
+   ============================ */
+.slide-1 { background: var(--smt-green); color: white; }
+.slide-1 .slide-header { background: transparent; }
+.slide-1 .slide-footer { color: rgba(255,255,255,0.5); }
+.slide-1 .event-tag { color: rgba(255,255,255,0.5); }
+.slide-1 .slide-content { padding: 0 18mm; }
+
+.slide-1 .kicker {
+  font-family: var(--mono);
+  font-size: 9pt;
+  font-weight: 500;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 6mm;
+}
+
+.slide-1 .triangle {
+  width: 14mm;
+  height: 14mm;
+  position: absolute;
+  top: 30mm;
+  right: 18mm;
+  background: var(--gold);
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}
+
+.slide-1 h1 {
+  font-family: var(--serif);
+  font-weight: 900;
+  font-size: 64pt;
+  line-height: 0.95;
+  letter-spacing: -1.5px;
+  margin-bottom: 8mm;
+  font-variation-settings: "SOFT" 0, "WONK" 1;
+}
+
+.slide-1 h1 em {
+  font-style: italic;
+  color: var(--gold);
+  font-weight: 500;
+}
+
+.slide-1 .sub {
+  font-family: var(--sans);
+  font-size: 14pt;
+  font-weight: 500;
+  line-height: 1.4;
+  color: rgba(255,255,255,0.9);
+  max-width: 220mm;
+  margin-bottom: 12mm;
+}
+
+.slide-1 .meta-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8mm;
+  max-width: 220mm;
+}
+
+.slide-1 .meta-grid > div {
+  border-left: 2px solid var(--gold);
+  padding-left: 4mm;
+}
+
+.slide-1 .meta-label {
+  font-family: var(--mono);
+  font-size: 7pt;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 1.5mm;
+}
+
+.slide-1 .meta-value {
+  font-family: var(--sans);
+  font-size: 10pt;
+  font-weight: 500;
+  color: white;
+  line-height: 1.3;
+}
+
+/* ============================
+   SLIDE 2 · LAS 2 PREGUNTAS GUÍA
+   ============================ */
+.slide-2 { background: var(--beige-light); }
+
+.slide-2 .slide-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8mm;
+  align-items: stretch;
+  padding-top: 4mm;
+  padding-bottom: 4mm;
+}
+
+.section-title {
+  font-family: var(--mono);
+  font-size: 8pt;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 4mm;
+}
+
+.slide-2 .pregunta-card {
+  background: white;
+  border-radius: 4mm;
+  padding: 12mm 10mm;
+  box-shadow: 0 2px 12px rgba(10,63,51,0.12);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
+
+.slide-2 .pregunta-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 8mm;
+  background: var(--smt-green);
+}
+
+.slide-2 .pregunta-card.b::before { background: var(--onic-red); }
+.slide-2 .pregunta-card.c::before { background: var(--olive); }
+
+.slide-2 .pregunta-num {
+  font-family: var(--serif);
+  font-weight: 900;
+  font-size: 56pt;
+  line-height: 1;
+  color: var(--smt-green);
+  margin-top: 6mm;
+  margin-bottom: 6mm;
+}
+
+.slide-2 .pregunta-card.b .pregunta-num { color: var(--onic-red); }
+.slide-2 .pregunta-card.c .pregunta-num { color: var(--olive); }
+
+.slide-2 .pregunta-label {
+  font-family: var(--mono);
+  font-size: 9pt;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--graphite);
+  opacity: 0.7;
+  margin-bottom: 4mm;
+}
+
+.slide-2 .pregunta-text {
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: 17pt;
+  line-height: 1.3;
+  color: var(--smt-green-dark);
+  font-style: italic;
+}
+
+.slide-2 h2 {
+  grid-column: 1 / -1;
+  font-family: var(--serif);
+  font-weight: 700;
+  font-size: 28pt;
+  line-height: 1.1;
+  color: var(--smt-green);
+  margin-bottom: 0;
+  letter-spacing: -0.5px;
+}
+
+/* ============================
+   SLIDE 3 · BARRERAS ESTRUCTURALES
+   ============================ */
+.slide-3 { background: var(--white); }
+
+.slide-3 .slide-content {
+  padding-top: 4mm;
+  padding-bottom: 4mm;
+}
+
+.slide-3 h2 {
+  font-family: var(--serif);
+  font-weight: 900;
+  font-size: 34pt;
+  line-height: 1;
+  color: var(--smt-green);
+  margin-bottom: 2mm;
+  letter-spacing: -0.5px;
+}
+
+.slide-3 .lead {
+  font-family: var(--sans);
+  font-size: 11pt;
+  color: var(--graphite);
+  opacity: 0.75;
+  margin-bottom: 8mm;
+  max-width: 200mm;
+}
+
+.barreras-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 5mm;
+  flex: 1;
+}
+
+.barrera {
+  background: var(--beige-light);
+  padding: 7mm 5mm 6mm 5mm;
+  position: relative;
+  border-left: 3px solid var(--onic-red);
+}
+
+.barrera .num {
+  position: absolute;
+  top: 3mm;
+  right: 4mm;
+  font-family: var(--serif);
+  font-weight: 900;
+  font-size: 30pt;
+  line-height: 1;
+  color: var(--onic-red);
+  opacity: 0.15;
+}
+
+.barrera .titulo {
+  font-family: var(--serif);
+  font-weight: 700;
+  font-size: 12pt;
+  line-height: 1.2;
+  color: var(--smt-green);
+  margin-bottom: 3mm;
+}
+
+.barrera .desc {
+  font-family: var(--sans);
+  font-size: 8.5pt;
+  line-height: 1.4;
+  color: var(--graphite);
+}
+
+/* ============================
+   SLIDE 4 · TRES FACTORES HABILITANTES (Zach)
+   ============================ */
+.slide-4 { background: var(--smt-green); color: white; }
+.slide-4 .slide-footer { color: rgba(255,255,255,0.5); }
+.slide-4 .event-tag { color: rgba(255,255,255,0.5); }
+
+.slide-4 .slide-content {
+  padding-top: 4mm;
+  padding-bottom: 8mm;
+}
+
+.slide-4 h2 {
+  font-family: var(--serif);
+  font-weight: 900;
+  font-size: 30pt;
+  line-height: 1;
+  color: white;
+  margin-bottom: 2mm;
+  letter-spacing: -0.5px;
+}
+
+.slide-4 h2 em {
+  font-style: italic;
+  color: var(--gold);
+  font-weight: 500;
+}
+
+.slide-4 .lead {
+  font-family: var(--sans);
+  font-size: 11pt;
+  color: rgba(255,255,255,0.75);
+  margin-bottom: 8mm;
+  max-width: 220mm;
+}
+
+.factores-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8mm;
+  flex: 1;
+}
+
+.factor {
+  background: rgba(255,255,255,0.06);
+  border-top: 3px solid var(--gold);
+  padding: 8mm 6mm;
+  position: relative;
+}
+
+.factor .icon {
+  width: 14mm;
+  height: 14mm;
+  margin-bottom: 4mm;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.factor .icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.factor h3 {
+  font-family: var(--serif);
+  font-weight: 700;
+  font-size: 18pt;
+  line-height: 1.1;
+  color: var(--gold);
+  margin-bottom: 4mm;
+}
+
+.factor p {
+  font-family: var(--sans);
+  font-size: 10pt;
+  line-height: 1.45;
+  color: rgba(255,255,255,0.92);
+}
+
+.factor .cita {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 9pt;
+  color: rgba(255,255,255,0.55);
+  margin-top: 4mm;
+  padding-top: 3mm;
+  border-top: 1px solid rgba(255,255,255,0.15);
+}
+
+/* ============================
+   SLIDE 5 · TRES PRIORIDADES NUMERADAS
+   ============================ */
+.slide-5 { background: var(--beige-light); }
+
+.slide-5 .slide-content {
+  padding-top: 3mm;
+  padding-bottom: 4mm;
+}
+
+.slide-5 h2 {
+  font-family: var(--serif);
+  font-weight: 900;
+  font-size: 28pt;
+  line-height: 1.05;
+  color: var(--smt-green);
+  margin-bottom: 1.5mm;
+  letter-spacing: -0.5px;
+}
+
+.slide-5 .lead {
+  font-family: var(--sans);
+  font-size: 10pt;
+  color: var(--graphite);
+  opacity: 0.75;
+  margin-bottom: 5mm;
+  max-width: 220mm;
+}
+
+.prioridades-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 6mm;
+  flex: 1;
+}
+
+.prioridad {
+  background: white;
+  padding: 6mm 6mm 5mm 6mm;
+  border-radius: 3mm;
+  box-shadow: 0 2px 8px rgba(10,63,51,0.1);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.prioridad .num-grande {
+  font-family: var(--serif);
+  font-weight: 900;
+  font-size: 60pt;
+  line-height: 0.85;
+  color: var(--gold);
+  margin-bottom: 3mm;
+  font-variation-settings: "SOFT" 0, "WONK" 1;
+}
+
+.prioridad h3 {
+  font-family: var(--serif);
+  font-weight: 700;
+  font-size: 14pt;
+  line-height: 1.15;
+  color: var(--smt-green);
+  margin-bottom: 4mm;
+  letter-spacing: -0.2px;
+}
+
+.prioridad .desc {
+  font-family: var(--sans);
+  font-size: 8.5pt;
+  line-height: 1.45;
+  color: var(--graphite);
+  flex: 1;
+}
+
+.prioridad .anchor {
+  font-family: var(--mono);
+  font-size: 7pt;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--olive-dark);
+  margin-top: 4mm;
+  padding-top: 3mm;
+  border-top: 1px dashed var(--beige);
+}
+
+/* ============================
+   SLIDE 6 · LO TRANSVERSAL
+   ============================ */
+.slide-6 { background: var(--white); }
+
+.slide-6 .slide-content {
+  padding-top: 4mm;
+  padding-bottom: 4mm;
+}
+
+.slide-6 h2 {
+  font-family: var(--serif);
+  font-weight: 900;
+  font-size: 32pt;
+  line-height: 1;
+  color: var(--smt-green);
+  margin-bottom: 2mm;
+  letter-spacing: -0.5px;
+}
+
+.slide-6 .lead {
+  font-family: var(--sans);
+  font-size: 11pt;
+  color: var(--graphite);
+  opacity: 0.75;
+  margin-bottom: 7mm;
+  max-width: 200mm;
+}
+
+.transversal-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6mm 14mm;
+  flex: 1;
+  align-content: start;
+}
+
+.transversal-list li {
+  display: flex;
+  gap: 5mm;
+  padding-top: 2mm;
+}
+
+.transversal-list .icon-box {
+  flex-shrink: 0;
+  width: 12mm;
+  height: 12mm;
+  background: var(--beige-light);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--olive);
+}
+
+.transversal-list .icon-box svg {
+  width: 7mm;
+  height: 7mm;
+  color: var(--smt-green);
+}
+
+.transversal-list .texto h4 {
+  font-family: var(--serif);
+  font-weight: 700;
+  font-size: 13pt;
+  line-height: 1.15;
+  color: var(--smt-green);
+  margin-bottom: 1.5mm;
+}
+
+.transversal-list .texto p {
+  font-family: var(--sans);
+  font-size: 9pt;
+  line-height: 1.4;
+  color: var(--graphite);
+}
+
+/* ============================
+   SLIDE 7 · LLAMADO DECLARACIÓN
+   ============================ */
+.slide-7 {
+  background: linear-gradient(135deg, var(--smt-green) 0%, var(--olive-dark) 100%);
+  color: white;
+}
+.slide-7 .slide-footer { color: rgba(255,255,255,0.5); }
+.slide-7 .event-tag { color: rgba(255,255,255,0.5); }
+
+.slide-7 .slide-content {
+  padding-top: 3mm;
+  padding-bottom: 4mm;
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 10mm;
+  align-items: center;
+}
+
+.slide-7 .left h2 {
+  font-family: var(--serif);
+  font-weight: 900;
+  font-size: 38pt;
+  line-height: 1.05;
+  color: white;
+  margin-bottom: 5mm;
+  letter-spacing: -1px;
+}
+
+.slide-7 .left h2 em {
+  font-style: italic;
+  color: var(--gold);
+  font-weight: 500;
+}
+
+.slide-7 .left .pedidos {
+  list-style: none;
+  counter-reset: pedido;
+}
+
+.slide-7 .left .pedidos li {
+  counter-increment: pedido;
+  padding: 3mm 0;
+  padding-left: 12mm;
+  position: relative;
+  font-family: var(--sans);
+  font-size: 11.5pt;
+  line-height: 1.35;
+  color: rgba(255,255,255,0.92);
+  border-bottom: 1px solid rgba(255,255,255,0.12);
+}
+
+.slide-7 .left .pedidos li:last-child { border-bottom: none; }
+
+.slide-7 .left .pedidos li::before {
+  content: counter(pedido);
+  position: absolute;
+  left: 0;
+  top: 2mm;
+  font-family: var(--serif);
+  font-weight: 900;
+  font-size: 22pt;
+  color: var(--gold);
+  line-height: 1;
+}
+
+.slide-7 .left .pedidos strong {
+  color: white;
+  font-weight: 700;
+}
+
+.slide-7 .right {
+  border-left: 4px solid var(--gold);
+  padding-left: 10mm;
+}
+
+.slide-7 .right .pull-kicker {
+  font-family: var(--mono);
+  font-size: 9pt;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 4mm;
+}
+
+.slide-7 .right .pull-quote {
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 500;
+  font-size: 26pt;
+  line-height: 1.15;
+  color: white;
+  letter-spacing: -0.5px;
+  margin-bottom: 8mm;
+}
+
+.slide-7 .right .pull-quote em {
+  font-weight: 900;
+  font-style: italic;
+  color: var(--gold);
+}
+
+.slide-7 .right .pull-source {
+  font-family: var(--sans);
+  font-size: 9.5pt;
+  color: rgba(255,255,255,0.7);
+  line-height: 1.4;
+}
+
+</style>
+</head>
+<body>
+
+<!-- =====================================================
+     SLIDE 1 · PORTADA
+     ===================================================== -->
+<div class="slide slide-1">
+  <div class="slide-header">
+    <div class="header-label">Mesa Latinoamérica</div>
+    <div class="event-tag">Cumbre RRI · Brasília 2026 · Jueves 28 mayo</div>
+  </div>
+  <div class="triangle"></div>
+  <div class="slide-content">
+    <div class="kicker">Reporte plenario · grupo de trabajo regional</div>
+    <h1>Mesa<br>América Latina<br><em>(español)</em></h1>
+    <p class="sub">Barreras estructurales y condiciones habilitantes para los medios de vida y las economías comunitarias en nuestra región.</p>
+    <div class="meta-grid">
+      <div>
+        <div class="meta-label">Facilitadora</div>
+        <div class="meta-value">Majo Cerda · RRI LATAM</div>
+      </div>
+      <div>
+        <div class="meta-label">Relator</div>
+        <div class="meta-value">Wilson Herrera Baltán<br>Coordinador SMT-ONIC · Colombia</div>
+      </div>
+      <div>
+        <div class="meta-label">Participantes</div>
+        <div class="meta-value">Honduras · Brasil · Bolivia<br>Guatemala · Ecuador · Perú · Panamá · Colombia</div>
+      </div>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Mesa América Latina · Cumbre RRI 2026</span>
+    <span class="slide-number">01 / 07</span>
+  </div>
+</div>
+
+<!-- =====================================================
+     SLIDE 2 · LAS 2 PREGUNTAS GUÍA
+     ===================================================== -->
+<div class="slide slide-2">
+  <div class="slide-header">
+    <div class="header-label">Mesa Latinoamérica</div>
+    <div class="event-tag">Cumbre RRI · Brasília 2026 · Reporte plenario</div>
+  </div>
+  <div class="slide-content">
+    <h2>El grupo trabajó dos preguntas guía.</h2>
+    <div class="pregunta-card b">
+      <span class="pregunta-num">1</span>
+      <span class="pregunta-label">Barreras estructurales clave</span>
+      <p class="pregunta-text">¿Cuáles son las principales barreras que afectan los medios de vida y las economías comunitarias en su región?</p>
+    </div>
+    <div class="pregunta-card c">
+      <span class="pregunta-num">2</span>
+      <span class="pregunta-label">Condiciones habilitantes</span>
+      <p class="pregunta-text">¿Qué deberían comprender mejor los actores globales sobre los medios de vida y las economías basadas en derechos?</p>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Preguntas guía · facilitación Majo Cerda</span>
+    <span class="slide-number">02 / 07</span>
+  </div>
+</div>
+
+<!-- =====================================================
+     SLIDE 3 · BARRERAS ESTRUCTURALES (5 puntos)
+     ===================================================== -->
+<div class="slide slide-3">
+  <div class="slide-header">
+    <div class="header-label">Mesa Latinoamérica</div>
+    <div class="event-tag">Cumbre RRI · Brasília 2026 · Reporte plenario</div>
+  </div>
+  <div class="slide-content">
+    <div class="section-title">Pregunta 1 · Barreras estructurales</div>
+    <h2>Cinco barreras que afectan los medios de vida.</h2>
+    <p class="lead">Las identificamos juntos · trazadas por compañeros de Honduras, Brasil, Amazonía, Guatemala, Ecuador y Colombia.</p>
+    <div class="barreras-grid">
+      <div class="barrera">
+        <span class="num">1</span>
+        <div class="titulo">Brecha implementación de derechos</div>
+        <p class="desc">Tenemos Convenio 169, sentencias, decretos. Pero los Estados no avanzan. No tenemos control territorial efectivo.</p>
+      </div>
+      <div class="barrera">
+        <span class="num">2</span>
+        <div class="titulo">Falta de datos propios homologables</div>
+        <p class="desc">No tenemos visibilidad de lo que producimos ni de lo que se exporta. La soya tiene 16 códigos; nuestros productos salen sin trazabilidad.</p>
+      </div>
+      <div class="barrera">
+        <span class="num">3</span>
+        <div class="titulo">Cadenas de valor diseñadas para otro mercado</div>
+        <p class="desc">Certificaciones, estándares e infraestructura hechos para la industria, no para los mecanismos territoriales.</p>
+      </div>
+      <div class="barrera">
+        <span class="num">4</span>
+        <div class="titulo">Industrias extractivas contaminan</div>
+        <p class="desc">Minería ilegal, monocultivos de commodities y agroindustria contaminan los productos y servicios de las economías territoriales.</p>
+      </div>
+      <div class="barrera">
+        <span class="num">5</span>
+        <div class="titulo">Quiebre generacional</div>
+        <p class="desc">Tenemos cinco años para hacer el traslado de saberes y gobierno propio a los jóvenes. Es una barrera de futuro.</p>
+      </div>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Voces del grupo · trabajadas en post-its sobre tablero</span>
+    <span class="slide-number">03 / 07</span>
+  </div>
+</div>
+
+<!-- =====================================================
+     SLIDE 4 · TRES FACTORES HABILITANTES (Zach)
+     ===================================================== -->
+<div class="slide slide-4">
+  <div class="slide-header">
+    <div class="header-label">Mesa Latinoamérica</div>
+    <div class="event-tag">Cumbre RRI · Brasília 2026 · Reporte plenario</div>
+  </div>
+  <div class="slide-content">
+    <div class="section-title" style="color: var(--gold);">Pregunta 2 · Condiciones habilitantes (1/2)</div>
+    <h2>Tres factores habilitantes <em>para la producción racional en el territorio.</em></h2>
+    <p class="lead">Como nos planteó Zach desde la Amazonía: los tres factores deben estar saneados juntos. Sin uno, no funcionan los otros dos.</p>
+    <div class="factores-grid">
+      <div class="factor">
+        <div class="icon">
+          <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2" style="color: var(--gold);">
+            <rect x="6" y="6" width="28" height="28" rx="2"></rect>
+            <line x1="12" y1="14" x2="28" y2="14"></line>
+            <line x1="12" y1="20" x2="28" y2="20"></line>
+            <line x1="12" y1="26" x2="22" y2="26"></line>
+          </svg>
+        </div>
+        <h3>Normativa</h3>
+        <p>Cumplimiento de estándares con reconocimiento de las certificaciones propias (chakra, sello territorial, sistemas de manejo comunitario).</p>
+        <div class="cita">"Hay almanaques de normativas, pero no podemos exigirlas."</div>
+      </div>
+      <div class="factor">
+        <div class="icon">
+          <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2" style="color: var(--gold);">
+            <path d="M6 30 L12 18 L20 26 L28 14 L34 22 L34 30 Z"></path>
+            <circle cx="14" cy="10" r="2.5"></circle>
+            <circle cx="30" cy="8" r="2"></circle>
+          </svg>
+        </div>
+        <h3>Infraestructura</h3>
+        <p>De transformación · secadoras, marquesinas, plantas de procesamiento. Hoy los costos son prohibitivos y se construye donde no se produce.</p>
+        <div class="cita">"Para ser competitivos los costos son demasiado altos."</div>
+      </div>
+      <div class="factor">
+        <div class="icon">
+          <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2" style="color: var(--gold);">
+            <circle cx="20" cy="20" r="14"></circle>
+            <path d="M6 20 Q20 8 34 20"></path>
+            <path d="M6 20 Q20 32 34 20"></path>
+            <line x1="20" y1="6" x2="20" y2="34"></line>
+          </svg>
+        </div>
+        <h3>Conectividad</h3>
+        <p>Acceso digital y disponibilidad de conectividad permanente para todos los territorios. Es la base de la trazabilidad, la articulación y los nuevos modelos.</p>
+        <div class="cita">"Conectividad como factor habilitativo · es fundamental."</div>
+      </div>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Trilogía habilitante · planteada por Zach (Amazonía)</span>
+    <span class="slide-number">04 / 07</span>
+  </div>
+</div>
+
+<!-- =====================================================
+     SLIDE 5 · TRES PRIORIDADES NUMERADAS · CORAZÓN
+     ===================================================== -->
+<div class="slide slide-5">
+  <div class="slide-header">
+    <div class="header-label">Mesa Latinoamérica</div>
+    <div class="event-tag">Cumbre RRI · Brasília 2026 · Reporte plenario</div>
+  </div>
+  <div class="slide-content">
+    <div class="section-title">Pregunta 2 · Condiciones habilitantes (2/2)</div>
+    <h2>Tres prioridades acordadas por el grupo para la Declaración.</h2>
+    <p class="lead">Lo que pedimos que los actores globales comprendan, hagan suyo y traduzcan en compromisos cuantitativos.</p>
+    <div class="prioridades-grid">
+      <div class="prioridad">
+        <div class="num-grande">1</div>
+        <h3>Soberanía de conocimientos tradicionales y sistemas de información comunitarios.</h3>
+        <div class="desc">Principios CARE y FAIR adaptados a los pueblos. Georreferenciación de afectaciones y de posibilidades. Bases de datos con control comunitario. Conexión institucional con el OS8j del Convenio de Diversidad Biológica.</div>
+        <div class="anchor">Conecta con CDB · OS8j · marco CARE</div>
+      </div>
+      <div class="prioridad">
+        <div class="num-grande">2</div>
+        <h3>Financiamiento directo · transición a un modelo de gobernanza propia.</h3>
+        <div class="desc">Hoy menos del 1% del Forest Tenure Pledge llega directo a organizaciones indígenas nacionales. Pedimos acreditaciones directas tipo GCF DAE, country packages, fondos territoriales modelo Podáali, ventanas filantrópicas con cuotas mínimas.</div>
+        <div class="anchor">Conecta con Forest Tenure Pledge · GCF · FCLP</div>
+      </div>
+      <div class="prioridad">
+        <div class="num-grande">3</div>
+        <h3>Gobernanza biocultural · principios territoriales · volver al origen.</h3>
+        <div class="desc">Planes de manejo propios. Acompañamiento técnico no impuesto. Certificaciones propias como el sistema chakra. Aprendizajes de la venta de carbono cuidando los trastornos culturales del ingreso masivo de recursos.</div>
+        <div class="anchor">Conecta con Declaración Sabios COP16 · ABS Nagoya</div>
+      </div>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Tres prioridades numeradas · acuerdo del grupo</span>
+    <span class="slide-number">05 / 07</span>
+  </div>
+</div>
+
+<!-- =====================================================
+     SLIDE 6 · LO TRANSVERSAL (5 puntos)
+     ===================================================== -->
+<div class="slide slide-6">
+  <div class="slide-header">
+    <div class="header-label">Mesa Latinoamérica</div>
+    <div class="event-tag">Cumbre RRI · Brasília 2026 · Reporte plenario</div>
+  </div>
+  <div class="slide-content">
+    <div class="section-title">Lo que el grupo entrega como agenda transversal</div>
+    <h2>Cinco hilos que cruzan todo.</h2>
+    <p class="lead">Más allá de barreras y condiciones, el grupo identificó cinco hilos que cruzan toda la conversación.</p>
+    <ul class="transversal-list">
+      <li>
+        <div class="icon-box">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2 L4 6 L4 12 C4 17 8 21 12 22 C16 21 20 17 20 12 L20 6 Z"></path></svg>
+        </div>
+        <div class="texto">
+          <h4>Mantener la dialéctica</h4>
+          <p>Alianza indígenas · afrodescendientes · comunidades locales. No perderla, no fragmentarnos entre nosotros.</p>
+        </div>
+      </li>
+      <li>
+        <div class="icon-box">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"></circle><path d="M3 12 H21"></path><path d="M12 3 C15 6 15 18 12 21"></path><path d="M12 3 C9 6 9 18 12 21"></path></svg>
+        </div>
+        <div class="texto">
+          <h4>Apoyo multilateral a reforma fiscal</h4>
+          <p>Re-orientar subsidios de commodities (soya) hacia economías de la naturaleza. Acuerdos en marco CDB.</p>
+        </div>
+      </li>
+      <li>
+        <div class="icon-box">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="M3 9 H21"></path><path d="M8 14 H16"></path></svg>
+        </div>
+        <div class="texto">
+          <h4>Planes de Vida como política pública</h4>
+          <p>Reconocidos por el Estado con certificaciones propias viabilizadas. Sistema chakra, sello territorial, gobierno propio.</p>
+        </div>
+      </li>
+      <li>
+        <div class="icon-box">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 17 L12 8 L15 11 L21 5"></path><path d="M15 5 H21 V11"></path></svg>
+        </div>
+        <div class="texto">
+          <h4>Pago por servicios ambientales</h4>
+          <p>Como nos planteó Marina Silva. Compras públicas tipo PNAE/PAA con contratos largo plazo que dan estabilidad.</p>
+        </div>
+      </li>
+      <li>
+        <div class="icon-box">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 4 L4 8 L8 12"></path><path d="M16 12 L20 16 L16 20"></path><path d="M4 8 H20"></path><path d="M20 16 H4"></path></svg>
+        </div>
+        <div class="texto">
+          <h4>Alianzas estratégicas territoriales</h4>
+          <p>No competir entre nosotros frente a las ONGs grandes. Coordinación regional sur-sur, intercambio de saberes y proyectos.</p>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="slide-footer">
+    <span>Agenda transversal · cruza barreras y condiciones</span>
+    <span class="slide-number">06 / 07</span>
+  </div>
+</div>
+
+<!-- =====================================================
+     SLIDE 7 · LLAMADO A LA DECLARACIÓN
+     ===================================================== -->
+<div class="slide slide-7">
+  <div class="slide-header">
+    <div class="header-label">Mesa Latinoamérica</div>
+    <div class="event-tag">Cumbre RRI · Brasília 2026 · Reporte plenario</div>
+  </div>
+  <div class="slide-content">
+    <div class="left">
+      <h2>Cuatro pedidos<br><em>a la Declaración Brasília 2026.</em></h2>
+      <ol class="pedidos">
+        <li><strong>Más seguimiento entre cumbres.</strong> Que no quede la conversación para dentro de un año.</li>
+        <li><strong>Mecanismos fiduciarios concretos</strong> con plazos cuantitativos. No más declaraciones de intención.</li>
+        <li><strong>Reconocimiento de los Planes de Vida</strong> como política pública nacional.</li>
+        <li><strong>Apoyo multilateral a reforma fiscal</strong> de commodities.</li>
+      </ol>
+    </div>
+    <div class="right">
+      <div class="pull-kicker">Cierre del grupo</div>
+      <p class="pull-quote">"Como nos enseñaron nuestros mayores · <em>volver al origen.</em><br>Estamos en eso."</p>
+      <p class="pull-source">Mandato del XI Congreso ONIC · resonante en toda la región<br>Mesa América Latina · Cumbre RRI Brasília · mayo 2026</p>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Texto completo de los 3 párrafos · entregado a la Mesa de Declaración por escrito</span>
+    <span class="slide-number">07 / 07</span>
+  </div>
+</div>
+
+</body>
+</html>

@@ -429,6 +429,261 @@ body {
 @media print {
   .no-print { display: none; }
 }
+
+/* ============================================
+   CASO ESTRELLA · MATAVÉN · Claude Design 2026-05-28
+   Mapa Leaflet + Timeline vintages + KPIs footer
+   ============================================ */
+.caso-estrella-section {
+  font-family: 'DM Sans', sans-serif;
+  color: var(--grafito);
+  background: #ffffff;
+  padding: 72px 64px 0;
+  max-width: 1280px;
+  margin: 0 auto;
+  -webkit-font-smoothing: antialiased;
+}
+.caso-estrella-section * { box-sizing: border-box; }
+
+.ce-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 44px;
+}
+.ce-eyebrow {
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 700;
+  font-size: 11px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--onic-red);
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex: 1;
+  margin: 0;
+}
+.ce-eyebrow::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: var(--gold);
+}
+.ce-download {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--smt-deep);
+  background: var(--gold);
+  padding: 11px 18px;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background 0.15s ease;
+}
+.ce-download:hover { background: #b08713; }
+
+.ce-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.08fr);
+  gap: 64px;
+  align-items: start;
+}
+
+.ce-map-eyebrow {
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 500;
+  font-size: 9px;
+  letter-spacing: 0.16em;
+  color: var(--olive);
+  padding: 9px 12px;
+  border: 1px solid var(--olive);
+  border-bottom: none;
+  text-transform: uppercase;
+  display: block;
+}
+
+#mataven-map {
+  height: 380px;
+  width: 100%;
+  border: 1px solid var(--gold);
+  background: var(--beige-cream);
+  position: relative;
+}
+
+.ce-map-caption {
+  font-family: 'DM Sans', sans-serif;
+  font-style: italic;
+  font-size: 11px;
+  color: var(--olive-dark);
+  margin-top: 12px;
+  letter-spacing: 0.01em;
+}
+
+.ce-timeline-title {
+  font-family: 'Fraunces', serif;
+  font-weight: 600;
+  font-size: 30px;
+  line-height: 1.18;
+  color: var(--smt-deep);
+  text-wrap: pretty;
+  margin: 0 0 38px 0;
+  max-width: 22ch;
+}
+
+.ce-timeline {
+  border-top: 0.5px solid rgba(125, 138, 60, 0.3);
+}
+.ce-entry {
+  padding: 22px 0;
+  border-bottom: 0.5px solid rgba(125, 138, 60, 0.3);
+}
+.ce-entry-top {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 24px;
+}
+.ce-vintage {
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 22px;
+  color: var(--grafito);
+  white-space: nowrap;
+}
+.ce-vcus {
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 700;
+  font-size: 28px;
+  font-variant-numeric: tabular-nums;
+  color: var(--smt-deep);
+  letter-spacing: -0.01em;
+  text-align: right;
+}
+.ce-vcus.is-pending {
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--gold);
+}
+.ce-entry-bottom {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 12px;
+  flex-wrap: wrap;
+}
+.ce-badge {
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 700;
+  font-size: 9px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 4px 9px;
+  white-space: nowrap;
+}
+.ce-badge.emitido {
+  color: var(--olive-dark);
+  background: var(--beige-cream);
+  border: 1px solid var(--olive);
+}
+.ce-badge.certificacion {
+  color: #8a6a0a;
+  background: rgba(212, 160, 23, 0.12);
+  border: 1px solid var(--gold);
+}
+.ce-detail {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 11px;
+  color: var(--grafito);
+  opacity: 0.78;
+}
+.ce-entry.is-total {
+  background: var(--beige-cream);
+  padding: 26px 24px;
+  border-bottom: none;
+  border-top: 1px solid var(--gold);
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 24px;
+}
+.ce-total-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 700;
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--olive-dark);
+  display: block;
+}
+.ce-total-caption {
+  font-family: 'DM Sans', sans-serif;
+  font-style: italic;
+  font-size: 10px;
+  color: var(--olive-dark);
+  opacity: 0.85;
+  margin-top: 6px;
+  display: block;
+  max-width: 24ch;
+}
+.ce-total-figure {
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 700;
+  font-size: 40px;
+  font-variant-numeric: tabular-nums;
+  color: var(--smt-deep);
+  letter-spacing: -0.02em;
+  text-align: right;
+  white-space: nowrap;
+}
+
+.ce-kpis {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  background: var(--beige-cream);
+  margin-top: 64px;
+  border-top: 1px solid var(--gold);
+  border-bottom: 1px solid var(--gold);
+}
+.ce-kpi {
+  padding: 32px 28px;
+  border-left: 0.5px solid rgba(125, 138, 60, 0.35);
+}
+.ce-kpi:first-child { border-left: none; }
+.ce-kpi-figure {
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 700;
+  font-size: 26px;
+  font-variant-numeric: tabular-nums;
+  color: var(--smt-deep);
+  letter-spacing: -0.01em;
+  line-height: 1;
+}
+.ce-kpi-figure.is-text { font-size: 17px; letter-spacing: 0.01em; }
+.ce-kpi-label {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 11px;
+  color: var(--olive-dark);
+  margin-top: 12px;
+}
+
+@media (max-width: 900px) {
+  .caso-estrella-section { padding: 48px 32px 0; }
+  .ce-grid { grid-template-columns: 1fr; gap: 48px; }
+  .ce-timeline-title { font-size: 26px; }
+  .ce-kpis { grid-template-columns: 1fr 1fr; }
+  .ce-kpi:nth-child(3) { border-left: none; }
+  .ce-header { flex-wrap: wrap; }
+}
+@media (max-width: 520px) {
+  .caso-estrella-section { padding: 40px 22px 0; }
+  .ce-kpis { grid-template-columns: 1fr; }
+  .ce-kpi { border-left: none; border-top: 0.5px solid rgba(125,138,60,0.35); }
+  .ce-kpi:first-child { border-top: none; }
+}
 </style>
 </head>
 <body class="bg-paper text-grafito">
@@ -819,60 +1074,102 @@ body {
 </section>
 
 <!-- ============== CASO ESTRELLA · MATAVÉN ============== -->
-<section id="caso-estrella" class="py-24 bg-paper">
-  <div class="max-w-7xl mx-auto px-6 lg:px-12">
-    <div class="grid lg:grid-cols-12 gap-12 items-start">
-      <div class="lg:col-span-5">
-        <div class="flex items-center gap-3 mb-6">
-          <span class="editorial-rule" style="background:var(--gold)"></span>
-          <p class="eyebrow text-gold">caso estrella</p>
-        </div>
-        <h2 class="section-headline text-4xl lg:text-6xl text-smt-deep mb-4" data-i18n="mataven_title">Selva de Matavén</h2>
-        <p class="font-display-soft italic text-xl text-olive-dark mb-8">El bosque que custodian cinco pueblos · el mecanismo fiduciario que ya funciona</p>
-        <p class="text-base text-grafito-light leading-relaxed mb-8" data-i18n="mataven_lead">El único proyecto REDD+ en Colombia con certificación VCS+CCB y cadena de custodia 100% indígena. Operado por ACATISEMA · 10 años · 1.85 millones de hectáreas · auditado internacionalmente.</p>
+<section id="caso-estrella" class="caso-estrella-section">
 
-        <div class="space-y-2 mb-8">
-          <div class="flex items-center gap-3">
-            <span class="font-mono text-xs bg-smt-deep text-gold px-3 py-1.5 font-bold tracking-widest">1566</span>
-            <span class="text-sm">Verra Registry ID</span>
-          </div>
-          <div class="flex items-center gap-3">
-            <span class="font-mono text-xs bg-smt-deep text-gold px-3 py-1.5 font-bold tracking-widest">VCS + CCB</span>
-            <span class="text-sm">Doble certificación independiente</span>
-          </div>
-          <div class="flex items-center gap-3">
-            <span class="font-mono text-xs bg-smt-deep text-gold px-3 py-1.5 font-bold tracking-widest">10 AÑOS</span>
-            <span class="text-sm">Operación verificada 2013-2042</span>
-          </div>
-        </div>
+  <div class="ce-header">
+    <p class="ce-eyebrow"><span data-i18n="mataven_caso_eyebrow">CASO ESTRELLA</span></p>
+    <a href="dossiers/mataven.pdf" class="ce-download" data-i18n="mataven_cta_download">Descargar dossier PDF</a>
+  </div>
 
-        <a href="dossiers/mataven.pdf" class="btn-primary btn-arrow">Descargar dossier</a>
-      </div>
+  <div class="ce-grid">
 
-      <div class="lg:col-span-7">
-        <div class="bg-smt-deep text-white p-10 lg:p-12 relative overflow-hidden">
-          <div class="absolute top-0 right-0 w-48 h-48 border-[16px] border-gold/10 rounded-full -mr-24 -mt-24"></div>
-          <p class="eyebrow text-gold mb-6" data-i18n="mataven_what_proves">Lo que prueba Matavén para Brasilia</p>
-          <div class="space-y-6">
-            <div class="flex gap-5 items-start">
-              <div class="kpi-block text-5xl text-gold">01</div>
-              <p class="text-lg leading-snug pt-2" data-i18n="mataven_proof_1">El mecanismo fiduciario directo a organizaciones indígenas nacionales funciona en la práctica.</p>
-            </div>
-            <div class="editorial-rule-long bg-white/15"></div>
-            <div class="flex gap-5 items-start">
-              <div class="kpi-block text-5xl text-gold">02</div>
-              <p class="text-lg leading-snug pt-2" data-i18n="mataven_proof_2">La cadena de custodia indígena es auditable internacionalmente.</p>
-            </div>
-            <div class="editorial-rule-long bg-white/15"></div>
-            <div class="flex gap-5 items-start">
-              <div class="kpi-block text-5xl text-gold">03</div>
-              <p class="text-lg leading-snug pt-2" data-i18n="mataven_proof_3">El modelo es replicable a las otras 4 macrorregiones ONIC.</p>
-            </div>
+    <div class="ce-col-map">
+      <span class="ce-map-eyebrow" data-i18n="mataven_map_eyebrow">POLÍGONO OFICIAL VERRA · 4.25°N -68.87°W</span>
+      <div id="mataven-map" data-map-leaflet></div>
+      <p class="ce-map-caption" data-i18n="mataven_map_caption">Vichada · Colombia · operación verificada 2013 → 2042 · custodia 100% indígena ACATISEMA</p>
+    </div>
+
+    <div class="ce-col-timeline">
+      <h2 class="ce-timeline-title" data-i18n="mataven_timeline_title">Diez años de créditos verificados. Un activo en transición metodológica.</h2>
+
+      <div class="ce-timeline">
+
+        <div class="ce-entry">
+          <div class="ce-entry-top">
+            <span class="ce-vintage" data-i18n="mataven_vintage_2013_label">2013-2015</span>
+            <span class="ce-vcus">2.224.201</span>
+          </div>
+          <div class="ce-entry-bottom">
+            <span class="ce-badge emitido" data-i18n="mataven_vintage_2013_status">EMITIDO</span>
+            <span class="ce-detail" data-i18n="mataven_vintage_2013_detail">ICONTEC · registrado dic-2016</span>
           </div>
         </div>
+
+        <div class="ce-entry">
+          <div class="ce-entry-top">
+            <span class="ce-vintage" data-i18n="mataven_vintage_2016_label">2016-2017</span>
+            <span class="ce-vcus">4.503.224</span>
+          </div>
+          <div class="ce-entry-bottom">
+            <span class="ce-badge emitido" data-i18n="mataven_vintage_2016_status">EMITIDO</span>
+            <span class="ce-detail" data-i18n="mataven_vintage_2016_detail">ICONTEC + KBS · comercializado 2020-2021</span>
+          </div>
+        </div>
+
+        <div class="ce-entry">
+          <div class="ce-entry-top">
+            <span class="ce-vintage" data-i18n="mataven_vintage_2018_label">2018-2019</span>
+            <span class="ce-vcus">2.344.418</span>
+          </div>
+          <div class="ce-entry-bottom">
+            <span class="ce-badge emitido" data-i18n="mataven_vintage_2018_status">EMITIDO</span>
+            <span class="ce-detail" data-i18n="mataven_vintage_2018_detail">Verificación 2020 + CCB 2022</span>
+          </div>
+        </div>
+
+        <div class="ce-entry">
+          <div class="ce-entry-top">
+            <span class="ce-vintage" data-i18n="mataven_vintage_2020_label">2020-2022</span>
+            <span class="ce-vcus is-pending">—</span>
+          </div>
+          <div class="ce-entry-bottom">
+            <span class="ce-badge certificacion" data-i18n="mataven_vintage_2020_status">EN CERTIFICACIÓN VM0048</span>
+            <span class="ce-detail" data-i18n="mataven_vintage_2020_detail">MR borrador VM0048 entregado 2024 · línea base jurisdiccional</span>
+          </div>
+        </div>
+
+        <div class="ce-entry is-total">
+          <div>
+            <span class="ce-total-label" data-i18n="mataven_total_label">TOTAL EMITIDO</span>
+            <span class="ce-total-caption" data-i18n="mataven_total_caption">VCUs verificados emitidos · vintages 2013-2019</span>
+          </div>
+          <span class="ce-total-figure">9.071.843</span>
+        </div>
+
       </div>
     </div>
+
   </div>
+
+  <div class="ce-kpis">
+    <div class="ce-kpi">
+      <div class="ce-kpi-figure">1.150.212&nbsp;ha</div>
+      <div class="ce-kpi-label" data-i18n="mataven_kpi_ha_label">netas certificadas</div>
+    </div>
+    <div class="ce-kpi">
+      <div class="ce-kpi-figure">30 años</div>
+      <div class="ce-kpi-label" data-i18n="mataven_kpi_anos_label">2013 → 2042</div>
+    </div>
+    <div class="ce-kpi">
+      <div class="ce-kpi-figure">2.845.250</div>
+      <div class="ce-kpi-label" data-i18n="mataven_kpi_buffer_label">buffer pool</div>
+    </div>
+    <div class="ce-kpi">
+      <div class="ce-kpi-figure is-text">VCS+CCB+SD VISta</div>
+      <div class="ce-kpi-label" data-i18n="mataven_kpi_sello_label">triple sello premium</div>
+    </div>
+  </div>
+
 </section>
 
 <!-- ============== PLANTAS UTILES ============== -->
@@ -1114,6 +1411,24 @@ regiones.forEach(r => {
     .addTo(map).bindPopup('<strong>' + r.name + '</strong>');
 });
 
+// Mapa Matavén · caso-estrella · polígono Verra ID 1566
+const matavenMap = L.map('mataven-map', {
+  zoomControl: false,
+  attributionControl: false,
+  scrollWheelZoom: false,
+  dragging: true
+}).setView([4.25, -68.87], 8);
+L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+  maxZoom: 18,
+  attribution: 'Esri'
+}).addTo(matavenMap);
+fetch('assets/mataven.geojson').then(r => r.json()).then(gj => {
+  const feature = gj.type === 'FeatureCollection' ? gj : { type: 'Feature', geometry: gj, properties: {} };
+  L.geoJSON(feature, {
+    style: { color: '#d4a017', weight: 2.5, fillColor: '#d4a017', fillOpacity: 0.28 }
+  }).addTo(matavenMap).bindPopup('<strong>Selva de Matavén</strong><br>1.150.212 ha · Verra ID 1566<br>Custodia ACATISEMA · 6 etnias');
+}).catch(e => console.warn('geojson load failed', e));
+
 // i18n
 const i18n = {
   es: {
@@ -1142,12 +1457,29 @@ const i18n = {
     modulos_lead: 'Cada módulo es un perfil de proyecto independiente con presupuesto auditable y donantes mapeados. Todos integrados bajo CREA (Control · Responsabilidad · Ética · Aprovechamiento).',
     mapa_title: '5 Macrorregiones ONIC · Evidencia Verificable',
     mapa_lead: 'ONIC representa 102 pueblos indígenas en toda Colombia. No solo Amazonía · cada región tiene un caso operativo o jurisprudencia consolidada que MACI propone escalar.',
-    mataven_title: 'Selva de Matavén',
-    mataven_lead: 'El único proyecto REDD+ en Colombia con certificación VCS+CCB y cadena de custodia 100% indígena. Operado por ACATISEMA · 10 años · 1.85 millones de hectáreas · auditado internacionalmente.',
-    mataven_what_proves: 'Lo que prueba Matavén para Brasilia',
-    mataven_proof_1: 'El mecanismo fiduciario directo a organizaciones indígenas nacionales funciona en la práctica.',
-    mataven_proof_2: 'La cadena de custodia indígena es auditable internacionalmente.',
-    mataven_proof_3: 'El modelo es replicable a las otras 4 macrorregiones ONIC.',
+    mataven_caso_eyebrow: 'CASO ESTRELLA',
+    mataven_cta_download: 'Descargar dossier PDF',
+    mataven_map_eyebrow: 'POLÍGONO OFICIAL VERRA · 4.25°N -68.87°W',
+    mataven_map_caption: 'Vichada · Colombia · operación verificada 2013 → 2042 · custodia 100% indígena ACATISEMA',
+    mataven_timeline_title: 'Diez años de créditos verificados. Un activo en transición metodológica.',
+    mataven_vintage_2013_label: '2013-2015',
+    mataven_vintage_2013_status: 'EMITIDO',
+    mataven_vintage_2013_detail: 'ICONTEC · registrado dic-2016',
+    mataven_vintage_2016_label: '2016-2017',
+    mataven_vintage_2016_status: 'EMITIDO',
+    mataven_vintage_2016_detail: 'ICONTEC + KBS · comercializado 2020-2021',
+    mataven_vintage_2018_label: '2018-2019',
+    mataven_vintage_2018_status: 'EMITIDO',
+    mataven_vintage_2018_detail: 'Verificación 2020 + CCB 2022',
+    mataven_vintage_2020_label: '2020-2022',
+    mataven_vintage_2020_status: 'EN CERTIFICACIÓN VM0048',
+    mataven_vintage_2020_detail: 'MR borrador VM0048 entregado 2024 · línea base jurisdiccional',
+    mataven_total_label: 'TOTAL EMITIDO',
+    mataven_total_caption: 'VCUs verificados emitidos · vintages 2013-2019',
+    mataven_kpi_ha_label: 'netas certificadas',
+    mataven_kpi_anos_label: '2013 → 2042',
+    mataven_kpi_buffer_label: 'buffer pool',
+    mataven_kpi_sello_label: 'triple sello premium',
     plantas_title: 'Catálogo Plantas Útiles × Resguardos 2024',
     plantas_lead: 'Base científica con aval internacional (Kew Gardens · GBIF) cruzada con resguardos indígenas colombianos. Conocimiento tradicional + ciencia formal.',
     plantas_stat_1: 'especies únicas',
@@ -1201,12 +1533,29 @@ const i18n = {
     modulos_lead: 'Each module is an independent project profile with auditable budget and mapped donors. All integrated under CREA (Control · Responsibility · Ethics · Use).',
     mapa_title: '5 ONIC Macro-regions · Verifiable Evidence',
     mapa_lead: 'ONIC represents 102 Indigenous peoples across Colombia. Not only Amazon · each region has an operational case or consolidated jurisprudence that MACI proposes to scale.',
-    mataven_title: 'Selva de Matavén',
-    mataven_lead: "Colombia's only REDD+ project with VCS+CCB certification and 100% Indigenous custody chain. Operated by ACATISEMA · 10 years · 1.85 million hectares · internationally audited.",
-    mataven_what_proves: 'What Matavén proves for Brasília',
-    mataven_proof_1: 'Direct fiduciary mechanism to Indigenous national organizations works in practice.',
-    mataven_proof_2: 'Indigenous custody chain is internationally auditable.',
-    mataven_proof_3: 'The model is replicable to the other 4 ONIC macro-regions.',
+    mataven_caso_eyebrow: 'FLAGSHIP CASE',
+    mataven_cta_download: 'Download PDF dossier',
+    mataven_map_eyebrow: 'OFFICIAL VERRA POLYGON · 4.25°N -68.87°W',
+    mataven_map_caption: 'Vichada · Colombia · operation verified 2013 → 2042 · 100% Indigenous custody by ACATISEMA',
+    mataven_timeline_title: 'Ten years of verified credits. An asset in methodological transition.',
+    mataven_vintage_2013_label: '2013-2015',
+    mataven_vintage_2013_status: 'ISSUED',
+    mataven_vintage_2013_detail: 'ICONTEC · registered Dec 2016',
+    mataven_vintage_2016_label: '2016-2017',
+    mataven_vintage_2016_status: 'ISSUED',
+    mataven_vintage_2016_detail: 'ICONTEC + KBS · transacted 2020-2021',
+    mataven_vintage_2018_label: '2018-2019',
+    mataven_vintage_2018_status: 'ISSUED',
+    mataven_vintage_2018_detail: 'Verification 2020 + CCB 2022',
+    mataven_vintage_2020_label: '2020-2022',
+    mataven_vintage_2020_status: 'IN CERTIFICATION VM0048',
+    mataven_vintage_2020_detail: 'Draft MR VM0048 delivered 2024 · jurisdictional baseline',
+    mataven_total_label: 'TOTAL ISSUED',
+    mataven_total_caption: 'Verified VCUs issued · vintages 2013-2019',
+    mataven_kpi_ha_label: 'net certified',
+    mataven_kpi_anos_label: '2013 → 2042',
+    mataven_kpi_buffer_label: 'buffer pool',
+    mataven_kpi_sello_label: 'triple premium label',
     plantas_title: 'Useful Plants × Indigenous Lands Catalogue 2024',
     plantas_lead: 'Internationally backed scientific base (Kew Gardens · GBIF) cross-tabulated with Colombian Indigenous lands. Traditional knowledge + formal science.',
     plantas_stat_1: 'unique species',
@@ -1260,12 +1609,29 @@ const i18n = {
     modulos_lead: 'Cada módulo é um perfil de projeto independente.',
     mapa_title: '5 Macrorregiões ONIC · Evidência Verificável',
     mapa_lead: 'ONIC representa 102 povos indígenas em toda Colômbia. Não só Amazônia.',
-    mataven_title: 'Selva de Matavén',
-    mataven_lead: 'O único projeto REDD+ na Colômbia com certificação VCS+CCB e cadeia de custódia 100% indígena. Operado por ACATISEMA · 10 anos · 1.85 milhões de hectares.',
-    mataven_what_proves: 'O que Matavén prova para Brasília',
-    mataven_proof_1: 'O mecanismo fiduciário direto a organizações indígenas funciona na prática.',
-    mataven_proof_2: 'A cadeia de custódia indígena é auditável internacionalmente.',
-    mataven_proof_3: 'O modelo é replicável às outras 4 macrorregiões ONIC.',
+    mataven_caso_eyebrow: 'CASO ESTRELA',
+    mataven_cta_download: 'Baixar dossiê PDF',
+    mataven_map_eyebrow: 'POLÍGONO OFICIAL VERRA · 4.25°N -68.87°W',
+    mataven_map_caption: 'Vichada · Colômbia · operação verificada 2013 → 2042 · custódia 100% indígena ACATISEMA',
+    mataven_timeline_title: 'Dez anos de créditos verificados. Um ativo em transição metodológica.',
+    mataven_vintage_2013_label: '2013-2015',
+    mataven_vintage_2013_status: 'EMITIDO',
+    mataven_vintage_2013_detail: 'ICONTEC · registrado dez-2016',
+    mataven_vintage_2016_label: '2016-2017',
+    mataven_vintage_2016_status: 'EMITIDO',
+    mataven_vintage_2016_detail: 'ICONTEC + KBS · comercializado 2020-2021',
+    mataven_vintage_2018_label: '2018-2019',
+    mataven_vintage_2018_status: 'EMITIDO',
+    mataven_vintage_2018_detail: 'Verificação 2020 + CCB 2022',
+    mataven_vintage_2020_label: '2020-2022',
+    mataven_vintage_2020_status: 'EM CERTIFICAÇÃO VM0048',
+    mataven_vintage_2020_detail: 'MR rascunho VM0048 entregue 2024 · linha de base jurisdicional',
+    mataven_total_label: 'TOTAL EMITIDO',
+    mataven_total_caption: 'VCUs verificados emitidos · safras 2013-2019',
+    mataven_kpi_ha_label: 'líquidas certificadas',
+    mataven_kpi_anos_label: '2013 → 2042',
+    mataven_kpi_buffer_label: 'buffer pool',
+    mataven_kpi_sello_label: 'tríplice selo premium',
     plantas_title: 'Catálogo Plantas Úteis × Resguardos 2024',
     plantas_lead: 'Base científica com aval internacional (Kew Gardens · GBIF).',
     plantas_stat_1: 'espécies únicas',
@@ -1319,12 +1685,29 @@ const i18n = {
     modulos_lead: 'Chaque module est un profil de projet indépendant.',
     mapa_title: '5 Macro-régions ONIC',
     mapa_lead: 'ONIC représente 102 peuples autochtones partout en Colombie.',
-    mataven_title: 'Selva de Matavén',
-    mataven_lead: 'Le seul projet REDD+ en Colombie avec certification VCS+CCB et chaîne de custodie 100% autochtone.',
-    mataven_what_proves: 'Ce que Matavén prouve',
-    mataven_proof_1: 'Le mécanisme fiduciaire direct fonctionne.',
-    mataven_proof_2: 'La chaîne de custodie autochtone est auditable.',
-    mataven_proof_3: 'Le modèle est réplicable.',
+    mataven_caso_eyebrow: 'CAS PHARE',
+    mataven_cta_download: 'Télécharger le dossier PDF',
+    mataven_map_eyebrow: 'POLYGONE OFFICIEL VERRA · 4.25°N -68.87°W',
+    mataven_map_caption: 'Vichada · Colombie · opération vérifiée 2013 → 2042 · garde 100% autochtone ACATISEMA',
+    mataven_timeline_title: 'Dix ans de crédits vérifiés. Un actif en transition méthodologique.',
+    mataven_vintage_2013_label: '2013-2015',
+    mataven_vintage_2013_status: 'ÉMIS',
+    mataven_vintage_2013_detail: 'ICONTEC · enregistré déc-2016',
+    mataven_vintage_2016_label: '2016-2017',
+    mataven_vintage_2016_status: 'ÉMIS',
+    mataven_vintage_2016_detail: 'ICONTEC + KBS · transigé 2020-2021',
+    mataven_vintage_2018_label: '2018-2019',
+    mataven_vintage_2018_status: 'ÉMIS',
+    mataven_vintage_2018_detail: 'Vérification 2020 + CCB 2022',
+    mataven_vintage_2020_label: '2020-2022',
+    mataven_vintage_2020_status: 'EN CERTIFICATION VM0048',
+    mataven_vintage_2020_detail: 'MR brouillon VM0048 livré 2024 · base de référence juridictionnelle',
+    mataven_total_label: 'TOTAL ÉMIS',
+    mataven_total_caption: 'VCUs vérifiés émis · millésimes 2013-2019',
+    mataven_kpi_ha_label: 'nettes certifiées',
+    mataven_kpi_anos_label: '2013 → 2042',
+    mataven_kpi_buffer_label: 'buffer pool',
+    mataven_kpi_sello_label: 'triple label premium',
     plantas_title: 'Catalogue Plantes Utiles × Resguardos 2024',
     plantas_lead: 'Base scientifique soutenue internationalement.',
     plantas_stat_1: 'espèces uniques',
