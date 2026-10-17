@@ -45,7 +45,7 @@ nav{position:sticky;top:0;z-index:60;background:rgba(10,63,51,.97);backdrop-filt
 .hero-badges{display:flex;gap:10px;flex-wrap:wrap;margin-top:30px}
 .badge{border:1px solid rgba(255,255,255,.28);border-radius:999px;padding:7px 15px;font-size:.78rem;color:rgba(255,255,255,.88);font-weight:500}
 
-section{padding:72px 0;border-bottom:1px solid var(--line)}
+section{padding:72px 0;border-bottom:1px solid var(--line);scroll-margin-top:62px}
 section.dark{background:var(--smt-deep);color:#fff;border-bottom:none}
 section.cream{background:var(--beige-cream)}
 h2.sec{font-size:clamp(1.85rem,3.6vw,2.85rem);margin:.25em 0 .5em}
@@ -101,6 +101,35 @@ section.dark .note{color:rgba(255,255,255,.6)}
 .sw{width:13px;height:13px;border-radius:3px;display:inline-block}
 .sw-arm{border:1.6px dashed var(--gold);background:rgba(212,160,23,.1)}
 .sw-mat{border:1.6px solid var(--gold);background:rgba(212,160,23,.5)}
+.sub-h{font-family:"Fraunces",Georgia,serif;font-size:1.32rem;font-weight:600;color:var(--smt-deep);margin:44px 0 6px;line-height:1.3}
+section.dark .sub-h{color:var(--gold-soft)}
+.bigstat{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px;margin-top:34px}
+.bg-n{background:var(--smt-deep);color:#fff;border-radius:13px;padding:24px 22px}
+.bg-n b{display:block;font-family:"JetBrains Mono",monospace;font-size:2.4rem;font-weight:700;color:var(--gold);letter-spacing:-.03em;line-height:1}
+.bg-n span{display:block;font-size:.84rem;color:rgba(255,255,255,.84);margin-top:11px;line-height:1.5}
+.bg-n em{font-style:normal;color:var(--gold-soft)}
+.tbl-wrap{overflow-x:auto;margin-top:16px;border:1px solid var(--line);border-radius:12px;background:#fff}
+.tbl{width:100%;border-collapse:collapse;font-size:.92rem;min-width:540px}
+.tbl th{text-align:left;padding:14px 18px;font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--onic-red);font-weight:700;border-bottom:1px solid var(--line);white-space:nowrap}
+.tbl td{padding:13px 18px;border-bottom:1px solid var(--line)}
+.tbl tr:last-child td{border-bottom:none}
+.tbl td.n{font-family:"JetBrains Mono",monospace;font-size:.88rem;white-space:nowrap}
+.tbl td.n b{color:var(--olive-dark)}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(248px,1fr));gap:16px;margin-top:18px}
+.card{background:#fff;border:1px solid var(--line);border-radius:13px;padding:22px}
+.card.alert{border-left:3px solid var(--onic-red)}
+.card-tag{font-size:.69rem;letter-spacing:.11em;text-transform:uppercase;font-weight:700;color:var(--olive-dark);display:block}
+.card.alert .card-tag{color:var(--onic-red)}
+.card-n{display:block;font-family:"JetBrains Mono",monospace;font-size:2.1rem;font-weight:700;color:var(--smt-deep);margin:8px 0 10px;letter-spacing:-.03em;line-height:1}
+.card p{margin:0;font-size:.88rem;color:var(--grafito-light);line-height:1.6}
+.card em{font-style:italic}
+.origen-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:18px;margin-top:36px}
+.og{background:rgba(255,255,255,.055);border:1px solid rgba(255,255,255,.17);border-radius:13px;padding:24px}
+.og-t{display:block;font-family:"Fraunces",Georgia,serif;font-size:1.2rem;font-weight:600;color:var(--gold-soft);margin-bottom:10px}
+.og p{margin:0;font-size:.9rem;color:rgba(255,255,255,.84);line-height:1.62}
+.og-q{margin-top:14px!important;padding-top:13px;border-top:1px dotted rgba(255,255,255,.2);font-style:italic;color:var(--gold-soft)!important}
+.pull{font-family:"Fraunces",Georgia,serif;font-size:clamp(1.25rem,2.4vw,1.7rem);line-height:1.38;color:#fff;border-left:3px solid var(--gold);padding:4px 0 4px 24px;margin:42px 0;max-width:40ch}
+@media(max-width:620px){.bg-n b{font-size:2rem}.card-n{font-size:1.8rem}}
 svg .arm-rect{fill:rgba(212,160,23,.1);stroke:var(--gold);stroke-width:1.8;stroke-dasharray:7 5}
 svg .mt-shape{fill:rgba(212,160,23,.5);stroke:var(--gold);stroke-width:1.6;stroke-linejoin:round}
 [hidden]{display:none!important}
@@ -114,6 +143,8 @@ svg .mt-shape{fill:rgba(212,160,23,.5);stroke:var(--gold);stroke-width:1.6;strok
     <div class="navlinks">
       <a href="#escala" data-i18n="nav_scale">La escala</a>
       <a href="#existe" data-i18n="nav_exists">Lo que ya opera</a>
+      <a href="#biodiversidad" data-i18n="nav_bio">Biodiversidad</a>
+      <a href="#origen" data-i18n="nav_origen">Ley de Origen</a>
       <a href="#pedidos" data-i18n="nav_asks">Lo que pedimos</a>
       <a href="#maci" data-i18n="nav_maci">MACI</a>
       <a href="#contacto" data-i18n="nav_contact">Contacto</a>
@@ -179,6 +210,95 @@ svg .mt-shape{fill:rgba(212,160,23,.5);stroke:var(--gold);stroke-width:1.6;strok
       <div class="stat"><b>30</b><span data-i18n="st6">años de operación verificada del monitoreo en Matavén</span></div>
     </div>
     <p class="note" data-i18n="exists_note">Cifras de gobernanza: Agencia Nacional de Tierras, 2025-2026. Catálogo de plantas útiles por resguardo, con aval del Royal Botanic Gardens, Kew, y GBIF. Matavén: registro público de Verra, proyecto VCS-1566, periodo acreditado 2013-2042. Esta página contiene únicamente información de nivel público: no publica coordenadas de comunidades, sitios sagrados ni conocimiento tradicional asociado.</p>
+  </div>
+</section>
+
+<section class="cream" id="biodiversidad">
+  <div class="wrap">
+    <p class="eyebrow" data-i18n="bio_eyebrow">La biodiversidad que gobiernan</p>
+    <h2 class="sec disp" data-i18n="bio_title">Casi la mitad de las especies de Colombia vive en territorio indígena</h2>
+    <p class="sub" data-i18n="bio_sub">Colombia es el segundo país más biodiverso del planeta. De las <strong>57.806 especies identificadas taxonómicamente</strong> en el país, <strong>25.768 —el 45 %— están en territorios y territorialidades indígenas</strong>, y 18.458 en resguardos legalizados. No es una coincidencia geográfica: es el resultado de un sistema de gobierno del territorio que lleva siglos operando.</p>
+
+    <div class="bigstat">
+      <div class="bg-n"><b>45 %</b><span data-i18n="bg1">de las especies del país, en territorios y territorialidades indígenas · <em>25.768 especies</em></span></div>
+      <div class="bg-n"><b>1.344.043</b><span data-i18n="bg2">registros de biodiversidad en territorio indígena · el 10 % de los 13,3 millones que Colombia tiene en GBIF</span></div>
+      <div class="bg-n"><b>31,3 %</b><span data-i18n="bg3">del territorio nacional · la proporción de tierra que explica esa concentración</span></div>
+    </div>
+
+    <h3 class="sub-h" data-i18n="bio_reino_t">Por reino, el peso es desigual — y el de las plantas es decisivo</h3>
+    <div class="tbl-wrap">
+      <table class="tbl">
+        <thead><tr>
+          <th data-i18n="th_reino">Reino</th>
+          <th data-i18n="th_col">En Colombia</th>
+          <th data-i18n="th_res">En resguardos legalizados</th>
+          <th data-i18n="th_ter">En territorialidades indígenas</th>
+        </tr></thead>
+        <tbody>
+          <tr><td data-i18n="r_veg"><strong>Vegetal</strong></td><td class="n">29.696</td><td class="n">11.882 · <b>40,0 %</b></td><td class="n">10.865 · <b>36,6 %</b></td></tr>
+          <tr><td data-i18n="r_ani"><strong>Animal</strong></td><td class="n">24.123</td><td class="n">6.233 · <b>25,8 %</b></td><td class="n">6.043 · <b>25,1 %</b></td></tr>
+          <tr><td data-i18n="r_fun"><strong>Fungi</strong></td><td class="n">2.509</td><td class="n">317 · <b>12,6 %</b></td><td class="n">355 · <b>14,2 %</b></td></tr>
+          <tr><td data-i18n="r_pro"><strong>Protista</strong></td><td class="n">104</td><td class="n">4</td><td class="n">27 · <b>26,0 %</b></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="note" data-i18n="bio_reino_n">Cuatro de cada diez especies vegetales identificadas en Colombia están dentro de resguardos legalizados. Esa es la cifra que convierte el debate sobre información digital sobre secuencias en un asunto de territorio y no solo de propiedad intelectual.</p>
+
+    <h3 class="sub-h" data-i18n="bio_emb_t">Lo que eso significa, especie por especie</h3>
+    <div class="cards">
+      <div class="card">
+        <span class="card-tag" data-i18n="c_aves_tag">Aves · Colombia es №1 del mundo</span>
+        <b class="card-n">79 %</b>
+        <p data-i18n="c_aves">De las <strong>2.118 especies de aves</strong> de Colombia —una de cada cinco del planeta— el 79 % está presente en territorialidades indígenas. La más registrada es el <em>tirano melancólico</em>, el sirirí.</p>
+      </div>
+      <div class="card">
+        <span class="card-tag" data-i18n="c_orq_tag">Orquídeas · Colombia es №1 del mundo</span>
+        <b class="card-n">1.986</b>
+        <p data-i18n="c_orq">Especies de orquídeas presentes en territorialidades indígenas. El 21 % de las registradas en resguardos se concentra en <strong>Vaupés y Kogui</strong>; otro 17 % en <strong>Kogui-Malayo-Arhuaco</strong>. Cinco de ellas están amenazadas, entre ellas <em>Oncidium nevadense</em>.</p>
+      </div>
+      <div class="card">
+        <span class="card-tag" data-i18n="c_fra_tag">Frailejones · el agua de las ciudades</span>
+        <b class="card-n">23 %</b>
+        <p data-i18n="c_fra">De las <strong>26 especies de frailejón amenazadas de extinción</strong>, el 23 % vive en territorios indígenas — sobre todo de los pueblos <strong>Pasto, Inga y Kamëntsá</strong>. Son las plantas que regulan el agua de los páramos, de donde beben las ciudades.</p>
+      </div>
+      <div class="card alert">
+        <span class="card-tag" data-i18n="c_con_tag">Cóndor andino · riesgo crítico</span>
+        <b class="card-n">73</b>
+        <p data-i18n="c_con">De los <strong>1.187 registros de cóndor</strong> que tiene el país, 73 están en resguardos: Arhuaco, Kogui-Malayo-Arhuaco y Kankuamo en la Sierra Nevada, y Kokonuco, Paletará y Puracé en el Cauca, y Unido U'wa en Boyacá. <strong>19 especies animales observadas en resguardos están en riesgo crítico</strong>, entre ellas la rana cocoi, el mono araña, la tortuga charapa y el pez sábalo.</p>
+      </div>
+    </div>
+
+    <p class="note" data-i18n="bio_note">Fuente de todas las cifras de esta sección: <strong>SMT-ONIC, 2024, a partir de GBIF, 2022</strong>. El catálogo propio de la ONIC añade <strong>5.690 especies útiles georreferenciadas por resguardo</strong>, con aval del Royal Botanic Gardens, Kew, y 99 especies endémicas documentadas dentro de resguardos. Esta página publica los agregados; las ubicaciones no salen del territorio.</p>
+  </div>
+</section>
+
+<section class="dark" id="origen">
+  <div class="wrap">
+    <p class="kicker" data-i18n="or_eyebrow">Por qué está ahí · y no es una casualidad</p>
+    <h2 class="sec disp" data-i18n="or_title">El territorio ya estaba ordenado antes de que existiera la palabra conservación</h2>
+    <p class="sub" data-i18n="or_sub">Cuando una delegación pregunta cómo se conserva el 45 % de las especies de un país en el 31 % de su superficie, la respuesta no es una política ambiental. Son tres sistemas normativos que los pueblos indígenas de Colombia llaman por su nombre, y que el Convenio reconoce en el artículo 8(j) sin llegar a entender del todo.</p>
+
+    <div class="origen-grid">
+      <div class="og">
+        <span class="og-t" data-i18n="og1_t">Ley de Origen</span>
+        <p data-i18n="og1_b">Define el principio del mundo, la formación del ser humano, los animales, el territorio y las plantas. Según ella <strong>el territorio ya está ordenado</strong>: hay áreas sagradas, áreas de recolección, áreas de animales y áreas de refugio. No es una zonificación que se decide; es una que se reconoce.</p>
+        <p class="og-q" data-i18n="og1_q">«Nosotros no somos dueños del territorio; los dueños son los espíritus creados por la Ley de Origen.»</p>
+      </div>
+      <div class="og">
+        <span class="og-t" data-i18n="og2_t">Ley Natural</span>
+        <p data-i18n="og2_b">La ley de las energías que regulan la naturaleza, el cosmos, el ser humano y los seres vivos, y que mantiene el equilibrio de los fenómenos y sus relaciones en un tejido vivo. El día y la noche, la lluvia, el rayo, el ciclo lunar y el solar, la subienda de los peces: el calendario con el que se decide cuándo se recolecta y cuándo no.</p>
+      </div>
+      <div class="og">
+        <span class="og-t" data-i18n="og3_t">Derecho Mayor</span>
+        <p data-i18n="og3_b">El derecho que nace de haber sido los primeros habitantes de estas tierras. <strong>Está escrito en vasijas, en piedras y en casas ancestrales</strong>, no en un registro notarial — y esa es exactamente la razón por la que los sistemas de patentes lo subvaloran cuando llega el momento de reconocer el conocimiento asociado a un recurso genético.</p>
+      </div>
+    </div>
+
+    <p class="pull" data-i18n="or_pull">La Ley de Origen hace que el territorio sea un organismo vivo: que siente, que piensa, que habla, que tiene derechos y una memoria. Y está antes que la Constitución Política y antes de la conquista.</p>
+
+    <p class="sub" data-i18n="or_close">Esto no es folclore que acompaña a los datos: <strong>es la metodología</strong>. El pueblo Barí ordena el universo en ocho niveles superpuestos y sabe qué ser habita cada uno; los pueblos de la Sierra Nevada ordenan el mar en ocho capas y saben cuál entrega los peces. Un inventario de biodiversidad levantado sobre ese conocimiento no es un inventario más: es el único que sabe <em>para qué sirve</em> cada especie y <em>cuándo</em> no se toca.</p>
+
+    <p class="note" data-i18n="or_note">Marco conceptual tomado de «Indicadores sobre biodiversidad SMT-ONIC», presentado por la ONIC en la COP 16. Los ejemplos de ordenamiento del universo corresponden al pueblo Barí y a los pueblos de la Sierra Nevada de Santa Marta, y se citan aquí en el nivel público en el que sus propias autoridades los han divulgado.</p>
   </div>
 </section>
 
@@ -289,6 +409,40 @@ svg .mt-shape{fill:rgba(212,160,23,.5);stroke:var(--gold);stroke-width:1.6;strok
 <script>
 const I18N = {
   en: {
+    nav_bio:"Biodiversity", nav_origen:"Law of Origin",
+    bio_eyebrow:"The biodiversity they govern",
+    bio_title:"Almost half of Colombia's species live in Indigenous territory",
+    bio_sub:"Colombia is the second most biodiverse country on the planet. Of the <strong>57,806 species taxonomically identified</strong> in the country, <strong>25,768 — 45% — are in Indigenous territories and territorialities</strong>, and 18,458 in legalised reserves. This is not a geographic coincidence: it is the result of a system of territorial government that has been running for centuries.",
+    bg1:"of the country's species, in Indigenous territories and territorialities · <em>25,768 species</em>",
+    bg2:"biodiversity records in Indigenous territory · 10% of the 13.3 million Colombia holds in GBIF",
+    bg3:"of the national territory · the share of land that explains that concentration",
+    bio_reino_t:"By kingdom the weight is uneven — and the plant figure is decisive",
+    th_reino:"Kingdom", th_col:"In Colombia", th_res:"In legalised reserves", th_ter:"In Indigenous territorialities",
+    r_veg:"<strong>Plant</strong>", r_ani:"<strong>Animal</strong>", r_fun:"<strong>Fungi</strong>", r_pro:"<strong>Protist</strong>",
+    bio_reino_n:"Four out of every ten plant species identified in Colombia lie inside legalised reserves. That is the figure that turns the debate on digital sequence information into a matter of territory, and not only of intellectual property.",
+    bio_emb_t:"What that means, species by species",
+    c_aves_tag:"Birds · Colombia ranks №1 worldwide", 
+    c_aves:"Of Colombia's <strong>2,118 bird species</strong> — one in five on the planet — 79% are present in Indigenous territorialities. The most recorded is the <em>tropical kingbird</em>, the sirirí.",
+    c_orq_tag:"Orchids · Colombia ranks №1 worldwide",
+    c_orq:"Orchid species present in Indigenous territorialities. 21% of those recorded in reserves are concentrated in <strong>Vaupés and Kogui</strong>; another 17% in <strong>Kogui-Malayo-Arhuaco</strong>. Five of them are threatened, among them <em>Oncidium nevadense</em>.",
+    c_fra_tag:"Frailejones · the cities' water",
+    c_fra:"Of the <strong>26 frailejón species threatened with extinction</strong>, 23% live in Indigenous territories — mostly those of the <strong>Pasto, Inga and Kamëntsá</strong> peoples. These are the plants that regulate the water of the páramos, where the cities drink from.",
+    c_con_tag:"Andean condor · critically endangered",
+    c_con:"Of the <strong>1,187 condor records</strong> in the country, 73 are in reserves: Arhuaco, Kogui-Malayo-Arhuaco and Kankuamo in the Sierra Nevada, Kokonuco, Paletará and Puracé in Cauca, and Unido U'wa in Boyacá. <strong>19 animal species observed in reserves are critically endangered</strong>, among them the cocoi frog, the spider monkey, the charapa turtle and the sábalo fish.",
+    bio_note:"Source for every figure in this section: <strong>SMT-ONIC, 2024, from GBIF, 2022</strong>. ONIC's own catalogue adds <strong>5,690 useful species georeferenced by reserve</strong>, endorsed by the Royal Botanic Gardens, Kew, and 99 endemic species documented inside reserves. This page publishes the aggregates; the locations do not leave the territory.",
+    or_eyebrow:"Why it is there · and it is no accident",
+    or_title:"The territory was already ordered before the word conservation existed",
+    or_sub:"When a delegation asks how 45% of a country's species are conserved in 31% of its surface, the answer is not an environmental policy. It is three normative systems that the Indigenous peoples of Colombia call by their name, and which the Convention recognises in Article 8(j) without quite understanding.",
+    og1_t:"Law of Origin",
+    og1_b:"It defines the beginning of the world, the forming of the human being, the animals, the territory and the plants. Under it <strong>the territory is already ordered</strong>: there are sacred areas, gathering areas, animal areas and refuge areas. It is not a zoning that gets decided; it is one that gets recognised.",
+    og1_q:"“We are not owners of the territory; the owners are the spirits created by the Law of Origin.”",
+    og2_t:"Natural Law",
+    og2_b:"The law of the energies that regulate nature, the cosmos, the human being and living beings, and that keeps the balance of phenomena and their relations in a living weave. Day and night, rain, lightning, the lunar and solar cycles, the fish run: the calendar by which it is decided when to harvest and when not to.",
+    og3_t:"Greater Right",
+    og3_b:"The right born of having been the first inhabitants of these lands. <strong>It is written in vessels, in stones and in ancestral houses</strong>, not in a notarial registry — and that is exactly why patent systems undervalue it when the moment comes to recognise the knowledge associated with a genetic resource.",
+    or_pull:"The Law of Origin makes the territory a living organism: one that feels, that thinks, that speaks, that holds rights and a memory. And it comes before the Political Constitution and before the conquest.",
+    or_close:"This is not folklore accompanying the data: <strong>it is the methodology</strong>. The Barí people order the universe in eight superimposed levels and know which being inhabits each one; the peoples of the Sierra Nevada order the sea in eight layers and know which one delivers the fish. A biodiversity inventory built on that knowledge is not one more inventory: it is the only one that knows <em>what each species is for</em> and <em>when</em> it is not to be touched.",
+    or_note:"Conceptual framework taken from “Indicators on biodiversity SMT-ONIC”, presented by ONIC at COP 16. The examples of ordering of the universe correspond to the Barí people and the peoples of the Sierra Nevada de Santa Marta, and are cited here at the public level at which their own authorities have shared them.",
     nav_scale:"The scale", nav_exists:"What already runs", nav_asks:"What we ask", nav_maci:"MACI", nav_contact:"Contact",
     hero_kicker:"COP 17 · Convention on Biological Diversity · Yerevan, 2026",
     hero_h1:"Twelve times Armenia.",
