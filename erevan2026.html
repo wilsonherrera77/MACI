@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ONIC · COP 17 Ereván 2026 · Doce veces Armenia</title>
+<meta name="description" content="Organización Nacional Indígena de Colombia en la COP 17 del Convenio sobre la Diversidad Biológica. 35,75 millones de hectáreas bajo gobierno indígena. MACI: USD 12,79 M el primer año en inventarios, biobanco, monitoreo comunitario y litigio estratégico.">
+<meta property="og:title" content="ONIC · COP 17 Ereván · Doce veces Armenia">
+<meta property="og:description" content="El territorio indígena titulado de Colombia equivale a doce veces Armenia. Esto es lo que ya operamos, y lo que cuesta sostenerlo.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT,WONK@9..144,300..900,0..100,0..1&family=DM+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --smt-deep:#0a3f33; --smt-deep-tint:#1a5f4f; --olive:#7d8a3c; --olive-dark:#5a6427;
+  --onic-red:#c8431c; --grafito:#2d2d2d; --grafito-light:#4a4a4a;
+  --beige-cream:#faf6e8; --gold:#d4a017; --gold-soft:#e5c067;
+  --paper:#fafaf6; --line:rgba(10,63,51,.14);
+}
+*{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:"DM Sans",system-ui,sans-serif;background:var(--paper);color:var(--grafito);line-height:1.6;font-size:17px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 28px}
+.disp{font-family:"Fraunces",Georgia,serif;font-weight:600;line-height:1.05;letter-spacing:-.015em}
+.mono{font-family:"JetBrains Mono",monospace}
+.eyebrow{font-size:.72rem;letter-spacing:.17em;text-transform:uppercase;font-weight:700;color:var(--onic-red)}
+
+nav{position:sticky;top:0;z-index:60;background:rgba(10,63,51,.97);backdrop-filter:blur(8px);border-bottom:1px solid rgba(255,255,255,.09)}
+.navin{max-width:1120px;margin:0 auto;padding:11px 28px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.brand{color:#fff;font-weight:700;letter-spacing:.11em;font-size:.76rem;text-transform:uppercase}
+.navlinks{display:flex;gap:20px;align-items:center;flex-wrap:wrap}
+.navlinks a{color:rgba(255,255,255,.76);text-decoration:none;font-size:.79rem;font-weight:500}
+.navlinks a:hover{color:var(--gold-soft)}
+.langs{display:flex;gap:5px}
+.lang{border:1px solid rgba(255,255,255,.3);background:transparent;color:rgba(255,255,255,.8);padding:4px 11px;border-radius:999px;font:inherit;font-size:.72rem;font-weight:600;cursor:pointer}
+.lang.on{background:var(--gold);border-color:var(--gold);color:var(--smt-deep)}
+
+.hero{background:var(--smt-deep);color:#fff;padding:76px 0 86px;position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:0;background-image:repeating-linear-gradient(45deg,transparent 0 19px,rgba(255,255,255,.028) 19px 20px),repeating-linear-gradient(-45deg,transparent 0 19px,rgba(212,160,23,.03) 19px 20px);pointer-events:none}
+.hero .wrap{position:relative}
+.hero h1{font-size:clamp(2.6rem,6.4vw,4.9rem);margin:.18em 0 .3em;color:#fff}
+.hero .lead{font-size:clamp(1.05rem,2vw,1.3rem);max-width:62ch;color:rgba(255,255,255,.9)}
+.kicker{font-size:.8rem;letter-spacing:.15em;text-transform:uppercase;color:var(--gold-soft);font-weight:700}
+.hero-badges{display:flex;gap:10px;flex-wrap:wrap;margin-top:30px}
+.badge{border:1px solid rgba(255,255,255,.28);border-radius:999px;padding:7px 15px;font-size:.78rem;color:rgba(255,255,255,.88);font-weight:500}
+
+section{padding:72px 0;border-bottom:1px solid var(--line)}
+section.dark{background:var(--smt-deep);color:#fff;border-bottom:none}
+section.cream{background:var(--beige-cream)}
+h2.sec{font-size:clamp(1.85rem,3.6vw,2.85rem);margin:.25em 0 .5em}
+section.dark h2.sec{color:#fff}
+.sub{max-width:68ch;color:var(--grafito-light);font-size:1.03rem}
+section.dark .sub{color:rgba(255,255,255,.82)}
+
+.scale-grid{display:grid;grid-template-columns:1fr 1fr;gap:34px;margin-top:38px;align-items:start}
+@media(max-width:860px){.scale-grid{grid-template-columns:1fr}}
+.scale-card{background:rgba(255,255,255,.055);border:1px solid rgba(255,255,255,.17);border-radius:14px;padding:26px}
+.armenia-box{position:relative;border:2px dashed var(--gold);border-radius:6px;background:rgba(212,160,23,.07);padding:30px 16px 16px}
+.armenia-lab{position:absolute;top:9px;left:11px;font-size:.67rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);font-weight:700}
+.twelve{display:grid;grid-template-columns:repeat(6,1fr);gap:7px;margin-top:18px}
+.twelve i{display:block;aspect-ratio:1.42;border:1.5px solid var(--gold);border-radius:3px;background:rgba(212,160,23,.16)}
+.mini-cap{font-size:.84rem;color:rgba(255,255,255,.72);margin-top:14px;line-height:1.5}
+
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(168px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:12px;overflow:hidden;margin-top:34px}
+.stat{background:#fff;padding:22px 20px}
+.stat b{display:block;font-family:"JetBrains Mono",monospace;font-size:1.7rem;color:var(--smt-deep);font-weight:700;letter-spacing:-.02em}
+.stat span{display:block;font-size:.8rem;color:var(--grafito-light);margin-top:7px;line-height:1.45}
+
+.ask{background:#fff;border:1px solid var(--line);border-left:3px solid var(--onic-red);border-radius:0 12px 12px 0;padding:24px 26px;margin-bottom:16px}
+.ask h3{margin:.1em 0 .45em;font-family:"Fraunces",Georgia,serif;font-size:1.2rem;color:var(--smt-deep);font-weight:600;line-height:1.3}
+.ask > p{margin:0;font-size:.97rem}
+.ask .where{font-size:.79rem;color:var(--grafito-light);margin-top:13px;padding-top:12px;border-top:1px dotted var(--line)}
+.ask .backed{margin-top:13px;background:var(--beige-cream);border-radius:9px;padding:13px 16px;font-size:.91rem}
+.ask .backed b{color:var(--olive-dark)}
+
+.mods{display:grid;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));gap:15px;margin-top:34px}
+.mod{background:#fff;border:1px solid var(--line);border-radius:13px;padding:22px;display:flex;flex-direction:column}
+.mod .tag{font-family:"JetBrains Mono",monospace;font-size:.73rem;font-weight:700;color:var(--onic-red);letter-spacing:.06em}
+.mod h4{margin:.45em 0 .3em;font-family:"Fraunces",Georgia,serif;font-size:1.06rem;color:var(--smt-deep);font-weight:600;line-height:1.25}
+.mod p{font-size:.87rem;color:var(--grafito-light);margin:0 0 16px;flex:1}
+.mod .amt{font-family:"JetBrains Mono",monospace;font-weight:700;font-size:1.2rem;color:var(--olive-dark);border-top:1px solid var(--line);padding-top:12px}
+.mod.hi{background:var(--smt-deep);border-color:var(--smt-deep)}
+.mod.hi .tag{color:var(--gold-soft)} .mod.hi h4{color:#fff} .mod.hi p{color:rgba(255,255,255,.8)}
+.mod.hi .amt{color:var(--gold);border-top-color:rgba(255,255,255,.2)}
+.total{margin-top:20px;font-family:"JetBrains Mono",monospace;font-size:.92rem;color:var(--grafito-light)}
+
+.contact{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.2);border-radius:14px;padding:30px;max-width:640px;margin-top:30px}
+.crow{display:flex;gap:16px;padding:11px 0;border-bottom:1px dotted rgba(255,255,255,.14);font-size:.93rem}
+.crow dt{min-width:118px;font-size:.71rem;letter-spacing:.11em;text-transform:uppercase;color:var(--gold-soft);font-weight:700;padding-top:3px;margin:0}
+.crow dd{margin:0}
+.crow a{color:inherit}
+dl{margin:0}
+footer{background:var(--smt-deep);color:rgba(255,255,255,.55);padding:26px 0;font-size:.79rem;border-top:1px solid rgba(255,255,255,.1)}
+.note{font-size:.8rem;color:var(--grafito-light);margin-top:28px;line-height:1.65;max-width:76ch}
+section.dark .note{color:rgba(255,255,255,.6)}
+.cmp{border:1px solid rgba(255,255,255,.2);border-radius:10px;background:rgba(0,0,0,.14);padding:20px 18px 16px}
+.cmp-legend{display:flex;gap:20px;flex-wrap:wrap;margin-top:16px;font-size:.78rem;color:rgba(255,255,255,.84)}
+.cmp-legend span{display:flex;align-items:center;gap:7px}
+.cmp-legend b{font-weight:700}
+.sw{width:13px;height:13px;border-radius:3px;display:inline-block}
+.sw-arm{border:1.6px dashed var(--gold);background:rgba(212,160,23,.1)}
+.sw-mat{border:1.6px solid var(--gold);background:rgba(212,160,23,.5)}
+svg .arm-rect{fill:rgba(212,160,23,.1);stroke:var(--gold);stroke-width:1.8;stroke-dasharray:7 5}
+svg .mt-shape{fill:rgba(212,160,23,.5);stroke:var(--gold);stroke-width:1.6;stroke-linejoin:round}
+[hidden]{display:none!important}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="navin">
+    <span class="brand">ONIC · SMT</span>
+    <div class="navlinks">
+      <a href="#escala" data-i18n="nav_scale">La escala</a>
+      <a href="#existe" data-i18n="nav_exists">Lo que ya opera</a>
+      <a href="#pedidos" data-i18n="nav_asks">Lo que pedimos</a>
+      <a href="#maci" data-i18n="nav_maci">MACI</a>
+      <a href="#contacto" data-i18n="nav_contact">Contacto</a>
+    </div>
+    <div class="langs">
+      <button class="lang on" data-lang="es">ES</button>
+      <button class="lang" data-lang="en">EN</button>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <p class="kicker" data-i18n="hero_kicker">COP 17 · Convenio sobre la Diversidad Biológica · Ereván, 2026</p>
+    <h1 class="disp" data-i18n="hero_h1">Doce veces Armenia.</h1>
+    <p class="lead" data-i18n="hero_lead">Ese es el tamaño del territorio indígena titulado de Colombia: 35,75 millones de hectáreas con autoridades propias, gobierno colectivo y un sistema de monitoreo operado por las comunidades que viven ahí. No venimos a pedir que se reconozca una intención. Venimos a mostrar lo que ya funciona, y a decir con franqueza qué cuesta sostenerlo.</p>
+    <div class="hero-badges">
+      <span class="badge" data-i18n="hero_b1">Organización Nacional Indígena de Colombia</span>
+      <span class="badge" data-i18n="hero_b2">Sistema de Monitoreo Territorial</span>
+      <span class="badge" data-i18n="hero_b3">Delegación de Rights and Resources Initiative</span>
+    </div>
+  </div>
+</header>
+
+<section class="dark" id="escala">
+  <div class="wrap">
+    <p class="kicker" data-i18n="scale_eyebrow">Para empezar por el tamaño</p>
+    <h2 class="sec disp" data-i18n="scale_title">Lo que se discute en esta sala, medido en el país que la hospeda</h2>
+    <p class="sub" data-i18n="scale_sub">Las cifras de territorio indígena se dicen en millones de hectáreas y no significan nada para quien las escucha por primera vez. Puestas en la escala de Armenia, significan esto.</p>
+
+    <div class="scale-grid">
+      <div class="scale-card">
+        <div class="cmp">
+            <svg viewBox="0 0 851 252" style="width:100%;height:auto;display:block" role="img" aria-labelledby="scTitle"><title id="scTitle">Armenia y el Resguardo Selva de Mataven a la misma escala de superficie</title><rect x="0.0" y="0.0" width="377.5" height="251.7" rx="4" class="arm-rect"/><path class="mt-shape" d="M546.9,105.3L554.5,102.4L562.5,104.0L570.4,106.8L578.4,112.5L585.4,108.4L591.0,117.1L599.1,120.8L607.7,123.7L616.3,127.4L624.8,130.3L633.1,129.2L635.2,121.6L642.7,121.8L650.1,122.3L651.6,113.4L662.6,107.6L659.7,100.3L667.0,94.1L675.3,90.5L682.4,88.3L678.7,79.8L687.4,74.4L695.0,67.5L702.9,64.1L710.5,62.3L717.8,59.9L725.6,59.6L729.1,52.6L736.4,53.8L740.5,45.4L749.1,42.7L758.0,39.9L761.8,32.6L768.9,38.8L778.6,36.6L786.2,37.2L793.8,33.8L802.3,39.9L811.2,38.9L822.3,37.6L831.1,31.6L835.6,24.3L843.8,23.2L847.9,30.6L850.8,44.7L850.5,51.7L849.9,58.7L847.5,71.4L838.2,69.8L829.5,61.2L824.1,68.2L816.5,71.6L802.8,72.5L793.6,70.3L785.1,71.4L775.2,72.1L767.4,78.7L774.9,78.7L783.2,81.5L790.3,79.8L797.5,84.3L806.6,86.7L810.3,94.1L814.7,102.0L822.0,100.5L828.8,112.4L830.3,119.9L821.2,120.1L819.4,128.2L814.7,137.5L807.0,142.8L797.0,147.0L789.9,144.9L779.5,143.0L775.8,151.0L767.9,153.6L760.3,155.2L759.5,162.8L752.0,165.8L761.9,165.6L769.8,166.9L778.5,169.0L789.2,173.8L781.0,179.9L778.1,188.8L767.0,188.3L759.7,186.7L758.3,194.9L749.8,196.1L742.0,194.8L734.1,204.0L725.7,203.2L711.9,204.7L703.7,208.8L689.1,212.4L681.3,210.8L673.7,209.8L665.4,209.5L656.6,212.2L645.7,215.7L637.2,211.1L635.8,220.3L627.9,214.5L620.3,214.2L610.9,215.1L600.2,222.0L591.5,224.7L564.7,230.1L552.5,220.3L560.0,222.8L555.3,215.3L556.2,203.8L553.8,195.7L544.5,194.1L535.1,184.6L528.4,174.5L522.9,167.4L513.6,163.8L504.2,164.4L498.1,157.2L466.6,149.4L454.8,153.9L442.0,158.1L431.5,159.1L441.3,153.7L449.4,151.4L458.3,140.2L481.8,140.6L485.4,131.7L495.4,128.2L500.0,120.8L507.1,124.4L506.2,115.8L513.7,115.0L520.8,113.7L528.9,107.3L538.6,105.8L546.9,105.3Z M635.0,129.8L625.4,134.7L642.9,135.8L650.9,131.6L657.9,129.1L667.6,121.2L675.0,110.3L683.3,105.3L690.9,98.7L698.5,98.8L706.2,94.5L714.5,93.1L718.5,85.6L725.6,82.7L733.9,77.4L742.4,79.4L749.8,72.3L760.1,73.4L767.2,70.8L775.0,66.9L783.5,69.1L795.9,67.7L805.1,68.1L812.7,66.8L821.3,61.6L824.6,50.3L816.1,48.1L806.6,48.6L799.0,52.9L787.0,49.1L779.9,53.6L769.5,52.8L760.9,54.0L749.9,58.3L742.7,59.5L733.2,66.6L723.9,71.3L715.6,70.9L708.3,75.6L707.9,84.9L698.0,86.6L690.9,87.0L683.0,91.1L680.3,98.5L673.3,105.7L666.1,116.0L651.3,127.9L643.0,127.6L635.4,128.2Z M538.4,108.9L530.8,112.3L523.7,115.3L531.3,116.1L532.3,125.3L542.1,123.3L544.7,115.7L552.9,117.8L562.0,115.8L570.2,115.8L574.3,123.8L583.5,126.2L582.3,118.7L574.9,116.4L567.6,112.5L552.9,112.4L544.2,113.0L537.1,115.0Z M832.1,43.2L833.0,50.7L841.8,49.0L841.1,56.6L845.6,49.0L839.1,40.1Z"/></svg>
+            <div class="cmp-legend">
+              <span><i class="sw sw-arm"></i><b>Armenia</b> · 2.974.300 ha</span>
+              <span><i class="sw sw-mat"></i><b>Matavén</b> · 1.150.212 ha</span>
+            </div>
+          </div>
+        <p class="mini-cap" data-i18n="scale_cap1"><strong>Un solo resguardo.</strong> La silueta es el Resguardo Indígena Unificado Selva de Matavén, en el Vichada: 1.150.212 hectáreas, cerca del 39 % de la superficie de Armenia. Lo gobiernan seis pueblos que integraron dieciséis resguardos en uno, y llevan treinta años de monitoreo comunitario verificado.</p>
+      </div>
+
+      <div class="scale-card">
+        <p class="armenia-lab" style="position:static;display:block;margin-bottom:10px" data-i18n="scale_12_label">Territorio indígena titulado de Colombia</p>
+        <div class="twelve" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+        <p class="mini-cap" data-i18n="scale_cap2"><strong>Doce Armenias.</strong> Los 959 resguardos titulados suman 35,75 millones de hectáreas, el 31,3 % del territorio nacional. Cada recuadro es un país anfitrión completo. Sumando los territorios colectivos afrodescendientes y campesinos, la gobernanza colectiva llega al 37,7 % del país.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="existe">
+  <div class="wrap">
+    <p class="eyebrow" data-i18n="exists_eyebrow">Lo que ya existe</p>
+    <h2 class="sec disp" data-i18n="exists_title">No es una aspiración: está titulado, delimitado y registrado</h2>
+    <p class="sub" data-i18n="exists_sub">La gobernanza colectiva del territorio en Colombia tiene expediente. El Sistema de Monitoreo Territorial de la ONIC la vigila con equipos comunitarios, bajo reglas de gobierno indígena de los datos: el primero es público y los otros tres no salen del territorio. Esa regla no es una política interna que adoptamos por conveniencia; es la condición que hace posible que la información exista.</p>
+    <div class="stats">
+      <div class="stat"><b>88</b><span data-i18n="st1">pueblos indígenas representados por la ONIC</span></div>
+      <div class="stat"><b>1.446.870</b><span data-i18n="st2">personas</span></div>
+      <div class="stat"><b>959</b><span data-i18n="st3">resguardos indígenas titulados</span></div>
+      <div class="stat"><b>31,3 %</b><span data-i18n="st4">del territorio nacional en resguardos · 35,75 millones de hectáreas</span></div>
+      <div class="stat"><b>5.690</b><span data-i18n="st5">especies útiles georreferenciadas en el catálogo propio por resguardo</span></div>
+      <div class="stat"><b>30</b><span data-i18n="st6">años de operación verificada del monitoreo en Matavén</span></div>
+    </div>
+    <p class="note" data-i18n="exists_note">Cifras de gobernanza: Agencia Nacional de Tierras, 2025-2026. Catálogo de plantas útiles por resguardo, con aval del Royal Botanic Gardens, Kew, y GBIF. Matavén: registro público de Verra, proyecto VCS-1566, periodo acreditado 2013-2042. Esta página contiene únicamente información de nivel público: no publica coordenadas de comunidades, sitios sagrados ni conocimiento tradicional asociado.</p>
+  </div>
+</section>
+
+<section class="cream" id="pedidos">
+  <div class="wrap">
+    <p class="eyebrow" data-i18n="asks_eyebrow">Lo que pedimos, y con qué lo sostenemos</p>
+    <h2 class="sec disp" data-i18n="asks_title">Cuatro puntos del texto en negociación, cada uno con su respaldo operativo</h2>
+    <p class="sub" data-i18n="asks_sub">Cada pedido tiene un texto concreto en esta COP, no una declaración de principios. Y cada uno tiene detrás un módulo del Marco de Acción para Comunidades Indígenas que ya está formulado y costeado: la diferencia entre pedir que nos reconozcan y mostrar que podemos operarlo.</p>
+
+    <div style="margin-top:34px">
+      <div class="ask">
+        <h3 data-i18n="a1_t">Los territorios indígenas y tradicionales, como sistema propio</h3>
+        <p data-i18n="a1_b">Que se adopte el reconocimiento de los territorios indígenas y tradicionales como categoría primaria y propia de conservación, con la restricción explícita de la palabra «autónomo», y que se rechace la definición que los absorbe como medidas de conservación bajo tutela estatal.</p>
+        <div class="backed" data-i18n="a1_k">Lo sostiene <b>M3 · Monitoreo Comunitario Biocultural</b>, con Matavén y treinta años de operación verificada.</div>
+        <p class="where" data-i18n="a1_w">Dónde: Meta 3 y artículo 8(j) · tema 10(b), anexo, párrafo 26 · tema 17(c), párrafo 2. Quién apoyó: Brasil, Guatemala, Namibia, la UICN y el FIIB.</p>
+      </div>
+
+      <div class="ask">
+        <h3 data-i18n="a2_t">Trazabilidad de la información digital sobre secuencias, en tres niveles, y el fondo bajo la COP</h3>
+        <p data-i18n="a2_b">Que cada secuencia genética registre su origen territorial y el conocimiento tradicional asociado, con un campo de consentimiento libre, previo e informado que no quede subordinado a la complejidad administrativa. Y que el mecanismo permanezca bajo la autoridad de la Conferencia de las Partes: trasladarlo al Fondo para el Medio Ambiente Mundial excluye en la práctica a las organizaciones indígenas.</p>
+        <div class="backed" data-i18n="a2_k">Lo sostiene <b>M4 · Genética y Biobanco</b>. No pedimos trazabilidad en abstracto: tenemos formulado con qué operarla.</div>
+        <p class="where" data-i18n="a2_w">Dónde: metadatos de origen y consentimiento, tema 11, párrafo 37(b) · gobernanza bajo la COP, párrafo 2(b) · acceso directo, anexo III. Todo entre corchetes.</p>
+      </div>
+
+      <div class="ask">
+        <h3 data-i18n="a3_t">Aportes obligatorios al Fondo Cali y una vía de acceso directo</h3>
+        <p data-i18n="a3_b">El aporte voluntario no funcionó: al 15 de septiembre de 2026 el Fondo Cali había recibido seis mil dólares y no había desembolsado nada. Pedimos aportes obligatorios y un párrafo que apruebe las vías de desembolso conservando el acceso directo, sin que una carta del punto focal nacional opere como veto.</p>
+        <div class="backed" data-i18n="a3_k">Lo sostienen <b>M2 · Plataforma Soberana de Datos</b> y el Consejo de Datos de <b>M1</b>: el mecanismo de rendición de cuentas ya está diseñado.</div>
+        <p class="where" data-i18n="a3_w">Dónde: tema 11, párrafo nuevo del punto 24 · criterio del tema 8(a), notas 44 y 45 del tema 8(b). Fuente del dato: CBD/COP/17/6/Add.1, párrafos 19-20. La decisión 16/2 prevé que al menos la mitad del Fondo apoye necesidades que identifiquen los propios pueblos.</p>
+      </div>
+
+      <div class="ask">
+        <h3 data-i18n="a4_t">Los pueblos afrodescendientes, fuera de los corchetes</h3>
+        <p data-i18n="a4_b">La decisión 16/6 reconoció por primera vez en treinta y cuatro años del Convenio a los pueblos afrodescendientes. Hoy su continuidad está entre corchetes y, veintiún meses después, su implementación no ha comenzado. Pedimos sacarla de los corchetes y garantizar la participación plena de los pueblos en el reglamento del órgano subsidiario del artículo 8(j), que esta COP adopta.</p>
+        <div class="backed" data-i18n="a4_k">Lo sostiene <b>M1 · Gobernabilidad y Soberanía</b>, con el consentimiento libre, previo e informado y el litigio estratégico, incluida la Sentencia SU-039 de 1997 del caso U'wa.</div>
+        <p class="where" data-i18n="a4_w">Por qué nos toca: la exigencia de reconocimiento de sistemas de registro diferenciados por pueblo y por territorio es la misma que planteamos para los territorios indígenas. Es un solo cuerpo.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="maci">
+  <div class="wrap">
+    <p class="eyebrow" data-i18n="maci_eyebrow">Con qué se hace · y qué cuesta</p>
+    <h2 class="sec disp" data-i18n="maci_title">MACI · Marco de Acción para Comunidades Indígenas</h2>
+    <p class="sub" data-i18n="maci_sub">MACI articula los mandatos del XI Congreso de la ONIC, el Pacto para Volver al Origen, con financiación internacional para 2026-2030. Son cinco módulos operativos, formulados y costeados. Lo que sigue es el primer año; el horizonte completo a cinco años está entre 60 y 80 millones de dólares.</p>
+
+    <div class="mods">
+      <div class="mod">
+        <span class="tag">M1</span>
+        <h4 data-i18n="m1_t">Gobernabilidad y Soberanía</h4>
+        <p data-i18n="m1_b">Consejo de Datos, consentimiento libre previo e informado, acceso y distribución de beneficios, y litigio estratégico.</p>
+        <span class="amt">USD 288 K</span>
+      </div>
+      <div class="mod">
+        <span class="tag">M2</span>
+        <h4 data-i18n="m2_t">Plataforma Soberana de Datos</h4>
+        <p data-i18n="m2_b">La infraestructura donde viven los inventarios, con las reglas de gobierno indígena de los datos escritas en el sistema.</p>
+        <span class="amt">USD 531 K</span>
+      </div>
+      <div class="mod">
+        <span class="tag">M3</span>
+        <h4 data-i18n="m3_t">Monitoreo Comunitario Biocultural</h4>
+        <p data-i18n="m3_b">Equipos de las propias comunidades levantando información sobre el territorio de forma continua, con protocolos de consentimiento.</p>
+        <span class="amt">USD 7,09 M</span>
+      </div>
+      <div class="mod hi">
+        <span class="tag">M4</span>
+        <h4 data-i18n="m4_t">Genética y Biobanco</h4>
+        <p data-i18n="m4_b">Bancos de datos e inventarios propios sobre recursos genéticos, con trazabilidad del origen territorial y del conocimiento asociado. Es la respuesta material al debate sobre información digital sobre secuencias.</p>
+        <span class="amt">USD 1,27 M</span>
+      </div>
+      <div class="mod">
+        <span class="tag">M5</span>
+        <h4 data-i18n="m5_t">Bioeconomía y Sostenibilidad</h4>
+        <p data-i18n="m5_b">El catálogo de 5.690 especies útiles puesto a producir, con protocolos bioculturales y distribución de beneficios.</p>
+        <span class="amt">USD 2,46 M</span>
+      </div>
+    </div>
+    <p class="total" data-i18n="maci_total">Año 1 · USD 12,79 M incluyendo diez por ciento de gastos de administración · Horizonte 2026-2030 · USD 60-80 M</p>
+    <p class="note" data-i18n="maci_note">Las cifras por módulo corresponden al primer año de la formulación de MACI y se presentan como el orden de magnitud de cada línea, no como un compromiso presupuestal cerrado. Cada módulo tiene su propia ficha pública, enlazada desde el sitio del Marco.</p>
+  </div>
+</section>
+
+<section class="dark" id="contacto">
+  <div class="wrap">
+    <p class="kicker" data-i18n="contact_eyebrow">Hablemos</p>
+    <h2 class="sec disp" data-i18n="contact_title">Qué sigue después de esta conversación</h2>
+    <p class="sub" data-i18n="contact_sub">Si algo de esto se cruza con tu agenda, el siguiente paso es concreto: una reunión en Ereván esta semana, o una fecha para seguir después de la COP.</p>
+    <div class="contact">
+      <dl>
+        <div class="crow"><dt data-i18n="c_name">Nombre</dt><dd>Wilson Fernando Herrera Baltán</dd></div>
+        <div class="crow"><dt data-i18n="c_role">Cargo</dt><dd data-i18n="c_role_v">Coordinador General · Sistema de Monitoreo Territorial · ONIC</dd></div>
+        <div class="crow"><dt data-i18n="c_when">En Ereván</dt><dd data-i18n="c_when_v">Del 19 al 26 de octubre de 2026</dd></div>
+        <div class="crow"><dt data-i18n="c_deleg">Delegación</dt><dd data-i18n="c_deleg_v">Coalición de Rights and Resources Initiative</dd></div>
+        <div class="crow"><dt data-i18n="c_mail">Correo</dt><dd><a href="mailto:wilsonherrera77@gmail.com">wilsonherrera77@gmail.com</a></dd></div>
+        <div class="crow"><dt data-i18n="c_phone">Teléfono</dt><dd><a href="tel:+573112201903">+57 311 220 1903</a></dd></div>
+      </dl>
+    </div>
+    <p class="note" data-i18n="contact_note">Wilson Herrera participa en la COP 17 como integrante de la delegación de la Coalición de Rights and Resources Initiative y como Coordinador General del Sistema de Monitoreo Territorial de la ONIC. Esta página presenta el trabajo del Sistema y las posiciones técnicas que lo acompañan; las decisiones institucionales de la ONIC las adopta su Consejo Mayor de Gobierno.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">Organización Nacional Indígena de Colombia · Sistema de Monitoreo Territorial · 2026</div>
+</footer>
+
+<script>
+const I18N = {
+  en: {
+    nav_scale:"The scale", nav_exists:"What already runs", nav_asks:"What we ask", nav_maci:"MACI", nav_contact:"Contact",
+    hero_kicker:"COP 17 · Convention on Biological Diversity · Yerevan, 2026",
+    hero_h1:"Twelve times Armenia.",
+    hero_lead:"That is the size of Colombia's titled Indigenous territory: 35.75 million hectares with their own authorities, collective government and a monitoring system run by the people who live there. We are not here to ask that an intention be recognised. We are here to show what already works, and to say plainly what it costs to sustain it.",
+    hero_b1:"National Indigenous Organization of Colombia", hero_b2:"Territorial Monitoring System", hero_b3:"Rights and Resources Initiative delegation",
+    scale_eyebrow:"Starting with the size",
+    scale_title:"What is being negotiated in this room, measured against the country hosting it",
+    scale_sub:"Indigenous territory figures are given in millions of hectares and mean nothing to someone hearing them for the first time. Set against the scale of Armenia, they mean this.",
+    scale_arm_label:"Armenia · 2,974,300 ha",
+    scale_cap1:"<strong>A single reserve.</strong> The outline is the Unified Indigenous Reserve of Selva de Matavén, in Vichada: 1,150,212 hectares, close to 39% of Armenia's surface. It is governed by six peoples who merged sixteen reserves into one, and it carries thirty years of verified community monitoring.",
+    scale_12_label:"Colombia's titled Indigenous territory",
+    scale_cap2:"<strong>Twelve Armenias.</strong> The 959 titled reserves add up to 35.75 million hectares, 31.3% of the national territory. Each box is one entire host country. Adding Afro-descendant and peasant collective territories, collective governance reaches 37.7% of the country.",
+    exists_eyebrow:"What already exists",
+    exists_title:"Not an aspiration: it is titled, demarcated and registered",
+    exists_sub:"Collective territorial governance in Colombia has a legal record. The ONIC Territorial Monitoring System watches over it with community teams, under Indigenous data governance rules: the first level is public and the other three never leave the territory. That rule is not an internal policy we adopted for convenience; it is the condition that makes the information exist at all.",
+    st1:"Indigenous peoples represented by ONIC", st2:"people", st3:"titled Indigenous reserves",
+    st4:"of the national territory in reserves · 35.75 million hectares",
+    st5:"useful species georeferenced in our own catalogue, by reserve",
+    st6:"years of verified monitoring operation in Matavén",
+    exists_note:"Governance figures: National Land Agency, 2025-2026. Useful plants catalogue by reserve, endorsed by the Royal Botanic Gardens, Kew, and GBIF. Matavén: Verra public registry, project VCS-1566, crediting period 2013-2042. This page carries public-level information only: it publishes no community coordinates, sacred sites or associated traditional knowledge.",
+    asks_eyebrow:"What we ask, and what backs it",
+    asks_title:"Four points of the negotiating text, each with its operational backing",
+    asks_sub:"Each ask has concrete text at this COP, not a statement of principle. And each has behind it a module of the Framework for Action for Indigenous Communities, already formulated and costed: the difference between asking to be recognised and showing we can run it.",
+    a1_t:"Indigenous and traditional territories, as a system of their own",
+    a1_b:"That Indigenous and traditional territories be recognised as a primary conservation category of their own, with the explicit restriction of the word “autonomous”, and that the definition absorbing them into state-tutelage conservation measures be rejected.",
+    a1_k:"Backed by <b>M3 · Biocultural Community Monitoring</b>, with Matavén and thirty years of verified operation.",
+    a1_w:"Where: Target 3 and Article 8(j) · item 10(b), annex, paragraph 26 · item 17(c), paragraph 2. Supported by: Brazil, Guatemala, Namibia, IUCN and the IIFB.",
+    a2_t:"Three-level traceability for digital sequence information, and the fund under the COP",
+    a2_b:"That every genetic sequence record its territorial origin and associated traditional knowledge, with a free, prior and informed consent field that is not made subordinate to administrative complexity. And that the mechanism remain under the authority of the Conference of the Parties: moving it to the Global Environment Facility excludes Indigenous organisations in practice.",
+    a2_k:"Backed by <b>M4 · Genetics and Biobank</b>. We are not asking for traceability in the abstract: we have it formulated and ready to run.",
+    a2_w:"Where: origin and consent metadata, item 11, paragraph 37(b) · governance under the COP, paragraph 2(b) · direct access, annex III. All in brackets.",
+    a3_t:"Mandatory contributions to the Cali Fund and a route to direct access",
+    a3_b:"The voluntary contribution did not work: as of 15 September 2026 the Cali Fund had received six thousand dollars and had disbursed nothing. We ask for mandatory contributions and a paragraph approving disbursement routes that preserves direct access, without a letter from the national focal point operating as a veto.",
+    a3_k:"Backed by <b>M2 · Sovereign Data Platform</b> and the Data Council in <b>M1</b>: the accountability mechanism is already designed.",
+    a3_w:"Where: item 11, new paragraph under point 24 · criterion in item 8(a), notes 44 and 45 of item 8(b). Source: CBD/COP/17/6/Add.1, paragraphs 19-20. Decision 16/2 provides that at least half the Fund should support needs identified by the peoples themselves.",
+    a4_t:"Afro-descendant peoples, out of the brackets",
+    a4_b:"Decision 16/6 recognised Afro-descendant peoples for the first time in thirty-four years of the Convention. Today its continuity sits in brackets and, twenty-one months on, implementation has not begun. We ask that it be taken out of the brackets and that full participation of peoples be guaranteed in the rules of procedure of the Article 8(j) subsidiary body, which this COP adopts.",
+    a4_k:"Backed by <b>M1 · Governance and Sovereignty</b>, with free, prior and informed consent and strategic litigation, including Judgment SU-039 of 1997 in the U'wa case.",
+    a4_w:"Why it concerns us: the demand for recognition of registry systems differentiated by people and by territory is the same one we raise for Indigenous territories. It is one single body.",
+    maci_eyebrow:"What it takes · and what it costs",
+    maci_title:"MACI · Framework for Action for Indigenous Communities",
+    maci_sub:"MACI connects the mandates of ONIC's XI Congress, the Pact to Return to the Origin, with international financing for 2026-2030. Five operational modules, formulated and costed. What follows is the first year; the full five-year horizon is between 60 and 80 million dollars.",
+    m1_t:"Governance and Sovereignty", m1_b:"Data Council, free prior and informed consent, access and benefit sharing, and strategic litigation.",
+    m2_t:"Sovereign Data Platform", m2_b:"The infrastructure where the inventories live, with Indigenous data governance rules written into the system.",
+    m3_t:"Biocultural Community Monitoring", m3_b:"Teams from the communities themselves gathering territorial information continuously, under consent protocols.",
+    m4_t:"Genetics and Biobank", m4_b:"Our own data banks and inventories of genetic resources, with traceability of territorial origin and associated knowledge. It is the material answer to the digital sequence information debate.",
+    m5_t:"Bioeconomy and Sustainability", m5_b:"The catalogue of 5,690 useful species put to work, with biocultural protocols and benefit sharing.",
+    maci_total:"Year 1 · USD 12.79 M including ten per cent overhead · Horizon 2026-2030 · USD 60-80 M",
+    maci_note:"Module figures correspond to the first year of the MACI formulation and are presented as the order of magnitude of each line, not as a closed budget commitment. Each module has its own public brief, linked from the Framework site.",
+    contact_eyebrow:"Let us talk", contact_title:"What comes after this conversation",
+    contact_sub:"If any of this crosses your agenda, the next step is concrete: a meeting in Yerevan this week, or a date to continue after the COP.",
+    c_name:"Name", c_role:"Role", c_role_v:"General Coordinator · Territorial Monitoring System · ONIC",
+    c_when:"In Yerevan", c_when_v:"19 to 26 October 2026",
+    c_deleg:"Delegation", c_deleg_v:"Rights and Resources Initiative Coalition",
+    c_mail:"Email", c_phone:"Phone",
+    contact_note:"Wilson Herrera attends COP 17 as a member of the Rights and Resources Initiative Coalition delegation and as General Coordinator of ONIC's Territorial Monitoring System. This page presents the System's work and the technical positions accompanying it; ONIC's institutional decisions are taken by its Mayor Council of Government."
+  }
+};
+const ES = {};
+document.querySelectorAll("[data-i18n]").forEach(el => ES[el.dataset.i18n] = el.innerHTML);
+function setLang(l){
+  const dict = l === "en" ? I18N.en : ES;
+  document.querySelectorAll("[data-i18n]").forEach(el => {
+    const v = l === "en" ? dict[el.dataset.i18n] : ES[el.dataset.i18n];
+    if (v !== undefined) el.innerHTML = v;
+  });
+  document.documentElement.lang = l;
+  document.querySelectorAll(".lang").forEach(b => b.classList.toggle("on", b.dataset.lang === l));
+  try { localStorage.setItem("onic_cop17_lang", l); } catch (e) {}
+}
+document.querySelectorAll(".lang").forEach(b => b.addEventListener("click", () => setLang(b.dataset.lang)));
+try { const s = localStorage.getItem("onic_cop17_lang"); if (s === "en") setLang("en"); } catch (e) {}
+</script>
+</body>
+</html>

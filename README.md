@@ -6,7 +6,11 @@
 
 ---
 
-## ⭐ Cumbre RRI Brasília 2026 · 26-29 mayo
+## COP 17 del CDB · Ereván 2026 · 19-26 octubre
+
+→ **Landing COP17:** [`erevan2026.html`](https://wilsonherrera77.github.io/MACI/erevan2026.html) (ES/EN · la escala, los cuatro pedidos del texto en negociación y el módulo MACI que sostiene cada uno)
+
+## ⭐ Cumbre RRI Brasília 2026 · 26-29 mayo · 26-29 mayo
 
 → **Landing Cumbre:** [`brasilia2026.html`](https://wilsonherrera77.github.io/MACI/brasilia2026.html) (multilingüe ES/EN/PT/FR)
 → **Hub móvil contacto:** [`contact-brasilia.html`](https://wilsonherrera77.github.io/MACI/contact-brasilia.html)
@@ -34,7 +38,7 @@ MACI es el vehículo bancable de ONIC para articular los mandatos del XI Congres
 
 ONIC representa 102 pueblos indígenas en **toda Colombia**. Casos verificables por macrorregión:
 
-- **Amazonía** · Selva de Matavén (ACATISEMA · Verra ID 1566 · REDD+ VCS+CCB certificado · ~1.85M ha · 5 etnias custodias)
+- **Amazonía** · Selva de Matavén (ACATISEMA · Verra ID 1566 · REDD+ VCS+CCB certificado · 1.150.212 ha netas · 6 pueblos custodios (Sikuani, Piaroa, Puinave, Curripaco, Cubeo, Piapoco))
 - **Orinoquía** · Cumaribo + Catálogo Plantas Útiles × Resguardos 2024 (5.690 especies geo · aval Kew Gardens + GBIF)
 - **Andes** · Pueblo U'wa · Sierra Nevada del Cocuy · Sentencia SU-039/1997 (caso jurídico fundacional consulta previa)
 - **Caribe-Sierra Nevada** · 4 pueblos Kogui · Wiwa · Arhuaco · Kankuamo · Línea Negra intersecciones territoriales
