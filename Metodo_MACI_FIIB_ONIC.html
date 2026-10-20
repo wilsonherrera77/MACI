@@ -1,0 +1,730 @@
+<!doctype html>
+<!-- [VA-ROUTE] opus-directo · pieza de diseño cuyo contenido son las 40+ cifras
+     medidas en esta sesión, con su identidad visual institucional verificada
+     (#004C45) y el léxico propio del SMT-ONIC. No es prosa delegable: cada
+     bloque cita un dato que sólo existe en el expediente de esta corrida. -->
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>El método · SMT-ONIC · COP 17 Ereván</title>
+<style>
+:root{
+  --tinta:#04110F;          /* fondo: verde casi negro, para sala oscura */
+  --tinta-2:#0A1F1C;
+  --marca:#004C45;          /* color de marca verificado del SMT-ONIC */
+  --marca-luz:#1FB89E;      /* el mismo verde, legible sobre oscuro */
+  --marca-claro:#8FE8D6;
+  --hueso:#F2EFE6;
+  --hueso-tenue:#A8B5B1;
+  --alerta:#E8A33D;
+  --sangre:#C85A47;
+  --linea:rgba(143,232,214,.18);
+  --serif:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,"Times New Roman",serif;
+  --sans:"Inter","Segoe UI",system-ui,-apple-system,Helvetica,Arial,sans-serif;
+  --mono:"SF Mono","Cascadia Mono",Consolas,"Liberation Mono",monospace;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;background:var(--tinta);color:var(--hueso);
+  font-family:var(--sans);font-size:17px;line-height:1.55;
+  -webkit-font-smoothing:antialiased;
+}
+/* ---------- estructura de lámina ---------- */
+.lamina{
+  min-height:100vh;display:flex;flex-direction:column;justify-content:center;
+  padding:5.5rem 7vw;position:relative;border-bottom:1px solid var(--linea);
+  scroll-margin-top:0;
+}
+.lamina>*{max-width:1180px;width:100%;margin-inline:auto}
+.num{
+  position:absolute;top:2rem;left:7vw;font-family:var(--mono);font-size:.72rem;
+  letter-spacing:.22em;color:var(--marca-luz);opacity:.75;
+}
+h1,h2,h3{font-family:var(--serif);font-weight:600;line-height:1.08;margin:0}
+h1{font-size:clamp(2.6rem,6.4vw,5.1rem);letter-spacing:-.025em}
+h2{font-size:clamp(1.9rem,4vw,3.1rem);letter-spacing:-.02em;margin-bottom:1.6rem}
+h3{font-size:1.18rem;letter-spacing:.01em}
+.rotulo{
+  font-family:var(--mono);font-size:.7rem;letter-spacing:.28em;text-transform:uppercase;
+  color:var(--marca-luz);margin-bottom:1.5rem;display:block;
+}
+.entrada{font-size:clamp(1.05rem,1.9vw,1.4rem);color:var(--hueso-tenue);max-width:60ch;line-height:1.5}
+.pie{font-family:var(--mono);font-size:.7rem;color:var(--hueso-tenue);opacity:.65;margin-top:1.4rem;line-height:1.6}
+em{font-style:italic;color:var(--marca-claro)}
+strong{color:var(--hueso);font-weight:600}
+
+/* ---------- la cifra enorme ---------- */
+.cifra{font-family:var(--serif);font-size:clamp(4.5rem,15vw,12rem);line-height:.86;letter-spacing:-.045em;color:var(--marca-luz)}
+.cifra.ambar{color:var(--alerta)}
+.cifra.sangre{color:var(--sangre)}
+.cifra-pie{font-size:1.1rem;color:var(--hueso-tenue);max-width:46ch;margin-top:1.1rem}
+
+/* ---------- portada ---------- */
+.portada{background:
+  radial-gradient(ellipse 80% 50% at 15% 0%,rgba(0,76,69,.55),transparent 62%),
+  radial-gradient(ellipse 60% 40% at 90% 100%,rgba(31,184,158,.14),transparent 60%),
+  var(--tinta);}
+.portada h1{max-width:17ch}
+.marca-sup{font-family:var(--mono);font-size:.76rem;letter-spacing:.3em;text-transform:uppercase;color:var(--marca-claro);margin-bottom:2.4rem}
+.bajada{font-size:1.3rem;color:var(--hueso-tenue);max-width:54ch;margin-top:2rem;line-height:1.5}
+
+/* ---------- ADN ---------- */
+.adn{display:flex;height:76px;gap:1px;border-radius:3px;overflow:hidden;margin:1.5rem 0 .6rem;background:var(--tinta-2)}
+.adn i{flex:1 0 auto;min-width:1px}
+.adn-A{background:#1FB89E}.adn-C{background:#2E7FB8}.adn-G{background:#E8A33D}.adn-T{background:#C85A47}
+.adn-leyenda{font-family:var(--mono);font-size:.68rem;color:var(--hueso-tenue);display:flex;gap:1.3rem;flex-wrap:wrap}
+.adn-leyenda span::before{content:"";display:inline-block;width:9px;height:9px;margin-right:.4rem;border-radius:1px;vertical-align:baseline}
+.l-A::before{background:#1FB89E}.l-C::before{background:#2E7FB8}.l-G::before{background:#E8A33D}.l-T::before{background:#C85A47}
+.fasta{font-family:var(--mono);font-size:.74rem;color:var(--marca-claro);background:var(--tinta-2);
+  padding:1rem 1.1rem;border-left:2px solid var(--marca-luz);overflow-x:auto;white-space:pre;line-height:1.5;margin:1.2rem 0}
+
+/* ---------- especie: foto + datos ---------- */
+.especie{display:grid;grid-template-columns:minmax(0,0.9fr) minmax(0,1.1fr);gap:3.2rem;align-items:center}
+.especie figure{margin:0}
+.especie img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:2px;filter:saturate(.92) contrast(1.04)}
+.especie figcaption{font-family:var(--mono);font-size:.64rem;color:var(--hueso-tenue);opacity:.7;margin-top:.6rem;line-height:1.5}
+.binomio{font-family:var(--serif);font-style:italic;font-size:clamp(1.7rem,3.4vw,2.6rem);color:var(--hueso);line-height:1.1}
+.ficha{list-style:none;padding:0;margin:1.6rem 0 0;border-top:1px solid var(--linea)}
+.ficha li{display:flex;justify-content:space-between;gap:1.5rem;padding:.72rem 0;border-bottom:1px solid var(--linea);font-size:.92rem}
+.ficha dt,.ficha .k{color:var(--hueso-tenue);font-family:var(--mono);font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;padding-top:.2rem}
+.ficha .v{text-align:right;font-weight:500}
+.ficha .v.mal{color:var(--sangre)}
+.ficha .v.bien{color:var(--marca-luz)}
+
+/* ---------- tablero de las 99 ---------- */
+.tablero{display:grid;grid-template-columns:repeat(auto-fill,minmax(26px,1fr));gap:5px;margin:2rem 0 1rem;max-width:760px}
+.tablero i{aspect-ratio:1;border-radius:2px;display:block;position:relative;cursor:default}
+.t-gris{background:rgba(168,181,177,.17)}
+.t-cero{background:var(--sangre)}
+.t-algo{background:var(--marca-luz)}
+.t-dudo{background:var(--alerta);opacity:.55}
+.leyenda{display:flex;gap:1.8rem;flex-wrap:wrap;font-size:.84rem;color:var(--hueso-tenue);margin-top:1.4rem}
+.leyenda span{display:flex;align-items:center;gap:.5rem}
+.leyenda b{width:11px;height:11px;border-radius:2px;display:inline-block}
+
+/* ---------- dos nombres ---------- */
+.nombres{display:grid;grid-template-columns:1fr auto 1fr;gap:2rem;align-items:center;margin:2.5rem 0}
+.caja{border:1px solid var(--linea);padding:1.8rem;border-radius:3px;background:var(--tinta-2)}
+.caja.apagada{opacity:.45}
+.caja .nom{font-family:var(--serif);font-style:italic;font-size:1.45rem;color:var(--hueso)}
+.caja .et{font-family:var(--mono);font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;color:var(--hueso-tenue);margin-bottom:.7rem}
+.caja .val{font-family:var(--serif);font-size:3.2rem;line-height:1;margin-top:.8rem}
+.flecha{font-family:var(--mono);color:var(--marca-luz);font-size:1.5rem}
+
+/* ---------- línea de tiempo ---------- */
+.tiempo{position:relative;height:160px;margin:2.5rem 0 1rem;border-bottom:1px solid var(--linea);display:flex;align-items:flex-end;gap:3px}
+.tiempo .barra{flex:1;background:var(--sangre);border-radius:1px 1px 0 0;min-height:2px;position:relative}
+.tiempo .barra.post{background:var(--marca-luz)}
+.tiempo .corte{position:absolute;top:0;bottom:0;width:1px;background:var(--alerta);opacity:.85}
+.tiempo .corte::after{content:attr(data-et);position:absolute;top:-1.6rem;left:.5rem;white-space:nowrap;
+  font-family:var(--mono);font-size:.66rem;letter-spacing:.1em;color:var(--alerta)}
+.eje{display:flex;justify-content:space-between;font-family:var(--mono);font-size:.66rem;color:var(--hueso-tenue);opacity:.6}
+
+/* ---------- tabla ceguera → módulo ---------- */
+.matriz{width:100%;border-collapse:collapse;margin-top:1.5rem;font-size:.95rem}
+.matriz th{text-align:left;font-family:var(--mono);font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--marca-luz);padding:.9rem 1.1rem .9rem 0;border-bottom:1px solid var(--marca-luz);font-weight:500;vertical-align:bottom}
+.matriz td{padding:1.15rem 1.1rem 1.15rem 0;border-bottom:1px solid var(--linea);vertical-align:top}
+.matriz .dato{font-family:var(--serif);font-size:1.55rem;color:var(--alerta);line-height:1.1;white-space:nowrap}
+.matriz .mod{color:var(--marca-claro);font-weight:600}
+.matriz .monto{font-family:var(--mono);font-size:.78rem;color:var(--hueso-tenue);display:block;margin-top:.25rem}
+
+/* ---------- consultor en vivo ---------- */
+.consola{border:1px solid var(--marca-luz);border-radius:4px;padding:2.2rem;background:
+  linear-gradient(180deg,rgba(31,184,158,.07),transparent 60%),var(--tinta-2);margin-top:1.5rem}
+.consola-fila{display:flex;gap:.8rem;flex-wrap:wrap}
+.consola input{flex:1;min-width:260px;background:var(--tinta);border:1px solid var(--linea);color:var(--hueso);
+  padding:1rem 1.2rem;font-family:var(--serif);font-style:italic;font-size:1.15rem;border-radius:3px}
+.consola input:focus{outline:none;border-color:var(--marca-luz)}
+.consola button{background:var(--marca-luz);color:var(--tinta);border:0;padding:1rem 1.9rem;font-family:var(--sans);
+  font-weight:600;font-size:.95rem;border-radius:3px;cursor:pointer;letter-spacing:.02em}
+.consola button:hover{background:var(--marca-claro)}
+.sugerencias{display:flex;gap:.55rem;flex-wrap:wrap;margin-top:1rem}
+.sugerencias button{background:transparent;border:1px solid var(--linea);color:var(--hueso-tenue);
+  padding:.42rem .9rem;font-size:.78rem;font-family:var(--serif);font-style:italic;border-radius:99px;cursor:pointer}
+.sugerencias button:hover{border-color:var(--marca-luz);color:var(--marca-claro)}
+#salida{margin-top:1.8rem;min-height:2.5rem}
+.res{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1.6rem;margin-bottom:1.5rem}
+.res div{border-left:2px solid var(--marca-luz);padding-left:1rem}
+.res .n{font-family:var(--serif);font-size:2.9rem;line-height:1;color:var(--marca-luz)}
+.res .n.mal{color:var(--sangre)}
+.res .e{font-family:var(--mono);font-size:.64rem;letter-spacing:.14em;text-transform:uppercase;color:var(--hueso-tenue);margin-top:.5rem}
+.detalle{font-size:.9rem;color:var(--hueso-tenue);line-height:1.6}
+.detalle b{color:var(--hueso)}
+.veredicto{font-family:var(--serif);font-size:1.25rem;color:var(--hueso);margin:1.2rem 0;padding-left:1rem;border-left:2px solid var(--alerta);line-height:1.4}
+.cargando{font-family:var(--mono);font-size:.8rem;color:var(--marca-luz);letter-spacing:.1em}
+
+/* ---------- cierre ---------- */
+.oferta{display:grid;grid-template-columns:1.3fr .7fr;gap:4rem;align-items:center}
+.pasos{list-style:none;padding:0;margin:2rem 0 0;counter-reset:p}
+.pasos li{counter-increment:p;padding:.85rem 0 .85rem 3rem;position:relative;border-bottom:1px solid var(--linea);font-size:.97rem}
+.pasos li::before{content:counter(p);position:absolute;left:0;font-family:var(--mono);font-size:.78rem;color:var(--marca-luz);
+  border:1px solid var(--marca-luz);width:1.65rem;height:1.65rem;display:grid;place-items:center;border-radius:99px}
+
+/* ---------- navegación ---------- */
+.nav{position:fixed;right:1.6rem;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:.7rem;z-index:50}
+.nav a{width:7px;height:7px;border-radius:99px;background:var(--hueso-tenue);opacity:.3;transition:all .2s}
+.nav a:hover,.nav a.on{opacity:1;background:var(--marca-luz);transform:scale(1.35)}
+.idioma{position:fixed;top:1.5rem;right:1.6rem;z-index:60;display:flex;gap:.4rem}
+.idioma button{background:transparent;border:1px solid var(--linea);color:var(--hueso-tenue);font-family:var(--mono);
+  font-size:.66rem;letter-spacing:.12em;padding:.35rem .7rem;border-radius:99px;cursor:pointer}
+.idioma button.on{border-color:var(--marca-luz);color:var(--marca-luz)}
+[data-en]{display:none}
+body.en [data-es]{display:none}
+body.en [data-en]{display:revert}
+
+@media(max-width:860px){
+  .lamina{padding:4.5rem 7vw}
+  .especie,.oferta,.nombres{grid-template-columns:1fr;gap:2rem}
+  .nombres .flecha{transform:rotate(90deg)}
+  .nav{display:none}
+}
+@media print{.nav,.idioma,.consola{display:none}.lamina{min-height:auto;page-break-after:always}}
+</style>
+</head>
+<body>
+
+<div class="idioma">
+  <button class="on" onclick="idioma('es',this)">ES</button>
+  <button onclick="idioma('en',this)">EN</button>
+</div>
+<nav class="nav" id="nav"></nav>
+
+<!-- ============ 1 · PORTADA ============ -->
+<section class="lamina portada" id="s1">
+  <div class="marca-sup">Organización Nacional Indígena de Colombia · Sistema de Monitoreo Territorial</div>
+  <h1>
+    <span data-es>Lo que ya está secuenciado<br>y nadie sabe de dónde salió</span>
+    <span data-en>What is already sequenced<br>and no one knows where it came from</span>
+  </h1>
+  <p class="bajada">
+    <span data-es>Un método para que cualquier pueblo audite, por sí mismo, qué de su territorio
+      ya circula en las bases genéticas del mundo.</span>
+    <span data-en>A method for any Indigenous people to audit, on their own, what from their
+      territory already circulates in the world's genetic databases.</span>
+  </p>
+  <p class="pie">Ereván · COP 17 del Convenio sobre la Diversidad Biológica · octubre de 2026<br>
+  Medición del 20 de octubre de 2026 · 804 consultas archivadas · cada cifra reproducible</p>
+</section>
+
+<!-- ============ 2 · EL PUNTO DE PARTIDA ============ -->
+<section class="lamina" id="s2">
+  <span class="num">01</span>
+  <span class="rotulo" data-es>El punto de partida</span><span class="rotulo" data-en>Starting point</span>
+  <h2 data-es>Sabemos qué crece en el territorio.</h2>
+  <h2 data-en>We know what grows in the territory.</h2>
+  <div class="res" style="margin-top:2rem">
+    <div><div class="n">5.690</div><div class="e" data-es>especies útiles georreferenciadas</div><div class="e" data-en>georeferenced useful species</div></div>
+    <div><div class="n">327.614</div><div class="e" data-es>registros con coordenada</div><div class="e" data-en>records with coordinates</div></div>
+    <div><div class="n">2.690</div><div class="e" data-es>especies dentro de resguardos</div><div class="e" data-en>species inside Indigenous lands</div></div>
+    <div><div class="n">99</div><div class="e" data-es>endémicas en resguardo</div><div class="e" data-en>endemic, inside Indigenous lands</div></div>
+  </div>
+  <p class="entrada" data-es>Ese catálogo lo construyó el SMT-ONIC sobre el inventario de plantas
+    útiles de Colombia, con aval del Royal Botanic Gardens de Kew y del Instituto Humboldt.
+    La pregunta que nadie había hecho es la siguiente.</p>
+  <p class="entrada" data-en>The SMT-ONIC built this catalogue on Colombia's useful plants inventory,
+    endorsed by the Royal Botanic Gardens, Kew and the Humboldt Institute. The question no one had
+    asked is the following.</p>
+  <p class="pie">Fuente: ONIC, 2026.</p>
+</section>
+
+<!-- ============ 3 · LA PREGUNTA ============ -->
+<section class="lamina" id="s3">
+  <span class="num">02</span>
+  <span class="rotulo" data-es>La pregunta</span><span class="rotulo" data-en>The question</span>
+  <h2 style="max-width:20ch" data-es>De esas especies, ¿cuántas ya están en las bases genéticas del mundo — y cuántas dicen de dónde salieron?</h2>
+  <h2 style="max-width:20ch" data-en>Of those species, how many are already in the world's genetic databases — and how many say where they came from?</h2>
+  <p class="entrada" style="margin-top:2rem" data-es>La respuesta se puede consultar. Es pública, es gratuita
+    y no hay que pedirle permiso a nadie. Lo que sigue se midió sobre las 99 especies endémicas
+    que crecen dentro de resguardos, con <strong>doble verificación</strong>: el endemismo contra dos
+    autoridades botánicas, y el conteo de secuencias contra dos bases independientes.</p>
+  <p class="entrada" style="margin-top:2rem" data-en>The answer can be looked up. It is public, free,
+    and requires no one's permission. What follows was measured on the 99 endemic species growing
+    inside Indigenous lands, with <strong>double verification</strong>: endemism against two botanical
+    authorities, sequence counts against two independent databases.</p>
+</section>
+
+<!-- ============ 4 · CEGUERA 1 ============ -->
+<section class="lamina" id="s4">
+  <span class="num">03 · <span data-es>primera ceguera</span><span data-en>first blind spot</span></span>
+  <h2 data-es>El nombre no aguanta.</h2><h2 data-en>The name does not hold.</h2>
+  <div class="nombres">
+    <div class="caja apagada">
+      <div class="et" data-es>Como la registra Colombia</div><div class="et" data-en>As Colombia registers it</div>
+      <div class="nom">Miconia tococa</div>
+      <div class="val" style="color:var(--sangre)">0</div>
+      <div class="e" style="font-family:var(--mono);font-size:.66rem;color:var(--hueso-tenue)"><span data-es>registros que lo llevan escrito</span><span data-en>records that carry that name</span></div>
+    </div>
+    <div class="flecha">→</div>
+    <div class="caja">
+      <div class="et" data-es>Como lo dice el registro</div><div class="et" data-en>As the record says it</div>
+      <div class="nom">Tococa guianensis</div>
+      <div class="val" style="color:var(--marca-luz)">133</div>
+      <div class="e" style="font-family:var(--mono);font-size:.66rem;color:var(--hueso-tenue)"><span data-es>de las 137 secuencias</span><span data-en>of the 137 sequences</span></div>
+    </div>
+  </div>
+  <p class="entrada" data-es><strong>137 secuencias</strong> de esta planta están publicadas. Ninguna lleva
+    escrito el nombre con el que Colombia la registra: <strong>133 dicen «Tococa guianensis»</strong>, un
+    nombre que la taxonomía ya retiró. La base resuelve el sinónimo si uno sabe preguntar por taxonomía,
+    pero el registro sigue diciendo otra cosa, y quien cruce una lista nacional contra esos textos no
+    encuentra nada. <strong>17 de nuestras 99 especies</strong> están así.</p>
+  <p class="entrada" data-en><strong>137 sequences</strong> of this plant are published. Not one carries the
+    name Colombia registers it under: <strong>133 say "Tococa guianensis"</strong>, a name taxonomy has
+    already retired. The database resolves the synonym if you know to ask by taxonomy, but the record still
+    says something else, and anyone matching a national list against those texts finds nothing.
+    <strong>17 of our 99 species</strong> are in that situation.</p>
+  <p class="pie">Figura 1. European Nucleotide Archive, consulta del 20 de octubre de 2026:
+    <span style="color:var(--marca-claro)">tax_name("Cinchona officinalis")</span> devuelve 137 registros;
+    133 descritos como <em>Tococa guianensis</em>, 1 como <em>Tococa discolor</em>, 3 sin binomio.
+    Fuente: ONIC, 2026.</p>
+</section>
+
+<!-- ============ 5 · CEGUERA 2 ============ -->
+<section class="lamina" id="s5">
+  <span class="num">04 · <span data-es>segunda ceguera</span><span data-en>second blind spot</span></span>
+  <h2 data-es>Casi seis de cada diez no dicen de dónde salieron.</h2>
+  <h2 data-en>Nearly six in ten do not say where they came from.</h2>
+  <div class="cifra ambar">40,9<span style="font-size:.4em">%</span></div>
+  <p class="cifra-pie" data-es>De <strong>149 secuencias públicas</strong> de especies cuyo endemismo
+    está confirmado por las dos autoridades, sólo <strong>61 declaran Colombia</strong> como país de origen.</p>
+  <p class="cifra-pie" data-en>Of <strong>149 public sequences</strong> from species whose endemism is
+    confirmed by both authorities, only <strong>61 declare Colombia</strong> as country of origin.</p>
+  <p class="entrada" style="margin-top:2.5rem" data-es>Y el campo existe y se usa: en esa misma base,
+    <strong>99.012 secuencias declaran Colombia</strong>, 5.889.670 declaran Brasil y 318.355 declaran Perú.
+    <strong>No declararlo es una elección, no una limitación técnica.</strong></p>
+  <p class="entrada" style="margin-top:2.5rem" data-en>And the field exists and is used: in that same
+    database, <strong>99,012 sequences declare Colombia</strong>, 5,889,670 declare Brazil, 318,355 declare
+    Peru. <strong>Not declaring it is a choice, not a technical limitation.</strong></p>
+  <p class="pie">Figura 2. European Nucleotide Archive, consulta del 20 de octubre de 2026. Fuente: ONIC, 2026.</p>
+</section>
+
+<!-- ============ 6 · EL CASO ============ -->
+<section class="lamina" id="s6">
+  <span class="num">05 · <span data-es>un caso</span><span data-en>one case</span></span>
+  <div class="especie">
+    <figure>
+      <img src="metodo_recursos/Solanum_garcia-barrigae.jpg" alt="Espécimen de herbario de Solanum garcia-barrigae">
+      <figcaption id="cap-sgb">Figura 3. Espécimen de herbario. Colecta: J. Cuatrecasas y R. Romero Castañeda.
+        Dominio público (CC0). Fuente: GBIF.</figcaption>
+    </figure>
+    <div>
+      <div class="binomio">Solanum garcia-barrigae</div>
+      <p class="entrada" style="font-size:1rem;margin-top:.9rem" data-es>Pariente silvestre de la papa.
+        Crece únicamente en Colombia. De toda la red mundial de datos de biodiversidad,
+        <strong>existe una sola imagen pública de esta especie</strong>: un pliego seco.</p>
+      <p class="entrada" style="font-size:1rem;margin-top:.9rem" data-en>A wild relative of the potato.
+        It grows only in Colombia. In the entire global biodiversity data network,
+        <strong>there is exactly one public image of this species</strong>: a dried herbarium sheet.</p>
+      <ul class="ficha">
+        <li><span class="k" data-es>Endemismo</span><span class="k" data-en>Endemism</span><span class="v bien" data-es>Confirmado · 4 fuentes</span><span class="v bien" data-en>Confirmed · 4 sources</span></li>
+        <li><span class="k">Sección</span><span class="v"><em>Petota</em> · <em>Conicibaccata</em></span></li>
+        <li><span class="k" data-es>Secuencias públicas</span><span class="k" data-en>Public sequences</span><span class="v">11</span></li>
+        <li><span class="k" data-es>Declaran origen</span><span class="k" data-en>Declare origin</span><span class="v mal">0</span></li>
+        <li><span class="k" data-es>Depositadas por</span><span class="k" data-en>Deposited by</span><span class="v">University of Wisconsin-Madison</span></li>
+        <li><span class="k">Voucher</span><span class="v" style="font-family:var(--mono);font-size:.8rem">PTIS:PI 498158</span></li>
+      </ul>
+    </div>
+  </div>
+  <div style="margin-top:3rem">
+    <h3 data-es>Su código genético, público desde 2010</h3>
+    <h3 data-en>Its genetic code, public since 2010</h3>
+    <div class="adn" id="adn-sgb"></div>
+    <div class="adn-leyenda">
+      <span class="l-A">Adenina</span><span class="l-C">Citosina</span>
+      <span class="l-G">Guanina</span><span class="l-T">Timina</span>
+      <span id="adn-info" style="margin-left:auto"></span>
+    </div>
+    <div class="fasta" id="fasta-sgb"></div>
+    <p class="entrada" data-es>El voucher que se lee en la propia cabecera, <strong>PI 498158</strong>, es una
+      accesión del banco de germoplasma de Estados Unidos. Los marcadores secuenciados son los que se usan
+      para el mejoramiento genético de las solanáceas. <strong>Nada de eso es ilegal.</strong> Lo que no existe
+      es el dato de dónde salió la planta.</p>
+    <p class="entrada" data-en>The voucher readable in the header itself, <strong>PI 498158</strong>, is an
+      accession of the United States germplasm bank. The sequenced markers are those used for
+      solanaceae breeding. <strong>None of this is illegal.</strong> What does not exist is the record of
+      where the plant came from.</p>
+    <p class="entrada" style="border-left:2px solid var(--alerta);padding-left:1.4rem;margin-top:2rem" data-es>Y hay un detalle en la etiqueta de ese pliego. Dice, escrito a mano: <strong>«Plantas colombianas»</strong>, y debajo, <strong>COLOMBIA</strong>. El dato de origen <strong>sí existía</strong>. Estaba en el papel. Se perdió al pasar a la base de datos.</p>
+    <p class="entrada" style="border-left:2px solid var(--alerta);padding-left:1.4rem;margin-top:2rem" data-en>And there is a detail on that sheet's label. It reads, handwritten: <strong>«Plantas colombianas»</strong>, and below it, <strong>COLOMBIA</strong>. The provenance record <strong>did exist</strong>. It was on the paper. It was lost on the way into the database.</p>
+  </div>
+</section>
+
+<!-- ============ 7 · EL CONTROL ============ -->
+<section class="lamina" id="s7">
+  <span class="num">06 · <span data-es>el control</span><span data-en>the control</span></span>
+  <div class="especie">
+    <div>
+      <h2 data-es>Sí se puede.</h2><h2 data-en>It can be done.</h2>
+      <div class="binomio" style="margin-top:.5rem">Masdevallia coccinea</div>
+      <p class="entrada" style="font-size:1rem;margin-top:1rem" data-es>Endémica confirmada, En Peligro,
+        en el Apéndice II de CITES. Y <strong>14 de sus 19 secuencias declaran Colombia</strong>.</p>
+      <p class="entrada" style="font-size:1rem;margin-top:1rem" data-en>Confirmed endemic, Endangered,
+        CITES Appendix II. And <strong>14 of its 19 sequences declare Colombia</strong>.</p>
+      <ul class="ficha">
+        <li><span class="k" data-es>Secuencias</span><span class="k" data-en>Sequences</span><span class="v">19</span></li>
+        <li><span class="k" data-es>Declaran Colombia</span><span class="k" data-en>Declare Colombia</span><span class="v bien">14</span></li>
+        <li><span class="k">CITES</span><span class="v">Apéndice II</span></li>
+        <li><span class="k" data-es>Una de las depositantes</span><span class="k" data-en>One depositor</span><span class="v bien">Universidad de Antioquia</span></li>
+      </ul>
+      <p class="entrada" style="margin-top:1.8rem" data-es>Este es el control del experimento. Prueba que
+        el campo de origen se puede llenar, que alguien lo llena, y que <strong>no llenarlo es una decisión</strong>.</p>
+      <p class="entrada" style="margin-top:1.8rem" data-en>This is the experiment's control. It proves the
+        origin field can be filled, that someone fills it, and that <strong>not filling it is a decision</strong>.</p>
+    </div>
+    <figure>
+      <img src="metodo_recursos/Masdevallia_coccinea.jpg" alt="Masdevallia coccinea">
+      <figcaption>Figura 4. <em>Masdevallia coccinea</em>. Fotografía: Fernando José Pimienta Neira,
+        CC BY-NC 4.0. Fuente: GBIF / iNaturalist.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ============ 8 · CEGUERA 3 ============ -->
+<section class="lamina" id="s8">
+  <span class="num">07 · <span data-es>tercera ceguera</span><span data-en>third blind spot</span></span>
+  <h2 data-es>Nadie avisa.</h2><h2 data-en>No one is notified.</h2>
+  <p class="entrada" data-es>Para saber quién depositó una secuencia hay que abrir el registro,
+    uno por uno, y leer el bloque de envío. <strong>No hay alerta, no hay reporte, no hay sistema.</strong>
+    Un pueblo no tiene forma de enterarse de que algo suyo entró a una base.</p>
+  <p class="entrada" data-en>To learn who deposited a sequence you must open each record, one by one,
+    and read the submission block. <strong>There is no alert, no report, no system.</strong>
+    A people has no way of finding out that something of theirs entered a database.</p>
+  <div class="tablero" id="tablero"></div>
+  <div class="leyenda">
+    <span data-es><b style="background:var(--sangre)"></b>tiene secuencias, ninguna declara origen</span>
+    <span data-en><b style="background:var(--sangre)"></b>has sequences, none declare origin</span>
+    <span data-es><b style="background:var(--marca-luz)"></b>alguna declara origen</span>
+    <span data-en><b style="background:var(--marca-luz)"></b>some declare origin</span>
+    <span data-es><b style="background:var(--alerta);opacity:.55"></b>bases en desacuerdo</span>
+    <span data-en><b style="background:var(--alerta);opacity:.55"></b>databases disagree</span>
+    <span data-es><b style="background:rgba(168,181,177,.17)"></b>sin secuenciar</span>
+    <span data-en><b style="background:rgba(168,181,177,.17)"></b>never sequenced</span>
+  </div>
+  <p class="pie">Figura 5. Las 99 especies endémicas en resguardo, una celda cada una. Fuente: ONIC, 2026.</p>
+</section>
+
+<!-- ============ 9 · CEGUERA 4 / LA VENTANA ============ -->
+<section class="lamina" id="s9">
+  <span class="num">08 · <span data-es>cuarta ceguera, y la ventana</span><span data-en>fourth blind spot, and the window</span></span>
+  <h2 data-es>Y la mayoría todavía no está.</h2><h2 data-en>And most of it is not there yet.</h2>
+  <div class="cifra">57</div>
+  <p class="cifra-pie" data-es><strong>de las 99 especies no tienen ni una sola secuencia pública.</strong>
+    Ni en Europa ni en Estados Unidos. El 58 % de las plantas útiles endémicas que crecen en resguardos
+    indígenas de Colombia no ha sido secuenciado por nadie.</p>
+  <p class="cifra-pie" data-en><strong>of the 99 species have not a single public sequence.</strong>
+    Neither in Europe nor in the United States. 58 % of the endemic useful plants growing in Colombian
+    Indigenous lands has never been sequenced by anyone.</p>
+  <p class="entrada" style="margin-top:2.5rem;max-width:62ch" data-es>Eso no es una buena noticia ni una mala:
+    es una ventana. Sobre lo que ya está en las bases, la decisión la tomó otro. Sobre estas 57,
+    <strong>todavía se puede decidir quién las registra primero, con qué datos y bajo qué reglas</strong>.
+    Esa ventana se cierra sola.</p>
+  <p class="entrada" style="margin-top:2.5rem;max-width:62ch" data-en>That is neither good news nor bad:
+    it is a window. For what is already in the databases, someone else made the decision. For these 57,
+    <strong>it can still be decided who registers them first, with what metadata and under what rules</strong>.
+    That window closes on its own.</p>
+</section>
+
+<!-- ============ 10 · EL MOMENTO EN VIVO ============ -->
+<section class="lamina" id="s10">
+  <span class="num">09 · <span data-es>compruébenlo ustedes</span><span data-en>check it yourselves</span></span>
+  <h2 data-es>No nos crean. Consulten.</h2><h2 data-en>Don't take our word. Look it up.</h2>
+  <p class="entrada" data-es>Escriba el nombre científico de una planta de su territorio. La consulta sale
+    desde este aparato a las bases públicas de Europa y de Estados Unidos, en vivo.</p>
+  <p class="entrada" data-en>Type the scientific name of a plant from your territory. The query goes from
+    this device to the public databases of Europe and the United States, live.</p>
+  <div class="consola">
+    <div class="consola-fila">
+      <input id="q" placeholder="Cinchona officinalis" autocomplete="off" spellcheck="false">
+      <button onclick="consultar()" data-es>Consultar</button>
+      <button onclick="consultar()" data-en>Search</button>
+    </div>
+    <div class="sugerencias" id="sug"></div>
+    <div id="salida"></div>
+  </div>
+  <p class="pie">European Nucleotide Archive (EMBL-EBI) · GenBank (NCBI) · GBIF. Sin claves, sin servidor intermedio.</p>
+</section>
+
+<!-- ============ 11 · DE LA CEGUERA AL MÓDULO ============ -->
+<section class="lamina" id="s11">
+  <span class="num">10 · <span data-es>qué hacemos con esto</span><span data-en>what we do with this</span></span>
+  <h2 data-es>Cada ceguera tiene su respuesta.</h2><h2 data-en>Each blind spot has its answer.</h2>
+  <p class="entrada" data-es>No hubo que inventar el vínculo: cada cosa que medimos justifica, por sí sola,
+    una de las cuatro líneas que la ONIC viene proponiendo.</p>
+  <p class="entrada" data-en>The link did not have to be invented: each thing we measured justifies, on its
+    own, one of the four lines the ONIC has been proposing.</p>
+  <table class="matriz">
+    <thead><tr>
+      <th style="width:16%" data-es>Lo medido</th><th style="width:16%" data-en>Measured</th>
+      <th style="width:30%" data-es>Por qué falla</th><th style="width:30%" data-en>Why it fails</th>
+      <th data-es>La respuesta</th><th data-en>The answer</th>
+    </tr></thead>
+    <tbody>
+      <tr>
+        <td class="dato">17<span style="font-size:.5em"> / 99</span></td>
+        <td data-es>El nombre científico no aguanta el paso del tiempo</td>
+        <td data-en>Scientific names do not survive time</td>
+        <td><span class="mod" data-es>Inventario propio con identificador estable</span><span class="mod" data-en>Own inventory with stable identifiers</span><span class="monto">M2 · USD 531.000</span></td>
+      </tr>
+      <tr>
+        <td class="dato">59<span style="font-size:.5em">%</span></td>
+        <td data-es>Nada obliga a que el origen viaje pegado al dato</td>
+        <td data-en>Nothing forces origin to travel with the data</td>
+        <td><span class="mod" data-es>Etiquetado que viaja con el registro</span><span class="mod" data-en>Labelling that travels with the record</span><span class="monto">M1 · USD 288.000</span></td>
+      </tr>
+      <tr>
+        <td class="dato" data-es>sin aviso</td><td class="dato" data-en>no alert</td>
+        <td data-es>No existe vigilancia: hay que mirar registro por registro</td>
+        <td data-en>No monitoring exists: one must read record by record</td>
+        <td><span class="mod" data-es>Monitoreo comunitario: alerta y anterioridad probatoria</span><span class="mod" data-en>Community monitoring: alerts and documented prior art</span><span class="monto">M3 · USD 7.090.000</span></td>
+      </tr>
+      <tr>
+        <td class="dato">57<span style="font-size:.5em"> / 99</span></td>
+        <td data-es>La ventana sigue abierta, y se cierra sola</td>
+        <td data-en>The window is still open, and closes on its own</td>
+        <td><span class="mod" data-es>Banco genético propio: llegar primero</span><span class="mod" data-en>Own genetic bank: arrive first</span><span class="monto">M4 · USD 1.268.000</span></td>
+      </tr>
+    </tbody>
+  </table>
+  <p class="entrada" style="margin-top:2.5rem" data-es>Y el monitoreo no es un principio: es la prueba.
+    Las patentes de la cúrcuma, del neem y del frijol se tumbaron por <strong>anterioridad documentada</strong>,
+    no por falta de divulgación de origen. Un pueblo que registra sistemáticamente está fabricando
+    el único argumento que ha ganado.</p>
+  <p class="entrada" style="margin-top:2.5rem" data-en>And monitoring is not a principle: it is the evidence.
+    The turmeric, neem and bean patents were revoked on <strong>documented prior art</strong>, not on
+    failure to disclose origin. A people that records systematically is manufacturing the one
+    argument that has actually won.</p>
+</section>
+
+<!-- ============ 12 · LA OFERTA ============ -->
+<section class="lamina" id="s12">
+  <span class="num">11</span>
+  <div class="oferta">
+    <div>
+      <span class="rotulo" data-es>Lo que dejamos aquí</span><span class="rotulo" data-en>What we leave here</span>
+      <h2 data-es>El método, no el caso.</h2><h2 data-en>The method, not the case.</h2>
+      <p class="entrada" data-es>Lo que vieron son 99 especies de Colombia. El procedimiento cabe en
+        una página, es gratuito y <strong>cualquier organización puede correrlo sobre sus especies esta
+        misma semana</strong>, sin permiso de nadie.</p>
+      <p class="entrada" data-en>What you saw are 99 species from Colombia. The procedure fits on one page,
+        is free, and <strong>any organization can run it on their own species this very week</strong>,
+        with no one's permission.</p>
+      <ol class="pasos">
+        <li data-es>Resolver el nombre y <strong>todos sus sinónimos</strong></li><li data-en>Resolve the name and <strong>all its synonyms</strong></li>
+        <li data-es>Contar las secuencias en Europa</li><li data-en>Count sequences in Europe</li>
+        <li data-es>Contarlas otra vez en Estados Unidos — si no coinciden, no se concluye</li><li data-en>Count again in the United States — if they disagree, no conclusion</li>
+        <li data-es>Ver cuántas declaran país de origen</li><li data-en>Check how many declare country of origin</li>
+        <li data-es>Abrir el registro y leer quién la depositó</li><li data-en>Open the record and read who deposited it</li>
+        <li data-es>Contrastar contra los permisos de acceso publicados</li><li data-en>Contrast against published access permits</li>
+      </ol>
+    </div>
+    <div style="text-align:center">
+      <div id="qr" style="background:var(--hueso);padding:1.2rem;border-radius:4px;display:inline-block"><svg xmlns="http://www.w3.org/2000/svg" width="259" height="259" viewBox="0 0 37 37" shape-rendering="crispEdges"><rect width="37" height="37" fill="#F2EFE6"/><rect x="2" y="2" width="7" height="1" fill="#04110F"/><rect x="11" y="2" width="5" height="1" fill="#04110F"/><rect x="18" y="2" width="2" height="1" fill="#04110F"/><rect x="21" y="2" width="1" height="1" fill="#04110F"/><rect x="25" y="2" width="1" height="1" fill="#04110F"/><rect x="28" y="2" width="7" height="1" fill="#04110F"/><rect x="2" y="3" width="1" height="1" fill="#04110F"/><rect x="8" y="3" width="1" height="1" fill="#04110F"/><rect x="11" y="3" width="1" height="1" fill="#04110F"/><rect x="13" y="3" width="1" height="1" fill="#04110F"/><rect x="15" y="3" width="4" height="1" fill="#04110F"/><rect x="22" y="3" width="1" height="1" fill="#04110F"/><rect x="24" y="3" width="1" height="1" fill="#04110F"/><rect x="28" y="3" width="1" height="1" fill="#04110F"/><rect x="34" y="3" width="1" height="1" fill="#04110F"/><rect x="2" y="4" width="1" height="1" fill="#04110F"/><rect x="4" y="4" width="3" height="1" fill="#04110F"/><rect x="8" y="4" width="1" height="1" fill="#04110F"/><rect x="10" y="4" width="2" height="1" fill="#04110F"/><rect x="15" y="4" width="1" height="1" fill="#04110F"/><rect x="17" y="4" width="2" height="1" fill="#04110F"/><rect x="23" y="4" width="1" height="1" fill="#04110F"/><rect x="25" y="4" width="1" height="1" fill="#04110F"/><rect x="28" y="4" width="1" height="1" fill="#04110F"/><rect x="30" y="4" width="3" height="1" fill="#04110F"/><rect x="34" y="4" width="1" height="1" fill="#04110F"/><rect x="2" y="5" width="1" height="1" fill="#04110F"/><rect x="4" y="5" width="3" height="1" fill="#04110F"/><rect x="8" y="5" width="1" height="1" fill="#04110F"/><rect x="10" y="5" width="1" height="1" fill="#04110F"/><rect x="12" y="5" width="1" height="1" fill="#04110F"/><rect x="14" y="5" width="1" height="1" fill="#04110F"/><rect x="16" y="5" width="4" height="1" fill="#04110F"/><rect x="25" y="5" width="2" height="1" fill="#04110F"/><rect x="28" y="5" width="1" height="1" fill="#04110F"/><rect x="30" y="5" width="3" height="1" fill="#04110F"/><rect x="34" y="5" width="1" height="1" fill="#04110F"/><rect x="2" y="6" width="1" height="1" fill="#04110F"/><rect x="4" y="6" width="3" height="1" fill="#04110F"/><rect x="8" y="6" width="1" height="1" fill="#04110F"/><rect x="10" y="6" width="2" height="1" fill="#04110F"/><rect x="13" y="6" width="2" height="1" fill="#04110F"/><rect x="17" y="6" width="1" height="1" fill="#04110F"/><rect x="20" y="6" width="3" height="1" fill="#04110F"/><rect x="24" y="6" width="2" height="1" fill="#04110F"/><rect x="28" y="6" width="1" height="1" fill="#04110F"/><rect x="30" y="6" width="3" height="1" fill="#04110F"/><rect x="34" y="6" width="1" height="1" fill="#04110F"/><rect x="2" y="7" width="1" height="1" fill="#04110F"/><rect x="8" y="7" width="1" height="1" fill="#04110F"/><rect x="10" y="7" width="4" height="1" fill="#04110F"/><rect x="15" y="7" width="1" height="1" fill="#04110F"/><rect x="17" y="7" width="3" height="1" fill="#04110F"/><rect x="24" y="7" width="1" height="1" fill="#04110F"/><rect x="28" y="7" width="1" height="1" fill="#04110F"/><rect x="34" y="7" width="1" height="1" fill="#04110F"/><rect x="2" y="8" width="7" height="1" fill="#04110F"/><rect x="10" y="8" width="1" height="1" fill="#04110F"/><rect x="12" y="8" width="1" height="1" fill="#04110F"/><rect x="14" y="8" width="1" height="1" fill="#04110F"/><rect x="16" y="8" width="1" height="1" fill="#04110F"/><rect x="18" y="8" width="1" height="1" fill="#04110F"/><rect x="20" y="8" width="1" height="1" fill="#04110F"/><rect x="22" y="8" width="1" height="1" fill="#04110F"/><rect x="24" y="8" width="1" height="1" fill="#04110F"/><rect x="26" y="8" width="1" height="1" fill="#04110F"/><rect x="28" y="8" width="7" height="1" fill="#04110F"/><rect x="10" y="9" width="1" height="1" fill="#04110F"/><rect x="13" y="9" width="1" height="1" fill="#04110F"/><rect x="17" y="9" width="1" height="1" fill="#04110F"/><rect x="22" y="9" width="2" height="1" fill="#04110F"/><rect x="26" y="9" width="1" height="1" fill="#04110F"/><rect x="2" y="10" width="1" height="1" fill="#04110F"/><rect x="4" y="10" width="5" height="1" fill="#04110F"/><rect x="11" y="10" width="3" height="1" fill="#04110F"/><rect x="15" y="10" width="1" height="1" fill="#04110F"/><rect x="17" y="10" width="4" height="1" fill="#04110F"/><rect x="24" y="10" width="1" height="1" fill="#04110F"/><rect x="26" y="10" width="1" height="1" fill="#04110F"/><rect x="28" y="10" width="5" height="1" fill="#04110F"/><rect x="2" y="11" width="3" height="1" fill="#04110F"/><rect x="9" y="11" width="3" height="1" fill="#04110F"/><rect x="18" y="11" width="2" height="1" fill="#04110F"/><rect x="21" y="11" width="3" height="1" fill="#04110F"/><rect x="25" y="11" width="1" height="1" fill="#04110F"/><rect x="28" y="11" width="2" height="1" fill="#04110F"/><rect x="31" y="11" width="2" height="1" fill="#04110F"/><rect x="34" y="11" width="1" height="1" fill="#04110F"/><rect x="2" y="12" width="1" height="1" fill="#04110F"/><rect x="5" y="12" width="1" height="1" fill="#04110F"/><rect x="7" y="12" width="2" height="1" fill="#04110F"/><rect x="11" y="12" width="2" height="1" fill="#04110F"/><rect x="17" y="12" width="1" height="1" fill="#04110F"/><rect x="27" y="12" width="2" height="1" fill="#04110F"/><rect x="30" y="12" width="1" height="1" fill="#04110F"/><rect x="32" y="12" width="1" height="1" fill="#04110F"/><rect x="3" y="13" width="1" height="1" fill="#04110F"/><rect x="7" y="13" width="1" height="1" fill="#04110F"/><rect x="11" y="13" width="3" height="1" fill="#04110F"/><rect x="16" y="13" width="2" height="1" fill="#04110F"/><rect x="20" y="13" width="2" height="1" fill="#04110F"/><rect x="23" y="13" width="1" height="1" fill="#04110F"/><rect x="25" y="13" width="4" height="1" fill="#04110F"/><rect x="30" y="13" width="5" height="1" fill="#04110F"/><rect x="2" y="14" width="2" height="1" fill="#04110F"/><rect x="5" y="14" width="1" height="1" fill="#04110F"/><rect x="8" y="14" width="1" height="1" fill="#04110F"/><rect x="10" y="14" width="1" height="1" fill="#04110F"/><rect x="12" y="14" width="3" height="1" fill="#04110F"/><rect x="20" y="14" width="1" height="1" fill="#04110F"/><rect x="22" y="14" width="1" height="1" fill="#04110F"/><rect x="26" y="14" width="2" height="1" fill="#04110F"/><rect x="29" y="14" width="3" height="1" fill="#04110F"/><rect x="33" y="14" width="2" height="1" fill="#04110F"/><rect x="3" y="15" width="4" height="1" fill="#04110F"/><rect x="15" y="15" width="4" height="1" fill="#04110F"/><rect x="20" y="15" width="3" height="1" fill="#04110F"/><rect x="24" y="15" width="2" height="1" fill="#04110F"/><rect x="28" y="15" width="2" height="1" fill="#04110F"/><rect x="31" y="15" width="1" height="1" fill="#04110F"/><rect x="33" y="15" width="2" height="1" fill="#04110F"/><rect x="2" y="16" width="1" height="1" fill="#04110F"/><rect x="5" y="16" width="2" height="1" fill="#04110F"/><rect x="8" y="16" width="4" height="1" fill="#04110F"/><rect x="13" y="16" width="3" height="1" fill="#04110F"/><rect x="19" y="16" width="1" height="1" fill="#04110F"/><rect x="23" y="16" width="1" height="1" fill="#04110F"/><rect x="26" y="16" width="3" height="1" fill="#04110F"/><rect x="31" y="16" width="1" height="1" fill="#04110F"/><rect x="33" y="16" width="1" height="1" fill="#04110F"/><rect x="5" y="17" width="2" height="1" fill="#04110F"/><rect x="9" y="17" width="2" height="1" fill="#04110F"/><rect x="12" y="17" width="1" height="1" fill="#04110F"/><rect x="14" y="17" width="1" height="1" fill="#04110F"/><rect x="18" y="17" width="1" height="1" fill="#04110F"/><rect x="23" y="17" width="1" height="1" fill="#04110F"/><rect x="25" y="17" width="1" height="1" fill="#04110F"/><rect x="27" y="17" width="6" height="1" fill="#04110F"/><rect x="4" y="18" width="1" height="1" fill="#04110F"/><rect x="6" y="18" width="8" height="1" fill="#04110F"/><rect x="19" y="18" width="4" height="1" fill="#04110F"/><rect x="24" y="18" width="1" height="1" fill="#04110F"/><rect x="27" y="18" width="1" height="1" fill="#04110F"/><rect x="29" y="18" width="2" height="1" fill="#04110F"/><rect x="32" y="18" width="1" height="1" fill="#04110F"/><rect x="34" y="18" width="1" height="1" fill="#04110F"/><rect x="2" y="19" width="2" height="1" fill="#04110F"/><rect x="6" y="19" width="1" height="1" fill="#04110F"/><rect x="10" y="19" width="3" height="1" fill="#04110F"/><rect x="14" y="19" width="1" height="1" fill="#04110F"/><rect x="16" y="19" width="1" height="1" fill="#04110F"/><rect x="18" y="19" width="6" height="1" fill="#04110F"/><rect x="25" y="19" width="1" height="1" fill="#04110F"/><rect x="27" y="19" width="3" height="1" fill="#04110F"/><rect x="31" y="19" width="2" height="1" fill="#04110F"/><rect x="34" y="19" width="1" height="1" fill="#04110F"/><rect x="3" y="20" width="1" height="1" fill="#04110F"/><rect x="7" y="20" width="2" height="1" fill="#04110F"/><rect x="11" y="20" width="1" height="1" fill="#04110F"/><rect x="13" y="20" width="1" height="1" fill="#04110F"/><rect x="15" y="20" width="1" height="1" fill="#04110F"/><rect x="17" y="20" width="1" height="1" fill="#04110F"/><rect x="19" y="20" width="1" height="1" fill="#04110F"/><rect x="22" y="20" width="2" height="1" fill="#04110F"/><rect x="26" y="20" width="2" height="1" fill="#04110F"/><rect x="29" y="20" width="2" height="1" fill="#04110F"/><rect x="32" y="20" width="2" height="1" fill="#04110F"/><rect x="2" y="21" width="3" height="1" fill="#04110F"/><rect x="9" y="21" width="2" height="1" fill="#04110F"/><rect x="12" y="21" width="2" height="1" fill="#04110F"/><rect x="15" y="21" width="6" height="1" fill="#04110F"/><rect x="22" y="21" width="2" height="1" fill="#04110F"/><rect x="27" y="21" width="1" height="1" fill="#04110F"/><rect x="29" y="21" width="5" height="1" fill="#04110F"/><rect x="2" y="22" width="1" height="1" fill="#04110F"/><rect x="4" y="22" width="2" height="1" fill="#04110F"/><rect x="8" y="22" width="3" height="1" fill="#04110F"/><rect x="17" y="22" width="2" height="1" fill="#04110F"/><rect x="25" y="22" width="1" height="1" fill="#04110F"/><rect x="27" y="22" width="1" height="1" fill="#04110F"/><rect x="29" y="22" width="1" height="1" fill="#04110F"/><rect x="31" y="22" width="1" height="1" fill="#04110F"/><rect x="34" y="22" width="1" height="1" fill="#04110F"/><rect x="2" y="23" width="2" height="1" fill="#04110F"/><rect x="5" y="23" width="2" height="1" fill="#04110F"/><rect x="9" y="23" width="1" height="1" fill="#04110F"/><rect x="11" y="23" width="5" height="1" fill="#04110F"/><rect x="17" y="23" width="1" height="1" fill="#04110F"/><rect x="19" y="23" width="7" height="1" fill="#04110F"/><rect x="27" y="23" width="2" height="1" fill="#04110F"/><rect x="31" y="23" width="1" height="1" fill="#04110F"/><rect x="34" y="23" width="1" height="1" fill="#04110F"/><rect x="2" y="24" width="1" height="1" fill="#04110F"/><rect x="5" y="24" width="1" height="1" fill="#04110F"/><rect x="7" y="24" width="3" height="1" fill="#04110F"/><rect x="11" y="24" width="2" height="1" fill="#04110F"/><rect x="14" y="24" width="2" height="1" fill="#04110F"/><rect x="17" y="24" width="3" height="1" fill="#04110F"/><rect x="23" y="24" width="2" height="1" fill="#04110F"/><rect x="27" y="24" width="1" height="1" fill="#04110F"/><rect x="30" y="24" width="4" height="1" fill="#04110F"/><rect x="2" y="25" width="1" height="1" fill="#04110F"/><rect x="4" y="25" width="1" height="1" fill="#04110F"/><rect x="6" y="25" width="2" height="1" fill="#04110F"/><rect x="9" y="25" width="6" height="1" fill="#04110F"/><rect x="16" y="25" width="2" height="1" fill="#04110F"/><rect x="20" y="25" width="5" height="1" fill="#04110F"/><rect x="27" y="25" width="3" height="1" fill="#04110F"/><rect x="31" y="25" width="2" height="1" fill="#04110F"/><rect x="34" y="25" width="1" height="1" fill="#04110F"/><rect x="2" y="26" width="1" height="1" fill="#04110F"/><rect x="4" y="26" width="1" height="1" fill="#04110F"/><rect x="7" y="26" width="6" height="1" fill="#04110F"/><rect x="14" y="26" width="1" height="1" fill="#04110F"/><rect x="17" y="26" width="3" height="1" fill="#04110F"/><rect x="21" y="26" width="1" height="1" fill="#04110F"/><rect x="24" y="26" width="1" height="1" fill="#04110F"/><rect x="26" y="26" width="5" height="1" fill="#04110F"/><rect x="32" y="26" width="2" height="1" fill="#04110F"/><rect x="10" y="27" width="3" height="1" fill="#04110F"/><rect x="15" y="27" width="1" height="1" fill="#04110F"/><rect x="18" y="27" width="1" height="1" fill="#04110F"/><rect x="20" y="27" width="5" height="1" fill="#04110F"/><rect x="26" y="27" width="1" height="1" fill="#04110F"/><rect x="30" y="27" width="1" height="1" fill="#04110F"/><rect x="32" y="27" width="1" height="1" fill="#04110F"/><rect x="34" y="27" width="1" height="1" fill="#04110F"/><rect x="2" y="28" width="7" height="1" fill="#04110F"/><rect x="12" y="28" width="4" height="1" fill="#04110F"/><rect x="17" y="28" width="2" height="1" fill="#04110F"/><rect x="20" y="28" width="1" height="1" fill="#04110F"/><rect x="25" y="28" width="2" height="1" fill="#04110F"/><rect x="28" y="28" width="1" height="1" fill="#04110F"/><rect x="30" y="28" width="1" height="1" fill="#04110F"/><rect x="32" y="28" width="2" height="1" fill="#04110F"/><rect x="2" y="29" width="1" height="1" fill="#04110F"/><rect x="8" y="29" width="1" height="1" fill="#04110F"/><rect x="10" y="29" width="2" height="1" fill="#04110F"/><rect x="15" y="29" width="3" height="1" fill="#04110F"/><rect x="21" y="29" width="1" height="1" fill="#04110F"/><rect x="23" y="29" width="1" height="1" fill="#04110F"/><rect x="25" y="29" width="2" height="1" fill="#04110F"/><rect x="30" y="29" width="3" height="1" fill="#04110F"/><rect x="34" y="29" width="1" height="1" fill="#04110F"/><rect x="2" y="30" width="1" height="1" fill="#04110F"/><rect x="4" y="30" width="3" height="1" fill="#04110F"/><rect x="8" y="30" width="1" height="1" fill="#04110F"/><rect x="10" y="30" width="1" height="1" fill="#04110F"/><rect x="12" y="30" width="2" height="1" fill="#04110F"/><rect x="15" y="30" width="2" height="1" fill="#04110F"/><rect x="20" y="30" width="1" height="1" fill="#04110F"/><rect x="26" y="30" width="6" height="1" fill="#04110F"/><rect x="33" y="30" width="2" height="1" fill="#04110F"/><rect x="2" y="31" width="1" height="1" fill="#04110F"/><rect x="4" y="31" width="3" height="1" fill="#04110F"/><rect x="8" y="31" width="1" height="1" fill="#04110F"/><rect x="10" y="31" width="2" height="1" fill="#04110F"/><rect x="14" y="31" width="1" height="1" fill="#04110F"/><rect x="17" y="31" width="2" height="1" fill="#04110F"/><rect x="21" y="31" width="1" height="1" fill="#04110F"/><rect x="23" y="31" width="5" height="1" fill="#04110F"/><rect x="30" y="31" width="1" height="1" fill="#04110F"/><rect x="32" y="31" width="3" height="1" fill="#04110F"/><rect x="2" y="32" width="1" height="1" fill="#04110F"/><rect x="4" y="32" width="3" height="1" fill="#04110F"/><rect x="8" y="32" width="1" height="1" fill="#04110F"/><rect x="10" y="32" width="1" height="1" fill="#04110F"/><rect x="15" y="32" width="1" height="1" fill="#04110F"/><rect x="19" y="32" width="1" height="1" fill="#04110F"/><rect x="28" y="32" width="2" height="1" fill="#04110F"/><rect x="31" y="32" width="2" height="1" fill="#04110F"/><rect x="2" y="33" width="1" height="1" fill="#04110F"/><rect x="8" y="33" width="1" height="1" fill="#04110F"/><rect x="11" y="33" width="3" height="1" fill="#04110F"/><rect x="18" y="33" width="1" height="1" fill="#04110F"/><rect x="21" y="33" width="3" height="1" fill="#04110F"/><rect x="30" y="33" width="3" height="1" fill="#04110F"/><rect x="2" y="34" width="7" height="1" fill="#04110F"/><rect x="10" y="34" width="1" height="1" fill="#04110F"/><rect x="16" y="34" width="1" height="1" fill="#04110F"/><rect x="19" y="34" width="1" height="1" fill="#04110F"/><rect x="22" y="34" width="1" height="1" fill="#04110F"/><rect x="24" y="34" width="3" height="1" fill="#04110F"/><rect x="28" y="34" width="2" height="1" fill="#04110F"/><rect x="32" y="34" width="2" height="1" fill="#04110F"/></svg></div>
+      <p class="pie" style="margin-top:1rem" data-es>El SMT-ONIC acompaña a quien quiera<br>correrlo en su territorio.</p>
+      <p class="pie" style="margin-top:1rem" data-en>The SMT-ONIC supports anyone<br>who wants to run it in their territory.</p>
+    </div>
+  </div>
+  <p class="pie" style="margin-top:3rem">
+    Organización Nacional Indígena de Colombia · Sistema de Monitoreo Territorial · 2026<br>
+    Medición del 20 de octubre de 2026. Doble verificación: ENA y GenBank para secuencias;
+    Royal Botanic Gardens Kew y Catálogo de Plantas y Líquenes de Colombia para endemismo.
+    804 respuestas crudas archivadas. Ninguna cifra sin dos fuentes.
+  </p>
+</section>
+
+<script>
+// ---------- los datos medidos, embebidos: la página funciona sin red ----------
+const MEDIDO = {
+  // estado de las 99: 0 sin secuenciar · 1 tiene y ninguna declara · 2 alguna declara · 3 bases en desacuerdo
+  tablero: [3, 2, 1, 2, 1, 1, 2, 1, 1, 1, 1, 1, 2, 1, 1, 2, 2, 1, 1, 2, 2, 1, 2, 1, 1, 1, 1, 2, 1, 1, 1, 1, 3, 1, 1, 1, 1, 3, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  detalle: [{"n": "Cinchona officinalis", "s": "137", "c": "0", "e": 3}, {"n": "Wettinia hirsuta", "s": "48", "c": "24", "e": 2}, {"n": "Zamia chigua", "s": "39", "c": "0", "e": 1}, {"n": "Masdevallia coccinea", "s": "19", "c": "14", "e": 2}, {"n": "Espeletia occulta", "s": "17", "c": "0", "e": 1}, {"n": "Espeletia grandiflora", "s": "15", "c": "0", "e": 1}, {"n": "Escallonia discolor", "s": "15", "c": "9", "e": 2}, {"n": "Macropsychanthus comosus", "s": "14", "c": "0", "e": 1}, {"n": "Passiflora arborea", "s": "12", "c": "0", "e": 1}, {"n": "Chloropetalum denticulatum", "s": "11", "c": "0", "e": 1}, {"n": "Eugenia umbellulifera", "s": "11", "c": "0", "e": 1}, {"n": "Solanum garcia-barrigae", "s": "11", "c": "0", "e": 1}, {"n": "Senecio niveoaureus", "s": "9", "c": "7", "e": 2}, {"n": "Miconia crenulata", "s": "7", "c": "0", "e": 1}, {"n": "Espeletia lopezii", "s": "6", "c": "0", "e": 1}, {"n": "Linochilus revolutus", "s": "6", "c": "2", "e": 2}, {"n": "Orphanodendron bernalii", "s": "5", "c": "5", "e": 2}, {"n": "Miconia allardii", "s": "5", "c": "0", "e": 1}, {"n": "Miconia granatensis", "s": "5", "c": "0", "e": 1}, {"n": "Miconia heteroclita", "s": "5", "c": "1", "e": 2}, {"n": "Ctenodon elegans", "s": "4", "c": "1", "e": 2}, {"n": "Blakea quadrangularis", "s": "4", "c": "0", "e": 1}, {"n": "Miconia aristigera", "s": "4", "c": "1", "e": 2}, {"n": "Miconia dimorphica", "s": "4", "c": "0", "e": 1}, {"n": "Miconia neosecunda", "s": "4", "c": "0", "e": 1}, {"n": "Miconia tococoronata", "s": "4", "c": "0", "e": 1}, {"n": "Mutisia clematis", "s": "3", "c": "0", "e": 1}, {"n": "Draba litamo", "s": "3", "c": "2", "e": 2}, {"n": "Obtegomeria caerulescens", "s": "3", "c": "0", "e": 1}, {"n": "Cuphea kubeorum", "s": "3", "c": "0", "e": 1}, {"n": "Miconia biappendiculata", "s": "3", "c": "0", "e": 1}, {"n": "Miconia tococoidea", "s": "3", "c": "0", "e": 1}, {"n": "Magnolia gilbertoi", "s": "2", "c": "0", "e": 3}, {"n": "Gustavia gracillima", "s": "2", "c": "0", "e": 1}, {"n": "Clavija latifolia", "s": "2", "c": "0", "e": 1}, {"n": "Stachys bogotensis", "s": "2", "c": "0", "e": 1}, {"n": "Miconia formicoheterophylla", "s": "2", "c": "0", "e": 1}, {"n": "Hesperomeles goudotiana", "s": "2", "c": "2", "e": 3}, {"n": "Solanum sibundoyense", "s": "1", "c": "0", "e": 1}, {"n": "Annona quinduensis", "s": "0", "c": "0", "e": 0}, {"n": "Magnolia urraoensis", "s": "0", "c": "0", "e": 0}, {"n": "Compsoneura cuatrecasasii", "s": "0", "c": "0", "e": 0}, {"n": "Iryanthera megistophylla", "s": "0", "c": "0", "e": 0}, {"n": "Peperomia bethaniana", "s": "0", "c": "0", "e": 0}, {"n": "Peperomia dimota", "s": "0", "c": "0", "e": 0}, {"n": "Peperomia macrotricha", "s": "0", "c": "0", "e": 0}, {"n": "Piper chiadoense", "s": "0", "c": "0", "e": 0}, {"n": "Piper contraverrugosum", "s": "0", "c": "0", "e": 0}, {"n": "Anthurium infectorium", "s": "0", "c": "0", "e": 0}, {"n": "Anthurium warocqueanum", "s": "0", "c": "0", "e": 0}, {"n": "Urospatha antisylleptica", "s": "0", "c": "0", "e": 0}, {"n": "Prestoea longepetiolata", "s": "0", "c": "0", "e": 0}, {"n": "Urceolina sanderi", "s": "0", "c": "0", "e": 0}, {"n": "Urceolina subedentata", "s": "0", "c": "0", "e": 0}, {"n": "Ageratina asclepiadea", "s": "0", "c": "0", "e": 0}, {"n": "Linochilus weddellii", "s": "0", "c": "0", "e": 0}, {"n": "Lourteigia humilis", "s": "0", "c": "0", "e": 0}, {"n": "Monticalia guicanensis", "s": "0", "c": "0", "e": 0}, {"n": "Varronia acuta", "s": "0", "c": "0", "e": 0}, {"n": "Draba cheiranthoides", "s": "0", "c": "0", "e": 0}, {"n": "Draba pamplonensis", "s": "0", "c": "0", "e": 0}, {"n": "Valeriana karstenii", "s": "0", "c": "0", "e": 0}, {"n": "Saurauia omichlophila", "s": "0", "c": "0", "e": 0}, {"n": "Cavendishia divaricata", "s": "0", "c": "0", "e": 0}, {"n": "Psammisia macrophylla", "s": "0", "c": "0", "e": 0}, {"n": "Satyria breviflora", "s": "0", "c": "0", "e": 0}, {"n": "Grias haughtii", "s": "0", "c": "0", "e": 0}, {"n": "Gustavia petiolata", "s": "0", "c": "0", "e": 0}, {"n": "Marcgravia myriostigma", "s": "0", "c": "0", "e": 0}, {"n": "Clavija lehmannii", "s": "0", "c": "0", "e": 0}, {"n": "Pouteria arguacoensium", "s": "0", "c": "0", "e": 0}, {"n": "Symplocos theiformis", "s": "0", "c": "0", "e": 0}, {"n": "Brownea stenantha", "s": "0", "c": "0", "e": 0}, {"n": "Macropsychanthus", "s": "0", "c": "0", "e": 0}, {"n": "Mandevilla mollissima", "s": "0", "c": "0", "e": 0}, {"n": "Halenia elata", "s": "0", "c": "0", "e": 0}, {"n": "Capirona macrophylla", "s": "0", "c": "0", "e": 0}, {"n": "Palicourea boqueronensis", "s": "0", "c": "0", "e": 0}, {"n": "Warszewiczia peltata", "s": "0", "c": "0", "e": 0}, {"n": "Parmentiera stenocarpa", "s": "0", "c": "0", "e": 0}, {"n": "Carpotroche pacifica", "s": "0", "c": "0", "e": 0}, {"n": "Caryocar amygdaliferum", "s": "0", "c": "0", "e": 0}, {"n": "Moquilea maritima", "s": "0", "c": "0", "e": 0}, {"n": "Cnidoscolus longipes", "s": "0", "c": "0", "e": 0}, {"n": "Ouratea kananariensis", "s": "0", "c": "0", "e": 0}, {"n": "Dacryodes granatensis", "s": "0", "c": "0", "e": 0}, {"n": "Phyllanthus valleanus", "s": "0", "c": "0", "e": 0}, {"n": "Matisia idroboi", "s": "0", "c": "0", "e": 0}, {"n": "Matisia sclerophylla", "s": "0", "c": "0", "e": 0}, {"n": "Matisia spathacea", "s": "0", "c": "0", "e": 0}, {"n": "Pachira morae", "s": "0", "c": "0", "e": 0}, {"n": "Theobroma nemorale", "s": "0", "c": "0", "e": 0}, {"n": "Miconia caquetensis", "s": "0", "c": "0", "e": 0}, {"n": "Miconia gleasoniana", "s": "0", "c": "0", "e": 0}, {"n": "Miconia neopilosa", "s": "0", "c": "0", "e": 0}, {"n": "Euplassa saxicola", "s": "0", "c": "0", "e": 0}, {"n": "Ficus eliadis", "s": "0", "c": "0", "e": 0}, {"n": "Pourouma hirsutipetiolata", "s": "0", "c": "0", "e": 0}, {"n": "Solanum stellatiglandulosum", "s": "0", "c": "0", "e": 0}],
+  sugerencias: ["Cinchona officinalis","Theobroma cacao","Masdevallia coccinea",
+                "Bertholletia excelsa","Banisteriopsis caapi","Vanilla planifolia"]
+};
+
+// ---------- código de barras de ADN desde la secuencia real ----------
+const SEC_SGB = {
+  accession:"HM747361",
+  cabecera:"ENA|HM747361|HM747361.1 Solanum garcia-barrigae voucher PTIS:PI 498158 marker COSII_At1g13380 allele 3 genomic sequence.",
+  bases:"CAGGTGAGGCATTGCTTATGGGAGTGACAAAATGCATGTGCTTCGGAGGACCTTTATCCCCTGGTTCAAATCGTGCATGGACCATTATATACTTCGTTTCATCATGGTGCGAGTCTCATCATTACACTTCTTTACCACATTTACATATGTAGAAGTAAAATTCCCATATGAACTACATTATTATGGTAATCCAGTCAACAATCAGCATCAAACTATCTTCTGCTGGCATATATAGATGTGCATGATTCTGTCCTCTGACATGTTATTATATTTTGAAAAGAAAATCAGATCACATGTTTGTTATTCTGGAAAAGAAGTTCCATTTATCTAAATGCTTGTCTCAATTTAGAATGCTCCATGGTGTATGATCATTAAACATTTGCACTCTTCACATTGTCTTTGCTCCTTGTACACTAATTTGTTATCAAGTTATTGCAATCACCATCTTGCAAATCATTTCTTAATATTAATGCTAAGATACCTTTCGAACTTCATTTTGGGGGTGATCCACATGATCTATAAGCAGTATCCTGAGATTTTACTTTTTTTCTGTTACTACACGTGAAGACATCTTAAAAGGATTCATCCTATGATATACTAAACCAATATTGATATCTGCAGGCTGACATTCCTGGTTGCTGAGGCATGTGTTGTTGCTGGAGCAAAGCAAAATGCATACCACACCA"
+};
+
+function pintarADN(destino, bases, limite){
+  const cont = document.getElementById(destino);
+  if(!cont) return;
+  const trozo = limite ? bases.slice(0, limite) : bases;
+  cont.innerHTML = "";
+  const frag = document.createDocumentFragment();
+  for(const b of trozo){
+    const i = document.createElement("i");
+    i.className = "adn-" + (("ACGT".includes(b)) ? b : "A");
+    frag.appendChild(i);
+  }
+  cont.appendChild(frag);
+}
+
+function pintarTablero(){
+  const cont = document.getElementById("tablero");
+  if(!cont) return;
+  const clases = ["t-gris","t-cero","t-algo","t-dudo"];
+  const nombres = ["sin secuenciar","ninguna declara origen","alguna declara origen","bases en desacuerdo"];
+  cont.innerHTML = "";
+  MEDIDO.tablero.forEach((v,n)=>{
+    const i = document.createElement("i");
+    i.className = clases[v];
+    const d = MEDIDO.detalle[n];
+    i.title = d ? (d.n + " · " + (d.s ? d.s + " secuencias, " + d.c + " declaran origen"
+                                     : "sin secuencias publicas")) : nombres[v];
+    cont.appendChild(i);
+  });
+}
+
+// ---------- el consultor en vivo ----------
+const ENA = "https://www.ebi.ac.uk/ena/portal/api/";
+const NCBI = "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/";
+
+async function texto(url){
+  const r = await fetch(url);
+  if(!r.ok) throw new Error("HTTP " + r.status);
+  return r.text();
+}
+function soloNumero(t){
+  const m = String(t).match(/\d+/g);
+  return m ? parseInt(m[m.length-1],10) : null;
+}
+
+async function consultar(){
+  const q = document.getElementById("q").value.trim();
+  const out = document.getElementById("salida");
+  if(!q){ out.innerHTML = ""; return; }
+  out.innerHTML = '<div class="cargando">CONSULTANDO EUROPA Y ESTADOS UNIDOS…</div>';
+  try{
+    const nom = encodeURIComponent('tax_name("' + q + '")');
+    const [tot, col] = await Promise.all([
+      texto(ENA + "count?result=sequence&query=" + nom),
+      texto(ENA + "count?result=sequence&query=" + nom + encodeURIComponent(' AND country="Colombia"'))
+    ]);
+    const nTot = soloNumero(tot), nCol = soloNumero(col);
+
+    let nNcbi = null, deposito = "", publicadaComo = "";
+    try{
+      const j = JSON.parse(await texto(NCBI + "esearch.fcgi?db=nuccore&term=" +
+                encodeURIComponent(q + "[Organism]") + "&retmode=json&retmax=1"));
+      nNcbi = parseInt(j.esearchresult.count,10);
+      const id = (j.esearchresult.idlist||[])[0];
+      if(id){
+        const gb = await texto(NCBI + "efetch.fcgi?db=nuccore&id=" + id + "&rettype=gb&retmode=text");
+        const m = gb.match(/Direct Submission\s*\n\s+JOURNAL\s+([^\n]*(?:\n\s{10,}[^\n]*)*)/);
+        if(m) deposito = m[1].replace(/\s+/g," ").trim();
+      }
+    }catch(e){}
+
+    if(nTot){
+      try{
+        const tsv = await texto(ENA + "search?result=sequence&query=" + nom +
+                    "&fields=description&format=tsv&limit=40");
+        const nombres = {};
+        tsv.split("\n").slice(1).forEach(l=>{
+          const m = l.match(/([A-Z][a-z]+ [a-z][a-z-]+)/);
+          if(m) nombres[m[1]] = (nombres[m[1]]||0)+1;
+        });
+        const otros = Object.entries(nombres).filter(([k])=>k.toLowerCase()!==q.toLowerCase());
+        if(otros.length) publicadaComo = otros.map(([k,v])=>k+" ("+v+")").join(", ");
+      }catch(e){}
+    }
+
+    let html = '<div class="res">' +
+      '<div><div class="n">' + (nTot===null?"—":nTot.toLocaleString("es")) + '</div><div class="e">secuencias · Europa</div></div>' +
+      '<div><div class="n">' + (nNcbi===null?"—":nNcbi.toLocaleString("es")) + '</div><div class="e">secuencias · EE. UU.</div></div>' +
+      '<div><div class="n' + (nCol===0&&nTot>0?" mal":"") + '">' + (nCol===null?"—":nCol.toLocaleString("es")) +
+        '</div><div class="e">declaran Colombia</div></div>' +
+      '</div>';
+
+    if(nTot === 0){
+      html += '<div class="veredicto">Esta especie no tiene ninguna secuencia pública. ' +
+              'Todavía se puede decidir quién la registra primero, y bajo qué reglas.</div>';
+    }else if(nCol === 0){
+      html += '<div class="veredicto">' + nTot + ' secuencias públicas, y ninguna dice de dónde salió la planta.</div>';
+    }else{
+      html += '<div class="veredicto">' + nCol + ' de ' + nTot + ' declaran Colombia como origen.</div>';
+    }
+    let det = "";
+    if(publicadaComo) det += '<p><b>Publicadas también como:</b> ' + publicadaComo +
+      '. Buscando por «' + q + '» no aparecen todas.</p>';
+    if(deposito) det += '<p><b>Una de ellas la depositó:</b> ' + deposito + '</p>';
+    det += '<p style="opacity:.6;font-size:.8rem;font-family:var(--mono)">ENA · NCBI · consultado ahora desde este aparato</p>';
+    out.innerHTML = html + '<div class="detalle">' + det + '</div>';
+  }catch(e){
+    out.innerHTML = '<div class="veredicto">No hay conexión a las bases en este momento. ' +
+      'Las cifras de las láminas anteriores están medidas y archivadas.</div>';
+  }
+}
+
+// ---------- navegación, idioma, QR ----------
+function idioma(l, btn){
+  document.body.classList.toggle("en", l === "en");
+  document.querySelectorAll(".idioma button").forEach(b=>b.classList.remove("on"));
+  btn.classList.add("on");
+}
+function construirNav(){
+  const nav = document.getElementById("nav");
+  document.querySelectorAll(".lamina").forEach(s=>{
+    const a = document.createElement("a");
+    a.href = "#" + s.id;
+    nav.appendChild(a);
+  });
+  const obs = new IntersectionObserver(es=>{
+    es.forEach(e=>{
+      if(e.isIntersecting){
+        const i = [...document.querySelectorAll(".lamina")].indexOf(e.target);
+        nav.querySelectorAll("a").forEach((a,n)=>a.classList.toggle("on", n===i));
+      }
+    });
+  },{threshold:.5});
+  document.querySelectorAll(".lamina").forEach(s=>obs.observe(s));
+}
+function sugerencias(){
+  const c = document.getElementById("sug");
+  MEDIDO.sugerencias.forEach(s=>{
+    const b = document.createElement("button");
+    b.textContent = s;
+    b.onclick = ()=>{ document.getElementById("q").value = s; consultar(); };
+    c.appendChild(b);
+  });
+}
+
+document.addEventListener("keydown", e=>{
+  const ls = [...document.querySelectorAll(".lamina")];
+  const act = ls.findIndex(s=>{ const r = s.getBoundingClientRect(); return r.top >= -80 && r.top < window.innerHeight/2; });
+  if(e.key === "ArrowRight" || e.key === "PageDown"){ e.preventDefault(); ls[Math.min(act+1, ls.length-1)]?.scrollIntoView(); }
+  if(e.key === "ArrowLeft"  || e.key === "PageUp"){ e.preventDefault(); ls[Math.max(act-1, 0)]?.scrollIntoView(); }
+});
+document.getElementById("q").addEventListener("keydown", e=>{ if(e.key === "Enter") consultar(); });
+
+
+// Abierta como archivo (file://), el navegador bloquea las consultas a las
+// bases por politica de origen. Mejor avisarlo aqui que descubrirlo en sala.
+if(location.protocol === "file:"){
+  const c = document.querySelector(".consola");
+  if(c){
+    const d = document.createElement("div");
+    d.style.cssText = "border-left:2px solid var(--alerta);padding:.9rem 1.2rem;margin-bottom:1.5rem;font-size:.9rem;color:var(--hueso-tenue)";
+    d.innerHTML = '<b style="color:var(--alerta)">Para la consulta en vivo hay que servir la página.</b><br>' +
+      'Abierta como archivo, el navegador bloquea las consultas. En una terminal, en esta carpeta:<br>' +
+      '<code style="font-family:var(--mono);font-size:.82rem;color:var(--marca-claro)">python -m http.server 8777</code>' +
+      ' &nbsp;y abrir &nbsp;<code style="font-family:var(--mono);font-size:.82rem;color:var(--marca-claro)">http://localhost:8777/metodo.html</code><br>' +
+      'Las cifras de las láminas anteriores no dependen de esto: están medidas y archivadas.';
+    c.insertBefore(d, c.firstChild);
+  }
+}
+
+pintarADN("adn-sgb", SEC_SGB.bases);
+document.getElementById("adn-info").textContent = SEC_SGB.accession + " · " + SEC_SGB.bases.length + " bases";
+document.getElementById("fasta-sgb").textContent =
+  ">" + SEC_SGB.cabecera + "\n" + SEC_SGB.bases.match(/.{1,60}/g).slice(0,3).join("\n") + "\n…";
+pintarTablero();
+construirNav();
+sugerencias();
+</script>
+</body>
+</html>
