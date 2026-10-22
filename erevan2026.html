@@ -270,13 +270,18 @@ svg .mt-shape{fill:rgba(212,160,23,.5);stroke:var(--gold);stroke-width:1.6;strok
     <h2 class="sec disp" data-i18n="exists_title">No es una aspiración: está titulado, delimitado y registrado</h2>
     <p class="sub" data-i18n="exists_sub">La gobernanza colectiva del territorio en Colombia tiene expediente. El Sistema de Monitoreo Territorial de la ONIC la vigila con equipos comunitarios, bajo reglas de gobierno indígena de los datos: el primero es público y los otros tres no salen del territorio. Esa regla no es una política interna que adoptamos por conveniencia; es la condición que hace posible que la información exista.</p>
     <div class="stats">
-      <div class="stat"><b>88</b><span data-i18n="st1">pueblos indígenas representados por la ONIC</span></div>
-      <div class="stat"><b>1.446.870</b><span data-i18n="st2">personas</span></div>
-      <div class="stat"><b>959</b><span data-i18n="st3">resguardos indígenas titulados</span></div>
-      <div class="stat"><b>31,3 %</b><span data-i18n="st4">del territorio nacional en resguardos · 35,75 millones de hectáreas</span></div>
-      <div class="stat"><b>5.690</b><span data-i18n="st5">especies útiles georreferenciadas en el catálogo propio por resguardo</span></div>
-      <div class="stat"><b>30</b><span data-i18n="st6">años de operación verificada del monitoreo en Matavén</span></div>
+      <div class="stat"><b data-i18n="st1_n">88</b><span data-i18n="st1">pueblos indígenas representados por la ONIC</span></div>
+      <div class="stat"><b data-i18n="st2_n">1.446.870</b><span data-i18n="st2">personas</span></div>
+      <div class="stat"><b data-i18n="st3_n">959</b><span data-i18n="st3">resguardos indígenas titulados</span></div>
+      <div class="stat"><b data-i18n="st4_n">31,3 %</b><span data-i18n="st4">del territorio nacional en resguardos · 35,75 millones de hectáreas</span></div>
+      <div class="stat"><b data-i18n="st5_n">5.690</b><span data-i18n="st5">especies útiles georreferenciadas en el catálogo propio por resguardo</span></div>
+      <div class="stat"><b data-i18n="st6_n">30</b><span data-i18n="st6">años de operación verificada del monitoreo en Matavén</span></div>
     </div>
+    <p class="eyebrow" style="margin-top:3.2rem" data-i18n="exec_eyebrow">Y lo que ya ejecutamos</p>
+    <h2 class="sec disp" data-i18n="exec_title">El inventario de biodiversidad no es un salto al vacío: es la capacidad que ya aplicamos al catastro y al censo</h2>
+    <p class="sub" data-i18n="exec_sub">La pregunta que un financiador no formula en voz alta es si la organización puede ejecutar. La respuesta está en el expediente de otros dos oficios. La ONIC levanta catastro multipropósito por convenio con el instituto geográfico del Estado, fue organización operadora de la recolección censal en territorios indígenas, y opera su propio sistema de información —visor, aplicación de campo y base georreferenciada— sin depender del servidor de nadie.</p>
+    <div class="stats"><div class="stat"><b data-i18n="ex1_n">29</b><span data-i18n="ex1">resguardos con catastro multipropósito levantado por la ONIC como Operador Catastral Étnico · convenio 5552 de 2025 con el IGAC</span></div><div class="stat"><b data-i18n="ex2_n">3,82</b><span data-i18n="ex2">millones de hectáreas en ese levantamiento, con trabajo de campo cerrado en los 29 nodos de interlocución</span></div><div class="stat"><b data-i18n="ex3_n">11.608</b><span data-i18n="ex3">construcciones y 1.692 sitios sagrados georreferenciados en esa operación</span></div><div class="stat"><b data-i18n="ex4_n">1.905.617</b><span data-i18n="ex4">personas indígenas de 115 pueblos, procesadas por la ONIC sobre los microdatos del censo nacional de 2018</span></div><div class="stat"><b data-i18n="ex5_n">13.868</b><span data-i18n="ex5">comunidades en la base georreferenciada propia, que sostiene el visor y la aplicación de campo de smt-onic.com</span></div><div class="stat"><b data-i18n="ex6_n">USD 2,5 M</b><span data-i18n="ex6">en convenios administrados en 2026 con el IGAC y el Departamento Nacional de Planeación</span></div></div>
+    <p class="note" data-i18n="exec_note">Convenio de Asociación 5552 de 2025, IGAC-ONIC; inicio por Resolución 50-000-025-2026 de la Dirección Territorial Meta. Hito 2 certificado conforme por el IGAC el 9 de julio de 2026. Censo Nacional de Población y Vivienda 2018 del DANE, con procesamiento propio de la Oficina de Población de la ONIC. Convenio DNP-1161-2026. Las cifras de campo tienen fecha de corte entre septiembre y octubre de 2026.</p>
     <p class="note" data-i18n="exists_note">Cifras de gobernanza: Agencia Nacional de Tierras, 2025-2026. Catálogo de plantas útiles por resguardo, con aval del Royal Botanic Gardens, Kew, y GBIF. Matavén: registro público de Verra, proyecto VCS-1566, periodo acreditado 2013-2042. Esta página contiene únicamente información de nivel público: no publica coordenadas de comunidades, sitios sagrados ni conocimiento tradicional asociado.</p>
   </div>
 </section>
@@ -658,6 +663,29 @@ svg .mt-shape{fill:rgba(212,160,23,.5);stroke:var(--gold);stroke-width:1.6;strok
 <script>
 const I18N = {
   en: {
+  foot: "National Indigenous Organization of Colombia · Territorial Monitoring System · 2026 · poblacion@onic.org.co",
+  exec_eyebrow: "And what we already run",
+  exec_title: "An inventory of biodiversity is no leap into the dark: it is the capability we already apply to cadastre and to census",
+  exec_sub: "The question a funder does not ask out loud is whether the organisation can execute. The answer sits in the record of two other trades. ONIC surveys multipurpose cadastre under agreement with the State's geographic institute, was an operating organisation of census collection in Indigenous territories, and runs its own information system - map viewer, field app and georeferenced base - without depending on anyone else's server.",
+  ex1: "resguardos with multipurpose cadastre surveyed by ONIC as Indigenous Cadastral Operator - agreement 5552 of 2025 with IGAC",
+  ex2: "million hectares in that survey, with fieldwork closed in all 29 interlocution nodes",
+  ex3: "structures and 1,692 sacred sites georeferenced in that operation",
+  ex4: "Indigenous people from 115 peoples, processed by ONIC from the 2018 national census microdata",
+  ex5: "communities in our own georeferenced base, which powers the map viewer and the field app at smt-onic.com",
+  ex6: "in agreements administered during 2026 with IGAC and the National Planning Department",
+  st1_n: "88",
+  st2_n: "1,446,870",
+  st3_n: "959",
+  st4_n: "31.3 %",
+  st5_n: "5,690",
+  st6_n: "30",
+  ex1_n: "29",
+  ex2_n: "3.82",
+  ex3_n: "11,608",
+  ex4_n: "1,905,617",
+  ex5_n: "13,868",
+  ex6_n: "USD 2.5 M",
+  exec_note: "Association Agreement 5552 of 2025, IGAC-ONIC; commenced by Resolution 50-000-025-2026 of the Meta Territorial Directorate. Milestone 2 certified conforme by IGAC on 9 July 2026. 2018 National Population and Housing Census (DANE), processed in-house by ONIC's Population Office. Agreement DNP-1161-2026. Field figures are cut off between September and October 2026.",
   nav_biblio: "Library",
   bib_eyebrow: "To take away",
   bib_title: "Everything behind this conversation",
