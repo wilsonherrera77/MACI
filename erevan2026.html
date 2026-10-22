@@ -170,6 +170,30 @@ svg .mt-shape{fill:rgba(212,160,23,.5);stroke:var(--gold);stroke-width:1.6;strok
   nav,.langs{display:none}
   .vid{break-inside:avoid}
 }
+
+.vid .thumb{width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;
+  display:block;background:var(--smt-deep)}
+.biblio{display:grid;gap:26px;margin-top:26px}
+.biblio .grupo > h3{font-size:.82rem;letter-spacing:.09em;text-transform:uppercase;
+  color:var(--onic-red);margin:0 0 12px;font-weight:700}
+.biblio .items{display:grid;grid-template-columns:repeat(auto-fit,minmax(248px,1fr));gap:12px}
+.biblio a{display:block;padding:13px 15px;border:1px solid var(--line);border-radius:9px;
+  text-decoration:none;background:#fff;transition:border-color .15s}
+.biblio a:hover{border-color:var(--olive-dark)}
+.biblio a b{display:block;font-size:.95rem;color:var(--smt-deep);margin-bottom:4px;
+  line-height:1.3;font-weight:600}
+.biblio a span{display:block;font-size:.8rem;color:var(--grafito-light);line-height:1.42}
+.biblio a em{display:block;font-size:.68rem;letter-spacing:.07em;text-transform:uppercase;
+  color:var(--olive-dark);font-style:normal;margin-top:7px;font-weight:600}
+.comps{display:grid;grid-template-columns:repeat(auto-fit,minmax(176px,1fr));gap:10px;
+  margin-top:20px}
+.comps a{display:block;padding:12px 14px;border:1px solid var(--line);border-radius:9px;
+  text-decoration:none;background:#fff}
+.comps a:hover{border-color:var(--olive-dark)}
+.comps a b{display:block;font-family:'JetBrains Mono',monospace;font-size:.78rem;
+  color:var(--gold);margin-bottom:3px}
+.comps a span{font-size:.86rem;color:var(--smt-deep);line-height:1.3}
+@media print{.biblio a,.comps a{break-inside:avoid}}
 </style>
 </head>
 <body>
@@ -185,6 +209,7 @@ svg .mt-shape{fill:rgba(212,160,23,.5);stroke:var(--gold);stroke-width:1.6;strok
       <a href="#origen" data-i18n="nav_origen">Ley de Origen</a>
       <a href="#pedidos" data-i18n="nav_asks">Lo que pedimos</a>
       <a href="#maci" data-i18n="nav_maci">MACI</a>
+      <a href="#biblioteca" data-i18n="nav_biblio">Biblioteca</a>
       <a href="#contacto" data-i18n="nav_contact">Contacto</a>
     </div>
     <div class="langs">
@@ -264,24 +289,28 @@ svg .mt-shape{fill:rgba(212,160,23,.5);stroke:var(--gold);stroke-width:1.6;strok
     <p class="sub" data-i18n="vid_sub">Cuatro piezas breves del Sistema de Monitoreo Territorial: qué es, cómo monitorean las comunidades, el trabajo con las plantas útiles y la conservación de las semillas propias.</p>
     <div class="vids">
       <a class="vid" href="https://youtu.be/WOF5ZH9qX28" target="_blank" rel="noopener">
+        <img class="thumb" src="assets/video_WOF5ZH9qX28.jpg" alt="" loading="lazy">
         <span class="play"><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2 1l9 5-9 5z"/></svg></span>
         <h3 data-i18n="v_WOF5ZH9qX28_t">¿Qué es el SMT-ONIC?</h3>
         <p data-i18n="v_WOF5ZH9qX28_d">El Sistema de Monitoreo Territorial contado por quienes lo operan.</p>
         <span class="go" data-i18n="v_go">Ver el video</span>
       </a>
       <a class="vid" href="https://youtu.be/c35SZghXaNY" target="_blank" rel="noopener">
+        <img class="thumb" src="assets/video_c35SZghXaNY.jpg" alt="" loading="lazy">
         <span class="play"><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2 1l9 5-9 5z"/></svg></span>
         <h3 data-i18n="v_c35SZghXaNY_t">Monitoreo ambiental comunitario</h3>
         <p data-i18n="v_c35SZghXaNY_d">Cómo las comunidades registran lo que pasa en su territorio.</p>
         <span class="go" data-i18n="v_go">Ver el video</span>
       </a>
       <a class="vid" href="https://youtu.be/cEfB9KILAdY" target="_blank" rel="noopener">
+        <img class="thumb" src="assets/video_cEfB9KILAdY.jpg" alt="" loading="lazy">
         <span class="play"><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2 1l9 5-9 5z"/></svg></span>
         <h3 data-i18n="v_cEfB9KILAdY_t">Centros botánicos</h3>
         <p data-i18n="v_cEfB9KILAdY_d">El trabajo con las plantas útiles en los territorios.</p>
         <span class="go" data-i18n="v_go">Ver el video</span>
       </a>
       <a class="vid" href="https://youtu.be/gOijWN6ONmQ" target="_blank" rel="noopener">
+        <img class="thumb" src="assets/video_gOijWN6ONmQ.jpg" alt="" loading="lazy">
         <span class="play"><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2 1l9 5-9 5z"/></svg></span>
         <h3 data-i18n="v_gOijWN6ONmQ_t">Redes y casas de semillas</h3>
         <p data-i18n="v_gOijWN6ONmQ_d">La conservación de las semillas propias, en manos de las comunidades.</p>
@@ -457,10 +486,147 @@ svg .mt-shape{fill:rgba(212,160,23,.5);stroke:var(--gold);stroke-width:1.6;strok
       </div>
     </div>
     <p class="total" data-i18n="maci_total">Año 1 · USD 12,79 M incluyendo diez por ciento de gastos de administración · Horizonte 2026-2030 · USD 60-80 M</p>
-    <p class="note" data-i18n="maci_note">Las cifras por módulo corresponden al primer año de la formulación de MACI y se presentan como el orden de magnitud de cada línea, no como un compromiso presupuestal cerrado. Cada módulo tiene su propia ficha pública, enlazada desde el sitio del Marco.</p>
+    <div class="comps">
+      <a href="https://wilsonherrera77.github.io/MACI1/MACI1.html" target="_blank" rel="noopener"><b>M1</b><span data-i18n="comp_M1">Gobernabilidad y Soberanía</span></a>
+      <a href="https://wilsonherrera77.github.io/MACI2/MACI2.html" target="_blank" rel="noopener"><b>M2</b><span data-i18n="comp_M2">Plataforma Soberana de Datos</span></a>
+      <a href="https://wilsonherrera77.github.io/MACI3/MACI3.html" target="_blank" rel="noopener"><b>M3</b><span data-i18n="comp_M3">Monitoreo Comunitario Biocultural</span></a>
+      <a href="https://wilsonherrera77.github.io/MACI4/MACI4.html" target="_blank" rel="noopener"><b>M4</b><span data-i18n="comp_M4">Genética y Biobanco</span></a>
+      <a href="https://wilsonherrera77.github.io/MACI5/MACI5.html" target="_blank" rel="noopener"><b>M5</b><span data-i18n="comp_M5">Bioeconomía y Sostenibilidad</span></a>
+    </div>
+    <p class="sub" style="margin-top:14px" data-i18n="comp_sub">Cada módulo tiene su ficha pública con objetivo, diseño operativo, presupuesto del primer año, equipo y cronograma a cinco años.</p>
   </div>
 </section>
 
+
+<section id="biblioteca" class="cream">
+  <div class="wrap">
+    <p class="eyebrow" data-i18n="bib_eyebrow">Para llevarse</p>
+    <h2 class="sec disp" data-i18n="bib_title">Todo lo que hay detrás de esta conversación</h2>
+    <p class="sub" data-i18n="bib_sub">El expediente completo, abierto: el método con su consultor en vivo, el caso Matavén en cuatro idiomas, los inventarios, el biobanco y lo que se deja en la mano. Todo se puede descargar sin pedirle permiso a nadie.</p>
+    <div class="biblio">
+      <div class="grupo">
+        <h3 data-i18n="bib_g0">El método y la auditoría genética</h3>
+        <div class="items">
+        <a href="Metodo_MACI_FIIB_ONIC.html" target="_blank" rel="noopener">
+          <b data-i18n="bib_0_0_t">El método, con consultor en vivo</b>
+          <span data-i18n="bib_0_0_d">Doce láminas: las cuatro cegueras, con su cifra y su fuente. Trae un buscador que consulta las bases genéticas de Europa y de Estados Unidos desde el propio aparato.</span>
+          <em>HTML</em>
+        </a>
+        <a href="Metodo_MACI_FIIB_ONIC.pptx" target="_blank" rel="noopener">
+          <b data-i18n="bib_0_1_t">El método, en PowerPoint editable</b>
+          <span data-i18n="bib_0_1_d">La misma presentación para adaptarla y usarla en otra sala.</span>
+          <em>PPTX</em>
+        </a>
+        </div>
+      </div>
+      <div class="grupo">
+        <h3 data-i18n="bib_g1">El caso Matavén</h3>
+        <div class="items">
+        <a href="brasilia2026.html" target="_blank" rel="noopener">
+          <b data-i18n="bib_1_0_t">Matavén en la Cumbre de Brasilia</b>
+          <span data-i18n="bib_1_0_d">1.150.212 hectáreas gobernadas por seis pueblos, con mapas, series de carbono y treinta años de monitoreo verificado.</span>
+          <em>HTML</em>
+        </a>
+        <a href="dossiers/mataven.pdf" target="_blank" rel="noopener">
+          <b data-i18n="bib_1_1_t">Dossier Matavén · castellano</b>
+          <span data-i18n="bib_1_1_d">El expediente completo del resguardo.</span>
+          <em>PDF</em>
+        </a>
+        <a href="dossiers/mataven_EN.pdf" target="_blank" rel="noopener">
+          <b data-i18n="bib_1_2_t">Dossier Matavén · inglés</b>
+          <span data-i18n="bib_1_2_d">El mismo expediente, en inglés.</span>
+          <em>PDF</em>
+        </a>
+        <a href="dossiers/mataven_PT.pdf" target="_blank" rel="noopener">
+          <b data-i18n="bib_1_3_t">Dossiê Matavén · português</b>
+          <span data-i18n="bib_1_3_d">El mismo expediente, en portugués.</span>
+          <em>PDF</em>
+        </a>
+        <a href="dossiers/mataven_FR.pdf" target="_blank" rel="noopener">
+          <b data-i18n="bib_1_4_t">Dossier Matavén · français</b>
+          <span data-i18n="bib_1_4_d">El mismo expediente, en francés.</span>
+          <em>PDF</em>
+        </a>
+        </div>
+      </div>
+      <div class="grupo">
+        <h3 data-i18n="bib_g2">Inventarios, semillas y bioeconomía</h3>
+        <div class="items">
+        <a href="dossiers/plantas-utiles.pdf" target="_blank" rel="noopener">
+          <b data-i18n="bib_2_0_t">Las 5.690 especies útiles</b>
+          <span data-i18n="bib_2_0_d">El catálogo propio, por resguardo, con aval del Royal Botanic Gardens de Kew.</span>
+          <em>PDF</em>
+        </a>
+        <a href="dossiers-html/mockup-app-inventarios.html" target="_blank" rel="noopener">
+          <b data-i18n="bib_2_1_t">Cómo se levanta un inventario</b>
+          <span data-i18n="bib_2_1_d">La aplicación con la que los equipos comunitarios registran en campo.</span>
+          <em>HTML</em>
+        </a>
+        <a href="dossiers/mockup-biobanco.pdf" target="_blank" rel="noopener">
+          <b data-i18n="bib_2_2_t">El biobanco con custodia indígena</b>
+          <span data-i18n="bib_2_2_d">Qué se guarda, quién lo custodia y bajo qué acuerdo de repatriación.</span>
+          <em>PDF</em>
+        </a>
+        </div>
+      </div>
+      <div class="grupo">
+        <h3 data-i18n="bib_g3">Territorio y derechos</h3>
+        <div class="items">
+        <a href="dossiers/sierra-nevada-santa-marta.pdf" target="_blank" rel="noopener">
+          <b data-i18n="bib_3_0_t">Sierra Nevada de Santa Marta</b>
+          <span data-i18n="bib_3_0_d">Cuatro pueblos y la Línea Negra.</span>
+          <em>PDF</em>
+        </a>
+        <a href="dossiers/uwa-su039-cocuy.pdf" target="_blank" rel="noopener">
+          <b data-i18n="bib_3_1_t">U'wa · Sentencia SU-039 de 1997</b>
+          <span data-i18n="bib_3_1_d">El precedente de consulta previa que fijó la Corte Constitucional.</span>
+          <em>PDF</em>
+        </a>
+        <a href="dossiers/mesquita-onic-conaq.pdf" target="_blank" rel="noopener">
+          <b data-i18n="bib_3_2_t">ONIC y CONAQ · pueblos quilombolas</b>
+          <span data-i18n="bib_3_2_d">El acuerdo con las comunidades quilombolas de Brasil.</span>
+          <em>PDF</em>
+        </a>
+        </div>
+      </div>
+      <div class="grupo">
+        <h3 data-i18n="bib_g4">Para dejar en la mano</h3>
+        <div class="items">
+        <a href="one-pager/one_pager_ES.pdf" target="_blank" rel="noopener">
+          <b data-i18n="bib_4_0_t">Una página · castellano</b>
+          <span data-i18n="bib_4_0_d">El resumen que se entrega en una conversación.</span>
+          <em>PDF</em>
+        </a>
+        <a href="one-pager/one_pager_EN.pdf" target="_blank" rel="noopener">
+          <b data-i18n="bib_4_1_t">Una página · inglés</b>
+          <span data-i18n="bib_4_1_d">El mismo resumen, en inglés.</span>
+          <em>PDF</em>
+        </a>
+        <a href="one-pager/one_pager_PT.pdf" target="_blank" rel="noopener">
+          <b data-i18n="bib_4_2_t">Uma página · português</b>
+          <span data-i18n="bib_4_2_d">El mismo resumen, en portugués.</span>
+          <em>PDF</em>
+        </a>
+        <a href="one-pager/one_pager_FR.pdf" target="_blank" rel="noopener">
+          <b data-i18n="bib_4_3_t">Une page · français</b>
+          <span data-i18n="bib_4_3_d">El mismo resumen, en francés.</span>
+          <em>PDF</em>
+        </a>
+        <a href="dossiers/declaracion-3-parrafos-ES.pdf" target="_blank" rel="noopener">
+          <b data-i18n="bib_4_4_t">La declaración, en tres párrafos</b>
+          <span data-i18n="bib_4_4_d">Lo mínimo que hay que poder decir de pie.</span>
+          <em>PDF</em>
+        </a>
+        <a href="SMT%20-%20ONIC%20presentacion%202024_2.pdf" target="_blank" rel="noopener">
+          <b data-i18n="bib_4_5_t">El SMT-ONIC, presentación general</b>
+          <span data-i18n="bib_4_5_d">Qué es el Sistema de Monitoreo Territorial y cómo opera.</span>
+          <em>PDF</em>
+        </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 <section class="dark" id="contacto">
   <div class="wrap">
     <p class="kicker" data-i18n="contact_eyebrow">Hablemos</p>
@@ -475,7 +641,7 @@ svg .mt-shape{fill:rgba(212,160,23,.5);stroke:var(--gold);stroke-width:1.6;strok
         <div class="crow"><dt data-i18n="c_mail">Correo</dt><dd><a href="mailto:poblacion@onic.org.co">poblacion@onic.org.co</a></dd></div>
       </dl>
     </div>
-    <p class="note" data-i18n="contact_note">Wilson Herrera participa en la COP 17 como integrante de la delegación de la Coalición de Rights and Resources Initiative y como Coordinador General del Sistema de Monitoreo Territorial de la ONIC. Esta página presenta el trabajo del Sistema y las posiciones técnicas que lo acompañan; las decisiones institucionales de la ONIC las adopta su Consejo Mayor de Gobierno.</p>
+    <p class="note" data-i18n="contact_note">Participamos en la COP 17 bajo los auspicios de la Rights and Resources Initiative; lo que aquí se presenta es un aporte técnico del Sistema de Monitoreo Territorial de la Organización Nacional Indígena de Colombia (ONIC).</p>
   </div>
 </section>
 
@@ -492,6 +658,59 @@ svg .mt-shape{fill:rgba(212,160,23,.5);stroke:var(--gold);stroke-width:1.6;strok
 <script>
 const I18N = {
   en: {
+  nav_biblio: "Library",
+  bib_eyebrow: "To take away",
+  bib_title: "Everything behind this conversation",
+  bib_sub: "The full file, open: the method with its live lookup tool, the Matavén case in four languages, the inventories, the biobank, and what gets left behind. All of it downloadable without anyone's permission.",
+  comp_sub: "Each module has a public sheet with its objective, operational design, first-year budget, team and five-year timeline.",
+  bib_g0: "The method and the genetic audit",
+  bib_0_0_t: "The method, with a live lookup tool",
+  bib_0_0_d: "Twelve panels: the four blind spots, each with its figure and source. It carries a lookup tool that queries the European and US genetic databases from your own device.",
+  bib_0_1_t: "The method, as an editable PowerPoint",
+  bib_0_1_d: "The same deck, to adapt and present elsewhere.",
+  bib_g1: "The Matavén case",
+  bib_1_0_t: "Matavén at the Brasília Summit",
+  bib_1_0_d: "1,150,212 hectares governed by six peoples, with maps, carbon series and thirty years of verified monitoring.",
+  bib_1_1_t: "Matavén dossier · Spanish",
+  bib_1_1_d: "The full resguardo file.",
+  bib_1_2_t: "Matavén dossier · English",
+  bib_1_2_d: "The same file, in English.",
+  bib_1_3_t: "Matavén dossier · Portuguese",
+  bib_1_3_d: "The same file, in Portuguese.",
+  bib_1_4_t: "Matavén dossier · French",
+  bib_1_4_d: "The same file, in French.",
+  bib_g2: "Inventories, seed and bioeconomy",
+  bib_2_0_t: "The 5,690 useful species",
+  bib_2_0_d: "Our own catalogue, by resguardo, endorsed by the Royal Botanic Gardens, Kew.",
+  bib_2_1_t: "How an inventory is built",
+  bib_2_1_d: "The application community teams use to record in the field.",
+  bib_2_2_t: "The biobank under Indigenous custody",
+  bib_2_2_d: "What is kept, who holds custody, and under what repatriation agreement.",
+  bib_g3: "Territory and rights",
+  bib_3_0_t: "Sierra Nevada de Santa Marta",
+  bib_3_0_d: "Four peoples and the Línea Negra.",
+  bib_3_1_t: "U'wa · Judgment SU-039 of 1997",
+  bib_3_1_d: "The prior-consultation precedent set by the Constitutional Court.",
+  bib_3_2_t: "ONIC and CONAQ · quilombola peoples",
+  bib_3_2_d: "The agreement with Brazil's quilombola communities.",
+  bib_g4: "To leave behind",
+  bib_4_0_t: "One page · Spanish",
+  bib_4_0_d: "The summary handed over in a conversation.",
+  bib_4_1_t: "One page · English",
+  bib_4_1_d: "The same summary, in English.",
+  bib_4_2_t: "One page · Portuguese",
+  bib_4_2_d: "The same summary, in Portuguese.",
+  bib_4_3_t: "One page · French",
+  bib_4_3_d: "The same summary, in French.",
+  bib_4_4_t: "The statement, in three paragraphs",
+  bib_4_4_d: "The minimum one must be able to say standing up.",
+  bib_4_5_t: "SMT-ONIC, general presentation",
+  bib_4_5_d: "What the Territorial Monitoring System is and how it operates.",
+  comp_M1: "Governance and Sovereignty",
+  comp_M2: "Sovereign Data Platform",
+  comp_M3: "Biocultural Community Monitoring",
+  comp_M4: "Genetics and Biobank",
+  comp_M5: "Bioeconomy and Sustainability",
   nav_videos: "Video",
   vid_eyebrow: "On video",
   vid_title: "The System, told by the people who run it",
@@ -594,7 +813,7 @@ const I18N = {
     c_when:"In Yerevan", c_when_v:"19 to 26 October 2026",
     c_deleg:"Delegation", c_deleg_v:"Rights and Resources Initiative Coalition",
     c_mail:"Email", c_phone:"Phone",
-    contact_note:"Wilson Herrera attends COP 17 as a member of the Rights and Resources Initiative Coalition delegation and as General Coordinator of ONIC's Territorial Monitoring System. This page presents the System's work and the technical positions accompanying it; ONIC's institutional decisions are taken by its Mayor Council of Government."
+    contact_note:"We are participating in COP 17 under the auspices of the Rights and Resources Initiative; what is presented here is a technical contribution from the Monitoring System of the National Indigenous Organization of Colombia (ONIC)."
   }
 };
 const ES = {};
