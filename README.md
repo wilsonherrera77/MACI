@@ -2,19 +2,19 @@
 
 > **Organización Nacional Indígena de Colombia (ONIC) · Sistema de Monitoreo Territorial (SMT)**
 > Mandato XI Congreso · *Pacto para Volver al Origen*
-> Sitio público: <https://wilsonherrera77.github.io/MACI/>
+> Sitio público: <https://erevan.smt-onic.com/MACI/>
 
 ---
 
 ## COP 17 del CDB · Ereván 2026 · 19-26 octubre
 
-→ **Landing COP17:** [`erevan2026.html`](https://wilsonherrera77.github.io/MACI/erevan2026.html) (ES/EN · la escala, los cuatro pedidos del texto en negociación y el módulo MACI que sostiene cada uno)
+→ **Landing COP17:** [`erevan2026.html`](https://erevan.smt-onic.com/MACI/erevan2026.html) (ES/EN · la escala, los cuatro pedidos del texto en negociación y el módulo MACI que sostiene cada uno)
 
 ## ⭐ Cumbre RRI Brasília 2026 · 26-29 mayo · 26-29 mayo
 
-→ **Landing Cumbre:** [`brasilia2026.html`](https://wilsonherrera77.github.io/MACI/brasilia2026.html) (multilingüe ES/EN/PT/FR)
-→ **Hub móvil contacto:** [`contact-brasilia.html`](https://wilsonherrera77.github.io/MACI/contact-brasilia.html)
-→ **vCard descargable:** [`wilson.vcf`](https://wilsonherrera77.github.io/MACI/wilson.vcf)
+→ **Landing Cumbre:** [`brasilia2026.html`](https://erevan.smt-onic.com/MACI/brasilia2026.html) (multilingüe ES/EN/PT/FR)
+→ **Hub móvil contacto:** [`contact-brasilia.html`](https://erevan.smt-onic.com/MACI/contact-brasilia.html)
+→ **vCard descargable:** [`wilson.vcf`](https://erevan.smt-onic.com/MACI/wilson.vcf)
 
 ---
 
@@ -24,11 +24,11 @@ MACI es el vehículo bancable de ONIC para articular los mandatos del XI Congres
 
 | # | Módulo | Año 1 | Subsitio |
 |---|---|---|---|
-| **M1** | Gobernabilidad y Soberanía (CREA · CLPI/ABS · Consejo de Datos) | USD 288K | [MACI1](https://wilsonherrera77.github.io/MACI1/MACI1.html) |
-| **M2** | Plataforma Soberana de Datos (PSB) | USD 531K | [MACI2](https://wilsonherrera77.github.io/MACI2/MACI2.html) |
-| **M3** | Monitoreo Comunitario Biocultural | USD 7.09M | [MACI3](https://wilsonherrera77.github.io/MACI3/MACI3.html) |
-| **M4** | Genética y Biobanco | USD 1.27M | [MACI4](https://wilsonherrera77.github.io/MACI4/MACI4.html) |
-| **M5** | Bioeconomía y Sostenibilidad | USD 2.46M | [MACI5](https://wilsonherrera77.github.io/MACI5/MACI5.html) |
+| **M1** | Gobernabilidad y Soberanía (CREA · CLPI/ABS · Consejo de Datos) | USD 288K | [MACI1](https://erevan.smt-onic.com/MACI1/MACI1.html) |
+| **M2** | Plataforma Soberana de Datos (PSB) | USD 531K | [MACI2](https://erevan.smt-onic.com/MACI2/MACI2.html) |
+| **M3** | Monitoreo Comunitario Biocultural | USD 7.09M | [MACI3](https://erevan.smt-onic.com/MACI3/MACI3.html) |
+| **M4** | Genética y Biobanco | USD 1.27M | [MACI4](https://erevan.smt-onic.com/MACI4/MACI4.html) |
+| **M5** | Bioeconomía y Sostenibilidad | USD 2.46M | [MACI5](https://erevan.smt-onic.com/MACI5/MACI5.html) |
 
 **Año 1 total:** USD 12.79M (incluyendo overhead 10%)
 
@@ -59,7 +59,7 @@ ONIC representa 102 pueblos indígenas en **toda Colombia**. Casos verificables 
 - GIZ Alemania · M5 · USD 500K-2M
 - Campaign for Nature (filantropía 30x30) · M3 30x30 · USD 200K-1M
 
-Tabla completa cross-map en [`brasilia2026.html`](https://wilsonherrera77.github.io/MACI/brasilia2026.html#donantes).
+Tabla completa cross-map en [`brasilia2026.html`](https://erevan.smt-onic.com/MACI/brasilia2026.html#donantes).
 
 ---
 
